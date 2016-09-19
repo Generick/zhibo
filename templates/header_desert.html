@@ -1,0 +1,67 @@
+<link data-fixed="true" href="/templates/index.css" rel="stylesheet">
+<script>
+    var cdn_domain="{$cdn_domain}";
+    var img_domain="{$images_domain}";
+    var site_skin="{$site_skin}";
+    var currentUserId="{$user.userId}";
+</script>
+<div class="head-outer btline">
+	<div class="header clearFix">
+        <a class="hd_bg fl" href="/"></a>
+        <ul class="nav fl">
+            <li class="fl {if $current_page=='index'}cu{/if}"><a href="/">首页</a></li>
+            <li class="fl {if $current_page=='square'}cu{/if}"><a href="/square.php">广场</a> </li>
+            <li class="fl {if $current_page=='mall'}cu{/if}"><a href="/mall.php">商城</a> </li>
+            <li class="fl {if $current_page=='order'}cu{/if}"><a href="/orders.php">排行榜</a> </li>
+        </ul>
+        <div class="input fl">
+            <input type="text" placeholder="输入房间号/频道号/ID" id="searchText" />
+            <a class="search" target="_blank" ></a>
+        </div>
+    {if !$user}
+    <div class="reg_log" style="margin-left: 300px;margin-top: 30px;">
+        <span class="log">登录</span><span class="reg">/注册</span>
+    </div>
+    {else}
+    <div class="user clearFix">
+        <div class="fl hd_hov">
+            <a class="username fl" href="centeros.php">{$user.nickname}</a> <a href="/login.php?action=logout&amp;type=html" class="userout">退出</a>
+            <a class="expand fl" id="expand" href="javascript:;"></a>
+        </div>
+        <a class="email fl" href="javascript:;"></a>
+        <div class="honor">
+            <div class="hon-header">
+                <div class="hon-title">我的勋章</div>
+            </div>
+            <div class="hon-list">
+                <ul>
+                    <li><span class="medal-li med3" title="万箭齐发"></span></li>
+                    <li><span class="medal-li med1" title="力拔山河"></span></li>
+                    <li><span class="medal-li med2" title="腰缠万贯"></span></li>
+                    <li><span class="medal-li med1" title="钟灵毓秀"></span></li>
+                    <li><span class="medal-li med3" title="雄霸天下"></span></li>
+                    <li><span class="medal-li med1" title="猴子偷桃"></span></li>
+                    <li><span class="medal-li med2" title="回光返照"></span></li>
+                    <li><span class="medal-li med3" title="钟灵毓秀"></span></li>
+                    <li><span class="medal-li med1" title="母仪天下"></span></li>
+                    <li><span class="medal-li med2" title="肆无忌惮"></span></li>
+                </ul>
+            </div>
+            <div class="hon-bottom">
+                <div class="tocenter"><a href="centeros.php">个人中心</a></div>
+                <div class="logout"><a href="/login.php?action=logout&amp;type=html">退出</a></div>
+            </div>
+        </div>
+    </div>
+
+    {/if}
+    </div>
+</div>
+
+
+
+
+
+
+
+

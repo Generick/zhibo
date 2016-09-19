@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>蝌蚪直播-互联网最好玩的娱乐直播生活秀平台</title>
+    <meta property="qc:admins" content="105415766763547646" />
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    <link href="{$cdn_domain}/static_data/images_css/anchor-level.css?v={$v}" rel="stylesheet">
+    <link href="{$cdn_domain}/static_data/images_css/icons.css?v={$v}" rel="stylesheet">
+    <script src="{$cdn_domain}/skin/desert/js/move.js"></script>
+    <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js?v={$v}"></script>
+    <script src="{$cdn_domain}/js/carousel.js?v={$v}"></script>
+
+    <script src="/js/jquery.lazyload.min.js"></script>
+    <script>
+        $(function () {
+            $("img.lazy").lazyload({ effect: "fadeIn" });
+        });
+    </script>
+</head>
+<body ondragstart="window.event.returnValue=false">
+{include file="header.html"}
+<div class="wrapper clearFix">
+	<div class="l fl">
+        <div id="carousel">
+            <div class="box" id="play">
+                <p id="pr"></p>
+                <p id="ne"></p>
+                <ul id="bannerList">
+                </ul>
+            </div>
+            <ol id="ol" class="clearFix">
+
+            </ol>
+    	</div>
+    
+        <!--hot-->
+        <div class="hot">
+            <div class="title clearFix">
+            <span class="fl hot_bg"></span>
+            <h3 class="fl">热门主播</h3>
+            <a class="dot fr" href="javascript:;"></a>
+            <a class="more fr" href="/square.php">更多</a>
+        </div>
+            <div class="beauty">
+            <div class="breauList clearFix">
+
+            </div>
+            </div>
+        </div>
+
+        <div style="clear: both"></div>
+        <!--movie-->
+        <div class="movie">
+            <a href="javascript:;">
+            </a>
+        </div>
+
+        <div style="clear: both"></div>
+        <!--new-->
+        <div class="hot">
+            <div class="title clearFix">
+            <span class="fl hot_bg"></span>
+            <h3 class="fl">最新入住</h3>
+            <a class="dot fr" href="javascript:;"></a>
+            <a class="more fr" href="/square.php">更多</a>
+        </div>
+            <div class="beauty">
+                <div class="clearFix hotlistss">
+
+
+            </div>
+            </div>
+        </div>
+</div>
+
+	<div class="r fr">
+
+	{if !$user}
+	<div id="login">
+
+        <div class="enter">
+            <a class="login_im" href="javascript:;">立即登录</a>
+            <a class="register" href="javascript:;">一键注册</a>
+            <div class="forgot-pass">忘记密码 点击 <a href="javascript:;">这里找回</a> </div>
+            <div class="klogin">快捷登录</div>
+            <div class="other_login_area index_login_area clearFix">
+                <span class="other_log_qq"><a href="javascript:login.qqlogin()"></a></span>
+                <span class="other_log_sina"><a href="javascript:login.wxlogin()" class="Stat 2_2"></a></span>
+            </div>
+
+        </div>
+    </div>
+	{else}
+	<div class="anchor">
+
+    <div class="anchor_info clearFix">
+        <a href="centeros.php" class="anchor_photo fl">
+            <img src="{$images_domain}/{$user.avatar}"  />
+        </a>
+        <div class="anchor_detail fl">
+            <p class="name"><a href="centeros.php" >{$user.nickname}</a></p>
+            <p class="value"><span></span>{$user.coins}</p>
+            <a  href="/pay.php" class="charge fr">充值</a>
+        </div>
+    </div>
+
+    <div class="level clearFix">
+        <div class="scale fl" style="width: 236px">
+            <div class="already" style="width:{$user.nextSpender}%"></div>
+            <div class="distance">还差{$user.differ}经验值升级到下一级</div>
+        </div>
+    </div>
+    <div class="be_char clearFix">
+        {if $user.roomNumber}
+        <a title="我要开播" class="begin fl" target="_blank" href="/{$user.roomNumber}">开播</a>
+        {/if}
+        {if $user.socType==1}
+        <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="ow fr">OW</a>
+        {/if}
+    </div>
+    <div class="achieve">
+        <p>获得成就</p>
+        <div class="division"></div>
+        <div class="medal" title="成就系统暂未开放">
+            <a class="more" href="#">更多</a>
+        </div>
+    </div>
+
+</div>
+	{/if}
+	<p class="notice clearFix">
+</p>
+
+	<div class="follow">
+        <div class="follow_con">
+        	<div class="follow_tit clearFix">
+                <h3 class="fl">我的关注<span>(30)</span></h3>
+
+                <span class="xia_hover xii spp"></span>
+                 <span class="shang_hover shh spp"></span>
+            </div>
+            <div class="list_care">
+                <ul class="list">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="download">
+        <div class="download_con">
+        	<!--<a href="/recruitItem.php"{if !$user}class="login_im"{/if} style="width: 100%;height: 100%;display: inline-block"></a>-->
+        </div>
+    </div>
+
+	<div class="rank">
+        <div class="rank_con">
+        	<div class="tit clearFix">
+                <h4 class="rank_tit fl">主播排行榜</h4>
+                <div class="type fl">
+                    <a href="javascript:;" class="active fl">周</a>
+                    <a href="javascript:;" class="fl">月</a>
+                    <a href="javascript:;" class="fl">年</a>
+                </div>
+            </div>
+            <div class="cons">
+                <ul class="rank_list"  id="dayList"></ul>
+                <ul class="rank_list" id="weekList" style="display: none"></ul>
+                <ul class="rank_list" id="monthList"   style="display: none"></ul>
+            </div>
+        </div>
+	</div>
+
+        <div class="fans">
+            <div class="fans_con">
+                <div class="tit clearFix">
+                    <h4 class="fans_tit fl">土豪榜</h4>
+                    <div class="type fl">
+                        <a href="javascript:;" class="fl active">周</a>
+                        <a href="javascript:;" class="fl">月</a>
+                        <a href="javascript:;" class="fl">年</a>
+                    </div>
+                </div>
+                <div class="cons">
+                    <ul class="rank_list" id="th_week">
+
+                    </ul>
+                    <ul class="rank_list"  id="th_month"  style="display: none">
+
+                    </ul>
+                    <ul class="rank_list"  id="th_year" style="display: none">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    <div class="fans">
+        <div class="fans_con">
+            <div class="tit clearFix">
+                <h4 class="fansTit fl">粉丝活跃榜</h4>
+                <div class="type fl">
+                    <a href="javascript:;" class="fl">周</a>
+                    <a href="javascript:;" class="fl">月</a>
+                    <a href="javascript:;" class="fl active">年</a>
+                </div>
+            </div>
+            <div class="cons">
+                <ul class="rank_list" id="hy_week">
+
+                </ul>
+                <ul class="rank_list"  id="hy_month"  style="display: none">
+
+                </ul>
+                <ul class="rank_list"  id="hy_year" style="display: none">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{include file="footer.html"}
+
+</body>
+</html>
