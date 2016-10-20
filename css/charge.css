@@ -40,9 +40,9 @@ img{border:none; }
 .recharge .char_tit{  border-bottom:1px solid #ddd;padding-top:26px; padding-bottom:8px; position:relative; }
 .recharge .char_tit .rest{position:absolute; left:150px; bottom:9px;  }
 .recharge .char_tit .rest i{font-style:normal; color:#333; }
-.char_tit .rest i strong{font-weight:normal; color:#fcb400; }
+.char_tit .rest i strong{font-weight:normal; color:#e34052; }
 
-.recharge .char_tit h3{font-size:22px; margin-bottom:12px; }
+.recharge .char_tit h3{font-size:22px; margin-bottom:12px;  display: block; }
 .recharge .char_tit p{font-size:12px; color:#989898; }
 .char_tit p i{color:#333; font-style:normal; margin-left:10px; } 
 .char_tit p b{color:#72d739; font-weight:normal; margin-left:3px; cursor:pointer;}
@@ -51,9 +51,9 @@ img{border:none; }
 .recharge .char_details h3{ font-weight:normal; color:#333; }
 .amount{height:310px; padding-top:10px; }
 .amount ul{width:1070px; margin-left:16px; }
-.amount ul li{width:180px; height:69px;margin-right:32px; margin-bottom:26px; border:1px solid #ddd; text-align:center; background:#fff; cursor:pointer; }
+.amount ul li{width:180px; height:50px;margin-right:32px; margin-bottom:26px; border:1px solid #ddd; text-align:center; background:#fff; cursor:pointer;border-radius: 1px; }
 .amount ul li p{margin-top:14px; font-size:17px; }
-.amount ul li span{color:#989898; }
+.amount ul li span{color:#333;  line-height: 50px;}
 
 /*充值点击*/
 .amount .clickBg{background:url(../img/mianzhi_border_hover.png) #fff; }
@@ -61,14 +61,14 @@ img{border:none; }
 .wayBank{height:334px; width:1050px; margin-left:16px; }
 .wayBank .ways{height:50px; border-bottom:1px solid #ddd; }
 .wayBank .ways li{width:112px; height:34px; border:2px solid #F2F2F2; margin-right:24px; cursor:pointer; }
-.wayBank li.cli,.wayBank .banks li.cli{border:2px solid #57da28; }
+.wayBank li.cli,.wayBank .banks li.cli{  border: 2px solid #3e63d8;  border-radius: 1px;}
 .wayBank .banks{margin-top:10px; margin-right: -20px;display: none;}
 .wayBank .banks li{float:left;border:2px solid #F2F2F2; margin-right:20px; margin-bottom:17px; cursor:pointer;}
 
 .wayBank p{font-size:15px; margin:20px auto; }
-.wayBank p i{color:#fec000; font-style:normal; font-size:17px; }
-.wayBank .imChar{width:166px; height:50px; background:#fec000; color:#fff; font-size:20px; border:none; cursor:pointer; }
-.wayBank .imChar:hover{background:#f9bb14; }
+.wayBank p i{color:#e34052; font-style:normal; font-size:17px; }
+.wayBank .imChar,.qqgameWay .imChar{width:166px; height:50px; background:#e34052; color:#fff; font-size:20px; border:none; cursor:pointer; border-radius: 4px;}
+.wayBank .imChar:hover,.qqgameWay .imChar:hover{background:#DC3144; }
 
 .char_explain{width:232px; height:416px; border:1px solid #ddd; margin-top:10px; padding-top:25px; padding-right:34px; padding-left:22px; background:#fff; }
 .char_explain .expl{font-size:16px; color:#333; }
@@ -79,7 +79,7 @@ img{border:none; }
 
 .char_explain .act{margin-bottom:12px; font-size:14px; }
 .char_explain ul li{margin-bottom:6px; }
-.char_explain ul li span{width:8px; height:8px; background:#ffb009; border-radius:50%; margin-top:5px; margin-right:5px; }
+.char_explain ul li span{width:8px;color: #e34052; height:8px; background:#e34052; border-radius:50%; margin-top:5px; margin-right:5px; }
 .char_explain .customService{margin-top:10px;height:92px; border-bottom:1px solid #ddd; margin-bottom:8px; }
 .char_explain .customService h3{margin-bottom:8px;font-size:14px; }
 .char_explain .customService .custom_bg{background:url(../img/icon_qqtalk.png); width:94px; height:23px; margin-bottom:4px; }

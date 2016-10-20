@@ -35,7 +35,7 @@ class SnsSigCheck
 
         return $my_sign;
     }
-    
+
 	static private function makeSource($method, $url_path, $params) 
     {
         $strs = strtoupper($method) . '&' . rawurlencode($url_path) . '&';

@@ -9,7 +9,13 @@
     <link data-fixed="true" href="/templates/square.css" rel="stylesheet">
     <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
     <script type="text/javascript" src="{$cdn_domain}/js/login.js?20150908"></script>
+
+    {if $pf=="qqgame" or $pf =="QQGame"}
+    <script src="/js/pay_QQCloud.js"></script>
+    {else}
     <script src="/js/charge.js"></script>
+    {/if}
+
 </head>
 {include file="header.html"}
 <div class="recharge">
@@ -17,9 +23,10 @@
         <div class="char_tit">
             <div class="clearFix">
                 <span class="sprite_pay icon_hot fl"></span>
-                <h3 class="fl">充值蚪币</h3>
+                <h3 class="fl">充值k豆</h3>
+                <div style="clear: both"></div>
                 <span class="rest">
-                	<i>账户余额 <strong>{$user['coins']}</strong> 蝌币</i>
+                	<i>账户余额 <strong>{$user['coins']}</strong> k豆</i>
                 </span>
             </div>
             <p><span>用户昵称：</span><i>{$user['nickname']}</i></p>
@@ -30,71 +37,73 @@
                     <h3 class="fl">充值金额:</h3>
                     <ul class="fl amoLi">
                         <li class="fl clickBg">
-                            <p>10元</p>
-                            <span>1000蚪币</span>
+                            <span val="1000">1000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>50元</p>
-                            <span>5000蚪币</span>
+                            <span val="5000">5000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>100元</p>
-                            <span>10000蚪币</span>
+                            <span val="10000">10000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>200元</p>
-                            <span>20000蚪币</span>
+                            <span val="20000">20000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>300元</p>
-                            <span>30000蚪币</span>
+                            <span val="30000">30000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>500元</p>
-                            <span>50000蚪币</span>
+                            <span val="50000">50000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>800元</p>
-                            <span>80000蚪币</span>
+                            <span val="80000">80000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>1000元</p>
-                            <span>100000蚪币</span>
+                            <span val="100000">100000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>2000元</p>
-                            <span>200000蚪币</span>
+                            <span val="200000">200000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>3000元</p>
-                            <span>300000蚪币</span>
+                            <span val="300000">300000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>5000元</p>
-                            <span>500000蚪币</span>
+                            <span val="500000">500000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>8000元</p>
-                            <span>800000蚪币</span>
+                            <span val="800000">800000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>10000元</p>
-                            <span>1000000蚪币</span>
+                            <span val="1000000">1000000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>20000元</p>
-                            <span>2000000蚪币</span>
+                            <span val="2000000">2000000k豆</span>
                         </li>
                         <li class="fl">
-                            <p>30000元</p>
-                            <span>3000000蚪币</span>
+                            <span  val="3000000">3000000k豆</span>
                         </li>
                     </ul>
                 </div>
+                {if $pf=="qqgame" or $pf =="QQGame"}
+                <div class="qqgameWay" data-type="QQGame">
 
-                <div class="charWay ">
+                    <form name="QQCloud" id="QQCloud" action="/rest/www/cloud.jsp" method="post"  >
+                        <div style="margin: 5px;">
+                            <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>k豆)</p>
+                        </div>
+                        <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee">
+                        <input type="hidden" name="WIDtotal_Id" id="WIDtotal_Id">
+                        <input type="hidden" id="openid" name="openid" value="{$openid}"/>
+                        <input type="hidden" id="openkey" name="openkey" value="{$openkey}"/>
+                        <input type="hidden" id="pf" name="pf" value="{$pf}"/>
+                        <input type="hidden" id="pfkey" name="pfkey" value="{$pfkey}"/>
+                        <input class="imChar" type="button" value="立即充值"/>
+                    </form>
+                </div>
+                <div class="paybox" style="display:none;width: 500px;height: 360px;position: fixed;margin: 200px auto;left: 0;right: 0;top: 0;bottom: 0"></div>
+                {else}
+                <div class="charWay">
                     <div class="wayLi clearFix">
-                        <h3 class="fl">支付方式:</h3>
+                        <h3 class="fl">支付方式{$pf}:</h3>
                         <div class="fl wayBank">
                             <ul class="clearFix ways">
                                 <li class="fl sprite_pay bank_17 cli"  ptype="ZFB"></li>
@@ -130,18 +139,21 @@
                                 <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee"/>
                                 <input type="hidden" name="WIDtotal_Id" id="WIDtotal_Id"/>
                                 <input type="hidden" name="WIDbank_type" id="WIDbank_type"/>
-                                <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>蚪币)</p>
+                                <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>k豆)</p>
                                 <input class="imChar" type="button" value="立即充值"/>
                             </form>
                         </div>
                     </div>
                 </div>
+               {/if}
+
+
             </div>
             <div class="fr char_explain">
                 <h3 class="expl">充值说明</h3>
                 <div class="exp">
-                    <p>1元=100蚪币</p>
-                    <p>蚪币是您在本平台消费的虚拟货币，您可以通过充值获得，也可手动添加充值金额。</p>
+                    <p>1元=100k豆</p>
+                    <p>k豆是您在本平台消费的虚拟货币，您可以通过充值获得，也可手动添加充值金额。</p>
                 </div>
                 <h3 class="act">您可到直播间进行：</h3>
                 <ul>

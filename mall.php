@@ -103,22 +103,7 @@ $user = checklogin();
                     /*道具*/
         ?>
         <div class="mall-list">
-            <div class="mall-box">
-                <div class="mall-box-top">
-                    <div class="mall-gift-img"><img src="/img/pic_liwu.png"> </div>
-                    <div class="mall-gift-con">
-                        <div class="mall-gift-tit">公爵礼包</div>
-                        <div class="mall-gift-mid">公爵以上才可以购买</div>
-                        <div class="mall-gift-price"><span>187956</span><span>蝌蚪币</span><a href="/pay.php" target="_blank" class="click">购买</a></div>
-                    </div>
-                </div>
-                <div class="clear"></div>
-                <div class="mall-box-bot">
-                    <div class="bot_tit">公爵礼包</div>
-                    <div class="">1、公爵以上可用特殊礼物</div>
-                    <div class="">2、使用后可获得发言橙色炫光效果</div>
-                </div>
-            </div>
+
             <div class="mall-box">
                 <div class="mall-box-top">
                     <div class="mall-gift-img"><img src="http://static.youku.com/ddshow/img/shopping/big/global-horn_1.png"/></div>

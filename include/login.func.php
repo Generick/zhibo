@@ -4,7 +4,7 @@ $nickname_blacklist=array("'",'"','-','|',',','admin','root','官方','客服','
 '李瑞环','尉健行','李岚清',
 '胡锦涛','罗干','温家宝','蝌蚪','官方',
 '吴邦国','曾庆红','贾庆林','黄菊','吴官正','李长春','吴仪','回良玉','曾培炎','周永康','曹刚川','唐家璇','华建敏','陈至立',
-'陈良宇','张德江','张立昌','俞正声','王乐泉','刘云山','贺国强','郭伯雄','胡耀邦','王乐泉','王兆国','周永康','习近平',
+'陈良宇','张德江','张立昌','俞正声','王乐泉','刘云山','贺国强','郭伯雄','胡耀邦','王乐泉','王兆国','周永康','习近d平',
 '李克强','吴帮国','无帮国','无邦国','无帮过','瘟家宝','假庆林','甲庆林','假青林','离长春','习远平','袭近平','李磕墙','贺过墙',
 '和锅枪','粥永康','轴永康','肘永康','周健康','粥健康','周小康柴玲','达赖喇嘛','江青','张春桥','姚文元','王洪文','东条英机','希特勒',
 '墨索里尼','赵紫阳','王丹','沃尔开西','李洪志','李大师','赖昌星','马加爵','班禅','额尔德尼','阿扁','阿扁万岁','热那亚','热比娅六四',
@@ -20,7 +20,7 @@ $nickname_blacklist=array("'",'"','-','|',',','admin','root','官方','客服','
 '鸦片','罂粟','迷幻药','白粉','嗑药','吸毒 AIDS','aids','Aids','DICK','dick','Dick','penis','sex','SM','屙','爱滋','淋病','梅毒',
 '爱液','屄','逼','臭机八','臭鸡巴','吹喇叭','吹箫','催情药','肛交','肛门','龟头','机八','机巴','鸡八','鸡巴','机掰','机巴',
 '鸡叭','鸡鸡','鸡掰','鸡奸','妓女','奸','茎','精液','精子','尻','口交','滥交','乱交','轮奸','卖淫','屁眼','嫖娼','强奸','强奸犯','肉棒',
-'乳房','乳峰','乳交','乳头','乳晕','三陪','色情','射精','手淫','性高潮','性交','性虐','性欲','小穴','颜射','阳物','一夜情','阴部','阴唇','阴道','阴蒂',
+'乳房','乳峰','乳交','乳头','乳晕','三陪','色情','射精','手手','性高潮','性交','性虐','性欲','小穴','颜射','阳物','一夜情','阴部','阴唇','阴道','阴蒂',
 '阴核','阴户','阴茎','阴门','淫','淫秽','淫乱','淫水','淫娃','淫液','淫汁','淫穴','淫洞','援交妹','做爱','梦遗','阳痿','早泄','奸淫','性欲',
 '性交','Bitch','FUCK','Fuck','fuck','SUCK','Suck','K他命','屄','婊子','操她妈','操妳妈','操你','操你妈','操他妈','草你','肏','册那','侧那','测拿',
 '插','蠢猪','荡妇','发骚','干她妈','干妳','干妳娘','干你','干你妈','干你妈B','干你妈b','干你妈逼','干你娘','干他妈','狗娘养的','滚','鸡奸',
@@ -94,6 +94,17 @@ function logincookie($info){
 }
 function password_deal($pwd){
 	return md5(md5($pwd));
+}
+function username_deal($unm){
+    $url="/rest/homeAnchors/checkLucene.mt";
+    $js = curl_post(_INTERFACE_.$url,"keyWord=".$unm);
+    $acceptData=json_decode($js, true);
+    if($acceptData['resultStatus'] == 101){
+        return $unm.$acceptData['resultStatus'];
+    }if($acceptData['resultStatus'] == 200){
+        return false;
+    }
+    return false;
 }
 
 function register_by_opensns($type,$snsid,$nickname,$avatar,$gender,$sns_type){
@@ -187,6 +198,7 @@ function microtime_float()
 }
 
 function check_nickname($nickname){
+
 	$nickname = urldecode($nickname);
 	global $db,$nickname_blacklist;
 	if((strlen($nickname) + mb_strlen($nickname,'UTF8'))/2>16 || mb_strlen ( $nickname,'utf-8' )<2){
@@ -196,7 +208,7 @@ function check_nickname($nickname){
 	if($db->GetOne("select count(userId) from bu_user where nickname='{$bsname}'")!=0){
 		return '昵称已经存在';
 	}
-    if(str_replace($nickname_blacklist,'',$nickname)!=$nickname) {
+    if(!username_deal($nickname)) {
         return '昵称中含有不被允许的文字';
     }
 	return 'yes';

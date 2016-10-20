@@ -19,6 +19,12 @@ $smarty->caching = false;
 $smarty->template_dir = "./templates";
 $smarty->compile_dir = "./templates_c";
 
+$page_var['openid']=$_SESSION['openid'];
+$page_var['openkey']=$_SESSION['openkey'];
+$page_var['pf']=$_SESSION['pf'];
+$page_var['pfkey']=$_SESSION['pfkey'];
+
+
 $page_var['current_page']="square";
 $page_var['cdn_domain']=_CDNDOMAIN_;
 foreach($page_var as $key=>$val){

@@ -383,6 +383,9 @@ Tools.stringFormat = function () {
                 return Math.ceil(tm/60000)+"分钟前开播";
              },
             tolive:function(s,b){
+                if(s == null){
+                    return '';
+                }
                 if(s !="0" || s != 0 ){
                     if(b ==1){
                         return '<span class="Biszb"></span>';
@@ -397,16 +400,17 @@ Tools.stringFormat = function () {
         };
         compiliter.parseAnchors = function(url,type){
             Tools.getJson({
-                url: url,
+                url: "/ajax/getLiveAnchors.php"+"?anc_type="+type+"&a="+Math.random(99999),
                 data: ""
             }, function (data) {
                 if(data == "" || data ==undefined){
                     return 0;
                 }
-                data=JSON.parse(data);
-                if (data != null && data.length > 0) {
+               // data=JSON.parse(data);
+                if (data != null) {
                     var s_big,s_sml;
                     var ul = $('<ul class="sright"></ul>');
+                    var obj="";
                     $.each(data, function(k, v) {
                         if(k==0){
                             s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,compiliter.toboard(v.totalpoint),v.image, v.image,v.image,v.nickName,v.totalpoint, v.numbers,compiliter.tolive(v.online,1),v.nickName, compiliter.totime(v.onlineTime),v.city);
@@ -415,6 +419,7 @@ Tools.stringFormat = function () {
                         }
                         ul.append(s_sml);
                     })
+
                     if(type == "new"){
                         $container=".hotlistss";
                     }else{

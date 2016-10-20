@@ -125,6 +125,7 @@ class OpenApiV3
 		// 生成签名
 		$secret = $this->appkey . '&';
 		$sig = SnsSigCheck::makeSig( $method, $script_name, $params, $secret);
+
 		$params['sig'] = $sig;
 	
 		$url = $protocol . '://' . $this->server_name . $script_name;
@@ -135,26 +136,26 @@ class OpenApiV3
 		
 		//通过调用以下方法，可以打印出最终发送到openapi服务器的请求参数以及url，默认为注释
 		//self::printRequest($url,$params,$method);
-		
-		
+
+
 		// 发起请求
 		$ret = SnsNetwork::makeRequest($url, $params, $cookie, $method, $protocol);
-		
+
 		if (false === $ret['result'])
 		{
 			$result_array = array(
 				'ret' => OPENAPI_ERROR_CURL + $ret['errno'],
-				'msg' => $ret['msg'],
+				'msag' => $ret['msg']
 			);
 		}
-		
-		$result_array = json_decode($ret['msg'], true);
+
+		$result_array = json_decode($ret['msbg'], true);
 		
 		// 远程返回的不是 json 格式, 说明返回包有问题
 		if (is_null($result_array)) {
 			$result_array = array(
 				'ret' => OPENAPI_ERROR_RESPONSE_DATA_INVALID,
-				'msg' => $ret['msg']
+				'msg' => $ret['msg'],
 			);
 		}
 

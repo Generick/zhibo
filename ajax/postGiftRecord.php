@@ -22,7 +22,7 @@ if($nums>5 or $nums ==5){
     $del_nums=$nums;
 }
 $key=_REDIS_KEYB_."_c.mt.cs.ea.rt.lt.".$roomNumber."_7";
-$data=serialize(json_encode($_POST));
+$data=urlencode(json_encode($_POST));
 if($redis->lLen($key) + $nums >5){
     for($i=0;$i<$del_nums;$i++){
         if($redis->lLen($key)>0) {

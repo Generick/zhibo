@@ -3,13 +3,15 @@ $(function(){
 	var $aBtn=$(".amoLi li");
 	var now=0;
     var paytype=$(".ways .cli").attr('ptype')?$(".ways .cli").attr('ptype'):"ZFB";
+
     var btype="";
     var timer="";
     var request_num =0;
     var pay_url = {
         "ZFB": "/rest/www/alipay.jsp",
         "CFT": "/rest/www/tenpay.jsp",
-        "ZXZF": "/rest/www/bpay.jsp"
+        "ZXZF": "/rest/www/bpay.jsp",
+        "QQCloud": "/rest/www/cloud.jsp"
     }
     String.prototype.gblen = function() {
         var len = 0;
@@ -23,16 +25,22 @@ $(function(){
         return len;
     }
     var pvalue,spvalue;
-	$aBtn.click(function(){
+    $(".amoLi li").on("click",function(){
+        $(this).addClass('clickBg').siblings().removeClass("clickBg");
+        spvalue=$(this).find("span").attr("val");
+        $("#P_RMB").text(spvalue/100);
+        $("#P_DB").text(spvalue);
+    })
+
+	/*$aBtn.click(function(){
 		now=$(this).index();
         $aBtn.removeClass('clickBg');
         $aBtn.eq(now).addClass('clickBg');
-        pvalue=$(this).find("p").text();
         spvalue=$(this).find("span").text();
-        $("#P_RMB").text(pvalue.substr(0,pvalue.gblen()-2));
+        $("#P_RMB").text(spvalue.substr(0,spvalue.gblen()-4)/100);
         $("#P_DB").text(spvalue.substr(0,spvalue.gblen()-4));
 	})
-
+*/
 	var $waysBtn=$(".ways li");
 	$waysBtn.click(function(){
 		now=$(this).index();
@@ -76,8 +84,8 @@ $(function(){
     var $orderid='';
     $(".imChar").on("click",function(){
         if(currentUserId==null || currentUserId ==''){
-            login.show();
-            return false;
+           // login.show();
+            //return false;
         }
         if(paytype=="WXP"){
 			$(this).attr("disabled",true);
@@ -147,6 +155,39 @@ $(function(){
             $("#WIDtotal_fee").val(money);
             $("#WIDtotal_Id").val(currentUserId);
             $('#alpay').submit();
+        }else if(paytype =="QQCloud"){
+            if($("#P_RMB").text() == 30000){
+                money=0.01;
+            }else{
+                money= $("#P_RMB").text();
+            }
+
+            $("#WIDtotal_fee").val(money);
+            $("#WIDtotal_Id").val(currentUserId);
+            var data={
+                "openid":$("#openid").val(),
+                "openkey":$("#openkey").val(),
+                "pf":$("#pf").val(),
+                "pfkey":$("#pfkey").val(),
+                "WIDtotal_fee":money,
+                "WIDtotal_Id":currentUserId
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/rest/www/cloud.jsp",
+                data: data,
+                cache: false
+            }).done(function (data) {
+
+                if(data != "fail"){
+                    $(".paybox").html(data).show();
+                }
+
+
+            }).error(function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+            });
         }
     });
 

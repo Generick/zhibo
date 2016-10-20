@@ -29,5 +29,9 @@ define('ajax/username', function(require, exports, module){
         $(".a-myname").show();
         $(".c-myname").hide();
     })
+    $(".c-funds-dh").on("click",function(){
+        $(".zhezhao").show();
+        $(".duikdou").show();
+    })
 
 });

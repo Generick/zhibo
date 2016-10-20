@@ -42,7 +42,7 @@ img {
 .c-myname #sure{background: #F77599;color:#fff;}
 .c-myname #cancel{background:#C9C9C9;color:#404040}
 .center-level{float: left}
-.c-right .c-myfund{margin-bottom: 20px;font-size: 14px;font-weight: 700;}
+.c-right .c-myfund{margin-bottom: 12px;font-size: 14px;font-weight: 700;}
 .info-middle .c-mylevel{font-size: 14px;font-weight: 700;margin-bottom: 10px;}
 .info-middle .c-level-message{font-size: 12px; color: #999;float: left;margin-left: 54px;}
 .info-middle .c-level-bar{height: 24px;}
@@ -54,7 +54,9 @@ img {
 .c-right{    position: absolute; left: 900px; top: 45px;}
 .c-right .c-funds .c-funds-jb{background: url(/img/icon_money.png) no-repeat left;float:left;margin-right: 40px;height: 20px; padding-left: 28px;padding-top: 3px;}
 .c-right .c-funds .c-funds-db{float:left;font-size: 12px;color: #434343;margin-right: 40px;height: 20px; padding-right: 22px;padding-top: 8px;}
-.c-right .c-funds .c-funds-cz{width:42px;height: 21px;color: #fff;background: #F77599;font-size: 12px;float: left; padding-top: 4px; text-align: center; margin-top: 3px; border-radius: 2px;cursor: pointer;line-height: 14px;}
+.c-right .c-funds .c-funds-cz{width:42px;height: 19px;color: #fff;background: #F77599;font-size: 12px;float: left; padding-top: 4px; text-align: center; border-radius: 2px;cursor: pointer;line-height: 14px;}
+.c-funds-xd{float: left;  line-height: 22px;}
+.c-right .c-funds .c-funds-dh{float:left ;font-size: 12px;margin-left: 25px;  line-height: 22px;color: #FFBE4A}
 .hidden{display: none;}
 .center-left{width:348px;border: 1px #E3E3E3 solid; float: left;    margin-bottom: 30px;}
 .center-left .cl-div{width:348px;height: 60px;position: relative;background: #fff;color: #3F3F3F;font-size: 14px;border-bottom:1px #ccc solid;cursor: pointer}

@@ -15,7 +15,7 @@ $key=_REDIS_KEYB_."_c.mt.cs.ea.rt.lt.".$roomNumber."_7";
 $data =$redis->lRange($key,0,-1);
 $new_array=array();
 foreach($data as $k=>$v){
-    $vv=json_decode(unserialize($v));
+    $vv=json_decode(urldecode($v));
     $new_array[]=$vv;
 }
 echo json_encode($new_array);

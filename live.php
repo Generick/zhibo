@@ -9,9 +9,14 @@ header("Pragma: no-cache");
 include('include/header.inc.php');
 include($app_path."include/level.func.php");
 $user=checklogin();
+
+if(ismobile()){
+    include "live_mobile.php";
+    exit();
+}
+
 //vision
 $vsn = md5(date('Y-d-m'));
-
 //背景
 $bgclassList=array("bg1","bg2");
 $index=rand(0,count($bgclassList)-1);
@@ -90,13 +95,27 @@ $redis->auth(_REDIS_PWD_);
 $key=_REDIS_KEYB_."_c.mt.cs.ea.rt.nx.".$roomnumber."_6";
 $skid=$redis->get($key);
 
+$rtp_key=_REDIS_KEYB_."_c.mt.cs.ea.rt.hash.".$roomnumber."_4";
+$hash_room=$redis->hGetAll($rtp_key);
+
+$roomType= $hash_room['rtype']?$hash_room['rtype']:"";
+
+$roomType_p='';
+if($hash_room['rtype'] == "2"){
+    $roomType='game';
+    $roomType_p = $roomType."_";
+}else{
+    $roomType='';
+}
+
 if($skid !="" and file_exists(dirname(__FILE__)."/live_{$skid}.php")){
     $tt=$skid;
 }else{
     $tt="comic";
 }
 
-//echo $key;
+$skinType = $roomType_p.$tt;
 $page_var['cdn_domain']=_CDNDOMAIN_;
-include($app_path."live_{$tt}.php");
+include($app_path."live_comic.php");
 include($app_path."include/footer.inc.php");
+

@@ -487,9 +487,9 @@ define(function(require, exports, module) {
         },
         visitors : function(data) {
             /** 游客进入 */
-            if (data.userId != null && data.nickname != null) {
+            if (data.nickname != null) {
                 var htmls = '<li class="fontred"><div><span>欢迎   </span><span class="u">{0} </span><span>进入房间</span></div></li>';
-                htmls = Tools.stringFormat(htmls, data.nickname);
+                htmls = Tools.stringFormat(htmls, decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
                 $("#nano-pubChatList").nanoScroller();
                 $("#nano-pubChatList").nanoScroller({
@@ -503,7 +503,7 @@ define(function(require, exports, module) {
             	if (data.numbers != null)
     				$(".live-info .s-else .s-people").text(data.numbers);
                 var htmls = '<li class="fontred"><div><span>欢迎   </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}">{5}</a><span>进入房间</span></div></li>';
-                htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, data.nickname, this.spimg(data.levs), decodeURI(data.nickname));
+                htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
                 $("#nano-pubChatList").nanoScroller();
                 $("#nano-pubChatList").nanoScroller({
@@ -539,7 +539,7 @@ define(function(require, exports, module) {
         /** 主播私聊 */
         onPrvMsg : function(data) {
             var msg = '<li class="fontred"><div><span class="gr-time">' + Tools.dateFormat(new Date(), "HH:mm")
-                + '  </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}">{5}</a><span>{6}：{7}</span></div></li>';
+                + '  </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}">{5}</a><span class="prwords">{6}：{7}</span></div></li>';
             var head = UIF.handler.cache.get(cons.USER_HEADINFOS);
             var action = Tools.stringFormat("{0}", (head != null && head.userId == data.userId) ? "" : "对你说");
             words = Face.faceReplaceImg(data.message);
@@ -567,7 +567,7 @@ define(function(require, exports, module) {
             var msg = '<div class="roomIntro"><span class="gr-time">公告：{0}</span></div>';
             var notice = (data != null && data.notice != null) ? data.notice : "";
             if (notice != null && notice.length > 0)
-                $(".bCorner .pr-body").before(Tools.stringFormat(msg, notice));
+                $("#priChatList").append(Tools.stringFormat(msg, notice));
         },
         /** 房间弹幕 */
         onFlyMsg : function(data) {

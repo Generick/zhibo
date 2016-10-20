@@ -22,15 +22,16 @@
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/comic/css/nanoScroller.css" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/comic/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript">
         var UIF = {
             cdn_img : "<?php echo _IMAGES_DOMAIN_?>",
-            thisHome:"<?php echo $thisHome?>",
+            thisHome:"<?php echo $thisHome;?>",
+            roomType:"<?php echo $roomType;?>",
             currentToken : "<?php echo $currentToken;?>",
             currentUserID : "<?php echo addslashes($user['userId'])?>",
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
@@ -41,6 +42,9 @@
             swfClose : function(data){
                 UIF.handler.close(data);
             },
+            liveClose : function(data){
+            	UIF.handler.liveClose(data);
+            }, 
             muteEffect : function(data){
                 UIF.handler.effect = data == 0 ? false : true;
             },
@@ -99,7 +103,7 @@
                 
                 var rankarea = UIF.getCookie("rank-area");
 				if(rankarea != null){
-					$(".rank-area").attr("style",rankarea);
+					//$(".rank-area").attr("style",rankarea);
 				}
                 $(".rank-area").draggable({containment:"parent",stop:function(){
                 	var st = $(".rank-area").attr("style");
@@ -109,26 +113,28 @@
                 
                 var giftrecord = UIF.getCookie("gift-record");
 				if(giftrecord != null){
-					$(".gift-record").attr("style",giftrecord);
+					//$(".gift-record").attr("style",giftrecord);
 				}
                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    var st = $(".gift-record").attr("style");
-                    UIF.setCookie("gift-record",st,60 * 24 * 60);
+                  //  var st = $(".gift-record").attr("style");
+                  //  UIF.setCookie("gift-record",st,60 * 24 * 60);
                 }});
+                $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    var st = $(".visitant-record").attr("style");
-                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                   // var st = $(".visitant-record").attr("style");
+                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
 				if(chatarea != null){
-					$(".chat-area").attr("style",chatarea);
+					//$(".chat-area").attr("style",chatarea);
 				}
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                	var st = $(".chat-area").attr("style");
-                	UIF.setCookie("chat-area",st,60 * 24 * 60);
+                	//var st = $(".chat-area").attr("style");
+                	//UIF.setCookie("chat-area",st,60 * 24 * 60);
                 }});
                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
@@ -138,7 +144,7 @@
 								                
                 var newGifts = UIF.getCookie("newGifts");
 				if(newGifts != null){
-					$(".newGifts").attr("style",newGifts);
+				//	$(".newGifts").attr("style",newGifts);
 				}
                 $(".newGifts").draggable({containment:"parent",stop:function(){
                 	var st = $(".newGifts").attr("style");
@@ -172,7 +178,7 @@
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
 <div class="nav-left">
-    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/comic/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
+    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/<?php echo $skinType;?>/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
         <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
     </div>
     <?php if(!$user){ ?>
@@ -331,6 +337,10 @@
     <div class="br" style="width:10px; height:10px; position:absolute; right:0; bottom:0; cursor:nw-resize"></div>
 </div>
 <!--守护区 !-->
+<?php
+if($roomType != "game"){
+
+?>
 <div class="guard-area myDiv6">
     <div class="guard-header">
         <span class="guard-title"></span>
@@ -343,6 +353,8 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
+<?php }?>
+
 <!-- 任务区-->
 <?php
 include('./include/studio/task.php');
@@ -418,7 +430,6 @@ if($thisHome ==1){
 </div>
 
 <div class="switch-area">
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>

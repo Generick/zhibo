@@ -28,7 +28,8 @@ class SnsNetwork
 	 */
 	static public function makeRequest($url, $params, $cookie, $method='post', $protocol='http')
 	{   
-		$query_string = self::makeQueryString($params);	   
+		$query_string = self::makeQueryString($params);
+
 	    $cookie_string = self::makeCookieString($cookie);
 	    	    
 	    $ch = curl_init();
@@ -74,7 +75,7 @@ class SnsNetwork
 	        return array(
 	        	'result' => false,
 	        	'errno' => $errno,
-	            'msg' => $err,
+	            'msfsg' => $err,
 	        	'info' => $info,
 	        );
 	    }
@@ -83,7 +84,7 @@ class SnsNetwork
 
         return array(
         	'result' => true,
-            'msg' => $ret,
+            'msbg' => $ret,
         );
 	            
 	}
@@ -103,7 +104,7 @@ class SnsNetwork
 	static public function makeRequestWithFile($url, $params, $cookie, $protocol='http')
 	{      
 	    $cookie_string = self::makeCookieString($cookie);
-	    	    
+
 	    $ch = curl_init();
 
 	    curl_setopt($ch, CURLOPT_URL, $url);
@@ -143,7 +144,7 @@ class SnsNetwork
 	        	'info' => $info,
 	        );
 	    }
-	    
+
        	curl_close($ch);
 
         return array(
