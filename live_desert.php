@@ -5,14 +5,15 @@
     <title><?php echo addslashes($showinfo['nickname'])?>的直播间_美女视频聊天室_视频交友房间_视频秀 &ndash; <?php echo $page_var['site_name']?></title>
     <meta name="description" content="<?php echo $page_var['site_name']?>是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <meta content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" name="keywords">
-  <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery/jquery/3.0.0/jquery-3.0.0.min.js"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/anchor-base.js?v=<?php /*echo $vsn;*/?>"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery-ui-master/external/splitter/jqxcore.js"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
-    <script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
+    <script src="/skin/comic/js/jquery.min.js"></script>
+    <!--<script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery/jquery/3.0.0/jquery-3.0.0.min.js"></script>-->
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/anchor-base.js?v=<?php echo $vsn;?>"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxcore.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
     <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
@@ -23,11 +24,157 @@
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/nanoScroller.css" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/live.css?v=<?php echo $vsn;?>1" rel="stylesheet">
+    <link href="/skin/desert/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>2" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
+    <script type="text/javascript">
+        var UIF = {
+            cdn_img : "<?php echo _IMAGES_DOMAIN_?>",
+            thisHome:"<?php echo $thisHome;?>",
+            roomType:"<?php echo $roomType;?>",
+            currentToken : "<?php echo $currentToken;?>",
+            currentUserID : "<?php echo addslashes($user['userId'])?>",
+            currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
+            currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
+            log : function(msg){
+                UIF.handler.weblog(msg);
+            },
+            swfClose : function(data){
+                UIF.handler.close(data);
+            },
+            liveClose : function(data){
+                UIF.handler.liveClose(data);
+            },
+            muteEffect : function(data){
+                UIF.handler.effect = data == 0 ? false : true;
+            },
+            switchPlayer : function(){
+                UIF.handler.ntsRoom();
+            },
+            init : function(){
+                seajs.config({
+                    base : "/js/sea-modules/",
+                    alias : {
+                        "socket" : "socket.io/socket.io",
+                        "swfobject" : "swfobject/swfobject",
+                        "jquery" : "jquery/jquery/1.10.1/jquery"
+                    }
+                })
+                seajs.use("/js/sea-modules/anchor-webs",function(W){
+                    UIF.handler = new W();
+                    UIF.handler.loading(UIF.currentUserID, UIF.currentToken, UIF.currentRoomNumber);
+                });
+            },
+            getCookie : function(sKey) {
+                if (!sKey)
+                    return "";
+                if (document.cookie.length > 0) {
+                    var startIndex = document.cookie.indexOf(sKey + "=")
+                    if (startIndex != -1) {
+                        startIndex = startIndex + sKey.length + 1
+                        var endIndex = document.cookie.indexOf(";", startIndex)
+                        if (endIndex == -1) {
+                            endIndex = document.cookie.length;
+                        }
+                        return decodeURIComponent(document.cookie.substring(startIndex, endIndex));
+                    }
+                }
+                return ""
+            },
+            setCookie : function(sKey, sValue, iExpireSeconds) {
+                if (!sKey)
+                    return;
+                var expireDate = new Date();
+                expireDate.setTime(expireDate.getTime() + iExpireSeconds * 1000);
+                document.cookie = sKey + "=" + encodeURIComponent(sValue) + ";expires=" + expireDate.toGMTString() + ";";
+            }
+        }
+        $(function() {
+            try {
+                var guardarea = UIF.getCookie("guard-area");
+                if(guardarea != null){
+                    $(".guard-area").attr("style",guardarea);
+                }
+                $(".guard-area").draggable({containment:"parent",stop:function(){
+                    var st = $(".guard-area").attr("style");
+                    UIF.setCookie("guard-area",st,60 * 24 * 60);
+                }});
+                $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208});
 
+                var rankarea = UIF.getCookie("rank-area");
+                if(rankarea != null){
+                    $(".rank-area").attr("style",rankarea);
+                }
+                $(".rank-area").draggable({containment:"parent",stop:function(){
+                    var st = $(".rank-area").attr("style");
+                    UIF.setCookie("rank-area",st,60 * 24 * 60);
+                }});
+                $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208});
+
+                var giftrecord = UIF.getCookie("gift-record");
+                if(giftrecord != null){
+                    $(".gift-record").attr("style",giftrecord);
+                }
+                $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
+                    var st = $(".gift-record").attr("style");
+                    UIF.setCookie("gift-record",st,60 * 24 * 60);
+                }});
+                $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+
+                $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+                $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
+                    var st = $(".visitant-record").attr("style");
+                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                }});
+                $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+
+                var chatarea = UIF.getCookie("chat-area");
+                if(chatarea != null){
+                    $(".chat-area").attr("style",chatarea);
+                }
+                $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
+                    var st = $(".chat-area").attr("style");
+                    UIF.setCookie("chat-area",st,60 * 24 * 60);
+                }});
+                $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
+                $( ".chat-area" ).on( "resizestop", function( event, ui ) {
+                    $("#nano-pubChatList").nanoScroller();
+                    $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
+                } );
+
+                var newGifts = UIF.getCookie("newGifts");
+                if(newGifts != null){
+                    $(".newGifts").attr("style",newGifts);
+                }
+                $(".newGifts").draggable({containment:"parent",stop:function(){
+                    var st = $(".newGifts").attr("style");
+                    UIF.setCookie("newGifts",st,60 * 24 * 60);
+                }});
+                if(UIF.currentUserID != null && UIF.currentUserID.length > 0){
+                    UIF.radials = radialIndicator("#indicatorContainer2", {
+                        radius: 44,
+                        barWidth: 11,
+                        minValue: 0,
+                        maxValue: 100,
+                        fontWeight: 'normal',
+                        barColor: "#c5ff59",
+                        barBgColor:"#2b2b2b",
+                        roundCorner: true,
+                        percentage: true
+                    });
+                }
+            } catch (e) {
+                UIF.log(e);
+            }
+            UIF.init();
+        });
+    </script>
+    <script type="text/javascript">
+        window.onbeforeunload = function(){
+            //  return "quit?";
+        }
+    </script>
 </head>
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
@@ -99,7 +246,7 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
-<div class="visitant-record myDiv3" id="visitantResizable">
+<!--<div class="visitant-record myDiv3" id="visitantResizable">
     <div class="vr-header"><span class="span"></span></div>
     <div class="nano gr-main" id="nano-sendGiftList">
         <ul id="song_item" class="content"></ul>
@@ -108,7 +255,7 @@
     <div class="rt"></div>
     <div class="lb"></div>
     <div class="rb"></div>
-</div>
+</div>-->
 <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
@@ -127,7 +274,7 @@
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="werImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
@@ -287,9 +434,7 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
-    <?php if(1==2){?>
-        <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
-    <?php }?>
+    <div class="sw-guard Bmenu" id="sw-guard"></div>
 </div>
 <div class="chat-tip-warp toggleBox" >
     <div class="chat-tip-top">
@@ -470,7 +615,7 @@ if($thisHome ==1){
     </div>
     <div class="mana_shadow" id="mana_shadow">
         <div class="add_mana">
-            <a class="mana_close" id="mana_close" href="java`script:;">×</a>
+            <a class="mana_close" id="mana_close" href="javascript:;">×</a>
             <h2 class="tit">添加管理</h2>
             <p>通过ID查找需要添加的管理</p>
             <div class="search">

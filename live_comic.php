@@ -103,7 +103,7 @@
                 
                 var rankarea = UIF.getCookie("rank-area");
 				if(rankarea != null){
-					//$(".rank-area").attr("style",rankarea);
+					$(".rank-area").attr("style",rankarea);
 				}
                 $(".rank-area").draggable({containment:"parent",stop:function(){
                 	var st = $(".rank-area").attr("style");
@@ -113,28 +113,28 @@
                 
                 var giftrecord = UIF.getCookie("gift-record");
 				if(giftrecord != null){
-					//$(".gift-record").attr("style",giftrecord);
+					$(".gift-record").attr("style",giftrecord);
 				}
                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                  //  var st = $(".gift-record").attr("style");
-                  //  UIF.setCookie("gift-record",st,60 * 24 * 60);
+                    var st = $(".gift-record").attr("style");
+                    UIF.setCookie("gift-record",st,60 * 24 * 60);
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                   // var st = $(".visitant-record").attr("style");
-                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                   var st = $(".visitant-record").attr("style");
+                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
 				if(chatarea != null){
-					//$(".chat-area").attr("style",chatarea);
+					$(".chat-area").attr("style",chatarea);
 				}
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                	//var st = $(".chat-area").attr("style");
-                	//UIF.setCookie("chat-area",st,60 * 24 * 60);
+                	var st = $(".chat-area").attr("style");
+                	UIF.setCookie("chat-area",st,60 * 24 * 60);
                 }});
                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
@@ -144,7 +144,7 @@
 								                
                 var newGifts = UIF.getCookie("newGifts");
 				if(newGifts != null){
-				//	$(".newGifts").attr("style",newGifts);
+					$(".newGifts").attr("style",newGifts);
 				}
                 $(".newGifts").draggable({containment:"parent",stop:function(){
                 	var st = $(".newGifts").attr("style");
@@ -245,7 +245,7 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
-<div class="visitant-record myDiv3" id="visitantResizable">
+<!--<div class="visitant-record myDiv3" id="visitantResizable">
     <div class="vr-header"><span class="span"></span></div>
     <div class="nano gr-main" id="nano-sendGiftList">
         <ul id="song_item" class="content"></ul>
@@ -254,7 +254,7 @@
     <div class="rt"></div>
     <div class="lb"></div>
     <div class="rb"></div>
-</div>
+</div>-->
 <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
@@ -273,7 +273,7 @@
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="werImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
@@ -433,9 +433,7 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
-    <?php if(1==2){?>
-    <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
-    <?php }?>
+    <div class="sw-guard Bmenu" id="sw-guard"></div>
 </div>
 <div class="chat-tip-warp toggleBox" >
     <div class="chat-tip-top">
