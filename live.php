@@ -97,8 +97,6 @@ if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['o
     include($app_path."live_desert.php");
     include($app_path."include/footer.inc.php");
     exit();
-}else{
-    echo "openid:".$_SESSION['openid'];
 }
 
 
