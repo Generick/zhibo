@@ -18,7 +18,6 @@ if(isset($_GET[openid]) and $_GET[openid] !=''){
 
     //exit();
 }
-
 $user=checklogin();
 $page_var['user']=$user;
 $page_var['source']="QQGame";

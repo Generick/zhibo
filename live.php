@@ -89,6 +89,19 @@ while($arr=$rs->FetchRow()){
 	$giftcate[$arr["giftcateid"]] = $arr;
 }
 
+
+$page_var['cdn_domain']=_CDNDOMAIN_;
+
+
+if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
+    include($app_path."live_desert.php");
+    include($app_path."include/footer.inc.php");
+    exit();
+}else{
+    echo "openid:".$_SESSION['openid'];
+}
+
+
 $redis = new Redis();
 $redis->connect(_REDIS_HOST_, 6379);
 $redis->auth(_REDIS_PWD_);
@@ -115,7 +128,6 @@ if($skid !="" and file_exists(dirname(__FILE__)."/live_{$skid}.php")){
 }
 
 $skinType = $roomType_p.$tt;
-$page_var['cdn_domain']=_CDNDOMAIN_;
 include($app_path."live_comic.php");
 include($app_path."include/footer.inc.php");
 
