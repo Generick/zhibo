@@ -1,4 +1,5 @@
 // JavaScript Document
+//create on 2016-10-23 11：45
 function SwapTab(name, title, content, Sub, cur) {
     $(name + ' ' + title).mouseover(function () {
         $(this).addClass(cur).siblings().removeClass(cur);
@@ -285,6 +286,21 @@ $(function(){
                 </div>\
                 <div class="shadow thumbnail"></div>\
                 <div class="playBtn"></div></a>',
+        bightmlNew:
+            '<a href="{0}" class="thumbnail firHot">\
+            <img src="{1}" alt="{2}"/>\
+                <div class="firB ellipsis">\
+                    <p class="colorPin f16">{3}</p>\
+                    <p class="clearfix f12">\
+                        <span class="glyphicon glyphicon-eye-open"></span>\
+                        <span>{4}</span>\
+                        <span class="glyphicon glyphicon-fire"></span>\
+                        <span>{5}</span>\
+                    </p>\
+                </div>\
+                <div class="shadow thumbnail"></div>\
+                <div class="playBtn"></div></a>',
+
         lithtml:
             '<div class="{0}">\
                     <a href="{1}" class="hotItem thumbnail">\
@@ -304,6 +320,20 @@ $(function(){
                         <div class="playBtn"></div>\
                     </a>\
                     </div>',
+        lithtmlNew:
+            '<div class="{0}">\
+                    <a href="{1}" class="hotItem thumbnail">\
+                        <img src="{2}" alt="{3}"/>\
+                        <div class="hotB">\
+                            <div class="colorPin f14 ellipsis">{4}</div>\
+                            <p class="f12 ellipsis">\
+                                <span class="glyphicon glyphicon-eye-open"></span>\
+                                <span>{5}</span>\
+                            </p>\
+                        </div>\
+                    </a>\
+            </div>',
+
         sonh:
             '<a href="#" class="hotItem thumbnail">\
             <img src="images/girl02.png" alt="">\
@@ -383,22 +413,135 @@ $(function(){
     };
     compiliter.parseAnchors = function(url,type){
         Tools.getJson({
+            url: "/ajax/getLiveAnchors.php"+"?anc_type=hot&a="+Math.random(99999),
+            data: ""
+        }, function (data) {
+            if(data == "" || data ==undefined){
+                return 0;
+            }
+    
+            $h="hotList";
+            if (data != null) {
+                    var row1=data.slice(0,13);
+                    var row2=data.slice(5,15);
+                    var row3=data.slice(15,21);
+                    var row4=data.slice(17,25);
+                    
+
+                    var s_big,s_sml;
+                    var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
+                    var swrap = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
+                    var srow = $('<div class="row"></div>');
+                    $.each(row1, function(k, v) {
+                        if(v.image =="" || v.image == null ){
+                            v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                        }
+                        if(k==0){
+                            s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,v.nickName, v.numbers,v.nickName,compiliter.totime(v.onlineTime), v.city);
+                            bwrap.append(s_big);
+                        }else if(k>0 && k<=4){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }else if(k>4 && k <=6){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }else if(k>6 && k <=8){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }else if(k>8 && k <=12){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }
+                        srow.append(s_sml);
+
+                    })
+                    swrap.append(srow);
+                    $("#"+$h+" .hrow1").append(bwrap);
+                    $("#"+$h+" .hrow1").append(swrap);
+
+                    var s2wrap="";
+                    $.each(row2, function(k, v) {
+                        if(v.image =="" || v.image == null ){
+                            v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                        }
+                        if(k<=1){
+                            s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }else if(k>1 && k <=2){
+                            s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }else if(k>2 && k <=5){
+                            s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }else{
+
+                            s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        }
+                    })
+
+                    $("#"+$h+" .hrow2").append(s2wrap);
+
+                    var s3wrap ="";
+                    var s3img =
+                        '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">\
+                            <a href="#" class="thumbnail">\
+                                <img src="/images/kedo/hotImg.png" alt="">\
+                            </a>\
+                        </div>';
+
+                    $.each(row3, function(k, v) {
+                        if(v.image =="" || v.image == null ){
+                            v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                        }
+                        if(k<=1){
+                            s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else if(k == 2){
+                            s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else if(k==3){
+                            s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else{
+                            s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }
+                    })
+                    var s3html = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
+                    s3html.append($('<div class="row"></div>').append(s3wrap));
+                    $("#"+$h+" .hrow3").append(s3img);
+                    $("#"+$h+" .hrow3").append(s3html);
+
+                    
+
+                    var s4wrap="";
+                    $.each(row4, function (k,v) {
+                        if(v.image =="" || v.image == null ){
+                            v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                        }
+                        if(k==0){
+                            s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else if(k == 1){
+                            s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else if(k>1 || k<=3){
+                            s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else if(k==4){
+                            s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }else{
+                            s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        }
+                    });
+                    $("#"+$h+" .hrow4").append(s4wrap);        
+            }
+            
+        });
+    }
+
+    compiliter.parseNewAnchors = function(url,type){
+        Tools.getJson({
             url: "/ajax/getLiveAnchors.php"+"?anc_type="+type+"&a="+Math.random(99999),
             data: ""
         }, function (data) {
             if(data == "" || data ==undefined){
                 return 0;
             }
-            if(type =="hot"){
-                $h="hotList";
-            }else{
-                $h="newList";
-            }
+
+            $h="newList";
             if (data != null) {
                 var row1=data.slice(0,13);
                 var row2=data.slice(5,15);
                 var row3=data.slice(15,21);
                 var row4=data.slice(17,25);
+                var rowAdd=data.slice(25,27);
 
                 var s_big,s_sml;
                 var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -409,23 +552,22 @@ $(function(){
                         v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
                     }
                     if(k==0){
-                        s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,v.nickName, v.numbers,v.nickName,compiliter.totime(v.onlineTime), v.city);
+                        s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,v.nickName, v.numbers,v.nickName,compiliter.totime(v.onlineTime), v.city);
                         bwrap.append(s_big);
                     }else if(k>0 && k<=4){
-                        s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }else if(k>4 && k <=6){
-                        s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }else if(k>6 && k <=8){
-                        s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }else if(k>8 && k <=12){
-                        s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }
                     srow.append(s_sml);
                 })
                 swrap.append(srow);
                 $("#"+$h+" .hrow1").append(bwrap);
                 $("#"+$h+" .hrow1").append(swrap);
-                // $(".hotItem img").addClass("img-responsive center-block");
 
                 var s2wrap="";
                 $.each(row2, function(k, v) {
@@ -434,67 +576,79 @@ $(function(){
                     }
 
                     if(k<=1){
-                        s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }else if(k>1 && k <=3){
-                        s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }else if(k>3 && k <=7){
-                        s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }else if(k>7 && k <=9){
-                        s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                        s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime));
                     }
                 })
 
                 $("#"+$h+" .hrow2").append(s2wrap);
 
                 var s3wrap ="";
-                var s3img =
-                    '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">\
-                                <a href="#" class="thumbnail">\
-                            <img src="/images/kedo/hotImg.png" alt="">\
-                            </a>\
-                            </div>';
+                var s3img ="";
+                $.each(rowAdd,function(k,v){
+                    if(v.image =="" || v.image == null ){
+                        v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                    }
+                    if(k==0){
+                        s3img += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-6 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                    }else if(k==1){
+                        s3img += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-6 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                    }
+                })
+
                 $.each(row3, function(k, v) {
                     if(v.image =="" || v.image == null ){
                         v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
                     }
+                    
                     if(k<=1){
-                        s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else if(k == 2){
-                        s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else if(k==3){
-                        s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else{
-                        s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }
                 })
                 var s3html = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
+                var s3htmlAdd = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
+                s3htmlAdd.append(s3img);
                 s3html.append($('<div class="row"></div>').append(s3wrap));
-                $("#"+$h+" .hrow3").append(s3img);
+                $("#"+$h+" .hrow3").append(s3htmlAdd);
                 $("#"+$h+" .hrow3").append(s3html);
-
+                    
                 var s4wrap="";
                 $.each(row4, function (k,v) {
                     if(v.image =="" || v.image == null ){
                         v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
                     }
                     if(k==0){
-                        s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else if(k == 1){
-                        s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else if(k>1 || k<=3){
-                        s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else if(k==4){
-                        s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }else{
-                        s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
+                        s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }
                 });
                 $("#"+$h+" .hrow4").append(s4wrap);
-            }
+                }
+               
+            
         });
     }
+
     compiliter.parseAnchors(ulList.anc_hot,"hot");
-    compiliter.parseAnchors(ulList.anc_new,"new");
+    compiliter.parseNewAnchors(ulList.anc_new,"new");
     compiliter.parseGame=function(){
         Tools.getJson({
             url: ulList.anc_game,

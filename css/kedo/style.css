@@ -216,7 +216,7 @@ body{
 }
 .recommImg{
 	position: relative;
-	display: inline-block;
+	display: block;
 }
 .carousel-indicators li.active{
 	background-color:#e34052;
