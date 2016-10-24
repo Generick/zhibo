@@ -6,7 +6,6 @@
     <meta name="description" content="<?php echo $page_var['site_name']?>是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <meta content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" name="keywords">
     <script src="/skin/comic/js/jquery.min.js"></script>
-    <!--<script src="<?php /*echo $page_var['cdn_domain']*/?>/js/sea-modules/jquery/jquery/3.0.0/jquery-3.0.0.min.js"></script>-->
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/anchor-base.js?v=<?php echo $vsn;?>"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxcore.js"></script>
@@ -14,9 +13,9 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
-    <!--[if IE]>
-    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
+
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="/js/json2.js"></script>
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
@@ -38,7 +37,7 @@
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
             currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
             log : function(msg){
-                UIF.handler.weblog(msg);
+              //  UIF.handler.weblog(msg);
             },
             swfClose : function(data){
                 UIF.handler.close(data);
@@ -644,4 +643,4 @@ if($thisHome ==1){
 <div class="login-html"></div>
 </body>
 
-</html>
+</html>>
