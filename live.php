@@ -93,10 +93,20 @@ while($arr=$rs->FetchRow()){
 $page_var['cdn_domain']=_CDNDOMAIN_;
 
 
-if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
+if($http_host == "10.1.1.17"){
     include($app_path."live_desert.php");
     include($app_path."include/footer.inc.php");
     exit();
+}
+
+
+if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
+
+    include($app_path."live_desert.php");
+    include($app_path."include/footer.inc.php");
+    exit();
+}else{
+    console_log("1w1");
 }
 
 
