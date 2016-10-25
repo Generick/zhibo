@@ -43,13 +43,13 @@
                 UIF.handler.close(data);
             },
             liveClose : function(data){
-            	UIF.handler.liveClose(data);
-            }, 
+                UIF.handler.liveClose(data);
+            },
             muteEffect : function(data){
                 UIF.handler.effect = data == 0 ? false : true;
             },
             switchPlayer : function(){
-            	UIF.handler.ntsRoom();
+                UIF.handler.ntsRoom();
             },
             init : function(){
                 seajs.config({
@@ -66,89 +66,89 @@
                 });
             },
             getCookie : function(sKey) {
-				if (!sKey)
-					return "";
-				if (document.cookie.length > 0) {
-					var startIndex = document.cookie.indexOf(sKey + "=")
-					if (startIndex != -1) {
-						startIndex = startIndex + sKey.length + 1
-						var endIndex = document.cookie.indexOf(";", startIndex)
-						if (endIndex == -1) {
-							endIndex = document.cookie.length;
-						}
-						return decodeURIComponent(document.cookie.substring(startIndex, endIndex));
-					}
-				}
-				return ""
-			},
-			setCookie : function(sKey, sValue, iExpireSeconds) {
-				if (!sKey)
-					return;
-				var expireDate = new Date();
-				expireDate.setTime(expireDate.getTime() + iExpireSeconds * 1000);
-				document.cookie = sKey + "=" + encodeURIComponent(sValue) + ";expires=" + expireDate.toGMTString() + ";";
-			}
+                if (!sKey)
+                    return "";
+                if (document.cookie.length > 0) {
+                    var startIndex = document.cookie.indexOf(sKey + "=")
+                    if (startIndex != -1) {
+                        startIndex = startIndex + sKey.length + 1
+                        var endIndex = document.cookie.indexOf(";", startIndex)
+                        if (endIndex == -1) {
+                            endIndex = document.cookie.length;
+                        }
+                        return decodeURIComponent(document.cookie.substring(startIndex, endIndex));
+                    }
+                }
+                return ""
+            },
+            setCookie : function(sKey, sValue, iExpireSeconds) {
+                if (!sKey)
+                    return;
+                var expireDate = new Date();
+                expireDate.setTime(expireDate.getTime() + iExpireSeconds * 1000);
+                document.cookie = sKey + "=" + encodeURIComponent(sValue) + ";expires=" + expireDate.toGMTString() + ";";
+            }
         }
         $(function() {
             try {
-				var guardarea = UIF.getCookie("guard-area");
-				if(guardarea != null){
-					$(".guard-area").attr("style",guardarea);
-				}
+                var guardarea = UIF.getCookie("guard-area");
+                if(guardarea != null){
+                    $(".guard-area").attr("style",guardarea);
+                }
                 $(".guard-area").draggable({containment:"parent",stop:function(){
-                	var st = $(".guard-area").attr("style");
-                	UIF.setCookie("guard-area",st,60 * 24 * 60);
+                    var st = $(".guard-area").attr("style");
+                    UIF.setCookie("guard-area",st,60 * 24 * 60);
                 }});
                 $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208});
-                
+
                 var rankarea = UIF.getCookie("rank-area");
-				if(rankarea != null){
-					$(".rank-area").attr("style",rankarea);
-				}
+                if(rankarea != null){
+                    //$(".rank-area").attr("style",rankarea);
+                }
                 $(".rank-area").draggable({containment:"parent",stop:function(){
-                	var st = $(".rank-area").attr("style");
-                	UIF.setCookie("rank-area",st,60 * 24 * 60);
+                    var st = $(".rank-area").attr("style");
+                    UIF.setCookie("rank-area",st,60 * 24 * 60);
                 }});
                 $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208});
-                
+
                 var giftrecord = UIF.getCookie("gift-record");
-				if(giftrecord != null){
-					$(".gift-record").attr("style",giftrecord);
-				}
+                if(giftrecord != null){
+                    //$(".gift-record").attr("style",giftrecord);
+                }
                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    var st = $(".gift-record").attr("style");
-                    UIF.setCookie("gift-record",st,60 * 24 * 60);
+                    //  var st = $(".gift-record").attr("style");
+                    //  UIF.setCookie("gift-record",st,60 * 24 * 60);
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                   var st = $(".visitant-record").attr("style");
-                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                    // var st = $(".visitant-record").attr("style");
+                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
-				if(chatarea != null){
-					$(".chat-area").attr("style",chatarea);
-				}
+                if(chatarea != null){
+                    //$(".chat-area").attr("style",chatarea);
+                }
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                	var st = $(".chat-area").attr("style");
-                	UIF.setCookie("chat-area",st,60 * 24 * 60);
+                    //var st = $(".chat-area").attr("style");
+                    //UIF.setCookie("chat-area",st,60 * 24 * 60);
                 }});
                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
                     $("#nano-pubChatList").nanoScroller();
                     $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
                 } );
-								                
+
                 var newGifts = UIF.getCookie("newGifts");
-				if(newGifts != null){
-					$(".newGifts").attr("style",newGifts);
-				}
+                if(newGifts != null){
+                    //	$(".newGifts").attr("style",newGifts);
+                }
                 $(".newGifts").draggable({containment:"parent",stop:function(){
-                	var st = $(".newGifts").attr("style");
-                	UIF.setCookie("newGifts",st,60 * 24 * 60);
+                    var st = $(".newGifts").attr("style");
+                    UIF.setCookie("newGifts",st,60 * 24 * 60);
                 }});
                 if(UIF.currentUserID != null && UIF.currentUserID.length > 0){
                     UIF.radials = radialIndicator("#indicatorContainer2", {
@@ -171,7 +171,7 @@
     </script>
     <script type="text/javascript">
         window.onbeforeunload = function(){
-          //  return "quit?";
+            //  return "quit?";
         }
     </script>
 </head>
@@ -204,7 +204,7 @@
                         <div class="mt-rl3">
                             <span class="dbicon"></span>
                             <span class="kb">0</span>
-                           <span class="mt-charge"><a target="_blank" href="/pay.php">充值</a></span>
+                            <span class="mt-charge"><a target="_blank" href="/pay.php">充值</a></span>
                             <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
                         </div>
                     </div>
@@ -224,15 +224,15 @@
         </ul>
     </div>
     <?php if(1==2){?>
-    <div class="nl-else">
-        <ul class="euc">
-            <li style="height: 30px;"></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="wenjuan"><span>问卷</span></a></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="libao"><span>礼包</span></a></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="jubao"><span>举报</span></a></li>
-        </ul>
-    </div>
+        <div class="nl-else">
+            <ul class="euc">
+                <li style="height: 30px;"></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="wenjuan"><span>问卷</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="libao"><span>礼包</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="jubao"><span>举报</span></a></li>
+            </ul>
+        </div>
     <?php }?>
 </div>
 <div class="gift-record myDiv3" id="recordResizable">
@@ -245,16 +245,7 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
-<!--<div class="visitant-record myDiv3" id="visitantResizable">
-    <div class="vr-header"><span class="span"></span></div>
-    <div class="nano gr-main" id="nano-sendGiftList">
-        <ul id="song_item" class="content"></ul>
-    </div>
-    <div class="lt"></div>
-    <div class="rt"></div>
-    <div class="lb"></div>
-    <div class="rb"></div>
-</div>-->
+
 <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
@@ -267,13 +258,13 @@
     <div class="live-video">
         <div class="player-area" >
             <div id="video">
-            	<div class="no-live"></div>
+                <div class="no-live"></div>
             </div>
         </div>
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="werImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
@@ -340,19 +331,19 @@
 <?php
 if($roomType != "game"){
 
-?>
-<div class="guard-area myDiv6">
-    <div class="guard-header">
-        <span class="guard-title"></span>
-        <span class="gdnum">0/32</span>
-        <span class="kais button button-highlight button-rounded"></span>
+    ?>
+    <div class="guard-area myDiv6">
+        <div class="guard-header">
+            <span class="guard-title"></span>
+            <span class="gdnum">0/32</span>
+            <span class="kais button button-highlight button-rounded"></span>
+        </div>
+        <div class="guard-main nano"><ul class="content">  </ul></div>
+        <div class="lt"></div>
+        <div class="rt"></div>
+        <div class="lb"></div>
+        <div class="rb"></div>
     </div>
-    <div class="guard-main nano"><ul class="content">  </ul></div>
-    <div class="lt"></div>
-    <div class="rt"></div>
-    <div class="lb"></div>
-    <div class="rb"></div>
-</div>
 <?php }?>
 
 <!-- 任务区-->
@@ -396,8 +387,8 @@ if($thisHome ==1){
         <div class="chat-footer">
             <div class="cf-select">
                 <div class="cfchange">
-                	<span data="" class="switchChat changeCh"><!-- 公共频道 --></span>
-                	<!-- <i class="liii"></i> -->
+                    <span data="" class="switchChat changeCh"><!-- 公共频道 --></span>
+                    <!-- <i class="liii"></i> -->
                 </div>
                 <ul class="son_ul" style="display:none ">
                     <li id="GLO"></li>
@@ -433,7 +424,9 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php if(1==2){?>
+        <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
+    <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
     <div class="chat-tip-top">
@@ -476,8 +469,8 @@ if($thisHome ==1){
                 <div class="portBg"></div>
                 <div class="price" id="indicatorContainer2"></div>
                 <div class="circleImg">
-				    <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>"alt="<?php echo $user["nickname"]?>">
-				</div>
+                    <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>"alt="<?php echo $user["nickname"]?>">
+                </div>
                 <div class="portrait-level-pane"><div class="circleLevel activelevel"></div></div>
             </div>
         <?php } ?>
@@ -496,7 +489,7 @@ if($thisHome ==1){
                 }
                 ?>
                 <span id="gt<?php echo $giftcateid;?>"  rel="<?php echo $giftcateid;?>"  <?php echo $ac;?> class="ct"></span>
-                
+
             <?php endforeach;?>
         </div>
         <div class="giftContents">
