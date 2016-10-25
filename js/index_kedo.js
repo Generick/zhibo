@@ -1,5 +1,5 @@
 // JavaScript Document
-//create on 2016-10-25 10.18
+//create on 2016-10-25 15.49
 $(document).ready(function(){
 	function SwapTab(name, title, content, Sub, cur) {
     $(name + ' ' + title).mouseover(function () {
@@ -450,22 +450,22 @@ $(function(){
             	var datas=JSON.parse(data);
             	//alert(datas);
             }catch(e){
-            	alert("catch");
             	var datas="";
             	return false;
             }
-    
             var $h="hotList";
             if (datas != null && datas.length > 0) {
-            		//alert(datas.length);
-            		console.log(datas);
-                    var row1=datas.slice(0,13);
-                    console.log(row1);
-                    var row2=datas.slice(5,15);
-                    var row3=datas.slice(15,21);
-                    var row4=datas.slice(17,25);
+                    try{
+                        var row1=datas.slice(0,13);
+                        var row2=datas.slice(5,15);
+                        var row3=datas.slice(15,21);
+                        var row4=datas.slice(17,25);
+                    }
+                    catch(e){
+                        alert(e);
+                    }
+            		
                     
-
                     var s_big,s_sml;
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
                     var swrap = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
@@ -492,7 +492,7 @@ $(function(){
                     swrap.append(srow);
                     $("#"+$h+" .hrow1").append(bwrap);
                     $("#"+$h+" .hrow1").append(swrap);
-                    alert(srow);
+
 
                     var s2wrap="";
                     $.each(row2, function(k, v) {
@@ -512,6 +512,7 @@ $(function(){
                     })
 
                     $("#"+$h+" .hrow2").append(s2wrap);
+
 
                     var s3wrap ="";
                     var s3img =
@@ -539,7 +540,6 @@ $(function(){
                     s3html.append($('<div class="row"></div>').append(s3wrap));
                     $("#"+$h+" .hrow3").append(s3img);
                     $("#"+$h+" .hrow3").append(s3html);
-
                     
 
                     var s4wrap="";
@@ -559,7 +559,7 @@ $(function(){
                             s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                         }
                     });
-                    $("#"+$h+" .hrow4").append(s4wrap);        
+                    $("#"+$h+" .hrow4").append(s4wrap);     
             }
             
         });
@@ -585,6 +585,8 @@ $(function(){
 
             var $new="newList";
             if (dealData != null && dealData.length > 0) {
+                
+
                 var row1=dealData.slice(0,13);
                 var row2=dealData.slice(5,15);
                 var row3=dealData.slice(15,21);
@@ -691,7 +693,6 @@ $(function(){
                 $("#"+$new+" .hrow4").append(s4wrap);
                 }
                
-            
         });
     }
 
