@@ -1,6 +1,7 @@
 // JavaScript Document
-//create on 2016-10-23 11：45
-function SwapTab(name, title, content, Sub, cur) {
+//create on 2016-10-25 10.18
+$(document).ready(function(){
+	function SwapTab(name, title, content, Sub, cur) {
     $(name + ' ' + title).mouseover(function () {
         $(this).addClass(cur).siblings().removeClass(cur);
         $(content + " > " + Sub).eq($(name + ' ' + title).index(this)).show().siblings().hide();
@@ -24,6 +25,8 @@ Tools.getDate = function (params, callback) {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             //alert(params.url+" error code:"+textStatus);
+
+
         }
     });
 };
@@ -38,9 +41,12 @@ Tools.getJson = function (params, callback) {
         statusCode: {
             404: function() {
                 // return false;
+
+
             },
             200: function(){
                 // alert("请求成功");
+
             }
         },
         success: function (data, textStatus, jqXHR) {
@@ -48,6 +54,8 @@ Tools.getJson = function (params, callback) {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             //alert(params.url+" error code:"+jqXHR.status);
+
+
         }
     });
 };
@@ -76,6 +84,8 @@ Tools.sliceObject=function(o,s,n){
         return newo;
 }
 //关注
+
+
 $(function () {
     var Mycare = {};
     Mycare.listlen=0;
@@ -132,12 +142,15 @@ $(function () {
     var canTop=false;
     var canBottom=false;
     // alert(Math.ceil(12/5));
+
+
     Mycare.addEvent=function(){
         var li_len=67;
         scrollerTop=0;
         scrollNum=0;
         function changeClose(name1){
             switch (name1){ //glyphicon-menu-up  glyphicon-menu-down
+
                 case 'glyphicon-menu-down':
                     $(".titD .xii").removeClass('glyphicon-menu-down').addClass('glyphicon-menu-down-hover');
                     break;
@@ -194,21 +207,34 @@ $(function(){
 
     var ulList={
         "dayList":"/files/giftWeels.json", //主播周塝
+
         "weekList":"/files/giftMonth.json", //主播月
+
         "monthList":"/files/giftYear.json", //主播年榜
 
+
         "th_week":"/files/localTyrantDay.json",//土豪周
+
         "th_month":"/files/localTyrantMonth.json",//土豪月
+
         "th_year":"/files/localTyrantYear.json",//土豪年
 
+
         "hy_week":"/files/fansActive.json",//活跃周
+
         "hy_month":"/files/fansActive.json",//活跃月
+
         "hy_year":"/files/fansActive.json",//活跃年
 
+
         "anc_banner":"/files/banners.json",//banner
+
         "anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
+
         "anc_game":"/files/gameAnchors.json",//精彩推荐
+
         "anc_new":"/files/newAnchors.json" //"/ajax/getLiveAnchors.php"+"?anc_type=new"
+
     }
     var ht_rank='<li class="clearFix">\
             <span class="icon_shuzi_{0} sprite_top fl"></span>\
@@ -411,21 +437,33 @@ $(function(){
             }
         }
     };
+
     compiliter.parseAnchors = function(url,type){
         Tools.getJson({
-            url: "/ajax/getLiveAnchors.php"+"?anc_type=hot&a="+Math.random(99999),
+            url: ulList.anc_hot,
             data: ""
         }, function (data) {
             if(data == "" || data ==undefined){
                 return 0;
             }
+            try{
+            	var datas=JSON.parse(data);
+            	//alert(datas);
+            }catch(e){
+            	alert("catch");
+            	var datas="";
+            	return false;
+            }
     
-            $h="hotList";
-            if (data != null) {
-                    var row1=data.slice(0,13);
-                    var row2=data.slice(5,15);
-                    var row3=data.slice(15,21);
-                    var row4=data.slice(17,25);
+            var $h="hotList";
+            if (datas != null && datas.length > 0) {
+            		//alert(datas.length);
+            		console.log(datas);
+                    var row1=datas.slice(0,13);
+                    console.log(row1);
+                    var row2=datas.slice(5,15);
+                    var row3=datas.slice(15,21);
+                    var row4=datas.slice(17,25);
                     
 
                     var s_big,s_sml;
@@ -454,6 +492,7 @@ $(function(){
                     swrap.append(srow);
                     $("#"+$h+" .hrow1").append(bwrap);
                     $("#"+$h+" .hrow1").append(swrap);
+                    alert(srow);
 
                     var s2wrap="";
                     $.each(row2, function(k, v) {
@@ -526,22 +565,31 @@ $(function(){
         });
     }
 
+   
     compiliter.parseNewAnchors = function(url,type){
         Tools.getJson({
-            url: "/ajax/getLiveAnchors.php"+"?anc_type="+type+"&a="+Math.random(99999),
+            url: ulList.anc_new,
             data: ""
         }, function (data) {
             if(data == "" || data ==undefined){
                 return 0;
             }
 
-            $h="newList";
-            if (data != null) {
-                var row1=data.slice(0,13);
-                var row2=data.slice(5,15);
-                var row3=data.slice(15,21);
-                var row4=data.slice(17,25);
-                var rowAdd=data.slice(25,27);
+            try{
+            	var dealData=JSON.parse(data);
+            }catch(e){
+            	var datas="";
+            	return false;
+            }
+
+
+            var $new="newList";
+            if (dealData != null && dealData.length > 0) {
+                var row1=dealData.slice(0,13);
+                var row2=dealData.slice(5,15);
+                var row3=dealData.slice(15,21);
+                var row4=dealData.slice(17,25);
+                var rowAdd=dealData.slice(25,27);
 
                 var s_big,s_sml;
                 var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -566,8 +614,8 @@ $(function(){
                     srow.append(s_sml);
                 })
                 swrap.append(srow);
-                $("#"+$h+" .hrow1").append(bwrap);
-                $("#"+$h+" .hrow1").append(swrap);
+                $("#"+$new+" .hrow1").append(bwrap);
+                $("#"+$new+" .hrow1").append(swrap);
 
                 var s2wrap="";
                 $.each(row2, function(k, v) {
@@ -586,7 +634,7 @@ $(function(){
                     }
                 })
 
-                $("#"+$h+" .hrow2").append(s2wrap);
+                $("#"+$new+" .hrow2").append(s2wrap);
 
                 var s3wrap ="";
                 var s3img ="";
@@ -620,8 +668,8 @@ $(function(){
                 var s3htmlAdd = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
                 s3htmlAdd.append(s3img);
                 s3html.append($('<div class="row"></div>').append(s3wrap));
-                $("#"+$h+" .hrow3").append(s3htmlAdd);
-                $("#"+$h+" .hrow3").append(s3html);
+                $("#"+$new+" .hrow3").append(s3htmlAdd);
+                $("#"+$new+" .hrow3").append(s3html);
                     
                 var s4wrap="";
                 $.each(row4, function (k,v) {
@@ -640,7 +688,7 @@ $(function(){
                         s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.numbers,v.nickName,compiliter.totime(v.onlineTime))
                     }
                 });
-                $("#"+$h+" .hrow4").append(s4wrap);
+                $("#"+$new+" .hrow4").append(s4wrap);
                 }
                
             
@@ -706,5 +754,7 @@ $(function(){
         });
     }();
 
+
+})
 
 })
