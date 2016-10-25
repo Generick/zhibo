@@ -103,7 +103,7 @@
 
                 var rankarea = UIF.getCookie("rank-area");
                 if(rankarea != null){
-                    //$(".rank-area").attr("style",rankarea);
+                    $(".rank-area").attr("style",rankarea);
                 }
                 $(".rank-area").draggable({containment:"parent",stop:function(){
                     var st = $(".rank-area").attr("style");
@@ -113,11 +113,11 @@
 
                 var giftrecord = UIF.getCookie("gift-record");
                 if(giftrecord != null){
-                    //$(".gift-record").attr("style",giftrecord);
+                    $(".gift-record").attr("style",giftrecord);
                 }
                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    //  var st = $(".gift-record").attr("style");
-                    //  UIF.setCookie("gift-record",st,60 * 24 * 60);
+                      var st = $(".gift-record").attr("style");
+                      UIF.setCookie("gift-record",st,60 * 24 * 60);
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
@@ -133,8 +133,8 @@
                     //$(".chat-area").attr("style",chatarea);
                 }
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                    //var st = $(".chat-area").attr("style");
-                    //UIF.setCookie("chat-area",st,60 * 24 * 60);
+                    var st = $(".chat-area").attr("style");
+                    UIF.setCookie("chat-area",st,60 * 24 * 60);
                 }});
                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
@@ -144,7 +144,7 @@
 
                 var newGifts = UIF.getCookie("newGifts");
                 if(newGifts != null){
-                    //	$(".newGifts").attr("style",newGifts);
+                    	$(".newGifts").attr("style",newGifts);
                 }
                 $(".newGifts").draggable({containment:"parent",stop:function(){
                     var st = $(".newGifts").attr("style");
