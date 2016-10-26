@@ -1,11 +1,11 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=9;ie=8;ie=7" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge;ie=9;ie=8">
     <title><?php echo addslashes($showinfo['nickname'])?>的直播间_美女视频聊天室_视频交友房间_视频秀 &ndash; <?php echo $page_var['site_name']?></title>
     <meta name="description" content="<?php echo $page_var['site_name']?>是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <meta content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" name="keywords">
-    <script src="/skin/comic/js/jquery.min.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery/jquery/3.0.0/jquery-3.0.0.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/anchor-base.js?v=<?php echo $vsn;?>"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxcore.js"></script>
@@ -13,17 +13,17 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
-
-    <!--[if lte IE 9]>
-        <script type="text/javascript" src="/js/json2.js"></script>
+    <!--[if IE]>
+    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/nanoScroller.css" rel="stylesheet">
-    <link href="/skin/desert/css/live.css?v=<?php echo rand(1000,100000);?>" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
@@ -37,7 +37,7 @@
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
             currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
             log : function(msg){
-              //  UIF.handler.weblog(msg);
+                UIF.handler.weblog(msg);
             },
             swfClose : function(data){
                 UIF.handler.close(data);
@@ -123,14 +123,14 @@
 
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    var st = $(".visitant-record").attr("style");
-                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                    // var st = $(".visitant-record").attr("style");
+                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
                 if(chatarea != null){
-                    $(".chat-area").attr("style",chatarea);
+                    //$(".chat-area").attr("style",chatarea);
                 }
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
                     var st = $(".chat-area").attr("style");
@@ -245,16 +245,7 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
-<!--<div class="visitant-record myDiv3" id="visitantResizable">
-    <div class="vr-header"><span class="span"></span></div>
-    <div class="nano gr-main" id="nano-sendGiftList">
-        <ul id="song_item" class="content"></ul>
-    </div>
-    <div class="lt"></div>
-    <div class="rt"></div>
-    <div class="lb"></div>
-    <div class="rb"></div>
-</div>-->
+
 <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
@@ -273,7 +264,7 @@
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="werImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
@@ -433,7 +424,9 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php if(1==2){?>
+        <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
+    <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
     <div class="chat-tip-top">
@@ -643,4 +636,4 @@ if($thisHome ==1){
 <div class="login-html"></div>
 </body>
 
-</html>>
+</html>
