@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/nanoScroller.css" rel="stylesheet">
-    <link href="/skin/desert/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
+    <link href="/skin/desert/css/live.css?v=<?php echo rand(1000,100000);?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 

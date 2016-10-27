@@ -72,10 +72,11 @@ function get_user_info($sdk, $openid, $openkey, $pf)
     $params = array(
         'openid' => $openid,
         'openkey' => $openkey,
-        'pf' => $pf,
+        'pf' => 'qzone',
         'charset'=>'utf-8',
         'userip'=>get_real_ip(),
-        'flag'=>1
+        'flag'=>1,
+        'format'=>'json'
     );
 
     $script_name = '/v3/user/get_info';     //参数: http://wiki.open.qq.com/wiki/v3/user/get_info
@@ -89,15 +90,36 @@ $qq_user_info = get_user_info($sdk, $openid, $openkey, $pf);
 /*echo "<pre>";
 print_r($qq_user_info);
 echo "</pre>";*/
+/*Array
+(
+    [ret] => 0
+    [is_lost] => 0
+    [nickname] => 940613683
+    [gender] => 男
+    [country] => 中国
+    [province] => 上海
+    [city] => 浦东新区
+    [figureurl] => http://thirdapp3.qlogo.cn/qzopenapp/e7516f198a8aeedfd4ee5e0fc474c7fee827edf43506d9869a9e5eaa4c9cfa79/50
+    [is_yellow_vip] => 0
+    [is_yellow_year_vip] => 0
+    [yellow_vip_level] => 0
+    [is_yellow_high_vip] => 0
+)*/
+
 if($_GET['openid']){//优先设置qq id
 
 //如果设置了openid
-    $qq_user_info = get_user_info($sdk, $openid, $openkey, $pf);
+   // $qq_user_info = get_user_info($sdk, $openid, $openkey, $pf);
 
-    //file_put_contents("/opt/get_user_info.txt",json_encode($qq_user_info));
-    if($qq_user_info){//登陆token正确
+    if($qq_user_info != null and $qq_user_info['ret'] ==0){  //http://wiki.open.qq.com/wiki/%E5%85%AC%E5%85%B1%E8%BF%94%E5%9B%9E%E7%A0%81%E8%AF%B4%E6%98%8E#OpenAPI_V3.0_.E8.BF.94.E5.9B.9E.E7.A0.81
         $user=$db->GetRow("select * from bu_user where snsid='$openid'");
         if($user){
+            if(base64_decode($user['nickname']) =="001"){
+                $unickname = base64_encode($qq_user_info[nickname]);
+                $c=$db->Execute("update bu_user  set nickname ='{$unickname}' where snsid='{$openid}'");
+                $user[nickname]=$qq_user_info[nickname];
+            }
+
             $cookiestr=logincookie($user);
             setcookie("KDUUS",$cookiestr,time()+3600*24,"/",_COOKIE_DOMAIN_);
             $_SESSION['KDCOOKIE']=$cookiestr;
@@ -107,6 +129,7 @@ if($_GET['openid']){//优先设置qq id
 
             $userinfo=search_save_user($user['userId']);
             set_login_info($userinfo);
+
 
         }else{
             if($qq_user_info['gender'] == "男"){

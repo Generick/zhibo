@@ -13,7 +13,9 @@ $page_var['sitename']=SITENAME;
 if(isset($_GET[openid]) and $_GET[openid] !=''){
 
     //include("opensns/qq/index.php");
-   include("include/QQZone/QQGame.inc.php");
+    include("include/QQZone/QQGame.inc.php");
+    // include("PHPSDK/Test_OpenApiV3.php");
+
     // include("demo/app_demo_for_web.html");
 
     //exit();
