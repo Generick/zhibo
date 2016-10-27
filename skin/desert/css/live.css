@@ -77,7 +77,7 @@ a{text-decoration:none; }
 .euc .jubao:hover{background: url(/skin/desert/images/jubao-hover.png)center top no-repeat;}
 
 /*中部*/
-.video-area{width:640px;margin: 77px  auto;left: 0; right: 0; margin-top: 77px;}
+.video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
 .live-info{position: relative;  margin-top: 8px;}
 
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
@@ -234,7 +234,7 @@ a{text-decoration:none; }
 .rkb-p1{color:#ffc937}
 
 /*菜单*/
-.switch-area{width:365px; position: fixed;position:absolute\9;right:50px;bottom: 10px;  z-index: 110;}
+.switch-area{width:365px; position: fixed;right:50px;bottom: 10px;  z-index: 110;}
 .switch-area .Bmenu {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sucai-tb.png); cursor: pointer}
 .sw-chat {width:70px; height:70px; background-position: -578px -2px}
 .sw-chat-hover,.sw-chat:hover{width:70px; height:70px; background-position: -650px -2px}
@@ -592,7 +592,7 @@ a{text-decoration:none; }
 .sf-times{display:none;width:212px; border: 1px solid #1E2629;overflow: hidden;width: 146px;position:absolute;left: 50px;top:56px;}
 .sf-times ul li{float: left;height: 24px;line-height: 24px;width: 24px;cursor: pointer;color:#ECEAE7;text-align: center;}
 .sf-times ul li:hover{background:#6F838E}
-.clz{    float: right;  margin-right: 6px;  margin-top: 6px;width:15px;height:15px;background: url("/skin/desert/images/gaunbi.png")no-repeat;cursor: pointer;}
+.clz{position: absolute;right: 17px;top:15px;width:15px;height:15px;background: url("/skin/desert/images/gaunbi.png")no-repeat;cursor: pointer;}
 .clz:hover{background: url("/skin/desert/images/gaunbi_hover.png") no-repeat;}
 
 

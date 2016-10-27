@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/live.css?v=<?php rand(100002,954542)?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
@@ -33,7 +33,7 @@
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
             currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
             log : function(msg){
-                UIF.handler.weblog(msg);
+              //  UIF.handler.weblog(msg);
             },
             swfClose : function(data){
                 UIF.handler.close(data);
@@ -260,7 +260,7 @@
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
