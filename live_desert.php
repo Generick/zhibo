@@ -1,7 +1,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge;ie=9;ie=8">
+    <meta http-equiv="X-UA-Compatible" content="ie=9;ie=8;ie=7">
     <title><?php echo addslashes($showinfo['nickname'])?>的直播间_美女视频聊天室_视频交友房间_视频秀 &ndash; <?php echo $page_var['site_name']?></title>
     <meta name="description" content="<?php echo $page_var['site_name']?>是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <meta content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" name="keywords">
@@ -13,13 +13,16 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
+    <!--[if lte IE 9]>
+    <script type="text/javascript" src="/js/json2.js"></script>
+    <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/live.css?v=<?php rand(100002,954542)?>" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/live.css?v=<?php echo  rand(100002,954542)?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
@@ -420,6 +423,7 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>

@@ -14,7 +14,6 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
-    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
     <![endif]-->
 
@@ -424,6 +423,8 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+
+    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
