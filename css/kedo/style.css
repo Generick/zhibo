@@ -325,8 +325,7 @@ body{
 	.follow .foLi .spriteLev,.rank .foLi .spriteLev,.rich .foLi .spriteLev,.fans .foLi .spriteLev{
 		margin-top:18px;
 	}
-	.follow img,.rank img,.rich img,.fans img{
-		border-radius:50%;
+	.follow a>img,.rank a>img,.rich a>img,.fans a>img{
         width: 52px;
         height: 52px;
     }
@@ -392,33 +391,26 @@ body{
 		.hotItem .hotT{
 			line-height:21px;
 		}
-		.hotItem{
-			max-height:171px;
-			overflow:hidden;
-		}
+		
 	}
 	@media(max-width:1450px){
 		.hotItem{
-			max-height:129px;
 			overflow:hidden;
 		}
 	}
 	
 	@media(max-width:1200px){
 		.hotItem{
-			max-height:145px;
 			overflow:hidden;
 		}
 	}
 	@media(max-width:768px){
 		.hotItem{
-			max-height:244px;
 			overflow:hidden;
 		}
 	}
 	@media(max-width:572px){
 		.hotItem{
-			max-height:162px;
 			overflow:hidden;
 		}
 	}
@@ -442,6 +434,11 @@ body{
 	.hotCon .firHot{
 		background-color:#e34052;	
 	}
+	/* .firHot{
+		width:250px;
+		height: 380px;
+	} */
+
 	.firHot .firB{
 		bottom:0.6%;
 		left:1%;
@@ -457,6 +454,7 @@ body{
 	.firHot,.hotItem{
 		position:relative; 
 	}
+	
 	.firB,.hotB{
 		height:23%; 
 		position:absolute;
@@ -519,6 +517,11 @@ body{
 		color: #333; 
 		
 	}
+	.firT >div{
+		position: absolute;
+		top: -42%;
+    	left: -5%;
+	}
 	.hotT{
 		height: 14%;
 		top: 4%;
@@ -530,7 +533,7 @@ body{
 	}
 
 	.hotB{
-		height: 34%;
+		height: 28%;
 		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	    filter: alpha(opacity=0);
 	    opacity: 0;
@@ -539,11 +542,15 @@ body{
 	}
 	.hotItem{
 		font-size: 12px; 
-		
+		overflow: hidden;
 	}
-	.hotItem img{
-		max-height: 163px;
+	.hotItem .sprite_s{
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
 	}
+	
 	.glyphicon-stats{
 		position: absolute;
 		right: 11%; 
@@ -567,6 +574,9 @@ body{
 	
 	.recommB{
 		padding-top: 8%; 
+	}
+	.recommB .ellipsis{
+		width:58%;
 	}
 	.recomm a.thumbnail{
 		background-color: #f4f4f4;
