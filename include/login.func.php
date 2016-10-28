@@ -100,7 +100,7 @@ function username_deal($unm){
     $js = curl_get(_INTERFACE_.$url,"keyWord=".$unm);
     $acceptData=json_decode($js, true);
     if($acceptData['resultStatus'] == 101){
-        return true;
+        return $unm.$acceptData['resultStatus'];
     }if($acceptData['resultStatus'] == 200){
         return false;
     }
