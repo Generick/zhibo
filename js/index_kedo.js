@@ -1,43 +1,6 @@
 // JavaScript Document
 //create on 2016-10-26 19.40
 $(document).ready(function(){
-	//c3转化成js
-	var $changeWid=$("#carousel-example-captions");
-	var $doneWid=$("#carousel-example-captions .thumb-bar")
-	$changeWid.hover(function(){
-		$doneWid.css("width","100%");
-	},function(){
-		$doneWid.css("width","0");
-	});
-	var $recoWid=$("#gameAnchors .thumbnail");
-	var $reDoneWid=$("#gameAnchors .thumb-bar");
-	$recoWid.hover(function(){
-		$reDoneWid.css("width","100%");
-	},function(){
-		$reDoneWid.css("width","0");
-	});
-	
-	$("#btn_login").hover(function(){
-		$(this).css("backgroundColor","#e86473");
-	},function(){
-		$(this).css({"backgroundColor":"#e34052"},{"border":"1px solid #f40923"});
-	});
-
-	
-	$(".firHot").hover(function(){
-		$(".firHot .shadow").css({"filter":"alpha(opacity=50)","opacity":"0.5"});
-		$(".firHot .playBtn").css({"filter":"alpha(opacity=100)","opacity":"1"});
-	});
-
-    $(".hotItem").hover(function(){
-        $(".hotT").show().css("opacity",1);
-        $(".hotB").show().css("opacity",1);
-    })
-	
-	
-	
-	
-	
 	function SwapTab(name, title, content, Sub, cur) {
 		$(name + ' ' + title).mouseover(function () {
 			$(this).addClass(cur).siblings().removeClass(cur);
@@ -127,14 +90,14 @@ $(document).ready(function(){
 		Mycare.listlen=0;
 		Mycare.loop=0;
 		canBottomNum=0;
-		Mycare.li = '<li class="clearFix"><a href="/{0}" target="_blank">\
+		Mycare.li = '<li class="clearFix"><a href="/{0}">\
 					<img class="fl" src="{1}" alt="{2}">\
 					<span class="diamond fl sprite liverlevel-pic_liverlevel_{3}"></span>\
 					<span class="name fl">{4}</a></span>\
 					{5}\
 					</li>';
 		Mycare.lii =
-			'<div class="row foLi"><a href="/{0}"  target="_blank">\
+			'<div class="row foLi"><a href="/{0}">\
 				<img class="pull-left img-circle" src="{1}" alt="{2}">\
 				<div class="pull-left">\
 					<p class="name">{3}</p>\
@@ -158,7 +121,7 @@ $(document).ready(function(){
 						var _self = $(this)[0];
 						if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickname += "c"};
 						if (_self.online == true) {
-							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName,_self.nickName, "<p><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
+							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName, "<p><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
 						}else{
 							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName,'<p class="ynLiv">未开播</p>',_self.totalpoint);
 						}
@@ -277,7 +240,7 @@ $(document).ready(function(){
 					<img class="rank_pho img-circle" src="{1}" alt="{2}">\
 						{3}\
 					<span class="diamond fl sprite liverlevel-pic_liverlevel_{4}"></span>\
-					<a href="{5}" target="_blank"><span class="name fl">{6}</span> </a>\
+					<a href="{5}"><span class="name fl">{6}</span> </a>\
 				</li>';
 		var ht_rans='<div class="row foLi"><a href="{0}">\
 						<img class="pull-left img-circle" src="{1}" alt="{2}"/>\
@@ -534,11 +497,12 @@ $(document).ready(function(){
 							if(v.image =="" || v.image == null ){
 								v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
 							}
+
 							if(k<=1){
 								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>1 && k <=2){
+							}else if(k>1 && k <=3){
 								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>2 && k <=5){
+							}else if(k>3 && k <=7){
 								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
 							}else{
 	
@@ -701,8 +665,8 @@ $(document).ready(function(){
 							s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
 						}
 					})
-					var s3html = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
-					var s3htmlAdd = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
+					var s3html = $('<div class="col-lg-9 hidden-md hidden-sm col-xs-6"></div>');
+					var s3htmlAdd = $('<div class="col-lg-3 hidden-md hidden-sm col-xs-6"></div>');
 					s3htmlAdd.append(s3img);
 					s3html.append($('<div class="row"></div>').append(s3wrap));
 					$("#"+$new+" .hrow3").append(s3htmlAdd);
@@ -774,9 +738,9 @@ $(document).ready(function(){
 				if (datas != null && datas.length > 0) {
 					$.each(datas, function(k, v) {
 						if(v.url !=''){
-                            item+='<div class="item"><a href="'+v.url+'" target="_blank"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item"><a href="'+v.url+'"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
 						}else{
-                            item+='<div class="item"><a href="'+v.url+'" target="_blank"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item"><a href="'+v.url+'"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                             //item+='<div class="item"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'++v.image'" data-holder-rendered="true"/></div>';
 						}
 						if(k==0){
@@ -793,5 +757,15 @@ $(document).ready(function(){
 	
 	
 	})
+
+	//c3转化成js
+	var $changeWid=$("#carousel-example-captions");
+	var $doneWid=$("#carousel-example-captions .thumb-bar")
+	$changeWid.hover(function(){
+		$doneWid.css("width","100%");
+	},function(){
+		$doneWid.css("width","0");
+	});
+	
 
 })
