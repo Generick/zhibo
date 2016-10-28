@@ -37,9 +37,12 @@ define(function(require, exports, module) {
 		close : function(data) {
 			try {
 				$("#" + data.elements).css("z-index", "0");
-				$("#" + data.elements).css("pointer-events", "none");
-				swfobject.getObjectById(data.elements).style.visibility = 'hidden';
+                $("#" + data.elements).css("pointer-events", "none");
+                $("#" + data.elements).css("visibility", "hidden");
+				//swfobject.getObjectById(data.elements).style.visibility = 'hidden';
+
 			} catch (e) {
+
 				setTimeout(function(){},5 * 1000);
 			}
 		},

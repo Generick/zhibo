@@ -97,10 +97,10 @@ function password_deal($pwd){
 }
 function username_deal($unm){
     $url="/rest/homeAnchors/checkLucene.mt";
-    $js = curl_post(_INTERFACE_.$url,"keyWord=".$unm);
+    $js = curl_get(_INTERFACE_.$url,"keyWord=".$unm);
     $acceptData=json_decode($js, true);
     if($acceptData['resultStatus'] == 101){
-        return $unm.$acceptData['resultStatus'];
+        return true;
     }if($acceptData['resultStatus'] == 200){
         return false;
     }

@@ -282,6 +282,7 @@ define(function(require, exports, module) {
 						if (call != null) {
 							call(data.args);
 						}
+
 					}
 				});
 				UIF.handler.cache.put(cons.USER_SOCKETIO, true);
