@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 					UIF.handler.loging();
 					return;
 				}
-				sendGiftNum = $.trim($("#sendGiftNum").val());
+				sendGiftNum = parseInt($("#sendGiftNum").val());
 				if (sendGiftNum == "") {
 					sendGiftNum = 0;
 				}
