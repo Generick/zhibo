@@ -38,12 +38,8 @@ define(function(require, exports, module) {
 			try {
 				$("#" + data.elements).css("z-index", "0");
                 $("#" + data.elements).css("pointer-events", "none");
-                var a= Math.random(1111);
-                //$(".aud").html("<span>观众"+ a +"</span>");
-                $("#EffectPlayerSwf").hide();
-				//swfobject.getObjectById("EffectPlayerSwf").style.visibility = 'hidden';
+				swfobject.getObjectById("EffectPlayerSwf").style.visibility = 'hidden';
 			} catch (e) {
-                alert(e);
 				setTimeout(function(){},5 * 1000);
 			}
 		},

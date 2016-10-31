@@ -20,11 +20,7 @@ define(function(require, exports, module) {
     var face = require("./anchor-face");
     //var pet = require("./anchor-pet");
     var backLoad = require("./anchor-backLoad");
-    var console = console || {
-            log : function() {
-                return;
-            }
-        }
+
 
     var Webs = function(url) {
         this.flash = null;
