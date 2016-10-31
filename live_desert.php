@@ -57,7 +57,10 @@
                         "socket" : "socket.io/socket.io",
                         "swfobject" : "swfobject/swfobject",
                         "jquery" : "jquery/jquery/1.9.0/jquery"
-                    }
+                    },
+                    map:[
+                        [".js",".js?v="+Math.random(100)]//映射规则
+                    ]
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
                     UIF.handler = new W();

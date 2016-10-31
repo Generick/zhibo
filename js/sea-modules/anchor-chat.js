@@ -47,7 +47,7 @@ define(function(require, exports, module) {
                         var roles = UIF.handler.cache.get(cons.USER_HEADROLES);
                         var head = UIF.handler.cache.get(cons.USER_HEADINFOS);
                         var stime = UIF.handler.cache.get(cons.LOCAL_TIMESENDMSG);
-                        if (head != null && head.anchorId != userId && roles != null && roles.length > 0) {
+                        if (head != null && head.anchorId != UIF.handler.userId && roles != null && roles.length > 0) {
                             var $roles = jQuery.parseJSON(roles);
                             if (!Tools.arrayContains($roles, 1) && !Tools.arrayContains($roles, 2)) {
                                 btime = 2 * 1000;
@@ -478,10 +478,14 @@ define(function(require, exports, module) {
                     v.levs = v.levs.replace(/\\/g,'');
                     htmls = Tools.stringFormat(htmls, v.ctime,_this.headimg(v.levs), _this.pclass(v.levs), v.userId, v.nickname, _this.spimg(v.levs), v.nickname+"：", words);
                     $("#pubChatList").append(htmls);
-                    $("#nano-pubChatList").nanoScroller();
-                    $("#nano-pubChatList").nanoScroller({
-                        scroll : 'bottom'
-                    });
+                    try {
+                    	 $("#nano-pubChatList").nanoScroller();
+                         $("#nano-pubChatList").nanoScroller({
+                             scroll : 'bottom'
+                         });
+					} catch (e) {
+						UIF.handler.weblog(e);
+					}
                 })
             });
         },
@@ -491,10 +495,14 @@ define(function(require, exports, module) {
                 var htmls = '<li class="fontred"><div><span>欢迎   </span><span class="u">{0} </span><span>进入房间</span></div></li>';
                 htmls = Tools.stringFormat(htmls, decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
-                $("#nano-pubChatList").nanoScroller();
-                $("#nano-pubChatList").nanoScroller({
-                    scroll : 'bottom'
-                });
+               try {
+            	   $("#nano-pubChatList").nanoScroller();
+                   $("#nano-pubChatList").nanoScroller({
+                       scroll : 'bottom'
+                   });
+				} catch (e) {
+					UIF.handler.weblog(e);
+				}
             }
         },
         welcome : function(data) {
@@ -505,10 +513,14 @@ define(function(require, exports, module) {
                 var htmls = '<li class="fontred"><div><span>欢迎   </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}">{5}</a><span>进入房间</span></div></li>';
                 htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
-                $("#nano-pubChatList").nanoScroller();
-                $("#nano-pubChatList").nanoScroller({
-                    scroll : 'bottom'
-                });
+                try {
+                	$("#nano-pubChatList").nanoScroller();
+                    $("#nano-pubChatList").nanoScroller({
+                        scroll : 'bottom'
+                    });
+				} catch (e) {
+					UIF.handler.weblog(e);
+				}
             }
         },
         /** 公共聊天 */
@@ -523,7 +535,7 @@ define(function(require, exports, module) {
                     dataType : "json",
                     async : false
                 }).done(function(datas) {
-                    console.log(data);
+                	UIF.handler.weblog(data);
                 });
             }
             var htmls = '<li class="fontred"><span class="gr-time">' + Tools.dateFormat(new Date(), "HH:mm")
@@ -531,10 +543,14 @@ define(function(require, exports, module) {
             words = Face.faceReplaceImg(data.message);
             htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, data.nickname, this.spimg(data.levs), data.nickname + "：", words);
             $("#pubChatList").append(htmls);
-            $("#nano-pubChatList").nanoScroller();
-            $("#nano-pubChatList").nanoScroller({
-                scroll : 'bottom'
-            });
+            try {
+            	$("#nano-pubChatList").nanoScroller();
+                $("#nano-pubChatList").nanoScroller({
+                    scroll : 'bottom'
+                });
+			} catch (e) {
+				UIF.handler.weblog(e);
+			}
         },
         /** 主播私聊 */
         onPrvMsg : function(data) {
@@ -545,10 +561,14 @@ define(function(require, exports, module) {
             words = Face.faceReplaceImg(data.message);
             msg = Tools.stringFormat(msg, this.headimg(data.levs), this.pclass(data.levs), data.userId, data.nickname, this.spimg(data.levs), data.nickname, action, words);
             $("#priChatList").append(msg);
-            $("#nano-priChatList").nanoScroller();
-            $("#nano-priChatList").nanoScroller({
-                scroll : 'bottom'
-            });
+            try {
+            	$("#nano-priChatList").nanoScroller();
+                $("#nano-priChatList").nanoScroller({
+                    scroll : 'bottom'
+                });
+			} catch (e) {
+				UIF.handler.weblog(e);
+			}
         },
         /** 用户私聊 */
         onP2PMsg : function(data) {
