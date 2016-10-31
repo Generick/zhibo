@@ -496,12 +496,12 @@ body{
 	    height: 40px;
 	    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	    filter: alpha(opacity=0);
-	    opacity: 0;
 	    background: url("http://i7.pdim.gs/bd7431bc663cd90b0a0b56b682f3bef9.png") no-repeat;
 	    -webkit-transform: scale(2);
 	    -ms-transform: scale(2);
 	    transform: scale(2);
 	    -webkit-transition: all ease-in 250ms;
+	    -ms-transition:all ease-in 250ms;
 	    transition: all ease-in 250ms;
 	}
 	.firT,.hotT{
