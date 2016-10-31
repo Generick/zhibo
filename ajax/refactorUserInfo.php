@@ -21,9 +21,9 @@ if(!$user){
 $_GET=safe_output($_GET);
 $_POST=safe_output($_POST);
  if($_REQUEST["action"] =="editName"){
-     $nickname = strip_tags(trim($_REQUEST['nickname']));
+     $nickname = $_REQUEST['nickname'];
      $r=check_nickname($nickname);
-     if($r!='yes'){
+     if($r!="yes"){
          echo json_encode(array("resultStatus"=>100,"errorMessage"=>$r));
          exit();
      }else{
