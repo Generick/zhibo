@@ -115,8 +115,8 @@
                     $(".gift-record").attr("style",giftrecord);
                 }
                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                      var st = $(".gift-record").attr("style");
-                      UIF.setCookie("gift-record",st,60 * 24 * 60);
+                    var st = $(".gift-record").attr("style");
+                    UIF.setCookie("gift-record",st,60 * 24 * 60);
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
@@ -143,7 +143,7 @@
 
                 var newGifts = UIF.getCookie("newGifts");
                 if(newGifts != null){
-                    	$(".newGifts").attr("style",newGifts);
+                    $(".newGifts").attr("style",newGifts);
                 }
                 $(".newGifts").draggable({containment:"parent",stop:function(){
                     var st = $(".newGifts").attr("style");
@@ -359,7 +359,6 @@ if($thisHome ==1){
 <!-- 聊天区-->
 <div class="chat-area myDiv4">
     <div class="chat-header">
-        <div class="setting" style="display: none" id="setting">设置</div>
         <div class="closing" style="display: none" id="closing">关闭</div>
         <div class="issel chat_right chatTit" ct="ch1"></div>
         <div class="chat_right vipTit" id="choSong" ct="ch2"></div>
@@ -546,94 +545,6 @@ if($thisHome ==1){
     </div>
 </div>
 <div class="shadow" id="shadow"></div>
-<div id="pop" class="pop">
-    <a href="javascript:;" id="close" class="close">×</a>
-    <div class="noti_mana_song" id="noti_mana_song">
-        <a href="javascript:;" class="notice active">公告</a>
-        <a href="javascript:;" id="manage" class="manage">管理</a>
-        <a href="javascript:;" class="song">点歌</a>
-    </div>
-    <div id="info">
-        <div style="display:block;" id="notice_info">
-            <div class="noti_bg">
-                <span class="laba"></span>
-                <span class="notice">公告</span>
-            </div>
-            <textarea id="roomNotice" class="textarea">
-            </textarea>
-            <input type="hidden" id="id" value=""/>
-            <div id="save" class="save">保存</div>
-        </div>
-        <div id="manage_info">
-            <div class="tit clearFix">
-                <span class="rank fl">排序</span>
-                <span class="name fl">称号</span>
-                <span class="operate fl">操作</span>
-                <span class="add fr" id="add_user">添加</span>
-            </div>
-            <div class="divide"></div>
-            <div class="no_added" id="no_added">
-                <div class="manage_detail">
-                    <p class="tip">您还未添加任何管理，请添加</p>
-                    <div class="add_btn" id="add_btn">添加</div>
-                </div>
-                <div class="bottom clearFix">
-                    <p class="bottom_tip fl">每位管理都必须满足消费额度才可以添加</p>
-                    <a class="fl" href="javascript:;">查看管理成长体系></a>
-                </div>
-            </div>
-            <div class="added" id="added">
-                <ul class="added_list" id="added_list"></ul>
-                <div class="bottom clearFix">
-                    <p class="bottom_tip fl">每位管理都必须满足消费额度才可以添加</p>
-                    <a class="fl" href="javascript:;">查看管理成长体系></a>
-                </div>
-            </div>
-        </div>
-        <div id="song_info">
-            <h4 id="add_tip" style="margin-top:16px; font-size:14px; color:#333; margin-left:88px; margin-bottom:6px;">添加歌曲</h4>
-            <div class="add_song clearFix">
-                <input class="songname fl" type="text" id="songsName" />
-                <span class="save_song fl" id="songsSave">保存</span>
-            </div>
-            <h4 class="song_list">歌曲列表</h4>
-            <div class="list_tit clearFix">
-                <span class="rank_tit fl">排序</span>
-                <span class="name_tit fl">歌曲名称</span>
-                <span class="operate_tit fl">操作</span>
-            </div>
-            <div class="divide"></div>
-            <div class="song_detail" id="song_detail"></div>
-        </div>
-    </div>
-    <div class="mana_shadow" id="mana_shadow">
-        <div class="add_mana">
-            <a class="mana_close" id="mana_close" href="javascript:;">×</a>
-            <h2 class="tit">添加管理</h2>
-            <p>通过ID查找需要添加的管理</p>
-            <div class="search">
-                <span></span>
-                <input type="text" id="userId"/>
-            </div>
-            <span class="search_btn" id="search_btn">查找</span>
-
-            <div class="appear" id="appear">
-                <p class="find" >查找到一下用户</p>
-                <div class="divide"></div>
-                <div class="user_info clearFix">
-                    <div class="img fl">
-                        <img src="" id="userImg" style="width:60px;height：60px"/>
-                    </div>
-                    <div class="name_id fl">
-                        <p class="name" id="userName"></p>
-                        <p><span>ID：</span><span id="idNum"></span></p>
-                    </div>
-                    <div class="user_add fl" id="user_add">添加</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="login-html"></div>
 </body>
 
