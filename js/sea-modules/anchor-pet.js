@@ -1,71 +1,112 @@
 define(function(require, exports, module) {
 	var swf = require("./anchor-swf");
 	module.exports = {
-		//所有操作菜单
-		options : ["左行走", "挨打", "攻击"],
-		menuOpt : ["详情", "喂食"],
+		petData : null,
 		init : function() {
 			this.initPetOptView();
 			this.initPetInteractions();
-            this.setVisible();
 		},
-        setVisible : function(){
-            $(".PetSwf").hide();
-        },
-		
+		showPetUI : function(initL, initT){
+			$('.pet-opt-ui').css({
+				'left' : initL + $(".PetSwf")[0].clientHeight * .5 + "px",
+				'top' : initT + "px"
+			});
+			$(".pet-opt-ui").show();
+		},
+		hidePetUI : function() {
+			$(".pet-opt-ui").hide();
+		},
+		showNameChange : function(){
+			if(this.checkIfAnchor()){
+				document.getElementById("pet-opt-ui-petNameInput").readOnly = false;
+				$("#pet-opt-ui-changenameBtn").hide();
+				$("#pet-opt-ui-changename-confirmBtn").show();
+				$("#pet-opt-ui-changename-cancelBtn").show();
+			}
+		},
+		hideNameChange : function(){
+			document.getElementById("pet-opt-ui-petNameInput").readOnly = true;
+			$("#pet-opt-ui-changenameBtn").show();
+			$("#pet-opt-ui-changename-confirmBtn").hide();
+			$("#pet-opt-ui-changename-cancelBtn").hide();
+		},
+		confirmNameChangeFunc : function(){
+			
+		},
+		cancelNameChangeFunc : function(){
+			this.hideNameChange();
+		},
+		showHelpFunc : function(){
+			
+		},
+		hideHelpFunc : function(){
+			
+		},
+		trainPetFunc : function(){
+			setTimeout(300, function(){
+		},
+		changePetname : function($name){
+			var petName = document.getElementById("pet-opt-ui-petNameInput").value;
+			document.getElementById("petName").innerHTML = petName;
+		},
+		updatePetdata(){
+			
+		},
 		//初始化宠物操作面板
 		initPetOptView : function() {
 			var _this = this;
 			//宠物操作面板事件
-			$(".petOpt-tip-warp button").click(function(event){
-				var actionName = event.target.textContent;
-				if(-1 != $.inArray(actionName,_this.options)){
-					swf.petPlayAction(actionName);
-				}else{
-					switch(actionName){
-						case "详情":
-
-							break;
-						case "喂食":
-							
-							break;
-						case "确定修改":
-							_this.changePetname();
-							break;
-					}
+			$(".pet-opt-ui button").click(function(event){
+				var actionName = event.target.className;
+				switch(actionName){
+					case "pet-opt-ui-closeBtn"://关闭按钮
+						_this.hidePetUI();
+						break;
+					case "pet-opt-ui-changenameBtn":
+						_this.showNameChange();
+						break;
+					case "pet-opt-ui-changename-confirmBtn":
+						_this.confirmNameChangeFunc();
+						break;
+					case "pet-opt-ui-changename-cancelBtn":
+						_this.cancelNameChangeFunc();
+						break;
+					case "pet-opt-ui-helpBtn":
+						_this.showHelpFunc();
+						break;
+					case "pet-opt-ui-trainBtn":
+						_this.trainPetFunc();
+						break;
 				}
-			});
-			
+			});			
 			//宠物改名
-			$(".petOpt-tip-warp input").focus(function(event){
+			$(".pet-opt-ui-petNameInput").focus(function(event){
 				console.log("onfocus");
 			});
 			
 			//宠物改名
-			$(".petOpt-tip-warp input").blur(function(event){
+			$(".pet-opt-ui-petNameInput").blur(function(event){
 				console.log("onBlur");
 			});
+			//宠物改名按钮
+			$("#pet-opt-ui-changenameBtn").hide();
+			$("#pet-opt-ui-changename-confirmBtn").hide();
+			$("#pet-opt-ui-changename-cancelBtn").hide();
 			if(this.checkIfAnchor()){
-				document.getElementById("petOpt-tip-warp-petNameInput").readOnly = false;
-				$("#petOpt-tip-warp-changeNameBtn").show();
+				$("#pet-opt-ui-changenameBtn").show();
 			}
 		},
 		
 		//注册宠物点击、移动等事件
 		initPetInteractions : function() {
 			//宠物点击弹窗
+			var _this = this;
 			$(".PetSwf").click(function(e){
 				if ($(this).hasClass('noclick')) {
 					$(this).removeClass('noclick');
 				}
 				else {
-					var initL = e.pageX;
-					var initT = e.pageY;
-					$('.petOpt-tip-warp').css({
-						'left' : initL + $(".PetSwf")[0].clientHeight * .5 + "px",
-						'top' : initT + "px"
-					});
-					$(".petOpt-tip-warp").show();
+					_this.showPetUI(e.pageX, e.pageY);
 				}
 			});
 			
@@ -83,10 +124,6 @@ define(function(require, exports, module) {
 					
 				}
 			});	
-		},
-		changePetname : function(){
-			var petName = document.getElementById("petOpt-tip-warp-petNameInput").value;
-			document.getElementById("petName").innerHTML = petName;
 		},
 		//检测是否是主播
 		checkIfAnchor : function(){
