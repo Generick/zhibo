@@ -42,7 +42,7 @@ define(function(require, exports, module) {
 				//swfobject.getObjectById(data.elements).style.visibility = 'hidden';
 
 			} catch (e) {
-
+                alert(e);
 				setTimeout(function(){},5 * 1000);
 			}
 		},

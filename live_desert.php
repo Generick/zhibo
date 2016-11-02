@@ -56,7 +56,7 @@
                     alias : {
                         "socket" : "socket.io/socket.io",
                         "swfobject" : "swfobject/swfobject",
-                        "jquery" : "jquery/jquery/1.10.1/jquery"
+                        "jquery" : "jquery/jquery/1.9.0/jquery"
                     }
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
@@ -350,7 +350,7 @@ if($roomType != "game"){
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
 if($_SERVER['HTTP_HOST'] != "0www.kedo.tv"){
-    include('./include/studio/pet.php');
+    //include('./include/studio/pet.php');
 }
 if($thisHome ==1){
     include('./include/studio/setting.php');

@@ -135,8 +135,8 @@
     <div class="petOpt-tip-warp-left"></div>
     <div class="petOpt-tip-warp-right"></div>
     <div class="petOpt-tip-warp-ui">
-        <img class="petImg" src="http://images.181show.com/fe1251becda767dd3275c1fc09f1e117" ></img>
-        <input id="petOpt-tip-warp-petNameInput" type="text" value="龙儿" readOnly="true"></input>
+        <img class="petImg" src="http://images.181show.com/fe1251becda767dd3275c1fc09f1e117" >
+        <input id="petOpt-tip-warp-petNameInput" type="text" value="龙儿" readOnly="true">
         <button id="petOpt-tip-warp-changeNameBtn" >确定修改</button>
         <div class="pet-level-bar">
             <div style="width: 33%;">
