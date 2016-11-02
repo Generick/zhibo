@@ -204,7 +204,7 @@
     <?php }?>
     <div class="nl-nav">
         <ul>
-            <li class="cur"><a href="/index_qqgame.php"   >首页</a></li>
+            <li class="cur"><a href="/index_qqgame.php">首页</a></li>
             <li><a href="/square.php" >广场</a></li>
             <li><a href="/mall.php"   >商城</a></li>
             <li><a href="javascript:"   >活动</a></li>
