@@ -194,7 +194,6 @@
                             <span class="dbicon"></span>
                             <span class="kb">0</span>
                             <span class="mt-charge"><a  href="/pay.php">充值</a></span>
-                            <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
                         </div>
                     </div>
                 </div>

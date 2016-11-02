@@ -86,6 +86,16 @@ $(document).ready(function(){
 	
 	
 	$(function () {
+
+        $("*").on("click","a",function(){
+            if(document.all){
+              //  alert("IE");
+                window.location.href="/html/guild/index.html";  return false;
+            }else{
+                //alert("not ie");
+            }
+
+        })
 		var Mycare = {};
 		Mycare.listlen=0;
 		Mycare.loop=0;
@@ -758,7 +768,10 @@ $(document).ready(function(){
 	
 	})
 
-	//c3转化成js
+
+
+
+    //c3转化成js
 	var $changeWid=$("#carousel-example-captions");
 	var $doneWid=$("#carousel-example-captions .thumb-bar")
 	$changeWid.hover(function(){
