@@ -763,7 +763,7 @@ $(document).ready(function(){
 					$(".carousel-indicators").append(lo);
 				}
 			});
-		}();
+		};
 	
 	
 	})
