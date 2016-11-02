@@ -30,7 +30,8 @@ define(function(require, exports, module) {
                 }
                 var msg = $("#msgContent").val();
                 if (msg == "") {
-                    try {
+                    try {1
+
                         $("#msgContent").focusInput();
                         $("#msgContent").focus();
                     } catch (e) {

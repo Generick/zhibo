@@ -88,16 +88,12 @@ $giftcate = array();
 while($arr=$rs->FetchRow()){
     $giftcate[$arr["giftcateid"]] = $arr;
 }
-
-
 $page_var['cdn_domain']=_CDNDOMAIN_;
-
-
 if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
-   //$skinType = "comic";
-    //include($app_path."live_desert.php");
-   // include($app_path."include/footer.inc.php");
-   // exit();
+    $skinType="desert";
+    include($app_path."/skin/desert/index.php");
+    include($app_path."include/footer.inc.php");
+    exit();
 }
 
 
