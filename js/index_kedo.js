@@ -303,7 +303,7 @@ $(document).ready(function(){
 		var compiliter={
 			bightml:
 				'<a href="{0}" class="thumbnail firHot">\
-				<img src="{1}?w=240&h=360" alt="{2}"/>\
+				<img src="{1}&w=240&h=360" alt="{2}"/>\
 				{3}\
 					<div class="firT thumbnail clearfix">\
 						<div class="pull-left sprite_l pic_liverlevel_L_{4}"></div>\
@@ -322,7 +322,7 @@ $(document).ready(function(){
 					<div class="playBtn"></div></a>',
 			bightmlNew:
 				'<a href="{0}" class="thumbnail firHot">\
-				<img src="{1}?w=240&h=360" alt="{2}"/>\
+				<img src="{1}&w=240&h=360" alt="{2}"/>\
 					<div class="firB ellipsis">\
 						<p class="colorPin f16">{3}</p>\
 						<p class="clearfix f12">\
@@ -338,7 +338,7 @@ $(document).ready(function(){
 			lithtml:
 				'<div class="{0}">\
 						<a href="{1}" class="hotItem thumbnail">\
-						<img src="{2}?w=110&h=165" alt="{3}"/>\
+						<img src="{2}&w=110&h=165" alt="{3}"/>\
                         <div class="sprite_s pic_liverlevel_S_{4}"></div>\
                         {5}\
 							<div class="hotT thumbnail">\
@@ -356,7 +356,7 @@ $(document).ready(function(){
 			lithtmlNew:
 				'<div class="{0}">\
 						<a href="{1}" class="hotItem thumbnail">\
-							<img src="{2}?w=110&h=165" alt="{3}"/>\
+							<img src="{2}&w=110&h=165" alt="{3}"/>\
 							<div class="hotB">\
 								<div class="colorPin f14 ellipsis">{4}</div>\
 								<p class="f12 ellipsis">\
@@ -388,7 +388,7 @@ $(document).ready(function(){
 				' <div class="col-lg-3 col-sm-3 col-xs-4">\
 					<a href="{0}" class="thumbnail">\
 					<div class="recommImg thumbnail">\
-						<img src="{1}?w=234&h=127" alt="{2}"/>\
+						<img src="{1}&w=234&h=127" alt="{2}"/>\
 						<div class="thumb-bar"></div>\
 						<div class="shadow"></div>\
 						<div class="playBtn"></div>\
@@ -462,6 +462,7 @@ $(document).ready(function(){
 					return false;
 				}
 				var $h="hotList";
+                datas=datas.data;
 				if (datas != null && datas.length > 0) {
 						try{
 							var row1=datas.slice(0,13);
@@ -593,6 +594,7 @@ $(document).ready(function(){
 	
 	
 				var $new="newList";
+                dealData= dealData.data;
 				if (dealData != null && dealData.length > 0) {
 					
 	
@@ -718,6 +720,7 @@ $(document).ready(function(){
 				try
 				{
 					datas=JSON.parse(data);
+                    datas =datas.data;
 				}
 				catch (e)
 				{
@@ -747,11 +750,11 @@ $(document).ready(function(){
 	            
 				if (datas != null && datas.length > 0) {
 					$.each(datas, function(k, v) {
-						if(v.url !=''){
-                            item+='<div class="item"><a href="'+v.url+'"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+						$active = k==0?"active":"";
+                        if(v.url !=''){
+                            item+='<div class="item '+$active+'"><a href="'+v.url+'"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
 						}else{
-                            item+='<div class="item"><a href="'+v.url+'"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
-                            //item+='<div class="item"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'++v.image'" data-holder-rendered="true"/></div>';
+                            item+='<div class="item '+$active+'"><a href="javascript:;"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
 						}
 						if(k==0){
                             lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"></li>';
@@ -759,17 +762,12 @@ $(document).ready(function(){
                             lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""></li>';
 						}
 					})
-					$(".carousel-inner").append(item);
-					$(".carousel-indicators").append(lo);
+					$(".carousel-inner").html(item);
+					$(".carousel-indicators").html(lo);
 				}
 			});
-		};
-	
-	
+		}();
 	})
-
-
-
 
     //c3转化成js
 	var $changeWid=$("#carousel-example-captions");

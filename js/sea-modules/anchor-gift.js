@@ -469,7 +469,8 @@ define(function(require, exports, module) {
 					data : data,
 					cache : false,
 					dataType : "json",
-					async : false
+					async : false,
+                    timeout : 2000
 				}).done(function(datas) {
 					console.log(data);
 				});
