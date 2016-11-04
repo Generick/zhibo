@@ -387,8 +387,13 @@ $(document).ready(function(){
 			gameHtml:
 				' <div class="col-lg-3 col-sm-3 col-xs-4">\
 					<a href="{0}" class="thumbnail">\
+<<<<<<< HEAD
+					<div class="recommImg thumbnail" style="background-color:none; ">\
+						<img src="{1}?w=234&h=127" alt="{2}"/>\
+=======
 					<div class="recommImg thumbnail">\
 						<img src="{1}&w=234&h=127" alt="{2}"/>\
+>>>>>>> aa654212da8172fae6438a910c42c8798d3041bc
 						<div class="thumb-bar"></div>\
 						<div class="shadow"></div>\
 						<div class="playBtn"></div>\
