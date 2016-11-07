@@ -352,8 +352,8 @@ if($roomType != "game"){
 <?php
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
-if($_SERVER['HTTP_HOST'] != "0www.kedo.tv"){
-   // include('./include/studio/pet.php');
+if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
+    include('./include/studio/pet.php');
 }
 if($thisHome ==1){
     include('./include/studio/setting.php');
@@ -386,6 +386,7 @@ if($thisHome ==1){
             <div class="rb"></div>
         </div>
         <div class="chat-footer">
+            </div>
             <div class="cf-select">
                 <div class="cfchange">
                     <span data="" class="switchChat changeCh"><!-- 公共频道 --></span>
@@ -406,11 +407,12 @@ if($thisHome ==1){
             </div>
             <a id="sendChatBtn" href="javascript:;" class="sendChatBtn sdChat"></a>
         </div>
-        <div style="display:none;" class="FaceBox toggleBox" id="faces">
-            <div class="col" id="facesBd"></div>
-            <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
-            <div class="clear"></div>
-        </div>
+    <div style="display:none;" class="FaceBox toggleBox" id="faces">
+        <div class="col" id="facesBd"></div>
+        <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
+        <div class="clear"></div>
+    </div>
+    <div id="sendChatNotice" style="    position: relative;top: -53px;width: 76px;height: 20px;border-radius: 2px;left: 222px;display: none;background-color: white;overflow: hidden;font-size: 12px;line-height: 20px;padding-left: 5px;"> [0]秒</div>
     </div>
     <div class="chs2 nano" id="nano-songList" style="display: none">
         <div class="song-main content">
