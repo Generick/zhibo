@@ -51,7 +51,7 @@
                 ?>
                 <div class="clear"></div>
                 <div class="c-funds-xd">星豆 ：<?php echo (int)$user['coins']?> </div>
-                <div class="c-funds-dh"><a href="javascript:;">兑换k豆</a></div>
+                <div class="c-funds-dh" style="display: none"><a href="javascript:;">兑换k豆</a></div>
 
                 <style>
                     .duikdou{position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;width: 450px;height: 224px;border-radius: 3px;z-index: 5000;display: none}
