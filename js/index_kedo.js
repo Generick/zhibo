@@ -109,7 +109,7 @@ $(document).ready(function(){
 		Mycare.lii =
 			'<div class="row foLi"><a href="/{0}">\
 				<img class="pull-left img-circle" src="{1}" alt="{2}">\
-				<div class="pull-left">\
+				<div class="pull-left state">\
 					<p class="name">{3}</p>\
 				{4}\
 			</div>\
@@ -131,7 +131,7 @@ $(document).ready(function(){
 						var _self = $(this)[0];
 						if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickname += "c"};
 						if (_self.online == true) {
-							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName, "<p><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
+							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName, "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
 						}else{
 							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName,'<p class="ynLiv">未开播</p>',_self.totalpoint);
 						}
@@ -252,12 +252,22 @@ $(document).ready(function(){
 					<span class="diamond fl sprite liverlevel-pic_liverlevel_{4}"></span>\
 					<a href="{5}"><span class="name fl">{6}</span> </a>\
 				</li>';
-		var ht_rans='<div class="row foLi"><a href="{0}">\
-						<img class="pull-left img-circle" src="{1}" alt="{2}"/>\
-					<div class="pull-left">\
-						<p class="name">{3}</p>\
+		var ht_ransT='<div class="row foLi"><a href="{0}">\
+						<span class="icon_shuzi_{1} sprite_top pull-left hidden-md hidden-sm hidden-xs"></span>\
+						<img class="pull-left img-circle" src="{2}" alt="{3}"/>\
+						<span class="crown hidden-md hidden-sm hidden-xs"></span>\
+					<div class="pull-left state">\
+						<p class="name">{4}</p>\
 					</div>\
-					<div class="pull-left spriteLev liverlevel-pic_liverlevel_{4}"></div>\
+					<div class="pull-left spriteLev liverlevel-pic_liverlevel_{5}"></div>\
+					</a></div>';
+		var ht_rans='<div class="row foLi"><a href="{0}">\
+						<span class="icon_shuzi_{1} sprite_top pull-left hidden-md hidden-sm hidden-xs"></span>\
+						<img class="pull-left img-circle" src="{2}" alt="{3}"/>\
+					<div class="pull-left state">\
+						<p class="name">{4}</p>\
+					</div>\
+					<div class="pull-left spriteLev liverlevel-pic_liverlevel_{5}"></div>\
 					</a></div>';
 		function parse_to_board(listid,url,type){
 			Tools.getJson({
@@ -277,9 +287,9 @@ $(document).ready(function(){
 							roomnumber = v.roomNumber;
 						}
 						if(k==0){
-							s_ht3 = Tools.stringFormat(ht_rans,roomnumber,v.avatar, v.nickname, v.nickname,v.totalpoint);
+							s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar, v.nickname, v.nickname,v.totalpoint);
 						}else{
-							s_ht3 = Tools.stringFormat(ht_rans,roomnumber,v.avatar, v.nickname, v.nickname,v.totalpoint);
+							s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, v.nickname, v.nickname,v.totalpoint);
 						}
 						$("#"+listid+"").append(s_ht3);
 						if(k==7){return false;}
@@ -314,8 +324,7 @@ $(document).ready(function(){
 						<p class="clearfix f12">\
 							<span class="glyphicon glyphicon-user"></span>\
 							<span>{7}</span>\
-							<span class="glyphicon glyphicon-map-marker"></span>\
-							<span>{8}</span>\
+							{8}\
 						</p>\
 					</div>\
 					<div class="shadow thumbnail"></div>\
@@ -350,7 +359,6 @@ $(document).ready(function(){
 									<span>{8}</span>\
 								</p>\
 							</div>\
-							<div class="playBtn"></div>\
 						</a>\
 						</div>',
 			lithtmlNew:
@@ -366,6 +374,7 @@ $(document).ready(function(){
 							</div>\
 						</a>\
 				</div>',
+
 	
 			sonh:
 				'<a href="#" class="hotItem thumbnail">\
@@ -387,13 +396,8 @@ $(document).ready(function(){
 			gameHtml:
 				' <div class="col-lg-3 col-sm-3 col-xs-4">\
 					<a href="{0}" class="thumbnail">\
-<<<<<<< HEAD
-					<div class="recommImg thumbnail" style="background-color:none; ">\
-						<img src="{1}?w=234&h=127" alt="{2}"/>\
-=======
 					<div class="recommImg thumbnail">\
-						<img src="{1}&w=234&h=127" alt="{2}"/>\
->>>>>>> aa654212da8172fae6438a910c42c8798d3041bc
+						<img src="{1}&w=248&h=127" alt="{2}"/>\
 						<div class="thumb-bar"></div>\
 						<div class="shadow"></div>\
 						<div class="playBtn"></div>\
@@ -406,7 +410,7 @@ $(document).ready(function(){
 								<span>{4}</span>\
 							</div>\
 						</div>\
-						<p class="color99 ellipsis f12">{5}</p>\
+						<p class="color99 ellipsis f12">沙盒游戏minecraft</p>\
 					</div></a>\
 					</div>\
 			',
@@ -433,6 +437,13 @@ $(document).ready(function(){
 					return "未开播";
 				}
 				return Math.ceil(tm/60000)+"分钟前开播";
+			},
+			toCity:function(ct){
+				if(ct){
+					return '<span class="glyphicon glyphicon-map-marker"></span><span>'+ct+'</span>'
+				}else{
+					return '';
+				}
 			},
 			tolive:function(s,b){
 				if(s == null){
@@ -468,12 +479,10 @@ $(document).ready(function(){
 				}
 				var $h="hotList";
                 datas=datas.data;
+
 				if (datas != null && datas.length > 0) {
 						try{
-							var row1=datas.slice(0,13);
-							var row2=datas.slice(5,15);
-							var row3=datas.slice(15,21);
-							var row4=datas.slice(17,25);
+							var row1=datas.slice(0,19);
 						}
 						catch(e){
 							alert(e);
@@ -481,6 +490,11 @@ $(document).ready(function(){
 						
 						
 						var s_big,s_sml;
+						var advertisement =
+							'<a href="#" class="thumbnail adImg">\
+								<img src="/images/kedo/hotImg.png" alt="">\
+							</a>\
+							';
 						var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
 						var swrap = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
 						var srow = $('<div class="row"></div>');
@@ -488,93 +502,28 @@ $(document).ready(function(){
 							if(v.image =="" || v.image == null ){
 								v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
 							}
+							if(v.city==""||v.city==null){
+								$(".glyphicon-map-marker").removeClass();
+							}
 							if(k==0){
-								s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,v.nickName,compiliter.tolive(v.online,1),v.totalpoint, v.numbers,v.nickName,compiliter.totime(v.onlineTime), v.city);
+								
+								s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,v.nickName,compiliter.tolive(v.online,1),v.totalpoint, v.numbers,v.nickName,compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
 								bwrap.append(s_big);
-							}else if(k>0 && k<=4){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>4 && k <=6){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>6 && k <=8){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>8 && k <=12){
+								bwrap.append(advertisement);
+								
+							}else if(k>0 && k<=6){
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+							}else if(k>6 && k <=12){
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+							}else if(k>12 && k <=18){
 								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
 							}
 							srow.append(s_sml);
 	
 						})
 						swrap.append(srow);
-						$("#"+$h+" .hrow1").append(bwrap);
-						$("#"+$h+" .hrow1").append(swrap);
-	
-	
-						var s2wrap="";
-						$.each(row2, function(k, v) {
-							if(v.image =="" || v.image == null ){
-								v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-							}
-
-							if(k<=1){
-								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>1 && k <=3){
-								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else if(k>3 && k <=7){
-								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}else{
-	
-								s2wrap +=Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
-							}
-						})
-	
-						$("#"+$h+" .hrow2").append(s2wrap);
-	
-	
-						var s3wrap ="";
-						var s3img =
-							'<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">\
-								<a href="#" class="thumbnail">\
-									<img src="/images/kedo/hotImg.png" alt="">\
-								</a>\
-							</div>';
-	
-						$.each(row3, function(k, v) {
-							if(v.image =="" || v.image == null ){
-								v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-							}
-							if(k<=1){
-								s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else if(k == 2){
-								s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else if(k==3){
-								s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else{
-								s3wrap += Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}
-						})
-						var s3html = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
-						s3html.append($('<div class="row"></div>').append(s3wrap));
-						$("#"+$h+" .hrow3").append(s3img);
-						$("#"+$h+" .hrow3").append(s3html);
-						
-	
-						var s4wrap="";
-						$.each(row4, function (k,v) {
-							if(v.image =="" || v.image == null ){
-								v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-							}
-							if(k==0){
-								s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else if(k == 1){
-								s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else if(k>1 || k<=3){
-								s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else if(k==4){
-								s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}else{
-								s4wrap += Tools.stringFormat(compiliter.lithtml,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime))
-							}
-						});
-						$("#"+$h+" .hrow4").append(s4wrap);     
+						$("#"+$h+" .hotLiCon").append(bwrap);
+						$("#"+$h+" .hotLiCon").append(swrap);	
 				}
 				
 			});
@@ -601,15 +550,13 @@ $(document).ready(function(){
 				var $new="newList";
                 dealData= dealData.data;
 				if (dealData != null && dealData.length > 0) {
-					
-	
-					var row1=dealData.slice(0,13);
-					var row2=dealData.slice(5,15);
-					var row3=dealData.slice(15,21);
-					var row4=dealData.slice(17,25);
-					var rowAdd=dealData.slice(25,27);
-	
+					var row1=dealData.slice(0,19);
 					var s_big,s_sml;
+					var advertisement =
+							'<a href="#" class="thumbnail adImg">\
+								<img src="/images/kedo/hotImg.png" alt="">\
+							</a>\
+							';
 					var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
 					var swrap = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
 					var srow = $('<div class="row"></div>');
@@ -618,95 +565,24 @@ $(document).ready(function(){
 							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
 						}
 						if(k==0){
-							s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,v.nickName, v.nickName,v.numbers,compiliter.totime(v.onlineTime));
+							s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,v.nickName, v.nickName,v.numbers,v.heats);
 							bwrap.append(s_big);
-						}else if(k>0 && k<=4){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}else if(k>4 && k <=6){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}else if(k>6 && k <=8){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}else if(k>8 && k <=12){
+							bwrap.append(advertisement);
+						}else if(k>0 && k<=6){
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+						}else if(k>6 && k <=12){
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+						}else if(k>12 && k <=18){
 							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
 						}
 						srow.append(s_sml);
 					})
 					swrap.append(srow);
-					$("#"+$new+" .hrow1").append(bwrap);
-					$("#"+$new+" .hrow1").append(swrap);
+					$("#"+$new+" .newLiCon").append(bwrap);
+					$("#"+$new+" .newLiCon").append(swrap);
 	
-					var s2wrap="";
-					$.each(row2, function(k, v) {
-						if(v.image =="" || v.image == null ){
-							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-						}
-	
-						if(k<=1){
-							s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}else if(k>1 && k <=3){
-							s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}else if(k>3 && k <=7){
-							s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}else if(k>7 && k <=9){
-							s2wrap +=Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
-						}
-					})
-	
-					$("#"+$new+" .hrow2").append(s2wrap);
-	
-					var s3wrap ="";
-					var s3img ="";
-					$.each(rowAdd,function(k,v){
-						if(v.image =="" || v.image == null ){
-							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-						}
-						if(k==0){
-							s3img += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-6 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else if(k==1){
-							s3img += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-6 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}
-					})
-	
-					$.each(row3, function(k, v) {
-						if(v.image =="" || v.image == null ){
-							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-						}
 						
-						if(k<=1){
-							s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else if(k == 2){
-							s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-4 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else if(k==3){
-							s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else{
-							s3wrap += Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}
-					})
-					var s3html = $('<div class="col-lg-9 hidden-md hidden-sm col-xs-6"></div>');
-					var s3htmlAdd = $('<div class="col-lg-3 hidden-md hidden-sm col-xs-6"></div>');
-					s3htmlAdd.append(s3img);
-					s3html.append($('<div class="row"></div>').append(s3wrap));
-					$("#"+$new+" .hrow3").append(s3htmlAdd);
-					$("#"+$new+" .hrow3").append(s3html);
-						
-					var s4wrap="";
-					$.each(row4, function (k,v) {
-						if(v.image =="" || v.image == null ){
-							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
-						}
-						if(k==0){
-							s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md hidden-sm col-xs-3",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else if(k == 1){
-							s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg hidden-md col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else if(k>1 || k<=3){
-							s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 col-xs-3",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else if(k==4){
-							s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}else{
-							s4wrap += Tools.stringFormat(compiliter.lithtmlNew,"hidden-lg col-md-2 hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers)
-						}
-					});
-					$("#"+$new+" .hrow4").append(s4wrap);
+					
 					}
 				   
 			});
