@@ -6,7 +6,7 @@
  * Time: 19:59
  */
 if($_SERVER[HTTP_HOST]=='kedo.tv'){
-    $heardUrl='http://www.'.$_SERVER[HTTP_HOST].$_SERVER[PHP_SELF];
+    $heardUrl='http://www.'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];  //$_SERVER["SERVER_NAME"]
     Header('HTTP/1.1 301 Moved Permanently') ;
     Header('Location:'.$heardUrl);
     exit();

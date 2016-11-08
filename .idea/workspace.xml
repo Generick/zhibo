@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07844f66-8786-44a7-97b9-89e3f6e8ea83" name="Default" comment="正常的低版本 ie78bei">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/conf/conf_kedo.php" afterPath="$PROJECT_DIR$/include/conf/conf_kedo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anchors.iws" />
@@ -27,27 +28,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="conf_kedo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/conf/conf_kedo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0689654" vertical-offset="0" max-vertical-offset="560">
-              <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="live.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/live.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89786756" vertical-offset="0" max-vertical-offset="2700">
-              <caret line="39" column="278" selection-start-line="39" selection-start-column="278" selection-end-line="39" selection-end-column="278" />
+            <state vertical-scroll-proportion="0.6958474" vertical-offset="20" max-vertical-offset="2700">
+              <caret line="32" column="88" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="88" />
               <folding>
-                <marker date="1478587656091" expanded="true" signature="735:793" placeholder="update bu_us..." />
-                <marker date="1478587656091" expanded="true" signature="831:877" placeholder="select liveD..bu_user_packs..." />
-                <marker date="1478587656091" expanded="true" signature="1101:1345" placeholder="select u.use..bu_user_anchors..." />
-                <marker date="1478587656091" expanded="true" signature="2079:2180" placeholder="select * fro..gift..." />
-                <marker date="1478587656091" expanded="true" signature="2759:2815" placeholder="select * fro..giftcate..." />
+                <marker date="1478590452668" expanded="true" signature="735:793" placeholder="update bu_us..." />
+                <marker date="1478590452668" expanded="true" signature="831:877" placeholder="select liveD..bu_user_packs..." />
+                <marker date="1478590452668" expanded="true" signature="1101:1345" placeholder="select u.use..bu_user_anchors..." />
+                <marker date="1478590452668" expanded="true" signature="2079:2180" placeholder="select * fro..gift..." />
+                <marker date="1478590452668" expanded="true" signature="2759:2815" placeholder="select * fro..giftcate..." />
               </folding>
             </state>
           </provider>
@@ -103,12 +94,12 @@
         <option value="$PROJECT_DIR$/js/index_kedo.js" />
         <option value="$PROJECT_DIR$/templates/index_desert.html" />
         <option value="$PROJECT_DIR$/templates/index_kedo.html" />
-        <option value="$PROJECT_DIR$/include/conf/conf_kedo.php" />
         <option value="$PROJECT_DIR$/index_qqgame.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/include/personal_tpl/center-info.php" />
         <option value="$PROJECT_DIR$/pay.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/include/conf/conf_kedo.php" />
         <option value="$PROJECT_DIR$/live.php" />
       </list>
     </option>
@@ -511,7 +502,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -964,22 +955,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/conf/conf_kedo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0689654" vertical-offset="0" max-vertical-offset="560">
-          <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.112233445" vertical-offset="0" max-vertical-offset="891">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/live.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89786756" vertical-offset="0" max-vertical-offset="2700">
-          <caret line="39" column="278" selection-start-line="39" selection-start-column="278" selection-end-line="39" selection-end-column="278" />
+        <state vertical-scroll-proportion="0.6958474" vertical-offset="20" max-vertical-offset="2700">
+          <caret line="32" column="88" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="88" />
           <folding>
-            <marker date="1478587656091" expanded="true" signature="735:793" placeholder="update bu_us..." />
-            <marker date="1478587656091" expanded="true" signature="831:877" placeholder="select liveD..bu_user_packs..." />
-            <marker date="1478587656091" expanded="true" signature="1101:1345" placeholder="select u.use..bu_user_anchors..." />
-            <marker date="1478587656091" expanded="true" signature="2079:2180" placeholder="select * fro..gift..." />
-            <marker date="1478587656091" expanded="true" signature="2759:2815" placeholder="select * fro..giftcate..." />
+            <marker date="1478590452668" expanded="true" signature="735:793" placeholder="update bu_us..." />
+            <marker date="1478590452668" expanded="true" signature="831:877" placeholder="select liveD..bu_user_packs..." />
+            <marker date="1478590452668" expanded="true" signature="1101:1345" placeholder="select u.use..bu_user_anchors..." />
+            <marker date="1478590452668" expanded="true" signature="2079:2180" placeholder="select * fro..gift..." />
+            <marker date="1478590452668" expanded="true" signature="2759:2815" placeholder="select * fro..giftcate..." />
           </folding>
         </state>
       </provider>
