@@ -96,12 +96,13 @@ define(function(require, exports, module) {
                             var i = 3;
                             function d3() {
                                 i--;
-                                $("#sendChatBtn").text(" [" + i + "]秒");
+                                $("#sendChatNotice").text(" [" + i + "]秒后再试");
+                                $("#sendChatNotice").show();
                                 $("#sendChatBtn").attr("disabled", true);
                                 if (i == 0) {
                                     clearInterval(ti);
                                     $("#sendChatBtn").attr("disabled", false);
-                                    $("#sendChatBtn").text("发送");
+                                    $("#sendChatNotice").hide();
                                 }
                             }
                             var ti = setInterval(d3, 1000);

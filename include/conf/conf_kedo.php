@@ -5,6 +5,12 @@
  * Date: 2016/8/25
  * Time: 19:59
  */
+if($_SERVER[HTTP_HOST]=='kedo.com'){
+    $heardUrl='http://www.'.$_SERVER[HTTP_HOST].$_SERVER[PHP_SELF];
+    Header('HTTP/1.1 301 Moved Permanently') ;
+    Header('Location:'.$heardUrl);
+    exit();
+}
 
 //ini_set('display_errors','On');
 //error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);

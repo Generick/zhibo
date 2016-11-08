@@ -30,8 +30,8 @@ if(!$_COOKIE["sbg"]){
 $roomnumber=(int)$_GET['roomnumber'];
 
 //tokern校验
-$db->Execute("update bu_user_packs set liveDT='".time()."' where userId='{$user[userId]}'");
-$liveDT=$db->GetRow("select liveDT from bu_user_packs where userId='{$user[userId]}'");
+$db->Execute("update bu_user_packs set liveDT='".time()."' where userId=$user[userId]");
+$liveDT=$db->GetRow("select liveDT from bu_user_packs where userId=$user[userId]");
 if($liveDT){
     $currentToken=base64_encode(md5($user["username"].$user["password"].$liveDT["liveDT"]));
     $tokens=$user["username"].$user["password"].$liveDT["liveDT"];

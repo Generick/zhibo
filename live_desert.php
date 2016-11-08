@@ -53,9 +53,9 @@
                         "socket" : "socket.io/socket.io",
                         "swfobject" : "swfobject/swfobject",
                         "jquery" : "jquery/jquery/1.10.1/jquery"
-                    }
+                    },
                     map:[
-                        [“.js”,”.js?v=”+version]//映射规则
+                        [".js",".js?v="+Math.random(1000)]//映射规则
                     ]
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
