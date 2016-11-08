@@ -45,6 +45,6 @@ foreach($page_var as $key=>$val){
 $smarty->registerPlugin("function","toColor","toColor");
 $smarty->registerPlugin("function","toTime","toTime");
 
-$smarty->display("index_{$page_var['site_skin']}.html");
+$smarty->display("index_desert.html");
 
 include("include/footer.inc.php");
