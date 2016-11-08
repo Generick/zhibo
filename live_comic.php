@@ -23,7 +23,7 @@
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript">
