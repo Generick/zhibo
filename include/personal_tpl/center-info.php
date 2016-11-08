@@ -54,7 +54,7 @@
                 <div class="c-funds-dh"><a href="javascript:;">兑换k豆</a></div>
 
                 <style>
-                    .duikdou{position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;width: 450px;height: 224px;border-radius: 3px;z-index: 5000;display: none}
+                    .duikdou{display:none;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;width: 450px;height: 224px;border-radius: 3px;z-index: 5000;}
                     .dui-header{background-color: #292829;line-height: 50px;text-align: center;color: #fff;font-size:16px;}
                     .dui-mian{background-color: #fff}
                     .duiv{width:335px;height: 42px;border: 2px solid #D6D3D6;display: inline-block;margin:20px 50px;font-size: 16px;}
@@ -68,6 +68,10 @@
     </div>
 
 </div>
+<?php
+if($user['roomNumber']){
+?>
+
 <div class="duikdou">
     <div class="dui-header">兑换k豆</div>
     <div class="dui-mian">
@@ -78,6 +82,7 @@
         </div>
     </div>
 </div>
-
+<?php
+}?>
 
 
