@@ -10,7 +10,7 @@
     <link href="/css/kedo/style.css" rel="stylesheet">
     <link href="/css/kedo/homeBg.css" rel="stylesheet">
     <link href="/css/kedo/anchorLevel.css" rel="stylesheet">
-
+    
       <script>
           var cdn_domain="{$cdn_domain}";
           var img_domain="{$images_domain}";
@@ -98,21 +98,15 @@
                 <div class="hotCon" id="hotList">
                 	<div class="page-header clearfix">
                         <h4 class="pull-left">
-                        	<span class="glyphicon glyphicon-hot">HOT</span>
-                        	<span>热门</span>
+                        	<span class="glyphicon icon-hot"></span>
+                        	<span>热门主播</span>
                         </h4>
                         <h4 class="pull-right hotR">
                           <a href="http://www.kedo.tv/skin/desert/css/live.css"><small>更多</small></a>
                         </h4>
                     </div>
 
-                    <div class="row hrow1"  num="1+12">
-                    </div>
-                    <div class="row hrow2"  num="8(6-15)">
-                    </div>
-                    <div class="row hrow3"  num ="s1+6(16-21)">
-                    </div>
-                    <div class="row hrow4"  num ="8(18-25)">
+                    <div class="row hotLiCon"  num="1+12">
                     </div>
                     
                 </div>
@@ -120,7 +114,7 @@
                 <!--精彩推荐-->
                 <div class="recomm">
                 	 <div class="page-header clearfix">
-                        <h4 class="pull-left"><span class="glyphicon glyphicon-fire"></span>精彩推荐 </h4>
+                        <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>精彩推荐</span> </h4>
                         <h4 class="pull-right recommR">
                           <a href="javascript:;"><small>话题</small></a>
                           <a href="javascript:;"><small>游戏</small></a>
@@ -139,7 +133,7 @@
                 <div class="hotCon" id="newList">
                 	<div class="page-header clearfix">
                         <h4 class="pull-left">
-                        	<span class="glyphicon glyphicon-hot">NEW</span>
+                        	<span class="glyphicon icon-new"></span>
                         	<span>最新入驻</span>
                             
                         </h4>
@@ -151,13 +145,7 @@
                           <a href="javascript:;"><small>更多</small></a>
                         </h4>
                     </div>
-                    <div class="row hrow1">
-                    </div>
-                    <div class="row hrow2">
-                    </div>
-                    <div class="row hrow3">
-                    </div>
-                    <div class="row hrow4">
+                    <div class="row newLiCon">
                     </div>
                 </div>
 
@@ -173,9 +161,9 @@
                         <p class="row">
                             <a type="button" href="javascript:;" class="btn_login regBtn btn btn-default register" data-loading-text="Loading..." autocomplete="off">一键注册</a>
                         </p>
-                        <p class="text-left color99 pasTip">忘记密码 点击 <b><a href="javascript:;">这里找回</a></b></p>
+                        <p class="text-center color99 f12 pasTip">忘记密码 点击 <b><a href="javascript:;" class="colorBlue">这里找回</a></b></p>
                         <hr/>
-                        <p class="text-left quickLog">快捷登录</p>
+                        <p class="text-center quickLog">快捷登录</p>
                         <p class="row">
                             <button type="button" onclick="javascript:login.qqlogin()" class="btn_login btn btn-info qqLog" data-loading-text="Loading..." autocomplete="off">QQ账号登录</button>
                         </p>
@@ -261,8 +249,8 @@
                	</div>
                </div>
                 <!--申请入驻-->
-                <a href="javascript:;" class="thumbnail">
-                    <img src="images/kedo/download.jpg"/>
+                <a href="javascript:;" class="thumbnail apply">
+                    <img src="images/kedo/banner_zhaoping.png"/>
                 </a>
                 
                 <!--主播排行榜-->
@@ -351,11 +339,11 @@
 	<div class="bs-docs-footer navbar-inverse" role="contentinfo">
 		<div class="container">
 			<p>
-      	<a href="javascript:;">关于蝌蚪 </a>|
-      	<a href="javascript:;">服务协议 </a>|
-          <a href="javascript:;">客服帮助 </a>|
-          <a href="javascript:;">关于我们 </a>|            
-          <a href="javascript:;">版权声明</a>
+      	<a href="javascript:;" class="firBL">关于蝌蚪 </a>|
+      	<a href="javascript:;" class="firBL">服务协议 </a>|
+          <a href="javascript:;" class="firBL">客服帮助 </a>|
+          <a href="javascript:;" class="firBL">关于我们 </a>|            
+          <a href="javascript:;" class="firBL">版权声明</a>
       </p>
       <p>
       	<img src="images/kedo/logo_foot.png"/>
@@ -373,6 +361,8 @@
     <script src="/js/bootstrap/boot.js"></script>
     <script src="/js/json2.js"></script>
     <script src="/js/index_kedo.js"></script>
+    <script src="/js/login.js"></script>
+
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <!-- <script src="http://minigame.qq.com/plat/social_hall/app_frame/qqgamelib.js"></script>
