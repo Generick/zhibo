@@ -1,76 +1,3 @@
-
-/*首页背景图*/
-.sprite_homePg {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/homePg.png);}
-
-.hot {width:26px; height:14px; background-position: -668px -34px}
-.icon_geren_xiala {width:12px; height:7px; background-position: -668px -50px}
-.icon_messages {width:18px; height:18px; background-position: -738px -34px}
-.icon_messages_hover {width:18px; height:18px; background-position: -718px -34px}
-.icon_money {width:28px; height:28px; background-position: -774px -2px}
-.icon_shouye_shangla {width:12px; height:8px; background-position: -654px -50px}
-.icon_shouye_shangla_hover {width:12px; height:8px; background-position: -640px -50px}
-.icon_shouye_xiala {width:12px; height:8px; background-position: -758px -44px}
-.icon_shouye_xiala_hover {width:12px; height:8px; background-position: -758px -34px}
-.icon_xiaoxi-tishi {width:20px; height:18px; background-position: -774px -32px}
-.icon_xiaoxi-tishi:hover {width:20px; height:18px; background-position: -696px -34px}
-.logo_footer {width:132px; height:30px; background-position: -640px -2px}
-.logo_qiantai {width:168px; height:48px; background-position: -470px -2px}
-.new {width:26px; height:14px; background-position: -640px -34px}
-.top {width:466px; height:56px; background-position: -2px -2px}
-
-/*大框*/
-.sprite_big_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/big_box.png);}
-
-.biankuang-black {width:306px; height:446px; background-position: -1542px -2px}
-.biankuang-blue {width:306px; height:446px; background-position: -1234px -2px}
-.biankuang-orange {width:306px; height:446px; background-position: -926px -2px}
-.biankuang-size {width:306px; height:446px; background-position: -618px -2px}
-.biankuang-white {width:306px; height:446px; background-position: -310px -2px}
-.biankuang-yellow {width:306px; height:446px; background-position: -2px -2px}	
-
-/*小框*/
-.sprite_small_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/small_box.png);}
-
-.biankuang_black_little {width:146px; height:214px; background-position: -742px -2px}
-.biankuang_blue_little {width:146px; height:214px; background-position: -594px -2px}
-.biankuang_orange_little {width:146px; height:214px; background-position: -446px -2px}
-.biankuang_size_little {width:146px; height:214px; background-position: -298px -2px}
-.biankuang_white_little {width:146px; height:214px; background-position: -150px -2px}
-.biankuang_yellow_little {width:146px; height:214px; background-position: -2px -2px}
-/*等级小图*/
-.sprite_s {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_S.png);}
-
- .pic_liverlevel_S_1 {width:40px; height:40px; background-position: -380px -86px}
- .pic_liverlevel_S_10 {width:40px; height:40px; background-position: -380px -44px}
- .pic_liverlevel_S_11 {width:40px; height:40px; background-position: -338px -86px}
- .pic_liverlevel_S_12 {width:40px; height:40px; background-position: -338px -44px}
- .pic_liverlevel_S_13 {width:40px; height:40px; background-position: -380px -2px}
- .pic_liverlevel_S_14 {width:40px; height:40px; background-position: -338px -2px}
- .pic_liverlevel_S_15 {width:40px; height:40px; background-position: -296px -86px}
- .pic_liverlevel_S_16 {width:40px; height:40px; background-position: -296px -44px}
- .pic_liverlevel_S_17 {width:40px; height:40px; background-position: -296px -2px}
- .pic_liverlevel_S_18 {width:40px; height:40px; background-position: -254px -86px}
- .pic_liverlevel_S_19 {width:40px; height:40px; background-position: -254px -44px}
- .pic_liverlevel_S_2 {width:40px; height:40px; background-position: -254px -2px}
- .pic_liverlevel_S_20 {width:40px; height:40px; background-position: -212px -86px}
- .pic_liverlevel_S_21 {width:40px; height:40px; background-position: -212px -44px}
- .pic_liverlevel_S_22 {width:40px; height:40px; background-position: -212px -2px}
- .pic_liverlevel_S_23 {width:40px; height:40px; background-position: -170px -86px}
- .pic_liverlevel_S_24 {width:40px; height:40px; background-position: -170px -44px}
- .pic_liverlevel_S_25 {width:40px; height:40px; background-position: -170px -2px}
- .pic_liverlevel_S_26 {width:40px; height:40px; background-position: -128px -86px}
- .pic_liverlevel_S_27 {width:40px; height:40px; background-position: -128px -44px}
- .pic_liverlevel_S_28 {width:40px; height:40px; background-position: -128px -2px}
- .pic_liverlevel_S_29 {width:40px; height:40px; background-position: -86px -86px}
- .pic_liverlevel_S_3 {width:40px; height:40px; background-position: -86px -44px}
- .pic_liverlevel_S_30 {width:40px; height:40px; background-position: -86px -2px}
- .pic_liverlevel_S_4 {width:40px; height:40px; background-position: -44px -86px}
- .pic_liverlevel_S_5 {width:40px; height:40px; background-position: -44px -44px}
- .pic_liverlevel_S_6 {width:40px; height:40px; background-position: -44px -2px}
- .pic_liverlevel_S_7 {width:40px; height:40px; background-position: -2px -86px}
- .pic_liverlevel_S_8 {width:40px; height:40px; background-position: -2px -44px}
- .pic_liverlevel_S_9 {width:40px; height:40px; background-position: -2px -2px}
-
     /*等级大图*/
 
 .sprite_l {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_L.png);}
@@ -269,6 +196,18 @@
 .relationlevel-pic_relationlevel_7 {width:24px; height:18px; background-position: -54px -2px}
 .relationlevel-pic_relationlevel_8 {width:24px; height:18px; background-position: -28px -2px}
 .relationlevel-pic_relationlevel_9 {width:24px; height:18px; background-position: -2px -2px}
+
+/* 数字背景 */
+.sprite_top {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(/images/kedo/top.png);}
+
+.icon_shuzi_1 {width:16%; height:52px; background-position: -408px -2px}
+.icon_shuzi_2 {width:16%; height:52px; background-position: -350px -2px}
+.icon_shuzi_3 {width:16%; height:52px; background-position: -292px -2px}
+.icon_shuzi_4 {width:16%; height:52px; background-position: -234px -2px}
+.icon_shuzi_5 {width:16%; height:52px; background-position: -176px -2px}
+.icon_shuzi_6 {width:16%; height:52px; background-position: -118px -2px}
+.icon_shuzi_7 {width:16%; height:52px; background-position: -60px -2px}
+.icon_shuzi_8 {width:16%; height:52px; background-position: -2px -2px}
 
 
 
