@@ -60,7 +60,7 @@ define(function(require, exports, module) {
 		userEntersCars : function(data) {
 			UIF.log("进场特效：" + data);
 			chat.welcome(jQuery.parseJSON(data));
-            setTimeout(gift.enterCar(jQuery.parseJSON(data)), 5000);
+			setTimeout(gift.enterCar(jQuery.parseJSON(data)), 5000);
 			list.addUsers(jQuery.parseJSON(data));
 		},
 		guardList : function(data) {
@@ -115,6 +115,10 @@ define(function(require, exports, module) {
 		anchorPK : function(data) {
 			UIF.log("主播pk信息：" + data);
 			swf.anchorPK(jQuery.parseJSON(data));
+		},
+		guardsMessage : function(data) {
+			UIF.log("守护通知：" + data);
+			guards.onMessage(jQuery.parseJSON(data));
 		}
 	}
 })
