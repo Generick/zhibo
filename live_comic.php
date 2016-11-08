@@ -14,7 +14,6 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
-    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
     <![endif]-->
 
@@ -24,7 +23,7 @@
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript">
@@ -43,13 +42,13 @@
                 UIF.handler.close(data);
             },
             liveClose : function(data){
-            	UIF.handler.liveClose(data);
-            }, 
+                UIF.handler.liveClose(data);
+            },
             muteEffect : function(data){
                 UIF.handler.effect = data == 0 ? false : true;
             },
             switchPlayer : function(){
-            	UIF.handler.ntsRoom();
+                UIF.handler.ntsRoom();
             },
             init : function(){
                 seajs.config({
@@ -58,7 +57,10 @@
                         "socket" : "socket.io/socket.io",
                         "swfobject" : "swfobject/swfobject",
                         "jquery" : "jquery/jquery/1.10.1/jquery"
-                    }
+                    },
+                    map:[
+                        [".js",".js?v="+Math.random(1000)]//映射规则
+                    ]
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
                     UIF.handler = new W();
@@ -66,55 +68,55 @@
                 });
             },
             getCookie : function(sKey) {
-				if (!sKey)
-					return "";
-				if (document.cookie.length > 0) {
-					var startIndex = document.cookie.indexOf(sKey + "=")
-					if (startIndex != -1) {
-						startIndex = startIndex + sKey.length + 1
-						var endIndex = document.cookie.indexOf(";", startIndex)
-						if (endIndex == -1) {
-							endIndex = document.cookie.length;
-						}
-						return decodeURIComponent(document.cookie.substring(startIndex, endIndex));
-					}
-				}
-				return ""
-			},
-			setCookie : function(sKey, sValue, iExpireSeconds) {
-				if (!sKey)
-					return;
-				var expireDate = new Date();
-				expireDate.setTime(expireDate.getTime() + iExpireSeconds * 1000);
-				document.cookie = sKey + "=" + encodeURIComponent(sValue) + ";expires=" + expireDate.toGMTString() + ";";
-			}
+                if (!sKey)
+                    return "";
+                if (document.cookie.length > 0) {
+                    var startIndex = document.cookie.indexOf(sKey + "=")
+                    if (startIndex != -1) {
+                        startIndex = startIndex + sKey.length + 1
+                        var endIndex = document.cookie.indexOf(";", startIndex)
+                        if (endIndex == -1) {
+                            endIndex = document.cookie.length;
+                        }
+                        return decodeURIComponent(document.cookie.substring(startIndex, endIndex));
+                    }
+                }
+                return ""
+            },
+            setCookie : function(sKey, sValue, iExpireSeconds) {
+                if (!sKey)
+                    return;
+                var expireDate = new Date();
+                expireDate.setTime(expireDate.getTime() + iExpireSeconds * 1000);
+                document.cookie = sKey + "=" + encodeURIComponent(sValue) + ";expires=" + expireDate.toGMTString() + ";";
+            }
         }
         $(function() {
             try {
-				var guardarea = UIF.getCookie("guard-area");
-				if(guardarea != null){
-					$(".guard-area").attr("style",guardarea);
-				}
+                var guardarea = UIF.getCookie("guard-area");
+                if(guardarea != null){
+                    $(".guard-area").attr("style",guardarea);
+                }
                 $(".guard-area").draggable({containment:"parent",stop:function(){
-                	var st = $(".guard-area").attr("style");
-                	UIF.setCookie("guard-area",st,60 * 24 * 60);
+                    var st = $(".guard-area").attr("style");
+                    UIF.setCookie("guard-area",st,60 * 24 * 60);
                 }});
                 $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208});
-                
+
                 var rankarea = UIF.getCookie("rank-area");
-				if(rankarea != null){
-					$(".rank-area").attr("style",rankarea);
-				}
+                if(rankarea != null){
+                    $(".rank-area").attr("style",rankarea);
+                }
                 $(".rank-area").draggable({containment:"parent",stop:function(){
-                	var st = $(".rank-area").attr("style");
-                	UIF.setCookie("rank-area",st,60 * 24 * 60);
+                    var st = $(".rank-area").attr("style");
+                    UIF.setCookie("rank-area",st,60 * 24 * 60);
                 }});
                 $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208});
-                
+
                 var giftrecord = UIF.getCookie("gift-record");
-				if(giftrecord != null){
-					$(".gift-record").attr("style",giftrecord);
-				}
+                if(giftrecord != null){
+                    $(".gift-record").attr("style",giftrecord);
+                }
                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
                     var st = $(".gift-record").attr("style");
                     UIF.setCookie("gift-record",st,60 * 24 * 60);
@@ -123,32 +125,32 @@
 
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                   var st = $(".visitant-record").attr("style");
-                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                    // var st = $(".visitant-record").attr("style");
+                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
-				if(chatarea != null){
-					$(".chat-area").attr("style",chatarea);
-				}
+                if(chatarea != null){
+                    //$(".chat-area").attr("style",chatarea);
+                }
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                	var st = $(".chat-area").attr("style");
-                	UIF.setCookie("chat-area",st,60 * 24 * 60);
+                    var st = $(".chat-area").attr("style");
+                    UIF.setCookie("chat-area",st,60 * 24 * 60);
                 }});
                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
                     $("#nano-pubChatList").nanoScroller();
                     $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
                 } );
-								                
+
                 var newGifts = UIF.getCookie("newGifts");
-				if(newGifts != null){
-					$(".newGifts").attr("style",newGifts);
-				}
+                if(newGifts != null){
+                    $(".newGifts").attr("style",newGifts);
+                }
                 $(".newGifts").draggable({containment:"parent",stop:function(){
-                	var st = $(".newGifts").attr("style");
-                	UIF.setCookie("newGifts",st,60 * 24 * 60);
+                    var st = $(".newGifts").attr("style");
+                    UIF.setCookie("newGifts",st,60 * 24 * 60);
                 }});
                 if(UIF.currentUserID != null && UIF.currentUserID.length > 0){
                     UIF.radials = radialIndicator("#indicatorContainer2", {
@@ -171,7 +173,7 @@
     </script>
     <script type="text/javascript">
         window.onbeforeunload = function(){
-          //  return "quit?";
+            //  return "quit?";
         }
     </script>
 </head>
@@ -204,7 +206,7 @@
                         <div class="mt-rl3">
                             <span class="dbicon"></span>
                             <span class="kb">0</span>
-                           <span class="mt-charge"><a target="_blank" href="/pay.php">充值</a></span>
+                            <span class="mt-charge"><a target="_blank" href="/pay.php">充值</a></span>
                             <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
                         </div>
                     </div>
@@ -224,15 +226,15 @@
         </ul>
     </div>
     <?php if(1==2){?>
-    <div class="nl-else">
-        <ul class="euc">
-            <li style="height: 30px;"></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="wenjuan"><span>问卷</span></a></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="libao"><span>礼包</span></a></li>
-            <li class="eu"><a  href="javascript:" target="_blank" class="jubao"><span>举报</span></a></li>
-        </ul>
-    </div>
+        <div class="nl-else">
+            <ul class="euc">
+                <li style="height: 30px;"></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="wenjuan"><span>问卷</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="libao"><span>礼包</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="jubao"><span>举报</span></a></li>
+            </ul>
+        </div>
     <?php }?>
 </div>
 <div class="gift-record myDiv3" id="recordResizable">
@@ -245,16 +247,7 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
-<!--<div class="visitant-record myDiv3" id="visitantResizable">
-    <div class="vr-header"><span class="span"></span></div>
-    <div class="nano gr-main" id="nano-sendGiftList">
-        <ul id="song_item" class="content"></ul>
-    </div>
-    <div class="lt"></div>
-    <div class="rt"></div>
-    <div class="lb"></div>
-    <div class="rb"></div>
-</div>-->
+
 <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
@@ -267,13 +260,13 @@
     <div class="live-video">
         <div class="player-area" >
             <div id="video">
-            	<div class="no-live"></div>
+                <div class="no-live"></div>
             </div>
         </div>
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="werImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
@@ -340,26 +333,26 @@
 <?php
 if($roomType != "game"){
 
-?>
-<div class="guard-area myDiv6">
-    <div class="guard-header">
-        <span class="guard-title"></span>
-        <span class="gdnum">0/32</span>
-        <span class="kais button button-highlight button-rounded"></span>
+    ?>
+    <div class="guard-area myDiv6">
+        <div class="guard-header">
+            <span class="guard-title"></span>
+            <span class="gdnum">0/32</span>
+            <span class="kais button button-highlight button-rounded"></span>
+        </div>
+        <div class="guard-main nano"><ul class="content">  </ul></div>
+        <div class="lt"></div>
+        <div class="rt"></div>
+        <div class="lb"></div>
+        <div class="rb"></div>
     </div>
-    <div class="guard-main nano"><ul class="content">  </ul></div>
-    <div class="lt"></div>
-    <div class="rt"></div>
-    <div class="lb"></div>
-    <div class="rb"></div>
-</div>
 <?php }?>
 
 <!-- 任务区-->
 <?php
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
-if($_SERVER['HTTP_HOST'] != "0www.kedo.tv"){
+if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
     include('./include/studio/pet.php');
 }
 if($thisHome ==1){
@@ -369,7 +362,6 @@ if($thisHome ==1){
 <!-- 聊天区-->
 <div class="chat-area myDiv4">
     <div class="chat-header">
-        <div class="setting" style="display: none" id="setting">设置</div>
         <div class="closing" style="display: none" id="closing">关闭</div>
         <div class="issel chat_right chatTit" ct="ch1"></div>
         <div class="chat_right vipTit" id="choSong" ct="ch2"></div>
@@ -396,8 +388,8 @@ if($thisHome ==1){
         <div class="chat-footer">
             <div class="cf-select">
                 <div class="cfchange">
-                	<span data="" class="switchChat changeCh"><!-- 公共频道 --></span>
-                	<!-- <i class="liii"></i> -->
+                    <span data="" class="switchChat changeCh"><!-- 公共频道 --></span>
+                    <!-- <i class="liii"></i> -->
                 </div>
                 <ul class="son_ul" style="display:none ">
                     <li id="GLO"></li>
@@ -414,11 +406,12 @@ if($thisHome ==1){
             </div>
             <a id="sendChatBtn" href="javascript:;" class="sendChatBtn sdChat"></a>
         </div>
-        <div style="display:none;" class="FaceBox toggleBox" id="faces">
-            <div class="col" id="facesBd"></div>
-            <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
-            <div class="clear"></div>
-        </div>
+    <div style="display:none;" class="FaceBox toggleBox" id="faces">
+        <div class="col" id="facesBd"></div>
+        <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
+        <div class="clear"></div>
+    </div>
+    <div id="sendChatNotice" style="    position: relative;top: -53px;width: 76px;height: 20px;border-radius: 2px;left: 222px;display: none;background-color: white;overflow: hidden;font-size: 12px;line-height: 20px;padding-left: 5px;"> [0]秒</div>
     </div>
     <div class="chs2 nano" id="nano-songList" style="display: none">
         <div class="song-main content">
@@ -433,7 +426,11 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+
     <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php if(1==2){?>
+        <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
+    <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
     <div class="chat-tip-top">
@@ -476,8 +473,8 @@ if($thisHome ==1){
                 <div class="portBg"></div>
                 <div class="price" id="indicatorContainer2"></div>
                 <div class="circleImg">
-				    <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>"alt="<?php echo $user["nickname"]?>">
-				</div>
+                    <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>"alt="<?php echo $user["nickname"]?>">
+                </div>
                 <div class="portrait-level-pane"><div class="circleLevel activelevel"></div></div>
             </div>
         <?php } ?>
@@ -496,7 +493,7 @@ if($thisHome ==1){
                 }
                 ?>
                 <span id="gt<?php echo $giftcateid;?>"  rel="<?php echo $giftcateid;?>"  <?php echo $ac;?> class="ct"></span>
-                
+
             <?php endforeach;?>
         </div>
         <div class="giftContents">
@@ -552,94 +549,6 @@ if($thisHome ==1){
     </div>
 </div>
 <div class="shadow" id="shadow"></div>
-<div id="pop" class="pop">
-    <a href="javascript:;" id="close" class="close">×</a>
-    <div class="noti_mana_song" id="noti_mana_song">
-        <a href="javascript:;" class="notice active">公告</a>
-        <a href="javascript:;" id="manage" class="manage">管理</a>
-        <a href="javascript:;" class="song">点歌</a>
-    </div>
-    <div id="info">
-        <div style="display:block;" id="notice_info">
-            <div class="noti_bg">
-                <span class="laba"></span>
-                <span class="notice">公告</span>
-            </div>
-            <textarea id="roomNotice" class="textarea">
-            </textarea>
-            <input type="hidden" id="id" value=""/>
-            <div id="save" class="save">保存</div>
-        </div>
-        <div id="manage_info">
-            <div class="tit clearFix">
-                <span class="rank fl">排序</span>
-                <span class="name fl">称号</span>
-                <span class="operate fl">操作</span>
-                <span class="add fr" id="add_user">添加</span>
-            </div>
-            <div class="divide"></div>
-            <div class="no_added" id="no_added">
-                <div class="manage_detail">
-                    <p class="tip">您还未添加任何管理，请添加</p>
-                    <div class="add_btn" id="add_btn">添加</div>
-                </div>
-                <div class="bottom clearFix">
-                    <p class="bottom_tip fl">每位管理都必须满足消费额度才可以添加</p>
-                    <a class="fl" href="javascript:;">查看管理成长体系></a>
-                </div>
-            </div>
-            <div class="added" id="added">
-                <ul class="added_list" id="added_list"></ul>
-                <div class="bottom clearFix">
-                    <p class="bottom_tip fl">每位管理都必须满足消费额度才可以添加</p>
-                    <a class="fl" href="javascript:;">查看管理成长体系></a>
-                </div>
-            </div>
-        </div>
-        <div id="song_info">
-            <h4 id="add_tip" style="margin-top:16px; font-size:14px; color:#333; margin-left:88px; margin-bottom:6px;">添加歌曲</h4>
-            <div class="add_song clearFix">
-                <input class="songname fl" type="text" id="songsName" />
-                <span class="save_song fl" id="songsSave">保存</span>
-            </div>
-            <h4 class="song_list">歌曲列表</h4>
-            <div class="list_tit clearFix">
-                <span class="rank_tit fl">排序</span>
-                <span class="name_tit fl">歌曲名称</span>
-                <span class="operate_tit fl">操作</span>
-            </div>
-            <div class="divide"></div>
-            <div class="song_detail" id="song_detail"></div>
-        </div>
-    </div>
-    <div class="mana_shadow" id="mana_shadow">
-        <div class="add_mana">
-            <a class="mana_close" id="mana_close" href="javascript:;">×</a>
-            <h2 class="tit">添加管理</h2>
-            <p>通过ID查找需要添加的管理</p>
-            <div class="search">
-                <span></span>
-                <input type="text" id="userId"/>
-            </div>
-            <span class="search_btn" id="search_btn">查找</span>
-
-            <div class="appear" id="appear">
-                <p class="find" >查找到一下用户</p>
-                <div class="divide"></div>
-                <div class="user_info clearFix">
-                    <div class="img fl">
-                        <img src="" id="userImg" style="width:60px;height：60px"/>
-                    </div>
-                    <div class="name_id fl">
-                        <p class="name" id="userName"></p>
-                        <p><span>ID：</span><span id="idNum"></span></p>
-                    </div>
-                    <div class="user_add fl" id="user_add">添加</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="login-html"></div>
 </body>
 

@@ -35,6 +35,7 @@ $redis->rPush($key,$data);
 if($redis->lLen($key) >5){
     $redis->lPop($key);
 }
+$redis->lTrim($key,0,5);
 var_dump($data);
 include('../include/footer.inc.php');
 

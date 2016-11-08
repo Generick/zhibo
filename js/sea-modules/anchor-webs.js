@@ -18,7 +18,7 @@ define(function(require, exports, module) {
 	var swf = require("./anchor-swf");
 	var list = require("./anchor-list");
 	var face = require("./anchor-face");
-	var pet = require("./anchor-pet");
+	//var pet = require("./anchor-pet");
 	var backLoad = require("./anchor-backLoad");
 
 	var Webs = function(url) {
@@ -42,8 +42,8 @@ define(function(require, exports, module) {
 		this.url = url || "";
 		this.isIE = !!window.ActiveXObject;
 		this.ie6 = this.isIE && !window.XMLHttpRequest;
-		this.ie8 = this.isIE && !!document.documentMode;
 		this.ie7 = this.isIE && !this.ie6 && !this.ie8;
+		this.ie8 = this.isIE && !!document.documentMode;
 	}
 
 	Webs.prototype = {
@@ -61,7 +61,7 @@ define(function(require, exports, module) {
 			anchor.init();
 			setting.init();
 			lvs.init(data);
-			pet.init();
+			//pet.init();
 			backLoad.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
@@ -89,8 +89,8 @@ define(function(require, exports, module) {
 			};
 			base.cache.put("userInfo", false);
 			base.cache.put("anchorInfo", false);
-			window.onbeforeunload = function(){
-				if(base.userId == base.anchorId && base.sock != null){
+			window.onbeforeunload = function() {
+				if (base.userId == base.anchorId && base.sock != null) {
 					var url = "/rest/site/begins.mt";
 					var params = Tools.stringFormat("action=endShow&roomNumber={0}", base.roomNumber);
 					$.ajax({
@@ -100,9 +100,28 @@ define(function(require, exports, module) {
 						cache : false,
 						dataType : "json",
 						async : false
-					}).done(function(data){});
+					}).done(function(data) {
+					});
 				}
 			}
+		},
+		agents : function() {
+			var $ie = false;
+			if (navigator.userAgent.indexOf("MSIE") > 0) {
+				if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+					$ie = true;
+				}
+				if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
+					$ie = true;
+				}
+				if (navigator.userAgent.indexOf("MSIE 8.0") > 0) {
+					$ie = true;
+				}
+				if (navigator.userAgent.indexOf("MSIE 9.0") > 0) {
+					$ie = true;
+				}
+			}
+			return $ie;
 		},
 		loading : function(userId, token, room) {
 			lvs.mo();
@@ -112,32 +131,33 @@ define(function(require, exports, module) {
 			base.roomNumber = room;
 			var url = "/rest/checkToken/checkTokenRoles.mt";
 			var params = Tools.stringFormat("token={0}&userId={1}&roomNumber={2}", base.token, base.userId, base.roomNumber);
-            if (!Array.prototype.forEach) {
-                Array.prototype.forEach = function(callback, thisArg) {
-                    var T, k;
-                    if (this == null) {
-                        throw new TypeError(" this is null or not defined");
-                    }
-                    var O = Object(this);
-                    var len = O.length >>> 0; // Hack to convert O.length to a UInt32
-                    if ({}.toString.call(callback) != "[object Function]") {
-                        throw new TypeError(callback + " is not a function");
-                    }
-                    if (thisArg) {
-                        T = thisArg;
-                    }
-                    k = 0;
-                    while (k < len) {
-                        var kValue;
-                        if (k in O) {
-                            kValue = O[k];
-                            callback.call(T, kValue, k, O);
-                        }
-                        k++;
-                    }
-                };
-            }
-            $.ajax({
+			if (!Array.prototype.forEach) {
+				Array.prototype.forEach = function(callback, thisArg) {
+					var T, k;
+					if (this == null) {
+						throw new TypeError(" this is null or not defined");
+					}
+					var O = Object(this);
+					var len = O.length >>> 0; // Hack to convert O.length to a
+					// UInt32
+					if ({}.toString.call(callback) != "[object Function]") {
+						throw new TypeError(callback + " is not a function");
+					}
+					if (thisArg) {
+						T = thisArg;
+					}
+					k = 0;
+					while (k < len) {
+						var kValue;
+						if (k in O) {
+							kValue = O[k];
+							callback.call(T, kValue, k, O);
+						}
+						k++;
+					}
+				};
+			}
+			$.ajax({
 				type : "POST",
 				url : url,
 				data : params,
@@ -281,10 +301,28 @@ define(function(require, exports, module) {
 						if (call != null) {
 							call(data.args);
 						}
+
 					}
 				});
 				UIF.handler.cache.put(cons.USER_SOCKETIO, true);
 			}
+		},
+		agentSocket : function(msg) {
+			var base = this;
+			var url = "/rest/checkToken/nsocket.mt";
+			var params = msg;
+			$.ajax({
+				url : url,
+				type : "POST",
+				data : params,
+				cache : false,
+				dataType : "json",
+				async : false
+			}).done(function(data) {
+				if (data.resultStatus == 200) {
+					base.weblog("agent socket message success!");
+				}
+			});
 		},
 		resconnect : function() {
 			var base = this;
@@ -323,6 +361,7 @@ define(function(require, exports, module) {
 			this.events.put("CHATFLY_MESSAGE", wcall.chatFLYMessage);// 直播间飞屏内容
 			this.events.put("CHATAFF_MESSAGE", wcall.chatAFFMessage);// 全站公告内容
 			this.events.put("ANCHOR_PK", wcall.anchorPK);// 主播pk
+			this.events.put("GUARDS_MESSAGE", wcall.guardsMessage);// 守护通知
 		},
 		sendMsg : function(msg, call, tags) {
 			var base = this;
@@ -335,13 +374,20 @@ define(function(require, exports, module) {
 				events : "msg",
 				tags : tags,
 				msgid : Tools.uuid(),
-				args : encodeURIComponent(JSON.stringify(msg))
+				args : encodeURI(JSON.stringify(msg))
 			}
 			base.map.put($msg.msgid, call);
-			if (base.sock != null && base.sock.emit != null) {
-				base.sock.emit("msg", $msg);
+			if (false) {
+				if (base.sock.id != null)
+					$msg.suid = base.sock.id;
+				$msg.nsp = base.roomNumber;
+				base.agentSocket($msg);
 			} else {
-				base.queue.put($msg.msgid, $msg);
+				if (base.sock != null && base.sock.emit != null) {
+					base.sock.emit("msg", $msg);
+				} else {
+					base.queue.put($msg.msgid, $msg);
+				}
 			}
 		},
 		sendWelcome : function(msg, call) {

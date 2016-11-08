@@ -26,7 +26,7 @@
         {foreach from=$sqAnchorList item=show key=key}
             {if $key==1}{break}{/if}
             <li class="fl squ_first">
-                <a href="/{$show.roomNumber}.html" target="_blank">
+                <a href="/{$show.roomNumber}.html">
                     <em class="sprite_big_box biankuang-{toColor level=$show.totalpoint}"></em>
                     <img src="{$show.image}" alt="{$show.nickName}">
                     <span class="sprite_l pic_liverlevel_L_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
@@ -45,7 +45,7 @@
         {foreach from=$sqAnchorList item=show key=key}
             {if $key==0}{continue}{/if}  
             <li class="fl ">
-                <a href="/{$show.roomNumber}.html" target="_blank">
+                <a href="/{$show.roomNumber}.html">
                 <em class="sprite_small_box biankuang_{toColor level=$show.totalpoint}_little "></em>
                 <img src="{$show.image}" alt="{$show.nickName}">
                 <span class="sprite_s pic_liverlevel_S_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>

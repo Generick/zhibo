@@ -115,6 +115,10 @@ define(function(require, exports, module) {
 		anchorPK : function(data) {
 			UIF.log("主播pk信息：" + data);
 			swf.anchorPK(jQuery.parseJSON(data));
+		},
+		guardsMessage : function(data) {
+			UIF.log("守护通知：" + data);
+			guards.onMessage(jQuery.parseJSON(data));
 		}
 	}
 })

@@ -29,15 +29,21 @@ body{
 	font-size:16px;
 }
 /*字体*/
-.glyphicon-hot{
-	font-size:15px;
-	background-color:#e34052;
-	color:#fff; 
-	padding:3px; 
-	border-radius:4px;
-	-webkit-border-radius:4px;
-	-o-border-radius:4px; 
-	padding-bottom: 5px;
+.icon-hot{
+	background: url(/images/kedo/icon_hot.png) no-repeat;
+	width: 40px;
+	height: 20px; 
+}
+.icon-fire{
+	background: url(/images/kedo/icon_jingcai.png) no-repeat;
+	width: 40px;
+	height: 20px; 
+	margin-right: 10px; 
+}
+.icon-new{
+	background: url(/images/kedo/icon_new.png) no-repeat;
+	width: 40px;
+	height: 20px; 
 }
 .row{
 	margin-right: -8px;
@@ -230,9 +236,7 @@ body{
 	background-color:#e34052;
 	border:1px solid #f40923;
 }
-.pasTip,.quickLog{
-	margin-left:9%;
-}
+
 .regLog{
     padding:34px 12px 14px;
 }
@@ -325,10 +329,16 @@ body{
 	.follow .foLi .spriteLev,.rank .foLi .spriteLev,.rich .foLi .spriteLev,.fans .foLi .spriteLev{
 		margin-top:18px;
 	}
-	.follow img,.rank img,.rich img,.fans img{
-		border-radius:50%;
-        width: 52px;
-        height: 52px;
+	.follow a>img,.rank a>img,.rich a>img,.fans a>img{
+        width: 21%;
+        height: 21%;
+    }
+    .foLi .foLi .state,.foLi .state{
+    	width:32%;
+    	margin-top: 5%; 
+    }
+    .foLi{
+    	position: relative;
     }
     .glyphicon-menu-up-hover:before {
         content: "\e260";
@@ -354,6 +364,9 @@ body{
     width: 100%;
     margin-top: 6px;
 }
+.foTit{
+	margin-bottom: 5%; 
+}
 
 
 
@@ -365,14 +378,21 @@ body{
         font-size: 14px;
         margin: 7px;
         white-space: nowrap;
-        max-width: 116px;
         text-overflow: ellipsis;
         overflow: hidden;
 	}
-	.follow .ynLiv,.rank .ynLiv,.rich .ynLiv,.fans .ynLiv{
+	.follow .ynLiv,.rank .ynLiv,.rich .ynLiv,.fans .ynLiv,.follow .yesLiv,.rank .yesLiv,.rich .yesLiv,.fans .yesLiv{
 		font-size:12px;
 		color:#999; 
 		margin-left: 7px;
+	}
+	.crown{
+		position: absolute;
+	    top: -15px;
+	    left: 25%;
+	    width: 36px;
+	    height: 20px;
+	    background: url(/images/kedo/icon_huangguan.png);
 	}
 	.navbar-default{
 		background-color:#fff; 
@@ -383,45 +403,23 @@ body{
 	.titD .colorPin{
 		padding:4px;
 	}
-	
+	.apply img{
+		border-radius: 4px; 
+	}
 	/*热门*/
-	@media (min-width: 1200px){
-		.firT{
-			line-height:28px; 
-		}
-		.hotItem .hotT{
-			line-height:21px;
-		}
-		.hotItem{
-			max-height:171px;
-			overflow:hidden;
-		}
-	}
-	@media(max-width:1450px){
-		.hotItem{
-			max-height:129px;
-			overflow:hidden;
-		}
-	}
 	
-	@media(max-width:1200px){
-		.hotItem{
-			max-height:145px;
-			overflow:hidden;
-		}
+	.page-header{
+		border:none;
+		padding-bottom: 0; 
 	}
-	@media(max-width:768px){
-		.hotItem{
-			max-height:244px;
-			overflow:hidden;
-		}
+	.hotCon .hotR{
+		margin-right: 10px; 
 	}
-	@media(max-width:572px){
-		.hotItem{
-			max-height:162px;
-			overflow:hidden;
-		}
+	.adImg{
+		margin-top: -3%;
 	}
+
+		
 	/* 手机端 */
 	.hrow1{
 		display: flex;
@@ -442,21 +440,25 @@ body{
 	.hotCon .firHot{
 		background-color:#e34052;	
 	}
+	/* .firHot{
+		width:250px;
+		height: 380px;
+	} */
+
 	.firHot .firB{
 		bottom:0.6%;
 		left:1%;
 		right:1%;
 		width:98%;
 	}
-	.page-header{
-		border:none;
-	}
+	
 	.page-header .pull-left{
 		margin-bottom:0; 
 	}
 	.firHot,.hotItem{
 		position:relative; 
 	}
+	
 	.firB,.hotB{
 		height:23%; 
 		position:absolute;
@@ -504,6 +506,7 @@ body{
 	    -ms-transform: scale(2);
 	    transform: scale(2);
 	    -webkit-transition: all ease-in 250ms;
+	    -ms-transition:all ease-in 250ms;
 	    transition: all ease-in 250ms;
 	}
 	.firT,.hotT{
@@ -519,6 +522,11 @@ body{
 		color: #333; 
 		
 	}
+	.firT >div{
+		position: absolute;
+		top: -42%;
+    	left: -5%;
+	}
 	.hotT{
 		height: 14%;
 		top: 4%;
@@ -528,9 +536,8 @@ body{
 	    -webkit-transition: all ease-in 250ms;
 	    transition: all ease-in 250ms;
 	}
-
 	.hotB{
-		height: 34%;
+		height: 28%;
 		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	    filter: alpha(opacity=0);
 	    opacity: 0;
@@ -539,11 +546,15 @@ body{
 	}
 	.hotItem{
 		font-size: 12px; 
-		
+		overflow: hidden;
 	}
-	.hotItem img{
-		max-height: 163px;
+	.hotItem .sprite_s{
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
 	}
+	
 	.glyphicon-stats{
 		position: absolute;
 		right: 11%; 
@@ -554,19 +565,12 @@ body{
 	
 	
 	/* 精彩推荐 */
-	.recomm .glyphicon-fire{
-		color: #fff;
-		background-color:#e34052;;
-		padding-left: 8px;
-		padding-right: 8px; 
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-o-border-radius: 4px;
-		margin-right: 8px; 
-	}
 	
 	.recommB{
 		padding-top: 8%; 
+	}
+	.recommB .ellipsis{
+		width:58%;
 	}
 	.recomm a.thumbnail{
 		background-color: #f4f4f4;
@@ -585,6 +589,17 @@ body{
 		text-align: center;
 		border-top: 1px solid #e5e5e5;
 	}
+
+	.bs-docs-footer .firBL{
+		color: #999;
+	}
+	
+	.bs-docs-footer .firBL:hover{
+		color: #337ab7;
+	}
+
+
+
 	
 	/*所有悬停效果手机和平板没有*/
 	@media (min-width: 1200px){
@@ -616,6 +631,7 @@ body{
 			-ms-transform: scale(1);
 			transform: scale(1);
 		}
+		
 		.hotItem:hover{
 			-webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
 			-moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);

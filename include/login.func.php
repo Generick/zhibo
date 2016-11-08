@@ -96,12 +96,12 @@ function password_deal($pwd){
 	return md5(md5($pwd));
 }
 function username_deal($unm){
-    $url="/rest/homeAnchors/checkLucene.mt";
-    $js = curl_post(_INTERFACE_.$url,"keyWord=".$unm);
-    $acceptData=json_decode($js, true);
-    if($acceptData['resultStatus'] == 101){
-        return $unm.$acceptData['resultStatus'];
-    }if($acceptData['resultStatus'] == 200){
+    $url=_INTERFACE_."/rest/homeAnchors/checkLucene.mt?keyWord=".$unm;
+    $js = file_get_contents($url);
+    $js=json_decode($js);
+    if($js->resultStatus == 101){
+        return true;
+    }else if($js->resultStatus == 200){
         return false;
     }
     return false;
