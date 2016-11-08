@@ -63,8 +63,8 @@
                 <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                     <li><a href="/centeros.php">{$user.nickname}</a></li>
                     <li class="hidden-xs"><a href="">|</a></li>
-                    <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li><!--
-                    <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>-->
+                    <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
+                    <!--<li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>-->
                 </ul>
 
             {/if}
@@ -154,26 +154,6 @@
 				<!--登录注册-->
                 <div class="thumbnail regLog text-center">
                      {if !$user}
-<<<<<<< HEAD
-                    <div class="caption beforLog">
-                        <p class="row">
-                            <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" onclick="login()">立即登录</button>
-                        </p>
-                        <p class="row">
-                            <a type="button" href="javascript:;" class="btn_login regBtn btn btn-default register" data-loading-text="Loading..." autocomplete="off">一键注册</a>
-                        </p>
-                        <p class="text-center color99 f12 pasTip">忘记密码 点击 <b><a href="javascript:;" class="colorBlue">这里找回</a></b></p>
-                        <hr/>
-                        <p class="text-center quickLog">快捷登录</p>
-                        <p class="row">
-                            <button type="button" onclick="javascript:login.qqlogin()" class="btn_login btn btn-info qqLog" data-loading-text="Loading..." autocomplete="off">QQ账号登录</button>
-                        </p>
-                        <p class="row">
-                            <button type="button" onclick="javascript:login.wxlogin()" class="btn_login btn btn-success weChatLog" data-loading-text="Loading..." autocomplete="off">微信账号登录</button>
-                        </p>
-=======
->>>>>>> 64e231aa5fc8dac8cb73a94b8b1f41e84b270c06
-
                     {else}
                     <div class="caption AfterLog">
                         <div class="row">
