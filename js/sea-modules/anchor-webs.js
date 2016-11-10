@@ -20,7 +20,7 @@ define(function(require, exports, module) {
 	var face = require("./anchor-face");
 	var pet = require("./anchor-pet");
 	var backLoad = require("./anchor-backLoad");
-    var console=console||{log:function(){return;}}
+    //var console=console||{log:function(){return;}}
 
 	var Webs = function(url) {
 		this.flash = null;
@@ -208,6 +208,7 @@ define(function(require, exports, module) {
 				this.connect();
 				this.sendWelcome();
 				this.resconnect();
+				this.sendPetInit();
 			}
 		},
 		weblog : function(msg) {
@@ -324,7 +325,13 @@ define(function(require, exports, module) {
 			this.events.put("CHATPRV_MESSAGE", wcall.chatPRVMessage);// 主播私聊内容
 			this.events.put("CHATFLY_MESSAGE", wcall.chatFLYMessage);// 直播间飞屏内容
 			this.events.put("CHATAFF_MESSAGE", wcall.chatAFFMessage);// 全站公告内容
-			this.events.put("ANCHOR_PK", wcall.anchorPK);// 主播pk
+			this.events.put("ANCHOR_PK", wcall.anchorPK);
+			// 主播pk
+			this.events.put("ANCHORS_AUTOPET", wcall.initPetData);
+			// pet数据
+			this.events.put("ANCHORS_PET", wcall.updatePetData);
+			//宠物出生
+			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);
 		},
 		sendMsg : function(msg, call, tags) {
 			var base = this;
@@ -481,6 +488,14 @@ define(function(require, exports, module) {
 		censor : function(msg, call) {
 			/** 关闭直播间 */
 			this.sendMsg(msg, call, "censor");
+		},
+		sendPetInit :function(msg, call) {
+			/** 初始化宠物信息 */
+			this.sendMsg(msg, call, "anchorsAutoPet");
+		},
+		changePetName :function(msg, call) {
+			/** 修改宠物名字 */
+			this.sendMsg(msg, call, "anchorsPetChangeName");
 		},
 		socketio : function(msg, call) {
 			this.sendMsg(msg, call, "socketio");

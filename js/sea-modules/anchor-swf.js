@@ -27,7 +27,7 @@ define(function(require, exports, module) {
                 wmode : "transparent",
                 allowScriptAccess : "always"
             });
-			swfobject.embedSWF("/js/sea-modules/swf/Pet.swf?v=102403", "PetSwf", 160, 160, "10.0", "", {
+			swfobject.embedSWF("/js/sea-modules/swf/PetNew.swf?v=102403", "PetSwf", 440, 320, "10.0", "", {
                 mtadd : UIF.handler.flash
             }, {
                 wmode : "transparent",
@@ -162,8 +162,16 @@ define(function(require, exports, module) {
 			swfobject.getObjectById("player").pkStart(pkRoomNum);
 		},
 		
-		petPlayAction: function(data){
-			swfobject.getObjectById("PetSwf").playAction(data);
+		petPlayAction : function(data){
+			var actionName = data;
+			swfobject.getObjectById("PetSwf").playAction(actionName);
+		},
+		
+		petUpdateData : function(data){
+			var imageId = data.imageId;
+			var level = data.level;
+			var levelGap = data.levelGap;
+			swfobject.getObjectById("PetSwf").updateData(imageId, level, levelGap);
 		}
 	}
 })

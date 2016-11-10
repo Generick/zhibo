@@ -16,6 +16,9 @@ switch($http_host){
     case "127.0.0.1":
         define("SITENAME","local");
         break;
+	case "localhost":
+        define("SITENAME","local");
+        break;
     case "10.1.1.17":
         define("SITENAME","local");
         break;

@@ -9,6 +9,7 @@ define(function(require, exports, module) {
 	var hall = require("./anchor-hall");
 	var chat = require("./anchor-chat");
 	var list = require("./anchor-list");
+	var pet = require("./anchor-pet");
 	module.exports = {
 		status : function(data) {
 			lvs.stat(jQuery.parseJSON(data));
@@ -115,6 +116,18 @@ define(function(require, exports, module) {
 		anchorPK : function(data) {
 			UIF.log("主播pk信息：" + data);
 			swf.anchorPK(jQuery.parseJSON(data));
+		},
+		initPetData : function(data){
+			UIF.log("宠物信息：" + data);
+			pet.initPetData(jQuery.parseJSON(data));
+		},
+		updatePetData : function(data){
+			UIF.log("刷新宠物信息：" + data);
+			pet.updatePetData(jQuery.parseJSON(data));
+		},
+		petBirth : function(data){
+			UIF.log("宠物出生");
+			pet.petBirth();
 		}
 	}
 })
