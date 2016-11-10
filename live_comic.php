@@ -386,7 +386,6 @@ if($thisHome ==1){
             <div class="rb"></div>
         </div>
         <div class="chat-footer">
-            </div>
             <div class="cf-select">
                 <div class="cfchange">
                     <span data="" class="switchChat changeCh"><!-- 公共频道 --></span>
