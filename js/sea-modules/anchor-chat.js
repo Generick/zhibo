@@ -28,10 +28,10 @@ define(function(require, exports, module) {
                     UIF.handler.loging();
                     return;
                 }
+                var clealMsg = false;
                 var msg = $("#msgContent").val();
                 if (msg == "") {
-                    try {1
-
+                    try {
                         $("#msgContent").focusInput();
                         $("#msgContent").focus();
                     } catch (e) {
@@ -90,6 +90,7 @@ define(function(require, exports, module) {
                                 }, function(data) {
                                 });
                             }
+                            clealMsg = true;
                         } else {
                             // 发送消息太频繁
                             // Tools.dialog("发送消息太频繁,请稍后再发送!");
@@ -122,6 +123,7 @@ define(function(require, exports, module) {
                                         Tools.dialog(data.resultMessage);
                                     }
                                 });
+                                clealMsg = true;
                             }, function(e) {
                             });
                         }
@@ -135,6 +137,7 @@ define(function(require, exports, module) {
                                     Tools.dialog(data.resultMessage);
                                 }
                             });
+                            clealMsg = true;
                         }
                         break;
                     case "GLO":
@@ -155,6 +158,7 @@ define(function(require, exports, module) {
                                                 Tools.dialog(data.resultMessage);
                                             }
                                         });
+                                        clealMsg = true;
                                     }, function(e) {
                                     });
                                 }
@@ -168,6 +172,7 @@ define(function(require, exports, module) {
                                             Tools.dialog(data.resultMessage);
                                         }
                                     });
+                                    clealMsg = true;
                                 }
                             } else {
                                 Tools.dialog("全站公告需要爵位6级以上\!");
@@ -194,7 +199,8 @@ define(function(require, exports, module) {
                         }
                         break;
                 }
-                $("#msgContent").val("");
+                if(clealMsg)
+                	$("#msgContent").val("");
             });
 
             $(".sdChat").mousedown(function(){
