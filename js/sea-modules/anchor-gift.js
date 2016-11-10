@@ -517,7 +517,7 @@ define(function(require, exports, module) {
 						$t += Tools.stringFormat(ls, data.guards);
 					if (data.toUserName != null && data.toUserName != "")
 						$touser += data.toUserName;
-					$h = Tools.stringFormat(html, $t, data.user, $touser, $p, $n);
+					$h = Tools.stringFormat(html, $t, decodeURI(data.user), decodeURI($touser), $p, $n);
 					base.giftQueue.push($h);
 				}
 				var sh;

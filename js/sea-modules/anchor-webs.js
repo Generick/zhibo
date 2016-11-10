@@ -19,7 +19,7 @@ define(function(require, exports, module) {
 	var list = require("./anchor-list");
 	var face = require("./anchor-face");
 	var backLoad = require("./anchor-backLoad");
-
+	
 	var Webs = function(url) {
 		this.flash = null;
 		this.token = null;
@@ -258,7 +258,6 @@ define(function(require, exports, module) {
 						if (call != null) {
 							call(data.args);
 						}
-
 					}
 				});
 				UIF.handler.cache.put(cons.USER_SOCKETIO, true);
