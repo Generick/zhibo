@@ -39,7 +39,7 @@ define(function(require, exports, module) {
 							+ '" class="img1"/>\
 		                        </div>\
 		                        <div class="gname"><a href="#"  title="' + decodeURI(_self[0].name) + '">'
-							+ _self[0].name + '</a></div></div></li>';
+							+ decodeURI(_self[0].name) + '</a></div></div></li>';
 				})
 			}
 			if (n < 8) {

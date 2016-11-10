@@ -603,7 +603,7 @@ define(function(require, exports, module) {
         /** 全站公告 */
         onAffMsg : function(data) {
             if (data.actions != null && data.actions == "upgrade") {
-                var msg = "恭喜" + data.nickname + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data.splev + "'></span>";
+                var msg = "恭喜" + decodeURI(data.nickname) + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data.splev + "'></span>";
                 toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
                     "roomid" : data.roomNumber,
                     "src_nickname" : decodeURI(data.nickname),

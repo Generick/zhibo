@@ -100,7 +100,6 @@ define(function(require, exports, module) {
 						anhimg : anchInfo.avatar
 					});
 				}
-				/** 爵位升级 */
 				if (headInfo.splev != null && base.data.splev != null && base.data.splev >= 6 && base.data.splev > headInfo.splev) {
 					UIF.handler.upgrade({
 						nickname : base.data.nickname,
