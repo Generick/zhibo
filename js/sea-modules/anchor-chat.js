@@ -123,7 +123,6 @@ define(function(require, exports, module) {
                                         Tools.dialog(data.resultMessage);
                                     }
                                 });
-                                clealMsg = true;
                             }, function(e) {
                             });
                         }
@@ -137,8 +136,8 @@ define(function(require, exports, module) {
                                     Tools.dialog(data.resultMessage);
                                 }
                             });
-                            clealMsg = true;
                         }
+                        clealMsg = true;
                         break;
                     case "GLO":
                         var roles = UIF.handler.cache.get(cons.USER_HEADROLES);
@@ -158,7 +157,6 @@ define(function(require, exports, module) {
                                                 Tools.dialog(data.resultMessage);
                                             }
                                         });
-                                        clealMsg = true;
                                     }, function(e) {
                                     });
                                 }
@@ -172,12 +170,12 @@ define(function(require, exports, module) {
                                             Tools.dialog(data.resultMessage);
                                         }
                                     });
-                                    clealMsg = true;
                                 }
                             } else {
                                 Tools.dialog("全站公告需要爵位6级以上\!");
                             }
                         }
+                        clealMsg = true;
                         break;
                     default:
                         var bool = false;
@@ -197,6 +195,7 @@ define(function(require, exports, module) {
                         if (!bool) {
                             Tools.dialog("向主播发送私聊消息,需要爵位达到6级以上!")
                         }
+                        clealMsg = true;
                         break;
                 }
                 if(clealMsg)
@@ -607,21 +606,21 @@ define(function(require, exports, module) {
                 var msg = "恭喜" + data.nickname + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data.splev + "'></span>";
                 toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
                     "roomid" : data.roomNumber,
-                    "src_nickname" : data.nickname,
-                    "src_lucknumber" : UIF.currentUserNickname
+                    "src_nickname" : decodeURI(data.nickname),
+                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
                 }, Face.replace_face(msg));
             } else if (data.actions != null && data.actions == "maintain") {
                 toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
                     "roomid" : data.roomNumber,
-                    "src_nickname" : data.nickname,
-                    "src_lucknumber" : UIF.currentUserNickname
+                    "src_nickname" : decodeURI(data.nickname),
+                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
                 }, Face.replace_face(msg));
             } else {
                 var msg = data.nickname + "说：" + data.message;
                 toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
                     "roomid" : data.roomNumber,
-                    "src_nickname" : data.nickname,
-                    "src_lucknumber" : UIF.currentUserNickname
+                    "src_nickname" : decodeURI(data.nickname),
+                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
                 }, Face.replace_face(msg));
             }
         },

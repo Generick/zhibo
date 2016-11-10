@@ -38,7 +38,7 @@ define(function(require, exports, module) {
 		                        <img src="/static_data/images_css/guardbox/' + _self[0].levelImage
 							+ '" class="img1"/>\
 		                        </div>\
-		                        <div class="gname"><a href="#"  title="' + _self[0].name + '">'
+		                        <div class="gname"><a href="#"  title="' + decodeURI(_self[0].name) + '">'
 							+ _self[0].name + '</a></div></div></li>';
 				})
 			}
@@ -117,7 +117,7 @@ define(function(require, exports, module) {
 		onMessage : function(data) {
 			swf.guardLevelup({
 				guardLevel : data.grds,
-				nickname : data.name
+				nickname : decodeURI(data.name)
 			});
 		}
 	}
