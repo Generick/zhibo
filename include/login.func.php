@@ -118,7 +118,7 @@ function register_by_opensns($type,$snsid,$nickname,$avatar,$gender,$sns_type){
 	}
 	//过滤昵称
 	$nickname=str_replace($nickname_blacklist,'',$nickname);
-    $nickname=base64_encode($nickname);
+    $nickname=urlencode($nickname);
 	if(!$_COOKIE['unionid']){
 		$_COOKIE['unionid'] = 0;
 	}
@@ -200,11 +200,11 @@ function microtime_float()
 function check_nickname($nickname){
 
 	$nickname = urldecode($nickname);
-	global $db,$nickname_blacklist;
+	global $db;
 	if((strlen($nickname) + mb_strlen($nickname,'UTF8'))/2>16 || mb_strlen ( $nickname,'utf-8' )<2){
 		return '昵称长度2~8个汉字';
 	}
-    $bsname=base64_encode($nickname);
+    $bsname=urldecode($nickname);
 	if($db->GetOne("select count(userId) from bu_user where nickname='{$bsname}'")!=0){
 		return '昵称已经存在';
 	}

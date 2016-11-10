@@ -313,12 +313,7 @@ function reArrayNickname($array){
         $newArray=array();
         foreach($array as $k =>$v){
             if($v['nickname']!=null){
-                if ($v['nickname'] == base64_encode(base64_decode($v['nickname']))) {
-                    $uuname = base64_decode($v['nickname']);
-                }else{
-                    $uuname = $v['nickname'];
-                }
-                $v['nickname']=$uuname;
+                $v['nickname']= urldecode($v['nickname']);
             }
             $newArray[]=$v;
         }

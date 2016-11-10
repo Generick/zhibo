@@ -46,7 +46,7 @@ switch($action){
 			}
 
             $nickname=str_replace($nickname_blacklist,'',$_REQUEST[nickname]);
-            $nickname=base64_encode($nickname);
+            $nickname=urlencode($nickname);
             $timer=date('Y-m-d H:i:s',$_SERVER['REQUEST_TIME']);
 			$db->Execute("insert into bu_user(createDT,status,nickname,username,password,accountfrom,email,avatar,gender,logins) values('".$timer."',1,'$nickname','$_REQUEST[email]','".password_deal($_REQUEST[password])."',0,'$_REQUEST[email]','46a920d47a9c287e627693554180598a',0,1)");
 			$userid=$db->Insert_ID();

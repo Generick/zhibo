@@ -189,15 +189,10 @@ function search_save_user($userid){
         }
         $datas1 = curl_post(_INTERFACE_."/rest/homeAnchors/personInfo.mt","userId={$userinfo['userId']}");
         $acceptData1=json_decode($datas1, true);
-
-        if ($userinfo['nickname'] == base64_encode(base64_decode($userinfo['nickname']))) {
-            $uuname = base64_decode($userinfo['nickname']);
-        }else{
-            $uuname = $userinfo['nickname'];
-        }
+        $uuname = urldecode($userinfo['nickname']);
 
         if($acceptData1[resultStatus] == 200){
-            $uuname=$acceptData1[data]['user']?$acceptData1[data]['user']:$uuname;
+          //  $uuname=$acceptData1[data]['user']?$acceptData1[data]['user']:$uuname;
             $userinfo['coins'] =intval($acceptData1[data]['coins']);
             $userinfo['spender'] =$acceptData1[data]['spender'];
             $userinfo['differ'] = $acceptData1[data]['differ'];

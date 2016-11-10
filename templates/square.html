@@ -28,11 +28,11 @@
             <li class="fl squ_first">
                 <a href="/{$show.roomNumber}.html">
                     <em class="sprite_big_box biankuang-{toColor level=$show.totalpoint}"></em>
-                    <img src="{$show.image}" alt="{$show.nickName}">
+                    <img src="{$show.image}" alt="{$show.nickName|urldecode}">
                     <span class="sprite_l pic_liverlevel_L_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
                     <i>当前人数：{$show.numbers}</i>
                     <div>
-                        <p>清新脱俗的呆星</p>
+                        <p>{$show.nickName|urldecode}</p>
                         <p>{toTime st=$show.onlineTime}分钟前开播</p>
                         <b class="b1"></b>
                         <b class="b2">{$show.city}</b>
@@ -47,11 +47,11 @@
             <li class="fl ">
                 <a href="/{$show.roomNumber}.html">
                 <em class="sprite_small_box biankuang_{toColor level=$show.totalpoint}_little "></em>
-                <img src="{$show.image}" alt="{$show.nickName}">
+                <img src="{$show.image}"  alt="{$show.nickName|urldecode}">
                 <span class="sprite_s pic_liverlevel_S_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
                 <i>当前人数：{$show.numbers}</i>
                 <div>
-                    <p>{$show.nickName}</p>
+                    <p>{$show.nickName|urldecode}</p>
                     <p>{toTime st=$show.onlineTime}分钟前开播</p>
                 </div>
                 </a>
