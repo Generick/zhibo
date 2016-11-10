@@ -6,9 +6,15 @@
  * Time: 19:59
  */
 if($_SERVER[HTTP_HOST]=='kedo.tv'){
-    $heardUrl='http://www.'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];  //$_SERVER["SERVER_NAME"]
-    Header('HTTP/1.1 301 Moved Permanently') ;
-    Header('Location:'.$heardUrl);
+    //echo "roomnumber";
+
+    if(strpos($_SERVER['SCRIPT_NAME'],"live.php") && strstr($_SERVER['QUERY_STRING'],"roomnumber")){
+        Header('Location:http://www.kedo.tv/'.$_GET['roomnumber']);
+    }else {
+        $heardUrl = 'http://www.' . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];  //$_SERVER["SERVER_NAME"]
+        Header('HTTP/1.1 301 Moved Permanently');
+        Header('Location:' . $heardUrl);
+    }
     exit();
 }
 
