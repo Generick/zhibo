@@ -387,7 +387,7 @@ define(function(require, exports, module) {
 			if (data.sendNum > 0) {
 				swf.mul({
 					uid : data.uid,
-					user : data.user,
+					user : decodeURI(data.user),
 					number : data.number,
 					sendNum : data.sendNum,
 					headImg : UIF.cdn_img + "/" + data.avatar,
@@ -410,7 +410,7 @@ define(function(require, exports, module) {
 		},
 		speGift : function(data) {
 			swf.spe({
-				nickname : data.nickname,
+				nickname : decodeURI(data.nickname),
 				speimg : "/static_data/images_css/upgrades/pic_consumelevel_" + data.splev + ".png"
 			});
 		},
@@ -438,7 +438,7 @@ define(function(require, exports, module) {
 							giftId : enter.giftId,
 							number : enter.number,
 							car : 1,
-							nickname : data.nickname,
+							nickname : decodeURI(data.nickname),
 							carName : carName,
 							needAddFlag : needAddFlag
 						});
@@ -448,7 +448,7 @@ define(function(require, exports, module) {
 						giftId : enter.giftId,
 						number : enter.number,
 						car : 1,
-						nickname : data.nickname,
+						nickname : decodeURI(data.nickname),
 						carName : carName,
 						needAddFlag : needAddFlag
 					});

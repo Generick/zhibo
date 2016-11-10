@@ -139,7 +139,7 @@ define(function(require, exports, module) {
 							var $nums = Tools.stringFormat("{0} 在线", e.numbers)
 							if (e.numbers == 0)
 								$nums = " 离线";
-							var ps = Tools.stringFormat($s, e.roomNumber, e.image, e.nickName, e.levelImg, e.nickName, $nums);
+							var ps = Tools.stringFormat($s, e.roomNumber, e.image, decodeURI(e.nickName), e.levelImg, decodeURI(e.nickName), $nums);
 							content.push(ps);
 						});
 					}

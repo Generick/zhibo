@@ -104,7 +104,7 @@ define(function(require, exports, module) {
 			}
 		},
 		agents : function() {
-			return true;
+			return false;
 		},
 		loading : function(userId, token, room) {
 			lvs.mo();
