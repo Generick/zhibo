@@ -18,7 +18,6 @@ define(function(require, exports, module) {
 	var swf = require("./anchor-swf");
 	var list = require("./anchor-list");
 	var face = require("./anchor-face");
-	// var pet = require("./anchor-pet");
 	var backLoad = require("./anchor-backLoad");
 
 	var Webs = function(url) {
@@ -61,7 +60,6 @@ define(function(require, exports, module) {
 			anchor.init();
 			setting.init();
 			lvs.init(data);
-			// pet.init();
 			backLoad.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
