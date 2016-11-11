@@ -65,6 +65,7 @@
                 <?php
                 /*
                 SELECT g.giftid,g.giftimage,g.giftname,g.giftprice,
+
 (SELECT if(Count(1) = 1,1,0) FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = 1006) as ts,
 (SELECT c.active FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = 1006) as active,
 (SELECT c.valiDT FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = 1006) as valiDT,
@@ -115,6 +116,7 @@ FROM gift g where g.giftcateid = 8 ORDER BY g.giftid ASC");
 
             </div>
         <div class="clear"></div>
+        </div>
 
     </div>
 </div>
