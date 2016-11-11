@@ -1,4 +1,5 @@
 <?php// echo $current_page;?>
+<div class="clearFix">
 <div class="center-left">
 
     <div class="pi">

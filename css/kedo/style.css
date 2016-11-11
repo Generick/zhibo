@@ -108,6 +108,7 @@ body{
 	height:1px;
 	background-color:#ddd;
 }
+
 /*搜索按钮*/
 .searchBtn{
 	color:#e34052;
@@ -241,9 +242,6 @@ body{
     padding:34px 12px 14px;
 }
 /*登陆后*/
-.beforLog{
-    /* display:none;*/
-}
 .AfterLog .imgR{
     border:2px solid #e34052;
     margin-right:16px;
