@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 		Mycare.lii =
 			'<div class="row foLi"><a href="/{0}" target="_blank">\
-				<img class="pull-left img-circle lazy"  data-original="{1}" alt="{2}">\
+				<img class="pull-left img-circle lazy"  src="{1}" alt="{2}">\
 				<div class="pull-left state">\
 					<p class="name">{3}</p>\
 				{4}\
@@ -242,7 +242,7 @@ $(document).ready(function(){
    
 		var ht_rank='<li class="clearFix">\
 				<span class="icon_shuzi_{0} sprite_top fl"></span>\
-					<img class="rank_pho img-circle lazy" data-original="{1}" alt="{2}">\
+					<img class="rank_pho img-circle lazy" src="{1}" alt="{2}">\
 						{3}\
 					<span class="diamond fl sprite liverlevel-pic_liverlevel_{4}"></span>\
 					<a href="{5}"><span class="name fl">{6}</span> </a>\
@@ -312,7 +312,7 @@ $(document).ready(function(){
 		var compiliter={
 			bightml:
 				'<a href="{0}"  target="_blank" class="thumbnail firHot">\
-				<img class="lazy" data-original="{1}&w=240&h=360" alt="{2}"/>\
+				<img class="lazy" src="{1}&w=240&h=360" alt="{2}"/>\
 				{3}\
 					<div class="firT thumbnail clearfix">\
 						<div class="pull-left sprite_l pic_liverlevel_L_{4}"></div>\
@@ -330,7 +330,7 @@ $(document).ready(function(){
 					<div class="playBtn"></div></a>',
 			bightmlNew:
 				'<a href="{0}"  target="_blank" class="thumbnail firHot">\
-				<img class="lazy" data-original="{1}&w=240&h=360" alt="{2}"/>\
+				<img class="lazy" src="{1}&w=240&h=360" alt="{2}"/>\
 				{3}\
 					<div class="firB ellipsis">\
 						<p class="colorPin f16">{4}</p>\
@@ -347,7 +347,7 @@ $(document).ready(function(){
 			lithtml:
 				'<div class="{0}">\
 						<a href="{1}"  target="_blank" class="hotItem thumbnail">\
-						<img class="lazy" data-original="{2}&w=110&h=165" alt="{3}"/>\
+						<img class="lazy" src="{2}&w=110&h=165" alt="{3}"/>\
                         <div class="sprite_s pic_liverlevel_S_{4}"></div>\
                         {5}\
 							<div class="hotT thumbnail">\
@@ -364,7 +364,7 @@ $(document).ready(function(){
 			lithtmlNew:
 				'<div class="{0}">\
 						<a href="{1}"  target="_blank" class="hotItem thumbnail">\
-							<img class="lazy" data-original="{2}&w=110&h=165" alt="{3}"/>\
+							<img class="lazy" src="{2}&w=110&h=165" alt="{3}"/>\
 							{4}\
 							<div class="hotB">\
 								<div class="colorPin f14 ellipsis">{5}</div>\
@@ -379,7 +379,7 @@ $(document).ready(function(){
 	
 			sonh:
 				'<a href="#" target="_blank" class="hotItem thumbnail">\
-				<img class="lazy" data-original="images/girl02.png" alt="">\
+				<img class="lazy" src="images/girl02.png" alt="">\
 				<span class="glyphicon glyphicon-stats"></span>\
 				<div class="hotT thumbnail">\
 				<div class=""></div>\
@@ -398,7 +398,7 @@ $(document).ready(function(){
 				' <div class="col-lg-3 col-sm-3 col-xs-4">\
 					<a href="{0}" target="_blank" class="thumbnail">\
 					<div class="recommImg thumbnail">\
-						<img class="lazy" data-original="{1}&w=248&h=127" alt="{2}"/>\
+						<img class="lazy" src="{1}&w=248&h=127" alt="{2}"/>\
 						<div class="thumb-bar"></div>\
 						<div class="shadow"></div>\
 						<div class="playBtn"></div>\
@@ -492,8 +492,8 @@ $(document).ready(function(){
 						
 						var s_big,s_sml;
 						var advertisement =
-							'<a href="/applyHome.php" target="_blank" class="thumbnail adImg">\
-								<img class="lazy" data-original="/images/kedo/hotImg.png" alt="">\
+							'<a href="#" target="_blank" class="thumbnail adImg">\
+								<img class="lazy" src="/images/kedo/hotImg.png" alt="">\
 							</a>\
 							';
 						var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -563,7 +563,7 @@ $(document).ready(function(){
 					var s_big,s_sml;
 					var advertisement =
 							'<a href="#" target="_blank" class="thumbnail adImg">\
-								<img class="lazy" data-original="/images/kedo/hotImg.png" alt="">\
+								<img class="lazy" src="/images/kedo/hotImg.png" alt="">\
 							</a>\
 							';
 					var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -650,9 +650,9 @@ $(document).ready(function(){
 					$.each(datas, function(k, v) {
 						$active = k==0?"active":"";
                         if(v.url !=''){
-                            item+='<div class="item '+$active+'"><a href="'+v.url+'"><img class="lazy" data-src="'+v.image+'" alt="900x500" data-original="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="'+v.url+'"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
 						}else{
-                            item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  data-original="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
 						}
 						if(k==0){
                             lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"></li>';
