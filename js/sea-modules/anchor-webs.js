@@ -27,6 +27,7 @@ define(function(require, exports, module) {
 		this.login = false;
 		this.weblg = false;
 		this.effect = true;
+		this.qqgame = false;
 		this.anchorId = null;
 		this.intervals = null;
 		this.sendTsg = "ALL";
@@ -104,7 +105,7 @@ define(function(require, exports, module) {
 			}
 		},
 		agents : function() {
-			return false;
+			return this.qqgame;
 		},
 		loading : function(userId, token, room) {
 			lvs.mo();
