@@ -516,7 +516,6 @@ $(document).ready(function(){
 							}else if(k>0 && k<=6){
 								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}else if(k>6 && k <=12){
-<<<<<<< HEAD
 								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}else if(k>12 && k <=18){
 								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
