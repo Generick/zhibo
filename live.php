@@ -14,8 +14,6 @@ if(ismobile()){
     exit();
 }
 
-//vision
-$vsn = md5(date('Y-d-m'));
 //背景
 $bgclassList=array("bg1","bg2");
 $index=rand(0,count($bgclassList)-1);

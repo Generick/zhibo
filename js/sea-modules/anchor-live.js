@@ -41,7 +41,7 @@ define(function(require, exports, module) {
 			content.push('<div id="mwin1">');
 			content.push(' <!--<![endif]-->');
 			content.push('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="360" id="player" name="player" align="middle">');
-			content.push('<param name="movie" value="/js/sea-modules/swf/record.swf?"+ UIF.version>');
+			content.push('<param name="movie" value="/js/sea-modules/swf/record.swf?'+UIF.version+'">');
 			content.push('<param name="flashvars" value="chat=1&amp;usernumber=' + roomNumber + '&amp;roomnumber=' + roomNumber + '&amp;c=' + token + '&amp;mtadd=' + flashPath
 					+ '">');
 			content.push('<param name="quality" value="high">');
@@ -49,8 +49,8 @@ define(function(require, exports, module) {
 			content.push('<param name="allowScriptAccess" value="always">');
 			content.push('<param name="allowfullscreen" value="true">');
 			content.push('<!--[if !IE]>-->');
-			content.push('<object type="application/x-shockwave-flash" data="/js/sea-modules/swf/record.swf?"+ UIF.version id="player" name="player" width="640" height="360">');
-			content.push('<param name="movie" value="/js/sea-modules/swf/record.swf?"+ UIF.version>');
+			content.push('<object type="application/x-shockwave-flash" data="/js/sea-modules/swf/record.swf?'+UIF.version+'" id="player" name="player" width="640" height="360">');
+			content.push('<param name="movie" value="/js/sea-modules/swf/record.swf?'+UIF.version+'">');
 			content.push('<param name="flashvars" value="chat=1&amp;usernumber=' + userId + '&amp;roomnumber=' + roomNumber + '&amp;c=' + token + '&amp;mtadd=' + flashPath + '">');
 			content.push('<param name="quality" value="high">');
 			content.push('<param name="wmode" value="transparent">');
@@ -76,15 +76,15 @@ define(function(require, exports, module) {
 			content.push('<div id="mwin1">');
 			content.push(' <!--<![endif]-->');
 			content.push('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="360" id="player" name="player" align="middle">');
-			content.push('<param name="movie" value="/js/sea-modules/swf/player.swf?"+ UIF.version>');
+			content.push('<param name="movie" value="/js/sea-modules/swf/player.swf?'+UIF.version+'">');
 			content.push('<param name="flashvars" value="token=&amp;chat=1&amp;roomnumber=' + roomNumber + '&amp;fn=' + roomNumber + '&amp;mtadd=' + flashPath + '">');
 			content.push('<param name="quality" value="high">');
 			content.push('<param name="wmode" value="transparent">');
 			content.push('<param name="allowScriptAccess" value="always">');
 			content.push('<param name="allowfullscreen" value="true">');
 			content.push('<!--[if !IE]>-->');
-			content.push('<object type="application/x-shockwave-flash" data="/js/sea-modules/swf/player.swf?"+UIF.version id="player" name="player" width="640" height="360">');
-			content.push('<param name="movie" value="/js/sea-modules/swf/player.swf?" + UIF.version>');
+			content.push('<object type="application/x-shockwave-flash" data="/js/sea-modules/swf/player.swf?'+UIF.version+'" id="player" name="player" width="640" height="360">');
+			content.push('<param name="movie" value="/js/sea-modules/swf/player.swf?'+UIF.version+'">');
 			content.push('<param name="flashvars" value="token=&amp;chat=1&amp;roomnumber=' + roomNumber + '&amp;fn=' + roomNumber + '&amp;mtadd=' + flashPath + '">');
 			content.push('<param name="quality" value="high">');
 			content.push('<param name="wmode" value="transparent">');

@@ -11,6 +11,10 @@ if(isset($_GET['c'])){
     $tm=true;
 }
 
+//vision
+$vsn = md5(date('Y-d-m')."WRsW");
+$page_var['vsn']=$vsn;
+
 $http_host=$_SERVER['HTTP_HOST'];
 switch($http_host){
     case "127.0.0.1":
