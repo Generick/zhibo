@@ -62,6 +62,7 @@ define(function(require, exports, module) {
 			setting.init();
 			lvs.init(data);
 			backLoad.init();
+			pet.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
 				var keyCode;
