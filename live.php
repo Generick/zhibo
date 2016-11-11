@@ -10,7 +10,8 @@ include('include/header.inc.php');
 include($app_path."include/level.func.php");
 $user=checklogin();
 if(ismobile()){
-    include "live_mobile.php";
+
+   include "live_mobile.php";
     exit();
 }
 
