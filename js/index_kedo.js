@@ -128,13 +128,13 @@ $(document).ready(function(){
 					var  $listObj = $.extend(true,$x,data.data);
 					$num=$listObj.length;
 					$.each($listObj, function() {
-						var _self = $(this)[0];
-						if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickname += "c"};
-						if (_self.online == true) {
-							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName, "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
-						}else{
-							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName,'<p class="ynLiv">未开播</p>',_self.totalpoint);
-						}
+                        var _self = $(this)[0];
+                        if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickName};
+                        if (_self.online == true) {
+                            htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, decodeURI(_self.nickName), decodeURI(_self.nickName), "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
+                        }else{
+                            htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, decodeURI(_self.nickName), decodeURI(_self.nickName),'<p class="ynLiv">未开播</p>',_self.totalpoint);
+                        }
 					})
 					$(".follow .caption .boxx").html(htm);
 	
@@ -286,11 +286,11 @@ $(document).ready(function(){
 						if(type == "anchor"){
 							roomnumber = v.roomNumber;
 						}
-						if(k==0){
-							s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar, v.nickname, v.nickname,v.totalpoint);
-						}else{
-							s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, v.nickname, v.nickname,v.totalpoint);
-						}
+                        if(k==0){
+                            s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar, decodeURI(v.nickname), decodeURI(v.nickname),v.totalpoint);
+                        }else{
+                            s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, decodeURI(v.nickname), decodeURI(v.nickname),v.totalpoint);
+                        }
 						$("#"+listid+"").append(s_ht3);
 						if(k==7){return false;}
 					})
@@ -507,16 +507,16 @@ $(document).ready(function(){
 							}
 							if(k==0){
 								
-								s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,v.nickName,compiliter.tolive(v.online,1),v.totalpoint, v.numbers,v.nickName,compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
+								s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,decodeURI(v.nickName),compiliter.tolive(v.online,1),v.totalpoint, v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
 								bwrap.append(s_big);
 								bwrap.append(advertisement);
 								
 							}else if(k>0 && k<=6){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}else if(k>6 && k <=12){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}else if(k>12 && k <=18){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}
 							srow.append(s_sml);
 	
@@ -565,15 +565,15 @@ $(document).ready(function(){
 							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
 						}
 						if(k==0){
-							s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,v.nickName, v.nickName,v.numbers,v.heats);
+							s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,decodeURI(v.nickName), decodeURI(v.nickName),v.numbers,v.heats);
 							bwrap.append(s_big);
 							bwrap.append(advertisement);
 						}else if(k>0 && k<=6){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, decodeURI(v.nickName),decodeURI(v.nickName),v.numbers);
 						}else if(k>6 && k <=12){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),decodeURI(v.nickName),v.numbers);
 						}else if(k>12 && k <=18){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),decodeURI(v.nickName),v.numbers);
 						}
 						srow.append(s_sml);
 					})
@@ -611,7 +611,7 @@ $(document).ready(function(){
 				var li="";
 				if (datas != null && datas.length > 0) {
 					$.each(datas, function(k, v) {
-						li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, v.nickName, v.nickName,v.numbers,"","");
+						li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, decodeURI(v.nickName), decodeURI(v.nickName),v.numbers,"","");
 					})
 					$("#gameAnchors").append(li);
 				}
