@@ -38,7 +38,7 @@
         <div class="mindex-else-title"> 我守护的</div>
         <div class="mycare-list">
             <?php
-                $datas = curl_post(_CDNDOMAIN_."/rest/personCenter/myGuard.mt","userid=$user[userId]");
+                $datas = curl_post(_INTERFACE_."/rest/personCenter/myGuard.mt","userid=$user[userId]");
                 $acceptData=json_decode($datas, true);
                 foreach($acceptData[data] as $k=>$v) {
             ?>
@@ -48,7 +48,7 @@
                             <div><img src="<?php echo $v['himage']?>"/></div>
                         </div>
                         <div class="mycare-box-right">
-                            <div class="mybr1"><span class="mbysp1"><?php echo $v['name']?></span> <span class="mbysp2">守护中..</span></div>
+                            <div class="mybr1"><span class="mbysp1"><?php echo urldecode($v['name'])?></span> <span class="mbysp2">守护中..</span></div>
                             <div class="mybr2"><?php echo $v['followeds']?> 粉丝</div>
                             <div class="mybr3">守护等级：<span class="colorcc"><?php echo $v['grds']?></span></div>
                             <div class="mybr4">剩余天数：<span class="colorcc"><?php echo $v['days']?> </span>天</div>
