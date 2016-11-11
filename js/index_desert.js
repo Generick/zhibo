@@ -13,7 +13,16 @@ $(document).ready(function(){
 
 	SwapTab(".captitle", "a", ".cons", ".foLi", "active");
 	SwapTab("#orderTit", "li", "#orderBody", ".orderItem", "active");
-	
+    function ndecodeURI(str){
+        var $a="";
+        try{
+            $a = ndecodeURI(str);
+        }catch (e){
+            $a="é”™è¯¯ç¼–ç ";
+        }
+
+        return $a;
+    }
 	var Tools = {};
 	Tools.getDate = function (params, callback) {
 		$.ajax({
@@ -32,7 +41,7 @@ $(document).ready(function(){
 			}
 		});
 	};
-	//postÇëÇó
+	//postï¿½ï¿½ï¿½ï¿½
 	Tools.getJson = function (params, callback) {
 		$.ajax({
 			type: "GET",
@@ -47,7 +56,7 @@ $(document).ready(function(){
 	
 				},
 				200: function(){
-					// alert("ÇëÇó³É¹¦");
+					// alert("ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
 	
 				}
 			},
@@ -86,7 +95,7 @@ $(document).ready(function(){
 			return newo;
 	}
 
-	//¹Ø×¢
+	//ï¿½ï¿½×¢
 	
 	
 	$(function () {
@@ -120,9 +129,9 @@ $(document).ready(function(){
 						var _self = $(this)[0];
 						if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickName};
 						if (_self.online == true) {
-							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, decodeURI(_self.nickName), decodeURI(_self.nickName), "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>·ÖÖÓÇ°¿ª²¥</p>",_self.totalpoint);
+							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, ndecodeURI(_self.nickName), ndecodeURI(_self.nickName), "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½</p>",_self.totalpoint);
 						}else{
-							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, decodeURI(_self.nickName), decodeURI(_self.nickName),'<p class="ynLiv">Î´¿ª²¥</p>',_self.totalpoint);
+							htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, ndecodeURI(_self.nickName), ndecodeURI(_self.nickName),'<p class="ynLiv">Î´ï¿½ï¿½ï¿½ï¿½</p>',_self.totalpoint);
 						}
 					})
 					$(".follow .caption .boxx").html(htm);
@@ -208,32 +217,32 @@ $(document).ready(function(){
 	$(function(){
 	
 		var ulList={
-			"dayList":"/files/giftWeels.json", //Ö÷²¥ÖÜ‰Y
+			"dayList":"/files/giftWeels.json", //ï¿½ï¿½ï¿½ï¿½ï¿½Ü‰Y
 	
-			"weekList":"/files/giftMonth.json", //Ö÷²¥ÔÂ
+			"weekList":"/files/giftMonth.json", //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-			"monthList":"/files/giftYear.json", //Ö÷²¥Äê°ñ
-	
-	
-			"th_week":"/files/localTyrantDay.json",//ÍÁºÀÖÜ
-	
-			"th_month":"/files/localTyrantMonth.json",//ÍÁºÀÔÂ
-	
-			"th_year":"/files/localTyrantYear.json",//ÍÁºÀÄê
+			"monthList":"/files/giftYear.json", //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	
-			"hy_week":"/files/fansActive.json",//»îÔ¾ÖÜ
+			"th_week":"/files/localTyrantDay.json",//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-			"hy_month":"/files/fansActive.json",//»îÔ¾ÔÂ
+			"th_month":"/files/localTyrantMonth.json",//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-			"hy_year":"/files/fansActive.json",//»îÔ¾Äê
+			"th_year":"/files/localTyrantYear.json",//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	
+	
+			"hy_week":"/files/fansActive.json",//ï¿½ï¿½Ô¾ï¿½ï¿½
+	
+			"hy_month":"/files/fansActive.json",//ï¿½ï¿½Ô¾ï¿½ï¿½
+	
+			"hy_year":"/files/fansActive.json",//ï¿½ï¿½Ô¾ï¿½ï¿½
 	
 	
 			"anc_banner":"/files/banners.json",//banner
 	
 			"anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
 	
-			"anc_game":"/files/gameAnchors.json",//¾«²ÊÍÆ¼ö
+			"anc_game":"/files/gameAnchors.json",//ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½
 	
 			"anc_new":"/files/newAnchors.json" //"/ajax/getLiveAnchors.php"+"?anc_type=new"
 	
@@ -285,9 +294,9 @@ $(document).ready(function(){
 						}
 						if(k==0){
 
-							s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar,decodeURI(v.nickname), decodeURI(v.nickname),v.totalpoint);
+							s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar,ndecodeURI(v.nickname), ndecodeURI(v.nickname),v.totalpoint);
 						}else{
-							s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, decodeURI(v.nickname), decodeURI(v.nickname),v.totalpoint);
+							s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, ndecodeURI(v.nickname), ndecodeURI(v.nickname),v.totalpoint);
 						}
 						$("#"+listid+"").append(s_ht3);
 						if(k==7){return false;}
@@ -317,7 +326,7 @@ $(document).ready(function(){
 				{3}\
 					<div class="firT thumbnail clearfix">\
 						<div class="pull-left sprite_l pic_liverlevel_L_{4}"></div>\
-						<p class="text-center">ÈËÊı£º<span>{5}</span></p>\
+						<p class="text-center">ï¿½ï¿½ï¿½ï¿½<span>{5}</span></p>\
 						 </div>\
 					<div class="firB ellipsis">\
 						<p class="colorPin f16">{6}</p>\
@@ -352,7 +361,7 @@ $(document).ready(function(){
                         <div class="sprite_s pic_liverlevel_S_{4}"></div>\
                         {5}\
 							<div class="hotT thumbnail">\
-								<p class="text-center">ÈËÊı£º<span>{6}</span></p>\
+								<p class="text-center">ï¿½ï¿½ï¿½ï¿½<span>{6}</span></p>\
 							</div>\
 							<div class="hotB">\
 								<div class="colorPin f14 ellipsis">{7}</div>\
@@ -384,13 +393,13 @@ $(document).ready(function(){
 				<span class="glyphicon glyphicon-stats"></span>\
 				<div class="hotT thumbnail">\
 				<div class=""></div>\
-				<p class="text-center">ÈËÊı£º<span>268</span></p>\
+				<p class="text-center">ï¿½ï¿½ï¿½ï¿½<span>268</span></p>\
 				</div>\
 					<div class="hotB">\
-						<span class="colorPin f14">Ğ¡ÃÛÌÒsasa</span>\
+						<span class="colorPin f14">Ğ¡ï¿½ï¿½ï¿½ï¿½sasa</span>\
 						<p class="f12">\
 							<span>30</span>\
-							<span>·ÖÖÓÖ®Ç°</span>\
+							<span>ï¿½ï¿½ï¿½ï¿½Ö®Ç°</span>\
 						</p>\
 					</div>\
 					<div class="playBtn"></div>\
@@ -436,9 +445,9 @@ $(document).ready(function(){
 			},
 			totime:function(tm){
 				if(!tm){
-					return "Î´¿ª²¥";
+					return "Î´ï¿½ï¿½ï¿½ï¿½";
 				}
-				return Math.ceil(tm/60000)+"·ÖÖÓÇ°¿ª²¥";
+				return Math.ceil(tm/60000)+"ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½";
 			},
 			toCity:function(ct){
 				if(ct){
@@ -509,16 +518,16 @@ $(document).ready(function(){
 							}
 							if(k==0){
 								
-								s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,decodeURI(v.nickName),compiliter.tolive(v.online,1),v.totalpoint, v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
+								s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,ndecodeURI(v.nickName),compiliter.tolive(v.online,1),v.totalpoint, v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
 								bwrap.append(s_big);
 								bwrap.append(advertisement);
 								
 							}else if(k>0 && k<=6){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}else if(k>6 && k <=12){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}else if(k>12 && k <=18){
-								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,decodeURI(v.nickName),compiliter.totime(v.onlineTime));
+								s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
 							}
 							srow.append(s_sml);
 	
@@ -575,15 +584,15 @@ $(document).ready(function(){
 							v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
 						}
 						if(k==0){
-							s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,decodeURI(v.nickName), compiliter.tolive(v.online,1),decodeURI(v.nickName),v.numbers,v.heats);
+							s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,ndecodeURI(v.nickName), compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers,v.heats);
 							bwrap.append(s_big);
 							bwrap.append(advertisement);
 						}else if(k>0 && k<=6){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, decodeURI(v.nickName),compiliter.tolive(v.online,1),decodeURI(v.nickName),v.numbers);
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
 						}else if(k>6 && k <=12){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,decodeURI(v.nickName),compiliter.tolive(v.online,1),decodeURI(v.nickName),v.numbers);
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
 						}else if(k>12 && k <=18){
-							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, decodeURI(v.nickName),compiliter.tolive(v.online,1),decodeURI(v.nickName),v.numbers);
+							s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
 						}
 						srow.append(s_sml);
 					})
@@ -625,7 +634,7 @@ $(document).ready(function(){
 				var li="";
 				if (datas != null && datas.length > 0) {
 					$.each(datas, function(k, v) {
-                        li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, v.title, v.title,v.numbers,decodeURI(v.nickName));
+                        li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, v.title, v.title,v.numbers,ndecodeURI(v.nickName));
 					})
 					$("#gameAnchors").append(li);
 
@@ -678,7 +687,7 @@ $(document).ready(function(){
 
 	
 
-    //c3×ª»¯³Éjs
+    //c3×ªï¿½ï¿½ï¿½ï¿½js
 	var $changeWid=$("#carousel-example-captions");
 	var $doneWid=$("#carousel-example-captions .thumb-bar")
 	$changeWid.hover(function(){

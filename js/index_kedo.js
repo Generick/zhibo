@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 	SwapTab(".captitle", "a", ".cons", ".foLi", "active");
 	SwapTab("#orderTit", "li", "#orderBody", ".orderItem", "active");
-    function nndecodeURI(str){
+    function ndecodeURI(str){
         var $a="";
         try{
             $a = decodeURI(str);
