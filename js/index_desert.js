@@ -625,12 +625,7 @@ $(document).ready(function(){
 				var li="";
 				if (datas != null && datas.length > 0) {
 					$.each(datas, function(k, v) {
-<<<<<<< HEAD
-						li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber, v.image,decodeURI(v.nickName), decodeURI(v.nickName),v.numbers,v.title);
-=======
-
                         li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, v.title, v.title,v.numbers,decodeURI(v.nickName));
->>>>>>> refs/remotes/origin/master
 					})
 					$("#gameAnchors").append(li);
 
