@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
 <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
 <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
-<link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
+<link href="<?php echo $page_var['cdn_domain']?>/css/login.css?<?php echo $vsn;?>" type="text/css" rel="stylesheet" />
 <link href="<?php echo $page_var['cdn_domain']?>/css/nanoScroller.css" rel="stylesheet">
 <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
 <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
@@ -30,6 +30,7 @@
         currentUserID : "<?php echo addslashes($user['userId'])?>",
         currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
         currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
+        version :"<?php echo $vsn?>",
         log : function(msg){
             UIF.handler.weblog(msg);
         },
@@ -52,10 +53,14 @@
                     "socket" : "socket.io/socket.io",
                     "swfobject" : "swfobject/swfobject",
                     "jquery" : "jquery/jquery/1.10.1/jquery"
-                }
+                },
+                map:[
+                    [".js",".js?v=<?php echo $vsn?>"]//映射规则
+                ]
             })
             seajs.use("/js/sea-modules/anchor-webs",function(W){
                 UIF.handler = new W();
+                UIF.handler.QQGame = true;
                 UIF.handler.loading(UIF.currentUserID, UIF.currentToken, UIF.currentRoomNumber);
             });
         },

@@ -27,9 +27,7 @@ and b.isFollow =1
             while($arr=$rs->FetchRow()){
                 $arr=safe_output($arr,true);
                 $arr['starlevel']=point2star($arr['totalpoint']);
-                if ($arr['nickname'] == base64_encode(base64_decode($arr['nickname']))) {
-                    $arr['nickname'] = base64_decode($arr['nickname']);
-                }
+                $arr['nickname'] = urldecode($arr['nickname']);
                 ?>
                 <div class="care-li">
                     <div class="care-img"><a href="/<?php echo $arr['roomNumber']?>.html"><img src="/apis/avatar.php?uid=<?php echo $arr['userId']?>" alt="name"></a></div>

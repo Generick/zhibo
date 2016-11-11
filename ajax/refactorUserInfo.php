@@ -28,7 +28,7 @@ $_POST=safe_output($_POST);
          exit();
      }else{
          $snic=$nickname;
-         $nickname = base64_encode($nickname);
+         $nickname = urlencode($nickname);
          $db->Execute("update bu_user set nickname='{$nickname}' where userId='{$user['userId']}'");
 
          $userinfo=search_save_user($user['userId']);
@@ -47,7 +47,7 @@ $_POST=safe_output($_POST);
      }
      $gender=$_POST['gender']?$_POST['gender']:0;
      $snic=$nickname;
-     $nickname=base64_encode($_POST['aliasname']);
+     $nickname=urlencode($_POST['aliasname']);
      $res=$db->Execute("update bu_user set nickname='{$nickname}', birthday='$birthday',gender=$gender,province='{$_POST['province']}',city='{$_POST['city']}' where userId=$user[userId]");
      if($res){
          header('Content-Type:application/json; charset=utf-8');

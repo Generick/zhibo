@@ -295,7 +295,7 @@ define(function(require, exports, module) {
 			})
 
 			//record
-			var _this = this;
+            /*var _this = this;
 			var data = {
 				roomNumber : UIF.handler.roomNumber
 			}
@@ -313,7 +313,7 @@ define(function(require, exports, module) {
 					})
 				}
 
-			});
+			});*/
 
 		},
 		filGift : function(data) {
@@ -387,7 +387,7 @@ define(function(require, exports, module) {
 			if (data.sendNum > 0) {
 				swf.mul({
 					uid : data.uid,
-					user : data.user,
+					user : decodeURI(data.user),
 					number : data.number,
 					sendNum : data.sendNum,
 					headImg : UIF.cdn_img + "/" + data.avatar,
@@ -410,7 +410,7 @@ define(function(require, exports, module) {
 		},
 		speGift : function(data) {
 			swf.spe({
-				nickname : data.nickname,
+				nickname : decodeURI(data.nickname),
 				speimg : "/static_data/images_css/upgrades/pic_consumelevel_" + data.splev + ".png"
 			});
 		},
@@ -438,7 +438,7 @@ define(function(require, exports, module) {
 							giftId : enter.giftId,
 							number : enter.number,
 							car : 1,
-							nickname : data.nickname,
+							nickname : decodeURI(data.nickname),
 							carName : carName,
 							needAddFlag : needAddFlag
 						});
@@ -448,7 +448,7 @@ define(function(require, exports, module) {
 						giftId : enter.giftId,
 						number : enter.number,
 						car : 1,
-						nickname : data.nickname,
+						nickname : decodeURI(data.nickname),
 						carName : carName,
 						needAddFlag : needAddFlag
 					});
@@ -462,7 +462,7 @@ define(function(require, exports, module) {
 				return false;
 			}
 			data.ctime = Tools.dateFormat(new Date(), "HH:mm");
-			if (UIF.thisHome == 1) {
+			/*if (UIF.thisHome === 100000) {
 				$.ajax({
 					type : "POST",
 					url : "/ajax/postGiftRecord.php",
@@ -474,7 +474,7 @@ define(function(require, exports, module) {
 				}).done(function(datas) {
 					console.log(data);
 				});
-			}
+			}*/
 			var base = this;
 			var ls = '<span class="gr-ulevel {0}"></span>';
 			var path = UIF.cdn_img + "/" + data.samllimg + "?p=0";
@@ -517,7 +517,7 @@ define(function(require, exports, module) {
 						$t += Tools.stringFormat(ls, data.guards);
 					if (data.toUserName != null && data.toUserName != "")
 						$touser += data.toUserName;
-					$h = Tools.stringFormat(html, $t, data.user, $touser, $p, $n);
+					$h = Tools.stringFormat(html, $t, decodeURI(data.user), decodeURI($touser), $p, $n);
 					base.giftQueue.push($h);
 				}
 				var sh;

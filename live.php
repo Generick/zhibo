@@ -9,14 +9,11 @@ header("Pragma: no-cache");
 include('include/header.inc.php');
 include($app_path."include/level.func.php");
 $user=checklogin();
-
 if(ismobile()){
     include "live_mobile.php";
     exit();
 }
 
-//vision
-$vsn = md5(date('Y-d-m'));
 //背景
 $bgclassList=array("bg1","bg2");
 $index=rand(0,count($bgclassList)-1);
@@ -46,11 +43,7 @@ if(!$showinfo){
 }
 $showinfo=safe_output($showinfo);
 
-if ($showinfo['nickname'] == base64_encode(base64_decode($showinfo['nickname']))) {
-    $b = base64_decode($showinfo['nickname']);
-}else{
-    $b = $showinfo['nickname'];
-}
+$b = urldecode($showinfo['nickname']);
 $showinfo['nickname'] =$b;
 $showinfo['starlevel']=1;
 

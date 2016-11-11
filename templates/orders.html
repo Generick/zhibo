@@ -7,10 +7,10 @@
     <title>广场-蝌蚪直播</title>
     <meta property="qc:admins" content="105415766763547646" />
     <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
-    <link data-fixed="true" href="/templates/square.css" rel="stylesheet">
-    <link href="{$cdn_domain}/static_data/images_css/icons.css" rel="stylesheet">
+    <link data-fixed="true" href="/templates/square.css?{$vsn}" rel="stylesheet">
+    <link href="{$cdn_domain}/static_data/images_css/icons.css?{$vsn}" rel="stylesheet">
     <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
-    <script type="text/javascript" src="{$cdn_domain}/js/login.js?20150908"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js?{$vsn}"></script>
     <script>
         $(function(){
 
@@ -48,10 +48,10 @@
                 {if $key==2}
                 <a href="/{$show.roomNumber}.html" class="order-box-second">
                     <div class="order-second-img">
-                        <img class="rank_pho" src="{$show.image}" alt="{$show.nickName}"/>
+                        <img class="rank_pho" src="{$show.image}" alt="{$show.nickName|urldecode}"/>
                         <span class="secondCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-second-level"><span></span></div>
                 </a>
                 {/if}
@@ -61,11 +61,11 @@
                 {if $key==1}{break}{/if}
                 <a href="/{$show.roomNumber}.html"   class="order-box-first">
                     <div class="order-first-img">
-                        <img class="rank_pho" src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho" src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="crown"></span>
                         <span class="crown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_24"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_24"></span>{$show.nickName|urldecode}</div>
                     <div class="order-first-level"><span></span></div>
                 </a>
                 {/foreach}
@@ -74,10 +74,10 @@
                 {if $key==3}
                 <a href="/{$show.roomNumber}.html" class="order-box-third">
                     <div class="order-third-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="thirdCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_22"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_22"></span>{$show.nickName|urldecode}</div>
                     <div class="order-third-level"><span></span></div>
                 </a>
                 {/if}
@@ -92,7 +92,7 @@
                         <a href="/{$show.roomNumber}.html"  >
                             <span class="number">{$key}.</span>
                             <span class="diamond sprite {$show.levelImg}"></span>
-                            <span class="order-second-name">{$show.nickName}</span>
+                            <span class="order-second-name">{$show.nickName|urldecode}</span>
                         </a>
                     </li>
                     {/if}
@@ -326,10 +326,10 @@
                 {if $key==2}
                 <a href="javascript:;" class="order-box-second">
                     <div class="order-second-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="secondCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-second-level"><span></span></div>
                 </a>
                 {/if}
@@ -339,11 +339,11 @@
                 {if $key==1}{break}{/if}
                 <a href="javascript:;"class="order-box-first">
                     <div class="order-first-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="crown"></span>
                         <span class="crown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-first-level"><span></span></div>
                 </a>
                 {/foreach}
@@ -352,10 +352,10 @@
                 {if $key==3}
                 <a href="javascript:;" class="order-box-third">
                     <div class="order-third-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="thirdCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-third-level"><span></span></div>
                 </a>
                 {/if}
@@ -372,7 +372,7 @@
                         <a href="javascript:;">
                             <span class="number">{$key}.</span>
                             <span class="diamond sprite {$show.levelImg}"></span>
-                            <span class="order-second-name">{$show.nickName}</span>
+                            <span class="order-second-name">{$show.nickName|urldecode}</span>
                         </a>
                     </li>
                     {/if}
@@ -609,10 +609,10 @@
                 <a href="javascript:;" class="order-box-second">
                     <div class="order-second-img">
 
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="secondCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-second-level"><span></span></div>
                 </a>
                 {/if}
@@ -622,11 +622,11 @@
                 {if $key==1}{break}{/if}
                 <a href="javascript:;"class="order-box-first">
                     <div class="order-first-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="crown"></span>
                         <span class="crown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-first-level"><span></span></div>
                 </a>
                 {/foreach}
@@ -635,10 +635,10 @@
                 {if $key==3}
                 <a href="javascript:;" class="order-box-third">
                     <div class="order-third-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName}"/>
+                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="thirdCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName}</div>
+                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
                     <div class="order-third-level"><span></span></div>
                 </a>
                 {/if}
@@ -655,7 +655,7 @@
                         <a href="javascript:;">
                             <span class="number">{$key}.</span>
                             <span class="diamond sprite {$show.levelImg}"></span>
-                            <span class="order-second-name">{$show.nickName}</span>
+                            <span class="order-second-name">{$show.nickName|urldecode}</span>
                         </a>
                     </li>
                     {/if}

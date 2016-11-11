@@ -114,8 +114,8 @@ if($_GET['openid']){//优先设置qq id
     if($qq_user_info != null and $qq_user_info['ret'] ==0){  //http://wiki.open.qq.com/wiki/%E5%85%AC%E5%85%B1%E8%BF%94%E5%9B%9E%E7%A0%81%E8%AF%B4%E6%98%8E#OpenAPI_V3.0_.E8.BF.94.E5.9B.9E.E7.A0.81
         $user=$db->GetRow("select * from bu_user where snsid='$openid'");
         if($user){
-            if(base64_decode($user['nickname']) =="001"){
-                $unickname = base64_encode($qq_user_info[nickname]);
+            if(urldecode($user['nickname']) =="001"){
+                $unickname = urlencode($qq_user_info[nickname]);
                 $c=$db->Execute("update bu_user  set nickname ='{$unickname}' where snsid='{$openid}'");
                 $user[nickname]=$qq_user_info[nickname];
             }
