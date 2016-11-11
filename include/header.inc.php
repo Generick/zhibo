@@ -12,7 +12,7 @@ if(isset($_GET['c'])){
 }
 
 //vision
-$vsn = md5(date('Y-d-m')."WRsW");
+$vsn = md5(date('Y-d-m')."S%WGF");
 $page_var['vsn']=$vsn;
 
 $http_host=$_SERVER['HTTP_HOST'];
