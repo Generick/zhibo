@@ -295,7 +295,7 @@ define(function(require, exports, module) {
 			})
 
 			//record
-			var _this = this;
+            /*var _this = this;
 			var data = {
 				roomNumber : UIF.handler.roomNumber
 			}
@@ -313,7 +313,7 @@ define(function(require, exports, module) {
 					})
 				}
 
-			});
+			});*/
 
 		},
 		filGift : function(data) {
@@ -462,7 +462,7 @@ define(function(require, exports, module) {
 				return false;
 			}
 			data.ctime = Tools.dateFormat(new Date(), "HH:mm");
-			if (UIF.thisHome == 1) {
+			/*if (UIF.thisHome === 100000) {
 				$.ajax({
 					type : "POST",
 					url : "/ajax/postGiftRecord.php",
@@ -474,7 +474,7 @@ define(function(require, exports, module) {
 				}).done(function(datas) {
 					console.log(data);
 				});
-			}
+			}*/
 			var base = this;
 			var ls = '<span class="gr-ulevel {0}"></span>';
 			var path = UIF.cdn_img + "/" + data.samllimg + "?p=0";
