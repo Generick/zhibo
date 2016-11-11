@@ -188,6 +188,11 @@ define(function(require, exports, module) {
 			UIF.handler.sendPetInit();
 		},
 		showPetUI : function(initL, initT){
+			
+			if (!UIF.handler.login) {
+				UIF.handler.loging();
+				return;
+			}
 			if(!this.checkIfPetBorn())
 			{
 				Tools.dialog(this.PetNotBornStr);
@@ -241,7 +246,7 @@ define(function(require, exports, module) {
 			if(!this.checkIfPetBorn()){
 				return;
 			}
-			if(!UserData.data.isFollows){
+			if((!UserData.data.isFollows)&&(!this.checkIfAnchor())){
 				Tools.dialog(this.MustFollowAnchor);
 				return;
 			}
