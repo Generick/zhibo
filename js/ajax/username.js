@@ -1,12 +1,15 @@
 define('ajax/username', function(require, exports, module){
     exports.check = function(){
         nickname= $("#nickname").val();
+        var data={
+            nickname:$("#nickname").val()
+        }
         $.ajax({
             type: "POST",
             cache: false,
-            url: "/ajax/refactorUserInfo.php?action=editName&nickname="+nickname,
-            data:JSON.stringify(""),
-            contentType:"application/json; charset=utf-8",
+            url: "/ajax/refactorUserInfo.php?action=editName",
+            contentType: "application/x-www-form-urlencoded",
+            data:data,
             success:function(data){
                 data=JSON.parse(data);
                  if(data.resultStatus == 200){

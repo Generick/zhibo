@@ -128,6 +128,10 @@ define(function(require, exports, module) {
 		petBirth : function(data){
 			UIF.log("宠物出生");
 			pet.petBirth();
+		},
+		guardsMessage : function(data) {
+			UIF.log("守护通知：" + data);
+			guards.onMessage(jQuery.parseJSON(data));
 		}
 	}
 })

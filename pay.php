@@ -24,8 +24,6 @@ $page_var['openkey']=$_SESSION['openkey'];
 $page_var['pf']=$_SESSION['pf'];
 $page_var['pfkey']=$_SESSION['pfkey'];
 
-
-$page_var['current_page']="square";
 $page_var['cdn_domain']=_CDNDOMAIN_;
 foreach($page_var as $key=>$val){
     $smarty->assign($key,$val);

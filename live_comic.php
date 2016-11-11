@@ -20,10 +20,10 @@
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
-    <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?v=<?php echo $vsn;?>" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript">
@@ -35,6 +35,7 @@
             currentUserID : "<?php echo addslashes($user['userId'])?>",
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
             currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
+            version :"<?php echo $vsn?>",
             log : function(msg){
                 UIF.handler.weblog(msg);
             },
@@ -57,7 +58,10 @@
                         "socket" : "socket.io/socket.io",
                         "swfobject" : "swfobject/swfobject",
                         "jquery" : "jquery/jquery/1.10.1/jquery"
-                    }
+                    },
+                    map:[
+                        [".js",".js?v=<?php echo $vsn?>"]//映射规则
+                    ]
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
                     UIF.handler = new W();
@@ -349,7 +353,7 @@ if($roomType != "game"){
 <?php
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
-if($_SERVER['HTTP_HOST'] != "0www.kedo.tv"){
+if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
     include('./include/studio/pet.php');
 }
 if($thisHome ==1){
@@ -403,11 +407,12 @@ if($thisHome ==1){
             </div>
             <a id="sendChatBtn" href="javascript:;" class="sendChatBtn sdChat"></a>
         </div>
-        <div style="display:none;" class="FaceBox toggleBox" id="faces">
-            <div class="col" id="facesBd"></div>
-            <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
-            <div class="clear"></div>
-        </div>
+    <div style="display:none;" class="FaceBox toggleBox" id="faces">
+        <div class="col" id="facesBd"></div>
+        <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
+        <div class="clear"></div>
+    </div>
+    <div id="sendChatNotice" style="    position: relative;top: -53px;width: 76px;height: 20px;border-radius: 2px;left: 222px;display: none;background-color: white;overflow: hidden;font-size: 12px;line-height: 20px;padding-left: 5px;"> [0]秒</div>
     </div>
     <div class="chs2 nano" id="nano-songList" style="display: none">
         <div class="song-main content">

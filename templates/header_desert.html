@@ -8,9 +8,9 @@
 </script>
 <div class="head-outer btline">
 	<div class="header clearFix">
-        <a class="hd_bg fl" href="/"></a>
+        <a class="hd_bg fl" href="/{$index_page}"></a>
         <ul class="nav fl">
-            <li class="fl {if $current_page=='index'}cu{/if}"><a href="/">首页</a></li>
+            <li class="fl {if $current_page=='index'}cu{/if}"><a href="/{$index_page}">首页</a></li>
             <li class="fl {if $current_page=='square'}cu{/if}"><a href="/square.php">广场</a> </li>
             <li class="fl {if $current_page=='mall'}cu{/if}"><a href="/mall.php">商城</a> </li>
             <li class="fl {if $current_page=='order'}cu{/if}"><a href="/orders.php">排行榜</a> </li>
@@ -26,7 +26,10 @@
     {else}
     <div class="user clearFix">
         <div class="fl hd_hov">
-            <a class="username fl" href="centeros.php">{$user.nickname}</a> <a href="/login.php?action=logout&amp;type=html" class="userout">退出</a>
+            <a class="username fl" href="centeros.php">{$user.nickname}</a>
+            {if $index_page ==""}
+            <a href="/login.php?action=logout&amp;type=html" class="userout">退出</a>
+            {/if}
             <a class="expand fl" id="expand" href="javascript:;"></a>
         </div>
         <a class="email fl" href="javascript:;"></a>
@@ -50,7 +53,9 @@
             </div>
             <div class="hon-bottom">
                 <div class="tocenter"><a href="centeros.php">个人中心</a></div>
-                <div class="logout"><a href="/login.php?action=logout&amp;type=html">退出</a></div>
+                {if $index_page ==""}
+                    <div class="logout"><a href="/login.php?action=logout&amp;type=html">退1出</a></div>
+                {/if}
             </div>
         </div>
     </div>

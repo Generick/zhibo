@@ -38,14 +38,14 @@ define(function(require, exports, module) {
 			try {
 				$("#" + data.elements).css("z-index", "0");
                 $("#" + data.elements).css("pointer-events", "none");
-                $("#" + data.elements).css("visibility", "hidden");
-				//swfobject.getObjectById(data.elements).style.visibility = 'hidden';
-
+				swfobject.getObjectById("EffectPlayerSwf").style.visibility = 'hidden';
 			} catch (e) {
-                alert(e);
 				setTimeout(function(){},5 * 1000);
 			}
 		},
+        hideSuc : function(){
+            alert("hide success");
+        },
 		filDescribe : "\u8C6A\u534E\u793C\u7269",
 		fil : function(data) {
 			if (UIF.handler.effect) {

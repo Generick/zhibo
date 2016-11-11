@@ -204,11 +204,11 @@ function payback($orderid,$money,$tradeid,$code,$postStr){
         $userid=$row["userId"];
         $money=$money*100;
 
-        $packs=$db->GetRow("select * from bu_user_packs where userid='$userid' FOR UPDATE");
+        $packs=$db->GetRow("select * from bu_user_packs where userId=$userid FOR UPDATE");
         $coins=$packs[coins];
 
         $addB=$coins+$money;
-        $db->Execute("update bu_user_packs set coins='$addB' where userid='$userid'");
+        $db->Execute("update bu_user_packs set coins='$addB' where userId='$userid'");
         //tradeStatus 0.未处理 1成功 2.失败
         $db->Execute("update bu_gift_details set tradeStatus=1,logs=$postStr,balance='$addB' where  orderId='$orderid' ");
     }
@@ -228,11 +228,11 @@ function payOrdersDeal($r6_Order,$r3_Amt,$r2_TrxId){
 	if($row['status']==0 && $row['money']==$r3_Amt){    //尚未付款的订单
 		$db->Execute("update orders set status=1,sid='$r2_TrxId' where id='$orderid'");
 		$chooseuserid = empty($row["chooseuserid"])?$row["userid"]:$row["chooseuserid"];//给他人充值
-		$user=$db->GetRow("select * from bu_user_packs where userid='$chooseuserid' FOR UPDATE");
+		$user=$db->GetRow("select * from bu_user_packs where userId=$chooseuserid FOR UPDATE");
 		$money=$row["balanceadd"];
 		$balance=$user['coins']+$money;
 		//加钱
-		$db->Execute("update bu_user_packs set coins='$balance' where userid='$chooseuserid'");
+		$db->Execute("update bu_user_packs set coins='$balance' where userId=$chooseuserid");
 		$touserid = 0;
 		$point = 0;
 		if($row[showuserid]){
@@ -313,12 +313,7 @@ function reArrayNickname($array){
         $newArray=array();
         foreach($array as $k =>$v){
             if($v['nickname']!=null){
-                if ($v['nickname'] == base64_encode(base64_decode($v['nickname']))) {
-                    $uuname = base64_decode($v['nickname']);
-                }else{
-                    $uuname = $v['nickname'];
-                }
-                $v['nickname']=$uuname;
+                $v['nickname']= urldecode($v['nickname']);
             }
             $newArray[]=$v;
         }

@@ -9,14 +9,11 @@ header("Pragma: no-cache");
 include('include/header.inc.php');
 include($app_path."include/level.func.php");
 $user=checklogin();
-
 if(ismobile()){
     include "live_mobile.php";
     exit();
 }
 
-//vision
-$vsn = md5(date('Y-d-m'));
 //背景
 $bgclassList=array("bg1","bg2");
 $index=rand(0,count($bgclassList)-1);
@@ -30,8 +27,8 @@ if(!$_COOKIE["sbg"]){
 $roomnumber=(int)$_GET['roomnumber'];
 
 //tokern校验
-$db->Execute("update bu_user_packs set liveDT='".time()."' where userId='{$user[userId]}'");
-$liveDT=$db->GetRow("select liveDT from bu_user_packs where userId='{$user[userId]}'");
+$db->Execute("update bu_user_packs set liveDT='".time()."' where userId=$user[userId]");
+$liveDT=$db->GetRow("select liveDT from bu_user_packs where userId=$user[userId]");
 if($liveDT){
     $currentToken=base64_encode(md5($user["username"].$user["password"].$liveDT["liveDT"]));
     $tokens=$user["username"].$user["password"].$liveDT["liveDT"];
@@ -46,11 +43,7 @@ if(!$showinfo){
 }
 $showinfo=safe_output($showinfo);
 
-if ($showinfo['nickname'] == base64_encode(base64_decode($showinfo['nickname']))) {
-    $b = base64_decode($showinfo['nickname']);
-}else{
-    $b = $showinfo['nickname'];
-}
+$b = urldecode($showinfo['nickname']);
 $showinfo['nickname'] =$b;
 $showinfo['starlevel']=1;
 
@@ -88,14 +81,10 @@ $giftcate = array();
 while($arr=$rs->FetchRow()){
     $giftcate[$arr["giftcateid"]] = $arr;
 }
-
-
 $page_var['cdn_domain']=_CDNDOMAIN_;
-
-
 if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
-   //$skinType = "comic";
-    include($app_path."live_desert.php");
+    $skinType="desert";
+    include($app_path."/skin/desert/index.php");
     include($app_path."include/footer.inc.php");
     exit();
 }

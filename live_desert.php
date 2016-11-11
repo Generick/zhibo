@@ -1,11 +1,10 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=9;ie=8;ie=7">
     <title><?php echo addslashes($showinfo['nickname'])?>的直播间_美女视频聊天室_视频交友房间_视频秀 &ndash; <?php echo $page_var['site_name']?></title>
     <meta name="description" content="<?php echo $page_var['site_name']?>是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <meta content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" name="keywords">
-    <script src="/skin/comic/js/jquery.min.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery/jquery/3.0.0/jquery-3.0.0.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/anchor-base.js?v=<?php echo $vsn;?>"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxcore.js"></script>
@@ -13,16 +12,13 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
-    <!--[if lte IE 9]>
-    <script type="text/javascript" src="/js/json2.js"></script>
-    <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
     <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?20150413" type="text/css" rel="stylesheet" />
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/skin/desert/css/live.css?v=<?php echo  rand(100002,954542)?>" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
 
@@ -36,7 +32,7 @@
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
             currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
             log : function(msg){
-              //  UIF.handler.weblog(msg);
+                UIF.handler.weblog(msg);
             },
             swfClose : function(data){
                 UIF.handler.close(data);
@@ -56,8 +52,11 @@
                     alias : {
                         "socket" : "socket.io/socket.io",
                         "swfobject" : "swfobject/swfobject",
-                        "jquery" : "jquery/jquery/1.9.0/jquery"
-                    }
+                        "jquery" : "jquery/jquery/1.10.1/jquery"
+                    },
+                    map:[
+                        [".js",".js?v="+Math.random(1000)]//映射规则
+                    ]
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
                     UIF.handler = new W();
@@ -168,17 +167,12 @@
             UIF.init();
         });
     </script>
-    <script type="text/javascript">
-        window.onbeforeunload = function(){
-            //  return "quit?";
-        }
-    </script>
 </head>
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
 <div class="nav-left">
     <div class="live-logo" style="width:70px;height:82px;background:url(/skin/<?php echo $skinType;?>/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
-        <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
+        <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>"  ></a>
     </div>
     <?php if(!$user){ ?>
         <div class="nl-nologin">
@@ -203,33 +197,33 @@
                         <div class="mt-rl3">
                             <span class="dbicon"></span>
                             <span class="kb">0</span>
-                            <span class="mt-charge"><a target="_blank" href="/pay.php">充值</a></span>
+                            <span class="mt-charge"><a  href="/pay.php">充值</a></span>
                             <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
                         </div>
                     </div>
                 </div>
-                <div class="ospan"><a href="/centeros.php" target="_blank"> <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>" alt="<?php echo $user["nickname"]?>"></a></div>
+                <div class="ospan"><a href="/centeros.php"  > <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>" alt="<?php echo $user["nickname"]?>"></a></div>
             </div>
         </div>
     <?php }?>
     <div class="nl-nav">
         <ul>
-            <li class="cur"><a href="/"  target="_blank">首页</a></li>
-            <li><a href="/square.php"  target="_blank">广场</a></li>
-            <li><a href="/mall.php"  target="_blank">商城</a></li>
-            <li><a href="javascript:"  target="_blank">活动</a></li>
+            <li class="cur"><a href="/"   >首页</a></li>
+            <li><a href="/square.php" >广场</a></li>
+            <li><a href="/mall.php"   >商城</a></li>
+            <li><a href="javascript:"   >活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
-            <li><a href="/help.php" target="_blank">帮助</a></li>
+            <li><a href="/help.php"  >帮助</a></li>
         </ul>
     </div>
     <?php if(1==2){?>
         <div class="nl-else">
             <ul class="euc">
                 <li style="height: 30px;"></li>
-                <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
-                <li class="eu"><a  href="javascript:" target="_blank" class="wenjuan"><span>问卷</span></a></li>
-                <li class="eu"><a  href="javascript:" target="_blank" class="libao"><span>礼包</span></a></li>
-                <li class="eu"><a  href="javascript:" target="_blank" class="jubao"><span>举报</span></a></li>
+                <li class="eu"><a  href="javascript:"   class="download"><span>下载</span></a></li>
+                <li class="eu"><a  href="javascript:"   class="wenjuan"><span>问卷</span></a></li>
+                <li class="eu"><a  href="javascript:"   class="libao"><span>礼包</span></a></li>
+                <li class="eu"><a  href="javascript:"   class="jubao"><span>举报</span></a></li>
             </ul>
         </div>
     <?php }?>
@@ -263,7 +257,7 @@
     </div>
     <!--主视频区结束-->
     <div class="live-info">
-        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" alt="<?php echo $showinfo[nickname]?>"> </div>
+        <div class="self-photo"><img class="showerImg" src="<?php echo _IMAGES_DOMAIN_.'/'.$showinfo[avatar]?>" onerror="javascript:this.src='http://img.kedo.tv/46a920d47a9c287e627693554180598a'" alt="<?php echo $showinfo[nickname]?>"> </div>
         <div class="self-name">
             <div class="s-name">
                 <span class="anchor-info-names"><?php echo $showinfo["nickname"]?></span>
@@ -350,7 +344,7 @@ if($roomType != "game"){
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
 if($_SERVER['HTTP_HOST'] != "0www.kedo.tv"){
-    //include('./include/studio/pet.php');
+    // include('./include/studio/pet.php');
 }
 if($thisHome ==1){
     include('./include/studio/setting.php');
@@ -359,7 +353,6 @@ if($thisHome ==1){
 <!-- 聊天区-->
 <div class="chat-area myDiv4">
     <div class="chat-header">
-        <div class="setting" style="display: none" id="setting">设置</div>
         <div class="closing" style="display: none" id="closing">关闭</div>
         <div class="issel chat_right chatTit" ct="ch1"></div>
         <div class="chat_right vipTit" id="choSong" ct="ch2"></div>
@@ -423,6 +416,7 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+
     <div class="sw-guard Bmenu" id="sw-guard"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
@@ -545,94 +539,6 @@ if($thisHome ==1){
     </div>
 </div>
 <div class="shadow" id="shadow"></div>
-<div id="pop" class="pop">
-    <a href="javascript:;" id="close" class="close">×</a>
-    <div class="noti_mana_song" id="noti_mana_song">
-        <a href="javascript:;" class="notice active">公告</a>
-        <a href="javascript:;" id="manage" class="manage">管理</a>
-        <a href="javascript:;" class="song">点歌</a>
-    </div>
-    <div id="info">
-        <div style="display:block;" id="notice_info">
-            <div class="noti_bg">
-                <span class="laba"></span>
-                <span class="notice">公告</span>
-            </div>
-            <textarea id="roomNotice" class="textarea">
-            </textarea>
-            <input type="hidden" id="id" value=""/>
-            <div id="save" class="save">保存</div>
-        </div>
-        <div id="manage_info">
-            <div class="tit clearFix">
-                <span class="rank fl">排序</span>
-                <span class="name fl">称号</span>
-                <span class="operate fl">操作</span>
-                <span class="add fr" id="add_user">添加</span>
-            </div>
-            <div class="divide"></div>
-            <div class="no_added" id="no_added">
-                <div class="manage_detail">
-                    <p class="tip">您还未添加任何管理，请添加</p>
-                    <div class="add_btn" id="add_btn">添加</div>
-                </div>
-                <div class="bottom clearFix">
-                    <p class="bottom_tip fl">每位管理都必须满足消费额度才可以添加</p>
-                    <a class="fl" href="javascript:;">查看管理成长体系></a>
-                </div>
-            </div>
-            <div class="added" id="added">
-                <ul class="added_list" id="added_list"></ul>
-                <div class="bottom clearFix">
-                    <p class="bottom_tip fl">每位管理都必须满足消费额度才可以添加</p>
-                    <a class="fl" href="javascript:;">查看管理成长体系></a>
-                </div>
-            </div>
-        </div>
-        <div id="song_info">
-            <h4 id="add_tip" style="margin-top:16px; font-size:14px; color:#333; margin-left:88px; margin-bottom:6px;">添加歌曲</h4>
-            <div class="add_song clearFix">
-                <input class="songname fl" type="text" id="songsName" />
-                <span class="save_song fl" id="songsSave">保存</span>
-            </div>
-            <h4 class="song_list">歌曲列表</h4>
-            <div class="list_tit clearFix">
-                <span class="rank_tit fl">排序</span>
-                <span class="name_tit fl">歌曲名称</span>
-                <span class="operate_tit fl">操作</span>
-            </div>
-            <div class="divide"></div>
-            <div class="song_detail" id="song_detail"></div>
-        </div>
-    </div>
-    <div class="mana_shadow" id="mana_shadow">
-        <div class="add_mana">
-            <a class="mana_close" id="mana_close" href="javascript:;">×</a>
-            <h2 class="tit">添加管理</h2>
-            <p>通过ID查找需要添加的管理</p>
-            <div class="search">
-                <span></span>
-                <input type="text" id="userId"/>
-            </div>
-            <span class="search_btn" id="search_btn">查找</span>
-
-            <div class="appear" id="appear">
-                <p class="find" >查找到一下用户</p>
-                <div class="divide"></div>
-                <div class="user_info clearFix">
-                    <div class="img fl">
-                        <img src="" id="userImg" style="width:60px;height：60px"/>
-                    </div>
-                    <div class="name_id fl">
-                        <p class="name" id="userName"></p>
-                        <p><span>ID：</span><span id="idNum"></span></p>
-                    </div>
-                    <div class="user_add fl" id="user_add">添加</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="login-html"></div>
 </body>
 

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>蝌蚪直播-最好玩的直播平台</title>
     <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/kedo/style.css" rel="stylesheet">
-    <link href="/css/kedo/homeBg.css" rel="stylesheet">
-    <link href="/css/kedo/anchorLevel.css" rel="stylesheet">
-
+    <link href="/css/kedo/style.css?vsn={$vsn}" rel="stylesheet">
+    <link href="/css/kedo/homeBg.css?vsn={$vsn}" rel="stylesheet">
+    <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
+    
       <script>
           var cdn_domain="{$cdn_domain}";
           var img_domain="{$images_domain}";
@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
-                <li class="{if $current_page=='index'}active{/if}"><a href="/">首页</a></li>
+                <li class="{if $current_page=='index'}active{/if}"><a href="/index_qqgame.php">首页</a></li>
                 <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
                 <li class="{if $current_page=='mall'}active{/if}"><a href="/mall.php">商城</a> </li>
                 <li class="{if $current_page=='order'}active{/if}"><a href="/orders.php">排行榜</a> </li>
@@ -54,17 +54,12 @@
               </form>
             {if !$user}
                 <ul class="nav navbar-nav navbar-right  hidden-sm hdNavR reg_log">
-                    <li><a href="javascript:;" class="log">登录</a></li>
-                    <li class="hidden-xs"><a href="">|</a></li>
-                    <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href=""></a></li>
-                    <li class=""><a href="./" class="reg">注册<span class="sr-only">(current)</span></a></li>
                 </ul>
             {else}
                 <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                     <li><a href="/centeros.php">{$user.nickname}</a></li>
                     <li class="hidden-xs"><a href="">|</a></li>
                     <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
-                    <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
                 </ul>
 
             {/if}
@@ -78,26 +73,11 @@
     	<div class="row">
         	<div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
             	<div id="carousel-example-captions" class="carousel slide" data-ride="carousel" style="margin-bottom:30px;">
-					     <ol class="carousel-indicators">
-                   <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
-                  <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
-                  <li data-target="#carousel-example-captions" data-slide-to="2" class="active"></li> 
-              </ol>
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                    </ol>
 					<div class="carousel-inner" role="listbox">
-                  <div class="item">
-                      <a href=""><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="images/kedo/banner1.jpg" data-holder-rendered="true"/></a>
-                  </div>
-                  <div class="item">
-                    <a href="#">
-                      <img data-src="holder.js/900x500/auto/#666:#666" alt="900x500" src="images/kedo/banner2.jpg" data-holder-rendered="true"/>
-                    </a>
-                  </div>
-                  <div class="item active">
-                    <a href="">
-                      <img data-src="holder.js/900x500/auto/#555:#555" alt="900x500" src="images/kedo/banner3.jpg" data-holder-rendered="true"/>
-                    </a>
-                  </div>
-          </div>
+                    </div>
       					<a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
                               <span class="icon-prev glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                               <span class="sr-only">Previous</span>
@@ -113,21 +93,15 @@
                 <div class="hotCon" id="hotList">
                 	<div class="page-header clearfix">
                         <h4 class="pull-left">
-                        	<span class="glyphicon glyphicon-hot">HOT</span>
-                        	<span>热门</span>
+                        	<span class="glyphicon icon-hot"></span>
+                        	<span>热门主播</span>
                         </h4>
                         <h4 class="pull-right hotR">
-                          <a href="http://www.kedo.tv/skin/desert/css/live.css"><small>更多0</small></a>
+                          <a href="http://www.kedo.tv/skin/desert/css/live.css"><small>更多</small></a>
                         </h4>
                     </div>
 
-                    <div class="row hrow1"  num="1+12">
-                    </div>
-                    <div class="row hrow2"  num="8(6-15)">
-                    </div>
-                    <div class="row hrow3"  num ="s1+6(16-21)">
-                    </div>
-                    <div class="row hrow4"  num ="8(18-25)">
+                    <div class="row hotLiCon"  num="1+12">
                     </div>
                     
                 </div>
@@ -135,7 +109,7 @@
                 <!--精彩推荐-->
                 <div class="recomm">
                 	 <div class="page-header clearfix">
-                        <h4 class="pull-left"><span class="glyphicon glyphicon-fire"></span>精彩推荐 </h4>
+                        <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>精彩推荐</span> </h4>
                         <h4 class="pull-right recommR">
                           <a href="javascript:;"><small>话题</small></a>
                           <a href="javascript:;"><small>游戏</small></a>
@@ -154,7 +128,7 @@
                 <div class="hotCon" id="newList">
                 	<div class="page-header clearfix">
                         <h4 class="pull-left">
-                        	<span class="glyphicon glyphicon-hot">NEW</span>
+                        	<span class="glyphicon icon-new"></span>
                         	<span>最新入驻</span>
                             
                         </h4>
@@ -166,13 +140,7 @@
                           <a href="javascript:;"><small>更多</small></a>
                         </h4>
                     </div>
-                    <div class="row hrow1">
-                    </div>
-                    <div class="row hrow2">
-                    </div>
-                    <div class="row hrow3">
-                    </div>
-                    <div class="row hrow4">
+                    <div class="row newLiCon">
                     </div>
                 </div>
 
@@ -181,24 +149,6 @@
 				<!--登录注册-->
                 <div class="thumbnail regLog text-center">
                      {if !$user}
-                    <div class="caption beforLog">
-                        <p class="row">
-                            <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" onclick="login()">立即登录</button>
-                        </p>
-                        <p class="row">
-                            <a type="button" href="javascript:;" class="btn_login regBtn btn btn-default register" data-loading-text="Loading..." autocomplete="off">一键注册</a>
-                        </p>
-                        <p class="text-left color99 pasTip">忘记密码 点击 <b><a href="javascript:;">这里找回</a></b></p>
-                        <hr/>
-                        <p class="text-left quickLog">快捷登录</p>
-                        <p class="row">
-                            <button type="button" onclick="javascript:login.qqlogin()" class="btn_login btn btn-info qqLog" data-loading-text="Loading..." autocomplete="off">QQ账号登录</button>
-                        </p>
-                        <p class="row">
-                            <button type="button" onclick="javascript:login.wxlogin()" class="btn_login btn btn-success weChatLog" data-loading-text="Loading..." autocomplete="off">微信账号登录</button>
-                        </p>
-
-                    </div>
                     {else}
                     <div class="caption AfterLog">
                         <div class="row">
@@ -276,8 +226,8 @@
                	</div>
                </div>
                 <!--申请入驻-->
-                <a href="javascript:;" class="thumbnail">
-                    <img src="images/kedo/download.jpg"/>
+                <a href="javascript:;" class="thumbnail apply">
+                    <img src="images/kedo/banner_zhaoping.png"/>
                 </a>
                 
                 <!--主播排行榜-->
@@ -287,9 +237,9 @@
                         	<h4 class="pull-left titH hidden-sm">主播排行榜</h4>
                             <h4 class="pull-left titH visible-sm-block">主播榜</h4>
                             <div class="pull-right captitle titD">
-                            	<a href="#" class="colorPin active">周</a>
-                            	<a href="#" class="colorPin">月</a>
-                              <a href="#" class="colorPin">年</a>
+                            	<a href="javascript:;" class="colorPin active">周</a>
+                            	<a href="javascript:;" class="colorPin">月</a>
+                              <a href="javascript:;" class="colorPin">年</a>
                             </div>
                         </div>
 
@@ -313,9 +263,9 @@
                          	<div class="row foTit">
                         		<h4 class="pull-left titH">土豪榜</h4>
                                 <div class="pull-right captitle titD">
-                                    <a href="#" class="colorPin active">周</a>
-                                    <a href="#" class="colorPin">月</a>
-                                    <a href="#" class="colorPin">年</a>
+                                    <a href="javascript:;" class="colorPin active">周</a>
+                                    <a href="javascript:;" class="colorPin">月</a>
+                                    <a href="javascript:;" class="colorPin">年</a>
                                 </div>
                         	</div>
                              <div class="cons">
@@ -339,9 +289,9 @@
                         		<h4 class="pull-left titH hidden-sm">粉丝活跃榜</h4>
                                 <h4 class="pull-left titH visible-sm-block">粉丝榜</h4>
                                 <div class="pull-right titD captitle">
-                                    <a href="#" class="colorPin active">周</a>
-                                    <a href="#" class="colorPin">月</a>
-                                    <a href="#" class="colorPin">年</a>
+                                    <a href="javascript:;" class="colorPin active">周</a>
+                                    <a href="javascript:;" class="colorPin">月</a>
+                                    <a href="javascript:;" class="colorPin">年</a>
                                 </div>
                         	</div>
 
@@ -366,11 +316,11 @@
 	<div class="bs-docs-footer navbar-inverse" role="contentinfo">
 		<div class="container">
 			<p>
-      	<a href="javascript:;">关于蝌蚪 </a>|
-      	<a href="javascript:;">服务协议 </a>|
-          <a href="javascript:;">客服帮助 </a>|
-          <a href="javascript:;">关于我们 </a>|            
-          <a href="javascript:;">版权声明</a>
+      	<a href="javascript:;" class="firBL">关于蝌蚪 </a>|
+      	<a href="javascript:;" class="firBL">服务协议 </a>|
+          <a href="javascript:;" class="firBL">客服帮助 </a>|
+          <a href="javascript:;" class="firBL">关于我们 </a>|            
+          <a href="javascript:;" class="firBL">版权声明</a>
       </p>
       <p>
       	<img src="images/kedo/logo_foot.png"/>
@@ -387,11 +337,11 @@
     <script src="/js/bootstrap/bootstrap.min.js"></script>
     <script src="/js/bootstrap/boot.js"></script>
     <script src="/js/json2.js"></script>
-    <script src="/js/index_kedo.js"></script> 
+    <script src="/js/index_kedo.js?vsn={$vsn}"></script>
+
+
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="http://minigame.qq.com/plat/social_hall/js/jquery.js"></script>
-    <script src="http://minigame.qq.com/plat/social_hall/js/jquery.pm.js"></script>
     <!-- <script src="http://minigame.qq.com/plat/social_hall/app_frame/qqgamelib.js"></script>
     <script type="text/javascript">
       $(function(){

@@ -17,9 +17,8 @@ if(isset($_GET[openid]) and $_GET[openid] !=''){
 
 $user=checklogin();
 $page_var['user']=$user;
-
+$page_var['vsn']=$vsn;
 //banner
-$page_var['v'] = md5(date('Y-d-m'));
 
 
 //smarty初始化
@@ -45,9 +44,6 @@ foreach($page_var as $key=>$val){
 $smarty->registerPlugin("function","toColor","toColor");
 $smarty->registerPlugin("function","toTime","toTime");
 
-if($_GET["qz"]=="ajax"){
-    $smarty->display("index_{$page_var['site_skin']}_ajax.html");
-}else{
-    $smarty->display("index_{$page_var['site_skin']}.html");
-}
+$smarty->display("index_desert.html");
+
 include("include/footer.inc.php");
