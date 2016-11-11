@@ -60,7 +60,7 @@
 		top : 0px;
 		left : 0px;
 		width : 440px;
-		height : 320px; 
+		height : 320px;
 	}
 	.petName{
 		top : 320px;
@@ -155,6 +155,7 @@
 	#Pet{
 		position : absolute;
 		z-index : 990;
+		pointer-events : none;
 	}
 	#PetSwf{
 		position : absolute;
@@ -376,9 +377,9 @@
 <!--宠物部分  开始-->
 <div id = "Pet" class="Pet">
     <div id="PetSwf" class = "PetSwf"></div>
-    <div id="petName" class = "petName"></div>
-    <div id="clickRect" class = "clickRect"></div>
+    <div id="petName" class = "petName"></div>   
 </div>
+<div id="clickRect" class = "clickRect"></div>
 <div class = "pet-opt-ui">
 	<span id = "pet-opt-ui-title" class = "pet-opt-ui-title">熊宝宝</span>
 	<button id = "pet-opt-ui-closeBtn" class = "pet-opt-ui-closeBtn"></button>

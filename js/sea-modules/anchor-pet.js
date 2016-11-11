@@ -357,19 +357,9 @@ define(function(require, exports, module) {
 		initPetInteractions : function() {
 			//宠物点击弹窗
 			var _this = this;
-			var clickFunc = function(){
-				$(".Pet").click(function(e){
-					_this.showPetUI(e.pageX, e.pageY);
-				})
-			}
-			var removeClickFunc = function(){
-				$(".Pet").click(function(e){
-					return false;
-				})
-			}
-			
-			$(".clickRect").mouseover(clickFunc);
-			$(".clickRect").mouseout(removeClickFunc);
+			$(".clickRect").click(function(e){
+				_this.showPetUI(e.pageX, e.pageY);
+			})
 		},
 		//检测是否是主播
 		checkIfAnchor : function(){
