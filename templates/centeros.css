@@ -233,7 +233,7 @@ img {
 .colorcc{color: #F54841}
 .mindex-recharge-button{position: absolute; bottom:20px;right:20px;width:40px;height: 18px;border:none; border-radius: 3px; color: #fff;text-align: center;background-color:#F77599;font-family: sans-serif; line-height: 18px;}
 
-.mcar-box{width:219px;height: 120px;border: 1px solid #D5D5D5;    margin-bottom: 20px;float: left;padding: 15px;margin-left: 50px; position: relative;  border-radius: 5px;}
+.mcar-box{width:270px;height: 120px;border: 1px solid #D5D5D5;    margin-bottom: 20px;float: left;padding: 15px;margin-left: 50px; position: relative;  border-radius: 5px;}
 .mcar-left{float:left;}
 .mcar-left img{width:85px;max-width: 85px;}
 .mcar-right{float:left;margin-left: 10px;margin-top: 15px;}
