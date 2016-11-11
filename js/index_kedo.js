@@ -419,7 +419,7 @@ $(document).ready(function(){
 								<span>{4}</span>\
 							</div>\
 						</div>\
-						<p class="color99 ellipsis f12">沙盒游戏minecraft</p>\
+						<p class="color99 ellipsis f12">{5}</p>\
 					</div></a>\
 					</div>\
 			',
