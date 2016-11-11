@@ -18,8 +18,8 @@
 		width : 440px;
 	}
 	.clickRect{
-		top : 160px;
-		left : 140px;
+		top : 522px;
+		left : 490px;
 		width : 160px;
 		height : 160px;
 	}
@@ -27,7 +27,7 @@
 @media only screen and (max-width:1920px){
 	#Pet{		
 		top : 362px;
-		left : 18.2%;
+		left : 350px;
 		width : 440px;
 		height : 320px;
 	}
@@ -43,8 +43,8 @@
 		width : 440px;
 	}
 	.clickRect{
-		top : 160px;
-		left : 140px;
+		top : 520px;
+		left : 490px;
 		width : 160px;
 		height : 160px;
 	}
@@ -68,8 +68,8 @@
 		width : 440px;
 	}
 	.clickRect{
-		top : 160px;
-		left : 140px;
+		top : 520px;
+		left : 490px;
 		width : 160px;
 		height : 160px;
 	}
@@ -78,7 +78,7 @@
 @media only screen and (max-width:1680px){
 	#Pet{		
 		top : 400px;
-		left : 16%;
+		left : 268px;
 		width : 385px;
 		height : 280px;
 	}
@@ -94,8 +94,8 @@
 		width : 385px;
 	}
 	.clickRect{
-		top : 140px;
-		left : 122px;
+		top : 540px;
+		left : 390px;
 		width : 140px;
 		height : 140px;
 	}
@@ -120,8 +120,8 @@
 		width : 330px;
 	}
 	.clickRect{
-		top : 120px;
-		left : 105px;
+		top : 400px;
+		left : 355px;
 		width : 120px;
 		height : 120px;
 	}
@@ -146,8 +146,8 @@
 		width : 275px;
 	}
 	.clickRect{
-		top : 100px;
-		left : 87px;
+		top : 350px;
+		left : 327px;
 		width : 100px;
 		height : 100px;
 	}
