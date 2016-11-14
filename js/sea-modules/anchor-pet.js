@@ -7,7 +7,7 @@ define(function(require, exports, module) {
 		TRAIN_PET : "TRAIN_PET",
 		LEVEL_GAP : 5,
 		petData : null,
-		MaxTrainGapTime : 30,
+		MaxTrainGapTime : 3,
 		currentGapTime : 0,
 		timeOut : null,
 		TrainCompleteStr : "今日训练已完成",
