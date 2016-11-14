@@ -47,6 +47,7 @@
             <div class="nexts"> </div>
         </div>
     </div>
+    </div>
 
 
     <script>

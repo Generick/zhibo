@@ -39,7 +39,7 @@ img {
 .c-myname >div{height:30px;margin-bottom: 20px}
 #nickname,#aliasname{width:195px;height: 30px;border: 1px solid #ADAAAD;line-height: 30px;}
 #nickname:active,#aliasname:active{border:1px solid #E74152}
-.small-button{width: 66px;  height: 30px; margin-right: 15px;  border: none;  border-radius: 3px; cursor: pointer;}
+.small-button{width: 66px;  height: 30px; line-height:30px; margin-right: 15px;  border: none;  border-radius: 3px; cursor: pointer;}
 .c-myname #sure{background: #F77599;color:#fff;}
 .c-myname #cancel{background:#C9C9C9;color:#404040}
 .center-level{float: left}
@@ -63,6 +63,7 @@ img {
 .center-left{width:348px;border: 1px #E3E3E3 solid; float: left;    margin-bottom: 30px;}
 .center-left .cl-div{width:348px;height: 60px;position: relative;background: #fff;color: #3F3F3F;font-size: 14px;border-bottom:1px #ccc solid;cursor: pointer}
 .center-left .cl-focus{background-color:#f77599;width:348px;height: 60px;position: relative;color: #fff;font-size: 14px;border-bottom:0;}
+.center-left .cl-focus .cl-title{color: #fff; }
 .cl-title{position: absolute;left: 60px;top:16px;width:100px;padding-left: 30px;height: 30px;line-height: 30px;}
 .pi a{width:100%;height: 100%;display: inline-block}
 .cl-index{background: url("/skin/desert/images/icon_home.png") no-repeat left center;}
@@ -128,11 +129,11 @@ img {
 .bind-phone-area #code:focus,.bind-phone-area #phone:focus{border:1px solid #F77599;}
 .bind-phone-area #code{width:160px;}
 .bind-phone-area #phone{width:200px;}
-.bind-phone-area .send{color: #1B76BD;  display: inline-block;  font-size: 12px;  cursor: pointer;  width: 100px;  height: 30px;  color: #333;
+.bind-phone-area .send{color: #1B76BD;  display: inline-block;  font-size: 12px;  cursor: pointer;  width: 100px;  height: 30px;  line-height: 30px;color: #333;
 }
 .bind-phone-area .resend-ms{display:none;color:#F77599;font-size: 12px;padding-left: 10px;}
 
-#bindPhone{width: 115px; height: 30px;  margin-right: 15px;  border: none;border-radius: 3px;cursor: pointer;    background: #F77599;color: #fff;}
+#bindPhone{width: 115px; height: 30px;  line-height:30px; margin-right: 15px;  border: none;border-radius: 3px;cursor: pointer;    background: #F77599;color: #fff;}
 .bind-phone-why{width:965px;padding:30px;margin:105px auto;border-top:1px solid #ccc;}
 .bind-phone-why p,.bind-phone-why a{ color:#333;line-height:30px; height:30px;letter-spacing: 1px;}
 .phone_error{display: none;margin-left: 10px;font-size: 12px;color: #F77599}
