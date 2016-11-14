@@ -38,11 +38,21 @@ img{border:none; }
 
 .recharge{background:#f7f7f7; }
 .recharge .char_tit{  border-bottom:1px solid #ddd;padding-top:26px; padding-bottom:8px; position:relative; }
-.recharge .char_tit .rest{position:absolute; left:150px; bottom:9px;  }
+.recharge .char_tit .rest{margin-right: 20%; }
 .recharge .char_tit .rest i{font-style:normal; color:#333; }
 .char_tit .rest i strong{font-weight:normal; color:#e34052; }
 
-.recharge .char_tit h3{font-size:22px; margin-bottom:12px;  display: block; }
+.icon-hot {
+    background: url(/images/kedo/icon_hot.png) no-repeat;
+    width: 40px;
+    height: 20px;
+}
+.char_tit .charK{
+	margin-top: 0; 
+	font-size:22px; margin-bottom:12px;  display: block;
+	margin-left: 0.5%; 
+}
+
 .recharge .char_tit p{font-size:12px; color:#989898; }
 .char_tit p i{color:#333; font-style:normal; margin-left:10px; } 
 .char_tit p b{color:#72d739; font-weight:normal; margin-left:3px; cursor:pointer;}

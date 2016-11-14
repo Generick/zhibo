@@ -22,15 +22,16 @@
 <div class="recharge">
     <div class="wrapper">
         <div class="char_tit">
-            <div class="clearFix">
-                <span class="sprite_pay icon_hot fl"></span>
-                <h3 class="fl">充值k豆</h3>
-                <div style="clear: both"></div>
-                <span class="rest">
-                	<i>账户余额 <strong>{$user['coins']}</strong> k豆</i>
-                </span>
+            <div class="clearfix">
+                <span class="glyphicon icon-hot pull-left"></span>
+                <h3 class="pull-left charK">充值k豆</h3>
             </div>
-            <p><span>用户昵称：</span><i>{$user['nickname']}</i></p>
+            <div class="clearfix">
+            <p class="pull-left"><span>用户昵称：</span><i>{$user['nickname']}</i></p>
+            <span class="rest pull-right">
+                <i>账户余额 <strong>{$user['coins']}</strong> k豆</i>
+            </span>
+            </div>
         </div>
         <div class="char_details">
             <div class="fl">
