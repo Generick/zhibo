@@ -90,7 +90,7 @@ img{border:none; }
 .char_explain .act{margin-bottom:12px; font-size:14px; }
 .char_explain ul li{margin-bottom:6px; }
 .char_explain ul li span{width:8px;color: #e34052; height:8px; background:#e34052; border-radius:50%; margin-top:5px; margin-right:5px; }
-.char_explain .customService{margin-top:10px;height:92px; border-bottom:1px solid #ddd; margin-bottom:8px; }
+.char_explain .customService{margin-top:36px;height:116px; border-bottom:1px solid #ddd; margin-bottom:8px; }
 .char_explain .customService h3{margin-bottom:8px;font-size:14px; }
 .char_explain .customService .custom_bg{background:url(../img/icon_qqtalk.png); width:94px; height:23px; margin-bottom:4px; }
   
