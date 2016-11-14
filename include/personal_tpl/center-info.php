@@ -44,7 +44,7 @@
         <div class="c-myfund">我的资产</div>
         <div class="c-funds">
             <div class="c-funds-jb"><?php echo (int)$user['coins']?> </div>
-            <div class="c-funds-cz"><a href="/pay.php">充值</a></div>
+            <div class="c-funds-cz"><a class="colorff" href="/pay.php">充值</a></div>
         </div>
     </div>
 

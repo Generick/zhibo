@@ -30,7 +30,7 @@
 .consultTit{
 	margin-top: 10%; 
 }
-.opeQQ{
+.applyHm .opeQQ,.applyM .opeQQ{
 	background: url(/images/kedo/pic_qqtalk.png) no-repeat; 
 	background-size: cover; 
 	text-indent: -99999em;
@@ -90,7 +90,7 @@
 
 }
 .download,.opeQQB{
-	margin-left: 59%;
+	margin-left: 55%;
 
 }
 .download .btn, .opeQQB .opeQQ{

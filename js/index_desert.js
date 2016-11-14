@@ -1,5 +1,5 @@
 // JavaScript Document
-//create on 2016-11-11 18.40
+//create on 2016-11-14 11.25
 $(document).ready(function(){
     function SwapTab(name, title, content, Sub, cur) {
         $(name + ' ' + title).mouseover(function () {
@@ -502,7 +502,7 @@ $(document).ready(function(){
 
                     var s_big,s_sml;
                     var advertisement =
-                        '<a href="#" target="_blank" class="thumbnail adImg">\
+                        '<a href="/applyHome.php" target="_blank" class="thumbnail adImg">\
                             <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
                         </a>\
                         ';
