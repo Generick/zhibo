@@ -41,7 +41,7 @@
             <div class="cl-setting cl-title">我的设置</div>
             <div class="<?php if($current_page !="history"){ echo "arrow-down";}else{ echo "arrow-up"; }?>"></div>
         </div>
-        <div class="cl-set-info <?php if($current_page !="history"){ echo "hidden";}?>" >
+        <div class="cl-set-info <?php if($current_page !="history"){ echo "hiddens";}?>" >
             <ul>
                 <li <?php if($current_page=="info"){ echo "class=li-hover";}?> ><a href="centeros.php?ptype=info">基本资料</a></li>
                 <li <?php if($current_page=="mportrait"){ echo "class=li-hover";}?> ><a href="centeros.php?ptype=mportrait">修改头像</a></li>

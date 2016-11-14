@@ -121,7 +121,7 @@ define(function(require, exports, module) {
 					function() {
 						var price_html;
 						if ($(this).find("div").attr("price") > 0) {
-							price_html = $(this).find("img").attr("rel") + '</i>蚪币';
+							price_html = $(this).find("img").attr("rel") + '</i>K豆';
 						} else {
 							price_html = '';
 						}

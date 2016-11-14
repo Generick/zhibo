@@ -37,7 +37,8 @@ img {
 .c-photo{margin-right: 20px;}
 .c-photo img{width:83px;height: 83px;-webkit-border-radius: 50%; -moz-border-radius: 50%;-o-border-radius: 50%;border:solid 1px #f77599;border-radius: 50%;}
 .c-myname >div{height:30px;margin-bottom: 20px}
-#nickname,#aliasname{width:195px;height: 30px;border:1px solid #59db28}
+#nickname,#aliasname{width:195px;height: 30px;border: 1px solid #ADAAAD;line-height: 30px;}
+#nickname:active,#aliasname:active{border:1px solid #E74152}
 .small-button{width: 66px;  height: 30px; margin-right: 15px;  border: none;  border-radius: 3px; cursor: pointer;}
 .c-myname #sure{background: #F77599;color:#fff;}
 .c-myname #cancel{background:#C9C9C9;color:#404040}
@@ -58,6 +59,7 @@ img {
 .c-funds-xd{float: left;  line-height: 22px;}
 .c-right .c-funds .c-funds-dh{float:left ;font-size: 12px;margin-left: 25px;  line-height: 22px;color: #FFBE4A}
 .hidden{display: none;}
+.hiddens{display: none;}
 .center-left{width:348px;border: 1px #E3E3E3 solid; float: left;    margin-bottom: 30px;}
 .center-left .cl-div{width:348px;height: 60px;position: relative;background: #fff;color: #3F3F3F;font-size: 14px;border-bottom:1px #ccc solid;cursor: pointer}
 .center-left .cl-focus{background-color:#f77599;width:348px;height: 60px;position: relative;color: #fff;font-size: 14px;border-bottom:0;}
@@ -92,7 +94,7 @@ img {
 #info-table #nickname{width:180px;height: 30px;}
 .n-type{text-align: right;font-size: 14px;color: #646464}
 #info-table select{width:167px;height: 30px;line-height: 30px;color:#5F5D68;  cursor: pointer;}
-#info-table #submits{background: #F77599; color: #fff;width: 66px; height: 30px;  margin-right: 15px;border: none;border-radius: 3px;  cursor: pointer;}
+#info-table #submits{background: #F77599; color: #fff;width: 66px; height: 30px;  line-height: 30px;  margin-right: 15px;border: none;border-radius: 3px;  cursor: pointer;}
 /*关注**/
 .cr-care{position:relative;width:100%}
 .cr-care-main{margin-left:20px;margin-top:40px;  }
