@@ -103,6 +103,20 @@
                         border: none;
                         margin-left: 50px;
                     }
+                    .dui-first{
+                        display: none;
+                    }
+                    .dui-next{
+
+                    }
+                    .dui-cert-text{
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    .dui-cert-notice{
+                        font-size:12px;
+                        color: #9C9A9C;
+                    }
 
                     .dui-queren {
                         background-color: #FFBE4A;
@@ -124,8 +138,16 @@ if ($user['roomNumber']) {
 
     <div class="duikdou">
         <div class="dui-header">兑换k豆</div>
-        <div class="dui-mian">
+        <div class="dui-mian dui-first">
             <div class="dui-input"><input type="text" name="duiv" id="duiv" class="duiv" placeholder="请输入100的整数"/></div>
+            <div class="dui-control">
+                <button class="dui-queren">确认</button>
+                <button class="dui-cancel">退出</button>
+            </div>
+        </div>
+        <div class="dui-mian dui-next">
+            <div class="dui-cert-text">确定兑换k豆</div>
+            <div class="dui-cert-notice">温馨提示星豆不可兑换k豆</div>
             <div class="dui-control">
                 <button class="dui-queren">确认</button>
                 <button class="dui-cancel">退出</button>
@@ -134,3 +156,23 @@ if ($user['roomNumber']) {
     </div>
 <?php
 }?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
