@@ -154,29 +154,29 @@
 }
 	#Pet{
 		position : absolute;
-		z-index : 990;
+		z-index : 800;
 		pointer-events : none;
 	}
 	#PetSwf{
 		position : absolute;
-		z-index : 889;
+		z-index : 801;
 	}
 	.petName{
 		position : absolute;
-		z-index : 990;
+		z-index : 802;
 		text-align : center;
 		color : #ffffff;
 	}
 	.clickRect{
 		position : absolute;
 		cursor : pointer;
-		z-index : 991;
+		z-index : 803;
 	}
 	.pet-opt-ui{
 		position : absolute;
 		display : none;
 		font-family : "Microsoft YaHei";
-		z-index : 991;
+		z-index : 804;
 		background: url("/images/pet/board.png") no-repeat;
 			
 		width : 345px;
@@ -355,7 +355,7 @@
 		position : absolute;
 		display : none;
 		font-family : "Microsoft YaHei";
-		z-index : 1000;
+		z-index : 820;
 		background: url("/images/pet/help_board.png") no-repeat;
 			
 		width : 154px;
