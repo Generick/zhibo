@@ -59,6 +59,8 @@ define('ajax/username', function (require, exports, module) {
                     $(".dui-cancel").click();
                 }
             });
+        }else{
+            $("#duiv").focus();
         }
 
     })

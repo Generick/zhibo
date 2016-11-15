@@ -46,7 +46,7 @@
         <div class="c-myfund">我的资产</div>
         <div class="c-funds">
             <div class="c-funds-jb"><?php echo (int)$user['coins'] ?> </div>
-            <div class="c-funds-cz"><a href="/pay.php">充值</a></div>
+            <div class="c-funds-cz"><a href="/pay.php" style="color: #fff;">充值</a></div>
 
 
             <?php
@@ -84,6 +84,7 @@
                     }
 
                     .duiv {
+                        padding-left: 3px;
                         width: 335px;
                         height: 42px;
                         border: 2px solid #D6D3D6;
@@ -124,7 +125,7 @@ if ($user['roomNumber']) {
     <div class="duikdou">
         <div class="dui-header">兑换k豆</div>
         <div class="dui-mian">
-            <div class="dui-input"><input type="text" name="duiv" id="duiv" class="duiv"/></div>
+            <div class="dui-input"><input type="text" name="duiv" id="duiv" class="duiv" placeholder="请输入100的整数"/></div>
             <div class="dui-control">
                 <button class="dui-queren">确认</button>
                 <button class="dui-cancel">退出</button>
