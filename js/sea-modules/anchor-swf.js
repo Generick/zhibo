@@ -171,7 +171,8 @@ define(function(require, exports, module) {
 			var imageId = data.imageId;
 			var level = data.level;
 			var levelGap = data.levelGap;
-			swfobject.getObjectById("PetSwf").updateData(imageId, level, levelGap);
+			var randomMovieGap = data.randomMovieGap;
+			swfobject.getObjectById("PetSwf").updateData(imageId, level, levelGap, randomMovieGap);
 		}
 	}
 })

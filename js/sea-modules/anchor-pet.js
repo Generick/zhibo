@@ -5,6 +5,9 @@ define(function(require, exports, module) {
 	module.exports = {
 		//训练动作
 		TRAIN_PET : "TRAIN_PET",
+		//攻击动作
+		ATTACK_PET : "ATTACK_PET",
+		
 		LEVEL_GAP : 5,
 		petData : null,
 		MaxTrainGapTime : 3,
@@ -19,6 +22,10 @@ define(function(require, exports, module) {
 		PetNameTooLong : "名字过长",
 		MustFollowAnchor : "关注主播才可以训练",
 		PetHelpTip : "训练或者赠送主播礼物都可以增加精灵经验，帮助精灵升级。\n每天可以训练精灵3次，提升爵位等级可以增加每日训练次数",
+		//随机动画间隔时间
+		RandomAnimateGap : 30,
+		RandomAnimateSwitch : true,
+		
 		init : function() {
 			this.initPetView();
 			this.initPetOptView();
@@ -136,12 +143,18 @@ define(function(require, exports, module) {
 					param.imageId = "0";
 					param.level = 0;
 					param.levelGap = _this.LEVEL_GAP;
+					if(_this.RandomAnimateSwitch){
+						param.randomMovieGap = _this.RandomAnimateGap;
+					}
 					swf.petUpdateData(param);
 				}
 				else{
 					param.imageId = _this.petData.petId;
 					param.level = _this.petData.level;
 					param.levelGap = _this.LEVEL_GAP;
+					if(_this.RandomAnimateSwitch){
+						param.randomMovieGap = _this.RandomAnimateGap;
+					}
 					swf.petUpdateData(param);
 				}
 			}
