@@ -47,6 +47,7 @@
             </table>
         </div>
     </div>
+    </div>
     <!--main-->
 <script>
     function birthday_selected(year,month,day){
@@ -84,6 +85,7 @@
         });
     });
     </script></div>
+
 
 
 <!--main-->
