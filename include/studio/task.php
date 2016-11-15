@@ -114,7 +114,7 @@
         </div>
         <div class="sf-buy-area">
             <div class="sf-buy-style">购买方式</div>
-            <div class="sf-buy-time">购买时长<span class="sftext">3</span>月 <span class="sfpeice">总价格:266400逗币</span></div>
+            <div class="sf-buy-time">购买时长<span class="sftext">3</span>月 <span class="sfpeice">总价格:266400K豆</span></div>
             <div class="sf-times">
                 <ul>
                     <li dv="1">1</li>

@@ -17,9 +17,8 @@ if(isset($_GET[openid]) and $_GET[openid] !=''){
 
 $user=checklogin();
 $page_var['user']=$user;
-
+$page_var['vsn']=$vsn;
 //banner
-$page_var['v'] = md5(date('Y-d-m'));
 
 
 //smarty初始化

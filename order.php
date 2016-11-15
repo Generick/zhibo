@@ -16,7 +16,7 @@ include($app_path."include/level.func.php");
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/login.js"></script>
 <link rel="shortcut icon" href="new.ico" />
 </head>
-<body>
+<body style="padding-top:60px;">
 <?php 
 $current_page="order";
 include('tpl_header.php');

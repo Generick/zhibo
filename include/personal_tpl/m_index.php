@@ -38,7 +38,7 @@
         <div class="mindex-else-title"> 我守护的</div>
         <div class="mycare-list">
             <?php
-                $datas = curl_post(_CDNDOMAIN_."/rest/personCenter/myGuard.mt","userid=$user[userId]");
+                $datas = curl_post(_INTERFACE_."/rest/personCenter/myGuard.mt","userid=$user[userId]");
                 $acceptData=json_decode($datas, true);
                 foreach($acceptData[data] as $k=>$v) {
             ?>
@@ -48,7 +48,7 @@
                             <div><img src="<?php echo $v['himage']?>"/></div>
                         </div>
                         <div class="mycare-box-right">
-                            <div class="mybr1"><span class="mbysp1"><?php echo $v['name']?></span> <span class="mbysp2">守护中..</span></div>
+                            <div class="mybr1"><span class="mbysp1"><?php echo urldecode($v['name'])?></span> <span class="mbysp2">守护中..</span></div>
                             <div class="mybr2"><?php echo $v['followeds']?> 粉丝</div>
                             <div class="mybr3">守护等级：<span class="colorcc"><?php echo $v['grds']?></span></div>
                             <div class="mybr4">剩余天数：<span class="colorcc"><?php echo $v['days']?> </span>天</div>
@@ -65,6 +65,7 @@
                 <?php
                 /*
                 SELECT g.giftid,g.giftimage,g.giftname,g.giftprice,
+
 (SELECT if(Count(1) = 1,1,0) FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = 1006) as ts,
 (SELECT c.active FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = 1006) as active,
 (SELECT c.valiDT FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = 1006) as valiDT,
@@ -115,6 +116,7 @@ FROM gift g where g.giftcateid = 8 ORDER BY g.giftid ASC");
 
             </div>
         <div class="clear"></div>
+        </div>
 
     </div>
 </div>

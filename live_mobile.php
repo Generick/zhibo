@@ -1,6 +1,4 @@
 <?php
-
-include('include/header.inc.php');
 $roomnumber=(int)$_GET['roomnumber'];
 
 $showinfo=$db->CacheGetRow(10,"select u.userId as userId,u.avatar as avatar,u.nickname as nickname,u.city as city,a.roomNumber as roomNumber from bu_user_anchors a LEFT JOIN bu_user u on a.userId = u.userId WHERE a.roomNumber = $roomnumber and a.`status` =1 and u.`status` =1");
@@ -59,8 +57,7 @@ include($app_path."include/footer.inc.php");
     <div class="main">
         <div class="live-video">
             <video width="" height="" controls>
-
-                <source src="http://hls.181show.com/mutian-ucloud/10019/playlist.m3u8" type="video/ogg" />
+                <source src="http://hls.181show.com/mutian-ucloud/1020/playlist.m3u8" type="video/ogg" />
             </video>
         </div>
     </div>

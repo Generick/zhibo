@@ -1,16 +1,28 @@
 // JavaScript Document
-//create on 2016-10-26 19.40
+//create on 2016-11-14 11.25
 $(document).ready(function(){
     function SwapTab(name, title, content, Sub, cur) {
         $(name + ' ' + title).mouseover(function () {
             $(this).addClass(cur).siblings().removeClass(cur);
             $(content + " > " + Sub).eq($(name + ' ' + title).index(this)).show().siblings().hide();
+
         })
+
+
     }
 
     SwapTab(".captitle", "a", ".cons", ".foLi", "active");
     SwapTab("#orderTit", "li", "#orderBody", ".orderItem", "active");
+    function ndecodeURI(str){
+        var $a="";
+        try{
+            $a = decodeURI(str);
+        }catch (e){
+            $a="错误编码";
+        }
 
+        return $a;
+    }
     var Tools = {};
     Tools.getDate = function (params, callback) {
         $.ajax({
@@ -82,33 +94,19 @@ $(document).ready(function(){
         }
         return newo;
     }
+
     //关注
 
 
     $(function () {
-
-        $("*").on("click","a",function(){
-            if(document.all){
-                //  alert("IE");
-                window.location.href="/html/guild/index.html";  return false;
-            }else{
-                //alert("not ie");
-            }
-
-        })
         var Mycare = {};
         Mycare.listlen=0;
         Mycare.loop=0;
         canBottomNum=0;
-        Mycare.li = '<li class="clearFix"><a href="/{0}">\
-					<img class="fl" src="{1}" alt="{2}">\
-					<span class="diamond fl sprite liverlevel-pic_liverlevel_{3}"></span>\
-					<span class="name fl">{4}</a></span>\
-					{5}\
-					</li>';
+
         Mycare.lii =
-            '<div class="row foLi"><a href="/{0}">\
-                <img class="pull-left img-circle" src="{1}" alt="{2}">\
+            '<div class="row foLi"><a href="/{0}" target="_blank">\
+                <img class="pull-left img-circle lazy"  src="{1}" alt="{2}">\
                 <div class="pull-left state">\
                     <p class="name">{3}</p>\
                 {4}\
@@ -129,14 +127,18 @@ $(document).ready(function(){
                     $num=$listObj.length;
                     $.each($listObj, function() {
                         var _self = $(this)[0];
-                        if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickname += "c"};
+                        if(_self.tj!=undefined && _self.Abc!=undefined =="11"){_self.nickName};
                         if (_self.online == true) {
-                            htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName, "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
+                            htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, ndecodeURI(_self.nickName), ndecodeURI(_self.nickName), "<p class='yesLiv'><span>"+Math.ceil(_self.onlineTime/600000)+"</span>分钟前开播</p>",_self.totalpoint);
                         }else{
-                            htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, _self.nickName, _self.nickName,'<p class="ynLiv">未开播</p>',_self.totalpoint);
+                            htm += Tools.stringFormat(Mycare.lii,_self.roomNumber,_self.imagePrivate, ndecodeURI(_self.nickName), ndecodeURI(_self.nickName),'<p class="ynLiv">未开播</p>',_self.totalpoint);
                         }
                     })
                     $(".follow .caption .boxx").html(htm);
+
+                    $(".follow img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });
 
                     Mycare.listlen=$num*1;
                     if(Mycare.listlen>5){
@@ -245,30 +247,34 @@ $(document).ready(function(){
             "anc_new":"/files/newAnchors.json" //"/ajax/getLiveAnchors.php"+"?anc_type=new"
 
         }
+
+
         var ht_rank='<li class="clearFix">\
 				<span class="icon_shuzi_{0} sprite_top fl"></span>\
-					<img class="rank_pho img-circle" src="{1}" alt="{2}">\
+					<img class="rank_pho img-circle lazy" src="{1}" alt="{2}">\
 						{3}\
 					<span class="diamond fl sprite liverlevel-pic_liverlevel_{4}"></span>\
 					<a href="{5}"><span class="name fl">{6}</span> </a>\
 				</li>';
-        var ht_ransT='<div class="row foLi"><a href="{0}">\
+        var ht_ransT='<div class="row foLi"><a href="{0}" target="_blank">\
 						<span class="icon_shuzi_{1} sprite_top pull-left hidden-md hidden-sm hidden-xs"></span>\
-						<img class="pull-left img-circle" src="{2}" alt="{3}"/>\
+						<img class="pull-left img-circle lazy"  src="{2}" alt="{3}"/>\
 						<span class="crown hidden-md hidden-sm hidden-xs"></span>\
 					<div class="pull-left state">\
 						<p class="name">{4}</p>\
 					</div>\
 					<div class="pull-left spriteLev liverlevel-pic_liverlevel_{5}"></div>\
 					</a></div>';
-        var ht_rans='<div class="row foLi"><a href="{0}">\
+        var ht_rans='<div class="row foLi"><a href="{0}" target="_blank">\
 						<span class="icon_shuzi_{1} sprite_top pull-left hidden-md hidden-sm hidden-xs"></span>\
-						<img class="pull-left img-circle" src="{2}" alt="{3}"/>\
+						<img class="pull-left img-circle lazy" src="{2}" alt="{3}"/>\
 					<div class="pull-left state">\
 						<p class="name">{4}</p>\
 					</div>\
 					<div class="pull-left spriteLev liverlevel-pic_liverlevel_{5}"></div>\
 					</a></div>';
+
+
         function parse_to_board(listid,url,type){
             Tools.getJson({
                 url: url,
@@ -287,9 +293,10 @@ $(document).ready(function(){
                             roomnumber = v.roomNumber;
                         }
                         if(k==0){
-                            s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar, v.nickname, v.nickname,v.totalpoint);
+
+                            s_ht3 = Tools.stringFormat(ht_ransT,roomnumber,k+1,v.avatar,ndecodeURI(v.nickname), ndecodeURI(v.nickname),v.totalpoint);
                         }else{
-                            s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, v.nickname, v.nickname,v.totalpoint);
+                            s_ht3 = Tools.stringFormat(ht_rans,roomnumber,k+1,v.avatar, ndecodeURI(v.nickname), ndecodeURI(v.nickname),v.totalpoint);
                         }
                         $("#"+listid+"").append(s_ht3);
                         if(k==7){return false;}
@@ -310,10 +317,12 @@ $(document).ready(function(){
         parse_to_board("hy_month",ulList.hy_month);
         parse_to_board("hy_year",ulList.hy_year);
 
+
+
         var compiliter={
             bightml:
-                '<a href="{0}" class="thumbnail firHot">\
-                <img src="{1}&w=240&h=360" alt="{2}"/>\
+                '<a href="{0}"  target="_blank" class="thumbnail firHot">\
+                <img class="lazy" src="{1}&w=240&h=360" alt="{2}"/>\
                 {3}\
                     <div class="firT thumbnail clearfix">\
                         <div class="pull-left sprite_l pic_liverlevel_L_{4}"></div>\
@@ -330,15 +339,16 @@ $(document).ready(function(){
                     <div class="shadow thumbnail"></div>\
                     <div class="playBtn"></div></a>',
             bightmlNew:
-                '<a href="{0}" class="thumbnail firHot">\
-                <img src="{1}&w=240&h=360" alt="{2}"/>\
+                '<a href="{0}"  target="_blank" class="thumbnail firHot">\
+                <img class="lazy" src="{1}&w=240&h=360" alt="{2}"/>\
+                {3}\
                     <div class="firB ellipsis">\
-                        <p class="colorPin f16">{3}</p>\
+                        <p class="colorPin f16">{4}</p>\
                         <p class="clearfix f12">\
                             <span class="glyphicon glyphicon-eye-open"></span>\
-                            <span>{4}</span>\
-                            <span class="glyphicon glyphicon-fire"></span>\
                             <span>{5}</span>\
+                            <span class="glyphicon glyphicon-fire"></span>\
+                            <span>{6}</span>\
                         </p>\
                     </div>\
                     <div class="shadow thumbnail"></div>\
@@ -346,8 +356,8 @@ $(document).ready(function(){
 
             lithtml:
                 '<div class="{0}">\
-                        <a href="{1}" class="hotItem thumbnail">\
-                        <img src="{2}&w=110&h=165" alt="{3}"/>\
+                        <a href="{1}"  target="_blank" class="hotItem thumbnail">\
+                        <img class="lazy" src="{2}&w=110&h=165" alt="{3}"/>\
                         <div class="sprite_s pic_liverlevel_S_{4}"></div>\
                         {5}\
                             <div class="hotT thumbnail">\
@@ -363,13 +373,14 @@ $(document).ready(function(){
                         </div>',
             lithtmlNew:
                 '<div class="{0}">\
-                        <a href="{1}" class="hotItem thumbnail">\
-                            <img src="{2}&w=110&h=165" alt="{3}"/>\
+                        <a href="{1}"  target="_blank" class="hotItem thumbnail">\
+                            <img class="lazy" src="{2}&w=110&h=165" alt="{3}"/>\
+                            {4}\
                             <div class="hotB">\
-                                <div class="colorPin f14 ellipsis">{4}</div>\
+                                <div class="colorPin f14 ellipsis">{5}</div>\
                                 <p class="f12 ellipsis">\
                                     <span class="glyphicon glyphicon-eye-open"></span>\
-                                    <span>{5}</span>\
+                                    <span>{6}</span>\
                                 </p>\
                             </div>\
                         </a>\
@@ -377,8 +388,8 @@ $(document).ready(function(){
 
 
             sonh:
-                '<a href="#" class="hotItem thumbnail">\
-                <img src="images/girl02.png" alt="">\
+                '<a href="#" target="_blank" class="hotItem thumbnail">\
+                <img class="lazy" src="images/girl02.png" alt="">\
                 <span class="glyphicon glyphicon-stats"></span>\
                 <div class="hotT thumbnail">\
                 <div class=""></div>\
@@ -395,9 +406,9 @@ $(document).ready(function(){
                 </a>',
             gameHtml:
                 ' <div class="col-lg-3 col-sm-3 col-xs-4">\
-                    <a href="{0}" class="thumbnail">\
+                    <a href="{0}" target="_blank" class="thumbnail">\
                     <div class="recommImg thumbnail">\
-                        <img src="{1}&w=248&h=127" alt="{2}"/>\
+                        <img class="lazy" src="{1}&w=248&h=127" alt="{2}"/>\
                         <div class="thumb-bar"></div>\
                         <div class="shadow"></div>\
                         <div class="playBtn"></div>\
@@ -410,7 +421,7 @@ $(document).ready(function(){
                                 <span>{4}</span>\
                             </div>\
                         </div>\
-                        <p class="color99 ellipsis f12">沙盒游戏minecraft</p>\
+                        <p class="color99 ellipsis f12">{5}</p>\
                     </div></a>\
                     </div>\
             ',
@@ -491,8 +502,8 @@ $(document).ready(function(){
 
                     var s_big,s_sml;
                     var advertisement =
-                        '<a href="#" class="thumbnail adImg">\
-                            <img src="/images/kedo/hotImg.png" alt="">\
+                        '<a href="/applyHome.php" target="_blank" class="thumbnail adImg">\
+                            <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
                         </a>\
                         ';
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -507,16 +518,16 @@ $(document).ready(function(){
                         }
                         if(k==0){
 
-                            s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,v.nickName,compiliter.tolive(v.online,1),v.totalpoint, v.numbers,v.nickName,compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
+                            s_big = Tools.stringFormat(compiliter.bightml,v.roomNumber,v.image,ndecodeURI(v.nickName),compiliter.tolive(v.online,1),v.totalpoint, v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime), compiliter.toCity(v.city));
                             bwrap.append(s_big);
                             bwrap.append(advertisement);
 
                         }else if(k>0 && k<=6){
-                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
                         }else if(k>6 && k <=12){
-                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
                         }else if(k>12 && k <=18){
-                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.totalpoint,compiliter.tolive(v.online,1),v.numbers,v.nickName,compiliter.totime(v.onlineTime));
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
                         }
                         srow.append(s_sml);
 
@@ -524,6 +535,14 @@ $(document).ready(function(){
                     swrap.append(srow);
                     $("#"+$h+" .hotLiCon").append(bwrap);
                     $("#"+$h+" .hotLiCon").append(swrap);
+
+
+                    $("#hotList img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });
+
+
+
                 }
 
             });
@@ -553,8 +572,8 @@ $(document).ready(function(){
                     var row1=dealData.slice(0,19);
                     var s_big,s_sml;
                     var advertisement =
-                        '<a href="#" class="thumbnail adImg">\
-                            <img src="/images/kedo/hotImg.png" alt="">\
+                        '<a href="#" target="_blank" class="thumbnail adImg">\
+                            <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
                         </a>\
                         ';
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -565,21 +584,25 @@ $(document).ready(function(){
                             v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
                         }
                         if(k==0){
-                            s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,v.nickName, v.nickName,v.numbers,v.heats);
+                            s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,ndecodeURI(v.nickName), compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers,v.heats);
                             bwrap.append(s_big);
                             bwrap.append(advertisement);
                         }else if(k>0 && k<=6){
-                            s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+                            s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
                         }else if(k>6 && k <=12){
-                            s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+                            s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
                         }else if(k>12 && k <=18){
-                            s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, v.nickName,v.nickName,v.numbers);
+                            s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
                         }
                         srow.append(s_sml);
                     })
                     swrap.append(srow);
                     $("#"+$new+" .newLiCon").append(bwrap);
                     $("#"+$new+" .newLiCon").append(swrap);
+
+                    $("#newList img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });
 
 
 
@@ -611,9 +634,13 @@ $(document).ready(function(){
                 var li="";
                 if (datas != null && datas.length > 0) {
                     $.each(datas, function(k, v) {
-                        li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, v.nickName, v.nickName,v.numbers,"","");
+                        li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,"","");
                     })
                     $("#gameAnchors").append(li);
+
+                    $(".recomm img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });
                 }
             });
         }();
@@ -633,9 +660,9 @@ $(document).ready(function(){
                     $.each(datas, function(k, v) {
                         $active = k==0?"active":"";
                         if(v.url !=''){
-                            item+='<div class="item '+$active+'"><a href="'+v.url+'"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="'+v.url+'"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }else{
-                            item+='<div class="item '+$active+'"><a href="javascript:;"><img data-src="holder.js/1128x320/auto/#777:#777" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }
                         if(k==0){
                             lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"></li>';
@@ -645,10 +672,20 @@ $(document).ready(function(){
                     })
                     $(".carousel-inner").html(item);
                     $(".carousel-indicators").html(lo);
+
+                    $(".carousel-inner img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });
                 }
+
             });
+
         }();
+
+
     })
+
+
 
     //c3转化成js
     var $changeWid=$("#carousel-example-captions");

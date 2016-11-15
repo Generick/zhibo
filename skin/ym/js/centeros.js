@@ -16,6 +16,9 @@ $(function () {
         }
     })
     $(".cl-focus").siblings(".cl-set-info").show();
+    $(".cl-set-info ul li a").click(function(){
+        
+    })
     function closeWindow(fun){
         $(".zhezhao").hide();
         $("."+fun).hide();

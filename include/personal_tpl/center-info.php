@@ -45,10 +45,9 @@
     <div class="c-right">
         <div class="c-myfund">我的资产</div>
         <div class="c-funds">
+
             <div class="c-funds-jb"><?php echo (int)$user['coins'] ?> </div>
             <div class="c-funds-cz"><a href="/pay.php" style="color: #fff;">充值</a></div>
-
-
             <?php
             if ($user['roomNumber']) {
                 ?>
@@ -115,6 +114,7 @@
                     }
                 </style>
             <?php } ?>
+
         </div>
     </div>
 </div>

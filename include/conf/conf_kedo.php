@@ -6,9 +6,15 @@
  * Time: 19:59
  */
 if($_SERVER[HTTP_HOST]=='kedo.tv'){
-    $heardUrl='http://www.'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];  //$_SERVER["SERVER_NAME"]
-    Header('HTTP/1.1 301 Moved Permanently') ;
-    Header('Location:'.$heardUrl);
+    //echo "roomnumber";
+
+    if(strpos($_SERVER['SCRIPT_NAME'],"live.php") && strstr($_SERVER['QUERY_STRING'],"roomnumber")){
+        Header('Location:http://www.kedo.tv/'.$_GET['roomnumber']);
+    }else {
+        $heardUrl = 'http://www.' . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];  //$_SERVER["SERVER_NAME"]
+        Header('HTTP/1.1 301 Moved Permanently');
+        Header('Location:' . $heardUrl);
+    }
     exit();
 }
 
@@ -26,3 +32,5 @@ define('_COREWEB_','http://core.kedo.tv/guildsSoc/checkToken.mt');//公会地址
 define('_REDIS_HOST_','09ede0159aa64f40.m.cnhza.kvstore.aliyuncs.com');//redis地址
 define('_REDIS_PWD_','09ede0159aa64f40:fooBa4eds');//redis地址
 define('_REDIS_KEYB_','ext');
+
+$vsn = md5(date('Y-d-m')."S%sdfgd");

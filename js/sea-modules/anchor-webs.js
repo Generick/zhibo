@@ -18,9 +18,8 @@ define(function(require, exports, module) {
 	var swf = require("./anchor-swf");
 	var list = require("./anchor-list");
 	var face = require("./anchor-face");
-	//var pet = require("./anchor-pet");
 	var backLoad = require("./anchor-backLoad");
-
+	
 	var Webs = function(url) {
 		this.flash = null;
 		this.token = null;
@@ -28,6 +27,7 @@ define(function(require, exports, module) {
 		this.login = false;
 		this.weblg = false;
 		this.effect = true;
+		this.QQGame = false;
 		this.anchorId = null;
 		this.intervals = null;
 		this.sendTsg = "ALL";
@@ -61,7 +61,6 @@ define(function(require, exports, module) {
 			anchor.init();
 			setting.init();
 			lvs.init(data);
-			//pet.init();
 			backLoad.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
@@ -106,22 +105,7 @@ define(function(require, exports, module) {
 			}
 		},
 		agents : function() {
-			var $ie = false;
-			if (navigator.userAgent.indexOf("MSIE") > 0) {
-				if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
-					$ie = true;
-				}
-				if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
-					$ie = true;
-				}
-				if (navigator.userAgent.indexOf("MSIE 8.0") > 0) {
-					$ie = true;
-				}
-				if (navigator.userAgent.indexOf("MSIE 9.0") > 0) {
-					$ie = true;
-				}
-			}
-			return $ie;
+			return this.QQGame;
 		},
 		loading : function(userId, token, room) {
 			lvs.mo();
@@ -131,32 +115,6 @@ define(function(require, exports, module) {
 			base.roomNumber = room;
 			var url = "/rest/checkToken/checkTokenRoles.mt";
 			var params = Tools.stringFormat("token={0}&userId={1}&roomNumber={2}", base.token, base.userId, base.roomNumber);
-			if (!Array.prototype.forEach) {
-				Array.prototype.forEach = function(callback, thisArg) {
-					var T, k;
-					if (this == null) {
-						throw new TypeError(" this is null or not defined");
-					}
-					var O = Object(this);
-					var len = O.length >>> 0; // Hack to convert O.length to a
-					// UInt32
-					if ({}.toString.call(callback) != "[object Function]") {
-						throw new TypeError(callback + " is not a function");
-					}
-					if (thisArg) {
-						T = thisArg;
-					}
-					k = 0;
-					while (k < len) {
-						var kValue;
-						if (k in O) {
-							kValue = O[k];
-							callback.call(T, kValue, k, O);
-						}
-						k++;
-					}
-				};
-			}
 			$.ajax({
 				type : "POST",
 				url : url,
@@ -301,7 +259,6 @@ define(function(require, exports, module) {
 						if (call != null) {
 							call(data.args);
 						}
-
 					}
 				});
 				UIF.handler.cache.put(cons.USER_SOCKETIO, true);
@@ -377,7 +334,7 @@ define(function(require, exports, module) {
 				args : encodeURI(JSON.stringify(msg))
 			}
 			base.map.put($msg.msgid, call);
-			if (false) {
+			if (base.agents()) {
 				if (base.sock.id != null)
 					$msg.suid = base.sock.id;
 				$msg.nsp = base.roomNumber;

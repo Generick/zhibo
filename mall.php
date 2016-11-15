@@ -23,7 +23,7 @@ $user = checklogin();
     </script>
 
 </head>
-<body>
+<body style="padding-top:60px;">
 <?php
     include_once('tpl_header.php');
     $type=$_GET[type];
