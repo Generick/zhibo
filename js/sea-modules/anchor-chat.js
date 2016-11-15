@@ -624,6 +624,11 @@ define(function(require, exports, module) {
                 }, Face.replace_face(msg));
             }
         },
+
+        /*runWayMsg:function(data){
+            console.log(data);
+
+        }*/
         /** 禁止说话 */
         banned : function(data) {
             $("#sendChatBtn").attr("disabled", true);

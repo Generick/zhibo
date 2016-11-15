@@ -10,6 +10,7 @@
 	background: url(/images/kedo/banner.png) no-repeat;
 	padding-bottom: 39%;
 	background-size:88%; 
+	margin-top: 1.3%;
 }
 .applyBtn{
 	background-color: #e34052;
@@ -69,10 +70,12 @@
 .mainR01{
 	background: url(/images/kedo/pic_shijianzhu_01.png) no-repeat;
 	background-size: contain;
+	padding-bottom: 3%;
 }
 .mainR02{
 	background: url(/images/kedo/pic_shijianzhu_02.png) no-repeat;
 	background-size: contain;
+	padding-bottom: 7%;
 }
 .mainR03{
 	background: url(/images/kedo/pic_shijianzhu_03.png) no-repeat;

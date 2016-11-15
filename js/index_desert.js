@@ -503,7 +503,7 @@ $(document).ready(function(){
                     var s_big,s_sml;
                     var advertisement =
                         '<a href="/applyHome.php" target="_blank" class="thumbnail adImg">\
-                            <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
+                            <img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
                         </a>\
                         ';
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -573,7 +573,7 @@ $(document).ready(function(){
                     var s_big,s_sml;
                     var advertisement =
                         '<a href="#" target="_blank" class="thumbnail adImg">\
-                            <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
+                            <img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
                         </a>\
                         ';
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');

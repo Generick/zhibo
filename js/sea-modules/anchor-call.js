@@ -119,6 +119,11 @@ define(function(require, exports, module) {
 		guardsMessage : function(data) {
 			UIF.log("守护通知：" + data);
 			guards.onMessage(jQuery.parseJSON(data));
+		},
+		Runway: function(data){
+			console.log(data)
+			UIF.log("全站跑道：" + data);
+			//chat.runWayMsg(jQuery.parseJSON(data));
 		}
 	}
 })
