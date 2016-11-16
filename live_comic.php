@@ -341,6 +341,13 @@
         </div>
     </div>
 </div>
+<div class="list_top">
+    <div id="hottitle" class="hot">
+        <ul id="ulid">      
+          
+        </ul>
+    </div>
+</div>
 <!--中间部分结束-->
 <div id="CustomGiftSwf"></div>
 <div id="LevelUpPlayerSwf"></div>
