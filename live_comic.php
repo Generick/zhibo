@@ -12,6 +12,7 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/plug/MSClass.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
@@ -299,13 +300,13 @@
 
 
 
-<div id="broadcast">
+<!-- <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
             <div id="bclistWin"><ul id="bclist"></ul></div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="video-area">
     <!--主视频区-->
     <div class="live-video">
