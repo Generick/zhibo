@@ -172,7 +172,7 @@
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
 <div class="nav-left">
-    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/<?php echo $skinType;?>/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
+    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
         <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>"  ></a>
     </div>
     <?php if(!$user){ ?>
