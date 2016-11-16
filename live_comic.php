@@ -477,8 +477,12 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+    <?php if($roomType != "game"){ ?>
+        <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php }else{?>
+        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
+    <?php }?>
 
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
