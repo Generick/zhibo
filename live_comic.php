@@ -12,7 +12,6 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
-    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/plug/MSClass.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
@@ -250,7 +249,7 @@
     <div class="rb"></div>
 </div>
 <!-- 跑道开始 -->
-<div class="list_top">
+<!-- <div class="list_top">
     <div id="hottitle" class="hot">
         <ul id="ulid">
             <li>
@@ -294,7 +293,7 @@
             </li>
         </ul>
     </div>
-</div>
+</div> -->
 <!-- 跑道结束 -->
 
 
@@ -602,9 +601,9 @@ if($thisHome ==1){
 </div>
 <div class="shadow" id="shadow"></div>
 <div class="login-html"></div>
- <script language="javascript">
+ <!-- <script language="javascript">
     new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
-</script> 
+ </script>  -->
 </body>
 
 </html>

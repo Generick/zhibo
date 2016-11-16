@@ -602,6 +602,7 @@ define(function(require, exports, module) {
         },
         /** 全站公告 */
         onAffMsg : function(data) {
+            console.log(data)
             if (data.actions != null && data.actions == "upgrade") {
                 var msg = "恭喜" + decodeURI(data.nickname) + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data.splev + "'></span>";
                 toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
@@ -625,10 +626,9 @@ define(function(require, exports, module) {
             }
         },
 
-        /*runWayMsg:function(data){
-            console.log(data);
-
-        }*/
+        runWayMsg:function(data){
+            console.log(data.levs);
+        },
         /** 禁止说话 */
         banned : function(data) {
             $("#sendChatBtn").attr("disabled", true);
@@ -707,6 +707,30 @@ define("toproom", [], function(require, exports, module) {
                 })
             }, 105000);
         },
+        /*RunWaySayMsg : function(time, obj, content) {
+            content = content || obj.msginfo[0].content;
+            var list = $('<li class="bcItem"><img src="/skin/desert/images/zij.gif" alt="公告"/><span class="tipTime">' + time + '</span><a href="/' + obj.roomid
+            + '.html" target="_blank">' + this.formatLuckNum(obj.src_lucknumber) + '<span class="tipWords">' + Face.faceReplaceImg(content) + '</span></a></li>');
+            var ul = $('#bclist'), bc = $('#broadcast');
+            ul.append(list);
+            bc.show();
+            var _w = $('#bcCon').width();
+            list.css('marginLeft', _w);
+            list.animate({
+                'marginLeft' : 0
+            }, 3000);
+            if ($("#bclist li").length > 1) {
+                ul.children("li").first().remove();
+            }
+            setTimeout(function() {
+                list.fadeOut(function() {
+                    $(this).remove();
+                    if ('' == ul.html()) {
+                        bc.hide();
+                    }
+                })
+            }, 105000);
+        },*/
         formatLuckNum : function(n) {
             if (+n) {
                 return '<span class="fluck">(' + n + ')</span>';
