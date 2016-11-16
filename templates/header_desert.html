@@ -43,17 +43,21 @@
             </form>
             {if !$user}
             <ul class="nav navbar-nav navbar-right  hidden-sm hdNavR reg_log">
-                <li><a href="javascript:;" class="log">登录</a></li>
-                <li class="hidden-xs"><a href="">|</a></li>
-                <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href=""></a></li>
-                <li class=""><a href="./" class="reg">注册<span class="sr-only">(current)</span></a></li>
+                {if $index_page ==""}
+                    <li><a href="javascript:;" class="log">登录</a></li>
+                    <li class="hidden-xs"><a href="">|</a></li>
+                    <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href=""></a></li>
+                    <li class=""><a href="./" class="reg">注册<span class="sr-only">(current)</span></a></li>
+                {/if}
             </ul>
             {else}
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                 <li><a href="/centeros.php">{$user.nickname}</a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
+                {if $index_page ==""}
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
+                {/if}
             </ul>
 
             {/if}
