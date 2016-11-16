@@ -104,22 +104,25 @@
                         margin-left: 50px;
                     }
                     .dui-first{
-                        display: none;
+
                     }
                     .dui-next{
-
+                        display: none;
                     }
                     .dui-cert-text{
                         font-size: 16px;
-                        line-height: 24px;
+                        line-height: 46px;
+                        text-align: center;
                     }
                     .dui-cert-notice{
+                        text-align: center;
                         font-size:12px;
                         color: #9C9A9C;
+                        margin-bottom: 15px;
                     }
 
                     .dui-queren {
-                        background-color: #FFBE4A;
+                        background-color: #EF384A;
                         color: #fff2ed;
                     }
 

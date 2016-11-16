@@ -1,4 +1,6 @@
 define('ajax/username', function (require, exports, module) {
+
+    var common=require("./common");
     exports.check = function () {
         nickname = $("#nickname").val();
         var data = {
@@ -35,35 +37,47 @@ define('ajax/username', function (require, exports, module) {
     $(".c-funds-dh").on("click", function () {
         $(".zhezhao").show();
         $(".duikdou").show();
+        $(".dui-first").show();
+        $(".dui-next").hide();
     })
     $(".dui-cancel").on("click", function () {
         $(".zhezhao").hide();
         $(".duikdou").hide();
         $("#duiv").val("");
     })
-    $(".dui-queren").on("click", function () {
+
+
+    $(".dui-first .dui-queren").on("click", function () {
         var dou = $("#duiv").val() || null;
-        var common=require("./common");
-        if (dou != null && dou !== "") {
-            $.ajax({
-                type: "POST",
-                cache: false,
-                url: "/rest/usersGiftDetails/exchange.mt?userId=" + currentUserId + "&xcoins=" + dou,
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-                    if (data.resultStatus == 200) {
-                        common.clert(data.resultMessage);
-                    }else{
-                        common.clert(data.resultMessage);
-                    }
-                    $(".dui-cancel").click();
-                }
-            });
+        if (dou != null && dou !== "" && dou%100  != 0) {
+            $(".dui-next").show();
+            $(".dui-first").hide();
         }else{
             $("#duiv").focus();
         }
 
     })
+
+    $(".dui-next .dui-queren").on("click", function () {
+        var dou = $("#duiv").val() || null;
+        $.ajax({
+            type: "POST",
+            cache: false,
+            url: "/rest/usersGiftDetails/exchange.mt?userId=" + currentUserId + "&xcoins=" + dou,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                if (data.resultStatus == 200) {
+                    common.clert(data.resultMessage);
+                }else{
+                    common.clert(data.resultMessage);
+                }
+                $(".dui-cancel").click();
+            }
+        });
+
+    })
+
+
 
 
 });
