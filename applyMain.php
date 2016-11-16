@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>申请签约工会</title>
+<title>申请签约公会</title>
 <link href="css/kedo/style.css" rel="stylesheet">
 <link href="css/kedo/homeBg.css" rel="stylesheet">
 <link href="css/kedo/applyOw.css" rel="stylesheet">
@@ -16,11 +16,11 @@ include_once('tpl_header.php');
 ?>
 	<div class="container applyM">
 		<div class="owCon">
-		<h3>申请工会</h3>
+		<h3>申请公会</h3>
 		<div class="appDetail">
-			<h3 class="color99 tit">创建工会流程（线下）</h3>
+			<h3 class="color99 tit">创建公会流程（线下）</h3>
 			<div class="clearfix callCustom">
-				<a href="#" class="pull-right">联系客服</a>
+				<a href="/help.php" class="pull-right">联系客服</a>
 			</div>
 			<div class="row">
 				<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
@@ -32,11 +32,11 @@ include_once('tpl_header.php');
 				<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
 					<div href="#" class="thumbnail">
 						<div class="mainR mainR01">	
-							<p>1、准备10个艺人视频资料(说明所属工会名称及3分钟内才艺展示)</p>
+							<p>1、准备10个艺人视频资料(说明所属公会名称及3分钟内才艺展示)</p>
 							<p>2、提供公司营业执照及法人身份证照片</p>
 							<p>3、提供会长身份证照片，电话及联系QQ或微信</p>
 							<p>4、工作是设备，直播间照片</p>
-							<p class="clearfix download">
+							<p class="clearfix download hidden">
 								<button class="btn btn-default">下载样板</button>
 							</p>
 						</div>
@@ -44,9 +44,8 @@ include_once('tpl_header.php');
 						<div class="mainR mainR02">	
 							<p>对需要提供的资料进行打包，发送至蝌蚪平台指定的审核邮箱</p>
 							<p>kdgonghui@kedo.tv</p>
-							<p>入驻联系QQ：</p>
-							<p class="qqnum">534764940</p>
-							<p class="clearfix opeQQB">
+							<p>入驻联系QQ：534764940</p>
+							<p class="clearfix opeQQB hidden">
 								<button class="btn-lg opeQQ"></button>
 							</p>
 						</div>
