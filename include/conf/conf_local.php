@@ -7,7 +7,7 @@
  */
 
 ini_set('display_errors','On');
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL ^ E_NOTICE ^E_WARNING);
 define('_CDNDOMAIN_','');//cdn服务器
 define('_INTERFACE_','http://10.1.1.17');//接口
 define('_IMAGES_DOMAIN_','http://images.181show.com');//图片服务器
@@ -19,3 +19,6 @@ define('_COREWEB_','http://10.1.1.17:8080/survival/guildsSoc/checkToken.mt');//�
 define('_REDIS_HOST_','112.124.58.61');//redis地址
 define('_REDIS_PWD_','foobareds');//redis地址
 define('_REDIS_KEYB_','loc');
+
+$vsn = md5(date('Y-d-m')."S%sdfgd");
+
