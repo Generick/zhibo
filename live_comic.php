@@ -354,7 +354,7 @@ if($roomType != "game"){
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
 if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
-    include('./include/studio/pet.php');
+    //include('./include/studio/pet.php');
 }
 if($thisHome ==1){
     include('./include/studio/setting.php');
