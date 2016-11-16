@@ -7,7 +7,7 @@
  */
 
 ini_set('display_errors','On');
-error_reporting(E_ALL ^ E_NOTICE ^E_WARNING);
+error_reporting(E_ALL ^ E_NOTICE  ^E_WARNING);
 define('_CDNDOMAIN_','');//cdn服务器
 define('_INTERFACE_','http://10.1.1.17');//接口
 define('_IMAGES_DOMAIN_','http://images.181show.com');//图片服务器

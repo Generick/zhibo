@@ -46,7 +46,7 @@
 
                 {foreach from=$rank_super_star item=show key=key}
                 {if $key==2}
-                <a href="/{$show.roomNumber}.html" class="order-box-second">
+                <a href="javascript:;" class="order-box-second">
                     <div class="order-second-img">
                         <img class="rank_pho" src="{$show.image}" alt="{$show.nickName|urldecode}"/>
                         <span class="secondCrown"></span>
@@ -59,7 +59,7 @@
 
                 {foreach from=$rank_super_star item=show key=key}
                 {if $key==1}{break}{/if}
-                <a href="/{$show.roomNumber}.html"   class="order-box-first">
+                <a href="javascript:;"   class="order-box-first">
                     <div class="order-first-img">
                         <img class="rank_pho" src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="crown"></span>
@@ -72,7 +72,7 @@
 
                 {foreach from=$rank_super_star item=show key=key}
                 {if $key==3}
-                <a href="/{$show.roomNumber}.html" class="order-box-third">
+                <a href="javascript:;" class="order-box-third">
                     <div class="order-third-img">
                         <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
                         <span class="thirdCrown"></span>
@@ -89,7 +89,7 @@
                     {foreach from=$rank_super_star item=show key=key}
                     {if $key>3}
                     <li>
-                        <a href="/{$show.roomNumber}.html"  >
+                        <a href="javascript:;"  >
                             <span class="number">{$key}.</span>
                             <span class="diamond sprite {$show.levelImg}"></span>
                             <span class="order-second-name">{$show.nickName|urldecode}</span>
