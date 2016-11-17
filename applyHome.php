@@ -18,21 +18,18 @@ include_once('tpl_header.php');
 		<div class="jumbotron">
 		</div>
 		<p class="text-center">
-		  <a href="/applyMain.php" type="button" class="btn-lg applyBtn">申请签约工会</a>
-		</p>
-		<p class="text-center">
-		  <a href="/applyMain.php">创建玩家工会</a>
+		  <a href="/applyMain.php" type="button" class="btn-lg applyBtn">申请签约公会</a>
 		</p>
 		<div class="cen">
 			<h3>签约要求及待遇：</h3>
-			<p class="color99">1、首批入驻工会3个月内享有S级工会待遇，20%的工会提成以及优先获得首页资源位置</p>
-			<p class="color99">2、入驻工会有稳定的艺术资源，签约后1个月内需要保证15名艺人通过审核并进驻平台。</p>
+			<p class="color99">1、首批入驻公会3个月内享有S级公会待遇，20%的公会提成以及优先获得首页资源位置</p>
+			<p class="color99">2、入驻公会有稳定的艺术资源，签约后1个月内需要保证15名艺人通过审核并进驻平台。</p>
 			<p class="color99">3、每月需要提供5个及以上艺人入驻平台</p>
 
-			<h3 class="consultTit">签约工会入驻咨询：</h3>
+			<h3 class="consultTit hidden">签约公会入驻咨询：</h3>
 		</div>
-		<p class="text-center">
-			<a href="/applyMain.php" target="_blank" type="button" class="btn btn-default btn-lg opeQQ">申请签约工会</a>
+		<p class="text-center hidden">
+			<a href="/applyMain.php" target="_blank" type="button" class="btn btn-default btn-lg opeQQ">申请签约公会</a>
 		</p>
 
 	</div>

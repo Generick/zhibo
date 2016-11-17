@@ -109,7 +109,7 @@ define(function(require, exports, module) {
 			gift.sendRecord(jQuery.parseJSON(data));
 		},
 		censor : function(data) {
-			UIF.log("关闭直播间：" + data);
+			UIF.log("查封直播间：" + data);
 			swf.censor(jQuery.parseJSON(data));
 		},
 		anchorPK : function(data) {
@@ -117,8 +117,12 @@ define(function(require, exports, module) {
 			swf.anchorPK(jQuery.parseJSON(data));
 		},
 		guardsMessage : function(data) {
-			UIF.log("守护通知：" + data);
+			UIF.log("守护升级：" + data);
 			guards.onMessage(jQuery.parseJSON(data));
-		}
+		},
+		/*Runway: function(data){
+			UIF.log("全站跑道：" + data);
+			chat.runWayMsg(jQuery.parseJSON(data));
+		}*/
 	}
 })

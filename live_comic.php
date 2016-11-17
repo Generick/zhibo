@@ -181,7 +181,7 @@
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
 <div class="nav-left">
-    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/<?php echo $skinType;?>/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
+    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
         <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
     </div>
     <?php if(!$user){ ?>
@@ -248,6 +248,56 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
+<!-- 跑道开始 -->
+<!-- <div class="list_top">
+    <div id="hottitle" class="hot">
+        <ul id="ulid">
+            <li>
+                <a href="javascript:void(0)">
+                    <label>
+                        恭喜
+                        <span class="rwUser">纸鸢</span>
+                        升级为
+                        <span class="upTit">伯爵</span>
+                    </label>
+                </a>
+            </li>
+            <li>
+            <a href="javascript:void(0)">
+                <label>
+                    <span class="rwUser">多多</span>：
+                    <span class="chatContent">快来看这个逗逼主播</span>
+                </label>
+            </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <label>
+                        <span class="rwUser">朵朵</span>
+                        在
+                        <span class="anchor">春天的雪花</span>
+                        的房间升级为
+                        <span class="upTit">黄金守护</span> 
+                       
+                    </label>
+                </a>
+            </li>
+            <li>
+            <a href="javascript:void(0)">
+                <span class="rwUser">嘟嘟</span>
+                在
+                <span class="anchor">默默不高兴</span>
+                的房间赠送
+                <span class="gifts">水晶X3</span>
+            </a>
+            </li>
+        </ul>
+    </div>
+</div> -->
+<!-- 跑道结束 -->
+
+
+
 
 <div id="broadcast">
     <div class="bcConb">
@@ -354,7 +404,7 @@ if($roomType != "game"){
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
 if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
-    include('./include/studio/pet.php');
+    //include('./include/studio/pet.php');
 }
 if($thisHome ==1){
     include('./include/studio/setting.php');
@@ -427,8 +477,12 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+    <?php if($roomType != "game"){ ?>
+        <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php }else{?>
+        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
+    <?php }?>
 
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
@@ -551,6 +605,9 @@ if($thisHome ==1){
 </div>
 <div class="shadow" id="shadow"></div>
 <div class="login-html"></div>
+ <!-- <script language="javascript">
+    new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+ </script>  -->
 </body>
 
 </html>

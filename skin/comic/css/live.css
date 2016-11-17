@@ -41,6 +41,23 @@ a{text-decoration:none; }
 /**头部*/
 /*.header{width:100%;background:#444F64;height: 0px;overflow:hidden;position: relative;z-index: 9999}
 .logo{width:210px;height: 60px;background: url("../images/750.png") no-repeat center}*/
+
+/* 跑道开始 */
+.list_top a,.list_top select,.list_top td,.list_top b{font-size:12px; text-decoration:none;}
+.list_top{ width:300px;height:35px;position:absolute; top:10px; left:0; right:0; padding-left:40px; overflow:hidden; background:url("/skin/comic/images/pic_gonggao_bg.png") no-repeat; margin: 0 auto; }
+.hot{width: 246px; height: 30px; position: relative; overflow: hidden; margin-top:2px; }
+#ulid{width:720px; height:30px; overflow:hidden; margin:0;padding:0; padding: 0px; border: 0px; line-height: 30px; display: inline-block; list-style: none; padding-left:16px; }
+#ulid li{list-style: none; margin-left: 0px;  border-left-width: 0px; border-right-width: 0px; display: inline; height:30px; float:left; margin-right:40px; line-height:30px;}
+#ulid li a{color:#ddd; font-weight:bold;}
+#ulid li .rwUser{color:#d2eea5; }
+#ulid li .upTit{color:#edad4c; }
+#ulid li .chatContent{color:#fff; }
+#ulid li .anchor{color:#f3909b; }
+#ulid li .gifts{color:#e6a5ee; }
+/* 跑道结束 */
+
+
+
 /*左侧*/
 .nav-left{width:70px; background: #1c1c1c;padding-top: 60px;position: absolute;left: 0;top: 0;bottom: 0;z-index:120;}
 .nl-login {position: relative;}
@@ -236,17 +253,21 @@ a{text-decoration:none; }
 
 /*菜单*/
 .switch-area{width:365px; position: fixed;right:50px;bottom: 10px;  z-index: 110;}
-.switch-area .Bmenu {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sucai-tb.png); cursor: pointer}
-.sw-chat {width:70px; height:70px; background-position: -578px -2px}
-.sw-chat-hover,.sw-chat:hover{width:70px; height:70px; background-position: -650px -2px}
-.sw-guard {width:70px; height:70px; background-position: -434px -2px}
-.sw-guard:hover,.sw-guard-hover {width:70px; height:70px; background-position: -506px -2px}
-.sw-mission {width:70px; height:70px; background-position: -290px -2px}
-.sw-mission-hover,.sw-mission:hover {width:70px; height:70px; background-position: -362px -2px}
-.sw-rank {width:70px; height:70px; background-position: -146px -2px}
-.sw-rank-hover,.sw-rank:hover {width:70px; height:70px; background-position: -218px -2px}
-.sw-record {width:70px; height:70px; background-position: -74px -2px}
-.sw-record-hover,.sw-record:hover {width:70px; height:70px; background-position: -2px -2px}
+.switch-area .Bmenu{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sucai-tb.png);}
+
+.sw-chat {width:59px; height:59px; background-position: -616px -2px}
+.sw-chat-hover,.sw-chat:hover {width:59px; height:59px; background-position: -677px -2px}
+.sw-guard {width:59px; height:59px; background-position: -494px -2px}
+.sw-guard:hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
+.sw-mission {width:60px; height:60px; background-position: -126px -2px}
+.sw-mission-hover,.sw-mission:hover {width:60px; height:60px; background-position: -188px -2px}
+.sw-rank {width:59px; height:59px; background-position: -372px -2px}
+.sw-rank-hover,.sw-rank:hover {width:59px; height:59px; background-position: -433px -2px}
+.sw-record {width:59px; height:59px; background-position: -250px -2px}
+.sw-record-hover,.sw-record:hover {width:59px; height:59px; background-position: -311px -2px}
+.sw-vip {width:60px; height:60px; background-position: -2px -2px}
+.sw-vip-hover,.sw-vip:hover {width:60px; height:60px; background-position: -64px -2px}
+
 
 
 /*守护区*/
