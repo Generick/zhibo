@@ -250,55 +250,14 @@
     <div class="rb"></div>
 </div>
 <!-- 跑道开始 -->
-<!-- <div class="list_top">
+<div class="list_top">
     <div id="hottitle" class="hot">
-        <ul id="ulid">
-            <li>
-                <a href="javascript:void(0)">
-                    <label>
-                        恭喜
-                        <span class="rwUser">纸鸢</span>
-                        升级为
-                        <span class="upTit">伯爵</span>
-                    </label>
-                </a>
-            </li>
-            <li>
-            <a href="javascript:void(0)">
-                <label>
-                    <span class="rwUser">多多</span>：
-                    <span class="chatContent">快来看这个逗逼主播</span>
-                </label>
-            </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <label>
-                        <span class="rwUser">朵朵</span>
-                        在
-                        <span class="anchor">春天的雪花</span>
-                        的房间升级为
-                        <span class="upTit">黄金守护</span> 
-                       
-                    </label>
-                </a>
-            </li>
-            <li>
-            <a href="javascript:void(0)">
-                <span class="rwUser">嘟嘟</span>
-                在
-                <span class="anchor">默默不高兴</span>
-                的房间赠送
-                <span class="gifts">水晶X3</span>
-            </a>
-            </li>
+        <ul id="ulid">      
+          
         </ul>
     </div>
-</div> -->
+</div>
 <!-- 跑道结束 -->
-
-
-
 
 <!-- <div id="broadcast">
     <div class="bcConb">
@@ -342,13 +301,7 @@
         </div>
     </div>
 </div>
-<div class="list_top">
-    <div id="hottitle" class="hot">
-        <ul id="ulid">      
-          
-        </ul>
-    </div>
-</div>
+
 <!--中间部分结束-->
 <div id="CustomGiftSwf"></div>
 <div id="LevelUpPlayerSwf"></div>
@@ -615,7 +568,7 @@ if($thisHome ==1){
 <div class="login-html"></div>
  <!-- <script language="javascript">
     new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
- </script>  -->
+ </script> -->
 </body>
 
 </html>
