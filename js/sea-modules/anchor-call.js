@@ -87,10 +87,10 @@ define(function(require, exports, module) {
 			UIF.log("直播间飞屏：" + data);
 			chat.onFlyMsg(jQuery.parseJSON(data));
 		},
-		chatAFFMessage : function(data) {
+		/*chatAFFMessage : function(data) {
 			UIF.log("全站公告：" + data);
 			chat.onAffMsg(jQuery.parseJSON(data));
-		},
+		},*/
 		roomBanned : function(data) {
 			UIF.log("禁止发言：" + data);
 			chat.banned(jQuery.parseJSON(data));
@@ -120,9 +120,9 @@ define(function(require, exports, module) {
 			UIF.log("守护升级：" + data);
 			guards.onMessage(jQuery.parseJSON(data));
 		},
-		/*Runway: function(data){
+		Runway: function(data){
 			UIF.log("全站跑道：" + data);
-			chat.runWayMsg(jQuery.parseJSON(data));
-		}*/
+			chat.runMsg(jQuery.parseJSON(data));
+		}
 	}
 })
