@@ -83,7 +83,7 @@ define('ajax/recharge', function(require, exports, module){
                 });
 
             }else{
-                $h="<tr><td colspan='5'>没有数据!</td></tr>"
+                $h="<tr><td colspan='6'>没有数据!</td></tr>"
             }
             $('#conTable .fir').siblings().remove();
             $('#conTable .fir').after($h);
