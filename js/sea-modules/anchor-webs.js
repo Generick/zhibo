@@ -480,7 +480,7 @@ define(function(require, exports, module) {
 			this.sendMsg(msg, call, "sendUserGift");
 		},
 		censor : function(msg, call) {
-			/** 关闭直播间 */
+			/** 查封直播间 */
 			this.sendMsg(msg, call, "censor");
 		},
 		socketio : function(msg, call) {

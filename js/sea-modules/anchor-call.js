@@ -60,7 +60,7 @@ define(function(require, exports, module) {
 		userEntersCars : function(data) {
 			UIF.log("进场特效：" + data);
 			chat.welcome(jQuery.parseJSON(data));
-			setTimeout(gift.enterCar(jQuery.parseJSON(data)), 5000);
+			setTimeout(gift.enterCar(jQuery.parseJSON(data)), 10000);
 			list.addUsers(jQuery.parseJSON(data));
 		},
 		guardList : function(data) {
