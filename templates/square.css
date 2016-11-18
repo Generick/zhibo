@@ -199,16 +199,16 @@
 			margin-top: 34px;
 		}
 		.guard .gd_list{margin-top:82px; margin-left:24px; }
-		.guard .gd_list .bgBigLi{width: 282px; height:560px; text-align: center; margin-left: 62px; }
-		.guard .gd_list .bgBigLi.firstBig{width:238px; }
+		.guard .gd_list .bgBigLi{width: 260px; height:560px; text-align: center; margin-left: 62px; margin-top: -11px; }
+		.guard .gd_list .bgBigLi.firstBig{width:238px; margin-top: 0; }
 		.bgBigLi .gd_detail .firstDetail{height:268px; }
 		.bgBigLi .gd_detail li{height:68px; border-bottom:1px solid #ebebeb; font-size:14px; line-height:68px; }
 		.guard .gd_list .guard_tit_bg{margin-bottom: 28px; height:65px; }
-		.guard .gd_list .gd_detail{ height: 396px; border:1px solid #dedede; }
-		.firstBig .gd_detail li{ margin-left:25px; font-size:16px; height:64px; border-bottom:1px solid #c1c1c1; width:186px; line-height:64px; }
+		.guard .gd_list .gd_detail{ height: 396px; border:1px solid #dedede; padding-left: 0; }
+		.firstBig .gd_detail li{ font-size:16px; height:64px; border-bottom:1px solid #c1c1c1; width:236px; line-height:64px; }
 	
 		.gd_list .gd_detail li.jinchang{height:136px; line-height:136px; color:#27ce7e; }
-		.gd_detail li.jinchang .bg{margin-top:58px; margin-left:46px; }
+		.gd_detail li.jinchang .bg{margin-top:58px; margin-left:74px; }
 		.gd_detail li.jinchang .text{margin-left: 4px;}
 		.gd_list .gd_detail li .blue{color:blue; }
 		.gd_list .gd_detail li .violet{color:violet; }
@@ -258,12 +258,12 @@
 .pic_guardlevel_baiyin {width:148px; height:18px; background-position: -554px -1345px}
 .pic_guardlevel_huangjin {width:148px; height:18px; background-position: -404px -1345px}
 .pic_guardlevel_qingtong {width:148px; height:18px; background-position: -254px -1345px}
-.pic_shangcheng_baiyin {width:284px; height:70px; background-position: -826px -1273px}
+.pic_shangcheng_baiyin {width:284px; height:70px; background-position: -826px -1273px; margin-left: -14px; }
 .pic_shangcheng_banner {width:1224px; height:280px; background-position: -2px -2px}
-.pic_shangcheng_huangjin {width:284px; height:70px; background-position: -540px -1273px}
+.pic_shangcheng_huangjin {width:284px; height:70px; background-position: -540px -1273px; margin-left: -14px; }
 .pic_shangcheng_kaitong {width:1196px; height:582px; background-position: -2px -689px}
-.pic_shangcheng_qingtong {width:284px; height:70px; background-position: -254px -1273px}
-.pic_shangcheng_shengji {width:1198px; height:403px; background-position: -2px -284px}
+.pic_shangcheng_qingtong {width:284px; height:70px; background-position: -254px -1273px; margin-left: -14px; }
+.pic_shangcheng_shengji {width:1198px; height:403px; background-position: -2px -284px;}
 .pic_shouhu_baiyin {width:82px; height:90px; background-position: -170px -1273px}
 .pic_shuoming_huangjin {width:82px; height:90px; background-position: -86px -1273px}
 .pic_shuoming_qingtong {width:82px; height:90px; background-position: -2px -1273px}

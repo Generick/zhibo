@@ -16,7 +16,7 @@ $(document).ready(function(){
     function ndecodeURI(str){
         var $a="";
         try{
-            $a = decodeURI(str);
+            $a = decodeURIComponent(str);
         }catch (e){
             $a="错误编码";
         }
@@ -141,7 +141,7 @@ $(document).ready(function(){
                     });
 
                     Mycare.listlen=$num*1;
-                    if(Mycare.listlen>5){
+                    if(Mycare.listlen>4){
                         canBottomNum = Math.floor((Mycare.listlen-1)/5);
                         Mycare.addEvent();
                         $(".follow .titD .xii").removeClass('glyphicon-menu-down-hover').addClass('glyphicon-menu-down');
@@ -503,7 +503,7 @@ $(document).ready(function(){
                     var s_big,s_sml;
                     var advertisement =
                         '<a href="/applyHome.php" target="_blank" class="thumbnail adImg">\
-                            <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
+                            <img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
                         </a>\
                         ';
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -573,7 +573,7 @@ $(document).ready(function(){
                     var s_big,s_sml;
                     var advertisement =
                         '<a href="#" target="_blank" class="thumbnail adImg">\
-                            <img class="lazy" src="/images/kedo/hotImg.png" alt="">\
+                            <img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
                         </a>\
                         ';
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');

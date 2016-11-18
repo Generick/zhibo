@@ -27,6 +27,7 @@ define(function(require, exports, module) {
 			htm = "";
 			var n = 0;
 			if (data != null) {
+                data= data.sort(Tools.sortBy('headImage',1));
 				$.each(data, function() {
 					n++;
 					var _self = $(this);

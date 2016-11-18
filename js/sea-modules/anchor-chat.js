@@ -1,3 +1,4 @@
+/*create 11 16 14:53*/
 define(function(require, exports, module) {
     var cons = require("cons");
     var Tools = require('./anchor-tools');
@@ -199,7 +200,7 @@ define(function(require, exports, module) {
                         break;
                 }
                 if(clealMsg)
-                	$("#msgContent").val("");
+                    $("#msgContent").val("");
             });
 
             $(".sdChat").mousedown(function(){
@@ -485,13 +486,13 @@ define(function(require, exports, module) {
                     htmls = Tools.stringFormat(htmls, v.ctime,_this.headimg(v.levs), _this.pclass(v.levs), v.userId, decodeURI(v.nickname), _this.spimg(v.levs), decodeURI(v.nickname)+"：", words);
                     $("#pubChatList").append(htmls);
                     try {
-                    	 $("#nano-pubChatList").nanoScroller();
+                         $("#nano-pubChatList").nanoScroller();
                          $("#nano-pubChatList").nanoScroller({
                              scroll : 'bottom'
                          });
-					} catch (e) {
-						UIF.handler.weblog(e);
-					}
+                    } catch (e) {
+                        UIF.handler.weblog(e);
+                    }
                 })
             });
         },
@@ -502,31 +503,31 @@ define(function(require, exports, module) {
                 htmls = Tools.stringFormat(htmls, decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
                try {
-            	   $("#nano-pubChatList").nanoScroller();
+                   $("#nano-pubChatList").nanoScroller();
                    $("#nano-pubChatList").nanoScroller({
                        scroll : 'bottom'
                    });
-				} catch (e) {
-					UIF.handler.weblog(e);
-				}
+                } catch (e) {
+                    UIF.handler.weblog(e);
+                }
             }
         },
         welcome : function(data) {
             /** 进入直播间 */
             if (data.userId != null && data.nickname != null) {
-            	if (data.numbers != null)
-    				$(".live-info .s-else .s-people").text(data.numbers);
+                if (data.numbers != null)
+                    $(".live-info .s-else .s-people").text(data.numbers);
                 var htmls = '<li class="fontred"><div><span>欢迎   </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}">{5}</a><span>进入房间</span></div></li>';
                 htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
                 try {
-                	$("#nano-pubChatList").nanoScroller();
+                    $("#nano-pubChatList").nanoScroller();
                     $("#nano-pubChatList").nanoScroller({
                         scroll : 'bottom'
                     });
-				} catch (e) {
-					UIF.handler.weblog(e);
-				}
+                } catch (e) {
+                    UIF.handler.weblog(e);
+                }
             }
         },
         /** 公共聊天 */
@@ -541,7 +542,7 @@ define(function(require, exports, module) {
                     dataType : "json",
                     async : false
                 }).done(function(datas) {
-                	UIF.handler.weblog(data);
+                    UIF.handler.weblog(data);
                 });
             }
             var htmls = '<li class="fontred"><span class="gr-time">' + Tools.dateFormat(new Date(), "HH:mm")
@@ -550,13 +551,13 @@ define(function(require, exports, module) {
             htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), decodeURI(data.nickname) + "：", words);
             $("#pubChatList").append(htmls);
             try {
-            	$("#nano-pubChatList").nanoScroller();
+                $("#nano-pubChatList").nanoScroller();
                 $("#nano-pubChatList").nanoScroller({
                     scroll : 'bottom'
                 });
-			} catch (e) {
-				UIF.handler.weblog(e);
-			}
+            } catch (e) {
+                UIF.handler.weblog(e);
+            }
         },
         /** 主播私聊 */
         onPrvMsg : function(data) {
@@ -568,13 +569,13 @@ define(function(require, exports, module) {
             msg = Tools.stringFormat(msg, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), decodeURI(data.nickname), action, words);
             $("#priChatList").append(msg);
             try {
-            	$("#nano-priChatList").nanoScroller();
+                $("#nano-priChatList").nanoScroller();
                 $("#nano-priChatList").nanoScroller({
                     scroll : 'bottom'
                 });
-			} catch (e) {
-				UIF.handler.weblog(e);
-			}
+            } catch (e) {
+                UIF.handler.weblog(e);
+            }
         },
         /** 用户私聊 */
         onP2PMsg : function(data) {
@@ -601,7 +602,7 @@ define(function(require, exports, module) {
             screen.fly(msg);
         },
         /** 全站公告 */
-        onAffMsg : function(data) {
+        /*onAffMsg : function(data) {
             if (data.actions != null && data.actions == "upgrade") {
                 var msg = "恭喜" + decodeURI(data.nickname) + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data.splev + "'></span>";
                 toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
@@ -623,7 +624,55 @@ define(function(require, exports, module) {
                     "src_lucknumber" : decodeURI(UIF.currentUserNickname)
                 }, Face.replace_face(msg));
             }
+        },*/
+
+        runMsg : function(data) {
+            console.log(data);
+            if(data.id=='hornLi'){
+                var msg = data.userName + "说：" + data.content;
+                toproom.rwMsgH(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "hornText" : data.content,
+                    "src_nickname" : decodeURI(data.userName),
+                }, Face.replace_face(msg));
+
+            }else if (data.id=='giftLi') {
+                var msg = data.userName+"在"+data.liverName+"的房间赠送了"+data.itemName+data.number;
+                toproom.rwMsgGift(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "src_nickname" : decodeURI(data.userName),
+                    "anchorsName" : decodeURI(data.liverName), 
+                    "giftId" : data.itemName,
+                    "number" : data.number,
+
+                }, Face.replace_face(msg));
+            }else if(data.id=='guardLi') {
+                console.log(1213)
+                var msg = data.userName+"在"+data.liverName+"的房间升级为"+data.consumeLevel;
+                toproom.rwMsgG(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "src_nickname" : decodeURI(data.userName),
+                    "anchorsName" : decodeURI(data.liverName), 
+                    "level" : data.consumeLevel,
+                }, Face.replace_face(msg));
+            }else if (data.id=='spenderLi') {
+                var msg = "恭喜" + data.userName + "升级为"+ data.consumeLevel;
+                toproom.rwMsgS(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "level" : decodeURI(data.consumeLevel),
+                    "src_nickname" : decodeURI(data.userName),
+                }, Face.replace_face(msg));
+
+            }
         },
+      
+        /*giftMsg:function(data){
+             var msg = data.userName + " 在 "+data.liverName+"的房间赠送了 "+data.itemName;
+            toproom.rwMsgGift(Tools.dateFormat(new Date(), "HH:mm"), {
+                "src_nickname" : decodeURI(data.nickName),
+                "anchorsName" : decodeURI(data.liverName), 
+                "giftId" : data.itemName,
+                "number" : data.number,
+
+                //"src_lucknumber" : decodeURI(UIF.currentUserNickname)
+            }, Face.replace_face(msg));
+        },*/
         /** 禁止说话 */
         banned : function(data) {
             $("#sendChatBtn").attr("disabled", true);
@@ -678,7 +727,7 @@ define("flyScreen", [], function(require, exports, module) {
 define("toproom", [], function(require, exports, module) {
     var Face = require('./anchor-face');
     module.exports = {
-        sayMsg : function(time, obj, content) {
+        /*sayMsg : function(time, obj, content) {
             content = content || obj.msginfo[0].content;
             var list = $('<li class="bcItem"><img src="/skin/desert/images/zij.gif" alt="公告"/><span class="tipTime">' + time + '</span><a href="/' + obj.roomid
             + '.html" target="_blank">' + this.formatLuckNum(obj.src_lucknumber) + '<span class="tipWords">' + Face.faceReplaceImg(content) + '</span></a></li>');
@@ -701,7 +750,59 @@ define("toproom", [], function(require, exports, module) {
                     }
                 })
             }, 105000);
+        },*/
+        rwMsgH : function(time, obj, content) {
+            var list = $('<li id="hornLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' : </span><span class="chatContent">'+obj.hornText+'</span></label></a></li>');
+            var ul = $('#ulid'), bc = $('.list_top');
+            ul.append(list);
+            bc.fadeIn();
+            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },105000)
         },
+
+        rwMsgS : function(time, obj, content) {
+            var list = $('<li id="spenderLi"><a href="/' + obj.roomid
+            + '.html" target="_blank">' + '<label>恭喜 <span class="rwUser">' + obj.src_nickname + ' </span>升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
+            var ul = $('#ulid'), bc = $('.list_top');
+
+            ul.append(list);
+           bc.fadeIn();
+            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },105000)
+        },
+
+        rwMsgG : function(time, obj, content) {
+            var list = $('<li id="guardLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
+            var ul = $('#ulid'), bc = $('.list_top');
+            ul.append(list);
+            bc.fadeIn();
+            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },105000)
+        },
+ 
+        rwMsgGift : function(time, obj, content) {
+            var list = $('<li id="giftLi"><a href="/' + obj.roomid
+            + '.html" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间赠送了 <span class="gifts">'+obj. giftId+' x'+obj.number+'</span></label></a></li>');
+            var ul = $('#ulid'), bc = $('.list_top');
+
+            ul.append(list);
+            bc.fadeIn();
+            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },10500)
+        },
+        
         formatLuckNum : function(n) {
             if (+n) {
                 return '<span class="fluck">(' + n + ')</span>';

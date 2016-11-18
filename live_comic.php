@@ -12,6 +12,7 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
+    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/plug/MSClass.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
@@ -181,7 +182,7 @@
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
 <div class="nav-left">
-    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/<?php echo $skinType;?>/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
+    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
         <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
     </div>
     <?php if(!$user){ ?>
@@ -248,14 +249,23 @@
     <div class="lb"></div>
     <div class="rb"></div>
 </div>
+<!-- 跑道开始 -->
+<div class="list_top">
+    <div id="hottitle" class="hot">
+        <ul id="ulid">      
+          
+        </ul>
+    </div>
+</div>
+<!-- 跑道结束 -->
 
-<div id="broadcast">
+<!-- <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
             <div id="bclistWin"><ul id="bclist"></ul></div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="video-area">
     <!--主视频区-->
     <div class="live-video">
@@ -291,6 +301,7 @@
         </div>
     </div>
 </div>
+
 <!--中间部分结束-->
 <div id="CustomGiftSwf"></div>
 <div id="LevelUpPlayerSwf"></div>
@@ -354,7 +365,7 @@ if($roomType != "game"){
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
 if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
-    include('./include/studio/pet.php');
+    //include('./include/studio/pet.php');
 }
 if($thisHome ==1){
     include('./include/studio/setting.php');
@@ -427,8 +438,12 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+    <?php if($roomType != "game"){ ?>
+        <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php }else{?>
+        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
+    <?php }?>
 
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
@@ -551,6 +566,9 @@ if($thisHome ==1){
 </div>
 <div class="shadow" id="shadow"></div>
 <div class="login-html"></div>
+ <!-- <script language="javascript">
+    new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+ </script> -->
 </body>
 
 </html>
