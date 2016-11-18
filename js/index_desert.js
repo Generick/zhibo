@@ -16,7 +16,7 @@ $(document).ready(function(){
     function ndecodeURI(str){
         var $a="";
         try{
-            $a = decodeURI(str);
+            $a = decodeURIComponent(str);
         }catch (e){
             $a="错误编码";
         }

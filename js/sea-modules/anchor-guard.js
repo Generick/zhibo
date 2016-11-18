@@ -28,7 +28,6 @@ define(function(require, exports, module) {
 			var n = 0;
 			if (data != null) {
                 data= data.sort(Tools.sortBy('headImage',1));
-                data= data.sort(Tools.sortBy('days',1));
 				$.each(data, function() {
 					n++;
 					var _self = $(this);
