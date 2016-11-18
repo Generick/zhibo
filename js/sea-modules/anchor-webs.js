@@ -319,7 +319,7 @@ define(function(require, exports, module) {
 			this.events.put("CHATAFF_MESSAGE", wcall.chatAFFMessage);// 全站公告内容
 			this.events.put("ANCHOR_PK", wcall.anchorPK);// 主播pk
 			this.events.put("GUARDS_MESSAGE", wcall.guardsMessage);// 守护通知
-			//this.events.put("ROOM_RUNWAY", wcall.Runway);// 全站跑道
+			this.events.put("ROOM_RUNWAY", wcall.Runway);// 全站跑道
 		},
 		sendMsg : function(msg, call, tags) {
 			var base = this;
