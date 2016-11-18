@@ -25,15 +25,16 @@ img {
     float: left;
 }
 .inmiddle{margin:auto;width: 1440px;}
-.center-info{position: relative; width:1438px;height: 140px;border:1px #ccc solid;background: #fff; ;margin-bottom: 10px;margin-top: 32px;}
-.center-info .info-left{margin:30px 0 0 25px;}
+.center-info{position: relative; width:1368px;height: 140px;border:1px #ccc solid;background: #fff; ;margin-bottom: 10px;margin-top: 82px;
+    box-shadow: #ddd 0px 2px 0px;}
+.center-info .info-left{margin:30px 0 0 66px;}
 .c-photo,.c-myname,.info-left,.info-middle,.c-right{float:left;}
 .a-myname{float: left;margin-top:12px;}
 .center-edit{background:url("/skin/desert/images/icon_bianji.png") no-repeat; width:14px;height:15px;cursor: pointer;  display: inline-block; margin-left: 15px;}
 .center-edit:active{background:url("/skin/desert/images/icon_bianji_anxia.png") no-repeat;}
 .uid{color: #333333;font-weight: 700;margin-top:15px}
 .c-photo{margin-right: 20px;}
-.c-photo img{width:83px;height: 83px;-webkit-border-radius: 50%; -moz-border-radius: 50%;-o-border-radius: 50%;border:solid 1px #E74152;border-radius: 50%;}
+.c-photo img{width: 52px;  height: 52px;  -webkit-border-radius: 50%;  -moz-border-radius: 50%;  -o-border-radius: 50%;  border: solid 1px #E74152;  border-radius: 50%;  margin-top: 14px;}
 .c-myname >div{height:30px;margin-bottom: 20px}
 #nickname,#aliasname{width:195px;height: 30px;border: 1px solid #ADAAAD;line-height: 30px;}
 #nickname:active,#aliasname:active{border:1px solid #E74152}
@@ -49,13 +50,13 @@ img {
 .info-middle .c-level-bar .c-all-bars{float:left;  height: 10px;width: 250px;margin:5px;border-radius:10px; background-color: #C3C1C2;}
 .info-middle .c-level-bar .c-i-bar{display: block;height: 10px; border-radius:10px;  background-color: #E74152;max-width: 100%;}
 .info-middle .c-level-bar i{position: absolute;right: 10px;width:24px;height: 17px; top: -5px;}
-.info-middle{position: absolute; left: 350px;top: 45px;}
-.c-right{    position: absolute; left: 715px; top: 45px;}
-.c-right .c-funds .c-funds-jb{background: url(/img/icon_money.png) no-repeat left;float:left;margin-right: 40px;height: 20px; padding-left: 28px;padding-top: 3px;}
+.info-middle{position: absolute;left: 350px;  top: 45px;  padding-left: 72px;  border-left: 1px solid #ddd;}
+.c-right{position: absolute; left: 830px; top: 45px; border-left: 1px solid #ddd; padding-left: 90px;}
+.c-right .c-funds .c-funds-jb{background: url(/img/icon_money.png) no-repeat left;float:left;margin-right: 40px;height: 20px; padding-left: 28px;padding-top: 3px;color: #E74152}
 .c-right .c-funds .c-funds-db{float:left;font-size: 12px;color: #434343;margin-right: 40px;height: 20px; padding-right: 22px;padding-top: 8px;}
-.c-right .c-funds .c-funds-cz{width:42px;height: 19px;color: #fff;background: #E74152;font-size: 12px;float: left; padding-top: 4px; text-align: center; border-radius: 2px;cursor: pointer;line-height: 14px;}
+.c-right .c-funds .c-funds-cz{width:42px;height: 22px;color: #fff;background: #E74152;font-size: 12px;float: left; padding-top: 4px; text-align: center; border-radius: 2px;cursor: pointer;line-height: 14px;}
 .c-funds-xd{float: left;  line-height: 22px;  margin-left: 16px;color: #666}
-.c-right .c-funds .c-funds-dh{float:left ;font-size: 12px;margin-left: 25px;  line-height: 22px;border: 1px solid #E74152;color:#E74152;padding:0px 1px;border-radius: 2px;font-size: 12px;}
+.c-right .c-funds .c-funds-dh{float:left ;  }
 .c-funds-dh a{color: #E74152}
 .hidden{display: none;}
 .hiddens{display: none;}
@@ -144,8 +145,8 @@ img {
 .cl-set-info ul li{list-style: none;height:40px;width:210px;line-height:40px;border-bottom: 1px #BABABA solid;color:#616161; }
 .cl-set-info ul li:hover{cursor:pointer; color:#E74152}
 .cl-set-info ul .li-hover{cursor:pointer; color:#E74152}
-.center-right{float:left;margin-left:14px;width:1074px;height: auto;min-height:500px;border: 1px #E3E3E3 solid;background: #fff;padding-bottom: 30px;margin-bottom: 30px; }
-.center-right .cr-title{padding: 27px 0 15px 40px; color:#5F5D68; font-size: 22px;border-bottom:1px solid #D5D5D5;}
+.center-right{float:left;margin-left:14px;width:1000px;height: auto;min-height:500px;border: 1px #E3E3E3 solid;background: #fff;padding-bottom: 30px;margin-bottom: 30px; }
+.center-right .cr-title{padding: 27px 0 15px 40px; color:#5F5D68; font-size: 22px;}
 #info-table{width:680px; border: none;color: #5F5D68;}
 #info-table tr{height: 40px;line-height: 40px;}
 #info-table td{width: 170px;height: 30px;}
@@ -272,9 +273,12 @@ img {
 .titleee{margin-left: 50px;}
 .lev-inf{float: left;text-align: center;color: #fff;background-color: #E74152;width:64px;height: 25px;border-radius: 3px;line-height: 25px;}
 .blank-btline{width:830px;height: 24px;border-bottom: 1px solid #E74152;float: left;margin-left: -2px;}
-.active-level{position: relative;left: 50px;top: 20px}
+.active-level{position: relative; left: 0px;  top: 20px;  padding-left: 0;  border-left: none;}
 .active-level .c-level-bar .c-i-bar{background-color:#3b62db;max-width: 100%}
-.mindex-level{position: relative;left: 200px;top: 20px}
+.mindex-level{position: relative;left: 0px;
+    top: 20px;
+    padding-left: 100px;
+    border-left: none;}
 .mindex-else-title{width:930px;height: 30px;line-height: 30px;margin-left:50px;font-size: 20px;color: #E74152;margin-top:22px;margin-bottom: 18px;}
 
 .mycare-list{width: 970px;overflow: hidden;margin-left: 30px;}
@@ -310,16 +314,50 @@ img {
 /*消息中心**/
 .cr-notice-main{position: relative}
 .none-message{position: absolute;left: 470px;top: 200px;font-size: 16px;color: #9C9C9C}
-.has-message{padding-left: 38px;padding-top: 38px;}
+.has-message{padding-left: 38px;padding-top: 20px;}
 .message-list-box{margin-bottom: 20px;    overflow: hidden;border-bottom: 1px solid #D5D5D5;padding-bottom: 16px;width: 930px;}
-.mlb-left{  float: left;}
-.mlb-left img{width: 84px;height: 84px}
-.mlb-right{  float: left;margin-left: 16px;font-size: 12px;position: relative;height: 84px;width: 830px;}
-.mlb-title{color:#3F3F3F;margin-top: 8px;}
-.mlb-content{margin-top:15px;color: #959595}
-.mlb-title span{ color:#E74152;}
-.mlb-button{position: absolute;bottom: 0px;right: 30px;}
-.mlb-button button{color: #fff;background: #F03F39;height: 20px;border-radius:15px;border: none;padding: 0px 10px;}
+.message-list-box{color: #666;font-size: 12px;}
+.mlb-handlar{
+    font-size: 12px;
+    margin-left:38px;
+    overflow: hidden;
+    border-bottom: 1px solid #D5D5D5;
+    width: 930px;
+
+}
+.mlb-handlar .systitle{
+    background-color: #9C9A9C;
+    color: #fff;
+    float: left;
+    padding: 2px;
+    border-radius: 3px;
+}
+.mlb-handlar .right-h{float: right;}
+.mlb-handlar .select-all-box{
+    vertical-align: middle;
+    margin-top: 1px;
+}
+.mlb-handlar .select-all-text{
+    vertical-align: middle;
+    line-height: 22px;}
+.kbutton{border-radius: 3px;background-color: #E74152;color: #fff;display: inline-block;padding:1px 10px;}
+.lbutton{
+    margin-left: 25px;
+    line-height: 22px;
+    border: 1px solid #E74152;
+    color: #E74152;
+    padding:1px 5px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+.mlb-handlar .del-m{}
+.message-list-title{font-size: 14px;margin: 10px;color: #333}
+.message-list-title .times{margin-left: 20px;color: #999999;display: inline-block}
+.message-sf-cont{float: left; }
+.message-sf-cont .names{color:#E74152 }
+.message-sf-control{float: right}
+.message-del-single{margin-left: 15px;}
+
 
 .message-buy-box{width:393px; height: 393px;position: absolute;left: 310px;top: 30px;background: #302C2D;border: 5px solid #201F27}
 .mbb-top{margin-left: 18px;margin-top: 30px;color:#F4F2F3}

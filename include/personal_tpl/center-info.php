@@ -53,8 +53,8 @@
             <?php
             if ($user['roomNumber']) {
                 ?>
-                <div class="c-funds-xd">星 豆 ：<?php echo (int)$user['coins'] ?> </div>
-                <div class="c-funds-dh"><a href="javascript:;">兑换k豆</a></div>
+                <div class="c-funds-xd">星 豆 ：<span style="color: #E74152"><?php echo (int)$user['coins'] ?></span> </div>
+                <div class="c-funds-dh"><a href="javascript:;" class="lbutton">兑换k豆</a></div>
 
             <?php } ?>
         </div>
