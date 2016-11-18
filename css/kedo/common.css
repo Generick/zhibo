@@ -1,6 +1,13 @@
 body{
     font-family:"SimHei";
     background-color:#f4f4f4;
+    color: #333;
+}
+a{
+    color: #333; 
+}
+a:hover{
+    text-decoration: none;
 }
 .fl{ float:left; }
 .fr{ float:right;}

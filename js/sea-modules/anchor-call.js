@@ -102,7 +102,7 @@ define(function(require, exports, module) {
 		upgrades : function(data) {
 			UIF.log("爵位升级：" + data);
 			gift.speGift(jQuery.parseJSON(data));
-			chat.onAffMsg(jQuery.parseJSON(data));
+			//chat.onAffMsg(jQuery.parseJSON(data));
 		},
 		sendUsers : function(data) {
 			UIF.log("收到礼物：" + data);
