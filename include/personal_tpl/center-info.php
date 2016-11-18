@@ -45,93 +45,18 @@
     <div class="c-right">
         <div class="c-myfund">我的资产</div>
         <div class="c-funds">
-
+            <div class="c-funds-kd">K 豆 :</div>
             <div class="c-funds-jb"><?php echo (int)$user['coins'] ?> </div>
             <div class="c-funds-cz"><a href="/pay.php" style="color: #fff;">充值</a></div>
+        </div>
+        <div class="c-funds">
             <?php
             if ($user['roomNumber']) {
                 ?>
-                <div class="clear"></div>
-                <div class="c-funds-xd">星豆 ：<?php echo (int)$user['coins'] ?> </div>
+                <div class="c-funds-xd">星 豆 ：<?php echo (int)$user['coins'] ?> </div>
                 <div class="c-funds-dh"><a href="javascript:;">兑换k豆</a></div>
 
-                <style>
-                    .duikdou {
-                        display: none;
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        top: 0;
-                        bottom: 0;
-                        margin: auto;
-                        width: 450px;
-                        height: 224px;
-                        border-radius: 3px;
-                        z-index: 5000;
-                    }
-
-                    .dui-header {
-                        background-color: #292829;
-                        line-height: 50px;
-                        text-align: center;
-                        color: #fff;
-                        font-size: 16px;
-                    }
-
-                    .dui-mian {
-                        background-color: #fff
-                    }
-
-                    .duiv {
-                        padding-left: 3px;
-                        width: 335px;
-                        height: 42px;
-                        border: 2px solid #D6D3D6;
-                        display: inline-block;
-                        margin: 20px 50px;
-                        font-size: 16px;
-                    }
-
-                    .dui-control {
-                        padding-bottom: 20px;
-                    }
-
-                    .dui-control button {
-                        width: 142px;
-                        height: 42px;
-                        border-radius: 3px;
-                        border: none;
-                        margin-left: 50px;
-                    }
-                    .dui-first{
-
-                    }
-                    .dui-next{
-                        display: none;
-                    }
-                    .dui-cert-text{
-                        font-size: 16px;
-                        line-height: 46px;
-                        text-align: center;
-                    }
-                    .dui-cert-notice{
-                        text-align: center;
-                        font-size:12px;
-                        color: #9C9A9C;
-                        margin-bottom: 15px;
-                    }
-
-                    .dui-queren {
-                        background-color: #EF384A;
-                        color: #fff2ed;
-                    }
-
-                    .dui-cancel {
-                        color: #333;
-                    }
-                </style>
             <?php } ?>
-
         </div>
     </div>
 </div>

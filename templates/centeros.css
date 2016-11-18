@@ -49,15 +49,74 @@ img {
 .info-middle .c-level-bar .c-all-bars{float:left;  height: 10px;width: 250px;margin:5px;border-radius:10px; background-color: #C3C1C2;}
 .info-middle .c-level-bar .c-i-bar{display: block;height: 10px; border-radius:10px;  background-color: #E74152;max-width: 100%;}
 .info-middle .c-level-bar i{position: absolute;right: 10px;width:24px;height: 17px; top: -5px;}
-.info-middle{position: absolute; left: 470px;top: 45px;}
-.c-right{    position: absolute; left: 900px; top: 45px;}
+.info-middle{position: absolute; left: 350px;top: 45px;}
+.c-right{    position: absolute; left: 715px; top: 45px;}
 .c-right .c-funds .c-funds-jb{background: url(/img/icon_money.png) no-repeat left;float:left;margin-right: 40px;height: 20px; padding-left: 28px;padding-top: 3px;}
 .c-right .c-funds .c-funds-db{float:left;font-size: 12px;color: #434343;margin-right: 40px;height: 20px; padding-right: 22px;padding-top: 8px;}
 .c-right .c-funds .c-funds-cz{width:42px;height: 19px;color: #fff;background: #E74152;font-size: 12px;float: left; padding-top: 4px; text-align: center; border-radius: 2px;cursor: pointer;line-height: 14px;}
-.c-funds-xd{float: left;  line-height: 22px;}
-.c-right .c-funds .c-funds-dh{float:left ;font-size: 12px;margin-left: 25px;  line-height: 22px;color: #FFBE4A}
+.c-funds-xd{float: left;  line-height: 22px;  margin-left: 16px;color: #666}
+.c-right .c-funds .c-funds-dh{float:left ;font-size: 12px;margin-left: 25px;  line-height: 22px;border: 1px solid #E74152;color:#E74152;padding:0px 1px;border-radius: 2px;font-size: 12px;}
+.c-funds-dh a{color: #E74152}
 .hidden{display: none;}
 .hiddens{display: none;}
+.c-funds-kd{color: #666;float: left}
+.c-funds{float: left;font-size: 12px;}
+.duikdou {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 450px;
+    height: 224px;
+    border-radius: 3px;
+    z-index: 5000;
+}
+
+.dui-header {
+    background-color: #292829;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.dui-mian {
+    background-color: #fff
+}
+
+.duiv {
+    padding-left: 3px;
+    width: 335px;
+    height: 42px;
+    border: 2px solid #D6D3D6;
+    display: inline-block;
+    margin: 20px 50px;
+    font-size: 16px;
+}
+
+.dui-control {
+    padding-bottom: 20px;
+}
+
+.dui-control button {
+    width: 142px;
+    height: 42px;
+    border-radius: 3px;
+    border: none;
+    margin-left: 50px;
+}
+.dui-first{  }
+.dui-next{  display: none;  }
+.dui-cert-text{  font-size: 16px;  line-height: 46px;  text-align: center;  }
+.dui-cert-notice{  text-align: center;  font-size:12px;  color: #9C9A9C;  margin-bottom: 15px;
+}
+.dui-queren {  background-color: #EF384A;  color: #fff2ed;
+}
+.dui-cancel {  color: #333;
+}
 .center-left{width:348px;border: 1px #E3E3E3 solid; float: left;    margin-bottom: 30px;}
 .center-left .cl-div{width:348px;height: 60px;position: relative;background: #fff;color: #3F3F3F;font-size: 14px;border-bottom:1px #ccc solid;cursor: pointer}
 .center-left .cl-focus{background-color:#E74152;width:348px;height: 60px;position: relative;color: #fff;font-size: 14px;border-bottom:0;}
