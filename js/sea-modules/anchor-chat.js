@@ -272,7 +272,7 @@ define(function(require, exports, module) {
                 UIF.handler.sendUserId = userId;
                 $("#msgContent").focus();
             });
-            // 查封
+            // 查封直播间
             $(".chat-header .closing").click(function() {
                 if (!UIF.handler.login) {
                     UIF.handler.loging();

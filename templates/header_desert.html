@@ -52,14 +52,48 @@
             </ul>
             {else}
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
+
                 <li><a href="/centeros.php">{$user.nickname}</a></li>
+                <li><a class= "header-notice" style="display: none"></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 {if $index_page ==""}
-                <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
+                <li class=""><a href="/login.php?action=logout&amp;type=html">退出</a></li>
                 {/if}
-            </ul>
+                {literal}
+                    <style>
+                        .header-notice{margin-top: 20px;}
+                        .header-notice,.img-notice{display:inline-block;width:24px;height: 18px;  background: url("/images/kedo/header_notice.png") no-repeat;cursor: pointer}
+                        .header-notice:hover{background: url("/images/kedo/header_notice_hover.png") no-repeat;}
+                        .notice-list{display:none;position: absolute;overflow: hidden;
+                            font-size: 12px;
+                            background-color: #fff;
+                            padding: 10px;
+                            border-left: 2px solid #E74161;
+                            margin-top: 56px;
+                            right: 265px;
+                            border-right: 2px solid #E74161;
+                            border-bottom: 2px solid #E74161;
+                            width: 280px;
+                            border-bottom-left-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                        }
+                        .img-notice{height: 14px;}
+                        .notice-list ul li{height:36px;line-height: 36px; }
+                        .notice-list ul li a{color: #666}
+                        .notice-list ul li span{display: inline-block}
 
+                    </style>
+                {/literal}
+            </ul>
+                <div class="notice-list">
+                    <ul>
+                        <li><span class="img-notice"></span><a href="/centeros.php?ptype=notice">用户开播通知</a> <span>10-21 19:36 </span></li>
+                        <li><span class="img-notice"></span><a href="/centeros.php?ptype=notice">用户开播通知</a>  <span>10-21 19:36 </span></li>
+                        <li><span class="img-notice"></span><a href="/centeros.php?ptype=notice">用户开播通知</a> <span>10-21 19:36 </span></li>
+                        <li><span class="img-notice"></span><a href="/centeros.php?ptype=notice">用户开播通知</a>  <span>10-21 19:36 </span></li>
+                    </ul>
+                </div>
             {/if}
         </div><!--/.nav-collapse -->
     </div>
