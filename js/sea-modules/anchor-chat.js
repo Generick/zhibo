@@ -755,11 +755,13 @@ define("toproom", [], function(require, exports, module) {
             var list = $('<li id="hornLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' : </span><span class="chatContent">'+obj.hornText+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
             ul.append(list);
-            bc.fadeIn();
-            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            bc.slideDown();
+            if ($("#ulid li").length > 1) {
+                ul.children("li").first().remove();
+            }
             setTimeout(function(){
                 $('#ulid li').remove();
-                $(".list_top").fadeOut();
+                $(".list_top").slideUp();
             },105000)
         },
 
@@ -769,11 +771,13 @@ define("toproom", [], function(require, exports, module) {
             var ul = $('#ulid'), bc = $('.list_top');
 
             ul.append(list);
-           bc.fadeIn();
-            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+           bc.slideDown();
+           if ($("#ulid li").length > 1) {
+                ul.children("li").first().remove();
+            }
             setTimeout(function(){
                 $('#ulid li').remove();
-                $(".list_top").fadeOut();
+                $(".list_top").slideUp();
             },105000)
         },
 
@@ -781,11 +785,13 @@ define("toproom", [], function(require, exports, module) {
             var list = $('<li id="guardLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
             ul.append(list);
-            bc.fadeIn();
-            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            bc.slideDown();
+            if ($("#ulid li").length > 1) {
+                ul.children("li").first().remove();
+            }
             setTimeout(function(){
                 $('#ulid li').remove();
-                $(".list_top").fadeOut();
+                $(".list_top").slideUp();
             },105000)
         },
  
@@ -795,12 +801,14 @@ define("toproom", [], function(require, exports, module) {
             var ul = $('#ulid'), bc = $('.list_top');
 
             ul.append(list);
-            bc.fadeIn();
-            new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            bc.slideDown();
+            if ($("#ulid li").length > 1) {
+                ul.children("li").first().remove();
+            }
             setTimeout(function(){
                 $('#ulid li').remove();
-                $(".list_top").fadeOut();
-            },10500)
+                $(".list_top").slideUp();
+            },105000)
         },
         
         formatLuckNum : function(n) {
