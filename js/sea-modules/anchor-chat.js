@@ -272,7 +272,7 @@ define(function(require, exports, module) {
                 UIF.handler.sendUserId = userId;
                 $("#msgContent").focus();
             });
-            // 查封
+            // 查封直播间
             $(".chat-header .closing").click(function() {
                 if (!UIF.handler.login) {
                     UIF.handler.loging();
@@ -627,49 +627,52 @@ define(function(require, exports, module) {
         },*/
 
         runMsg : function(data) {
-            if (data.runType != null && data.runType == "SPENDER") {
-                console.log(data);
-                var msg = "恭喜" + decodeURI(data.nickname) + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data. level + "'></span>";
-                toproom.rwMsgS(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "level" : decodeURI(data.level),
-                    "src_nickname" : decodeURI(data.nickName),
-                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
+            console.log(data);
+            if(data.id=='hornLi'){
+                var msg = data.userName + "说：" + data.content;
+                toproom.rwMsgH(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "hornText" : data.content,
+                    "src_nickname" : decodeURI(data.userName),
                 }, Face.replace_face(msg));
-            } else if (data.runType != null && data.runType == "GUARDS") {
-                console.log(data);
-                toproom.rwMsgG(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "src_nickname" : decodeURI(data.nickName),
-                    "anchorsName" : decodeURI(data.anchorsName), 
-                    "level" : data.level,
-                    //"src_lucknumber" : decodeURI(UIF.currentUserNickname)
-                }, Face.replace_face(msg));
-            }else if (data.runType != null && data.runType == "GIFT") {
-                console.log(data);
+
+            }else if (data.id=='giftLi') {
+                var msg = data.userName+"在"+data.liverName+"的房间赠送了"+data.itemName+data.number;
                 toproom.rwMsgGift(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "src_nickname" : decodeURI(data.nickName),
-                    "anchorsName" : decodeURI(data.anchorsName), 
-                    "giftId" : data.giftName,
+                    "src_nickname" : decodeURI(data.userName),
+                    "anchorsName" : decodeURI(data.liverName), 
+                    "giftId" : data.itemName,
                     "number" : data.number,
 
-                    //"src_lucknumber" : decodeURI(UIF.currentUserNickname)
                 }, Face.replace_face(msg));
-            }else if(data.runType != null && data.runType=='HORN'){
-                console.log("这里是喇叭");
-                var msg = data.nickName + "说：" + data.hornText;
-                console.log(msg)
-                toproom.rwMsgH(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "hornText" : data.hornText,
-                    "src_nickname" : decodeURI(data.nickName),
-                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
+            }else if(data.id=='guardLi') {
+                console.log(1213)
+                var msg = data.userName+"在"+data.liverName+"的房间升级为"+data.consumeLevel;
+                toproom.rwMsgG(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "src_nickname" : decodeURI(data.userName),
+                    "anchorsName" : decodeURI(data.liverName), 
+                    "level" : data.consumeLevel,
+                }, Face.replace_face(msg));
+            }else if (data.id=='spenderLi') {
+                var msg = "恭喜" + data.userName + "升级为"+ data.consumeLevel;
+                toproom.rwMsgS(Tools.dateFormat(new Date(), "HH:mm"), {
+                    "level" : decodeURI(data.consumeLevel),
+                    "src_nickname" : decodeURI(data.userName),
                 }, Face.replace_face(msg));
 
             }
         },
       
+        /*giftMsg:function(data){
+             var msg = data.userName + " 在 "+data.liverName+"的房间赠送了 "+data.itemName;
+            toproom.rwMsgGift(Tools.dateFormat(new Date(), "HH:mm"), {
+                "src_nickname" : decodeURI(data.nickName),
+                "anchorsName" : decodeURI(data.liverName), 
+                "giftId" : data.itemName,
+                "number" : data.number,
+
+                //"src_lucknumber" : decodeURI(UIF.currentUserNickname)
+            }, Face.replace_face(msg));
+        },*/
         /** 禁止说话 */
         banned : function(data) {
             $("#sendChatBtn").attr("disabled", true);
@@ -749,42 +752,55 @@ define("toproom", [], function(require, exports, module) {
             }, 105000);
         },*/
         rwMsgH : function(time, obj, content) {
-            var list = $('<li><a href="/' + obj.roomid
-            + '.html" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ': </span><span class="chatContent">'+obj.hornText+'</span></label></a></li>');
+            var list = $('<li id="hornLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' : </span><span class="chatContent">'+obj.hornText+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
             ul.append(list);
-            bc.show();
+            bc.fadeIn();
             new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },105000)
         },
 
         rwMsgS : function(time, obj, content) {
-            var list = $('<li><a href="/' + obj.roomid
+            var list = $('<li id="spenderLi"><a href="/' + obj.roomid
             + '.html" target="_blank">' + '<label>恭喜 <span class="rwUser">' + obj.src_nickname + ' </span>升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
 
             ul.append(list);
-            bc.show();
+           bc.fadeIn();
             new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },105000)
         },
 
         rwMsgG : function(time, obj, content) {
-            var list = $('<li><a href="/' + obj.roomid
-            + '.html" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
+            var list = $('<li id="guardLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
-
             ul.append(list);
-            bc.show();
+            bc.fadeIn();
             new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },105000)
         },
  
         rwMsgGift : function(time, obj, content) {
-            var list = $('<li><a href="/' + obj.roomid
-            + '.html" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间赠送 <span class="gifts">'+obj. giftId+' x'+obj.number+'</span></label></a></li>');
+            var list = $('<li id="giftLi"><a href="/' + obj.roomid
+            + '.html" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间赠送了 <span class="gifts">'+obj. giftId+' x'+obj.number+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
 
             ul.append(list);
-            bc.show();
+            bc.fadeIn();
             new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+            setTimeout(function(){
+                $('#ulid li').remove();
+                $(".list_top").fadeOut();
+            },10500)
         },
         
         formatLuckNum : function(n) {

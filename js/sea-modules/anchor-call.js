@@ -60,7 +60,7 @@ define(function(require, exports, module) {
 		userEntersCars : function(data) {
 			UIF.log("进场特效：" + data);
 			chat.welcome(jQuery.parseJSON(data));
-			setTimeout(gift.enterCar(jQuery.parseJSON(data)), 5000);
+			setTimeout(gift.enterCar(jQuery.parseJSON(data)), 10000);
 			list.addUsers(jQuery.parseJSON(data));
 		},
 		guardList : function(data) {
@@ -102,7 +102,7 @@ define(function(require, exports, module) {
 		upgrades : function(data) {
 			UIF.log("爵位升级：" + data);
 			gift.speGift(jQuery.parseJSON(data));
-			chat.onAffMsg(jQuery.parseJSON(data));
+			//chat.onAffMsg(jQuery.parseJSON(data));
 		},
 		sendUsers : function(data) {
 			UIF.log("收到礼物：" + data);

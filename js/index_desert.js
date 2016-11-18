@@ -141,7 +141,7 @@ $(document).ready(function(){
                     });
 
                     Mycare.listlen=$num*1;
-                    if(Mycare.listlen>5){
+                    if(Mycare.listlen>4){
                         canBottomNum = Math.floor((Mycare.listlen-1)/5);
                         Mycare.addEvent();
                         $(".follow .titD .xii").removeClass('glyphicon-menu-down-hover').addClass('glyphicon-menu-down');
