@@ -48,7 +48,7 @@ a{text-decoration:none; }
 .hot{width: 450px; height: 30px; position: relative; overflow: hidden; margin-top:2px; }
 #ulid{width:720px; height:30px; overflow:hidden; margin:0;padding:0; padding: 0px; border: 0px; line-height: 30px; display: inline-block; list-style: none; padding-left:16px; }
 #ulid li{list-style: none; margin-left: 0px;  border-left-width: 0px; border-right-width: 0px; display: inline; height:30px; float:left; margin-right:40px; line-height:30px;}
-#ulid li a{color:#ddd; font-weight:bold;}
+#ulid li label{color:#ddd; }
 #ulid li .rwUser{color:#d2eea5; }
 #ulid li .upTit{color:#edad4c; }
 #ulid li .chatContent{color:#fff; }
@@ -295,7 +295,7 @@ a{text-decoration:none; }
 .no-circle{border-radius:70px;width:70px;height:80px;background: url("/skin/desert/images/pic_guardlevel_kong.png") no-repeat;  cursor: pointer;}
 
 /*聊天框*/
-.chat-area{width:340px;height: 530px; position: absolute;/*left:1360px;*/ right:20px; top:60px; background:url("../images/chatBg.png"); background-size: cover; }
+.chat-area{width:340px;height: 530px; position: absolute;/*left:1360px;*/ right:20px; top:280px; background:url("../images/chatBg.png"); background-size: cover; }
 .cr-body{height: 300px;min-height: 300px;}
 /* .pr-body{height: 100px;min-height: 100px;}*/
 .bCorner{height: 130px;min-height: 130px; position: relative; }

@@ -601,30 +601,6 @@ define(function(require, exports, module) {
             var msg = data.nickname + "说：" + data.message;
             screen.fly(msg);
         },
-        /** 全站公告 */
-        /*onAffMsg : function(data) {
-            if (data.actions != null && data.actions == "upgrade") {
-                var msg = "恭喜" + decodeURI(data.nickname) + "升级为<span class='gr-sender sprite consumelevel-pic_consumelevel_" + data.splev + "'></span>";
-                toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "src_nickname" : decodeURI(data.nickname),
-                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
-                }, Face.replace_face(msg));
-            } else if (data.actions != null && data.actions == "maintain") {
-                toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "src_nickname" : decodeURI(data.nickname),
-                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
-                }, Face.replace_face(msg));
-            } else {
-                var msg = data.nickname + "说：" + data.message;
-                toproom.sayMsg(Tools.dateFormat(new Date(), "HH:mm"), {
-                    "roomid" : data.roomNumber,
-                    "src_nickname" : decodeURI(data.nickname),
-                    "src_lucknumber" : decodeURI(UIF.currentUserNickname)
-                }, Face.replace_face(msg));
-            }
-        },*/
 
         runMsg : function(data) {
             console.log(data);
@@ -636,20 +612,21 @@ define(function(require, exports, module) {
                 }, Face.replace_face(msg));
 
             }else if (data.id=='giftLi') {
-                var msg = data.userName+"在"+data.liverName+"的房间赠送了"+data.itemName+data.number;
+                var msg = data.userName+"在"+data.liverName+data.roomNumber+"的房间赠送了"+data.itemName+data.number;
                 toproom.rwMsgGift(Tools.dateFormat(new Date(), "HH:mm"), {
                     "src_nickname" : decodeURI(data.userName),
                     "anchorsName" : decodeURI(data.liverName), 
+                    "roomid" : decodeURI(data.roomNumber), 
                     "giftId" : data.itemName,
                     "number" : data.number,
 
                 }, Face.replace_face(msg));
             }else if(data.id=='guardLi') {
-                console.log(1213)
-                var msg = data.userName+"在"+data.liverName+"的房间升级为"+data.consumeLevel;
+                var msg = data.userName+"在"+data.liverName+data.roomNumber+"的房间升级为"+data.consumeLevel;
                 toproom.rwMsgG(Tools.dateFormat(new Date(), "HH:mm"), {
                     "src_nickname" : decodeURI(data.userName),
                     "anchorsName" : decodeURI(data.liverName), 
+                    "roomid" : decodeURI(data.roomNumber), 
                     "level" : data.consumeLevel,
                 }, Face.replace_face(msg));
             }else if (data.id=='spenderLi') {
@@ -659,20 +636,11 @@ define(function(require, exports, module) {
                     "src_nickname" : decodeURI(data.userName),
                 }, Face.replace_face(msg));
 
+            }else if (data.id==null) {
+                console.log('there is no data');
             }
         },
       
-        /*giftMsg:function(data){
-             var msg = data.userName + " 在 "+data.liverName+"的房间赠送了 "+data.itemName;
-            toproom.rwMsgGift(Tools.dateFormat(new Date(), "HH:mm"), {
-                "src_nickname" : decodeURI(data.nickName),
-                "anchorsName" : decodeURI(data.liverName), 
-                "giftId" : data.itemName,
-                "number" : data.number,
-
-                //"src_lucknumber" : decodeURI(UIF.currentUserNickname)
-            }, Face.replace_face(msg));
-        },*/
         /** 禁止说话 */
         banned : function(data) {
             $("#sendChatBtn").attr("disabled", true);
@@ -727,32 +695,8 @@ define("flyScreen", [], function(require, exports, module) {
 define("toproom", [], function(require, exports, module) {
     var Face = require('./anchor-face');
     module.exports = {
-        /*sayMsg : function(time, obj, content) {
-            content = content || obj.msginfo[0].content;
-            var list = $('<li class="bcItem"><img src="/skin/desert/images/zij.gif" alt="公告"/><span class="tipTime">' + time + '</span><a href="/' + obj.roomid
-            + '.html" target="_blank">' + this.formatLuckNum(obj.src_lucknumber) + '<span class="tipWords">' + Face.faceReplaceImg(content) + '</span></a></li>');
-            var ul = $('#bclist'), bc = $('#broadcast');
-            ul.append(list);
-            bc.show();
-            var _w = $('#bcCon').width();
-            list.css('marginLeft', _w);
-            list.animate({
-                'marginLeft' : 0
-            }, 3000);
-            if ($("#bclist li").length > 1) {
-                ul.children("li").first().remove();
-            }
-            setTimeout(function() {
-                list.fadeOut(function() {
-                    $(this).remove();
-                    if ('' == ul.html()) {
-                        bc.hide();
-                    }
-                })
-            }, 105000);
-        },*/
         rwMsgH : function(time, obj, content) {
-            var list = $('<li id="hornLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' : </span><span class="chatContent">'+obj.hornText+'</span></label></a></li>');
+            var list = $('<li id="hornLi"><div>' + '<label><span class="rwUser">' + obj.src_nickname + ' : </span><span class="chatContent">'+obj.hornText+'</span></label></div></li>');
             var ul = $('#ulid'), bc = $('.list_top');
             ul.append(list);
             bc.slideDown();
@@ -766,8 +710,7 @@ define("toproom", [], function(require, exports, module) {
         },
 
         rwMsgS : function(time, obj, content) {
-            var list = $('<li id="spenderLi"><a href="/' + obj.roomid
-            + '.html" target="_blank">' + '<label>恭喜 <span class="rwUser">' + obj.src_nickname + ' </span>升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
+            var list = $('<li id="spenderLi"><div>' + '<label>恭喜 <span class="rwUser">' + obj.src_nickname + ' </span>升级为 <span class="upTit">'+obj. level+'</span></label></div></li>');
             var ul = $('#ulid'), bc = $('.list_top');
 
             ul.append(list);
@@ -782,7 +725,7 @@ define("toproom", [], function(require, exports, module) {
         },
 
         rwMsgG : function(time, obj, content) {
-            var list = $('<li id="guardLi"><a href="#" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间升级为 <span class="upTit">'+obj. level+'</span></label></a></li>');
+            var list = $('<li id="guardLi"><div>' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <a href="/'+obj.roomid+'" target="_blank" class="anchor">'+obj. anchorsName+'</a> 的房间升级为 <span class="upTit">'+obj. level+'</span></label></div></li>');
             var ul = $('#ulid'), bc = $('.list_top');
             ul.append(list);
             bc.slideDown();
@@ -796,8 +739,7 @@ define("toproom", [], function(require, exports, module) {
         },
  
         rwMsgGift : function(time, obj, content) {
-            var list = $('<li id="giftLi"><a href="/' + obj.roomid
-            + '.html" target="_blank">' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <span class="anchor">'+obj. anchorsName+'</span> 的房间赠送了 <span class="gifts">'+obj. giftId+' x'+obj.number+'</span></label></a></li>');
+            var list = $('<li id="giftLi"><div>' + '<label><span class="rwUser">' + obj.src_nickname + ' </span> 在 <a href="/'+obj.roomid+'" target="_blank" class="anchor">'+obj. anchorsName+'</a> 的房间赠送了 <span class="gifts">'+obj. giftId+' x'+obj.number+'</span></label></a></li>');
             var ul = $('#ulid'), bc = $('.list_top');
 
             ul.append(list);
