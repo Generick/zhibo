@@ -33,6 +33,12 @@ define(function(require, exports, module) {
                 wmode : "transparent",
                 allowScriptAccess : "always"
             });
+			swfobject.embedSWF("/js/sea-modules/swf/treasureBox.swf", "treasureBox_swf", 100, 100, "10.0", "", {
+                mtadd : UIF.handler.flash
+            }, {
+                wmode : "transparent",
+                allowScriptAccess : "always"
+            });
 		},
 		close : function(data) {
 			try {

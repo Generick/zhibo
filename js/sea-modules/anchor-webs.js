@@ -20,6 +20,7 @@ define(function(require, exports, module) {
 	var face = require("./anchor-face");
 	var backLoad = require("./anchor-backLoad");
 	var pet = require("./anchor-pet");
+	var treasureBox = require("./anchor-treasureBox");
 	var Webs = function(url) {
 		this.flash = null;
 		this.token = null;
@@ -63,6 +64,7 @@ define(function(require, exports, module) {
 			lvs.init(data);
 			backLoad.init();
 			pet.init();
+			treasureBox.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
 				var keyCode;
