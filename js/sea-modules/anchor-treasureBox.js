@@ -6,6 +6,7 @@ define(function(require, exports, module) {
 		CONST_MAXCOUNT : 3,//最大可领取次数
 		CONST_GAPARRAY : [5 * 60, 15 * 60, 30 * 60],
 		CONST_REACHMAX : "今日宝箱已经领取完毕",
+		CONST_TIMELIMIT  : " 宝箱冷却中",
 		CONST_LEFTTIME : "剩余{0}",
 		CONST_COULDLINGQU : "点击领取",
 		current_count : 0,
@@ -32,6 +33,26 @@ define(function(require, exports, module) {
 			$("#treasureBox_reward_confirm").click(function(e){
 				_this.hideTreasureBox_reward();
 			})
+		},
+		
+		initTreasureBoxData : function(data){
+			this.updateBoxShow();
+		},
+		
+		updateBoxShow : function(){
+			if(this.checkIfReachMax()){
+				this.hideTreasureBox();
+				return;
+			}
+			this.showTreasureBox();
+		},
+		
+		showTreasureBox : function(){
+			$("#treasureBox_div").hide();
+		},
+		
+		hideTreasureBox : function(){
+			$("#treasureBox_div").hide();
 		},
 		
 		test : function(){
@@ -112,7 +133,23 @@ define(function(require, exports, module) {
 				Tools.dialog(this.CONST_REACHMAX);
 				return;
 			}
-			this.showTreasureBox_reward();
+			if(this.timetick > 0){
+				Tools.dialog(this.CONST_TIMELIMIT);
+				return;
+			}
+			var _this = this;
+			
+			var param = {count : this.current_count};
+			UIF.handler.openTreasureBox(param, function(data){
+				var result = jQuery.parseJSON(data);
+				result.resultStatus;
+				_this.updateRewardShow(result);
+				_this.showTreasureBox_reward();
+			});
+		},
+		
+		updateRewardShow : function (data) {
+			
 		},
 		
 		checkIfReachMax : function(){

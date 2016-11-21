@@ -179,6 +179,11 @@ define(function(require, exports, module) {
 			var levelGap = data.levelGap;
 			var randomMovieGap = data.randomMovieGap;
 			swfobject.getObjectById("PetSwf").updateData(imageId, level, levelGap, randomMovieGap);
+		},
+		
+		//改变主播状态
+		changeTreasureBoxState : function(data){
+			swfobject.getObjectById("treasureBox_swf").updateState(data);
 		}
 	}
 })

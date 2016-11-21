@@ -189,6 +189,7 @@ define(function(require, exports, module) {
 				this.sendWelcome();
 				this.resconnect();
 				this.sendPetInit();
+				this.sendTreasureBoxInit();
 			}
 		},
 		weblog : function(msg) {
@@ -490,13 +491,21 @@ define(function(require, exports, module) {
 			/** 关闭直播间 */
 			this.sendMsg(msg, call, "censor");
 		},
-		sendPetInit :function(msg, call) {
+		sendPetInit : function(msg, call) {
 			/** 初始化宠物信息 */
 			this.sendMsg(msg, call, "anchorsAutoPet");
 		},
-		changePetName :function(msg, call) {
+		changePetName : function(msg, call) {
 			/** 修改宠物名字 */
 			this.sendMsg(msg, call, "anchorsPetChangeName");
+		},
+		sendTreasureBoxInit : function(msg, call) {
+			/** 初始化宝箱信息 */
+			//this.sendMsg(msg, call, "anchorsPetChangeName");
+		},
+		openTreasureBox : function(msg, call) {
+			/** 领取宝箱 */
+			//this.sendMsg(msg, call, "anchorsPetChangeName");
 		},
 		socketio : function(msg, call) {
 			this.sendMsg(msg, call, "socketio");
