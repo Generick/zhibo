@@ -10,6 +10,7 @@ define(function(require, exports, module) {
 	var chat = require("./anchor-chat");
 	var list = require("./anchor-list");
 	var pet = require("./anchor-pet");
+	var treasureBox = require("./anchor-treasureBox");
 	module.exports = {
 		status : function(data) {
 			lvs.stat(jQuery.parseJSON(data));
@@ -132,6 +133,10 @@ define(function(require, exports, module) {
 		guardsMessage : function(data) {
 			UIF.log("守护通知：" + data);
 			guards.onMessage(jQuery.parseJSON(data));
+		},
+		initTreasureBox : function(data){
+			UIF.log("宝箱数据：" + data);
+			treasureBox.initTreasureBoxData(jQuery.parseJSON(data));
 		}
 	}
 })

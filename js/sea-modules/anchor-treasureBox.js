@@ -3,8 +3,13 @@ define(function(require, exports, module) {
 	var Tools = require("./anchor-tools");
 	var UserData = require("./anchor-user");
 	module.exports = {
+		Cannotopen_State : "cannotopen_state",
+		Couldopen_State : "couldopen_state",
+		Open_Animation : "open_animation",
+		Close_Animation : "close_animation",
 		CONST_MAXCOUNT : 3,//最大可领取次数
-		CONST_GAPARRAY : [5 * 60, 15 * 60, 30 * 60],
+		//CONST_GAPARRAY : [5 * 60, 15 * 60, 30 * 60],
+		CONST_GAPARRAY : [5, 15, 30],
 		CONST_REACHMAX : "今日宝箱已经领取完毕",
 		CONST_TIMELIMIT  : " 宝箱冷却中",
 		CONST_LEFTTIME : "剩余{0}",
@@ -16,7 +21,6 @@ define(function(require, exports, module) {
 		init : function(){
 			this.initView();
 			this.initInteractions();
-			this.test();
 		},
 		
 		initView : function(){
@@ -31,44 +35,40 @@ define(function(require, exports, module) {
 			})
 			
 			$("#treasureBox_reward_confirm").click(function(e){
+				_this.showCloseMovie();
+				_this.startTimeTick();
 				_this.hideTreasureBox_reward();
 			})
 		},
 		
 		initTreasureBoxData : function(data){
-			this.updateBoxShow();
-		},
-		
-		updateBoxShow : function(){
-			if(this.checkIfReachMax()){
+			this.current_count = data.boxNum;
+			if(this.checkIfReachMax())
+			{
 				this.hideTreasureBox();
 				return;
 			}
 			this.showTreasureBox();
+			this.startTimeTick();
 		},
 		
 		showTreasureBox : function(){
-			$("#treasureBox_div").hide();
+			$("#treasureBox_div").show();
 		},
 		
 		hideTreasureBox : function(){
 			$("#treasureBox_div").hide();
 		},
 		
-		test : function(){
-			$("#treasureBox_div").show();
-			$("#treasureBox_reward_div").hide();
-			this.startTimeTick();
-		},
-		
 		startTimeTick : function(){
 			if(this.checkIfReachMax()){
+				this.hideTreasureBox();
 				return;
 			}
 			if(this.current_count >= this.CONST_GAPARRAY.length){
 				return;
 			}
-			
+			this.setBoxToTimeTickState();
 			this.timetick = this.CONST_GAPARRAY[this.current_count];
 			var _this = this;
 			var timeTickFunc = function(){
@@ -78,6 +78,7 @@ define(function(require, exports, module) {
 				{
 					_this.timetick = 0;
 					_this.stopTimeTick();
+					_this.setBoxToReadyOpenState();
 					return;
 				}
 				this.timetick_timeout = setTimeout(timeTickFunc, 1000);
@@ -90,11 +91,31 @@ define(function(require, exports, module) {
 		},
 		
 		setBoxToReadyOpenState : function(){
-			
+			this.showState(this.Couldopen_State);
 		},
 		
 		setBoxToTimeTickState : function(){
-			
+			this.showState(this.Cannotopen_State);
+		},
+		
+		showOpenMovie : function(){
+			this.showState(this.Open_Animation);
+		},
+		
+		showCloseMovie : function(){
+			this.showState(this.Close_Animation);
+		},
+		
+		showState : function(stateName){
+			var swfFunc = function(){
+				swf.changeTreasureBoxState(stateName);
+			}
+			try{
+				swfFunc();
+			}
+			catch(e){
+				setTimeout(swfFunc, 1000);
+			}
 		},
 		
 		updateBoxStateShow : function(){
@@ -145,7 +166,11 @@ define(function(require, exports, module) {
 				result.resultStatus;
 				_this.updateRewardShow(result);
 				_this.showTreasureBox_reward();
+				_this.showOpenMovie();
 			});
+			
+			_this.showTreasureBox_reward();
+			_this.showOpenMovie();
 		},
 		
 		updateRewardShow : function (data) {

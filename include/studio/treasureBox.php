@@ -1,62 +1,110 @@
 <style>
-@media only screen and (max-width:1920px){
+@media only screen and (max-width:4096px){
 	#treasureBox_div{
-		width : 100px;
-		height : 100px;
-		left : 630px;
-		top : 320px;
+		width : 125px;
+		height : 164px;
 	}
 	#treasureBox_swf{		
-		width : 100px;
-		height : 100px;
+		width : 125px;
+		height : 164px;
 	}
 	#treasureBox_clickRect{
-		width : 100px;
-		height : 100px;
+		width : 125px;
+		height : 164px;
 	}
 	#treasureBox_text{		
-		top : 103px;
-		width : 100px;
+		top : 164px;
+		width : 125px;
+	}
+}
+@media only screen and (max-width:1920px){
+	#treasureBox_div{
+		width : 125px;
+		height : 164px;
+	}
+	#treasureBox_swf{		
+		width : 125px;
+		height : 164px;
+	}
+	#treasureBox_clickRect{
+		width : 125px;
+		height : 164px;
+	}
+	#treasureBox_text{		
+		top : 164px;
+		width : 125px;
 	}
 }
 @media only screen and (max-width:1919px){
 	#treasureBox_div{
-		width : 100px;
-		height : 100px;
-		left : 630px;
-		top : 320px;
+		width : 125px;
+		height : 164px;
 	}
 	#treasureBox_swf{		
-		width : 100px;
-		height : 100px;
+		width : 125px;
+		height : 164px;
 	}
 	#treasureBox_clickRect{
-		width : 100px;
-		height : 100px;
+		width : 125px;
+		height : 164px;
 	}
 	#treasureBox_text{		
-		top : 103px;
-		width : 100px;
+		top : 164px;
+		width : 125px;
 	}
 }
 @media only screen and (max-width:1680px){
 	#treasureBox_div{
-		width : 87px;
-		height : 87px;
-		left : 455px;
-		top : 320px;
+		width : 110px;
+		height : 143px;
 	}
 	#treasureBox_swf{		
-		width : 87px;
-		height : 87px;
+		width : 110px;
+		height : 143px;
 	}
 	#treasureBox_clickRect{
-		width : 87px;
-		height : 87px;
+		width : 110px;
+		height : 143px;
 	}
 	#treasureBox_text{		
-		top : 103px;
-		width : 87px;
+		top : 143px;
+		width : 110px;
+	}
+}
+@media only screen and (max-width:1448px){
+	#treasureBox_div{
+		width : 93px;
+		height : 123px;
+	}
+	#treasureBox_swf{		
+		width : 93px;
+		height : 123px;
+	}
+	#treasureBox_clickRect{
+		width : 93px;
+		height : 123px;
+	}
+	#treasureBox_text{		
+		top : 123px;
+		width : 93px;
+	}
+}
+@media only screen and (max-width:1284px){
+	#treasureBox_div{
+		width : 82px;
+		height : 108px;
+	}
+	#treasureBox_swf{		
+		width : 82px;
+		height : 108px;
+	}
+	#treasureBox_clickRect{
+		width : 82px;
+		height : 108px;
+	}
+	#treasureBox_text{		
+		top : 108px;
+		width : 82px;
 	}
 }
 	#treasureBox_div{
@@ -64,6 +112,9 @@
 		position : absolute;
 		z-index : 820;
 		display : none;
+		
+		top : 44%;
+		right : 25%;
 	}
 	#treasureBox_swf{
 		position : absolute;
