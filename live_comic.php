@@ -448,11 +448,12 @@ if($thisHome ==1){
     <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
-    <div class="chat-tip-top">
+    <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
             <div class="levelss"></div>
             <div class="chat-tip-name"></div>　
+            <div class="chat-tip-atan fr"><a href="javascript:" class="atan">@私聊</a></div>
             <div class="clear"></div>
             <div class="chat-tip-id"></div>
             <div class="chat-tip-adress"></div>
@@ -461,7 +462,6 @@ if($thisHome ==1){
     <div class="chat-tip-line"></div>
     <div class="chat-tip-bottom">
         <div class="send-h-gift" >赠送礼物</div>
-        <div class="chat-tip-atan"><a href="javascript:" class="atan">@私聊</a></div>
         <div class="chat-tip-jinyan"><a href="javascript:" class="jinyan">禁言</a></div>
         <div class="chat-tip-kick"><a href="javascript:" class="kick">踢出</a></div>
     </div>

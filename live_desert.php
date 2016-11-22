@@ -423,7 +423,7 @@ if($thisHome ==1){
     <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
-    <div class="chat-tip-top">
+    <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
             <div class="levelss"></div>
