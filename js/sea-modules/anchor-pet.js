@@ -227,6 +227,8 @@ define(function(require, exports, module) {
 				$("#pet-opt-ui-changenameBtn").hide();
 				$("#pet-opt-ui-changename-confirmBtn").show();
 				$("#pet-opt-ui-changename-cancelBtn").show();
+				
+				$("#pet-opt-ui-petNameInput").focus();
 			}
 		},
 		hideNameChange : function(){
@@ -234,6 +236,7 @@ define(function(require, exports, module) {
 			$("#pet-opt-ui-changenameBtn").show();
 			$("#pet-opt-ui-changename-confirmBtn").hide();
 			$("#pet-opt-ui-changename-cancelBtn").hide();
+			
 		},
 		confirmNameChangeFunc : function(){
 			this.changePetName();

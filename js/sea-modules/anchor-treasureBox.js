@@ -14,6 +14,7 @@ define(function(require, exports, module) {
 		CONST_TIMELIMIT  : " 宝箱冷却中",
 		CONST_LEFTTIME : "剩余{0}",
 		CONST_COULDLINGQU : "点击领取",
+		CONST_GIFTNUM : "x{0}",
 		current_count : 0,
 		timetick : 0,
 		timetick_timeout : 0,
@@ -25,7 +26,7 @@ define(function(require, exports, module) {
 		
 		initView : function(){
 			$("#treasureBox_div").hide();
-			$("#treasureBox_reward_div").hide();
+			$("#treasureBox_reward_div").show();
 		},
 		
 		initInteractions : function(){
@@ -42,7 +43,7 @@ define(function(require, exports, module) {
 		},
 		
 		initTreasureBoxData : function(data){
-			this.current_count = data.boxNum;
+			this.current_count = parseInt(data.boxNum);
 			if(this.checkIfReachMax())
 			{
 				this.hideTreasureBox();
@@ -160,21 +161,48 @@ define(function(require, exports, module) {
 			}
 			var _this = this;
 			
-			var param = {count : this.current_count};
+			var param = {count : this.current_count + 1};
 			UIF.handler.openTreasureBox(param, function(data){
 				var result = jQuery.parseJSON(data);
-				result.resultStatus;
-				_this.updateRewardShow(result);
-				_this.showTreasureBox_reward();
-				_this.showOpenMovie();
+				if(200 == result.resultStatus){
+					_this.current_count = parseInt(result.boxNum);
+					_this.updateRewardShow(result);				
+					_this.showTreasureBox_reward();
+					_this.showOpenMovie();
+				}
+				else if(110 == result.resultStatus){
+					_this.current_count = parseInt(result.boxNum);
+					_this.startTimeTick();
+				}
 			});
-			
-			_this.showTreasureBox_reward();
-			_this.showOpenMovie();
 		},
 		
+		GiftType_Money : 0,
+		GiftType_Luxury : 1,
+		GiftType_Common : 2,
+		FrameUrl_Money : "/images/treasurebox/coins.png",
+		FrameUrl_Luxury : "/images/treasurebox/specialGift.png",
+		FrameUrl_Common : "/images/treasurebox/normalGift.png",
 		updateRewardShow : function (data) {
+			$("#treasureBox_reward_name").html(data.giftName);
+			$("#treasureBox_reward_num").html(this.CONST_GIFTNUM.replace("{0}", data.giftNum));
 			
+			var frameUrl = "";
+			switch(data.giftType){
+				case this.GiftType_Money:
+					frameUrl = this.FrameUrl_Money;
+					$("#treasureBox_reward_rewardIcon").css("background-image", "url(/images/treasurebox/coin.png?p=0)");
+					break;
+				case this.GiftType_Luxury:
+					frameUrl = this.FrameUrl_Luxury;
+					$("#treasureBox_reward_rewardIcon").css("background-image", "url(" + data.giftPic +")?p=0");
+					break;
+				case this.GiftType_Common:
+					frameUrl = this.FrameUrl_Common;
+					$("#treasureBox_reward_rewardIcon").css("background-image", "url(" + data.giftPic +")?p=0");
+					break;
+			}
+			$("#treasureBox_reward_frame").css("background-image", "url(" + frameUrl +")?p=0");
 		},
 		
 		checkIfReachMax : function(){

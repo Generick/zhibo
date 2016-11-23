@@ -373,6 +373,27 @@
 		background-color: transparent;
 		border : 0;
 	}
+	.pet-opt-ui-nameTag{
+		position : absolute;
+		background: url("/images/pet/bg_nameTag.png") no-repeat;
+		
+		top : 50px;
+		left : 22px;
+		width : 112px;
+		height : 27px;
+	}
+	.pet-opt-ui-nameTag-Edit{
+		position : absolute;
+		background: url("/images/pet/bg_nameTag_edit.png") no-repeat;
+		
+		top : 51px;
+		left : 23px;		
+		width : 110px;
+		height : 25px;
+		
+		display : none;
+	}
+	
 </style>
 <!--宠物部分  开始-->
 <div id = "Pet" class="Pet">
@@ -383,6 +404,8 @@
 <div class = "pet-opt-ui">
 	<span id = "pet-opt-ui-title" class = "pet-opt-ui-title">熊宝宝</span>
 	<button id = "pet-opt-ui-closeBtn" class = "pet-opt-ui-closeBtn"></button>
+	<div id = "pet-opt-ui-nameTag" class = "pet-opt-ui-nameTag"></div>
+	<div id = "pet-opt-ui-nameTag-Edit" class = "pet-opt-ui-nameTag-Edit"></div>
 	<input id = "pet-opt-ui-petNameInput" class = "pet-opt-ui-petNameInput" type="text" readOnly = "true" value="精通css的龙基基" />
 	<span id = "pet-opt-ui-level" class = "pet-opt-ui-level">999</span>
 	<button id = "pet-opt-ui-changenameBtn" class = "pet-opt-ui-changenameBtn"></button>
