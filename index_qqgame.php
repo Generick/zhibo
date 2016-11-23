@@ -11,19 +11,16 @@ $page_var['sitename']=SITENAME;
 
 
 if(isset($_GET[openid]) and $_GET[openid] !=''){
-
-    //include("opensns/qq/index.php");
     include("include/QQZone/QQGame.inc.php");
-    // include("PHPSDK/Test_OpenApiV3.php");
-
-    // include("demo/app_demo_for_web.html");
-
-    //exit();
 }
 $user=checklogin();
 $page_var['user']=$user;
 $page_var['source']="QQGame";
-
+if($_GET['param'] != "" and is_numeric($_GET['param'])and !empty($user)){
+    $roomNumber= $_GET["param"];
+    header('location:/'.$roomNumber);
+    exit();
+}
 //banner
 $page_var['v'] = md5(date('Y-d-m'));
 //smarty初始化
