@@ -12,7 +12,6 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
-    <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/plug/MSClass.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
     <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
@@ -225,6 +224,8 @@
             <li><a href="javascript:"  target="_blank">活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
             <li><a href="/help.php" target="_blank">帮助</a></li>
+            <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
+            <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>
         </ul>
     </div>
     <?php if(1==2){?>
@@ -243,6 +244,17 @@
     <div class="gr-header"><span id="span"></span></div>
     <div class="nano gr-main" id="nano-sendGiftList">
         <ul id="movelist1" class="content"></ul>
+    </div>
+    <div class="lt"></div>
+    <div class="rt"></div>
+    <div class="lb"></div>
+    <div class="rb"></div>
+</div>
+
+<div class="visitant-record myDiv3" id="visitantResizable">
+    <div class="vr-header"><span class="span"></span></div>
+    <div class="nano gr-main" id="nano-sendGiftList">
+        <ul id="song_item" class="content"></ul>
     </div>
     <div class="lt"></div>
     <div class="rt"></div>
@@ -376,7 +388,6 @@ if($thisHome ==1){
     <div class="chat-header">
         <div class="closing" style="display: none" id="closing">关闭</div>
         <div class="issel chat_right chatTit" ct="ch1"></div>
-        <div class="chat_right vipTit" id="choSong" ct="ch2"></div>
         <div class="lt"></div>
         <div class="rt"></div>
     </div>
@@ -444,16 +455,18 @@ if($thisHome ==1){
         <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
     <?php }?>
 
+    <div class="sw-vip Bmenu" id="sw-vip"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
-    <div class="chat-tip-top">
+    <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
             <div class="levelss"></div>
             <div class="chat-tip-name"></div>　
+            <div class="chat-tip-atan fr"><a href="javascript:" class="atan">@私聊</a></div>
             <div class="clear"></div>
             <div class="chat-tip-id"></div>
             <div class="chat-tip-adress"></div>
@@ -462,7 +475,6 @@ if($thisHome ==1){
     <div class="chat-tip-line"></div>
     <div class="chat-tip-bottom">
         <div class="send-h-gift" >赠送礼物</div>
-        <div class="chat-tip-atan"><a href="javascript:" class="atan">@私聊</a></div>
         <div class="chat-tip-jinyan"><a href="javascript:" class="jinyan">禁言</a></div>
         <div class="chat-tip-kick"><a href="javascript:" class="kick">踢出</a></div>
     </div>
