@@ -181,7 +181,6 @@ $(document).ready(function(){
                 scrollerTop = range;
             }
 
-            console.log('开始')
             $('.titD').on('click','.glyphicon-menu-down',function(){
                 if(canBottomNum>0){
                 	console.log(canBottomNum)
@@ -190,10 +189,8 @@ $(document).ready(function(){
                     scrollNum ++;
                     setScrollRange(-scrollNum*326);
                     if(canBottomNum <=0){
-                    	console.log(1)
                         changeClose('glyphicon-menu-down');
                     }
-                    console.log(2)
                     changeClose('glyphicon-menu-up-hover');
                 }
             });
