@@ -11,8 +11,8 @@
         <div class="cr-care" >
             <div class="cr-title">消息中心</div>
 
-            <div class="none-message" style="">暂无消息</div>
-            <div class="cr-notice-main" style="display: none">
+            <div class="none-message" style="display: none">暂无消息</div>
+            <div class="cr-notice-main" style="">
                 <div class="mlb-handlar">
                     <span class="systitle">系统消息</span>
                     <div class="right-h">

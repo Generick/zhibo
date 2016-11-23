@@ -4,12 +4,12 @@ define(function(require, exports, module) {
 	var swf = require("./anchor-swf");
 	var ani = require("./anchor-anchor");
 	var uni = require("./anchor-user");
-	var gift = require("./anchor-gift");
-	var guards = require("./anchor-guard");
-	var hall = require("./anchor-hall");
-	var chat = require("./anchor-chat");
-	var list = require("./anchor-list");
-	module.exports = {
+        var gift = require("./anchor-gift");
+    var guards = require("./anchor-guard");
+    var hall = require("./anchor-hall");
+    var chat = require("./anchor-chat");
+    var list = require("./anchor-list");
+    module.exports = {
 		status : function(data) {
 			lvs.stat(jQuery.parseJSON(data));
 		},
@@ -26,7 +26,9 @@ define(function(require, exports, module) {
 		},
 		anchorsHeadInfo : function(data) {
 			UIF.log("主播信息：" + data);
-			ani.onMessage(jQuery.parseJSON(data));
+			var d = jQuery.parseJSON(data);
+            ani.onMessage(d);
+            list.flushBuUsers(d.userList);
 			var boos = UIF.handler.cache.get(cons.LOCAL_TIMENICES);
 			if (!boos) {
 				chat.onNotice(jQuery.parseJSON(data));
@@ -59,9 +61,12 @@ define(function(require, exports, module) {
 		},
 		userEntersCars : function(data) {
 			UIF.log("进场特效：" + data);
-			chat.welcome(jQuery.parseJSON(data));
-			setTimeout(gift.enterCar(jQuery.parseJSON(data)), 10000);
-			list.addUsers(jQuery.parseJSON(data));
+            var pd = jQuery.parseJSON(data);
+			chat.welcome(pd);
+            list.welcome(pd);
+            list.flushBuUsers();
+			setTimeout(gift.enterCar(pd), 10000);
+			list.addUsers(pd);
 		},
 		guardList : function(data) {
 			UIF.log("守护列表：" + data);

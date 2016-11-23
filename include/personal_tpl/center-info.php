@@ -10,6 +10,50 @@
     seajs.use("ajax/username");
 </script>
 <div class="zhezhao"></div>
+<?php
+if ($user['roomNumber']) {
+    ?>
+    <div class="duikdou" >
+        <div class="dui-header">兑换K豆</div>
+        <div class="dui-mian dui-first" style="display: none">
+            <div class="dui-input"><input type="text" name="duiv" id="duiv" class="duiv" placeholder="请输入100的整数"/></div>
+            <div class="dui-control">
+                <button class="dui-queren">确认</button>
+                <button class="dui-cancel">退出</button>
+            </div>
+        </div>
+        <div class="dui-mian dui-next" >
+            <div class="dui-cert-text">确定兑换k豆</div>
+            <div class="dui-cert-notice">温馨提示星豆不可兑换k豆</div>
+            <div class="dui-control">
+                <button class="dui-queren">确认</button>
+                <button class="dui-cancel">退出</button>
+            </div>
+        </div>
+
+        <div class="dui-mian dui-end dui-cg"  style="display: none">
+            <div class="dui-icon ic-success"></div>
+            <div class="dui-suc">兑换成功</div>
+            <div class="dui-message">
+
+            </div>
+            <div class="dui-control">
+                <button class="dui-cancel">退出</button>
+            </div>
+        </div>
+        <div class="dui-mian dui-end dui-gg"  style="display: none">
+            <div class="dui-icon ic-success"></div>
+            <div class="dui-suc">兑换失败</div>
+            <div class="dui-message">
+
+            </div>
+            <div class="dui-control">
+                <button class="dui-cancel">退出</button>
+            </div>
+        </div>
+    </div>
+<?php
+}?>
 
 <div class="center-info">
     <div class="info-left">
@@ -53,54 +97,10 @@
             <?php
             if ($user['roomNumber']) {
                 ?>
-                <div class="c-funds-xd">星 豆 ：<span style="color: #E74152"><?php echo (int)$user['coins'] ?></span> </div>
-                <div class="c-funds-dh"><a href="javascript:;" class="lbutton">兑换k豆</a></div>
+                <div class="c-funds-xd">星 豆 ：<span style="color: #E74152"><?php echo (int)$user['xcoins'] ?></span> </div>
+                <div class="c-funds-dh"><a href="javascript:;" class="lbutton">兑换K豆</a></div>
 
             <?php } ?>
         </div>
     </div>
 </div>
-<?php
-if ($user['roomNumber']) {
-    ?>
-
-    <div class="duikdou">
-        <div class="dui-header">兑换k豆</div>
-        <div class="dui-mian dui-first">
-            <div class="dui-input"><input type="text" name="duiv" id="duiv" class="duiv" placeholder="请输入100的整数"/></div>
-            <div class="dui-control">
-                <button class="dui-queren">确认</button>
-                <button class="dui-cancel">退出</button>
-            </div>
-        </div>
-        <div class="dui-mian dui-next">
-            <div class="dui-cert-text">确定兑换k豆</div>
-            <div class="dui-cert-notice">温馨提示星豆不可兑换k豆</div>
-            <div class="dui-control">
-                <button class="dui-queren">确认</button>
-                <button class="dui-cancel">退出</button>
-            </div>
-        </div>
-    </div>
-<?php
-}?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -204,6 +204,7 @@ function search_save_user($userid){
             $userinfo['activeDiffer'] = $acceptData1[data]['activeDiffer'];
             $userinfo['nextActive'] = $acceptData1[data]['nextActive'];
             $userinfo['socType'] = $acceptData1[data]['socType'];
+            $userinfo['xcoins'] = $acceptData1[data]['xcoins'];
         }else{
             $userinfo['coins'] =0;
             $userinfo['spender'] =0;
@@ -213,6 +214,7 @@ function search_save_user($userid){
             $userinfo['activeDiffer'] = 0;
             $userinfo['nextActive'] =1; //比例
             $userinfo['socType'] =0;
+            $userinfo['xcoins'] =0;
         }
     }
     $userinfo['nickname'] =$uuname;

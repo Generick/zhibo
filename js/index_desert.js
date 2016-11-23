@@ -634,7 +634,8 @@ $(document).ready(function(){
                 var li="";
                 if (datas != null && datas.length > 0) {
                     $.each(datas, function(k, v) {
-                        li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,"","");
+                        console.log(data);
+                        li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,ndecodeURI(v.title));
                     })
                     $("#gameAnchors").append(li);
 

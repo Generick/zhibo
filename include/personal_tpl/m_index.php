@@ -45,12 +45,13 @@
 
                     <div class="mycare-box">
                         <div class="mycare-box-left">
-                            <div><img src="<?php echo $v['himage']?>"/></div>
+                            <div class="careImg"><img src="<?php echo $v['himage']?>"/></div>
+                            <div class="canBtn"><input type="button" class="canC" value="取消"/></div>
                         </div>
                         <div class="mycare-box-right">
                             <div class="mybr1"><span class="mbysp1"><?php echo urldecode($v['name'])?></span> <span class="mbysp2">守护中..</span></div>
                             <div class="mybr2"><?php echo $v['followeds']?> 粉丝</div>
-                            <div class="mybr3">守护等级：<span class="colorcc"><?php echo $v['grds']?></span></div>
+                            <div class="mybr3">守护等级：<span class="color33"><?php echo $v['grds']?></span></div>
                             <div class="mybr4">剩余天数：<span class="colorcc"><?php echo $v['days']?> </span>天</div>
                             <a class="mindex-recharge-button" href="/pay.php">充值</a>
                         </div>

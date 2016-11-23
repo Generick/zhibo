@@ -45,33 +45,40 @@ define('ajax/username', function (require, exports, module) {
         $(".duikdou").hide();
         $("#duiv").val("");
     })
+    var dou=0;
 
 
     $(".dui-first .dui-queren").on("click", function () {
-        var dou = $("#duiv").val() || null;
-        if (dou != null && dou !== "" && dou%100  != 0) {
+          dou = $("#duiv").val() || null;
+        var re = /^[0-9]*[0-9]$/i;
+        if (re.test(dou) && dou%100 === 0) {
             $(".dui-next").show();
             $(".dui-first").hide();
         }else{
+            $("#duiv").val();
             $("#duiv").focus();
         }
 
     })
-
     $(".dui-next .dui-queren").on("click", function () {
-        var dou = $("#duiv").val() || null;
         $.ajax({
             type: "POST",
             cache: false,
             url: "/rest/usersGiftDetails/exchange.mt?userId=" + currentUserId + "&xcoins=" + dou,
             contentType: "application/json; charset=utf-8",
             success: function (data) {
+                $('.dui-next').hide();
                 if (data.resultStatus == 200) {
-                    common.clert(data.resultMessage);
+                    var time=common.dateFormat(new Date(), "yyyy-yy-y HH:mm");
+
+                    var html ='尊敬的用户您于 <span>'+ time +'</span> 成功兑换 <span>'+dou+'K豆</span>';
+                    $(".dui-cg .dui-message").html("");
+                    $(".dui-cg").show();
                 }else{
-                    common.clert(data.resultMessage);
+                    $(".dui-gg .dui-message").text(data.resultMessage);
+                    $(".dui-gg").show();
                 }
-                $(".dui-cancel").click();
+               // $(".dui-cancel").click();
             }
         });
 

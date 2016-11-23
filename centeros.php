@@ -38,7 +38,7 @@ $_POST = safe_output($_POST);
 <link data-fixed="true" href="/templates/centeros.css" rel="stylesheet">
 <link href="/static_data/images_css/icons.css" rel="stylesheet">
 
-<script src="http://www.17aibo.com/Public/js/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/login.js?20150908"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/skin/ym/js/centeros.js?20150908"></script>
 
@@ -53,7 +53,7 @@ $_POST = safe_output($_POST);
     $birthday_month = $tmp_b[1];
     $birthday_day = $tmp_b[2];
 }
-if ($user['gender'] == '') {
+if ($user['ender'] == '') {
 
 } else if ($user['gender'] == 0) {
     $femalechecked = 'checked';

@@ -337,7 +337,7 @@ a{text-decoration:none; }
 .son_ul .no-b{border-bottom: none}
 .son_ul li{text-align: center;margin-left:9px; margin-bottom:10px; border-bottom: 1px solid #131313; width:51px; height: 24px; }
 .cf-inputs{float: left;height:31px;padding: 1px;border-radius: 3px; padding-right:4px; margin-left:-13px; margin-top: 0; border:1px solid #c9c7ca; background-color: #151618;  }
- 
+
 #msgContent{float:left;height: 26px;width:180px; min-width:180px; border:none;color: #FFF;max-height:26px;min-height:26px;  padding-left: 4px; background-color:#000; border:none; outline: none; }
 #msgFace{float:left; background: url(/skin/comic/images/msgFace.png) no-repeat; width:20px; height:18px; margin: 1px;cursor: pointer; margin-top: 3px; margin-left: 4px; }
 .flyMsgSend{height: 28px;line-height: 28px;padding: 0 7px;font-size: 14px;}
@@ -360,7 +360,7 @@ a{text-decoration:none; }
 /*点歌*/
 .chs2{padding:10px;width:340px;height:480px;overflow:hidden; }
 #song_item{padding:0;  position:relative; color:#f8f8f8;}
-#song_item li {height:24px;  margin-left :15px; }
+#song_item li {height:24px;  margin-left :5px; }
 .chs2 .price{height:38px; text-align:center; line-height:38px; font-size:14px; }
 .chs2 li{font-size: 12px;  height: 24px; line-height: 24px;   padding-left: 26px; position: relative;}
 .chs2 li .singer{position:absolute; left:154px; color:#2d3d3c; }
@@ -807,9 +807,9 @@ a{text-decoration:none; }
 
 
 @media only screen and (max-width:1448px){
-    // .bg2{background:url(../images/bg_02.jpg) no-repeat center top; background-color:black;  }
+// .bg2{background:url(../images/bg_02.jpg) no-repeat center top; background-color:black;  }
     .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
-    // .bg1{background:url(../images/bg_01_02.jpg) no-repeat center top; background-color:black;  }
+// .bg1{background:url(../images/bg_01_02.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .no-live{
         width:483px;

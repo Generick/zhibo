@@ -8,7 +8,7 @@ include_once('include/login.func.php');
 $user=checklogin();
 $page_var['user']=$user;
 
-$datas = curl_get(_INTERFACE_."/files/allAnchors.json","");
+$datas = file_get_contents(_INTERFACE_."/files/allAnchors.json");
 $acceptData=json_decode($datas, true);
 $page_var['sqAnchorList']=json_decode($acceptData,true);
 $page_var['sqAnchorList']=$page_var['sqAnchorList']['data'];
