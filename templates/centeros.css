@@ -64,7 +64,7 @@ img {
 .c-funds{float: left;font-size: 12px;}
 .duikdou {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -104,20 +104,28 @@ img {
 
 .dui-control button {
     width: 142px;
-    height: 42px;
+    height: 40px;
     border-radius: 3px;
     border: none;
     margin-left: 50px;
 }
+
 .dui-first{  }
 .dui-next{  display: none;  }
 .dui-cert-text{  font-size: 16px;  line-height: 46px;  text-align: center;  }
 .dui-cert-notice{  text-align: center;  font-size:12px;  color: #9C9A9C;  margin-bottom: 15px;
 }
-.dui-queren {  background-color: #EF384A;  color: #fff2ed;
-}
-.dui-cancel {  color: #333;
-}
+.dui-queren {  background-color: #EF384A;  color: #fff2ed;  }
+.dui-cancel {  color: #333;  }
+.dui-end{text-align: center;font-size: 12px;}
+.dui-suc{line-height: 30px;font-size: 14px}
+.dui-message{font-size: 12px;color: #A6A6A6;line-height: 22px;margin-bottom: 10px;}
+.dui-message span{color: #333}
+.dui-icon{width: 16px;height: 16px;  margin: 10px auto}
+.ic-success{ background: url("/img/dui_chenggong.png") no-repeat}
+.ic-faild{ background: url("/img/dui_shibai.png") no-repeat}
+
+
 .center-left{width:348px;border: 1px #E3E3E3 solid; float: left;    margin-bottom: 30px;}
 .center-left .cl-div{width:348px;height: 60px;position: relative;background: #fff;color: #3F3F3F;font-size: 14px;border-bottom:1px #ccc solid;cursor: pointer}
 .center-left .cl-focus{background-color:#E74152;width:348px;height: 60px;position: relative;color: #fff;font-size: 14px;border-bottom:0;}
@@ -145,7 +153,7 @@ img {
 .cl-set-info ul li{list-style: none;height:40px;width:210px;line-height:40px;border-bottom: 1px #BABABA solid;color:#616161; }
 .cl-set-info ul li:hover{cursor:pointer; color:#E74152}
 .cl-set-info ul .li-hover{cursor:pointer; color:#E74152}
-.center-right{float:left;margin-left:14px;width:1000px;height: auto;min-height:500px;border: 1px #E3E3E3 solid;background: #fff;padding-bottom: 30px;margin-bottom: 30px; }
+.center-right{float:left;margin-left:14px;width:1006px;height: auto;min-height:500px;border: 1px #E3E3E3 solid;background: #fff;padding-bottom: 30px;margin-bottom: 30px; }
 .center-right .cr-title{padding: 27px 0 15px 40px; color:#5F5D68; font-size: 22px;}
 #info-table{width:680px; border: none;color: #5F5D68;}
 #info-table tr{height: 40px;line-height: 40px;}
