@@ -42,7 +42,6 @@ define('ajax/recive', function(require, exports, module){
         }, function (data) {
             console.log(data);
             imghost=data.imghost;
-
             if(data.data){
                 $.each(data.data, function(k,v) {
                     if(v.type==1){  //礼物

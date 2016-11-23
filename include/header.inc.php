@@ -141,11 +141,7 @@ function curl_get($get_url,$get_param){
     $sContent = curl_exec($oCurl);
     $aStatus = curl_getinfo($oCurl);
     curl_close($oCurl);
-	
-	if($tm){
-		echo "<br>loadBegin:".getMillisecond();
-	}
-	
+
     if(intval($aStatus["http_code"])==200){
         return $sContent;
     }else{
