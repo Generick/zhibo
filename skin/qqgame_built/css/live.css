@@ -759,17 +759,21 @@ a{text-decoration:none; }
 }
 .amount ul li{
     float: left;
-    margin:10px 10px 8px 26px;
-    width:100px;
-    height: 22px;
+    margin: 10px 10px 8px 26px;
+    width: 100px;
+    height: 24px;
     cursor: pointer;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 23px;
 }
 
 .amount ul li:hover{
-    color: #F7759C;
+    color: #3961DE;
+    border:1px solid #3961DE;
 }
 .amount ul .hover{
-    color: #F7759C;
+    color: #3961DE;
 }
 .qqgameWay form{
     margin: 15px;

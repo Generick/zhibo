@@ -54,7 +54,7 @@
     <div class="qqgameWay" data-type="QQGame">
 
         <form name="QQCloud" id="QQCloud" action="/rest/www/cloud.jsp" method="post">
-            <div style="margin: 5px;margin-bottom: 10px;">
+            <div style="margin: 15px 10px 0 5px;">
                 <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>K豆)</p>
             </div>
             <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee">

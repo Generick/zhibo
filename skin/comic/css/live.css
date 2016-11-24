@@ -356,7 +356,7 @@ a{text-decoration:none; }
 #pubChatList li .anc,#priChatList li .anc{color:#E36370;}
 #priChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all;}
 
-.roomIntro{padding:6px;line-height: 18px;color:#F77599; font-size: 12px;}
+.roomIntro{padding:6px;line-height: 18px;color:#e34052; font-size: 12px;}
 /*点歌*/
 .chs2{padding:10px;width:340px;height:480px;overflow:hidden; }
 #song_item{padding:0;  position:relative; color:#f8f8f8;}
@@ -789,7 +789,7 @@ a{text-decoration:none; }
         left:30%;
     }
 
-    .guard-area,.rank-area,.gift-record,.visitant-record{
+    .guard-area,.rank-area,.gift-record{
         width:260px;
         height:200px;
         left:78px;
@@ -809,9 +809,7 @@ a{text-decoration:none; }
 
 
 @media only screen and (max-width:1448px){
-// .bg2{background:url(../images/bg_02.jpg) no-repeat center top; background-color:black;  }
     .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
-// .bg1{background:url(../images/bg_01_02.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .no-live{
         width:483px;
