@@ -93,7 +93,7 @@ $page_var['cdn_domain']=_CDNDOMAIN_;
     include($app_path."/skin/qqgame_built/index.php");
     include($app_path."include/footer.inc.php");
     exit();
- 
+
 
 
 $redis = new Redis();
