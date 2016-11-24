@@ -26,7 +26,7 @@ define(function(require, exports, module) {
 		
 		initView : function(){
 			$("#treasureBox_div").hide();
-			$("#treasureBox_reward_div").show();
+			$("#treasureBox_reward_div").hide();
 		},
 		
 		initInteractions : function(){
@@ -186,7 +186,6 @@ define(function(require, exports, module) {
 		updateRewardShow : function (data) {
 			$("#treasureBox_reward_name").html(data.giftName);
 			$("#treasureBox_reward_num").html(this.CONST_GIFTNUM.replace("{0}", data.giftNum));
-			
 			var frameUrl = "";
 			switch(data.giftType){
 				case this.GiftType_Money:
@@ -195,14 +194,14 @@ define(function(require, exports, module) {
 					break;
 				case this.GiftType_Luxury:
 					frameUrl = this.FrameUrl_Luxury;
-					$("#treasureBox_reward_rewardIcon").css("background-image", "url(" + data.giftPic +")?p=0");
+					$("#treasureBox_reward_rewardIcon").css("background-image", "url(" + data.giftPic +"?p=0)");
 					break;
 				case this.GiftType_Common:
 					frameUrl = this.FrameUrl_Common;
-					$("#treasureBox_reward_rewardIcon").css("background-image", "url(" + data.giftPic +")?p=0");
+					$("#treasureBox_reward_rewardIcon").css("background-image", "url(" + data.giftPic +"?p=0)");
 					break;
 			}
-			$("#treasureBox_reward_frame").css("background-image", "url(" + frameUrl +")?p=0");
+			$("#treasureBox_reward_frame").css("background-image", "url(" + frameUrl +"?p=0)");
 		},
 		
 		checkIfReachMax : function(){
