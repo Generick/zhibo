@@ -133,11 +133,7 @@ $(function(){
 
         }else if(paytype=="ZFB" || paytype=="CFT"){
             var money=0;
-            if($("#P_RMB").text() == 30000){
-                money=0.01;
-            }else{
-                money= $("#P_RMB").text();
-            }
+            money= $("#P_RMB").text();
             $("#WIDtotal_fee").val(money);
             $("#WIDtotal_Id").val(currentUserId);
             $('#alpay').submit();
@@ -147,21 +143,12 @@ $(function(){
                 alert("请选择支付银行!");
                 return false;
             }
-            if($("#P_RMB").text() == 30000){
-                money=0.01;
-            }else{
-                money= $("#P_RMB").text();
-            }
+            money= $("#P_RMB").text();
             $("#WIDtotal_fee").val(money);
             $("#WIDtotal_Id").val(currentUserId);
             $('#alpay').submit();
         }else if(paytype =="QQCloud"){
-            if($("#P_RMB").text() == 30000){
-                money=0.01;
-            }else{
-                money= $("#P_RMB").text();
-            }
-
+             money= $("#P_RMB").text();
             $("#WIDtotal_fee").val(money);
             $("#WIDtotal_Id").val(currentUserId);
             var data={

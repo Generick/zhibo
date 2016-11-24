@@ -800,7 +800,8 @@ a{text-decoration:none; }
     }
 
     .gift-record,.visitant-record{
-        top:478px;
+        top:60px;
+        right: 20px;
     }
 
 }

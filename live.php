@@ -82,17 +82,21 @@ while($arr=$rs->FetchRow()){
     $giftcate[$arr["giftcateid"]] = $arr;
 }
 $page_var['cdn_domain']=_CDNDOMAIN_;
-/*if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
-    $skinType="desert";
-    include($app_path."/skin/qqgame_built/index.php");
-    include($app_path."include/footer.inc.php");
-    exit();
-}*/
 
+if($_SESSION['param'] == "built"){
     $skinType="qqgame_built";
     include($app_path."/skin/qqgame_built/index.php");
     include($app_path."include/footer.inc.php");
     exit();
+}
+
+
+if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
+    $skinType="desert";
+    include($app_path."/skin/qqgame_built/index.php");
+    include($app_path."include/footer.inc.php");
+    exit();
+}
 
 
 

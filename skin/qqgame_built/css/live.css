@@ -9,8 +9,8 @@ html, body {
     height: 100%;
 
 }
-.bg1{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
-.bg2{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
+.bg1{ background: url('../images/bgDe.jpg'); background-position: center top;  background-repeat: no-repeat; width:1200px;height: 900px; position: absolute; }
+.bg2{ background: url('../images/bgDe.jpg'); background-position: center top;  background-repeat: no-repeat; width:1200px;height: 900px; position: absolute; }
 cite, i {
     font-style: normal;
 }
@@ -78,7 +78,8 @@ a{text-decoration:none; }
 .euc .jubao:hover{background: url(/skin/desert/images/jubao-hover.png)center top no-repeat;}
 
 /*中部*/
-.video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
+.video-area{width:568px; height:314px; margin-top: 66px;left: 314px; position: absolute}
+.live-video,.player-area,#video,.flash-area,.flash-area{width: 568px; height: 304px; }
 .live-info{position: relative;  margin-top: 8px;}
 
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
@@ -105,7 +106,7 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/desert/images/nolbg.jpg");position: relative}
+.no-live{width: 568px;height: 312px;overflow:hidden;background: url("/skin/desert/images/nolbg.jpg");position: relative}
 
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 42px;}
@@ -132,15 +133,15 @@ a{text-decoration:none; }
 
 /*礼物*/
 
-.myDiv1{width: 340px;position:absolute;}
-.myDiv2{width: 340px;position:absolute; }
-.myDiv3{width: 340px;position:absolute; }
-.myDiv4{width: 340px;position:absolute; }
-.myDiv5{width: 340px;position:absolute; }
-.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute}
-.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute}
+.myDiv1{width: 260px;position:absolute;}
+.myDiv2{width: 260px;position:absolute; }
+.myDiv3{width: 260px;position:absolute; }
+.myDiv4{width: 260px;position:absolute; }
+.myDiv5{width: 260px;position:absolute; }
+.gift-record{width:260px; height: 126px; background:url("../images/giftBg.png"); background-size:cover; left: 18px;top:532px;border-radius: 3px;position:absolute}
+.visitant-record{height: 110px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:260px;position:absolute}
 .gr-main{height:150px;}
-.rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
+.rank-area{height: 228px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 18px;top:298px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
 .gf-outer-header{cursor: move}
 .gf-header{position:relative; height:35px;border-radius:3px;}
@@ -177,7 +178,7 @@ a{text-decoration:none; }
 .gift-record ul li .gr-song,.cr-to{color: #FFffff}
 .gift-record ul li .gr-reciver{color: #ffc937;}
 .gift-record ul li img{width: 22px;  height: 24px; vertical-align: middle; margin: 0 3px 0 2px;}
-.gr-header,.vr-header{color:#FFffff;margin:10px;cursor: move}
+.gr-header,.vr-header{color:#FFffff;margin:15px 0 0 15px;cursor: move}
 .gr-header #span{ background:url(/skin/comic/images/gift_tit.png); width: 66px; height: 20px; display: block; }
 .vr-header .span{ background:url("/skin/comic/images/icon_guibinxi.png") no-repeat; width: 50px; height: 20px; display: block; }
 .handler{width: 15px;    height: 10px;  border-right: solid 1px #888;    border-bottom: solid 1px #888;  position: absolute;   right: 1px; bottom: 1px;  cursor: nw-resize;}
@@ -186,7 +187,7 @@ a{text-decoration:none; }
 
 
 /*聊天弹出框*/
-.chat-tip-warp{position: absolute;right: 200px;top: 100px;width:314px;padding:20px 10px 10px 20px;color:#fff;height:146px;background: url("/skin/desert/images/bg113.png") no-repeat;display: none}
+/* .chat-tip-warp{position: absolute;right: 200px;top: 100px;width:314px;padding:20px 10px 10px 20px;color:#fff;height:146px;background: url("/skin/desert/images/bg113.png") no-repeat;display: none}
 .chat-tip-top{height: 80px;margin-left: 10px;}
 .chat-tip-top >div{float: left;}
 .chat-top-imgs{display: block; width: 60px; height: 60px;-webkit-border-radius: 50%;-moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
@@ -203,19 +204,36 @@ a{text-decoration:none; }
 .send-h-gift{margin-left: 15px;background: url("/skin/desert/images/liwuss.png") no-repeat left center;padding-left: 20px;margin-left: 15px;}
 .chat-tip-atan{margin-left: 20px;}
 .chat-tip-jinyan{margin-left: 35px;}
-.chat-tip-kick{margin-left: 20px;}
+.chat-tip-kick{margin-left: 20px;} */
+.chat-tip-warp{position: absolute;right: 200px;top: 100px;width:22%; background-size:100%; padding:1.4% 0.9% 0.9% 0.9%;color:#fff;height:146px;background: url("/skin/comic/images/pic_bgTip.png") no-repeat;display: none; font-size: 12px; }
+.chat-tip-top{height: 61%; }
+.chat-tip-top >div{float: left;}
+.chat-top-imgs{display: block; width: 60px; height: 60px;border: 2px solid #e7b158; -webkit-border-radius: 50%;-moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
+.chat-tip-title{width:120px;margin-left: 20px; margin-top: 12px;}
+.levelss{float: left;width:46px;height:20px;}
+.chat-tip-name{float:left;margin-left: 15px; color: #b4ce90; font-size: 14px; }
+.chat-tip-id{}
+.chat-tip-adress{margin-left: 15px;}
+.chat-tip-id,
+.chat-tip-adress{float:left;line-height: 30px;font-size: 12px;color: #CCCACA;}
+.chat-tip-line{background: url("/skin/comic/images/pic_xian.png") no-repeat;width:100%;height:2px; margin-top: 8px; }
+.chat-tip-bottom{color:#eee; height: 20px; }
+.chat-tip-bottom >div{float: left;line-height: 22px;margin-top: 8px;  cursor: pointer;}
+.send-h-gift{background: url("/skin/comic/images/pic_songliwu.png") no-repeat left center;padding-left: 22px;}
+.chat-tip-jinyan{margin-left: 10px; padding-left:22px; background: url("/skin/comic/images/pic_jinyan.png") no-repeat left center; }
+.chat-tip-kick{margin-left: 10px; background: url("/skin/comic/images/pic_tiren.png") no-repeat left center;padding-left: 22px; }
 
 /*排行*/
-.rk-header{overflow: hidden;cursor: move}
-.rk-header >div{float: left;color:  #f2f2f2; width: 112px; height: 42px; text-align: center; cursor: pointer; }
-.rk-header .r-current.nosel {background:url("/skin/comic/images/r_cur_nos.png") no-repeat top center; margin-top: 4px;}
-.rk-header .r-current{background:url("/skin/comic/images/r_cur.png") no-repeat top center;  margin-top: 4px;}
+.rk-header{overflow: hidden; margin-bottom: 14px; }
+.rk-header >div{float: left;color:  #f2f2f2; width: 80px; height: 34px; margin-left:5px; cursor: pointer; }
+.rk-header .r-current.nosel {background:url("/skin/comic/images/r_cur_nos.png") no-repeat top center; background-size:100%; margin-top: 4px;}
+.rk-header .r-current{background:url("/skin/comic/images/r_cur.png") no-repeat top center;  margin-top: 4px; background-size: 100%; }
 
-.rk-header .r-week.nosel {background:url("/skin/comic/images/r_week_nos.png") no-repeat top center; margin-top: 4px;}
-.rk-header .r-week{background:url("/skin/comic/images/r_week.png") no-repeat top center; margin-top: 4px; }
+.rk-header .r-week.nosel {background:url("/skin/comic/images/r_week_nos.png") no-repeat top center; background-size:100%; margin-top: 4px;}
+.rk-header .r-week{background:url("/skin/comic/images/r_week.png") no-repeat top center; background-size:100%; margin-top: 4px; }
 
-.rk-header .r-active.nosel {background:url("/skin/comic/images/r_act_nos.png") no-repeat top center; margin-top: 4px; }
-.rk-header .r-active{background:url("/skin/comic/images/r_act.png") no-repeat top center; margin-top: 4px; }
+.rk-header .r-active.nosel {background:url("/skin/comic/images/r_act_nos.png") no-repeat top center; background-size:100%; margin-top: 4px; }
+.rk-header .r-active{background:url("/skin/comic/images/r_act.png") no-repeat top center;  background-size:100%; margin-top: 4px; }
 
 
 
@@ -253,38 +271,38 @@ a{text-decoration:none; }
 
 
 /*守护区*/
-.guard-area{width:340px;height:260px; background: url("/skin/comic/images/guardBg.png");  background-size:cover;   position: absolute;top:60px; left: 205px;  border-radius: 3px; }
-.guard-area .lt,.rank-area .lt,.gift-record .lt,.chat-area .lt{position: absolute; width:18px; height:17px; z-index: 89; left: 0; top: 0; background:url("/skin/comic/images/lt.png") no-repeat; }
-.guard-area .rt,.rank-area .rt,.gift-record .rt,.chat-area .rt{position: absolute; width:18px; height:17px; z-index: 89; right: 0; top: 0; background:url("/skin/comic/images/rt.png") no-repeat; }
-.guard-area .lb,.rank-area .lb,.gift-record .lb,.bCorner .lb,.chs2 .lb{position: absolute; width:18px; height:17px; z-index: 89; left: 0; bottom: 0; background:url("/skin/comic/images/lb.png") no-repeat; }
-.guard-area .rb,.rank-area .rb,.gift-record .rb,.bCorner .rb,.chs2 .rb{position: absolute; width:18px; height:17px; z-index: 89; right: 0; bottom: 0; background:url("/skin/comic/images/rb.png") no-repeat; }
-
+.guard-area{width:260px;height:246px; background: url("/skin/comic/images/guardBg.png");  background-size:cover;   position: absolute;top:44px; left:18px;  border-radius: 3px; }
+.guard-area .lt,.rank-area .lt,.visitant-record .lt,.gift-record .lt,.chat-area .lt{position: absolute; width:18px; height:17px; z-index: 89; left: 0; top: 0; background:url("/skin/comic/images/lt.png") no-repeat; }
+.guard-area .rt,.rank-area .rt,.visitant-record .rt,.gift-record .rt,.chat-area .rt{position: absolute; width:18px; height:17px; z-index: 89; right: 0; top: 0; background:url("/skin/comic/images/rt.png") no-repeat; }
+.guard-area .lb,.rank-area .lb,.visitant-record .lb,.gift-record .lb,.bCorner .lb,.chs2 .lb{position: absolute; width:18px; height:17px; z-index: 89; left: 0; bottom: 0; background:url("/skin/comic/images/lb.png") no-repeat; }
+.guard-area .rb,.rank-area .rb,.visitant-record .rb,.gift-record .rb,.bCorner .rb,.chs2 .rb{position: absolute; width:18px; height:17px; z-index: 89; right: 0; bottom: 0; background:url("/skin/comic/images/rb.png") no-repeat; }
+.bCorner .lb,.bCorner .rb{bottom:8px; }
 .guard-header{height: 40px;width: 100%;  overflow: hidden;cursor: move}
 .guard-header span{float: left;margin-top: 12px;}
 .guard-header .guard-title{margin-left: 12px;width:69px;height: 20px; background:url("/skin/comic/images/guardTit.png"); margin-right:4px; }
 .guard-header .gdnum{color: #A7AFC2;font-size: 12px; margin-top:16px; }
 .guard-header .kais{float: right;margin-right: 12px;font-size: 12px;  height: 28px; padding: 0 8px; background:url("/skin/comic/images/kais.png"); width: 81px; }
 .guard-main{width:340px;margin-top: 10px;height:212px}
-.guard-main ul li{margin-left:24px;float: left;  width: 70px;  height: 106px;}
+.guard-main ul li{margin-left:16px;float: left;  width: 70px;  height: 106px;}
 .guardYou{float: left}
 .guardYou .gback{width:56px;height: 78px;  position: relative;}
-.guardYou .gback .img1{    width: 70px;  height: 84;position: absolute;z-index: 103}
+.guardYou .gback .img1{    width: 64px;  height: 80;position: absolute;z-index: 103}
 .guardYou .gback .img3{    width: 53px; height: 56px; position: absolute;  z-index: 102; color: #FF675E;text-align: center; padding-top: 7px; left: 10px; background-color: rgba(39, 34, 34, 0.64); top: 15px; font-size: 12px; border-radius: 20px; display: none;}
 .guardYou .gback .img2{width: 52px;height: 52px; position: absolute;  z-index: 101;top: 14px;left: 9px; border-radius: 26px;}
 .guardYou .gname{ font-size: 12px;margin-bottom: 7px;text-overflow: ellipsis;  white-space: nowrap;  overflow: hidden;text-align: center;  width: 70px;margin-top:5px;cursor: pointer;}
 .guardYou .gname a{color:#ffc937;}
 .guardYou .gname a:hover{color:#ffffff;}
-.no-circle{border-radius:70px;width:70px;height:80px;background: url("/skin/desert/images/pic_guardlevel_kong.png") no-repeat;  cursor: pointer;}
+.no-circle{border-radius:70px;width:60px;height:70px;background: url("/skin/desert/images/pic_guardlevel_kong.png") no-repeat;  background-size:cover; cursor: pointer;}
 
 /*聊天框*/
-.chat-area{width:340px;height: 530px; position: absolute;/*left:1360px;*/ right:20px; top:60px; background:url("../images/chatBg.png"); background-size: cover; }
+.chat-area{width:266px;height: 478px; position: absolute;/*left:1360px;*/ right:18px; top:180px; background:url("../images/chatBg.png"); background-size: cover; }
 .cr-body{height: 300px;min-height: 300px;}
 /* .pr-body{height: 100px;min-height: 100px;}*/
 .bCorner{height: 130px;min-height: 130px; position: relative; }
 .chat-area .bg-000-50 { height: 2px;  cursor: n-resize; background:#141717; opacity: 0.9; filter:alpha(opacity:90); }
-.chat-header{cursor:move;position: relative;height: 40px; margin-bottom: 14px;}
+.chat-header{cursor:move;position: relative;height: 40px;  }
 .chat-header .chatTit{background:url("/skin/comic/images/chatTit.png") no-repeat top center; margin-top:4px; }
-.chat-header .chatTit.issel{background:url("/skin/comic/images/chatTit_sel.png") no-repeat top center; margin-top:4px; }
+.chat-header .chatTit.issel{background:url("/skin/comic/images/chatTit_sel.png") no-repeat top center; margin-top:12px; margin-left:12px; width:34px; height: 20px; }
 .chat-header .vipTit{background:url("/skin/comic/images/vipTit.png") no-repeat top center; margin-top:4px; }
 .chat-header .vipTit.issel{background:url("/skin/comic/images/vipTit_sel.png") no-repeat top center; margin-top:4px; }
 .chat-header .setting{width:45px; height:20px; line-height:20px; text-align:center; background:#fcaf01; color:#fff; cursor:pointer; border-radius:4px; position:absolute; top:-28px; left:4px; }
@@ -321,7 +339,7 @@ a{text-decoration:none; }
 .son_ul li{text-align: center;margin-left:9px; margin-bottom:10px; border-bottom: 1px solid #131313; width:51px; height: 24px; }
 .cf-inputs{float: left;height:31px;padding: 1px;border-radius: 3px; padding-right:4px; margin-left:-13px; margin-top: 0; border:1px solid #c9c7ca; background-color: #151618;  }
  
-#msgContent{float:left;height: 26px;width:180px; min-width:180px; border:none;color: #FFF;max-height:26px;min-height:26px;  padding-left: 4px; background-color:#000; border:none; outline: none; }
+#msgContent{float:left;height: 26px;width:106px; min-width:106px; border:none;color: #FFF;max-height:26px;min-height:26px;  padding-left: 4px; background-color:#000; border:none; outline: none; }
 #msgFace{float:left; background: url(/skin/comic/images/msgFace.png) no-repeat; width:20px; height:18px; margin: 1px;cursor: pointer; margin-top: 3px; margin-left: 4px; }
 .flyMsgSend{height: 28px;line-height: 28px;padding: 0 7px;font-size: 14px;}
 .sendChatBtn{background: url(/skin/comic/images/sendChatBtn.png) no-repeat; position: absolute; right: 4px; width: 60px; height: 33px; }
@@ -343,6 +361,7 @@ a{text-decoration:none; }
 /*点歌*/
 .chs2{padding:10px;width:340px;height:480px;overflow:hidden; }
 #song_item{padding:0;  position:relative; color:#f8f8f8;}
+#song_item li{  margin-left: 15px;}
 .chs2 .price{height:38px; text-align:center; line-height:38px; font-size:14px; }
 .chs2 li{font-size: 12px;  height: 24px; line-height: 24px;   padding-left: 26px; position: relative;}
 .chs2 li .singer{position:absolute; left:154px; color:#2d3d3c; }
@@ -447,7 +466,7 @@ a{text-decoration:none; }
 .less-butt .less-charge{background-color: #e7a317}
 .less-butt .less-cancel{background-color: #505050}
 /*新礼物*/
-.newGifts{ width: 600px; height: 92px;  position: absolute; - margin-left:-300px; left: 50%;  bottom:28%;}
+.newGifts{ width: 600px; height: 92px;  position: absolute; left: 280px;  top:534px;}
 .draggift{width:600px;height: 50px;position: absolute;top:-40px;cursor:move;}
 .toMarginLeft{width: 940px;height: 92px;position: absolute;left: 0}
 .mainGifts{width:502px;height:92px;position: absolute;right: -10px;}
@@ -541,8 +560,8 @@ a{text-decoration:none; }
 /*其他*/
 #presSwf,#flyMsgBox,#showCar{position:absolute;top:0;left:50%;z-index:0;margin-left:-470px;width:940px;height:500px;pointer-events:none;}
 #giftShapeSwf,#showGiftSwf,#EffectPlayerSwf{position:absolute;width:100%;height: 100%;z-index: 1009;pointer-events: none}
-#CustomGiftSwf,#LevelUpPlayerSwf{position:absolute;width:640px;height:360px; left: 0;top: 77px;  right: 0;  margin: 0 auto;z-index:888;pointer-events:none;}
-#MultyGiftNoticeSwf{position:absolute;width:640px;height:460px; left: 0; right: 0;  margin: 0 auto;z-index:999;pointer-events:none;}
+#CustomGiftSwf,#LevelUpPlayerSwf{position:absolute;width:568px;height:314px; left: 0;top: 77px;  right: 0;  margin: 0 auto;z-index:888;pointer-events:none;}
+#MultyGiftNoticeSwf{position:absolute;width:568px;height:314px; left: 0; right: 0;  margin: 0 auto;z-index:999;pointer-events:none;}
 /*弹框*/
 #tinymask, .bgmask {position:absolute;display:none;top:0;left:0;height:100%;width:100%;background:#404040;z-index:20000;}
 .bgmask {background-color:rgba(0,0,0,0.5);background-color:#0005;filter:Alpha(Opacity=50);}
@@ -576,7 +595,7 @@ a{text-decoration:none; }
 #bcCon .bcItem .tipWords{color:#F4f4f4}
 
 /*开通守护*/
-.start-watch{position:absolute;left:0;top:90px;bottom:0;right:0;margin:0 auto;width:402px;height: 470px;background:rgba(229, 230, 224, 0.43);padding:5px;display: none;z-index: 121}
+/* .start-watch{position:absolute;left:0;top:90px;bottom:0;right:0;margin:0 auto;width:402px;height: 470px;background:rgba(229, 230, 224, 0.43);padding:5px;display: none;z-index: 121}
 .istart-watch{width: 100%;height: 100%;background:#272828;  overflow: hidden;}
 .sf-title,.sf-img{text-align: center;margin:0 auto;color: #ECEAE7;font-size: 18px;margin-top: 10px;}
 .sf-title{margin-top:18px;}
@@ -597,19 +616,38 @@ a{text-decoration:none; }
 .sf-times ul li{float: left;height: 24px;line-height: 24px;width: 24px;cursor: pointer;color:#ECEAE7;text-align: center;}
 .sf-times ul li:hover{background:#6F838E}
 .clz{position: absolute;right: 17px;top:15px;width:15px;height:15px;background: url("/skin/desert/images/gaunbi.png")no-repeat;cursor: pointer;}
-.clz:hover{background: url("/skin/desert/images/gaunbi_hover.png") no-repeat;}
+.clz:hover{background: url("/skin/desert/images/gaunbi_hover.png") no-repeat;} */
 
-
-/*@media (max-width:1500px){
-    .guard-main{width: 260px;}
-    .guard-main ul li{margin-left: 20px;}
-
-    .myDiv2,.gift-record,.guard-area{width:260px;left: 91px;}
-    .rk-header >div{width: 86px;}
-
-    .chat-area{left:1070px;}　
-                    
-}*/
+/*开通守护*/
+.start-watch{position:absolute;left:0;top:90px;bottom:0;right:0;margin:0 auto;width:402px;height: 470px;padding:5px;display: none;z-index: 121}
+.istart-watch{width: 100%;height: 100%;background:url("/skin/comic/images/pic_bg.png") no-repeat;  overflow: hidden; color: #4a3824; }
+.sf-cenCon{margin-top: 20%; }
+.sf-title,.sf-img{color: #ECEAE7;font-size: 18px; }
+.sf-img{width: 33%; text-align: center; margin-top: 10%; }
+.sf-cenConR{width: 67%; }
+.sf-title{margin-top:18px;}
+.sf-descript{margin:12px 12px 12px 0px;}
+.sf-line-s{background:url("/skin/comic/images/pic_line_s.png") no-repeat; width: 238px; height: 2px;}
+.sf-ms-title{font-size:16px; color: #ECEAE7;margin-bottom: 12px; height: 19px; }
+.sf-ms-title.titMonth{background:url("/skin/comic/images/pic_yuefei.png") no-repeat; width: 86px; }
+.sf-ms-title.titYear{background:url("/skin/comic/images/pic_kaitong.png") no-repeat; width: 72px; }
+.sf-ms-content{font-size: 12px;color: #5e492f; }
+.sf-ms-content a{display: inline-block;margin-left: 18px; color: #742502; }
+.sf-ms-content a:hover{color: #a56f43; }
+.sf-line-b{height: 1px;background:  #161A1C; background:url("/skin/comic/images/pic_line.png") no-repeat; margin:10px 35px 12px 38px;}
+.sf-buy-area{padding-left:10%;position: relative}
+.sf-buy-style{font-size: 16px;color: #ECEAE7; background:url("/skin/comic/images/pic_goumai.png") no-repeat; width: 114px; height: 31px; }
+.sf-buy-time{font-size: 12px;margin:5% 0;}
+.sf-buy-time .sftext{display: inline-block;padding:0 25px 0 5px;border-radius:3px; margin:0 5px;background-image:url("/skin/comic/images/pic_import.png"); background-position: 88% center;background-repeat: no-repeat;line-height: 22px; background-size: 100%; }
+.sftext:hover {background-image:url("/skin/comic/images/pic_import_down.png") no-repeat;}
+.sf-buy-time .sfpeice{margin-left:10px;display:inline-block;color:#742502; }
+.watchButton{width:35%; height:9%; margin-top: 32px; margin: 0 auto;cursor: pointer; background:url("/skin/comic/images/icon_goumai_bt.png") no-repeat;  }
+.watchButton:hover{background:url("/skin/comic/images/icon_goumai_bt_down.png") no-repeat;  }
+.sf-times{display:none;width:60%; border: 1px solid #330700; padding:1.8% 2.5%; background-color:#444141; overflow: hidden; position:absolute;left: 23%;top:56%;}
+.sf-times ul li{float: left;line-height: 24px;width: 10%; height: 10%;cursor: pointer;color:#ECEAE7;text-align: center;}
+.sf-times ul li:hover{background:#292727; }
+.clz{position: absolute;right: -2%;top:-2%;width:13%;height:12%;background: url("/skin/comic/images/pic_close.png")no-repeat;cursor: pointer;}
+.clz:hover{background: url("/skin/comic/images/pic_close_down.png") no-repeat;}
 
 /*设置*/
 
@@ -700,211 +738,4 @@ a{text-decoration:none; }
 .user_info .img img{width:60px; height:60px; border-radius:50%; }
 
 .appear .user_info .user_add{width:82px; height:32px; line-height:32px; text-align:center; color:#fff; background:#fdb200; border-radius:4px; margin-left:12px; margin-top:60px; margin-bottom:14px; cursor:pointer; }
-
-
-
-@media only screen and (min-width:1920px) and (min-height:806px){
-    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
-    .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
-    #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        width:640px;
-        height:360px;
-    }
-    .video-area{margin:77px auto;}
-    .live-info{
-        margin-top:8px;
-    }
-
-    .rank-area{
-        top:340px;
-    }
-    .newGifts{
-        left:644px;
-    }
-
-    .guard-area,.rank-area,.gift-record{
-        left:78px;
-    }
-
-}
-
-@media only screen and (min-width:1950px){
-    body,html{
-        /*width:1920px;
-        height:1080px;  */
-    }
-    .switch-area,.newGifts{position: absolute}
-}
-@media only screen and (min-width:2048px){
-    .chat-area{left: 1700px;}
-}
-@media only screen and (min-width:2880px){
-    .chat-area{left: 2315px;}    .newGifts{left: 1072px;}
-}
-@media only screen and (min-width:3048px){
-    .chat-area{left: 3200px;} .newGifts{left: 1550px;}
-}
-@media only screen and (min-width:4096px){
-    .chat-area{left: 4338px;}    .newGifts{left: 3534px; bottom:3000px;}
-    .guard-area,.rank-area,.gift-record,.visitant-record{left:3000px; }
-}
-@media only screen and (max-width:1919px){
-    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
-    .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
-    #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        width:640px;
-        height:360px;
-        /*margin:77px auto;*/
-    }
-    .live-info{
-        margin-top:8px;
-    }
-    .newGifts{
-        left:30%;
-    }
-
-    .guard-area,.rank-area,.gift-record,.visitant-record{
-        width:260px;
-        height:200px;
-        left:78px;
-        overflow:hidden;
-    }
-
-    .rank-area{
-        top:268px;
-    }
-
-    .gift-record,.visitant-record{
-        top:478px;
-    }
-
-}
-
-
-@media only screen and (max-width:1448px){
-    // .bg2{background:url(../images/bg_02.jpg) no-repeat center top; background-color:black;  }
-    .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
-    // .bg1{background:url(../images/bg_01_02.jpg) no-repeat center top; background-color:black;  }
-    .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
-    .no-live{
-        /*width:468px;*/
-        width:483px;
-        /*height:264px;*/
-        height:272px;
-        margin:58px auto;
-        margin-top:-19px;
-        margin-left:79px;
-        background: url("/skin/desert/images/nolbg_02.jpg");
-    }
-    .no-live-text{margin-top:30px;}
-    .no-live ul{margin-top:25px;}
-    #player{
-        width:483px;
-        height:272px;
-        margin:58px auto;
-        margin-top:-19px;
-        margin-left:39px;
-
-    }
-
-    #CustomGiftSwf,#LevelUpPlayerSwf{
-        width:483px;
-        height:272px;
-        margin:58px auto;
-        margin-top:-19px;
-        margin-left:458px;
-
-    }
-
-    .live-info {
-        position: relative;
-        width: 483px;
-        margin-top: -62px;
-        margin-left: 80px;
-    }
-    .flash-area{
-        height:312px;
-        height:312px !important;
-    }
-
-    .newGifts{
-        left:390px;
-        bottom:36%;
-    }
-
-}
-
-@media only screen and (max-width:1284px){
-
-    .bg2{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
-    .bg1{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
-    .no-live{
-        /*width:428px;*/
-        width:429px;
-        height:242px;
-        margin:51px auto;
-        margin-top:-26px;
-        margin-left:107px;
-        background: url("/skin/desert/images/nolbg_03.jpg");
-    }
-
-    .no-live-text{margin-top:26px;}
-    .no-live ul{margin-top:8px;}
-    #player{
-        width:429px;
-        height:242px;
-        margin:51px auto;
-        margin-top:-26px;
-        margin-left:53px;
-
-    }
-
-    #CustomGiftSwf,#LevelUpPlayerSwf{
-        width:429px;
-        height:242px;
-        margin:51px auto;
-        margin-top:-26px;
-        margin-left:485px;
-
-    }
-
-    .live-info {
-        position: relative;
-        width: 429px;
-        margin-top: -62px;
-        margin-left: 92px;
-    }
-
-    .flash-area{
-        height:268px;
-        height:268px !important;
-    }
-
-    .self-care{
-        right:-10px;
-    }
-
-    .newGifts{
-        left:396px;
-    }
-    /*.myDiv2, .gift-record, .guard-area {
-        width: 260px;
-        left: 170px;
-    }*/
-
-    .myDiv2, .gift-record, .guard-area ,.visitant-record{
-        width: 220px;
-        height:198px;
-    }
-    .guard-area{
-        top:40px;
-    }
-
-    .myDiv2{
-        top:258px;
-    }
-    .gift-record,.visitant-record{
-        top:476px;
-    }
-}
 
