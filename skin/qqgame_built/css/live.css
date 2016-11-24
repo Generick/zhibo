@@ -765,7 +765,7 @@ a{text-decoration:none; }
     cursor: pointer;
     border: 1px solid #ddd;
     text-align: center;
-    line-height: 26px;
+    line-height: 23px;
 }
 
 .amount ul li:hover{
@@ -774,6 +774,7 @@ a{text-decoration:none; }
 }
 .amount ul .hover{
     color: #3961DE;
+    border:1px solid #3961DE;
 }
 .qqgameWay form{
     margin: 15px;
