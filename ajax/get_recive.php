@@ -33,6 +33,18 @@ switch($tpe){
         $_sql=  $_sql = "d.type <> 0";
 
 }
+$param=array(
+    'between'=>0,
+    'end'=>0,
+    'year'=>$year,
+    'monte'=>$month,
+    'userId'=>$user[userId]
+);
+
+$data = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",$param);
+
+echo $data;
+exit();
 
 
 
