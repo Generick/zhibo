@@ -357,7 +357,7 @@ a{text-decoration:none; }
 #pubChatList li .anc,#priChatList li .anc{color:#E36370;}
 #priChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all;}
 
-.roomIntro{padding:6px;line-height: 18px;color:#F77599; font-size: 12px;}
+.roomIntro{padding:6px;line-height: 18px;color:#e34052; font-size: 12px;}
 /*点歌*/
 .chs2{padding:10px;width:340px;height:480px;overflow:hidden; }
 #song_item{padding:0;  position:relative; color:#f8f8f8;}
@@ -759,13 +759,13 @@ a{text-decoration:none; }
 }
 .amount ul li{
     float: left;
-    margin: 10px 10px 8px 26px;
+    margin: 10px 0px 8px 30px;
     width: 100px;
     height: 24px;
     cursor: pointer;
     border: 1px solid #ddd;
     text-align: center;
-    line-height: 23px;
+    line-height: 26px;
 }
 
 .amount ul li:hover{
@@ -781,7 +781,7 @@ a{text-decoration:none; }
 .imChar{
     margin: 6px;
     font-size: 8px;
-    background: #f77599;
+    background: #e34052;
     color: #fff;
     border-radius: 3px;
     padding: 5px;
