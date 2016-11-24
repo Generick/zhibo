@@ -739,3 +739,49 @@ a{text-decoration:none; }
 
 .appear .user_info .user_add{width:82px; height:32px; line-height:32px; text-align:center; color:#fff; background:#fdb200; border-radius:4px; margin-left:12px; margin-top:60px; margin-bottom:14px; cursor:pointer; }
 
+.payArea{
+    display: none;
+    position:fixed;
+    margin:auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 12px;
+    background-color: #FEFEFE;
+    width: 560px;
+    height: 320px;
+    z-index: 10000000;
+}
+.amount h3{margin: 15px}
+.amount ul{
+    margin: 0 auto;
+}
+.amount ul li{
+    float: left;
+    margin:10px 10px 8px 26px;
+    width:100px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.amount ul li:hover{
+    color: #F7759C;
+}
+.amount ul .hover{
+    color: #F7759C;
+}
+.qqgameWay form{
+    margin: 15px;
+}
+.imChar{
+    margin: 6px;
+    font-size: 8px;
+    background: #f77599;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+    display: block;
+    width: 60px;
+    cursor: pointer;
+}
