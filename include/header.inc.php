@@ -28,6 +28,9 @@ switch($http_host){
     case "www.181show.com":
         define("SITENAME","181show");
         break;
+    case "tester.kedo.tv":
+        define("SITENAME","tester");
+        break;
     case "www.kedo.tv":
         define("SITENAME","kedo");
         break;
