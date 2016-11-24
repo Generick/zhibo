@@ -77,6 +77,7 @@ and b.isFollow =1
     </div>
 
 </div>
+</div>
 
 
 <!--main-->

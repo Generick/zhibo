@@ -1,6 +1,4 @@
 <?php
-
-include('include/header.inc.php');
 $roomnumber=(int)$_GET['roomnumber'];
 
 $showinfo=$db->CacheGetRow(10,"select u.userId as userId,u.avatar as avatar,u.nickname as nickname,u.city as city,a.roomNumber as roomNumber from bu_user_anchors a LEFT JOIN bu_user u on a.userId = u.userId WHERE a.roomNumber = $roomnumber and a.`status` =1 and u.`status` =1");

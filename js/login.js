@@ -466,3 +466,6 @@ function toSelfShow(){
 function getTimestamp(){
 	return Math.round(new Date().getTime()/1000);
 }
+$(".header-notice").on("mouseover",function(){
+    $(".notice-list").show();
+})

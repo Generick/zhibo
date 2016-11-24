@@ -35,7 +35,7 @@ while($arr=$rs->FetchRow()){
 <a href="/<?php echo $arr['usernumber']?>.html" target="_blank"><img width="130" height="98" src="/apis/avatar.php?uid=<?php echo $arr['userid']?>"></a><b class="offlive"></b>
 <a class="btn_st" href="/<?php echo $arr['usernumber']?>.html" target="_blank" style="display: none;"></a></div>
 <div class="sinfo">
-<p class="lname"><span><em class="zlevel zlv<?php echo $arr['starlevel']?>"></em></em></span><a target="_blank" href="/<?php echo $arr['usernumber']?>.html"><?php echo $arr['nickname']?>(<?php echo $arr['usernumber']?>)</a></p>
+<p class="lname"><span><em class="zlevel zlv<?php echo $arr['starlevel']?>"></em></em></span><a target="_blank" href="/<?php echo $arr['usernumber']?>.html"><?php echo urldecode($arr['nickname'])?>(<?php echo $arr['usernumber']?>)</a></p>
 <p><span class="dFav"><span class="dline"></span> <a onclick="return confirm('确定要取消收藏吗')" href='/ucenter.php?action=cancelfav&showernumber=<?php echo $arr['usernumber']?>' class="dFav">取消关注</a></span></p>
 <p>房间号：<?php echo $arr['usernumber']?><span class=""></span></p><p>开播时间：<span>不定时</span></p></div>
 </div>

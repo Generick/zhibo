@@ -12,8 +12,7 @@ if(isset($_GET['c'])){
 }
 
 //vision
-$vsn = md5(date('Y-d-m')."S%WGF");
-$page_var['vsn']=$vsn;
+$page_var['vsn']=@$vsn;
 
 $http_host=$_SERVER['HTTP_HOST'];
 switch($http_host){
@@ -208,6 +207,7 @@ function search_save_user($userid){
             $userinfo['activeDiffer'] = $acceptData1[data]['activeDiffer'];
             $userinfo['nextActive'] = $acceptData1[data]['nextActive'];
             $userinfo['socType'] = $acceptData1[data]['socType'];
+            $userinfo['xcoins'] = $acceptData1[data]['xcoins'];
         }else{
             $userinfo['coins'] =0;
             $userinfo['spender'] =0;
@@ -217,6 +217,7 @@ function search_save_user($userid){
             $userinfo['activeDiffer'] = 0;
             $userinfo['nextActive'] =1; //比例
             $userinfo['socType'] =0;
+            $userinfo['xcoins'] =0;
         }
     }
     $userinfo['nickname'] =$uuname;

@@ -17,19 +17,21 @@
     {/if}
 
 </head>
+<body style="padding-top:60px; ">
 {include file="header.html"}
 <div class="recharge">
     <div class="wrapper">
         <div class="char_tit">
-            <div class="clearFix">
-                <span class="sprite_pay icon_hot fl"></span>
-                <h3 class="fl">充值k豆</h3>
-                <div style="clear: both"></div>
-                <span class="rest">
-                	<i>账户余额 <strong>{$user['coins']}</strong> k豆</i>
-                </span>
+            <div class="clearfix">
+                <span class="glyphicon icon-hot pull-left"></span>
+                <h3 class="pull-left charK">充值K豆</h3>
             </div>
-            <p><span>用户昵称：</span><i>{$user['nickname']}</i></p>
+            <div class="clearfix">
+            <p class="pull-left"><span>用户昵称：</span><i>{$user['nickname']}</i></p>
+            <span class="rest pull-right">
+                <i>账户余额 <strong>{$user['coins']}</strong> K豆</i>
+            </span>
+            </div>
         </div>
         <div class="char_details">
             <div class="fl">
@@ -37,49 +39,49 @@
                     <h3 class="fl">充值金额:</h3>
                     <ul class="fl amoLi">
                         <li class="fl clickBg">
-                            <span val="1000">1000k豆</span>
+                            <span val="1000">1000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="5000">5000k豆</span>
+                            <span val="5000">5000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="10000">10000k豆</span>
+                            <span val="10000">10000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="20000">20000k豆</span>
+                            <span val="20000">20000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="30000">30000k豆</span>
+                            <span val="30000">30000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="50000">50000k豆</span>
+                            <span val="50000">50000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="80000">80000k豆</span>
+                            <span val="80000">80000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="100000">100000k豆</span>
+                            <span val="100000">100000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="200000">200000k豆</span>
+                            <span val="200000">200000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="300000">300000k豆</span>
+                            <span val="300000">300000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="500000">500000k豆</span>
+                            <span val="500000">500000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="800000">800000k豆</span>
+                            <span val="800000">800000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="1000000">1000000k豆</span>
+                            <span val="1000000">1000000K豆</span>
                         </li>
                         <li class="fl">
-                            <span val="2000000">2000000k豆</span>
+                            <span val="2000000">2000000K豆</span>
                         </li>
                         <li class="fl">
-                            <span  val="3000000">3000000k豆</span>
+                            <span  val="3000000">3000000K豆</span>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +90,7 @@
 
                     <form name="QQCloud" id="QQCloud" action="/rest/www/cloud.jsp" method="post"  >
                         <div style="margin: 5px;">
-                            <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>k豆)</p>
+                            <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>K豆)</p>
                         </div>
                         <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee">
                         <input type="hidden" name="WIDtotal_Id" id="WIDtotal_Id">
@@ -139,7 +141,7 @@
                                 <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee"/>
                                 <input type="hidden" name="WIDtotal_Id" id="WIDtotal_Id"/>
                                 <input type="hidden" name="WIDbank_type" id="WIDbank_type"/>
-                                <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>k豆)</p>
+                                <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>K豆)</p>
                                 <input class="imChar" type="button" value="立即充值"/>
                             </form>
                         </div>
@@ -152,8 +154,8 @@
             <div class="fr char_explain">
                 <h3 class="expl">充值说明</h3>
                 <div class="exp">
-                    <p>1元=100k豆</p>
-                    <p>k豆是您在本平台消费的虚拟货币，您可以通过充值获得，也可手动添加充值金额。</p>
+                    <p>1元=100K豆</p>
+                    <p>K豆是您在本平台消费的虚拟货币，您可以通过充值获得，也可手动添加充值金额。</p>
                 </div>
                 <h3 class="act">您可到直播间进行：</h3>
                 <ul>

@@ -327,6 +327,7 @@ define(function(require, exports, module) {
 			this.events.put("ANCHORS_PET", wcall.updatePetData);// pet数据
 			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);//宠物出生
 			this.events.put("GUARDS_MESSAGE", wcall.guardsMessage);// 守护通知
+			this.events.put("ROOM_RUNWAY", wcall.Runway);// 全站跑道
 		},
 		sendMsg : function(msg, call, tags) {
 			var base = this;
@@ -488,7 +489,7 @@ define(function(require, exports, module) {
 			this.sendMsg(msg, call, "sendUserGift");
 		},
 		censor : function(msg, call) {
-			/** 关闭直播间 */
+			/** 查封直播间 */
 			this.sendMsg(msg, call, "censor");
 		},
 		sendPetInit : function(msg, call) {

@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <title>serviCenter-蝌蚪直播</title>
 <link rel="stylesheet" type="text/css" href="html/help/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="html/help/css/allDegree.css"/>
+<link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css?v=<?php echo $vsn;?>" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="html/help/css/allDegree.css">
 <script src="html/help/js/jquery-1.12.2.min.js"></script>
 <script src="html/help/js/help.js"></script>
 </head>
@@ -93,7 +94,7 @@ include_once('tpl_header.php');
 						<tr>
 							<td>1</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_1"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_1"></span>
                             </td>
 							<td>1,000</td>
 							<td>10</td>
@@ -104,7 +105,7 @@ include_once('tpl_header.php');
 						<tr>
 							<td>2</td>
                             <td>
-                            	<span class="spriteAllDegre pic_consumelevel_2"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_2"></span>
                             </td>
 							<td>5,000</td>
 							<td>50</td>
@@ -114,7 +115,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>3</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_3"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_3"></span>
                             </td>
 							<td>10,000</td>
 							<td>100</td>
@@ -124,7 +125,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>4</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_4"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_4"></span>
                             </td>
 							<td>20,000</td>
 							<td>200</td>
@@ -134,7 +135,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>5</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_5"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_5"></span>
                             </td>
 							<td>40,000</td>
 							<td>400</td>
@@ -144,7 +145,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>6</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_6"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_6"></span>
                             </td>
 							<td>70,000</td>
 							<td>700</td>
@@ -158,7 +159,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>7</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_7"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_7"></span>
                             </td>
 							<td>120,000</td>
 							<td>1,200</td>
@@ -168,7 +169,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>8</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_8"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_8"></span>
                             </td>
 							<td>200,000</td>
 							<td>2,000</td>
@@ -178,7 +179,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>9</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_9"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_9"></span>
                             </td>
 							<td>350,000</td>
 							<td>3,500</td>
@@ -188,7 +189,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>10</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_10"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_10"></span>
                             </td>
 							<td>550,000</td>
 							<td>5,500</td>
@@ -198,7 +199,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>11</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_11"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_11"></span>
                             </td>
 							<td>900,000</td>
 							<td>9,000</td>
@@ -213,7 +214,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>12</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_12"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_12"></span>
                             </td>
 							<td>1,400,000</td>
 							<td>14,000</td>
@@ -223,7 +224,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>13</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_13"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_13"></span>
                             </td>
 							<td>2,150,000</td>
 							<td>21,500</td>
@@ -233,7 +234,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>14</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_14"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_14"></span>
                             </td>
 							<td>2,900,000</td>
 							<td>29,000</td>
@@ -243,7 +244,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>15</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_15"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_15"></span>
                             </td>
 							<td>3,850,000</td>
 							<td>38,500</td>
@@ -253,7 +254,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>16</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_16"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_16"></span>
                             </td>
 							<td>5,100,000</td>
 							<td>51,000</td>
@@ -269,7 +270,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>17</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_17"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_17"></span>
                             </td>
 							<td>6,800,000</td>
 							<td>68,000</td>
@@ -279,7 +280,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>18</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_18"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_18"></span>
                             </td>
 							<td>9,000,000</td>
 							<td>90,000</td>
@@ -289,7 +290,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>19</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_19"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_19"></span>
                             </td>
 							<td>11,800,000</td>
 							<td>118,000</td>
@@ -299,7 +300,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>20</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_20"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_20"></span>
                             </td>
 							<td>15,000,000</td>
 							<td>150,000</td>
@@ -309,7 +310,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>21</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_21"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_21"></span>
                             </td>
 							<td>19,000,000</td>
 							<td>190,000</td>
@@ -326,7 +327,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>22</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_22"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_22"></span>
                             </td>
 							<td>24,000,000</td>
 							<td>240,000</td>
@@ -336,7 +337,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>23</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_23"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_23"></span>
                             </td>
 							<td>30,000,000</td>
 							<td>300,000</td>
@@ -346,7 +347,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>24</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_24"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_24"></span>
                             </td>
 							<td>38,000,000</td>
 							<td>380,000</td>
@@ -356,7 +357,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>25</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_25"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_25"></span>
                             </td>
 							<td>48,000,000</td>
 							<td>480,000</td>
@@ -366,7 +367,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>26</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_26"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_26"></span>
                             </td>
 							<td>60,000,000</td>
 							<td>600,000</td>
@@ -377,7 +378,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>27</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_27"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_27"></span>
                             </td>
 							<td>75,000,000</td>
 							<td>750,000</td>
@@ -387,7 +388,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>28</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_28"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_28"></span>
                             </td>
 							<td>95,000,000</td>
 							<td>950,000</td>
@@ -397,7 +398,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>29</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_29"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_29"></span>
                             </td>
 							<td>120,000,000</td>
 							<td>1,200,000</td>
@@ -407,7 +408,7 @@ include_once('tpl_header.php');
                         <tr>
 							<td>30</td>
 							<td>
-                            	<span class="spriteAllDegre pic_consumelevel_30"></span>
+                            	<span class="sprite consumelevel-pic_consumelevel_30"></span>
                             </td>
 							<td>150,000,000</td>
 							<td>1,500,000</td>

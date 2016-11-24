@@ -181,7 +181,7 @@
 
 <body class="<?php echo $BSG;?>" onselectstart="return false;">
 <div class="nav-left">
-    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/<?php echo $skinType;?>/images/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
+    <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
         <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
     </div>
     <?php if(!$user){ ?>
@@ -224,6 +224,8 @@
             <li><a href="javascript:"  target="_blank">活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
             <li><a href="/help.php" target="_blank">帮助</a></li>
+            <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
+            <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>
         </ul>
     </div>
     <?php if(1==2){?>
@@ -249,13 +251,33 @@
     <div class="rb"></div>
 </div>
 
-<div id="broadcast">
+<div class="visitant-record myDiv3" id="visitantResizable">
+    <div class="vr-header"><span class="span"></span></div>
+    <div class="nano gr-main" id="nano-sendGiftList">
+        <ul id="song_item" class="content"></ul>
+    </div>
+    <div class="lt"></div>
+    <div class="rt"></div>
+    <div class="lb"></div>
+    <div class="rb"></div>
+</div>
+<!-- 跑道开始 -->
+<div class="list_top">
+    <div id="hottitle" class="hot">
+        <ul id="ulid">      
+          
+        </ul>
+    </div>
+</div>
+<!-- 跑道结束 -->
+
+<!-- <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
             <div id="bclistWin"><ul id="bclist"></ul></div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="video-area">
     <!--主视频区-->
     <div class="live-video">
@@ -291,6 +313,7 @@
         </div>
     </div>
 </div>
+
 <!--中间部分结束-->
 <div id="CustomGiftSwf"></div>
 <div id="LevelUpPlayerSwf"></div>
@@ -366,7 +389,6 @@ if($thisHome ==1){
     <div class="chat-header">
         <div class="closing" style="display: none" id="closing">关闭</div>
         <div class="issel chat_right chatTit" ct="ch1"></div>
-        <div class="chat_right vipTit" id="choSong" ct="ch2"></div>
         <div class="lt"></div>
         <div class="rt"></div>
     </div>
@@ -428,18 +450,24 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+    <?php if($roomType != "game"){ ?>
+        <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php }else{?>
+        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
+    <?php }?>
 
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <div class="sw-vip Bmenu" id="sw-vip"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
-    <div class="chat-tip-top">
+    <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
             <div class="levelss"></div>
             <div class="chat-tip-name"></div>　
+            <div class="chat-tip-atan fr"><a href="javascript:" class="atan">@私聊</a></div>
             <div class="clear"></div>
             <div class="chat-tip-id"></div>
             <div class="chat-tip-adress"></div>
@@ -448,7 +476,6 @@ if($thisHome ==1){
     <div class="chat-tip-line"></div>
     <div class="chat-tip-bottom">
         <div class="send-h-gift" >赠送礼物</div>
-        <div class="chat-tip-atan"><a href="javascript:" class="atan">@私聊</a></div>
         <div class="chat-tip-jinyan"><a href="javascript:" class="jinyan">禁言</a></div>
         <div class="chat-tip-kick"><a href="javascript:" class="kick">踢出</a></div>
     </div>
@@ -552,6 +579,9 @@ if($thisHome ==1){
 </div>
 <div class="shadow" id="shadow"></div>
 <div class="login-html"></div>
+ <!-- <script language="javascript">
+    new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+ </script> -->
 </body>
 
 </html>

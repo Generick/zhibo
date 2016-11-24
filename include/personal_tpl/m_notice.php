@@ -6,47 +6,76 @@
     include_once('./include/personal_tpl/menu_left.php');
     ?>
 
-
     <div class="center-right">
 
         <div class="cr-care" >
-            <div class="cr-title">我的消息</div>
-            <div class="cr-notice-main">
-                <div class="none-message" style="display: none">
-                    暂无消息
+            <div class="cr-title">消息中心</div>
 
+            <div class="none-message" style="display: none">暂无消息</div>
+            <div class="cr-notice-main" style="">
+                <div class="mlb-handlar">
+                    <span class="systitle">系统消息</span>
+                    <div class="right-h">
+                        <input type="checkbox" name="select-all" class="select-all-box"/>
+                        <span class="select-all-text">全选/反选</span>
+                        <span class="del-m kbutton">删除</span>
+                    </div>
                 </div>
-
                 <div class="has-message">
                     <div class="message-list-box">
-                        <div class="mlb-left"><img src="/skin/ym/images/vip.png" /></div>
-                        <div class="mlb-right">
-                            <div class="mlb-title">尊敬的蝌蚪会员　<span>梁胖胖</span></div>
-                            <div class="mlb-content">您的蝌蚪会员将于2065+65温柔的啊废弃物让对方感到放松 !</div>
-                            <div class="mlb-button">
-                                <button>再次购买</button>
-                                <button>删除</button>
+                        <div class="message-list-title">守护到期提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                        <div class="message-sf">
+                           <div class="message-sf-cont">
+                               您对 <a href="#" class="names">梁胖胖吃翔</a> 的守护期限即将到期,请及时守护
+                           </div>
+                            <div class="message-sf-control">
+                                <span class="message-sf-fee lbutton">前往续费</span>
+                                <span class="message-del-single kbutton">删除</span>
                             </div>
                         </div>
 
                     </div>
                     <div class="message-list-box">
-                        <div class="mlb-left"><img src="/skin/ym/images/vip.png" /></div>
-                        <div class="mlb-right">
-                            <div class="mlb-title">尊敬的蝌蚪会员　<span>梁胖胖</span></div>
-                            <div class="mlb-content">您的蝌蚪会员将于2065+65温柔的啊废弃物让对方感到放松 !</div>
-                            <div class="mlb-button">
-                                <button>再次购买</button>
-                                <button>删除</button>
+                        <div class="message-list-title">管理设置提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                您已成为 <a href="#" class="names">xx频道</a> 的管理员
+                            </div>
+                            <div class="message-sf-control">
+                                <span class="message-sf-fee lbutton">管理房间</span>
+                                <span class="message-del-single kbutton">删除</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="message-list-box">
+                        <div class="message-list-title">物品过期提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                您的 xxx座驾 即将到期 请即使续费
+                            </div>
+                            <div class="message-sf-control">
+                                <span class="message-sf-fee lbutton">管理房间</span>
+                                <span class="message-del-single kbutton">删除</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="message-list-box">
+                        <div class="message-list-title">开播提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                您关注的主播 <a href="/1020" class="names">龙基基不搞基</a> 已经开播,赶紧去看看吧!
+                            </div>
+                            <div class="message-sf-control">
+                                <span class="message-sf-fee lbutton">管理房间</span>
+                                <span class="message-del-single kbutton">删除</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
                 <div class="message-buy-box" style="display: none">
                     <div class="mbb-top">守护独享特权</div>
-
                     <div class="mbb-middle">
                         <div class="mbb-img-left"></div>
                         <div class="mbb-con-right">
@@ -54,7 +83,6 @@
                             <div class="mbb-con-content">专属进场特效、专属表情、每月两次专属道具、每天一次踢人权限    <a href="#">更多</a></div>
                         </div>
                     </div>
-
                     <div class="mbb-bottom">
                         <div class="mbb-bot-top">
                             <div class="mbb-bot-title">守护购买</div><div class="mbb-bot-ii">开通年会会员,用用排名考前红名等特权</div>
@@ -85,6 +113,7 @@
 
 
 
+</div>
 </div>
 
 

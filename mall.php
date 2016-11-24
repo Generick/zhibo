@@ -23,7 +23,7 @@ $user = checklogin();
     </script>
 
 </head>
-<body>
+<body style="padding-top:60px;">
 <?php
     include_once('tpl_header.php');
     $type=$_GET[type];
@@ -85,10 +85,10 @@ $user = checklogin();
     <div class="main-mall">
         <div class="mall-top">
             <div class="mall-top-title"> 
-            	<a href="mall.php?type=guard" class="<?php if($type=="guard"){ echo "mselect";}?>"> 守护</a> 
+            	<a href="mall.php?type=guard" class="<?php if($type=="guard" or $type==""){ echo "mselect";}?>"> 守护</a>
             </div>
             <div class="mall-top-title">
-            	<a href="mall.php?type=props" class="<?php if($type=="props" or $type==""){ echo "mselect";}?>"> 道具</a>
+            	<a href="mall.php?type=props" class="<?php if($type=="props"){ echo "mselect";}?>"> 道具</a>
             </div>
             <div class="mall-top-title">
             	<a href="mall.php?type=car" class="<?php if($type=="car"){ echo "mselect";}?>"> 座驾</a> 
@@ -99,7 +99,7 @@ $user = checklogin();
         <!-- 道具-->
         <?php
 
-            if($type == "props" or $type == "" ){
+            if($type == "props"){
                     /*道具*/
         ?>
         <div class="mall-list">
@@ -199,7 +199,7 @@ $user = checklogin();
                     </div>
                 </div>
             <?php
-            }else{
+            }else if($type == "" or $type == "guard"){
                 /*守护*/
                ?>
 

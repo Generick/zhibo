@@ -97,42 +97,47 @@
 </div>
 
 <div class="start-watch">
+    <div class="clz"></div>
     <div class="istart-watch">
-        <div class="clz"></div>
-        <div class="sf-title">成为守护</div>
-        <div class="sf-img"><img src="/skin/desert/images/icon_shouhu.png" /></div>
-        <div class="sf-mis">
-            <div class="sf-descript">
-                <div class="sf-ms-title">月费用户特权</div>
-                <div class="sf-ms-content">拥有专属勋章、个性名称、房间防踢、禁言他人、主播互动等功能<a href="#">查看更多</a></div>
+        <div class="sf-title"></div>
+        <div class="sf-cenCon clearFix">
+            <div class="sf-img fl"><img src="/skin/comic/images/pic_shouhu.png" /></div>
+            <div class="sf-cenConR fr">
+                <div class="sf-mis">
+                    <div class="sf-descript">
+                        <div class="sf-ms-title titMonth"></div>
+                        <div class="sf-ms-content">拥有专属勋章、个性名称、房间防踢、禁言他人、主播互动等功能<a href="#">查看更多</a></div>
+                    </div>
+                    <div class="sf-line-s"></div>
+                    <div class="sf-descript">
+                        <div class="sf-ms-title titYear"></div>
+                        <div class="sf-ms-content">一次性购买12个月即开通年费守护、尊享月费所有特权、额外可获得系统奖励蝌蚪比和守护经验的<a href="#">查看更多</a></div>
+                    </div>
+                </div>
             </div>
-            <div class="sf-descript">
-                <div class="sf-ms-title">开通年守护<span class="sf-nianshou"></span></div>
-                <div class="sf-ms-content">一次性购买12个月即开通年费守护、尊享月费所有特权、额外可获得系统奖励蝌蚪比和守护经验的<a href="#">查看更多</a></div>
-            </div>
-            <div class="sf-line"></div>
         </div>
+        <div class="sf-line-b"></div>
         <div class="sf-buy-area">
-            <div class="sf-buy-style">购买方式</div>
-            <div class="sf-buy-time">购买时长<span class="sftext">3</span>月 <span class="sfpeice">总价格:266400逗币</span></div>
-            <div class="sf-times">
-                <ul>
-                    <li dv="1">1</li>
-                    <li dv="2">2</li>
-                    <li dv="3">3</li>
-                    <li dv="4">4</li>
-                    <li dv="5">5</li>
-                    <li dv="6">6</li>
-                    <li dv="7">7</li>
-                    <li dv="8">8</li>
-                    <li dv="9">9</li>
-                    <li dv="10">10</li>
-                    <li dv="11">11</li>
-                    <li dv="12">12</li>
-                </ul>
-            </div>
-            <div id="watchButton" class="button button-highlight button-rounded watchButton">开通</div>
-        </div>
+                    <div class="sf-buy-style"></div>
+                    <div class="sf-buy-time">购买时长<span class="sftext">3</span>月 <span class="sfpeice">总价格:266400K豆</span></div>
+                    <div class="sf-times">
+                        <ul>
+                            <li dv="1">1</li>
+                            <li dv="2">2</li>
+                            <li dv="3">3</li>
+                            <li dv="4">4</li>
+                            <li dv="5">5</li>
+                            <li dv="6">6</li>
+                            <li dv="7">7</li>
+                            <li dv="8">8</li>
+                            <li dv="9">9</li>
+                            <li dv="10">10</li>
+                            <li dv="11">11</li>
+                            <li dv="12">12</li>
+                        </ul>
+                    </div>
+                    <div id="watchButton" class="watchButton"></div>
+                </div>
     </div>
 </div>
 

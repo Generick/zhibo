@@ -7,7 +7,7 @@ if(empty($uid)){
 	exit;
 }
 
-$md5=$db->GetOne("select avatar from bu_user where userid=$uid");
+$md5=$db->GetOne("select avatar from bu_user where userId=$uid");
 
 if($md5) {
     $imgurl=_IMAGES_DOMAIN_."/".$md5;
