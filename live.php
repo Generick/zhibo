@@ -10,7 +10,6 @@ include('include/header.inc.php');
 include($app_path."include/level.func.php");
 $user=checklogin();
 if(ismobile()){
-
    include "live_mobile.php";
     exit();
 }
@@ -83,12 +82,18 @@ while($arr=$rs->FetchRow()){
     $giftcate[$arr["giftcateid"]] = $arr;
 }
 $page_var['cdn_domain']=_CDNDOMAIN_;
-if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
+/*if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
     $skinType="desert";
-    include($app_path."/skin/desert/index.php");
+    include($app_path."/skin/qqgame_built/index.php");
     include($app_path."include/footer.inc.php");
     exit();
-}
+}*/
+
+    $skinType="qqgame_built";
+    include($app_path."/skin/qqgame_built/index.php");
+    include($app_path."include/footer.inc.php");
+    exit();
+ 
 
 
 $redis = new Redis();
