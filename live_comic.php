@@ -376,10 +376,11 @@ if($roomType != "game"){
 <?php
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
-if($_SERVER['HTTP_HOST'] != "www.kedo.tv"){
+if($_SERVER['HTTP_HOST'] == "1www.kedo.tv"){
+	
+	include('./include/studio/treasureBox.php');
     include('./include/studio/pet.php');
 }
-include('./include/studio/treasureBox.php');
 if($thisHome ==1){
     include('./include/studio/setting.php');
 }
