@@ -1,5 +1,5 @@
 // JavaScript Document
-//create on 2016-11-14 11.25
+//create on 2016-11-23 14.23
 $(document).ready(function(){
     function SwapTab(name, title, content, Sub, cur) {
         $(name + ' ' + title).mouseover(function () {
@@ -141,6 +141,7 @@ $(document).ready(function(){
                     });
 
                     Mycare.listlen=$num*1;
+
                     if(Mycare.listlen>4){
                         canBottomNum = Math.floor((Mycare.listlen-1)/5);
                         Mycare.addEvent();
@@ -156,7 +157,7 @@ $(document).ready(function(){
 
 
         Mycare.addEvent=function(){
-            var li_len=67;
+            var li_len=65;
             scrollerTop=0;
             scrollNum=0;
             function changeClose(name1){
@@ -182,10 +183,11 @@ $(document).ready(function(){
 
             $('.titD').on('click','.glyphicon-menu-down',function(){
                 if(canBottomNum>0){
-                    $('.follow .caption .boxx').animate({top:scrollerTop -li_len * 5}, 300);
+                	console.log(canBottomNum)
+                    $('.follow .caption .boxx .foLi').animate({top:scrollerTop -li_len * 5}, 300);
                     canBottomNum --;
                     scrollNum ++;
-                    setScrollRange(-scrollNum*290);
+                    setScrollRange(-scrollNum*326);
                     if(canBottomNum <=0){
                         changeClose('glyphicon-menu-down');
                     }
@@ -193,10 +195,10 @@ $(document).ready(function(){
                 }
             });
             $('.titD').on('click','.glyphicon-menu-up',function(){
-                $('.follow .caption .boxx').animate({top:scrollerTop + li_len * 5}, 300);
+                $('.follow .caption .boxx .foLi').animate({top:scrollerTop + li_len * 5}, 300);
                 scrollNum--;
                 canBottomNum++;
-                setScrollRange(-scrollNum*290);
+                setScrollRange(-scrollNum*325);
                 if(scrollNum<=0){
                     changeClose('glyphicon-menu-up');
                 }
@@ -634,7 +636,6 @@ $(document).ready(function(){
                 var li="";
                 if (datas != null && datas.length > 0) {
                     $.each(datas, function(k, v) {
-                        console.log(data);
                         li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,ndecodeURI(v.title));
                     })
                     $("#gameAnchors").append(li);

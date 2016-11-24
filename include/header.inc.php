@@ -12,11 +12,14 @@ if(isset($_GET['c'])){
 }
 
 //vision
-$page_var['vsn']=$vsn;
+$page_var['vsn']=@$vsn;
 
 $http_host=$_SERVER['HTTP_HOST'];
 switch($http_host){
     case "127.0.0.1":
+        define("SITENAME","local");
+        break;
+	case "localhost":
         define("SITENAME","local");
         break;
     case "10.1.1.17":
