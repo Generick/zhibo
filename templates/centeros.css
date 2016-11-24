@@ -282,7 +282,7 @@ img {
 .titleee{margin-left: 50px;}
 .lev-inf{float: left;text-align: center;color: #fff;background-color: #999;width:64px;height: 25px;border-radius: 3px;line-height: 25px;}
 .blank-btline{width:830px;height: 24px;border-bottom: 1px solid #999;float: left;margin-left: -2px;}
-.active-level{position: relative; left: 0px;  top: 20px;  padding-left: 0;  border-left: none;}
+.active-level{position: relative; left: -64px;  top: 20px;  padding-left: 0;  border-left: none;}
 .active-level .c-level-bar .c-i-bar{background-color:#3b62db;max-width: 100%}
 .mindex-level{position: relative;left: 0px;
     top: 20px;
@@ -290,15 +290,15 @@ img {
     border-left: none;}
 .mindex-else-title{width:930px;height: 30px;line-height: 30px;margin-left:50px;font-size: 18px;color: #999;margin-top:22px;margin-bottom: 18px;}
 
-.mycare-list{width: 970px;overflow: hidden;margin-left: 30px;}
-.mycare-box{width: 299px;height: 137px;border: 1px solid #D5D5D5;float: left;;margin-left:20px;  margin-bottom:30px; position: relative;border-radius: 5px;}
+.mycare-list{width: 970px;overflow: hidden;margin-left: 48px;}
+.mycare-box{width: 270px;height: 137px;border: 1px solid #D5D5D5;float: left;;margin-right:50px;  margin-bottom:30px; position: relative;border-radius: 5px;}
 .mycare-box:hover{border-color: #3e63d8; }
 .mycare-box:hover .canBtn{display: block; }
-.mycare-box .mycare-box-left{ float: left;margin: 14px 0 0 15px;}
+.mycare-box .mycare-box-left{ float: left;margin: 14px 0 0 6px;}
 .mycare-box-left div{text-align: center}
 .mycare-box-left div img{width: 78px;  height: 78px;border-radius: 39px; border: 2px solid #e7b158;}
 .mycare-box-left div button{margin-top: 10px;width:38px;height: 20px; border-radius: 3px;border: 1px solid #9A9A9A;color: #666666}
-.mycare-box .mycare-box-right{ float: left;margin-left: 20px;margin-top:16px;color: #999;font-size: 12px;}
+.mycare-box .mycare-box-right{ float: left;margin-left: 14px;margin-top:16px;color: #999;font-size: 12px;}
 .mycare-box .mybr1{width: 170px;height: 20px;}
 .mycare-box .mybr1 .mbysp1{float: left; font-size: 14px; color: #333; }
 .mycare-box .mybr1 .mbysp2{display: inline-block;float: right;font-weight: 700;font-size: 12px;}

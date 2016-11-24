@@ -19,7 +19,8 @@ define(function(require, exports, module) {
 	var list = require("./anchor-list");
 	var face = require("./anchor-face");
 	var backLoad = require("./anchor-backLoad");
-	
+	var pet = require("./anchor-pet");
+	var treasureBox = require("./anchor-treasureBox");
 	var Webs = function(url) {
 		this.flash = null;
 		this.token = null;
@@ -62,6 +63,8 @@ define(function(require, exports, module) {
 			setting.init();
 			lvs.init(data);
 			backLoad.init();
+			pet.init();
+			treasureBox.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
 				var keyCode;
@@ -185,6 +188,8 @@ define(function(require, exports, module) {
 				this.connect();
 				this.sendWelcome();
 				this.resconnect();
+				this.sendPetInit();
+				this.sendTreasureBoxInit(null, wcall.initTreasureBox);
 			}
 		},
 		weblog : function(msg) {
@@ -317,7 +322,10 @@ define(function(require, exports, module) {
 			this.events.put("CHATPRV_MESSAGE", wcall.chatPRVMessage);// 主播私聊内容
 			this.events.put("CHATFLY_MESSAGE", wcall.chatFLYMessage);// 直播间飞屏内容
 			this.events.put("CHATAFF_MESSAGE", wcall.chatAFFMessage);// 全站公告内容
-			this.events.put("ANCHOR_PK", wcall.anchorPK);// 主播pk
+			this.events.put("ANCHOR_PK", wcall.anchorPK);
+			this.events.put("ANCHORS_AUTOPET", wcall.initPetData);// 主播pk
+			this.events.put("ANCHORS_PET", wcall.updatePetData);// pet数据
+			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);//宠物出生
 			this.events.put("GUARDS_MESSAGE", wcall.guardsMessage);// 守护通知
 			this.events.put("ROOM_RUNWAY", wcall.Runway);// 全站跑道
 		},
@@ -483,6 +491,22 @@ define(function(require, exports, module) {
 		censor : function(msg, call) {
 			/** 查封直播间 */
 			this.sendMsg(msg, call, "censor");
+		},
+		sendPetInit : function(msg, call) {
+			/** 初始化宠物信息 */
+			this.sendMsg(msg, call, "anchorsAutoPet");
+		},
+		changePetName : function(msg, call) {
+			/** 修改宠物名字 */
+			this.sendMsg(msg, call, "anchorsPetChangeName");
+		},
+		sendTreasureBoxInit : function(msg, call) {
+			/** 初始化宝箱信息 */
+			this.sendMsg(msg, call, "chestBoxGet");
+		},
+		openTreasureBox : function(msg, call) {
+			/** 领取宝箱 */
+			this.sendMsg(msg, call, "openChestBox");
 		},
 		socketio : function(msg, call) {
 			this.sendMsg(msg, call, "socketio");
