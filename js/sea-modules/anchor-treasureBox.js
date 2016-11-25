@@ -31,7 +31,7 @@ define(function(require, exports, module) {
 			if(UIF.roomType){
 				var param = jQuery.parseJSON(options.params);
 				if(param.hasOwnProperty(UIF.roomType)){
-					this.Switch = param[UIF.roomType]["boxs"];
+					this.Switch = eval(param[UIF.roomType]["boxs"]);
 				}
 			}
 			this.initView();
