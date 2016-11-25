@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body{
-	font-family:"SimHei";
+	font-family:"Microsoft YaHei";
 	background-color:#f4f4f4;
 }
 a{
@@ -341,6 +341,9 @@ a:hover{
     	width:40%;
     	margin-top: 5%; 
     }
+    .rank .foLi .state{
+    	width: 34%; 
+    }
     .foLi{
     	position: relative;
     }
@@ -356,7 +359,7 @@ a:hover{
 	overflow: hidden;
 }
 .follow .caption .boxx{
-    max-height: 330px;
+    max-height: 335px;
     overflow: hidden;
     position: relative;
 }
@@ -374,6 +377,9 @@ a:hover{
 }
 .foTit{
 	margin-bottom: 5%; 
+}
+.follow .foTit{
+	margin-bottom: 0;
 }
 
 

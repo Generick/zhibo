@@ -141,11 +141,12 @@ $(document).ready(function(){
                     });
 
                     Mycare.listlen=$num*1;
-
-                    if(Mycare.listlen>4){
+                    if(Mycare.listlen>5){
                         canBottomNum = Math.floor((Mycare.listlen-1)/5);
                         Mycare.addEvent();
                         $(".follow .titD .xii").removeClass('glyphicon-menu-down-hover').addClass('glyphicon-menu-down');
+                    }else{
+                    	$(".follow .titD .xii").removeClass('glyphicon-menu-down').addClass('glyphicon-menu-down-hover');
                     }
                 }
             });
@@ -183,11 +184,10 @@ $(document).ready(function(){
 
             $('.titD').on('click','.glyphicon-menu-down',function(){
                 if(canBottomNum>0){
-                	console.log(canBottomNum)
                     $('.follow .caption .boxx .foLi').animate({top:scrollerTop -li_len * 5}, 300);
                     canBottomNum --;
                     scrollNum ++;
-                    setScrollRange(-scrollNum*326);
+                    setScrollRange(-scrollNum*334);
                     if(canBottomNum <=0){
                         changeClose('glyphicon-menu-down');
                     }
@@ -198,7 +198,7 @@ $(document).ready(function(){
                 $('.follow .caption .boxx .foLi').animate({top:scrollerTop + li_len * 5}, 300);
                 scrollNum--;
                 canBottomNum++;
-                setScrollRange(-scrollNum*325);
+                setScrollRange(-scrollNum*334);
                 if(scrollNum<=0){
                     changeClose('glyphicon-menu-up');
                 }
