@@ -85,6 +85,7 @@ $page_var['cdn_domain']=_CDNDOMAIN_;
 
 if($_SESSION['param'] == "built"){
     $skinType="qqgame_built";
+    $roomType='custom';
     include($app_path."/skin/qqgame_built/index.php");
     include($app_path."include/footer.inc.php");
     exit();
@@ -93,6 +94,7 @@ if($_SESSION['param'] == "built"){
 
 if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
     $skinType="desert";
+    $roomType='hall';
     include($app_path."/skin/desert/index.php");
     include($app_path."include/footer.inc.php");
     exit();
@@ -116,7 +118,7 @@ if($hash_room['rtype'] == "2"){
     $roomType='game';
     $roomType_p = $roomType."_";
 }else{
-    $roomType='';
+    $roomType='kedo';
 }
 
 if($skid !="" and file_exists(dirname(__FILE__)."/live_{$skid}.php")){
