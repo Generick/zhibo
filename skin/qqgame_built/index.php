@@ -243,7 +243,7 @@
 
 <div class="visitant-record myDiv3" id="visitantResizable">
     <div class="vr-header"><span class="span"></span></div>
-    <div class="nano gr-main" id="nano-sendGiftList">
+    <div class="nano vr-main" id="nano-sendGiftList">
         <ul id="song_item" class="content"></ul>
     </div>
     <div class="lt"></div>

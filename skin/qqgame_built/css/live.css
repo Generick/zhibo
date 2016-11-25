@@ -140,7 +140,8 @@ a{text-decoration:none; }
 .myDiv5{width: 260px;position:absolute; }
 .gift-record{width:260px; height: 126px; background:url("../images/giftBg.png"); background-size:cover; left: 18px;top:532px;border-radius: 3px;position:absolute}
 .visitant-record{height: 110px;z-index: 100; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:260px;position:absolute}
-.gr-main{height:150px;}
+.gr-main{height:92px;}
+.vr-main{height:74px;}
 .rank-area{height: 228px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 18px;top:298px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
 .gf-outer-header{cursor: move}
@@ -282,7 +283,7 @@ a{text-decoration:none; }
 .guard-header .guard-title{margin-left: 12px;width:69px;height: 20px; background:url("/skin/comic/images/guardTit.png"); margin-right:4px; }
 .guard-header .gdnum{color: #A7AFC2;font-size: 12px; margin-top:16px; }
 .guard-header .kais{float: right;margin-right: 12px;font-size: 12px;  height: 28px; padding: 0 8px; background:url("/skin/comic/images/kais.png"); width: 81px; }
-.guard-main{width:340px;margin-top: 10px;height:212px}
+.guard-main{    width: 260px;  margin-top: 10px;  height: 196px;}
 .guard-main ul li{margin-left:16px;float: left;  width: 70px;  height: 106px;}
 .guardYou{float: left}
 .guardYou .gback{width:56px;height: 78px;  position: relative;}
