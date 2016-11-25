@@ -37,6 +37,7 @@ define(function(require, exports, module) {
 		this.cache = new Map();
 		this.queue = new Map();
 		this.events = new Map();
+		this.modules = new Map();
 		this.userList = new Map();
 		this.roomNumber = null;
 		this.newSendGiftID = "";
@@ -50,22 +51,37 @@ define(function(require, exports, module) {
 	Webs.prototype = {
 		init : function(data) {
 			var base = this;
-			swf.init();
-			song.init();
-			face.init();
-			list.init();
-			hall.init();
-			chat.init();
-			gift.init();
-			login.init();
-			guards.init();
-			anchor.init();
-			setting.init();
-			lvs.init(data);
-			backLoad.init();
-			// pet.init();
-			// treasureBox.init();
+			base.addModules("lvs", lvs);
+			base.addModules("pet", pet);
+			base.addModules("swf", swf);
+			base.addModules("song", song);
+			base.addModules("face", face);
+			base.addModules("list", list);
+			base.addModules("hall", hall);
+			base.addModules("chat", chat);
+			base.addModules("gift", gift);
+			base.addModules("login", login);
+			base.addModules("guards", guards);
+			base.addModules("anchor", anchor);
+			base.addModules("setting", setting);
+			base.addModules("backLoad", backLoad);
+			base.addModules("treasureBox", treasureBox);
+			base.cache.put("userInfo", false);
+			base.cache.put("anchorInfo", false);
 			base.roomNumber = data.roomNumber;
+			for (var i = 0; i < base.modules.size(); i++) {
+				var msg = base.modules.element(0);
+				if (msg != null) {
+					var call = msg.value;
+					if (call != null && typeof call.init === "function") {
+						call.init({
+							webs : base,
+							params : base.params,
+							data : data
+						});
+					}
+				}
+			}
 			window.onkeydown = function(event) {
 				var keyCode;
 				if (!event)
@@ -89,8 +105,6 @@ define(function(require, exports, module) {
 					Tools.setCookie(cons.LOCAL_TIMEREFRESH, resTime, 24 * 60 * 60);
 				}
 			};
-			base.cache.put("userInfo", false);
-			base.cache.put("anchorInfo", false);
 			window.onbeforeunload = function() {
 				if (base.userId == base.anchorId && base.sock != null) {
 					var url = "/rest/site/begins.mt";
@@ -109,6 +123,9 @@ define(function(require, exports, module) {
 		},
 		agents : function() {
 			return this.QQGame;
+		},
+		addModules : function(key, callModules) {
+			this.modules.put(key, callModules);
 		},
 		loading : function(userId, token, room) {
 			lvs.mo();
@@ -146,20 +163,7 @@ define(function(require, exports, module) {
 								var args = jQuery.parseJSON(e.args);
 								base.flash = args.flash;
 								base.weblg = args.weblog;
-								if (args.hasOwnProperty("boxs")) {
-									base.boxs = args.boxs;
-								} else {
-									base.boxs = false;
-									;
-								}
-
-								if (args.hasOwnProperty("pets")) {
-									base.pets = args.pets;
-								} else {
-									base.pets = false;
-									;
-								}
-								base.pets = args.pets;
+								base.params = args.roomparams;
 								break;
 							case "USERS_HANDINFO":
 								var args = jQuery.parseJSON(e.args);
@@ -196,14 +200,26 @@ define(function(require, exports, module) {
 			});
 		},
 		doit : function(data) {
-			this.init(data);
+			var base = this;
+			base.init(data);
 			if (data.status == 200) {
-				this.addEventListeners();
-				this.connect();
-				this.sendWelcome();
-				this.resconnect();
-				this.sendPetInit();
-				this.sendTreasureBoxInit(null, wcall.initTreasureBox);
+				base.addEventListeners();
+				base.connect();
+				base.sendWelcome();
+				base.resconnect();
+				for (var i = 0; i < base.modules.size(); i++) {
+					var msg = base.modules.element(0);
+					if (msg != null) {
+						var call = msg.value;
+						if (call != null && typeof call.socketAfter === "function") {
+							call.socketAfter({
+								webs : base,
+								params : base.params,
+								data : data
+							});
+						}
+					}
+				}
 			}
 		},
 		weblog : function(msg) {
@@ -254,9 +270,9 @@ define(function(require, exports, module) {
 				base.sock.on("connect", function(data) {
 					if (data != null)
 						console.log(data);
-					if (base.queue.size > 0) {
+					if (base.queue.size() > 0) {
 						var msgid = new Array();
-						for (var i = 0; i < base.queue.size; i++) {
+						for (var i = 0; i < base.queue.size(); i++) {
 							var msg = base.queue.element(0);
 							msgid.push(msg.key);
 							base.sock.emit("msg", msg.value);
