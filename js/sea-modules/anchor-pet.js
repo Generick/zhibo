@@ -3,29 +3,24 @@ define(function(require, exports, module) {
 	var Tools = require("./anchor-tools");
 	var UserData = require("./anchor-user");
 	module.exports = {
-		//训练动作
 		TRAIN_PET : "TRAIN_PET",
-		//攻击动作
 		ATTACK_PET : "ATTACK_PET",
-		
 		LEVEL_GAP : 5,
 		petData : null,
 		MaxTrainGapTime : 3,
 		currentGapTime : 0,
 		timeOut : null,
-		TrainCompleteStr : "今日训练已完成",
-		TrainLeftCountStr : "今日剩余<font color='#0000FF'>{0}</font>次",
-		TrainGapStr : "训练中...剩余<font color='#0000FF'>{0}</font>s",
-		PetNotBornStr : "精灵尚未出生",
-		PetNameIllegal : "精灵名字包含非法字符",
+		TrainCompleteStr : "\u4ECA\u65E5\u8BAD\u7EC3\u5DF2\u5B8C\u6210",
+		TrainLeftCountStr : "\u4ECA\u65E5\u5269\u4F59<font color='#0000FF'>{0}</font>\u6B21",
+		TrainGapStr : "\u8BAD\u7EC3\u4E2D...\u5269\u4F59<font color='#0000FF'>{0}</font>s",
+		PetNotBornStr : "\u7CBE\u7075\u5C1A\u672A\u51FA\u751F",
+		PetNameIllegal : "\u7CBE\u7075\u540D\u5B57\u5305\u542B\u975E\u6CD5\u5B57\u7B26",
 		PetNameMaxLength : 14,
-		PetNameTooLong : "名字过长",
-		MustFollowAnchor : "关注主播才可以训练",
-		PetHelpTip : "训练或者赠送主播礼物都可以增加精灵经验，帮助精灵升级。\n每天可以训练精灵3次，提升爵位等级可以增加每日训练次数",
-		//随机动画间隔时间
+		PetNameTooLong : "\u540D\u5B57\u8FC7\u957F",
+		MustFollowAnchor : "\u5173\u6CE8\u4E3B\u64AD\u624D\u53EF\u4EE5\u8BAD\u7EC3",
+		PetHelpTip : "\u8BAD\u7EC3\u6216\u8005\u8D60\u9001\u4E3B\u64AD\u793C\u7269\u90FD\u53EF\u4EE5\u589E\u52A0\u7CBE\u7075\u7ECF\u9A8C\uFF0C\u5E2E\u52A9\u7CBE\u7075\u5347\u7EA7\u3002\n\u6BCF\u5929\u53EF\u4EE5\u8BAD\u7EC3\u7CBE\u70753\u6B21\uFF0C\u63D0\u5347\u7235\u4F4D\u7B49\u7EA7\u53EF\u4EE5\u589E\u52A0\u6BCF\u65E5\u8BAD\u7EC3\u6B21\u6570",
 		RandomAnimateGap : 30,
 		RandomAnimateSwitch : true,
-		
 		init : function() {
 			this.initPetView();
 			this.initPetOptView();
@@ -51,7 +46,7 @@ define(function(require, exports, module) {
 			$("#clickRect").show();
 			
 			this.petData = data;
-			if(0 == data.level){//处于蛋的形态
+			if(0 == data.level){
 				this.petData.isBorn = false;
 			}
 			else
@@ -63,7 +58,6 @@ define(function(require, exports, module) {
 		petBirth : function(){
 			this.sendPetInit();
 		},
-		//刷新宠物信息  不包括个人信息数据   如训练次数上限、当前次数
 		updatePetData(data){
 			if(null == this.petData){
 				return;
