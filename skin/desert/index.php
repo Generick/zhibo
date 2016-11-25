@@ -239,13 +239,33 @@
     <div class="rb"></div>
 </div>
 
-<div id="broadcast">
+<div class="visitant-record myDiv3" id="visitantResizable">
+    <div class="vr-header"><span class="span"></span></div>
+    <div class="nano gr-main" id="nano-sendGiftList">
+        <ul id="song_item" class="content"></ul>
+    </div>
+    <div class="lt"></div>
+    <div class="rt"></div>
+    <div class="lb"></div>
+    <div class="rb"></div>
+</div>
+<!-- 跑道开始 -->
+<div class="list_top">
+    <div id="hottitle" class="hot">
+        <ul id="ulid">
+
+        </ul>
+    </div>
+</div>
+<!-- 跑道结束 -->
+
+<!-- <div id="broadcast">
     <div class="bcConb">
         <div class="bcCon" id="bcCon" style="width: 640px;">
             <div id="bclistWin"><ul id="bclist"></ul></div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="video-area">
     <!--主视频区-->
     <div class="live-video">
@@ -343,9 +363,8 @@ if($roomType != "game"){
 <?php
 include('./include/studio/task.php');
 include('./include/studio/audience.php');
-if($_SERVER['HTTP_HOST'] != "0www.kedo.tv"){
-    // include('./include/studio/pet.php');
-}
+include('./include/studio/treasureBox.php');
+include('./include/studio/pet.php');
 if($thisHome ==1){
     include('./include/studio/setting.php');
 }
@@ -355,7 +374,6 @@ if($thisHome ==1){
     <div class="chat-header">
         <div class="closing" style="display: none" id="closing">关闭</div>
         <div class="issel chat_right chatTit" ct="ch1"></div>
-        <div class="chat_right vipTit" id="choSong" ct="ch2"></div>
         <div class="lt"></div>
         <div class="rt"></div>
     </div>
@@ -416,8 +434,13 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
+    <?php if($roomType != "game"){ ?>
+        <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <?php }else{?>
+        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
+    <?php }?>
 
-    <div class="sw-guard Bmenu" id="sw-guard"></div>
+    <div class="sw-vip Bmenu" id="sw-vip"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
@@ -428,6 +451,7 @@ if($thisHome ==1){
         <div class="chat-tip-title">
             <div class="levelss"></div>
             <div class="chat-tip-name"></div>　
+            <div class="chat-tip-atan fr"><a href="javascript:" class="atan">@私聊</a></div>
             <div class="clear"></div>
             <div class="chat-tip-id"></div>
             <div class="chat-tip-adress"></div>
@@ -436,7 +460,6 @@ if($thisHome ==1){
     <div class="chat-tip-line"></div>
     <div class="chat-tip-bottom">
         <div class="send-h-gift" >赠送礼物</div>
-        <div class="chat-tip-atan"><a href="javascript:" class="atan">@私聊</a></div>
         <div class="chat-tip-jinyan"><a href="javascript:" class="jinyan">禁言</a></div>
         <div class="chat-tip-kick"><a href="javascript:" class="kick">踢出</a></div>
     </div>

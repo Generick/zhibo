@@ -8,8 +8,8 @@ define(function(require, exports, module) {
 		Open_Animation : "open_animation",
 		Close_Animation : "close_animation",
 		CONST_MAXCOUNT : 3,//最大可领取次数
-		//CONST_GAPARRAY : [5 * 60, 15 * 60, 30 * 60],
-		CONST_GAPARRAY : [5, 15, 30],
+		CONST_GAPARRAY : [5 * 60, 15 * 60, 30 * 60],
+		//CONST_GAPARRAY : [5, 15, 30],
 		CONST_REACHMAX : "今日宝箱已经领取完毕",
 		CONST_TIMELIMIT  : " 宝箱冷却中",
 		CONST_LEFTTIME : "剩余{0}",
