@@ -38,13 +38,18 @@ define(function(require, exports, module) {
 		initPetView : function(){
 			$("#Pet").hide();
 			$("#petName").hide();
+			$("#clickRect").hide();
 		},
 		initPetData : function(data){
 			if(!data.hasOwnProperty("level"))
 			{
 				return;
 			}
+			
 			$("#Pet").show();
+			$("#petName").show();
+			$("#clickRect").show();
+			
 			this.petData = data;
 			if(0 == data.level){//处于蛋的形态
 				this.petData.isBorn = false;
