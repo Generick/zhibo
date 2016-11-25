@@ -926,8 +926,9 @@ a{text-decoration:none; }
     .myDiv2{
         top:258px;
     }
-    .gift-record,.visitant-record{
+    .gift-record{
         top:476px;
     }
+	.visitant-record{top:60px;}
 }
 

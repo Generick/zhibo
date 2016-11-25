@@ -93,7 +93,7 @@ if($_SESSION['param'] == "built"){
 
 if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
     $skinType="desert";
-    include($app_path."/skin/qqgame_built/index.php");
+    include($app_path."/skin/desert/index.php");
     include($app_path."include/footer.inc.php");
     exit();
 }
