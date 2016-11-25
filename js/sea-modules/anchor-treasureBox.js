@@ -19,13 +19,11 @@ define(function(require, exports, module) {
 		timetick : 0,
 		timetick_timeout : 0,
 		Switch : false,
-		
 		socketAfter : function() {
-			if(Switch){
+			if(this.Switch){
 				UIF.handler.sendTreasureBoxInit(null, this.initTreasureBoxData);
 			}
 		},
-		
 		init : function(options) {
 			if(UIF.handler.roomType){
 				var param = jQuery.parseJSON(options.params);
