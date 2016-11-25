@@ -17,7 +17,7 @@ $(function () {
     })
     $(".cl-focus").siblings(".cl-set-info").show();
     $(".cl-set-info ul li a").click(function(){
-        
+        $('.pi .cl-div').removeClass('cl-focus');
     })
     function closeWindow(fun){
         $(".zhezhao").hide();

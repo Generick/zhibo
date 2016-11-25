@@ -46,7 +46,6 @@
                     <div class="mycare-box">
                         <div class="mycare-box-left">
                             <div class="careImg"><img src="<?php echo $v['himage']?>"/></div>
-                            <div class="canBtn"><input type="button" class="canC" value="取消"/></div>
                         </div>
                         <div class="mycare-box-right">
                             <div class="mybr1"><span class="mbysp1"><?php echo urldecode($v['name'])?></span> <span class="mbysp2">守护中..</span></div>

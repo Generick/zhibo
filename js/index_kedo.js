@@ -152,7 +152,9 @@ $(document).ready(function(){
 						canBottomNum = Math.floor((Mycare.listlen-1)/5);
 						Mycare.addEvent();
 						$(".follow .titD .xii").removeClass('glyphicon-menu-down-hover').addClass('glyphicon-menu-down');
-					}
+					}else{
+                    	$(".follow .titD .xii").removeClass('glyphicon-menu-down').addClass('glyphicon-menu-down-hover');
+                    }
 				}
 			});
 		};
@@ -192,7 +194,7 @@ $(document).ready(function(){
 					$('.follow .caption .boxx').animate({top:scrollerTop -li_len * 5}, 300);
 					canBottomNum --;
 					scrollNum ++;
-					setScrollRange(-scrollNum*290);
+					setScrollRange(-scrollNum*334);
 					if(canBottomNum <=0){
 						changeClose('glyphicon-menu-down');
 					}
@@ -203,7 +205,7 @@ $(document).ready(function(){
 				$('.follow .caption .boxx').animate({top:scrollerTop + li_len * 5}, 300);
 				scrollNum--;
 				canBottomNum++;
-				setScrollRange(-scrollNum*290);
+				setScrollRange(-scrollNum*334);
 				if(scrollNum<=0){
 					changeClose('glyphicon-menu-up');
 				}
@@ -501,7 +503,7 @@ $(document).ready(function(){
 						var s_big,s_sml;
 						var advertisement =
 							'<a href="#" class="thumbnail adImg">\
-								<img src="/images/kedo/hotImg.png" alt="">\
+								<img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
 							</a>\
 							';
 						var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
@@ -563,7 +565,7 @@ $(document).ready(function(){
 					var s_big,s_sml;
 					var advertisement =
 							'<a href="#" class="thumbnail adImg">\
-								<img src="/images/kedo/hotImg.png" alt="">\
+								<img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
 							</a>\
 							';
 					var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');

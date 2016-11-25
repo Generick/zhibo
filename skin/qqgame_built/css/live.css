@@ -138,10 +138,12 @@ a{text-decoration:none; }
 .myDiv3{width: 260px;position:absolute; }
 .myDiv4{width: 260px;position:absolute; }
 .myDiv5{width: 260px;position:absolute; }
+
 .gift-record{width:260px; height: 126px; background:url("../images/giftBg.png"); background-size:cover; left: 18px;top:532px;border-radius: 3px;position:absolute}
 .visitant-record{height: 110px;z-index: 100; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:260px;position:absolute}
 .gr-main{height:92px;}
 .vr-main{height:74px;}
+
 .rank-area{height: 228px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 18px;top:298px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
 .gf-outer-header{cursor: move}
@@ -179,6 +181,7 @@ a{text-decoration:none; }
 .gift-record ul li .gr-song,.cr-to{color: #FFffff}
 .gift-record ul li .gr-reciver{color: #ffc937;}
 .gift-record ul li img{width: 22px;  height: 24px; vertical-align: middle; margin: 0 3px 0 2px;}
+
 .gr-header,.vr-header{color:#FFffff;margin:15px 0 0 15px;cursor: move}
 .gr-header #span{ background:url(/skin/comic/images/gift_tit.png); width: 66px; height: 20px; display: block; }
 .vr-header .span{ background:url("/skin/comic/images/icon_guibinxi.png") no-repeat; width: 50px; height: 20px; display: block; }
@@ -594,30 +597,6 @@ a{text-decoration:none; }
 #bcCon .bcItem a{ }
 #bcCon .bcItem .tipName{color:#ECBD36;padding-left:3px;}
 #bcCon .bcItem .tipWords{color:#F4f4f4}
-
-/*开通守护*/
-/* .start-watch{position:absolute;left:0;top:90px;bottom:0;right:0;margin:0 auto;width:402px;height: 470px;background:rgba(229, 230, 224, 0.43);padding:5px;display: none;z-index: 121}
-.istart-watch{width: 100%;height: 100%;background:#272828;  overflow: hidden;}
-.sf-title,.sf-img{text-align: center;margin:0 auto;color: #ECEAE7;font-size: 18px;margin-top: 10px;}
-.sf-title{margin-top:18px;}
-.sf-descript{margin:14px 35px 12px 38px;}
-.sf-ms-title{font-size:16px; color: #ECEAE7;margin-bottom: 2px;}
-.sf-ms-content{font-size: 12px;color: #838585}
-.sf-ms-content a{display: inline-block;margin-left: 10px;font-size: 14px;color: #ECEAE7;}
-.sf-ms-content a:hover{color: #f9ad10}
-.sf-line{height: 1px;background:  #161A1C;margin:10px 35px 12px 38px;}
-.sf-nianshou{position: relative;display:inline-block;width:32px;height: 13px;background: url("/skin/desert/images/nianshou.png") no-repeat; top: -5px;left: 5px;}
-.sf-buy-area{margin-left: 38px;position: relative}
-.sf-buy-style{font-size: 16px;color: #ECEAE7;}
-.sf-buy-time{color: #838585;font-size: 12px;margin:10px 0;}
-.sf-buy-time .sftext{display: inline-block;padding:0 25px 0 5px;border-radius:3px;background-color: #fff;margin:0 5px;background-image:url("/skin/desert/images/xiala.ss.png"); background-position: 88% center;background-repeat: no-repeat;height: 22px; line-height: 22px;    width: 35px;}
-.sf-buy-time .sfpeice{margin-left:10px;display:inline-block;color:#EC585C}
-.watchButton{position: absolute; right: 130px; height: 34px;line-height:34px; margin-top: 35px;font-size: 16px;   bottom: -90px; margin: 0 auto;cursor: pointer}
-.sf-times{display:none;width:212px; border: 1px solid #1E2629;overflow: hidden;width: 146px;position:absolute;left: 50px;top:56px;}
-.sf-times ul li{float: left;height: 24px;line-height: 24px;width: 24px;cursor: pointer;color:#ECEAE7;text-align: center;}
-.sf-times ul li:hover{background:#6F838E}
-.clz{position: absolute;right: 17px;top:15px;width:15px;height:15px;background: url("/skin/desert/images/gaunbi.png")no-repeat;cursor: pointer;}
-.clz:hover{background: url("/skin/desert/images/gaunbi_hover.png") no-repeat;} */
 
 /*开通守护*/
 .start-watch{position:absolute;left:0;top:90px;bottom:0;right:0;margin:0 auto;width:402px;height: 470px;padding:5px;display: none;z-index: 121}

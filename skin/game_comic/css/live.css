@@ -613,18 +613,6 @@ a{text-decoration:none; }
 .clz{position: absolute;right: 17px;top:15px;width:15px;height:15px;background: url("/skin/desert/images/gaunbi.png")no-repeat;cursor: pointer;}
 .clz:hover{background: url("/skin/desert/images/gaunbi_hover.png") no-repeat;}
 
-
-/*@media (max-width:1500px){
-    .guard-main{width: 260px;}
-    .guard-main ul li{margin-left: 20px;}
-
-    .myDiv2,.gift-record,.guard-area{width:260px;left: 91px;}
-    .rk-header >div{width: 86px;}
-
-    .chat-area{left:1070px;}　
-                    
-}*/
-
 /*设置*/
 
 .setting{width:45px; height:20px; line-height:20px; text-align:center; background:#fcaf01; color:#fff; cursor:pointer; border-radius:4px; position: absolute; right: 10px; top:30px;  }
