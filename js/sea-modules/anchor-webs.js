@@ -63,7 +63,11 @@ define(function(require, exports, module) {
 			setting.init();
 			lvs.init(data);
 			backLoad.init();
-			pet.init();
+			try {
+				pet.init();
+			} catch (e) {
+				base.weblog(e);
+			}
 			treasureBox.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
@@ -202,7 +206,7 @@ define(function(require, exports, module) {
 				this.connect();
 				this.sendWelcome();
 				this.resconnect();
-				this.sendPetInit();
+				//this.sendPetInit();
 				this.sendTreasureBoxInit(null, wcall.initTreasureBox);
 			}
 		},
