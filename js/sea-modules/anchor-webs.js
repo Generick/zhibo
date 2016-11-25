@@ -207,13 +207,13 @@ define(function(require, exports, module) {
 			}
 		},
 		weblog : function(msg) {
-            if (eval(this.weblg)){
+
                 if(UIF.handler.QQGame == true){
                     document.writeln(msg);
                 }else{
                      console.log(msg);
                 }
-            }
+            
 
 		},
 		restDoit : function() {
