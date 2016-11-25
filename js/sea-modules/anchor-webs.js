@@ -63,8 +63,8 @@ define(function(require, exports, module) {
 			setting.init();
 			lvs.init(data);
 			backLoad.init();
-			//pet.init();
-		    //treasureBox.init();
+			pet.init();
+			treasureBox.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
 				var keyCode;
@@ -146,18 +146,18 @@ define(function(require, exports, module) {
 								var args = jQuery.parseJSON(e.args);
 								base.flash = args.flash;
 								base.weblg = args.weblog;
-								if(args.hasOwnProperty("boxs"))
-								{
+								if (args.hasOwnProperty("boxs")) {
 									base.boxs = args.boxs;
-								}else{
-									base.boxs = false;;
+								} else {
+									base.boxs = false;
+									;
 								}
-								
-								if(args.hasOwnProperty("pets"))
-								{
+
+								if (args.hasOwnProperty("pets")) {
 									base.pets = args.pets;
-								}else{
-									base.pets = false;;
+								} else {
+									base.pets = false;
+									;
 								}
 								base.pets = args.pets;
 								break;
@@ -207,10 +207,13 @@ define(function(require, exports, module) {
 			}
 		},
 		weblog : function(msg) {
-            if (eval(this.weblg)){
-             console.log(msg);
-            }
-
+			if (this.QQGame == true) {
+				document.write(msg);
+			} else {
+				if (eval(this.weblg)) {
+					console.log(msg);
+				}
+			}
 		},
 		restDoit : function() {
 			this.connect();
@@ -341,7 +344,7 @@ define(function(require, exports, module) {
 			this.events.put("ANCHOR_PK", wcall.anchorPK);
 			this.events.put("ANCHORS_AUTOPET", wcall.initPetData);// 主播pk
 			this.events.put("ANCHORS_PET", wcall.updatePetData);// pet数据
-			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);//宠物出生
+			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);// 宠物出生
 			this.events.put("GUARDS_MESSAGE", wcall.guardsMessage);// 守护通知
 			this.events.put("ROOM_RUNWAY", wcall.Runway);// 全站跑道
 		},
@@ -510,8 +513,7 @@ define(function(require, exports, module) {
 		},
 		sendPetInit : function(msg, call) {
 			var base = this;
-			if(!base.pets)
-			{
+			if (!base.pets) {
 				return;
 			}
 			/** 初始化宠物信息 */
@@ -519,8 +521,7 @@ define(function(require, exports, module) {
 		},
 		changePetName : function(msg, call) {
 			var base = this;
-			if(!base.pets)
-			{
+			if (!base.pets) {
 				return;
 			}
 			/** 修改宠物名字 */
@@ -528,8 +529,7 @@ define(function(require, exports, module) {
 		},
 		sendTreasureBoxInit : function(msg, call) {
 			var base = this;
-			if(!base.boxs)
-			{
+			if (!base.boxs) {
 				return;
 			}
 			/** 初始化宝箱信息 */
@@ -537,8 +537,7 @@ define(function(require, exports, module) {
 		},
 		openTreasureBox : function(msg, call) {
 			var base = this;
-			if(!base.boxs)
-			{
+			if (!base.boxs) {
 				return;
 			}
 			/** 领取宝箱 */

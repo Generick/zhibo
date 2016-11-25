@@ -27,10 +27,17 @@ define(function(require, exports, module) {
 		RandomAnimateSwitch : true,
 		
 		init : function() {
-			this.initPetView();
-			this.initPetOptView();
-			this.initPetInteractions();
-			this.initHelpTipView();
+			try{
+				this.initPetView();
+				this.initPetOptView();
+				this.initPetInteractions();
+				this.initHelpTipView();
+			}
+			catch(e){
+				UIF.handler.weblog("init start");
+				UIF.handler.weblog(e);
+				UIF.handler.weblog("init end");
+			}
 		},
 		initHelpTipView(){
 			$("#pet-opt-ui-helpTip-textArea").val(this.PetHelpTip);
@@ -41,24 +48,31 @@ define(function(require, exports, module) {
 			$("#clickRect").hide();
 		},
 		initPetData : function(data){
-			if(!data.hasOwnProperty("level"))
-			{
-				return;
+			try{
+				if(!data.hasOwnProperty("level"))
+				{
+					return;
+				}
+				
+				$("#Pet").show();
+				$("#petName").show();
+				$("#clickRect").show();
+				
+				this.petData = data;
+				if(0 == data.level){//处于蛋的形态
+					this.petData.isBorn = false;
+				}
+				else
+				{
+					this.petData.isBorn = true;
+				}
+				this.updatePetshow();
 			}
-			
-			$("#Pet").show();
-			$("#petName").show();
-			$("#clickRect").show();
-			
-			this.petData = data;
-			if(0 == data.level){//处于蛋的形态
-				this.petData.isBorn = false;
+			catch(e){
+				UIF.handler.weblog("initPetData start");
+				UIF.handler.weblog(e);
+				UIF.handler.weblog("initPetData end");
 			}
-			else
-			{
-				this.petData.isBorn = true;
-			}
-			this.updatePetshow();
 		},
 		petBirth : function(){
 			this.sendPetInit();
