@@ -502,7 +502,7 @@ $(document).ready(function(){
 						
 						var s_big,s_sml;
 						var advertisement =
-							'<a href="#" class="thumbnail adImg">\
+							'<a href="/applyHome.php" class="thumbnail adImg">\
 								<img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
 							</a>\
 							';
@@ -564,7 +564,7 @@ $(document).ready(function(){
 					var row1=dealData.slice(0,19);
 					var s_big,s_sml;
 					var advertisement =
-							'<a href="#" class="thumbnail adImg">\
+							'<a href="/applyHome.php" class="thumbnail adImg">\
 								<img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
 							</a>\
 							';
