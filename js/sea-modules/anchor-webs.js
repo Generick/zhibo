@@ -63,11 +63,7 @@ define(function(require, exports, module) {
 			setting.init();
 			lvs.init(data);
 			backLoad.init();
-			try {
-				pet.init();
-			} catch (e) {
-				base.weblog(e);
-			}
+			pet.init();
 			treasureBox.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
@@ -206,18 +202,15 @@ define(function(require, exports, module) {
 				this.connect();
 				this.sendWelcome();
 				this.resconnect();
-				//this.sendPetInit();
+				this.sendPetInit();
 				this.sendTreasureBoxInit(null, wcall.initTreasureBox);
 			}
 		},
 		weblog : function(msg) {
-			if (this.QQGame == true) {
-				document.write(msg);
-			} else {
-				if (eval(this.weblg)) {
-					console.log(msg);
-				}
+			if (eval(this.weblg)) {
+				console.log(msg);
 			}
+
 		},
 		restDoit : function() {
 			this.connect();
@@ -348,7 +341,7 @@ define(function(require, exports, module) {
 			this.events.put("ANCHOR_PK", wcall.anchorPK);
 			this.events.put("ANCHORS_AUTOPET", wcall.initPetData);// 主播pk
 			this.events.put("ANCHORS_PET", wcall.updatePetData);// pet数据
-			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);// 宠物出生
+			this.events.put("ANCHORS_PET_TELLBIRTH", wcall.petBirth);//宠物出生
 			this.events.put("GUARDS_MESSAGE", wcall.guardsMessage);// 守护通知
 			this.events.put("ROOM_RUNWAY", wcall.Runway);// 全站跑道
 		},
