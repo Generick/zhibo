@@ -2,7 +2,7 @@ define('ajax/record', function(require, exports, module){
     var Tools = require('./common');
     var $h="";
     var html='<tr class="dd">\
-            <td>SN{0}</td>\
+            <td>{0}</td>\
             <td>{1}</td>\
             <td class="sendss">送给<a href="{2}" class="sendTo">{3}</a>{4}个<img src="{5}" /><span class="sendGiftNames">{6}</span></td>\
             <td>{7}</td>\
@@ -46,7 +46,7 @@ define('ajax/record', function(require, exports, module){
             if(data.data){
                 $.each(data.data, function(k,v) {
                     if(v.type==1){  //礼物
-                        $h += Tools.stringFormat(html,v.id,v.createDT,v.roomNumber,v.nickname,v.numbers,imghost +"/"+ v.giftimage+"?p=0",v.giftname,Math.abs(v.money));
+                        $h += Tools.stringFormat(html,v.orderId,v.createDT,v.roomNumber,v.nickname,v.numbers,imghost +"/"+ v.giftimage+"?p=0",v.giftname,Math.abs(v.money));
                     }else if(v.type==2){ //点歌
                         $h += '<tr class="dd"><td>'+v.orderId+'</td><td>'+v.createDT+'</td><td class="sendss">在<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickname+' </a>房间点歌</td><td>'+Math.abs(v.money)+'</td></tr>';
                     }else if(v.type==3){ //守护

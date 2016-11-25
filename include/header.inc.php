@@ -12,11 +12,14 @@ if(isset($_GET['c'])){
 }
 
 //vision
-$page_var['vsn']=$vsn;
+$page_var['vsn']=@$vsn;
 
 $http_host=$_SERVER['HTTP_HOST'];
 switch($http_host){
     case "127.0.0.1":
+        define("SITENAME","local");
+        break;
+	case "localhost":
         define("SITENAME","local");
         break;
     case "10.1.1.17":
@@ -24,6 +27,9 @@ switch($http_host){
         break;
     case "www.181show.com":
         define("SITENAME","181show");
+        break;
+    case "tester.kedo.tv":
+        define("SITENAME","tester");
         break;
     case "www.kedo.tv":
         define("SITENAME","kedo");
@@ -141,11 +147,7 @@ function curl_get($get_url,$get_param){
     $sContent = curl_exec($oCurl);
     $aStatus = curl_getinfo($oCurl);
     curl_close($oCurl);
-	
-	if($tm){
-		echo "<br>loadBegin:".getMillisecond();
-	}
-	
+
     if(intval($aStatus["http_code"])==200){
         return $sContent;
     }else{

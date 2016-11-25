@@ -9,6 +9,8 @@ define(function(require, exports, module) {
     var hall = require("./anchor-hall");
     var chat = require("./anchor-chat");
     var list = require("./anchor-list");
+	var pet = require("./anchor-pet");
+	var treasureBox = require("./anchor-treasureBox");
     module.exports = {
 		status : function(data) {
 			lvs.stat(jQuery.parseJSON(data));
@@ -128,6 +130,22 @@ define(function(require, exports, module) {
 		Runway: function(data){
 			UIF.log("全站跑道：" + data);
 			chat.runMsg(jQuery.parseJSON(data));
+		},
+		initPetData : function(data){
+			UIF.log("宠物信息：" + data);
+			pet.initPetData(jQuery.parseJSON(data));
+		},
+		updatePetData : function(data){
+			UIF.log("刷新宠物信息：" + data);
+			pet.updatePetData(jQuery.parseJSON(data));
+		},
+		petBirth : function(data){
+			UIF.log("宠物出生");
+			pet.petBirth();
+		},
+		initTreasureBox : function(data){
+			UIF.log("宝箱数据：" + data);
+			treasureBox.initTreasureBoxData(jQuery.parseJSON(data));
 		}
 	}
 })

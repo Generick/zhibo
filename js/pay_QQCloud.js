@@ -93,12 +93,7 @@ $(function(){
             // login.show();
             //return false;
         }
-        if($("#P_RMB").text() == 30000){
-            money=0.01;
-        }else{
-            money= $("#P_RMB").text();
-        }
-
+        money= $("#P_RMB").text();
         $("#WIDtotal_fee").val(money);
         $("#WIDtotal_Id").val(currentUserId);
         var data={
