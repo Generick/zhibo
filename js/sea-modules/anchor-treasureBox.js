@@ -20,8 +20,11 @@ define(function(require, exports, module) {
 		timetick_timeout : 0,
 		Switch : false,
 		socketAfter : function() {
+			var base = this;
 			if(this.Switch){
-				UIF.handler.sendTreasureBoxInit(null, this.initTreasureBoxData);
+				UIF.handler.sendTreasureBoxInit(null, function(data){
+					base.initTreasureBoxData(data);
+				});
 			}
 		},
 		init : function(options) {
