@@ -70,7 +70,7 @@ define(function(require, exports, module) {
 			base.cache.put("anchorInfo", false);
 			base.roomNumber = data.roomNumber;
 			for (var i = 0; i < base.modules.size(); i++) {
-				var msg = base.modules.element(0);
+				var msg = base.modules.element(i);
 				if (msg != null) {
 					var call = msg.value;
 					if (call != null && typeof call.init === "function") {
@@ -208,7 +208,7 @@ define(function(require, exports, module) {
 				base.sendWelcome();
 				base.resconnect();
 				for (var i = 0; i < base.modules.size(); i++) {
-					var msg = base.modules.element(0);
+					var msg = base.modules.element(i);
 					if (msg != null) {
 						var call = msg.value;
 						if (call != null && typeof call.socketAfter === "function") {
