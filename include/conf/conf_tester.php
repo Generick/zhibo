@@ -20,5 +20,5 @@ define('_REDIS_HOST_','09ede0159aa64f40.m.cnhza.kvstore.aliyuncs.com');//redis�
 define('_REDIS_PWD_','09ede0159aa64f40:fooBa4eds');//redis地址
 define('_REDIS_KEYB_','ext');
 
-$vsn = md5(date('Y-d-m')."S%ERWR");
+$vsn = md5(date('Y-d-m')."S%ERddWR");
 
