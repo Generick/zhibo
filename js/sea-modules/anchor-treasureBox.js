@@ -25,10 +25,10 @@ define(function(require, exports, module) {
 			}
 		},
 		init : function(options) {
-			if(UIF.handler.roomType){
+			if(UIF.roomType){
 				var param = jQuery.parseJSON(options.params);
-				if(param.hasOwnProperty(UIF.handler.roomType)){
-					this.Switch = param[UIF.handler.roomType]["boxs"];
+				if(param.hasOwnProperty(UIF.roomType)){
+					this.Switch = param[UIF.roomType]["boxs"];
 				}
 			}
 			this.initView();

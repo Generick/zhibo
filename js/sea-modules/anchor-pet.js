@@ -30,10 +30,10 @@ define(function(require, exports, module) {
 			this.sendPetInit();
 		},
 		init : function(options) {
-			if(UIF.handler.roomType){
+			if(UIF.roomType){
 				var param = jQuery.parseJSON(options.params);
-				if(param.hasOwnProperty(UIF.handler.roomType)){
-					this.Switch = param[UIF.handler.roomType]["pets"];
+				if(param.hasOwnProperty(UIF.roomType)){
+					this.Switch = param[UIF.roomType]["pets"];
 				}
 			}
 			this.initPetView();
