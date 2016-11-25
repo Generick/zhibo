@@ -41,9 +41,7 @@ define(function(require, exports, module) {
 				}
 				$(".viewer").removeClass("on"), $(this).addClass("on"), $(".manager-list").show(), $(".viewer-list").hide();
 			});
-			$("#choSong").on("click", function() {
-				base.flushBuUsers();
-			});
+
 		},
         welcome : function(data){
             console.log(data+'进入');
@@ -197,6 +195,14 @@ define(function(require, exports, module) {
 				}
 			});
 			$("#song_item").html(hs);
+            try {
+                $("#nano-guardList").nanoScroller();
+                $("#nano-guardList").nanoScroller({
+                    scroll : 'bottom'
+                });
+            } catch (e) {
+                UIF.handler.weblog(e);
+            }
 		},
 		flushManagers : function() {
 			var base = this;
