@@ -63,8 +63,8 @@ define(function(require, exports, module) {
 			setting.init();
 			lvs.init(data);
 			backLoad.init();
-			pet.init();
-			treasureBox.init();
+			//pet.init();
+		    //treasureBox.init();
 			base.roomNumber = data.roomNumber;
 			window.onkeydown = function(event) {
 				var keyCode;
@@ -207,13 +207,9 @@ define(function(require, exports, module) {
 			}
 		},
 		weblog : function(msg) {
-
-                if(UIF.handler.QQGame == true){
-                    document.writeln(msg);
-                }else{
-                     console.log(msg);
-                }
-            
+            if (eval(this.weblg)){
+             console.log(msg);
+            }
 
 		},
 		restDoit : function() {
