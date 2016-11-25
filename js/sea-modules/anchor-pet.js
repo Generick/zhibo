@@ -24,11 +24,18 @@ define(function(require, exports, module) {
 		PetHelpTip : "训练或者赠送主播礼物都可以增加精灵经验，帮助精灵升级。\n每天可以训练精灵3次，提升爵位等级可以增加每日训练次数",
 		// 随机动画间隔时间
 		RandomAnimateGap : 30,
+		Switch : false,
 		RandomAnimateSwitch : true,
-		socketAfter : function(options) {
-			UIF.handler.weblog(options.params);
+		socketAfter : function() {
+			this.sendPetInit();
 		},
-		init : function() {
+		init : function(options) {
+			if(UIF.handler.roomType){
+				var param = jQuery.parseJSON(options.params);
+				if(param.hasOwnProperty(UIF.handler.roomType)){
+					this.Switch = param[UIF.handler.roomType]["pets"];
+				}
+			}
 			this.initPetView();
 			this.initPetOptView();
 			this.initPetInteractions();
@@ -193,7 +200,9 @@ define(function(require, exports, module) {
 			this.updateTrainGapShow();
 		},
 		sendPetInit : function() {
-			UIF.handler.sendPetInit();
+			if(this.Switch){
+				UIF.handler.sendPetInit();
+			}
 		},
 		showPetUI : function(initL, initT) {
 

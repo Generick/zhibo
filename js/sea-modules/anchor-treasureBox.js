@@ -18,8 +18,21 @@ define(function(require, exports, module) {
 		current_count : 0,
 		timetick : 0,
 		timetick_timeout : 0,
-
-		init : function() {
+		Switch : false,
+		
+		socketAfter : function() {
+			if(Switch){
+				UIF.handler.sendTreasureBoxInit(null, this.initTreasureBoxData);
+			}
+		},
+		
+		init : function(options) {
+			if(UIF.handler.roomType){
+				var param = jQuery.parseJSON(options.params);
+				if(param.hasOwnProperty(UIF.handler.roomType)){
+					this.Switch = param[UIF.handler.roomType]["boxs"];
+				}
+			}
 			this.initView();
 			this.initInteractions();
 		},

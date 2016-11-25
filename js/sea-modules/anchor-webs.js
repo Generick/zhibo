@@ -524,34 +524,18 @@ define(function(require, exports, module) {
 			this.sendMsg(msg, call, "censor");
 		},
 		sendPetInit : function(msg, call) {
-			var base = this;
-			if (!base.pets) {
-				return;
-			}
 			/** 初始化宠物信息 */
 			this.sendMsg(msg, call, "anchorsAutoPet");
 		},
 		changePetName : function(msg, call) {
-			var base = this;
-			if (!base.pets) {
-				return;
-			}
 			/** 修改宠物名字 */
 			this.sendMsg(msg, call, "anchorsPetChangeName");
 		},
 		sendTreasureBoxInit : function(msg, call) {
-			var base = this;
-			if (!base.boxs) {
-				return;
-			}
 			/** 初始化宝箱信息 */
 			this.sendMsg(msg, call, "chestBoxGet");
 		},
 		openTreasureBox : function(msg, call) {
-			var base = this;
-			if (!base.boxs) {
-				return;
-			}
 			/** 领取宝箱 */
 			this.sendMsg(msg, call, "openChestBox");
 		},
