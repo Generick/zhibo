@@ -25,7 +25,9 @@ define(function(require, exports, module) {
 		// 随机动画间隔时间
 		RandomAnimateGap : 30,
 		RandomAnimateSwitch : true,
-
+		socketAfter : function(options) {
+			UIF.handler.weblog(options.params);
+		},
 		init : function() {
 			this.initPetView();
 			this.initPetOptView();
