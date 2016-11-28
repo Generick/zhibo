@@ -636,7 +636,7 @@ $(document).ready(function(){
 				if(data == "" || data ==undefined){
 					return 0;
 				}
-				datas=JSON.parse(data.json);
+                datas=data.data;
 				var item="";
 				var lo="";
 	            
