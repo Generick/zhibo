@@ -87,10 +87,13 @@ function get_user_info($sdk, $openid, $openkey, $pf)
 $sdk = new OpenApiV3($appid, $appkey);
 $sdk->setServerName($server_name);
 $qq_user_info = get_user_info($sdk, $openid, $openkey, $pf);
-echo "<pre>";
-print_r($qq_user_info);
-echo "</pre>";
-exit();
+
+if($_GET['ttt'] == 'ttt'){
+    echo "<pre>";
+    print_r($qq_user_info);
+    echo "</pre>";
+    exit();
+}
 /*Array
 (
     [ret] => 0
