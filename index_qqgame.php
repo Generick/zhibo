@@ -28,8 +28,9 @@ if ($_GET['param'] == 'userinfo' and $_GET['openid'] != null) {
     $sql1 = "SELECT coins,xcoins from bu_user_packs WHERE userId = '{$userId}'";
     $packs = $db->GetRow($sql1);
     $xcoins = $packs['xcoins']? $packs['xcoins']:0;
+    $xcoins = intval($xcoins);
     $coins = $packs['coins'];
-
+    $coins = intval($coins);
 
     $rs = $db->GetAll("select b.roomNumber,
 (SELECT o.online from bu_user_online o where o.roomnumber = b.roomNumber and o.anchors=1) online,
@@ -49,7 +50,7 @@ and b.isFollow =1
         $ac['live_id'] = $v['roomNumber'];
         $ac['room_name'] = urldecode($v['nickname']);
         $ac['nickname'] = urldecode($v['nickname']);
-        $ac['emcee_avatar'] = $v['avatar'];
+        $ac['emcee_avatar'] = _IMAGES_DOMAIN_.$v['avatar'];
         $ac['user_count'] = $v['followeds'];
         $jsona = json_decode($v['packs'],1);
         $rtype = $jsona['rtype'];
