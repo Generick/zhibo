@@ -86,9 +86,6 @@ if ($_GET['param'] != "" and is_numeric($_GET['param']) and !empty($user)) {
     $_SESSION['param'] =  'built';
     header('location:/' . $roomNumber);
     exit();
-}else{
-    console_log($user);
-    console_log($_SESSION['param']);
 }
 //banner
 $page_var['v'] = md5(date('Y-d-m'));
