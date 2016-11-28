@@ -64,7 +64,7 @@ and b.isFollow =1
     $userInfo[result] = 0;
     $userInfo[resultstr] ='success';
     $data['balance'] = array(
-        'cons' => $coins
+        'coins' => $coins
     );
     $data['livelist'] = $ab;
 
