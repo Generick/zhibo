@@ -651,10 +651,10 @@ $(document).ready(function(){
                 url: ulList.anc_banner,
                 data: ""
             }, function (data) {
-                if(data == "" || data ==undefined){
+                if(data == "" || data == undefined){
                     return 0;
                 }
-                datas=data;
+                datas=data.data;
                 var item="";
                 var lo="";
 
