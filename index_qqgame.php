@@ -27,7 +27,7 @@ if ($_GET['param'] == 'userinfo' and $_GET['openid'] != null) {
 
     $sql1 = "SELECT coins,xcoins from bu_user_packs WHERE userId = '{$userId}'";
     $packs = $db->GetRow($sql1);
-    $xcoins = $packs['xcoins'];
+    $xcoins = $packs['xcoins']? $packs['xcoins']:0;
     $coins = $packs['coins'];
 
 
@@ -47,8 +47,8 @@ and b.isFollow =1
     foreach ($rs as $k => $v) {
 
         $ac['live_id'] = $v['roomNumber'];
-        $ac['room_name'] = $v['nickname'];
-        $ac['nickname'] = $v['nickname'];
+        $ac['room_name'] = urldecode($v['nickname']);
+        $ac['nickname'] = urldecode($v['nickname']);
         $ac['emcee_avatar'] = $v['avatar'];
         $ac['user_count'] = $v['followeds'];
         $jsona = json_decode($v['packs'],1);
@@ -69,9 +69,7 @@ and b.isFollow =1
     $data['livelist'] = $ab;
 
     $userInfo[data]=$data;
-    echo "<pre>";
-    print_r($userInfo);
-    echo "</pre>";
+    echo json_encode($userInfo);
     exit();
 
 }

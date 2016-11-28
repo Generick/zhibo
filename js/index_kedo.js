@@ -288,7 +288,7 @@ $(document).ready(function(){
 				if(data == "" || data ==undefined){
 					return 0;
 				}
-				data=JSON.parse(data);
+				data=data;
 	
 				if (data.data != null && data.data.length > 0) {
 					var s_ht3;
@@ -482,7 +482,7 @@ $(document).ready(function(){
 					return 0;
 				}
 				try{
-					var datas=JSON.parse(data);
+					var datas=data;
 					//alert(datas);
 				}catch(e){
 					var datas="";
@@ -551,7 +551,7 @@ $(document).ready(function(){
 				}
 	
 				try{
-					var dealData=JSON.parse(data);
+					var dealData=data;
 				}catch(e){
 					var datas="";
 					return false;
@@ -611,7 +611,7 @@ $(document).ready(function(){
 				}
 				try
 				{
-					datas=JSON.parse(data);
+					datas=data;
                     datas =datas.data;
 				}
 				catch (e)
