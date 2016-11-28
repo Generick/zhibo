@@ -72,7 +72,7 @@ function get_user_info($sdk, $openid, $openkey, $pf)
     $params = array(
         'openid' => $openid,
         'openkey' => $openkey,
-        'pf' => 'qzone',
+        'pf' => 'qqgame',
         'charset'=>'utf-8',
         'userip'=>get_real_ip(),
         'flag'=>1,
