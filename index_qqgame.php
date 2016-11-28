@@ -83,8 +83,9 @@ $user = checklogin();
 $page_var['user'] = $user;
 $page_var['source'] = "QQGame";
 
-if ($_GET['param'] != "" and is_numeric($_GET['param']) and !empty($user) or $_SESSION['param'] =='built') {
-    $roomNumber = $_GET["param"]; 
+if ($_GET['param'] != "" and is_numeric($_GET['param']) and !empty($user)) {
+    $roomNumber = $_GET["param"];
+    $_SESSION['param'] =='built';
     header('location:/' . $roomNumber);
     exit();
 }
