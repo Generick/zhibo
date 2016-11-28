@@ -21,9 +21,10 @@ if($_SERVER[HTTP_HOST]=='kedo.tv'){
 //ini_set('display_errors','On');
 //error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);
 error_reporting(0);
-define('_CDNDOMAIN_','http://mains.kedo.tv');//cdn服务器
-define('_INTERFACE_','http://www.kedo.tv');//接口
+define('_CDNDOMAIN_','http://mains.kedo.tv');//文件加速服务器
 define('_IMAGES_DOMAIN_','http://img.kedo.tv');//图片服务器
+define('_IMGPLUS_DOMAIN_','http://static.kedo.tv');//图片服务器
+define('_INTERFACE_','http://www.kedo.tv');//接口
 define('_MYSQL_HOST_','rm-bp13gx2a9433w42r1.mysql.rds.aliyuncs.com');//数据库地址
 define('_MYSQL_DB_','anchors');//数据库名
 define('_MYSQL_USER_','anchors');//数据库用户名
