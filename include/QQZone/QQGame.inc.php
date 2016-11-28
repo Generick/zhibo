@@ -72,7 +72,7 @@ function get_user_info($sdk, $openid, $openkey, $pf)
     $params = array(
         'openid' => $openid,
         'openkey' => $openkey,
-        'pf' => 'qqgame',
+        'pf' => 'qzone',
         'charset'=>'utf-8',
         'userip'=>get_real_ip(),
         'flag'=>1,
@@ -87,7 +87,6 @@ function get_user_info($sdk, $openid, $openkey, $pf)
 $sdk = new OpenApiV3($appid, $appkey);
 $sdk->setServerName($server_name);
 $qq_user_info = get_user_info($sdk, $openid, $openkey, $pf);
-echo "1";
 echo "<pre>";
 print_r($qq_user_info);
 echo "</pre>";
