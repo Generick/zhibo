@@ -20,10 +20,12 @@ if(isset($_GET[openid]) and $_GET[openid] !=''){
     exit();
 }
 
+
 $user=checklogin();
 $page_var['user']=$user;
 $page_var['vsn']=$vsn;
-//banner
+
+$page_var['sid']=session_id();
 
 
 //smarty初始化

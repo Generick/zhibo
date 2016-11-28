@@ -21,6 +21,7 @@
         var inf_domain="{$inf_domain}";
         var site_skin="{$site_skin}";
         var currentUserId="{$user.userId}";
+        var sid="{$sid}";
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -215,7 +216,7 @@
                 <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
                 {/if}
                 {if $user.socType==1}
-                <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="btn btn-md btn-default colorBlue pull-right">OW</a>
+                <a  target="_blank" href="javascript:;" ahref = "{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                 {/if}
             </p>
 
@@ -371,15 +372,34 @@
 
 <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<!-- <script src="http://minigame.qq.com/plat/social_hall/app_frame/qqgamelib.js"></script>
-<script type="text/javascript">
-  $(function(){
-    if(GameAPI.SNSBrowser.IsQQGame()){
-        GameAPI.Aux.chk_origin = null;
-        GameAPI.SNSBrowser.SetSize(912, 1500);
-        GameAPI.SNSBrowser.SetOK();
+{literal}
+<script>
+
+    var url = "/rest/checkToken/checkOW.mt";
+    var data ={
+        sessionId:sid,
+        userId:currentUserId
     }
-});
-  </script> -->
+    $(".oww").click(function(){
+        var _this =$(this);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            dataType: "json",
+            timeout: 120000,
+            success: function (data, textStatus, jqXHR) {
+                location.href=$('.oww').attr("ahref");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                //alert(params.url+" error code:"+textStatus);
+
+            }
+        });
+    })
+
+
+</script>
+{/literal}
 </body>
 </html>
