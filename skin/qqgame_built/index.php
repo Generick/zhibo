@@ -12,7 +12,7 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
-
+    <script type="text/javascript" charset="utf-8"src="http://fusion.qq.com/fusion_loader?appid=1105729630&platform=qqgame"></script>
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
@@ -358,7 +358,6 @@ if($thisHome ==1){
                 <span class="dbicon"></span>
                 <span class="kb">0</span>
                 <span class="mt-charge"><a target="_blank" href="javascript:;" class="showPay">充值</a></span>
-                <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
             </div>
         </div>
     </div>

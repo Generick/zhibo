@@ -93,7 +93,6 @@ $smarty = new Smarty;
 $smarty->caching = false;
 $smarty->template_dir = "./templates";
 $smarty->compile_dir = "./templates_c";
-$smarty->assign('pointlimit', $pointlimit);
 
 //当前页面标示
 $page_var['current_page'] = "index";
