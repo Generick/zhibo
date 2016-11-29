@@ -122,14 +122,14 @@
 
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    // var st = $(".visitant-record").attr("style");
-                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                     var st = $(".visitant-record").attr("style");
+                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
                 if(chatarea != null){
-                    //$(".chat-area").attr("style",chatarea);
+                    $(".chat-area").attr("style",chatarea);
                 }
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
                     var st = $(".chat-area").attr("style");

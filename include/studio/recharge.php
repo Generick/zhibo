@@ -94,16 +94,12 @@
             url: "/rest/www/cloud.jsp",
             data: data,
             cache: false
-        }).done(function (data) {
-
+        }).done(function(data) {
             if(data != "fail"){
-                //$(".paybox").html().show();
+                $('.payArea').hide();
                 $("body").append(data);
+
             }
-
-
-        }).error(function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus);
         });
     })
 

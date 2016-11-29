@@ -80,15 +80,14 @@ if (isset($_GET[openid]) and $_GET[openid] != '') {
 $user = checklogin();
 $page_var['user'] = $user;
 $page_var['source'] = "QQGame";
+$page_var['vsn']=$vsn;
 
 if ($_GET['param'] != "" and is_numeric($_GET['param']) and !empty($user)) {
     $roomNumber = $_GET["param"];
     $_SESSION['param'] =  'built';
-    header('location:/' . $roomNumber);
+    header('location:/' . $roomNumber."?param=built");
     exit();
 }
-//banner
-$page_var['v'] = md5(date('Y-d-m'));
 //smarty初始化
 $smarty = new Smarty;
 $smarty->caching = false;
