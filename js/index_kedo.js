@@ -407,18 +407,19 @@ $(document).ready(function(){
 			gameHtml:
 				' <div class="col-lg-3 col-sm-3 col-xs-4">\
 					<a href="{0}" class="thumbnail">\
+					{1}\
 					<div class="recommImg thumbnail">\
-						<img src="{1}&w=248&h=127" alt="{2}"/>\
+						<img src="{2}&w=248&h=127" alt="{3}"/>\
 						<div class="thumb-bar"></div>\
 						<div class="shadow"></div>\
 						<div class="playBtn"></div>\
 					</div>\
 					<div class="recommB">\
 						<div class="clearfix">\
-							<span class="color33 pull-left ellipsis">{3}</span>\
+							<span class="color33 pull-left ellipsis">{4}</span>\
 							<div class="color99 pull-right">\
 								<span class="glyphicon glyphicon-eye-open"></span>\
-								<span>{4}</span>\
+								<span>{5}</span>\
 							</div>\
 						</div>\
 						<p class="color99 ellipsis f12">{5}</p>\
@@ -463,8 +464,7 @@ $(document).ready(function(){
 				if(s !="0" || s != 0 ){
 					if(b ==1){
 						return '<span class="glyphicon glyphicon-stats"></span>';
-					}
-					else{
+					}else{
 						return '<span class="iszb"></span>';
 					}
 				}else{
@@ -622,7 +622,7 @@ $(document).ready(function(){
 				var li="";
 				if (datas != null && datas.length > 0) {
 					$.each(datas, function(k, v) {
-						li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,ndecodeURI(v.title));
+						li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,compiliter.tolive(v.online,1),v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,ndecodeURI(v.title));
 					})
 					$("#gameAnchors").append(li);
 				}
