@@ -291,7 +291,7 @@ a{text-decoration:none; }
 .no-circle{border-radius:70px;width:70px;height:80px;background: url("/skin/desert/images/pic_guardlevel_kong.png") no-repeat;  cursor: pointer;}
 
 /*聊天框*/
-.chat-area{width:340px;height: 530px; position: absolute;/*left:1360px;*/ right:20px; top:60px; background:url("../images/chatBg.png"); background-size: cover; }
+.chat-area{width:340px;height: 530px; position: absolute; right:20px; top:280px; background:url("../images/chatBg.png"); background-size: cover; }
 .cr-body{height: 300px;min-height: 300px;}
 /* .pr-body{height: 100px;min-height: 100px;}*/
 .bCorner{height: 130px;min-height: 130px; position: relative; }
@@ -467,7 +467,6 @@ a{text-decoration:none; }
 .mainGifts{width:502px;height:92px;position: absolute;right: -10px;}
 .giftHeader{  position:absolute;top: -36px;left:15px; }
 .giftHeader .redot:after{content: '.';position: absolute;right:-4px;top:-2px;color:#cd0000; background: url("/skin/comic/images/redot.png") no-repeat; width:14px; height:15px;}
-// .giftHeader #redot{content: '.';position: absolute;width:14px; height:15px; right:-4px;top:-2px;color:#cd0000;font-size:30px; background: url("/skin/comic/images/redot.png") no-repeat;}
 .giftHeader:before{content: "",}
 .giftHeader span{position:absolute; z-index:104; color: #fff;text-align: center;height: 49px;width:66px;background-color:rgba(46,46,46,0.6); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#992e2e2e,endColorstr=#992e2e2e);  float: left;cursor: pointer;border-radius:2px;font-size: 12px}
 .giftHeader #gt25{background: url("/skin/comic/images/gt25.png") no-repeat; left:0; }

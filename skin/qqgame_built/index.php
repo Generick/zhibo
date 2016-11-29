@@ -91,64 +91,6 @@
         }
         $(function() {
             try {
-                /*var guardarea = UIF.getCookie("guard-area");
-                 if(guardarea != null){
-                 $(".guard-area").attr("style",guardarea);
-                 }*/
-                /*$(".guard-area").draggable({containment:"parent",stop:function(){
-                 var st = $(".guard-area").attr("style");
-                 UIF.setCookie("guard-area",st,60 * 24 * 60);
-                 }});
-                 $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208});*/
-
-                /*var rankarea = UIF.getCookie("rank-area");
-                 if(rankarea != null){
-                 $(".rank-area").attr("style",rankarea);
-                 }*/
-                /*$(".rank-area").draggable({containment:"parent",stop:function(){
-                 var st = $(".rank-area").attr("style");
-                 UIF.setCookie("rank-area",st,60 * 24 * 60);
-                 }});
-                 $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208});*/
-
-                /*var giftrecord = UIF.getCookie("gift-record");
-                 if(giftrecord != null){
-                 $(".gift-record").attr("style",giftrecord);
-                 }
-                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                 var st = $(".gift-record").attr("style");
-                 UIF.setCookie("gift-record",st,60 * 24 * 60);
-                 }});
-                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
-
-                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
-                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-
-                 }});
-                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});*/
-
-                /*var chatarea = UIF.getCookie("chat-area");
-                 if(chatarea != null){
-                 $(".chat-area").attr("style",chatarea);
-                 }*/
-                /*$(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                 var st = $(".chat-area").attr("style");
-                 UIF.setCookie("chat-area",st,60 * 24 * 60);
-                 }});
-                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
-                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
-                 $("#nano-pubChatList").nanoScroller();
-                 $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
-                 } );*/
-
-                /*var newGifts = UIF.getCookie("newGifts");
-                 if(newGifts != null){
-                 $(".newGifts").attr("style",newGifts);
-                 }*/
-                /*$(".newGifts").draggable({containment:"parent",stop:function(){
-                 var st = $(".newGifts").attr("style");
-                 UIF.setCookie("newGifts",st,60 * 24 * 60);
-                 }});*/
                 if(UIF.currentUserID != null && UIF.currentUserID.length > 0){
                     UIF.radials = radialIndicator("#indicatorContainer2", {
                         radius: 44,
@@ -172,64 +114,6 @@
 
 <body onselectstart="return false;">
 <div class="<?php echo $BSG;?>">
-<?php if(1==2){?>
-    <div class="nav-left">
-        <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
-            <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>"  ></a>
-        </div>
-        <?php if(!$user){ ?>
-            <div class="nl-nologin">
-                <span class="login-left">登录</span>
-                <span class="regis-left">注册</span>
-            </div>
-        <?php }else{?>
-            <div class="nl-login">
-                <div class="main-title">
-                    <div class="infoBox" style="display:none">
-                        <div class="mt-right">
-                            <div class="mt-rl1">　
-                                <div class="mtname"><?php echo $user["nickname"]?></div>
-                                <em></em>
-                                <div class="mtlevel"></div>
-                            </div>
-                            <div class="mt-rl2">
-                                <div class="mt-outer">
-                                    <div class="mt-inner" style="width:<?php echo $user["totalpoint"]/$user["nextrichV"]*100?>%"></div>
-                                </div>
-                            </div>
-                            <div class="mt-rl3">
-                                <span class="dbicon"></span>
-                                <span class="kb">0</span>
-                                <span class="mt-charge"><a  href="/pay.php">充值</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ospan"><a href="/centeros.php"  > <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>" alt="<?php echo $user["nickname"]?>"></a></div>
-                </div>
-            </div>
-        <?php }?>
-        <div class="nl-nav">
-            <ul>
-                <li class="cur"><a href="/index_qqgame.php">首页</a></li>
-                <li><a href="/square.php" >广场</a></li>
-                <li><a href="/mall.php"   >商城</a></li>
-                <li><a href="javascript:"   >活动</a></li>
-                <li class="aud"><span><a href="#">观众</a></span></li>
-                <li><a href="/help.php"  >帮助</a></li>
-            </ul>
-        </div>
-
-        <div class="nl-else">
-            <ul class="euc">
-                <li style="height: 30px;"></li>
-                <li class="eu"><a  href="javascript:"   class="download"><span>下载</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="wenjuan"><span>问卷</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="libao"><span>礼包</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="jubao"><span>举报</span></a></li>
-            </ul>
-        </div>
-    </div>
-<?php }?>
 <div class="gift-record myDiv3" id="recordResizable">
     <div class="gr-header"><span id="span"></span></div>
     <div class="nano gr-main" id="nano-sendGiftList">
