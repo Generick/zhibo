@@ -335,7 +335,7 @@ a:hover{
 	}
 	.follow a>img,.rank a>img,.rich a>img,.fans a>img{
         width: 21%;
-        height: 21%;
+        height: auto;
     }
     .foLi .foLi .state,.foLi .state{
     	width:40%;
