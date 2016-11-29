@@ -10,8 +10,8 @@ $page_var['user']=$user;
 
 $datas = file_get_contents(_INTERFACE_."/files/allAnchors.json");
 $acceptData=json_decode($datas, true);
-$page_var['sqAnchorList']=json_decode($acceptData,true);
-$page_var['sqAnchorList']=$page_var['sqAnchorList']['data'];
+
+$page_var['sqAnchorList']=$acceptData['data'];
 
 //smarty初始化
 $smarty = new Smarty;

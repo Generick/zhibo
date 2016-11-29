@@ -157,7 +157,7 @@ a{text-decoration:none; }
 .myDiv5{width: 340px;position:absolute; }
 .gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute}
 .visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute}
-.gr-main{height:150px;}
+.gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
 .gf-outer-header{cursor: move}
@@ -195,7 +195,7 @@ a{text-decoration:none; }
 .gift-record ul li .gr-song,.cr-to{color: #FFffff}
 .gift-record ul li .gr-reciver{color: #ffc937;}
 .gift-record ul li img{width: 22px;  height: 24px; vertical-align: middle; margin: 0 3px 0 2px;}
-.gr-header,.vr-header{color:#FFffff;margin:12px;cursor: move}
+.gr-header,.vr-header{color:#FFffff;margin:12px 0 0 15px;cursor: move}
 .gr-header #span{ background:url(/skin/comic/images/gift_tit.png); width: 66px; height: 20px; display: block; }
 .vr-header .span{ background:url("/skin/comic/images/icon_guibinxi.png") no-repeat; width: 50px; height: 20px; display: block; }
 .handler{width: 15px;    height: 10px;  border-right: solid 1px #888;    border-bottom: solid 1px #888;  position: absolute;   right: 1px; bottom: 1px;  cursor: nw-resize;}
@@ -239,7 +239,7 @@ a{text-decoration:none; }
 
 
 .r-week{margin: 0 1px;}
-.rk-contents .nano{height:165px; }
+.rk-contents .nano{height:146px; }
 .rk-conn ul li{height:45px; padding-left: 15px;margin-bottom: 4px;}
 .rk-conn ul li >div{float: left;color: #f2f8fa}
 .rkb-xuu{width:25px;height: 30px;background-repeat:no-repeat;margin-top: 10px;background: url("../images/sucai-hao.png")no-repeat}
@@ -361,7 +361,7 @@ a{text-decoration:none; }
 /*点歌*/
 .chs2{padding:10px;width:340px;height:480px;overflow:hidden; }
 #song_item{padding:0;  position:relative; color:#f8f8f8;}
-#song_item li {height:24px;  margin-left :5px; }
+#song_item li {height:24px;  margin-left :15px; }
 .chs2 .price{height:38px; text-align:center; line-height:38px; font-size:14px; }
 .chs2 li{font-size: 12px;  height: 24px; line-height: 24px;   padding-left: 26px; position: relative;}
 .chs2 li .singer{position:absolute; left:154px; color:#2d3d3c; }
@@ -486,9 +486,7 @@ a{text-decoration:none; }
 .inshaddow >div{float:left;vertical-align: middle}
 .toLeft,.toRight{width:12px;height: 72px;background-position: center;cursor: pointer}
 .toLeft{background:url("/skin/comic/images/arrowL.png") center no-repeat}
-// .toLeft:hover{background:url("/skin/desert/images/zuojiantou-hover.png") center no-repeat}
 .toRight{background:url("/skin/comic/images/arrowR.png")  center no-repeat;}
-// .toRight:hover{background:url("/skin/desert/images/youjiantou-hover.png")  center no-repeat;}
 .giftLists{width:376px;height: 65px;margin-top:3px; overflow: hidden; }
 .sendNum{position: absolute; }
 .hideli{display: none}

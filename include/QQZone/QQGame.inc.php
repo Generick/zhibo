@@ -87,9 +87,13 @@ function get_user_info($sdk, $openid, $openkey, $pf)
 $sdk = new OpenApiV3($appid, $appkey);
 $sdk->setServerName($server_name);
 $qq_user_info = get_user_info($sdk, $openid, $openkey, $pf);
-/*echo "<pre>";
-print_r($qq_user_info);
-echo "</pre>";*/
+
+if($_GET['ttt'] == 'ttt'){
+    echo "<pre>";
+    print_r($qq_user_info);
+    echo "</pre>";
+    exit();
+}
 /*Array
 (
     [ret] => 0
@@ -142,7 +146,7 @@ if($_GET['openid']){//优先设置qq id
                 $user=checklogin();
                 setcookie("firstinstall",'1',time()+360,"/",_COOKIE_DOMAIN_);
                 $_COOKIE['firstinstall']=1;
-                header("location:/index.php?openid=$openid&openkey=$openkey&tk=reg_login");
+              //  header("location:/index_qqgame.php?openid=$openid&openkey=$openkey&tk=reg_login");
             }
         }
     }else{//无法从qq获取正确信息，返回到首页

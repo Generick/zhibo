@@ -481,9 +481,7 @@ a{text-decoration:none; }
 .inshaddow >div{float:left;vertical-align: middle}
 .toLeft,.toRight{width:12px;height: 72px;background-position: center;cursor: pointer}
 .toLeft{background:url("/skin/comic/images/arrowL.png") center no-repeat}
-// .toLeft:hover{background:url("/skin/desert/images/zuojiantou-hover.png") center no-repeat}
 .toRight{background:url("/skin/comic/images/arrowR.png")  center no-repeat;}
-// .toRight:hover{background:url("/skin/desert/images/youjiantou-hover.png")  center no-repeat;}
 .giftLists{width:376px;height: 65px;margin-top:3px; overflow: hidden; }
 .sendNum{position: absolute; }
 .hideli{display: none}
@@ -784,9 +782,7 @@ a{text-decoration:none; }
 
 
 @media only screen and (max-width:1448px){
-    // .bg2{background:url(../images/bg_02.jpg) no-repeat center top; background-color:black;  }
     .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
-    // .bg1{background:url(../images/bg_01_02.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .no-live{
         /*width:468px;*/

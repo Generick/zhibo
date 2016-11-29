@@ -57,11 +57,12 @@ include($app_path."include/footer.inc.php");
     <div class="main">
         <div class="live-video">
             <video width="" height="" controls>
-                <source src="http://hls.181show.com/mutian-ucloud/1020/playlist.m3u8" type="video/ogg" />
+                <source src="http://hls.181show.com/mutian-ucloud/{$roomnumber}/playlist.m3u8" type="video/ogg" />
             </video>
         </div>
     </div>
     <footer></footer>
+
 </body>
 </html>
 
