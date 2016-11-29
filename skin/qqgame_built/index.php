@@ -442,5 +442,5 @@ if($thisHome ==1){
 <div class="login-html"></div>
 </div>
 </body>
-
+<?php console_log("pf:",$_SESSION['pf']);?>
 </html>
