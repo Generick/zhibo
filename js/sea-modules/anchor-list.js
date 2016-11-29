@@ -44,7 +44,7 @@ define(function(require, exports, module) {
 
 		},
         welcome : function(data){
-            console.log(data+'进入');
+            UIF.handler.weblog(JSON.stringify(data)+'进入');
         },
 		addUsers : function(data) {
 			if (!UIF.handler.userList.containsKey(data.userId)) {
