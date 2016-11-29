@@ -594,6 +594,7 @@ a:hover{
 	}
 	.recomm a.thumbnail{
 		background-color: #f4f4f4;
+		position: relative;
 	}
 	.recomm .thumbnail.recommImg{
 		margin-bottom: 0;
