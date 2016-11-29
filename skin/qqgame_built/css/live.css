@@ -476,7 +476,6 @@ a{text-decoration:none; }
 .mainGifts{width:502px;height:92px;position: absolute;right: -10px;}
 .giftHeader{  position:absolute;top: -36px;left:15px; }
 .giftHeader .redot:after{content: '.';position: absolute;right:-4px;top:-2px;color:#cd0000; background: url("/skin/comic/images/redot.png") no-repeat; width:14px; height:15px;}
-// .giftHeader #redot{content: '.';position: absolute;width:14px; height:15px; right:-4px;top:-2px;color:#cd0000;font-size:30px; background: url("/skin/comic/images/redot.png") no-repeat;}
 .giftHeader:before{content: "",}
 .giftHeader span{position:absolute; z-index:104; color: #fff;text-align: center;height: 49px;width:66px;background-color:rgba(46,46,46,0.6); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#992e2e2e,endColorstr=#992e2e2e);  float: left;cursor: pointer;border-radius:2px;font-size: 12px}
 .giftHeader #gt25{background: url("/skin/comic/images/gt25.png") no-repeat; left:0; }
@@ -490,9 +489,7 @@ a{text-decoration:none; }
 .inshaddow >div{float:left;vertical-align: middle}
 .toLeft,.toRight{width:12px;height: 72px;background-position: center;cursor: pointer}
 .toLeft{background:url("/skin/comic/images/arrowL.png") center no-repeat}
-// .toLeft:hover{background:url("/skin/desert/images/zuojiantou-hover.png") center no-repeat}
 .toRight{background:url("/skin/comic/images/arrowR.png")  center no-repeat;}
-// .toRight:hover{background:url("/skin/desert/images/youjiantou-hover.png")  center no-repeat;}
 .giftLists{width:376px;height: 65px;margin-top:3px; overflow: hidden; }
 .sendNum{position: absolute; }
 .hideli{display: none}
@@ -770,3 +767,18 @@ a{text-decoration:none; }
     width: 60px;
     cursor: pointer;
 }
+
+
+.nl-login {position: relative;}
+.ospan{position: relative;top: 15px; display:block;width:70px;margin-left:5px;text-align:center;color: #FFffff;font-size: 12px;margin-top: 9px;cursor: pointer;}
+.infoBox2{width:212px;height: 90px; border-radius: 3px;background:rgba(230, 232, 207, 0.8);position: absolute;font-size: 12px;margin-left: 2px;top: -70px;z-index: 99999; display: none }
+.mt-right{position: absolute;right:15px;top:15px;width:180px}
+.mt-right .mt-rl1,.nl-login .mt-right .mt-rl2,.nl-login .mt-right .mt-rl1{width:205px;}
+.mt-right .mt-rl1 .mtname{color: #0C1417;font-size: 14px;float: left}
+.mt-right .mt-rl1 .mtlevel{color: #fff;float: right;margin-right: 20px;}
+.mt-right .mt-rl2 .mt-outer{width:180px;height: 8px;background-color:#4C5A63;border:2px solid #fff;position: relative;margin: 10px 0;overflow: hidden;}
+.mt-right .mt-rl2 .mt-inner{background: #F9BA00;height: 4px;max-width: 100%}
+.mt-rl3 span{float: left}
+.kb{color: #ffffff;background: url("/img/icon_money.png") left center no-repeat; padding-left: 30px;height: 28px; display: inline-block; width:96px; line-height: 28px;  margin-right: 5px;overflow: hidden}
+.mt-charge{width: 40px;height: 28px;color:#fff;background:#FDBC02;cursor: pointer;text-align: center;line-height: 28px;display: inline-block;border-radius: 3px;overflow: hidden;margin-left: 5px;margin-right: 5px;}
+.nl-login-out{float: right;margin-top: 7px}

@@ -362,22 +362,6 @@ if($thisHome ==1){
             </div>
         </div>
     </div>
-    <style>
-        .nl-login {position: relative;}
-        .ospan{position: relative;top: 15px; display:block;width:70px;margin-left:5px;text-align:center;color: #FFffff;font-size: 12px;margin-top: 9px;cursor: pointer;}
-        .infoBox2{width:212px;height: 90px; border-radius: 3px;background:rgba(230, 232, 207, 0.8);position: absolute;font-size: 12px;margin-left: 2px;top: -70px;z-index: 99999; display: none }
-        .mt-right{position: absolute;right:15px;top:15px;width:180px}
-        .mt-right .mt-rl1,.nl-login .mt-right .mt-rl2,.nl-login .mt-right .mt-rl1{width:205px;}
-        .mt-right .mt-rl1 .mtname{color: #0C1417;font-size: 14px;float: left}
-        .mt-right .mt-rl1 .mtlevel{color: #fff;float: right;margin-right: 20px;}
-        .mt-right .mt-rl2 .mt-outer{width:180px;height: 8px;background-color:#4C5A63;border:2px solid #fff;position: relative;margin: 10px 0;overflow: hidden;}
-        .mt-right .mt-rl2 .mt-inner{background: #F9BA00;height: 4px;max-width: 100%}
-        .mt-rl3 span{float: left}
-        .kb{color: #ffffff;background: url("/img/icon_money.png") left center no-repeat; padding-left: 30px;height: 28px; display: inline-block; width:96px; line-height: 28px;  margin-right: 5px;overflow: hidden}
-        .mt-charge{width: 40px;height: 28px;color:#fff;background:#FDBC02;cursor: pointer;text-align: center;line-height: 28px;display: inline-block;border-radius: 3px;overflow: hidden;margin-left: 5px;margin-right: 5px;}
-        .nl-login-out{float: right;margin-top: 7px}
-    </style>
-
     <div class="portraits">
         <div class="circle  login-circle">
             <div class="portBg hoverAble"></div>
@@ -391,9 +375,6 @@ if($thisHome ==1){
     <div class="mainGifts" >
         <div class="giftHeader">
             <?php
-            echo "<pre>";
-            //print_r($giftcate);
-            echo "</pre>";
             foreach($giftcate as $giftcateid=>$arr):
                 if($giftcateid != 25){
                     $ac = '';
