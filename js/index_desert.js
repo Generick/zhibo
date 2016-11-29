@@ -654,12 +654,12 @@ $(document).ready(function(){
                 if(data == "" || data ==undefined){
                     return 0;
                 }
-                datas=data;
+                console.log(data)
                 var item="";
                 var lo="";
 
-                if (datas != null && datas.length > 0) {
-                    $.each(datas, function(k, v) {
+                if (data != null && data.length > 0) {
+                    $.each(data, function(k, v) {
                         $active = k==0?"active":"";
                         if(v.url !=''){
                             item+='<div class="item '+$active+'"><a href="'+v.url+'"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
