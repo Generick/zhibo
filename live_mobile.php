@@ -61,7 +61,7 @@ include($app_path . "include/footer.inc.php");
     <section class="banner">
         <a href="#">
 
-            <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4" width="750" height="800" autoplay="autoplay"
+            <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4" height="1200" autoplay="autoplay"
                x-webkit-airplay="true" controls="controls" muted="true"></video>
 
             <!-- <img src="img/live_girl.png" width="100%" height="100%" alt="" /> -->
