@@ -23,55 +23,185 @@ include($app_path . "include/footer.inc.php");
 <html>
 <head>
     <title>视频播放</title>
-    <style>
-        html, body {
-            background-repeat: no-repeat;
-            min-width: 1284px;
-            font-family: "微软雅黑", "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #5F544E;
-            min-height: 883px;
-            position: relative;
-            height: 100%;
-        }
-
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        *, *:before, *:after {
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-        }
-
-        header {
-            margin-top: 10px;
-        }
-
-        .portrait {
-            margin-left: 20px;
-            width: 70px;
-            height: 70px;
-            border-radius: 35px;
-        }
-
-        .live-video {
-            margin: 20px auto;
-            width: 90%;
-            height: 90%;
-            overflow: hidden;
-        }
-
-        .live-video video {
-            width: 100%;
-            height: 100%
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/templates/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/templates/css/style.css">
 </head>
-<body>
-<header>
+<body class="body">
+<div class="header">
+    <header>
+        <div class="row">
+            <div class="anchLive firAnch col-xs-2 clearfix bgff">
+                <div class="anchImg pull-left">
+                    <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                    <div class="degree glyphicon glyphicon-ok"></div>
+                </div>
+                <div class="firAnchR pull-left">
+                    <p class="colorR">LIVE</p>
+                    <!--<p class="color99">34567</p>-->
+                </div>
+            </div>
+            <div class="anchLive col-xs-2">
+                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+            </div>
+            <div class="anchLive col-xs-2">
+                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+            </div>
+            <div class="anchLive col-xs-2">
+                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+            </div>
+            <div class="anchLive col-xs-2">
+                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+            </div>
+            <div class="anchLive col-xs-2">
+                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <a href="#">
+            <img src="img/live_girl.png" width="100%" height="100%" alt="" />
+            <div class="txt clearfix">
+                <div class="txtL pull-left">
+                    <p class="tit">女人如歌节目</p>
+                    <p>
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        5644654</p>
+                </div>
+                <div class="txtR pull-right">
+                    关注她
+                    <span class="glyphicon glyphicon-heart colorR"></span>
+                </div>
+            </div>
+        </a>
+    </section>
+</div>
+
+    <section class="recommend">   
+       <div class="page-header clearfix">
+            <h4 class="pull-left">
+                <span class="glyphicon glyphicon-fire"></span>
+                精彩推荐
+            </h4>     
+        </div>
+       <div class="row">
+          <div class="col-xs-4">
+                <a href="#" class="thumbnail">
+                  <div class="recommImg thumbnail">
+                    <img src="img/pic_01.png" alt=""/>
+                    <div class="thumb-bar"></div>
+                  </div>
+                  <div class="recommB">
+                    <div class="clearfix">
+                      <span class="color33 pull-left">女人如歌节目</span>
+                      <div class="color99 pull-right">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span>2143324</span>
+                      </div>
+                    </div>
+                    <p class="color99 ellipsis">谢霆锋百科知识 舒淇变迷妹点赞</p>
+                  </div>
+
+                </a>
+              </div>
+          <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color33 pull-left">女人如歌节目</span>
+                  <div class="color99 pull-right">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color33 pull-left">女人如歌节目</span>
+                  <div class="color99 pull-right">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-4">
+                <a href="#" class="thumbnail">
+                  <div class="recommImg thumbnail">
+                    <img src="img/pic_01.png" alt=""/>
+                    <div class="thumb-bar"></div>
+                  </div>
+                  <div class="recommB">
+                    <div class="clearfix">
+                      <span class="color33 pull-left">女人如歌节目</span>
+                      <div class="color99 pull-right">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span>2143324</span>
+                      </div>
+                    </div>
+                    <p class="color99 ellipsis">谢霆锋百科知识 舒淇变迷妹点赞</p>
+                  </div>
+
+                </a>
+              </div>
+          <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color33 pull-left">女人如歌节目</span>
+                  <div class="color99 pull-right">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color33 pull-left">女人如歌节目</span>
+                  <div class="color99 pull-right">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+        </div>
+    </section>
+<!-- <header>
     <div><img src="<?php echo _IMAGES_DOMAIN_ . "/" . $showinfo['avatar'] ?>" class="portrait"
               alt="<?php echo $showinfo['nickname']; ?>"/></div>
     <div></div>
@@ -82,7 +212,7 @@ include($app_path . "include/footer.inc.php");
                x-webkit-airplay="true" controls="controls" muted="true"></video>
     </div>
 </div>
-<footer></footer>
+<footer></footer> -->
 
 </body>
 </html>
