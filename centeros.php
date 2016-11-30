@@ -31,7 +31,7 @@ $_POST = safe_output($_POST);
 
     ?>
 <!DOCTYPE html>
-<html>
+<html ng-app="personalCenter">
 <head lang="en">
 <meta charset="UTF-8">
 <title>个人中心－蝌蚪TV</title>
@@ -41,6 +41,8 @@ $_POST = safe_output($_POST);
 <script src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/login.js?20150908"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/skin/ym/js/centeros.js?20150908"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/angular/angular.min.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/angular/center.js"></script>
 
 </head>
 <body>
