@@ -133,7 +133,7 @@
                      var st = $(".visitant-record").attr("style");
                     UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
-                $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+                $(".visitant-record").resizable({alsoResize:".vr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
                 if(chatarea != null){
@@ -252,7 +252,7 @@
 
 <div class="visitant-record myDiv3" id="visitantResizable">
     <div class="vr-header"><span class="span"></span></div>
-    <div class="nano gr-main" id="nano-guardList">
+    <div class="nano vr-main" id="nano-guardList">
         <ul id="song_item" class="content"></ul>
     </div>
     <div class="lt"></div>
