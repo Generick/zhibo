@@ -779,8 +779,9 @@ a{text-decoration:none; }
         top:268px;
     }
 
-    .gift-record,.visitant-record{
-        top:478px;
+    .visitant-record {
+        top: 60px;
+        right: 20px;
     }
 
 }
