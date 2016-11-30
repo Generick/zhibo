@@ -58,26 +58,27 @@ include($app_path . "include/footer.inc.php");
         </div>
     </header>
 
-    <section class="banner">
-        <a href="#">
+    <section class="banner row">
+        <div class="col-xs-12">
+            <a href="#">
+                <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4" height="1000" autoplay="autoplay"
+                   x-webkit-airplay="true" controls="controls" muted="true"></video>
 
-            <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4" height="1200" autoplay="autoplay"
-               x-webkit-airplay="true" controls="controls" muted="true"></video>
-
-            <!-- <img src="img/live_girl.png" width="100%" height="100%" alt="" /> -->
-            <div class="txt clearfix">
-                <div class="txtL pull-left">
-                    <p class="tit">女人如歌节目</p>
-                    <p>
-                        <span class="glyphicon glyphicon-eye-open"></span>
-                        5644654</p>
+                <!-- <img src="img/live_girl.png" width="100%" height="100%" alt="" /> -->
+                <div class="txt clearfix">
+                    <div class="txtL pull-left">
+                        <p class="tit">女人如歌节目</p>
+                        <p>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            5644654</p>
+                    </div>
+                    <div class="txtR pull-right">
+                        关注她
+                        <span class="glyphicon glyphicon-heart colorR"></span>
+                    </div>
                 </div>
-                <div class="txtR pull-right">
-                    关注她
-                    <span class="glyphicon glyphicon-heart colorR"></span>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </section>
 </div>
 
