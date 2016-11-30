@@ -120,9 +120,13 @@ if ($hash_room['rtype'] == "2") {
     $gameInfo =array();
     $anchorUserId= $showinfop['userId'];
     $conn = $db->CacheGetRow(10, "select * from bu_game_room_set s LEFT JOIN bu_game_room g ON s.gaid = g.id  WHERE s.uid = {$showinfo['userId']}");
-    $gameInfo['bgImage'] = _IMAGES_DOMAIN_."/".$conn['bgImage'];
-
-    $gameInfo['gameUrl'] = $conn ['gameUrl'];
+    if(!empty($conn)){
+        $gameInfo['set'] =1;
+        $gameInfo['bgImage'] = _IMAGES_DOMAIN_."/".$conn['bgImage'];
+        $gameInfo['gameUrl'] = $conn ['gameUrl'];
+    }else{
+        $gameInfo['set'] =0;
+    }
 
     include($app_path . "/skin/game_comic/index.php");
     exit();

@@ -124,7 +124,11 @@
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
-                $(".visitant-record").resizable({alsoResize:".vr-main",minHeight:150,minWidth:208});
+
+                var visitant = UIF.getCookie("visitant-record");
+                if(visitant != null){
+                    $(".visitant-record").attr("style",visitant);
+                }
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
                      var st = $(".visitant-record").attr("style");
                     UIF.setCookie("visitant-record",st,60 * 24 * 60);
@@ -178,27 +182,27 @@
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
 
     .down-load-game{position: absolute;width: 120px;height: 76px;right: 0;top: 100px;}
-    .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("http://images.181show.com/0ea1d0b60a6bb6464ee520092acf49f0?p=0") no-repeat;}
+    .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
 
     @media only screen and (min-width:1920px) and (min-height:806px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("http://images.181show.com/0ea1d0b60a6bb6464ee520092acf49f0?p=0") no-repeat;}
+        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
     }
     @media only screen and (max-width:1919px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("http://images.181show.com/0ea1d0b60a6bb6464ee520092acf49f0?p=0") no-repeat;}
+        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
     }
     @media only screen and (max-width:1448px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']."?p=0&w=1444&h=812";?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 90px;height: 57px;background: url("http://images.181show.com/0ea1d0b60a6bb6464ee520092acf49f0?p=0&w=90&h=57") no-repeat;}
+        .btn-down-game{display:inline-block;width: 90px;height: 57px;background: url("/skin/game_comic/images/startGame_1444.png") no-repeat;}
     }
     @media only screen and (max-width:1284px) {
         .game-bake-ground{  background: url(<?php echo $gameInfo['bgImage']."?p=0&w=1284&h=722";?>) no-repeat center top;   background-color: black;  }
-        .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("http://images.181show.com/0ea1d0b60a6bb6464ee520092acf49f0?p=0&w=80&h=51") no-repeat;}
+        .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("/skin/game_comic/images/startGame_1284.png") no-repeat;}
     }
 </style>
 
-<body class="game-bake-ground"  onselectstart="return false;">
+<body class="<?php echo $gameInfo['set']?'game-bake-ground':'bg1';?>"  onselectstart="return false;">
 <div class="nav-left">
     <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
         <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
@@ -330,9 +334,12 @@
             <a id="isfollow1" href="javascript:;" class="button button-highlight button-rounded followme"title="关注TA">关注</a>
             <a id="isfollow0" href="javascript:;"title="已关注" class="button button-rounded button-tiny followout"  style="display: none">取消关注</a>
         </div>
-        <div class="down-load-game">
-            <a href="<?php echo  $gameInfo['gameUrl'];?>" class="btn-down-game"></a>
-        </div>
+        <?php if($gameInfo['set'] == 1){  ?>
+            <div class="down-load-game">
+                <a href="<?php echo  $gameInfo['gameUrl'];?>" class="btn-down-game"></a>
+            </div>
+        <?php }?>
+
 
     </div>
 </div>
