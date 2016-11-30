@@ -72,6 +72,7 @@ define('ajax/recharge', function(require, exports, module){
 
             if(data.data){
                 $.each(data.data, function(k,v) {
+                    if(v.orderId != null){
                         $h += '<tr  class="dd">\
                         <td>'+ v.orderId+'</td>\
                         <td>'+v.createDT+'</td>\
@@ -80,6 +81,7 @@ define('ajax/recharge', function(require, exports, module){
                         <td>'+ toStyle(v.topups)+'</td>\
                         <td>'+ toStatus(v.tradeStatus) +'</td>\
                         </tr>';
+                    }
                 });
 
             }else{
