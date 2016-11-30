@@ -41,26 +41,30 @@ include($app_path . "include/footer.inc.php");
                 </div>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
         </div>
     </header>
 
     <section class="banner">
         <a href="#">
-            <img src="img/live_girl.png" width="100%" height="100%" alt="" />
+
+            <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4" width="750" height="800" autoplay="autoplay"
+               x-webkit-airplay="true" controls="controls" muted="true"></video>
+
+            <!-- <img src="img/live_girl.png" width="100%" height="100%" alt="" /> -->
             <div class="txt clearfix">
                 <div class="txtL pull-left">
                     <p class="tit">女人如歌节目</p>
@@ -107,7 +111,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="img/pic_01.png" alt=""/>
+                <img src="templates/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
@@ -126,7 +130,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="img/pic_01.png" alt=""/>
+                <img src="templates/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
@@ -145,7 +149,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
                 <a href="#" class="thumbnail">
                   <div class="recommImg thumbnail">
-                    <img src="img/pic_01.png" alt=""/>
+                    <img src="templates/img/pic_01.png" alt=""/>
                     <div class="thumb-bar"></div>
                   </div>
                   <div class="recommB">
@@ -164,7 +168,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="img/pic_01.png" alt=""/>
+                <img src="templates/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
@@ -183,7 +187,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="img/pic_01.png" alt=""/>
+                <img src="templates/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
