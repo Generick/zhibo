@@ -89,22 +89,24 @@
     $('.imChar').on('click',function(){
         $("#WIDtotal_fee").val(data.WIDtotal_fee);
         $("#WIDtotal_Id").val(UIF.currentUserID);
+
         $.ajax({
             type: "POST",
             url: "/rest/www/cloud.jsp",
             data: data,
-            cache: false
-        }).done(function (data) {
-
-            if(data != "fail"){
-                //$(".paybox").html().show();
-                $("body").append(data);
+            cache: false,
+            success: function (data, textStatus, jqXHR) {
+                if(data != "fail"){
+                    $('.payArea').hide();
+                    $("body").append(data);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(params.url+" error code:"+textStatus);
             }
-
-
-        }).error(function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus);
         });
+
+
     })
 
     $(function(){

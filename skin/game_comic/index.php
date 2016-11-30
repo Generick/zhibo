@@ -1,6 +1,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title><?php echo addslashes($showinfo['nickname'])?>的直播间_美女视频聊天室_视频交友房间_视频秀 &ndash; <?php echo $page_var['site_name']?></title>
     <meta name="description" content="<?php echo $page_var['site_name']?>是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <meta content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" name="keywords">
@@ -12,15 +13,19 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="http://www.zhangxinxu.com/study/down/ie-css3.htc" />
+    <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
-    <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?<?php echo $vsn;?>" type="text/css" rel="stylesheet" />
-    <link href="<?php echo $page_var['cdn_domain']?>/css/nanoScroller.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/css/login.css?v=<?php echo $vsn;?>" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/nanoScroller.css" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/skin/<?php echo $skinType;?>/css/live.css?v=<?php echo $vsn;?>" rel="stylesheet">
-    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css" rel="stylesheet">
+    <link href="<?php echo $page_var['cdn_domain']?>/static_data/images_css/icons.css?v=<?php echo $vsn;?>" rel="stylesheet">
     <link href="<?php echo $page_var['cdn_domain']?>/css/gift.css?v=<?php echo $vsn;?>" rel="stylesheet" type="text/css"/>
+
     <script type="text/javascript">
         var UIF = {
             cdn_img : "<?php echo _IMAGES_DOMAIN_?>",
@@ -60,7 +65,6 @@
                 })
                 seajs.use("/js/sea-modules/anchor-webs",function(W){
                     UIF.handler = new W();
-                    UIF.handler.QQGame = true;
                     UIF.handler.loading(UIF.currentUserID, UIF.currentToken, UIF.currentRoomNumber);
                 });
             },
@@ -120,12 +124,16 @@
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
-                $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+
+                var visitant = UIF.getCookie("visitant-record");
+                if(visitant != null){
+                    $(".visitant-record").attr("style",visitant);
+                }
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
                      var st = $(".visitant-record").attr("style");
                     UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
-                $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+                $(".visitant-record").resizable({alsoResize:".vr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
                 if(chatarea != null){
@@ -170,10 +178,34 @@
     </script>
 </head>
 
-<body class="<?php echo $BSG;?>" onselectstart="return false;">
+<style>
+    .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
+
+    .down-load-game{position: absolute;width: 120px;height: 76px;right: 0;top: 100px;}
+    .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
+
+    @media only screen and (min-width:1920px) and (min-height:806px){
+        .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
+        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
+    }
+    @media only screen and (max-width:1919px){
+        .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
+        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
+    }
+    @media only screen and (max-width:1448px){
+        .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']."?p=0&w=1444&h=812";?>') no-repeat center top; background-color:black;  }
+        .btn-down-game{display:inline-block;width: 90px;height: 57px;background: url("/skin/game_comic/images/startGame_1444.png") no-repeat;}
+    }
+    @media only screen and (max-width:1284px) {
+        .game-bake-ground{  background: url(<?php echo $gameInfo['bgImage']."?p=0&w=1284&h=722";?>) no-repeat center top;   background-color: black;  }
+        .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("/skin/game_comic/images/startGame_1284.png") no-repeat;}
+    }
+</style>
+
+<body class="<?php echo $gameInfo['set']?'game-bake-ground':'bg1';?>"  onselectstart="return false;">
 <div class="nav-left">
     <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
-        <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>"  ></a>
+        <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>" target="_blank"></a>
     </div>
     <?php if(!$user){ ?>
         <div class="nl-nologin">
@@ -198,32 +230,35 @@
                         <div class="mt-rl3">
                             <span class="dbicon"></span>
                             <span class="kb">0</span>
-                            <span class="mt-charge"><a  href="/pay.php">充值</a></span>
+                            <span class="mt-charge"><a target="_blank" href="/pay.php">充值</a></span>
+                            <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
                         </div>
                     </div>
                 </div>
-                <div class="ospan"><a href="/centeros.php"  > <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>" alt="<?php echo $user["nickname"]?>"></a></div>
+                <div class="ospan"><a href="/centeros.php" target="_blank"> <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>" alt="<?php echo $user["nickname"]?>"></a></div>
             </div>
         </div>
     <?php }?>
     <div class="nl-nav">
         <ul>
-            <li class="cur"><a href="/index_qqgame.php">首页</a></li>
-            <li><a href="/square.php" >广场</a></li>
-            <li><a href="/mall.php"   >商城</a></li>
-            <li><a href="javascript:"   >活动</a></li>
+            <li class="cur"><a href="/"  target="_blank">首页</a></li>
+            <li><a href="/square.php"  target="_blank">广场</a></li>
+            <li><a href="/mall.php"  target="_blank">商城</a></li>
+            <li><a href="javascript:"  target="_blank">活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
-            <li><a href="/help.php"  >帮助</a></li>
+            <li><a href="/help.php" target="_blank">帮助</a></li>
+           <!-- <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
+            <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>-->
         </ul>
     </div>
     <?php if(1==2){?>
         <div class="nl-else">
             <ul class="euc">
                 <li style="height: 30px;"></li>
-                <li class="eu"><a  href="javascript:"   class="download"><span>下载</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="wenjuan"><span>问卷</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="libao"><span>礼包</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="jubao"><span>举报</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="wenjuan"><span>问卷</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="libao"><span>礼包</span></a></li>
+                <li class="eu"><a  href="javascript:" target="_blank" class="jubao"><span>举报</span></a></li>
             </ul>
         </div>
     <?php }?>
@@ -241,7 +276,7 @@
 
 <div class="visitant-record myDiv3" id="visitantResizable">
     <div class="vr-header"><span class="span"></span></div>
-    <div class="nano gr-main" id="nano-guardList">
+    <div class="nano vr-main" id="nano-guardList">
         <ul id="song_item" class="content"></ul>
     </div>
     <div class="lt"></div>
@@ -252,8 +287,8 @@
 <!-- 跑道开始 -->
 <div class="list_top">
     <div id="hottitle" class="hot">
-        <ul id="ulid">
-
+        <ul id="ulid">      
+          
         </ul>
     </div>
 </div>
@@ -299,8 +334,16 @@
             <a id="isfollow1" href="javascript:;" class="button button-highlight button-rounded followme"title="关注TA">关注</a>
             <a id="isfollow0" href="javascript:;"title="已关注" class="button button-rounded button-tiny followout"  style="display: none">取消关注</a>
         </div>
+        <?php if($gameInfo['set'] == 1){  ?>
+            <div class="down-load-game">
+                <a href="<?php echo  $gameInfo['gameUrl'];?>" class="btn-down-game"></a>
+            </div>
+        <?php }?>
+
+
     </div>
 </div>
+
 <!--中间部分结束-->
 <div id="CustomGiftSwf"></div>
 <div id="LevelUpPlayerSwf"></div>
@@ -415,11 +458,12 @@ if($thisHome ==1){
             </div>
             <a id="sendChatBtn" href="javascript:;" class="sendChatBtn sdChat"></a>
         </div>
-        <div style="display:none;" class="FaceBox toggleBox" id="faces">
-            <div class="col" id="facesBd"></div>
-            <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
-            <div class="clear"></div>
-        </div>
+    <div style="display:none;" class="FaceBox toggleBox" id="faces">
+        <div class="col" id="facesBd"></div>
+        <ul><li data_tp="lx" class="on">流行</li><li data_tp="jd">经典</li></ul>
+        <div class="clear"></div>
+    </div>
+    <div id="sendChatNotice" style="    position: relative;top: -53px;width: 76px;height: 20px;border-radius: 2px;left: 222px;display: none;background-color: white;overflow: hidden;font-size: 12px;line-height: 20px;padding-left: 5px;"> [0]秒</div>
     </div>
     <div class="chs2 nano" id="nano-songList" style="display: none">
         <div class="song-main content">
@@ -446,7 +490,7 @@ if($thisHome ==1){
     <?php }?>
 </div>
 <div class="chat-tip-warp toggleBox" >
-    <div class="chat-tip-top">
+    <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
             <div class="levelss"></div>
@@ -563,6 +607,9 @@ if($thisHome ==1){
 </div>
 <div class="shadow" id="shadow"></div>
 <div class="login-html"></div>
+ <!-- <script language="javascript">
+    new Marquee(["hottitle","ulid"],2,1,248,30,20,0,2);
+ </script> -->
 </body>
 
 </html>

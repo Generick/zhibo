@@ -12,7 +12,7 @@
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/radialIndicator-master/radialIndicator.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/jquery.nicescroll-master/jquery.nicescroll.min.js"></script>
     <script src="<?php echo $page_var['cdn_domain']?>/js/sea-modules/seajs/seajs/3.0.0/sea.js"></script>
-
+    <script type="text/javascript" charset="utf-8"src="http://fusion.qq.com/fusion_loader?appid=1105729630&platform=qqgame"></script>
     <link rel="stylesheet" type="text/css" href="/css/buttons.css" />
     <link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
     <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
@@ -91,64 +91,6 @@
         }
         $(function() {
             try {
-                /*var guardarea = UIF.getCookie("guard-area");
-                 if(guardarea != null){
-                 $(".guard-area").attr("style",guardarea);
-                 }*/
-                /*$(".guard-area").draggable({containment:"parent",stop:function(){
-                 var st = $(".guard-area").attr("style");
-                 UIF.setCookie("guard-area",st,60 * 24 * 60);
-                 }});
-                 $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208});*/
-
-                /*var rankarea = UIF.getCookie("rank-area");
-                 if(rankarea != null){
-                 $(".rank-area").attr("style",rankarea);
-                 }*/
-                /*$(".rank-area").draggable({containment:"parent",stop:function(){
-                 var st = $(".rank-area").attr("style");
-                 UIF.setCookie("rank-area",st,60 * 24 * 60);
-                 }});
-                 $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208});*/
-
-                /*var giftrecord = UIF.getCookie("gift-record");
-                 if(giftrecord != null){
-                 $(".gift-record").attr("style",giftrecord);
-                 }
-                 $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                 var st = $(".gift-record").attr("style");
-                 UIF.setCookie("gift-record",st,60 * 24 * 60);
-                 }});
-                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
-
-                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
-                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-
-                 }});
-                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});*/
-
-                /*var chatarea = UIF.getCookie("chat-area");
-                 if(chatarea != null){
-                 $(".chat-area").attr("style",chatarea);
-                 }*/
-                /*$(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                 var st = $(".chat-area").attr("style");
-                 UIF.setCookie("chat-area",st,60 * 24 * 60);
-                 }});
-                 $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
-                 $( ".chat-area" ).on( "resizestop", function( event, ui ) {
-                 $("#nano-pubChatList").nanoScroller();
-                 $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
-                 } );*/
-
-                /*var newGifts = UIF.getCookie("newGifts");
-                 if(newGifts != null){
-                 $(".newGifts").attr("style",newGifts);
-                 }*/
-                /*$(".newGifts").draggable({containment:"parent",stop:function(){
-                 var st = $(".newGifts").attr("style");
-                 UIF.setCookie("newGifts",st,60 * 24 * 60);
-                 }});*/
                 if(UIF.currentUserID != null && UIF.currentUserID.length > 0){
                     UIF.radials = radialIndicator("#indicatorContainer2", {
                         radius: 44,
@@ -172,64 +114,6 @@
 
 <body onselectstart="return false;">
 <div class="<?php echo $BSG;?>">
-<?php if(1==2){?>
-    <div class="nav-left">
-        <div class="live-logo" style="width:70px;height:82px;background:url(/skin/logo_zhibojian.png) no-repeat;position: absolute;top:8px;left:2px">
-            <a style="width:54px;height:32px;display: inline-block" href="<?php echo _CDNDOMAIN_?>"  ></a>
-        </div>
-        <?php if(!$user){ ?>
-            <div class="nl-nologin">
-                <span class="login-left">登录</span>
-                <span class="regis-left">注册</span>
-            </div>
-        <?php }else{?>
-            <div class="nl-login">
-                <div class="main-title">
-                    <div class="infoBox" style="display:none">
-                        <div class="mt-right">
-                            <div class="mt-rl1">　
-                                <div class="mtname"><?php echo $user["nickname"]?></div>
-                                <em></em>
-                                <div class="mtlevel"></div>
-                            </div>
-                            <div class="mt-rl2">
-                                <div class="mt-outer">
-                                    <div class="mt-inner" style="width:<?php echo $user["totalpoint"]/$user["nextrichV"]*100?>%"></div>
-                                </div>
-                            </div>
-                            <div class="mt-rl3">
-                                <span class="dbicon"></span>
-                                <span class="kb">0</span>
-                                <span class="mt-charge"><a  href="/pay.php">充值</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ospan"><a href="/centeros.php"  > <img src="<?php echo _IMAGES_DOMAIN_.'/'.$user[avatar]?>" alt="<?php echo $user["nickname"]?>"></a></div>
-                </div>
-            </div>
-        <?php }?>
-        <div class="nl-nav">
-            <ul>
-                <li class="cur"><a href="/index_qqgame.php">首页</a></li>
-                <li><a href="/square.php" >广场</a></li>
-                <li><a href="/mall.php"   >商城</a></li>
-                <li><a href="javascript:"   >活动</a></li>
-                <li class="aud"><span><a href="#">观众</a></span></li>
-                <li><a href="/help.php"  >帮助</a></li>
-            </ul>
-        </div>
-
-        <div class="nl-else">
-            <ul class="euc">
-                <li style="height: 30px;"></li>
-                <li class="eu"><a  href="javascript:"   class="download"><span>下载</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="wenjuan"><span>问卷</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="libao"><span>礼包</span></a></li>
-                <li class="eu"><a  href="javascript:"   class="jubao"><span>举报</span></a></li>
-            </ul>
-        </div>
-    </div>
-<?php }?>
 <div class="gift-record myDiv3" id="recordResizable">
     <div class="gr-header"><span id="span"></span></div>
     <div class="nano gr-main" id="nano-sendGiftList">
@@ -474,26 +358,9 @@ if($thisHome ==1){
                 <span class="dbicon"></span>
                 <span class="kb">0</span>
                 <span class="mt-charge"><a target="_blank" href="javascript:;" class="showPay">充值</a></span>
-                <span class="nl-login-out"><a href="/login.php?action=logout&amp;type=html">退出</a></span>
             </div>
         </div>
     </div>
-    <style>
-        .nl-login {position: relative;}
-        .ospan{position: relative;top: 15px; display:block;width:70px;margin-left:5px;text-align:center;color: #FFffff;font-size: 12px;margin-top: 9px;cursor: pointer;}
-        .infoBox2{width:212px;height: 90px; border-radius: 3px;background:rgba(230, 232, 207, 0.8);position: absolute;font-size: 12px;margin-left: 2px;top: -70px;z-index: 99999; display: none }
-        .mt-right{position: absolute;right:15px;top:15px;width:180px}
-        .mt-right .mt-rl1,.nl-login .mt-right .mt-rl2,.nl-login .mt-right .mt-rl1{width:205px;}
-        .mt-right .mt-rl1 .mtname{color: #0C1417;font-size: 14px;float: left}
-        .mt-right .mt-rl1 .mtlevel{color: #fff;float: right;margin-right: 20px;}
-        .mt-right .mt-rl2 .mt-outer{width:180px;height: 8px;background-color:#4C5A63;border:2px solid #fff;position: relative;margin: 10px 0;overflow: hidden;}
-        .mt-right .mt-rl2 .mt-inner{background: #F9BA00;height: 4px;max-width: 100%}
-        .mt-rl3 span{float: left}
-        .kb{color: #ffffff;background: url("/img/icon_money.png") left center no-repeat; padding-left: 30px;height: 28px; display: inline-block; width:96px; line-height: 28px;  margin-right: 5px;overflow: hidden}
-        .mt-charge{width: 40px;height: 28px;color:#fff;background:#FDBC02;cursor: pointer;text-align: center;line-height: 28px;display: inline-block;border-radius: 3px;overflow: hidden;margin-left: 5px;margin-right: 5px;}
-        .nl-login-out{float: right;margin-top: 7px}
-    </style>
-
     <div class="portraits">
         <div class="circle  login-circle">
             <div class="portBg hoverAble"></div>
@@ -507,9 +374,6 @@ if($thisHome ==1){
     <div class="mainGifts" >
         <div class="giftHeader">
             <?php
-            echo "<pre>";
-            //print_r($giftcate);
-            echo "</pre>";
             foreach($giftcate as $giftcateid=>$arr):
                 if($giftcateid != 25){
                     $ac = '';
@@ -577,5 +441,5 @@ if($thisHome ==1){
 <div class="login-html"></div>
 </div>
 </body>
-
+<?php console_log("pf:",$_SESSION['pf']);?>
 </html>

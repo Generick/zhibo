@@ -124,16 +124,20 @@
                 }});
                 $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
+                var visitant = UIF.getCookie("visitant-record");
+                if(visitant != null){
+                    $(".visitant-record").attr("style",visitant);
+                }
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    // var st = $(".visitant-record").attr("style");
-                    //UIF.setCookie("visitant-record",st,60 * 24 * 60);
+                     var st = $(".visitant-record").attr("style");
+                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
                 }});
                 $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
 
                 var chatarea = UIF.getCookie("chat-area");
                 if(chatarea != null){
-                    //$(".chat-area").attr("style",chatarea);
+                    $(".chat-area").attr("style",chatarea);
                 }
                 $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
                     var st = $(".chat-area").attr("style");
@@ -171,11 +175,6 @@
             }
             UIF.init();
         });
-    </script>
-    <script type="text/javascript">
-        window.onbeforeunload = function(){
-            //  return "quit?";
-        }
     </script>
 </head>
 
@@ -224,8 +223,8 @@
             <li><a href="javascript:"  target="_blank">活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
             <li><a href="/help.php" target="_blank">帮助</a></li>
-            <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
-            <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>
+           <!-- <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
+            <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>-->
         </ul>
     </div>
     <?php if(1==2){?>
