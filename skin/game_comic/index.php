@@ -340,7 +340,7 @@
             <a id="isfollow1" href="javascript:;" class="button button-highlight button-rounded followme"title="关注TA">关注</a>
             <a id="isfollow0" href="javascript:;"title="已关注" class="button button-rounded button-tiny followout"  style="display: none">取消关注</a>
         </div>
-        <?php if($gameInfo['set'] == 1 and $gameInfo['startGame'] == true){  ?>
+        <?php if($gameInfo['set'] == 1 and $gameInfo['startGame'] == true and $gameInfo['startGameUrl'] != ""){  ?>
             <div class="start-load-game">
                 <a href="<?php echo  $gameInfo['startGameUrl'];?>" class="btn-start-game"></a>
             </div>
