@@ -24,7 +24,7 @@ include($app_path . "include/footer.inc.php");
 <head>
     <title>视频播放</title>
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/templates/livePhone/livePhone/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
 </head>
 <body class="body">
 <div class="header">
@@ -149,7 +149,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
                 <a href="#" class="thumbnail">
                   <div class="recommImg thumbnail">
-                    <img src="templates/livePhone/livePhone/img/pic_01.png" alt=""/>
+                    <img src="templates/livePhone/img/pic_01.png" alt=""/>
                     <div class="thumb-bar"></div>
                   </div>
                   <div class="recommB">
