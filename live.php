@@ -112,6 +112,7 @@ $hash_room = $redis->hGetAll($rtp_key);
 $roomType = $hash_room['rtype'] ? $hash_room['rtype'] : "";
 
 $roomType_p = '';
+console_log($hash_room['rtype']);
 if ($hash_room['rtype'] == "2") {
     $roomType = 'game';
     $roomType_p = $roomType . "_";
@@ -121,13 +122,13 @@ if ($hash_room['rtype'] == "2") {
     $anchorUserId= $showinfop['userId'];
     $conn = $db->CacheGetRow(10, "select * from bu_game_room_set s LEFT JOIN bu_game_room g ON s.gaid = g.id  WHERE s.uid = {$showinfo['userId']}");
     if(!empty($conn)){
-        $gameInfo['set'] =1;
+        $gameInfo['set'] = 1;
         $gameInfo['bgImage'] = _IMAGES_DOMAIN_."/".$conn['bgImage'];
         $gameInfo['gameUrl'] = $conn ['gameUrl'];
     }else{
-        $gameInfo['set'] =0;
+        $gameInfo['set'] = 0;
     }
-
+    console_log($gameInfo);
     include($app_path . "/skin/game_comic/index.php");
     exit();
 } else {

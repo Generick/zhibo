@@ -271,7 +271,7 @@ img {
 .re-search-button{background:#E74152;color:#fff2ed}
 .re-search-button:hover{background-color:#ea7a85 }
 .research-table table{color: #474747;border: 1px solid #E1E1E1;width: 920px;margin-top: 30px;margin-left: 30px;}
-.research-table table td,.research-table table th{height: 54px; text-align: center;line-height: 54px;}
+.research-table table td,.research-table table th{height: 54px; text-align: center;line-height: 54px;  padding: 0 12px;}
 .research-table table th{background:#f4f4f4;color:#000;font-weight: 500;font-size: 14px;}
 .cancel-rechrage{color:#EC563E}
 .has-recharge{color:#72DB67}
