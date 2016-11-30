@@ -23,8 +23,8 @@ include($app_path . "include/footer.inc.php");
 <html>
 <head>
     <title>视频播放</title>
-    <link rel="stylesheet" type="text/css" href="/templates/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/templates/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/templates/livePhone/livePhone/css/style.css">
 </head>
 <body class="body">
 <div class="header">
@@ -32,7 +32,7 @@ include($app_path . "include/footer.inc.php");
         <div class="row">
             <div class="anchLive firAnch col-xs-2 clearfix bgff">
                 <div class="anchImg pull-left">
-                    <img src="img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                    <img src="templates/livePhone/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
                     <div class="degree glyphicon glyphicon-ok"></div>
                 </div>
                 <div class="firAnchR pull-left">
@@ -41,19 +41,19 @@ include($app_path . "include/footer.inc.php");
                 </div>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/livePhone/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/livePhone/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/livePhone/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/livePhone/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
             <div class="anchLive col-xs-2">
-                <img src="templates/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
+                <img src="templates/livePhone/img/934a3f4e9c8bac9e9b99d7ac0a8da00a.jpg"/>
             </div>
         </div>
     </header>
@@ -92,7 +92,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
                 <a href="#" class="thumbnail">
                   <div class="recommImg thumbnail">
-                    <img src="img/pic_01.png" alt=""/>
+                    <img src="templates/livePhone/img/pic_01.png" alt=""/>
                     <div class="thumb-bar"></div>
                   </div>
                   <div class="recommB">
@@ -111,7 +111,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="templates/img/pic_01.png" alt=""/>
+                <img src="templates/livePhone/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
@@ -130,7 +130,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="templates/img/pic_01.png" alt=""/>
+                <img src="templates/livePhone/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
@@ -149,7 +149,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
                 <a href="#" class="thumbnail">
                   <div class="recommImg thumbnail">
-                    <img src="templates/img/pic_01.png" alt=""/>
+                    <img src="templates/livePhone/livePhone/img/pic_01.png" alt=""/>
                     <div class="thumb-bar"></div>
                   </div>
                   <div class="recommB">
@@ -168,7 +168,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="templates/img/pic_01.png" alt=""/>
+                <img src="templates/livePhone/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
@@ -187,7 +187,7 @@ include($app_path . "include/footer.inc.php");
           <div class="col-xs-4">
             <a href="#" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="templates/img/pic_01.png" alt=""/>
+                <img src="templates/livePhone/img/pic_01.png" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
