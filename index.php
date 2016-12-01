@@ -26,6 +26,7 @@ $page_var['user']=$user;
 $page_var['vsn']=$vsn;
 
 $page_var['sid']=session_id();
+$page_var['ip'] = get_real_ips();
 
 
 //smarty初始化

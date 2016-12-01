@@ -34,18 +34,7 @@ switch($tpe){
 
 }
 
-/*$param=array(
-    'between'=>0,
-    'end'=>0,
-    'year'=>$year,
-    'monte'=>$month,
-    'userId'=>$user[userId]
-);
 
-$data = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",$param);
-
-echo $data;
-exit();*/
 
 $year=$_POST['y']?$_POST['y']: date("Y");
 $month=$_POST['m']?$_POST['m']:date("m");
@@ -53,9 +42,44 @@ $t=$year."-".$month."-01";
 $t1= $year."-".($month+1)."-01";
 $c_time=strtotime($t);
 $n_time=strtotime($t1);
-
 $page=$_POST['p']?$_POST['p']:1;
+
+
 $limit=10;
+
+$statrParam = array(
+    'between'=>0,
+    'end'=>0,
+    'year'=>$year,
+    'monte'=>$month,
+    'userId'=>$user[userId]
+);
+
+$dataAll = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",$statrParam);
+$dataAll =  json_decode($dataAll);
+$count =count($dataAll->data);
+$pageNum = ceil($count / $limit);
+$pagelinks=breakLen("/",$page,$pageNum,$limit);
+
+
+if($count < $limit){
+    $dataObj = $dataAll;
+}else{
+    $dataObj = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",array(
+        'between'=>($page-1)*$limit,
+        'end'=>10,
+        'year'=>$year,
+        'monte'=>$month,
+        'userId'=>$user[userId]
+    ));
+}
+
+
+$dataObject = json_decode($dataObj);
+$dataObject -> pagelinks = $pagelinks;
+echo json_encode($dataObject);
+exit();
+
 
 $sql="select d.*, u.nickname as nickname,g.giftname as giftname,g.giftimage as giftimage from bu_gift_details d left JOIN bu_user u on d.userId= u.userId LEFT JOIN gift g on d.giftIds = g.giftid
  where ".$__sql." = $user[userId] and unix_timestamp(d.createDT) > $c_time and unix_timestamp(d.createDT) < $n_time  and ".$_sql." and  d.status = 1 order by createDT";
