@@ -1,5 +1,5 @@
 <!--main-->
-<div class="inmiddle">
+<div class="inmiddle" ng-controller="center">
     <?php
     $current_page="notice";
     include_once('./include/personal_tpl/center-info.php');
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="has-message">
-                    <div class="message-list-box">
+                    <div class="message-list-box" ng-repeat="new in news">
                         <div class="message-list-title">守护到期提醒 <span class="times">2016-11-16 20:20:08</span></div>
                         <div class="message-sf">
                            <div class="message-sf-cont">
@@ -109,6 +109,13 @@
                 </div>
             </div>
         </div>
+        <ul class="pagination">
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
     </div>
 
 
