@@ -181,24 +181,30 @@
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
 
-    .down-load-game{position: absolute;width: 120px;height: 76px;right: 0;top: 100px;}
+    .down-load-game{position: absolute;width: 120px;height: 76px;right: 0;top: 92px;}
+    .start-load-game{position: absolute;width: 120px;height: 76px;left: 0;top: 92px;}
     .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
+    .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/SstartGame_1920.png") no-repeat;}
 
     @media only screen and (min-width:1920px) and (min-height:806px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
         .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
+        .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/SstartGame_1920.png") no-repeat;}
     }
     @media only screen and (max-width:1919px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
         .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
+        .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/SstartGame_1920.png") no-repeat;}
     }
     @media only screen and (max-width:1448px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']."?p=0&w=1444&h=812";?>') no-repeat center top; background-color:black;  }
         .btn-down-game{display:inline-block;width: 90px;height: 57px;background: url("/skin/game_comic/images/startGame_1444.png") no-repeat;}
+        .btn-start-game{display:inline-block;width: 90px;height: 57px;background: url("/skin/game_comic/images/SstartGame_1444.png") no-repeat;}
     }
     @media only screen and (max-width:1284px) {
         .game-bake-ground{  background: url(<?php echo $gameInfo['bgImage']."?p=0&w=1284&h=722";?>) no-repeat center top;   background-color: black;  }
         .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("/skin/game_comic/images/startGame_1284.png") no-repeat;}
+        .btn-start-game{display:inline-block;width: 80px;height: 51px;background: url("/skin/game_comic/images/SstartGame_1284.png") no-repeat;}
     }
 </style>
 
@@ -334,6 +340,12 @@
             <a id="isfollow1" href="javascript:;" class="button button-highlight button-rounded followme"title="关注TA">关注</a>
             <a id="isfollow0" href="javascript:;"title="已关注" class="button button-rounded button-tiny followout"  style="display: none">取消关注</a>
         </div>
+        <?php if($gameInfo['set'] == 1 and $gameInfo['startGame'] == true and $gameInfo['startGameUrl'] != ""){  ?>
+            <div class="start-load-game">
+                <a href="<?php echo  $gameInfo['startGameUrl'];?>" class="btn-start-game"></a>
+            </div>
+        <?php }?>
+
         <?php if($gameInfo['set'] == 1){  ?>
             <div class="down-load-game">
                 <a href="<?php echo  $gameInfo['gameUrl'];?>" class="btn-down-game"></a>
