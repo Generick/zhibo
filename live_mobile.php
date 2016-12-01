@@ -19,7 +19,7 @@ $roomnumber = (int)$_GET['roomnumber'];
 // //print_r($showinfo);
 // include($app_path . "include/footer.inc.php");
 //...
-function curl_post($url,$post){
+function curl_post_data($url,$post){
   $options = array(
     CURLOPT_RETURNTRANSFER=>true,
     CURLOPT_HEADER=>false,
@@ -34,7 +34,7 @@ function curl_post($url,$post){
 }
 $post = array('roomnumber'=>$roomnumber);
 $interface = "http://kedo.tv/rest/homeAnchors/livePhone.mt?roomNumber=".$roomnumber;
-$datas = curl_post($interface,$post);
+$datas = curl_post_data($interface,$post);
 $data = json_decode($datas,true);
 print_r($data);
 $zhuboinfo = $data['data'];
