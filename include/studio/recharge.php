@@ -94,7 +94,7 @@
             type: "POST",
             url: "/rest/www/cloud.jsp",
             data: data,
-            cache: false
+            cache: false,
             success: function (data, textStatus, jqXHR) {
                 if(data != "fail"){
                     $('.payArea').hide();
@@ -103,7 +103,6 @@
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(params.url+" error code:"+textStatus);
-
             }
         });
 

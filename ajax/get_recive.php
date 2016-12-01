@@ -33,7 +33,8 @@ switch($tpe){
         $_sql=  $_sql = "d.type <> 0";
 
 }
-$param=array(
+
+/*$param=array(
     'between'=>0,
     'end'=>0,
     'year'=>$year,
@@ -44,9 +45,7 @@ $param=array(
 $data = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",$param);
 
 echo $data;
-exit();
-
-
+exit();*/
 
 $year=$_POST['y']?$_POST['y']: date("Y");
 $month=$_POST['m']?$_POST['m']:date("m");

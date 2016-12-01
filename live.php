@@ -109,13 +109,39 @@ $skid = $redis->get($key);
 
 $rtp_key = _REDIS_KEYB_ . "_c.mt.cs.ea.rt.hash." . $roomnumber . "_4";
 $hash_room = $redis->hGetAll($rtp_key);
-
 $roomType = $hash_room['rtype'] ? $hash_room['rtype'] : "";
 
 $roomType_p = '';
+if($_GET['ttt'] == "ttt"){
+    console_log($hash_room['rtype']);
+}
+
 if ($hash_room['rtype'] == "2") {
     $roomType = 'game';
     $roomType_p = $roomType . "_";
+    $skinType = $roomType_p . "comic";
+
+    $gameInfo =array();
+    $anchorUserId= $showinfop['userId'];
+    $conn = $db->CacheGetRow(10, "select * from bu_game_room_set s LEFT JOIN bu_game_room g ON s.gaid = g.id  WHERE s.uid = {$showinfo['userId']}");
+    if(!empty($conn)){
+        $gameInfo['set'] = 1;
+        $gameInfo['bgImage'] = _IMAGES_DOMAIN_."/".$conn['bgImage'];
+        $gameInfo['gameUrl'] = $conn ['gameUrl'];
+        $params = json_decode($conn ['params'],true);
+        $gameInfo['startGame'] = $params['open'];
+        $gameInfo['startGameUrl'] = $params['url'];
+    }else{
+        $gameInfo['set'] = 0;
+    }
+
+    if($_GET['ttt'] == "ttt"){
+        console_log($conn);
+    }
+
+
+    include($app_path . "/skin/game_comic/index.php");
+    exit();
 } else {
     $roomType = 'kedo';
 }
