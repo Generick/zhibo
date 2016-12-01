@@ -36,7 +36,7 @@ $post = array('roomnumber'=>$roomnumber);
 $interface = "http://kedo.tv/rest/homeAnchors/livePhone.mt?roomNumber=".$roomnumber;
 $datas = curl_post_data($interface,$post);
 $data = json_decode($datas,true);
-print_r($data);
+//print_r($data);
 $zhuboinfo = $data['data'];
 $roomUsers = $zhuboinfo['roomUsers'];
 //print_r($data['data']);
