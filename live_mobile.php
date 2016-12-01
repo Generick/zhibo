@@ -26,6 +26,8 @@ include($app_path . "include/footer.inc.php");
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
+    <script type="text/javascript" src="js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular/center.js"></script>
 </head>
 <body class="body" ng-controller="center">
     <div class="header">
@@ -97,7 +99,7 @@ include($app_path . "include/footer.inc.php");
             </h4>     
         </div>
        <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-6" ng-repeat="reply in replies">
                 <a href="#" class="thumbnail">
                   <div class="recommImg thumbnail">
                     <img src="/templates/livePhone/img/pic_01.png" alt=""/>
@@ -105,7 +107,7 @@ include($app_path . "include/footer.inc.php");
                   </div>
                   <div class="recommB">
                     <div class="clearfix">
-                      <span class="color00 pull-left f3">女人如歌节目</span>
+                      <span class="color00 pull-left f3">{{reply.id}}</span>
                       <div class="color99 pull-right f2_8">
                         <span class="glyphicon glyphicon-eye-open"></span>
                         <span>2143324</span>
