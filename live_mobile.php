@@ -33,7 +33,7 @@ function curl_post_data($url,$post){
   return $result;
 }
 $post = array('roomnumber'=>$roomnumber);
-$interface = "http://kedo.tv/rest/homeAnchors/livePhone.mt?roomNumber=".$roomnumber;
+$interface = _INTERFACE_."/rest/homeAnchors/livePhone.mt?roomNumber=".$roomnumber;
 $datas = curl_post_data($interface,$post);
 $data = json_decode($datas,true);
 //print_r($data);
@@ -50,6 +50,25 @@ $roomUsers = $zhuboinfo['roomUsers'];
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
     <script type="text/javascript" src="js/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/angular/center.js"></script>
+    <style type="text/css">
+      .downgame{
+        width: 250px;
+        height: 80px;
+        margin-left: 67%;
+        margin-top: 6%;
+        border-radius: 8px;
+        border: solid 0px gray;
+        /*background: transparent;*/
+        z-index: 10000;
+        position: absolute;
+        font-family: Microsoft Yahei;
+        color: white;
+        font-size: 34px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        background-color: #ec4356;
+      }
+    </style>
 </head>
 <body class="body" ng-controller="center">
     <div class="header">
@@ -68,7 +87,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
             <?php
                 $usernum = count($roomUsers);
                 if ($usernum<=0) {
-                  # code...
+                  // nothing to do
                 }else{
                   for ($i=0; $i <$usernum ; $i++) { 
                   echo '<div class="anchLive col-xs-2">
@@ -110,19 +129,20 @@ $roomUsers = $zhuboinfo['roomUsers'];
     </header>
 
     <section class="jumbotron banner row">
-      <div class="col-xs-12">
-          <video src="1.mp4" id="000.mp4"
-                   x-webkit-airplay="true" webkit-playsinline="true" controls="controls" muted="true"></video>
+      <div class="col-xs-12" style="">
+          <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4"
+                   x-webkit-airplay="true" webkit-playsinline="true" playsinline controls="controls" muted="true" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
 
             <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
+            <div><button class="downgame">下载游戏</button></div>
             <div class="txt clearfix">
-                <div class="txtL pull-left">
+                <div class="txtL pull-left" style="margin-top: 30px;">
                     <p class="tit colorR f3_4"><?php echo urldecode($zhuboinfo['nickName']);?></p>
                     <p class="color99 f2_8">
                       <span class="glyphicon glyphicon-eye-open f3_3"></span>
-                        <?php echo $zhuboinfo['personNum'];?></p>
+                        <span style="color:#999;"><?php echo $zhuboinfo['personNum'];?></span></p>
                 </div>
-                <div class="txtR pull-right f3">
+                <div class="txtR pull-right f3" style="margin-top: 30px;clear: both;margin-top: -6.5%;margin-right: 40%;color:#999;">
                     关注她
                     <span class="glyphicon glyphicon-heart colorR"></span>
                 </div>
@@ -133,7 +153,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
 <section class="recommend">   
        <div class="page-header clearfix">
             <h4 class="pull-left f3_4">
-              <span class="glyphicon glyphicon-fire"></span>
+              <span class="glyphicon glyphicon-fire" style="margin-top: 30px;"></span>
                 精彩推荐
             </h4>     
         </div>
@@ -144,24 +164,28 @@ $roomUsers = $zhuboinfo['roomUsers'];
             //   echo "</br>";
             // }
             $hotAnchors = $data['data']['hotAnchors'];
-            for ($i=0; $i <count($hotAnchors) ; $i++) { 
-              if(count($hotAnchors)<=0) break;
+            $hotNum = count($hotAnchors);
+            $imgsize = '&w=330&h=181';
+            //$imgsize = '';
+            //$hotNum = 0;
+            for ($i=0; $i <6 ; $i++) { 
+              if($hotNum<=0) break;
               if ($i == 0) {
                 echo '<div class="col-xs-6" ng-repeat="reply in replies">
                 <a href="'.$hotAnchors[$i]['roomNumber'].'" class="thumbnail">
                   <div class="recommImg thumbnail">
-                    <img src="'.$hotAnchors[$i]['image'].'" alt=""/>
+                    <img src="'.$hotAnchors[$i]['image'].$imgsize.'" alt=""/>
                     <div class="thumb-bar"></div>
                   </div>
                   <div class="recommB">
                     <div class="clearfix">
-                      <span class="color00 pull-left f3">'.urldecode($hotAnchors[$i]['nickName']).'</span>
+                      <span class="color00 pull-left f3">'.$hotAnchors[$i]['title'].'</span>
                       <div class="color99 pull-right f2_8">
                         <span class="glyphicon glyphicon-eye-open"></span>
                         <span>'.$hotAnchors[$i]['numbers'].'</span>
                       </div>
                     </div>
-                    <p class="color99 ellipsis f3">'.urldecode($hotAnchors[$i]['nickName']).'</p>
+                    <p class="color99 ellipsis f3">'.$hotAnchors[$i]['descri'].'</p>
                   </div>
 
                 </a>
@@ -170,18 +194,18 @@ $roomUsers = $zhuboinfo['roomUsers'];
                 echo '<div class="col-xs-6">
             <a href="'.$hotAnchors[$i]['roomNumber'].'" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="'.$hotAnchors[$i]['image'].'" alt=""/>
+                <img src="'.$hotAnchors[$i]['image'].$imgsize.'" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left f3">'.urldecode($hotAnchors[$i]['nickName']).'</span>
+                  <span class="color00 pull-left f3">'.$hotAnchors[$i]['title'].'</span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
                     <span>'.$hotAnchors[$i]['numbers'].'</span>
                   </div>
                 </div>
-                <p class="color99 ellipsis f3">'.urldecode($hotAnchors[$i]['nickName']).'</p>
+                <p class="color99 ellipsis f3">'.$hotAnchors[$i]['descri'].'</p>
               </div>
 
             </a>
