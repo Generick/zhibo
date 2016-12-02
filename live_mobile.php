@@ -134,7 +134,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
                    x-webkit-airplay="true" webkit-playsinline="true" playsinline controls="controls" muted="true" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
 
             <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
-            <div><button class="downgame">下载游戏</button></div>
+            <div><a href="<?php echo $zhuboinfo['uploadAdd'];?>"><button class="downgame">下载游戏</button></a></div>
             <div class="txt clearfix">
                 <div class="txtL pull-left" style="margin-top: 30px;">
                     <p class="tit colorR f3_4"><?php echo urldecode($zhuboinfo['nickName']);?></p>
