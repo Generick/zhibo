@@ -183,14 +183,14 @@ define(function(require, exports, module) {
 			}
 			values.forEach(function(e) {
 				var filter = e.levs;
-				if (filter != null && filter.indexOf("pic_liverlevel") > 0) {
+				if (filter != null && filter.indexOf("pic_liverlevel") > 0 && UIF.handler.anchorId != e.userId) {
 					hs += Tools.stringFormat(lis, e.userId, base.headimg(e.levs), decodeURI(e.nickname), decodeURI(e.nickname));
 				}
 			});
 			values.forEach(function(e) {
 				var filter = e.levs;
 
-				if (filter != null && filter.indexOf("pic_consumelevel") > 0 && filter.indexOf("pic_liverlevel") < 0) {
+				if (filter != null && filter.indexOf("pic_consumelevel") > 0 && filter.indexOf("pic_liverlevel") < 0 &&  UIF.handler.anchorId != e.userId) {
 					hs += Tools.stringFormat(lis, e.userId, base.headimg(e.levs), decodeURI(e.nickname), decodeURI(e.nickname));
 				}
 			});

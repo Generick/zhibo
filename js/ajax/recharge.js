@@ -28,7 +28,10 @@ define('ajax/recharge', function(require, exports, module){
         }
         return ret;
     }
-    function toStyle($int){
+    function toMoneys(s){
+        return s != null ?s:0
+    }
+/*    function toStyle($int){
         if($int ==1){
             return "微信";
         }
@@ -40,9 +43,7 @@ define('ajax/recharge', function(require, exports, module){
         }
         return "充值";
     }
-    function toMoneys(s){
-        return s != null ?s:0
-    }
+
     function toStatus($int){
         if($int == 0){
             return "<span style='color: #c0c0c0'>未处理</span>";
@@ -54,7 +55,7 @@ define('ajax/recharge', function(require, exports, module){
             return "<span style='color: #cd4e47'>失败</span>";
         }
         return "<span style='color: #9db28'>成功</span>";
-    }
+    }*/
     function initHtml($page){
         $h="";
         $p=$page?$page:1;
@@ -68,18 +69,16 @@ define('ajax/recharge', function(require, exports, module){
             }
         }, function (data) {
             console.log(data);
-            imghost=data.imghost;
-
             if(data.data){
                 $.each(data.data, function(k,v) {
-                    if(v.orderId != null){
+                    if(v.serialNum != null){
                         $h += '<tr  class="dd">\
-                        <td>'+ v.orderId+'</td>\
+                        <td>'+ v.serialNum+'</td>\
                         <td>'+v.createDT+'</td>\
                         <td>'+Math.abs(v.money)+'</td>\
                         <td>'+ toMoneys(v.consume)+'</td>\
-                        <td>'+ toStyle(v.topups)+'</td>\
-                        <td>'+ toStatus(v.tradeStatus) +'</td>\
+                        <td>'+ v.topups+'</td>\
+                        <td>'+ v.tradeStatus +'</td>\
                         </tr>';
                     }
                 });
@@ -98,8 +97,6 @@ define('ajax/recharge', function(require, exports, module){
     $(".nexts").on("click","span",function(){
         initHtml($(this).attr('hf'));
     })
-
-
     initHtml();
 
 });

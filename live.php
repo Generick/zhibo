@@ -131,6 +131,7 @@ if ($hash_room['rtype'] == "2") {
         $params = json_decode($conn ['params'],true);
         $gameInfo['startGame'] = $params['open'];
         $gameInfo['startGameUrl'] = $params['url'];
+        $gameInfo['gamePacks'] =  $params['gamePacks'];
     }else{
         $gameInfo['set'] = 0;
     }
