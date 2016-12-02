@@ -1,6 +1,6 @@
 <?php
 
-if($_SERVER[HTTP_HOST]=='mains.kedo.tv'){
+if($_SERVER['HTTP_HOST']=='mains.kedo.tv'){
     Header('HTTP/1.1 301 Moved Permanently');
     Header('Location:http://www.kedo.tv');
     exit();
