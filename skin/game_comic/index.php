@@ -178,13 +178,13 @@
     </script>
 </head>
 <?php
-$startImg1 = "/files/game/".$gameInfo['gamePacks']."/startGame_1920.png?".rand(1000,9999);
-$startImg2 = "/files/game/".$gameInfo['gamePacks']."/startGame_1444.png?".rand(1000,9999);
-$startImg3 = "/files/game/".$gameInfo['gamePacks']."/startGame_1284.png?".rand(1000,9999);
+$startImg1 = "/files/".$gameInfo['gamePacks']."/startGame1920.png?".rand(1000,9999);
+$startImg2 = "/files/".$gameInfo['gamePacks']."/startGame1444.png?".rand(1000,9999);
+$startImg3 = "/files/".$gameInfo['gamePacks']."/startGame1284.png?".rand(1000,9999);
 
-$downImg1 = "/files/game/".$gameInfo['gamePacks']."/downGame_1920.png?".rand(1000,9999);
-$downImg2 = "/files/game/".$gameInfo['gamePacks']."/downGame_1444.png?".rand(1000,9999);
-$downImg3 = "/files/game/".$gameInfo['gamePacks']."/downGame_1284.png?".rand(1000,9999);
+$downImg1 = "/files/".$gameInfo['gamePacks']."/downGame1920.png?".rand(1000,9999);
+$downImg2 = "/files/".$gameInfo['gamePacks']."/downGame1444.png?".rand(1000,9999);
+$downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999);
 ?>
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
