@@ -27,7 +27,7 @@ include($app_path . "include/footer.inc.php");
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
     <script type="text/javascript" src="js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="js/angular/center.js"></script>
+    <!-- <script type="text/javascript" src="js/angular/center.js"></script> -->
 </head>
 <body class="body" ng-controller="center">
     <div class="header">
@@ -73,7 +73,7 @@ include($app_path . "include/footer.inc.php");
     <section class="jumbotron banner row">
       <div class="col-xs-12">
           <video src="1.mp4" id="000.mp4"
-                   x-webkit-airplay="true" webkit-playsinline="true" controls="controls" muted="true"></video>
+                   x-webkit-airplay="true" webkit-playsinline="true" playsinline  controls="controls" muted="true"></video>
 
             <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
             <div class="txt clearfix">

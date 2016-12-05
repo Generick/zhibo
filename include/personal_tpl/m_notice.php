@@ -11,31 +11,33 @@
         <div class="cr-care" >
             <div class="cr-title">消息中心</div>
 
-            <div class="none-message" style="display: none">暂无消息</div>
+            <div class="none-message" ng-if="news.length==0">暂无消息</div>
             <div class="cr-notice-main" style="">
                 <div class="mlb-handlar">
                     <span class="systitle">系统消息</span>
                     <div class="right-h">
                         <input type="checkbox" name="select-all" class="select-all-box"/>
                         <span class="select-all-text">全选/反选</span>
-                        <span class="del-m kbutton">删除</span>
+                        <a class="del-m kbutton" href="#">删除</a>
                     </div>
                 </div>
                 <div class="has-message">
-                    <div class="message-list-box" ng-repeat="new in news">
-                        <div class="message-list-title">守护到期提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                
+                    <div class="message-list-box" ng-repeat="new in news track by $index" ng-repeat="detail in details">
+                        <div class="message-list-title">
+                        {{new.title}}<span class="times">{{new.createDT|date:"yyy-MM-dd HH:mm:ss"}}</span></div>
                         <div class="message-sf">
                            <div class="message-sf-cont">
-                               您对 <a href="#" class="names">梁胖胖吃翔</a> 的守护期限即将到期,请及时守护
+                               你关注的<a href="#" class="names">{{detail.userName}}</a> 已经开始直播
                            </div>
                             <div class="message-sf-control">
                                 <span class="message-sf-fee lbutton">前往续费</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <a ng-click="news.splice($index,1)" class="message-del-single kbutton" href="#">删除</a>
                             </div>
                         </div>
 
                     </div>
-                    <div class="message-list-box">
+                    <!--<div class="message-list-box">
                         <div class="message-list-title">管理设置提醒 <span class="times">2016-11-16 20:20:08</span></div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
@@ -71,7 +73,7 @@
                                 <span class="message-del-single kbutton">删除</span>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
                 <div class="message-buy-box" style="display: none">
@@ -110,11 +112,7 @@
             </div>
         </div>
         <ul class="pagination">
-            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li ng-repeat="item in pages" ng-click="getPage(item.num)" class="{{item.className}}"><a href="javascript:;">{{item.num}}</a></li>
         </ul>
     </div>
 
