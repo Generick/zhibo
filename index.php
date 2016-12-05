@@ -1,6 +1,6 @@
 <?php
 
-if($_SERVER[HTTP_HOST]=='mains.kedo.tv'){
+if($_SERVER['HTTP_HOST']=='mains.kedo.tv'){
     Header('HTTP/1.1 301 Moved Permanently');
     Header('Location:http://www.kedo.tv');
     exit();
@@ -26,6 +26,7 @@ $page_var['user']=$user;
 $page_var['vsn']=$vsn;
 
 $page_var['sid']=session_id();
+$page_var['ip'] = get_real_ips();
 
 
 //smarty初始化

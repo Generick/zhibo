@@ -422,7 +422,7 @@ $(document).ready(function(){
 								<span>{5}</span>\
 							</div>\
 						</div>\
-						<p class="color99 ellipsis f12">{5}</p>\
+						<p class="color99 ellipsis f12">{6}</p>\
 					</div></a>\
 					</div>\
 			',
@@ -621,9 +621,18 @@ $(document).ready(function(){
 				}
 				var li="";
 				if (datas != null && datas.length > 0) {
-					$.each(datas, function(k, v) {
-						li += Tools.stringFormat(compiliter.gameHtml,v.roomNumber,compiliter.tolive(v.online,1),v.image, ndecodeURI(v.nickName), ndecodeURI(v.nickName),v.numbers,ndecodeURI(v.title));
-					})
+                    $.each(datas, function(k, v) {
+                        descri =v.descri?v.descri:"　";
+                        li += Tools.stringFormat(compiliter.gameHtml,
+                            v.roomNumber,
+                            compiliter.tolive(v.online,1),
+                            v.image,
+                            ndecodeURI(v.nickName),
+                            ndecodeURI(v.nickName),
+                            v.numbers,
+                            descri
+                        );
+                    })
 					$("#gameAnchors").append(li);
 				}
 			});
