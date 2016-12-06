@@ -317,7 +317,7 @@ a{text-decoration:none; }
 #priChatList{min-height:120px;}
 .chat-header >div{float: left;width:50%;height:42px;text-align: center;color: #FFffff;position: relative;background-color: rgba(0, 0, 0,0.33);vertical-align: middle;line-height: 40px;cursor: pointer; }
 .chat-header .issel{background:none;}
-.chat-body ul li{margin-left: 15px;font-size: 12px;line-height: 24px;color:#fefefe}
+.chat-body ul li{margin-left: 6px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0; }
 .chat-body ul li .prwords{color: #fff}
 .chat-body ul li .words{color: #fff;}
