@@ -37,13 +37,44 @@ include_once('tpl_header.php');
             <div class="showHd pull-left active"></div>
            	<div class="gameHd pull-left"></div>
         </div>
+        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
+                <a href="{{squAnch.roomNumber}}" target="_blank" class="hotItem thumbnail" >
+                  <img src="{{squAnch.image}}&w=97&h=146" alt="{{squAnch.nickName}}"/>
+                  <div class="{{squAnch.levelImg}}"></div>
+                  <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
+                  <div class="hotT thumbnail">
+                    <p class="text-center color33">人数：<span>{{squAnch.numbers}}</span></p>
+                    
+                  </div>
+                  <div class="hotB">
+                    <span class="colorPin f14 f14">{{squAnch.nickName}}</span>  
+                    <p class="f12 color99" ng-if="squAnch.onlineTime>0">
+                        <span>{{squAnch.onlineTime}}</span>
+                        <span>分钟之前</span>
+                    </p>
+                    <p class="f12" ng-if="squAnch.onlineTime==0">
+                        <span>未开播</span>
+                    </p>
+                 </div>
+              </a>
+            
+            </div>
         <div class="row squareCon">
         	<div class="squareDe" style="display:block; ">
+            	<div class="secTit text-center clearfix color99">
+                    <span>全部</span>
+                    <span class="colorPin">最新入驻</span>
+                    <span>户外</span>
+                    <span>音乐</span>
+                    <span>蠢萌</span>
+                    <span>搞怪</span>
+                    <span>段子</span>
+                </div>
             	<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
                 <a href="" class="hotItem thumbnail" >
                   <img src="{{squAnch.image}}&w=97&h=146" alt="{{squAnch.nickName}}"/>
                   <div class="{{squAnch.levelImg}}"></div>
-                  <span ng-if="squAnch.totalpoint==1" class="glyphicon glyphicon-stats"></span>
+                  <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
                   <div class="hotT thumbnail">
                     <p class="text-center color33">人数：<span>{{squAnch.numbers}}</span></p>
                     
@@ -64,8 +95,21 @@ include_once('tpl_header.php');
             </div>
           	
             <div class="squareDe gameAnch">
+            	<div class="secTit text-center clearfix color99">
+                    <span>全部</span>
+                    <span class="colorPin">英雄联盟</span>
+                    <span>穿越火线</span>
+                    <span>守望先锋</span>
+                    <span>我的世界</span>
+                    <span>搞怪</span>
+                    <span>其他</span>
+                </div>
             	<div class="page-header">
                 	<h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 排行推荐</h4>
+                </div>
+                
+            	<div class="page-header">
+                	<h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 全部游戏</h4>
                 </div>
             	<div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="gameAnch in gameAnchs">                    
                 <a href="" target="_blank" class="thumbnail bgf4">            
@@ -75,16 +119,20 @@ include_once('tpl_header.php');
                         <div class="shadow"></div>                        
                         <div class="playBtn"></div>                    
                     </div>                    
-                    <div class="recommB">                        
-                        <div class="clearfix">                            
-                            <span class="color33 pull-left ellipsis">{{gameAnch.nickName}}</span>
-                            <div class="color99 pull-right">                                
-                            <span class="glyphicon glyphicon-eye-open"></span>            
-                            <span>{{gameAnch.numbers}}</span>                            
+                    <div class="recommB clearfix">  
+                    	<img class="pull-left recommBL img-circle" src="images/kedo/photo_title.jpg"/>                      	
+                        <div class="recommBR pull-right">
+                        	<div class="clearfix">                            
+                                <span class="color33 pull-left ellipsis">{{gameAnch.nickName}}</span>
+                                <div class="color99 pull-right">                                
+                                <span class="glyphicon glyphicon-eye-open"></span>            
+                                <span>{{gameAnch.numbers}}</span>                            
+                            </div>                        
                         </div>                        
-                	</div>                        
-                	<p class="color99 ellipsis f12">{{gameAnch.title}}</p>                    
-                </div>
+                			<p class="color99 ellipsis f12">{{gameAnch.title}}</p>
+                        </div>
+                                            
+                	</div>
                 </a>                    
             </div>
             </div>      

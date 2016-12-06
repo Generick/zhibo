@@ -151,9 +151,6 @@ a:hover{
 	.mainRight{
 		width: 20%;
 	}
-	.gameAnch .thumbnail{
-		border-radius:0;
-	}
 }
 
 .mainRight .thumbnail{
@@ -469,7 +466,7 @@ a:hover{
 		box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 	}
 	
-	.hotCon .thumbnail img{
+	.hotCon .thumbnail >img{
 		border-radius:12px;
 		width:100%;
 	}
@@ -732,6 +729,12 @@ a:hover{
 		height: 62px;
 		position: absolute;
 	}
+	.secTit{
+		margin-bottom: 3%;
+	}
+	.secTit span{
+		margin-right: 1%;
+	}
 	.square .showHd{
 		background: url("/images/kedo/pic_zhibo.png") no-repeat;
 		left:0;
@@ -758,16 +761,24 @@ a:hover{
 	.square .squareDe{
 		display: none;
 	}
-	.gameAnch .thumbnail img{
+	.gameAnch .thumbnail > img{
 		border-radius: 0;
 	}
 	.gameAnch .thumbnail{
 		padding: 0; 
         box-shadow: none;
+        border: none;
 	}
 	.glyphicon-fire{
 		border-radius: 4px;
 		padding:0 10px;
+	}
+	.gameAnch .recommB .recommBL{
+		width:18%;
+		height: auto;
+	}
+	.recommBR{
+		width:78%;
 	}
 
 
