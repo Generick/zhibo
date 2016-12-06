@@ -6,8 +6,6 @@ require('include/smarty/Smarty.class.php');
 include_once('include/login.func.php');
 
 $user=checklogin();
-$userinfo=search_save_user($user['userId']);
-set_login_info($userinfo);
 $page_var['user']=$userinfo;
 $datas = curl_get(_CDNDOMAIN_."/files/allAnchors.json","");
 $acceptData=json_decode($datas, true);
