@@ -5,8 +5,7 @@ define(function(require, exports, module) {
 	module.exports = {
 		oWidth : 0,
 		init : function() {
-			$("#sendGiftBtn")
-					.click(
+			$("#sendGiftBtn").click(
 							function() {
 								if (!UIF.handler.login) {
 									UIF.handler.loging();

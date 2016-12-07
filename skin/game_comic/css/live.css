@@ -119,28 +119,22 @@ a{text-decoration:none; }
 .no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative}
 
 /*未开播*/
-.no-live-text{margin: auto; text-align: center; margin-top: 140px; color: #ddb180; }
-.no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
+.no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
+.no-live ul{margin: 0 auto;margin-top:100px;width: 460px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
 .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
-.no-live ul li{float: left;margin-right:20px; }
+.no-live ul li{float: left;  margin-right: 25px;  margin-left: 25px;}
 .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
 .noanchor-kuang{width:102px;  height: 150px;position: relative;overflow: hidden}
-.noanchor-kuang .nocnchor-k{width: 102px;height: 150px;position: absolute;z-index: 11}
-.noanchor-kuang img{ position: absolute;height: 143px; width: 95px; z-index: 8; margin: 5px;  border-radius: 10px;}
+.noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
+.noanchor-kuang img{ position: absolute;height: 146px; width: 96px; z-index: 8; margin: 2px;  border-radius:5px;}
 
-.noanchor-info{ line-height: 18px;  margin-top: 3px;margin-left: -2px;}
+.noanchor-info{ line-height: 18px;  margin-top: 6px;margin-left: -2px;}
 .noanchor-info .noanchor-level{float: left}
-.noanchor-name {float: left;    float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;}
-.noanchor-num{float: left;margin-left: 10px;}
-.bk-white{background: url("/static_data/images_css/biankuang_nolive/biankuang_white_SS.png") no-repeat;}
-.bk-blue{background: url("/static_data/images_css/biankuang_nolive/biankuang_blue_SS.png") no-repeat;}
-.bk-yellow{background: url("/static_data/images_css/biankuang_nolive/biankuang_yellow_SS.png") no-repeat;}
-.bk-size{background: url("/static_data/images_css/biankuang_nolive/biankuang_size_SS.png") no-repeat;}
-.bk-orange{background: url("/static_data/images_css/biankuang_nolive/biankuang_orange_SS.png") no-repeat;}
-.bk-black{background: url("/static_data/images_css/biankuang_nolive/biankuang_black_SS.png") no-repeat;}
-
+.noanchor-name {float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;font-size: 14px;}
+.noanchor-num{float: left;margin-left: 10px;font-size: 12px;  color: #999;}
+.bk-color{    border: 2px solid #ccc;  border-radius: 10px;}
 /*礼物*/
 
 .myDiv1{width: 340px;position:absolute;}
@@ -459,7 +453,7 @@ a{text-decoration:none; }
 .less-butt .less-charge{background-color: #e7a317}
 .less-butt .less-cancel{background-color: #505050}
 /*新礼物*/
-.newGifts{ width: 600px; height: 92px;  position: absolute; - margin-left:-300px; left: 50%;  bottom:28%;}
+.newGifts{ width: 600px; height: 92px;  position: absolute; - margin-left:-300px; left: 50%;  bottom:10%;}
 .draggift{width:600px;height: 50px;position: absolute;top:-40px;cursor:move;}
 .toMarginLeft{width: 940px;height: 92px;position: absolute;left: 0}
 .mainGifts{width:502px;height:92px;position: absolute;right: -10px;}
@@ -733,6 +727,23 @@ a{text-decoration:none; }
         left:78px;
     }
 
+    .no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
+        .no-live ul{margin: 0 auto;margin-top:106px;width: 560px;height: 190px;}
+
+    .no-live{ font-size:12px; color: #fefefe}
+    .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
+    .no-live ul li{float: left;  margin-right: 25px;  margin-left: 25px;}
+    .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
+        .noanchor-kuang{width:128px;  height: 190px;position: relative;overflow: hidden}
+    .noanchor-kuang .nocnchor-k{width: 128px;height: 190px;position: absolute;z-index: 11}
+        .noanchor-kuang img{ position: absolute;    height: 187px;  width: 125px;z-index: 8; margin: 2px;  border-radius:10px;}
+
+    .noanchor-info{ line-height: 18px;  margin-top: 16px;margin-left: -2px;}
+    .noanchor-info .noanchor-level{float: left}
+    .noanchor-name {float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;font-size: 14px;}
+    .noanchor-num{float: left;margin-left: 10px;font-size: 12px;  color: #999;}
+    .bk-color{    border: 3px solid #ccc;  border-radius: 10px;}
+
 }
 
 @media only screen and (min-width:1950px){
@@ -797,10 +808,10 @@ a{text-decoration:none; }
         height: 415px;
         margin: 58px auto;
         margin-top: -19px;
-        background: url("/skin/game_comic/images/pic_zhibojian_moren_742_415.png");
+        background: url("/skin/game_comic/images/pic_zhibojian_moren_742_415.jpg");
     }
-    .no-live-text{margin-top:104px;}
-    .no-live ul{margin-top:40px;}
+    .no-live-text{margin-top:66px;}
+    .no-live ul{margin-top:60px;}
     #player{
         width:483px;
         height:272px;
@@ -843,11 +854,11 @@ a{text-decoration:none; }
         height: 370px;
         margin: 51px auto;
         margin-top: -26px;
-        background: url("/skin/game_comic/images/pic_zhibojian_moren_660_370.png");
+        background: url("/skin/game_comic/images/pic_zhibojian_moren_660_370.jpg");
     }
 
-    .no-live-text{margin-top:92px;}
-    .no-live ul{margin-top:30px;}
+    .no-live-text{margin-top:58px;}
+    .no-live ul{margin-top:50px;}
     .self-care{margin-top: 18px;}
     #player{
         width:429px;

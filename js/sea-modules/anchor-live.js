@@ -119,7 +119,7 @@ define(function(require, exports, module) {
 			liCt.push('<li>');
 			liCt.push('<a href="{0}"></a>');
 			liCt.push('<div class="noanchor-kuang">');
-			liCt.push('<div class="nocnchor-k bk-white"></div>');
+			liCt.push('<div class="nocnchor-k bk-color"></div>');
 			liCt.push('<img src="{1}" alt="{2}">');
 			liCt.push('</div>');
 			liCt.push('<div class="noanchor-info">');
