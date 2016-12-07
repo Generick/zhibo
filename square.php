@@ -50,7 +50,7 @@ include_once('tpl_header.php');
                 </div>
             	<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
                 <a href="{{squAnch.roomNumber}}" target="_blank" class="hotItem thumbnail" >
-                  <img src="{{squAnch.image}}&w=97&h=146" alt="{{squAnch.nickName|decode}}"/>
+                  <img src="{{squAnch.image|images}}&w=97&h=146" alt="{{squAnch.nickName|decode}}"/>
                   <div class="{{squAnch.levelImg}}"></div>
                   <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
                   <div class="hotT thumbnail">
@@ -89,16 +89,16 @@ include_once('tpl_header.php');
                     <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="rankGame in rankGames">                    
                     <a href="{{rankGame.roomNumber}}" target="_blank" class="thumbnail bgf4">            
                         <div class="recommImg">                        
-                            <img class="lazy" src="{{rankGame.image}}&w=221&h=146" alt="{{gameAnch.nickName}}">                        
+                            <img class="lazy" src="{{rankGame.image|images}}&w=221&h=146" alt="{{gameAnch.nickName|decode}}">                        
                             <div class="thumb-bar"></div>                        
                             <div class="shadow"></div>                        
                             <div class="playBtn"></div>                    
                         </div>                    
                         <div class="recommB clearfix">  
-                            <img class="pull-left recommBL img-circle" src="{{rankGame.imagePrivate}}"/>                      	
+                            <img class="pull-left recommBL img-circle" src="{{rankGame.imagePrivate|images}}"/>                      	
                             <div class="recommBR pull-right">
                                 <div class="clearfix">                            
-                                    <span class="color33 pull-left ellipsis">{{rankGame.nickName}}</span>
+                                    <span class="color33 pull-left ellipsis">{{rankGame.nickName|decode}}</span>
                                     <div class="color99 pull-right">                                
                                     <span class="glyphicon glyphicon-eye-open"></span>            
                                     <span>{{rankGame.numbers}}</span>                            
@@ -118,16 +118,16 @@ include_once('tpl_header.php');
             	<div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="gameAnch in gameAnchs">                    
                 <a href="{{gameAnch.roomNumber}}" target="_blank" class="thumbnail bgf4">            
                     <div class="recommImg">                        
-                        <img class="lazy" src="{{gameAnch.image}}&w=221&h=146" alt="{{gameAnch.nickName}}">                        
+                        <img class="lazy" src="{{gameAnch.image|images}}&w=221&h=146" alt="{{gameAnch.nickName|decode}}">                        
                         <div class="thumb-bar"></div>                        
                         <div class="shadow"></div>                        
                         <div class="playBtn"></div>                    
                     </div>                  
                     <div class="recommB clearfix">  
-                    	<img class="pull-left recommBL img-circle" src="{{gameAnch.imagePrivate}}"/>                      	
+                    	<img class="pull-left recommBL img-circle" src="{{gameAnch.imagePrivate|images}}"/>                      	
                         <div class="recommBR pull-right">
                         	<div class="clearfix">                            
-                                <span class="color33 pull-left ellipsis">{{gameAnch.nickName}}</span>
+                                <span class="color33 pull-left ellipsis">{{gameAnch.nickName|decode}}</span>
                                 <div class="color99 pull-right">                                
                                 <span class="glyphicon glyphicon-eye-open"></span>            
                                 <span>{{gameAnch.numbers}}</span>                            

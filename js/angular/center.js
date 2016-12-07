@@ -1,42 +1,10 @@
-/*var app=angular.module('personalCenter',[]);
-app.controller('center',function($scope,$http){
-	$scope.news=[];
-	
-	function getPage(p){
-		alert(p)
-		//显示
-		$http.get('rest/usersGiftDetails/alerts.mt',{
-			 params:{userId:6949,page:p,num:10},
-		}).success(function(arr){
-			console.log(arr)
-			$scope.news=arr.data;
-			if ($scope.news.length>10) {
-				$scope.news.pop();
-			}
-		}).error(function(){
-			alert('读取失败，请稍后重试')
-		})
-	}
-	getPage(1)
-	$scope.getPage=getPage;
-	//页码
-	$scope.pages=[];
-	$scope.curPage=1;
-	$http.get("rest/usersGiftDetails/alerts.mt",{
-	}).success(function(json){
-		console.log(json.count)
-	}).error(function(){
-		alert('页码获取失败');
-	})
-
-})*/
-
 (function(){
 	var app = angular.module('personalCenter',[]);
 	app.controller('center',function($scope,$http){
 		$scope.news = [];
-		$scope.pages= []  //{number:1},...,...
+		$scope.pages= [] 
 		$scope.curPage=1;
+		$scope.userId=userId;
 
 		function setCur(n){
 			$scope.pages= [];
@@ -44,24 +12,47 @@ app.controller('center',function($scope,$http){
 				$scope.pages.push(i)
 			}
 		}
-
+		getPage(1,$scope.userId);
 		// 获取显示数据
 		$scope.getPage=getPage;
-		getPage(1);
-		
-		function getPage(p){
+		function getPage(p,userId){
+			console.log(00)
 			$scope.curPage=p;
 			$http.get('rest/usersGiftDetails/alerts.mt',{
-				params:{userId:6798,page:p,num:10}
+				params:{userId:userId,page:p,num:10}
 			}).success(function(arr){
 				$scope.news = arr.data;
-				//console.log($scope.news[0].details.userName)
-				alert(angular.isArray($scope.news))
 				setCur(arr.count);
 			}).error(function(){
 				console.log('获取失败')
 			})
 		}
+
+		//删除数据
+		$scope.dele=function(id,p,userId){
+			$http.post('rest/usersGiftDetails/delAlerts.mt',{
+				params:{id:id}
+			}).success(function(arr){
+				console.log(arr)
+				getPage(p,userId);
+			}).error(function(){
+				alert('删除失败');
+			})
+		}
+
 	});
+
+	
+	app.filter("toJson",function(){
+		return function(value){
+			return angular.fromJson(value)
+		}
+	})
+
+	app.filter("decode",function(){
+	return function(value){
+		return decodeURIComponent(value)
+	}
+})
 
 })()

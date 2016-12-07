@@ -339,7 +339,7 @@ img {
     font-size: 12px;
     margin-left:38px;
     overflow: hidden;
-    border-bottom: 1px solid #D5D5D5;
+    border-bottom: 1px solid #ddd;
     width: 930px;
 
 }
@@ -374,7 +374,6 @@ img {
 .lbutton:hover{
     color: #ea7a85;
 }
-.mlb-handlar .del-m{}
 .message-list-title{font-size: 14px;margin: 10px 10px 10px 0;color: #333}
 .message-list-title .times{margin-left: 20px;color: #999999;display: inline-block}
 .message-sf-cont{float: left; }
