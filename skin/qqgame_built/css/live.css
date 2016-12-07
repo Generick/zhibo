@@ -782,3 +782,6 @@ a{text-decoration:none; }
 .kb{color: #ffffff;background: url("/img/icon_money.png") left center no-repeat; padding-left: 30px;height: 28px; display: inline-block; width:96px; line-height: 28px;  margin-right: 5px;overflow: hidden}
 .mt-charge{width: 40px;height: 28px;color:#fff;background:#FDBC02;cursor: pointer;text-align: center;line-height: 28px;display: inline-block;border-radius: 3px;overflow: hidden;margin-left: 5px;margin-right: 5px;}
 .nl-login-out{float: right;margin-top: 7px}
+
+/**/
+.flash-area{width:568px;height:314px}

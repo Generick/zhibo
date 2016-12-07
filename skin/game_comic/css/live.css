@@ -91,7 +91,7 @@ a{text-decoration:none; }
 
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
 .live-info{position: relative;  margin-top: 8px;}
-
+.flash-area{width: 985px;height: 550px;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
 .self-photo{width:60px; }.self-photo img,.nl-login img{ display: block;  width: 60px;  height: 60px;  -webkit-border-radius: 50%; -moz-border-radius: 50%;  -o-border-radius: 50%;  border-radius: 50%;}
@@ -906,3 +906,4 @@ a{text-decoration:none; }
     }
 }
 
+.flash-area{width:980px;height:550px}
