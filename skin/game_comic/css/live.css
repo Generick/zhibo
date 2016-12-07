@@ -10,7 +10,6 @@ html, body {
 
 }
 .bg1{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
-.bg2{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
 cite, i {
     font-style: normal;
 }
@@ -89,7 +88,8 @@ a{text-decoration:none; }
 .euc .jubao:hover{background: url(/skin/desert/images/jubao-hover.png)center top no-repeat;}
 
 /*中部*/
-.video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
+
+.video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
 .live-info{position: relative;  margin-top: 8px;}
 
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
@@ -116,10 +116,10 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative}
+.no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative}
 
 /*未开播*/
-.no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
+.no-live-text{margin: auto; text-align: center; margin-top: 140px; color: #ddb180; }
 .no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
@@ -709,15 +709,17 @@ a{text-decoration:none; }
 
 
 @media only screen and (min-width:1920px) and (min-height:806px){
-    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        width:640px;
-        height:360px;
+        width: 985px;
+        height: 550px;
+        margin: 0 auto;
     }
     .video-area{margin:77px auto;}
     .live-info{
-        margin-top:8px;
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 640px;
     }
 
     .rank-area{
@@ -754,15 +756,16 @@ a{text-decoration:none; }
     .guard-area,.rank-area,.gift-record,.visitant-record{left:3000px; }
 }
 @media only screen and (max-width:1919px){
-    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        width:640px;
-        height:360px;
-        /*margin:77px auto;*/
+        /*width:640px;
+       height:360px;
+      margin:77px auto;*/
     }
     .live-info{
-        margin-top:8px;
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 640px;
     }
     .newGifts{
         left:30%;
@@ -788,18 +791,16 @@ a{text-decoration:none; }
 
 
 @media only screen and (max-width:1448px){
-    .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .no-live{
-        width:483px;
-        height:272px;
-        margin:58px auto;
-        margin-top:-19px;
-        margin-left:79px;
-        background: url("/skin/comic/images/pic_zhibojian_moren_484.jpg");
+        width: 742px;
+        height: 415px;
+        margin: 58px auto;
+        margin-top: -19px;
+        background: url("/skin/game_comic/images/pic_zhibojian_moren_742_415.png");
     }
-    .no-live-text{margin-top:30px;}
-    .no-live ul{margin-top:25px;}
+    .no-live-text{margin-top:104px;}
+    .no-live ul{margin-top:40px;}
     #player{
         width:483px;
         height:272px;
@@ -815,14 +816,12 @@ a{text-decoration:none; }
         margin:58px auto;
         margin-top:-19px;
         margin-left:458px;
-
     }
 
     .live-info {
         position: relative;
         width: 483px;
         margin-top: -62px;
-        margin-left: 80px;
     }
     .flash-area{
         height:312px;
@@ -838,20 +837,18 @@ a{text-decoration:none; }
 
 @media only screen and (max-width:1284px){
 
-    .bg2{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
     .bg1{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
     .no-live{
-        /*width:428px;*/
-        width:429px;
-        height:242px;
-        margin:51px auto;
-        margin-top:-26px;
-        margin-left:107px;
-        background: url("/skin/comic/images/pic_zhibojian_moren_430.jpg");
+        width: 660px;
+        height: 370px;
+        margin: 51px auto;
+        margin-top: -26px;
+        background: url("/skin/game_comic/images/pic_zhibojian_moren_660_370.png");
     }
 
-    .no-live-text{margin-top:26px;}
-    .no-live ul{margin-top:8px;}
+    .no-live-text{margin-top:92px;}
+    .no-live ul{margin-top:30px;}
+    .self-care{margin-top: 18px;}
     #player{
         width:429px;
         height:242px;
@@ -874,7 +871,6 @@ a{text-decoration:none; }
         position: relative;
         width: 429px;
         margin-top: -62px;
-        margin-left: 92px;
     }
 
     .flash-area{
