@@ -375,7 +375,7 @@ img {
     color: #ea7a85;
 }
 .mlb-handlar .del-m{}
-.message-list-title{font-size: 14px;margin: 10px;color: #333}
+.message-list-title{font-size: 14px;margin: 10px 10px 10px 0;color: #333}
 .message-list-title .times{margin-left: 20px;color: #999999;display: inline-block}
 .message-sf-cont{float: left; }
 .message-sf-cont .names{color:#E74152 }

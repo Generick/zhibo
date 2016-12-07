@@ -9,6 +9,10 @@
     <div class="center-right">
 
         <div class="cr-care" >
+        	<ul class="pagination">
+                <li ng-repeat="item in pages" ng-class="item==curPage ?'active':''" ng-click="getPage(item)"><a href="javascript:;">{{item}}</a></li>
+            </ul>
+        
             <div class="cr-title">消息中心</div>
 
             <div class="none-message" ng-if="news.length==0">暂无消息</div>
@@ -17,63 +21,183 @@
                     <span class="systitle">系统消息</span>
                     <div class="right-h">
                         <input type="checkbox" name="select-all" class="select-all-box"/>
-                        <span class="select-all-text">全选/反选</span>
-                        <a class="del-m kbutton" href="#">删除</a>
+                        <span class="select-all-text">全选（当页）</span>
+                        <button type="button" class="btn btn-sm btn-danger">删除</button>
                     </div>
                 </div>
                 <div class="has-message">
                 
-                    <div class="message-list-box" ng-repeat="new in news track by $index" ng-repeat="detail in details">
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==0">
                         <div class="message-list-title">
-                        {{new.title}}<span class="times">{{new.createDT|date:"yyy-MM-dd HH:mm:ss"}}</span></div>
+                        {{new.title}}<span class="times">{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}</span></div>
                         <div class="message-sf">
                            <div class="message-sf-cont">
-                               你关注的<a href="#" class="names">{{detail.userName}}</a> 已经开始直播
+                               你关注的<a href="{{new.roomNumber}}" class="names">{{new.details.userName}}</a> 已经开始直播
                            </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">前往续费</span>
-                                <a ng-click="news.splice($index,1)" class="message-del-single kbutton" href="#">删除</a>
+                                <!--<a href="{{new.roomNumber}}" class="message-sf-fee lbutton">进入房间</a>-->
+                                <a href="{{new.roomNumber}}" class="btn btn-sm btn-default">进入房间</a>
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
 
                     </div>
-                    <!--<div class="message-list-box">
-                        <div class="message-list-title">管理设置提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==1">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                您已成为 <a href="#" class="names">xx频道</a> 的管理员
+                                {{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}前再消费{{new.money}}才能继续点亮当前爵位，记得不要让尊贵的爵位暗淡咯
                             </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">管理房间</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
                     </div>
-                    <div class="message-list-box">
-                        <div class="message-list-title">物品过期提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==2">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                您的 xxx座驾 即将到期 请即使续费
+                                你和{new.userName}}的亲密度等级达到{{new.level}}级
                             </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">管理房间</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==3">
+                        <div class="message-list-title">
+                        {{new.title}}<span class="times">{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}</span></div>
+                        <div class="message-sf">
+                           <div class="message-sf-cont">
+                               你对<a href="{{new.roomNumber}}" class="names">{{new.userName}}</a>的守护还有一天就要到期了，再多留点时间守护在TA身边吧
+                           </div>
+                            <div class="message-sf-control">
+                                <a href="{{new.roomNumber}}" class="btn btn-sm btn-default">继续守护TA</a>
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
 
-                    <div class="message-list-box">
-                        <div class="message-list-title">开播提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                    </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==4">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                您关注的主播 <a href="/1020" class="names">龙基基不搞基</a> 已经开播,赶紧去看看吧!
+                                <a href="#" class="names">{{new.userName}}</a>{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}送给你{{new.amount}}个{{new.itemName}}，你的K豆增加了{{new.amount}}
                             </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">管理房间</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==5">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                频道号：<a href="new.number" class="names">{{new.userName}}</a>将你设为了TA的房间管理员，你在这里享有踢人、禁言权利哦，请帮助TA管理频道秩序吧
+                            </div>
+                            <div class="message-sf-control">
+                            	<a href="{{new.roomNumber}}" class="btn btn-sm btn-default">前去管理房间</a>
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==6">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                亲爱的用户，你的背包里有{{new.amount}}个{{new.itemName}}即将在{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}失效，请记得在失效前赶紧用掉哦
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==7">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                亲爱的用户，你的背包里有{{new.amount}}个{{new.itemName}}超过有效期，系统已自动清理。如有疑问请联系客服
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==8">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                尊贵的用户恭喜你升级成为了{{new.nobility}}贵族
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==9">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                你的活跃度等级达到了{{new.level}}级
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
 
                 </div>
                 <div class="message-buy-box" style="display: none">
@@ -111,9 +235,7 @@
                 </div>
             </div>
         </div>
-        <ul class="pagination">
-            <li ng-repeat="item in pages" ng-click="getPage(item.num)" class="{{item.className}}"><a href="javascript:;">{{item.num}}</a></li>
-        </ul>
+        
     </div>
 
 
