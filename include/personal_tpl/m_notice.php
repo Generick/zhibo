@@ -5,9 +5,6 @@
     include_once('./include/personal_tpl/center-info.php');
     include_once('./include/personal_tpl/menu_left.php');
     ?>
- 	<script>
-		  var userId= 6798;
-    </script>
     <div class="center-right">
 
         <div class="cr-care" >

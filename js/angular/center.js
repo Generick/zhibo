@@ -4,7 +4,7 @@
 		$scope.news = [];
 		$scope.pages= [] 
 		$scope.curPage=1;
-		$scope.userId=userId;
+		$scope.userId=currentUserId;
 
 		function setCur(n){
 			$scope.pages= [];
@@ -29,7 +29,7 @@
 
 		//删除数据
 		$scope.dele=function(id,p,userId){
-			$http.post('rest/usersGiftDetails/delAlerts.mt',{
+			$http.get('rest/usersGiftDetails/delAlerts.mt',{
 				params:{id:id}
 			}).success(function(arr){
 				getPage(p,userId);
