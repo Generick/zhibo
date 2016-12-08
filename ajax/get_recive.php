@@ -9,32 +9,18 @@ if(!$user){
     echo json_encode($data);
     exit();
 }
-$tpe=$_POST['t'];
-if($tpe==0){
-    $_sql = "d.type=0";
-}else{
-    $_sql = "d.type <> 0";
-}
-switch($tpe){
-    case 1:
-        $__sql=" d.userId ";
-        $_sql=  $_sql = "d.type <> 0";
-        break;
-    case 0:
-        $__sql=" d.userId ";
-        $_sql=  $_sql = "d.type = 0";
-        break;
-    case 2:
-        $__sql=" d.toUserId ";
-        $_sql=  $_sql = "d.type <> 0";
-        break;
-    default:
-        $__sql=" d.userId ";
-        $_sql=  $_sql = "d.type <> 0";
+$year=$_POST['y']?$_POST['y']: date("Y");
+$month=$_POST['m']?$_POST['m']:date("m");
+$t=$year."-".$month."-01";
+$t1= $year."-".($month+1)."-01";
+$c_time=strtotime($t);
+$n_time=strtotime($t1);
+$page=$_POST['p']?$_POST['p']:1;
 
-}
 
-/*$param=array(
+$limit=10;
+
+$statrParam = array(
     'between'=>0,
     'end'=>0,
     'year'=>$year,
@@ -42,50 +28,27 @@ switch($tpe){
     'userId'=>$user[userId]
 );
 
-$data = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",$param);
-
-echo $data;
-exit();*/
-
-$year=$_POST['y']?$_POST['y']: date("Y");
-$month=$_POST['m']?$_POST['m']:date("m");
-$t=$year."-".$month."-01";
-$t1= $year."-".($month+1)."-01";
-$c_time=strtotime($t);
-$n_time=strtotime($t1);
-
-$page=$_POST['p']?$_POST['p']:1;
-$limit=10;
-
-$sql="select d.*, u.nickname as nickname,g.giftname as giftname,g.giftimage as giftimage from bu_gift_details d left JOIN bu_user u on d.userId= u.userId LEFT JOIN gift g on d.giftIds = g.giftid
- where ".$__sql." = $user[userId] and unix_timestamp(d.createDT) > $c_time and unix_timestamp(d.createDT) < $n_time  and ".$_sql." and  d.status = 1 order by createDT";
-$rsc=$db->CacheGetArray($sql);
-$count =count($rsc);
+$dataAll = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",$statrParam);
+$dataAll =  json_decode($dataAll);
+$count =count($dataAll->data);
 $pageNum = ceil($count / $limit);
 $pagelinks=breakLen("/",$page,$pageNum,$limit);
 
-if(!($count>$limit)){
-    $rs=$rsc;
+
+if($count < $limit){
+    $dataObj = $dataAll;
 }else{
-    $start=($page-1)*$limit;
-    $sql="select d.*, u.nickname as nickname,g.giftname as giftname,g.giftimage as giftimage from bu_gift_details d left JOIN bu_user u on d.userId= u.userId LEFT JOIN gift g on d.giftIds = g.giftid
- where  ".$__sql."  = $user[userId] and unix_timestamp(d.createDT) > $c_time and unix_timestamp(d.createDT) < $n_time and ".$_sql." and d.status = 1 order by createDT limit $start,$limit";
-    $rs=$db->CacheGetArray($sql);
+    $dataObj = curl_get(_INTERFACE_."/rest/usersGiftDetails/giving.mt",array(
+        'between'=>($page-1)*$limit,
+        'end'=>10,
+        'year'=>$year,
+        'monte'=>$month,
+        'userId'=>$user[userId]
+    ));
 }
 
-if($rs){
-    $data['resultStatus']=200;
-    $data['num']=count($rs);
-    $data['data']=reArrayNickname($rs);
-    $data['pagelinks']=$pagelinks;
-    $data['imghost'] = _IMAGES_DOMAIN_;
-}else{
-    $data['resultStatus']=100;
-    $data['data']="";
-    $data['pagelinks']="";
-}
 
-echo json_encode($data);
-include('../include/footer.inc.php');
-?>
-
+$dataObject = json_decode($dataObj);
+$dataObject -> pagelinks = $pagelinks;
+echo json_encode($dataObject);
+exit();

@@ -41,20 +41,20 @@ define('ajax/record', function(require, exports, module){
             }
         }, function (data) {
             console.log(data);
-            imghost=data.imghost;
-
             if(data.data){
                 $.each(data.data, function(k,v) {
-                    if(v.orderId != null){
+                    if(v.serialNum != null){
 
+                        v.nickName = decodeURIComponent(v.nickName);
+                        v.giftName = decodeURIComponent(v.giftName);
                         if(v.type==1){  //礼物
-                            $h += Tools.stringFormat(html,v.orderId,v.createDT,v.roomNumber,v.nickname,v.numbers,imghost +"/"+ v.giftimage+"?p=0",v.giftname,Math.abs(v.money));
+                            $h += Tools.stringFormat(html,v.serialNum,v.createDT,v.roomNumber,v.nickName,v.numbers, v.img,v.giftName,Math.abs(v.money));
                         }else if(v.type==2){ //点歌
-                            $h += '<tr class="dd"><td>'+v.orderId+'</td><td>'+v.createDT+'</td><td class="sendss">在<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickname+' </a>房间点歌</td><td>'+Math.abs(v.money)+'</td></tr>';
+                            $h += '<tr class="dd"><td>'+v.serialNum+'</td><td>'+v.createDT+'</td><td class="sendss">在<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickName+' </a>房间点歌</td><td>'+Math.abs(v.money)+'</td></tr>';
                         }else if(v.type==3){ //守护
-                            $h += '<tr class="dd"><td>'+v.orderId+'</td><td>'+v.createDT+'</td><td class="sendss">给<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickname+' </a>开通守护</td><td>'+Math.abs(v.money)+'</td></tr>';
+                            $h += '<tr class="dd"><td>'+v.serialNum+'</td><td>'+v.createDT+'</td><td class="sendss">给<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickName+' </a>开通守护</td><td>'+Math.abs(v.money)+'</td></tr>';
                         }else if(v.type==4){ //弹幕
-                            $h += '<tr class="dd"><td>'+v.orderId+'</td><td>'+v.createDT+'</td><td class="sendss">在<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickname+' </a>房间发弹幕</td><td>'+Math.abs(v.money)+'</td></tr>';
+                            $h += '<tr class="dd"><td>'+v.serialNum+'</td><td>'+v.createDT+'</td><td class="sendss">在<a href="'+v.roomNumber+'" class="sendTo"> '+v.nickName+' </a>房间发弹幕</td><td>'+Math.abs(v.money)+'</td></tr>';
                         }
                     };
                 });

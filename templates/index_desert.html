@@ -22,6 +22,7 @@
         var site_skin="{$site_skin}";
         var currentUserId="{$user.userId}";
         var sid="{$sid}";
+        var ip="{$ip}";
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -116,10 +117,10 @@
 
     </div>
 
-    <!--精彩推荐-->
+    <!--游戏专区-->
     <div class="recomm">
         <div class="page-header clearfix">
-            <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>精彩推荐</span> </h4>
+            <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>游戏专区</span> </h4>
             <h4 class="pull-right recommR">
                 <a href="javascript:;"><small>话题</small></a>
                 <a href="javascript:;"><small>游戏</small></a>
@@ -378,7 +379,8 @@
     var url = "/rest/checkToken/checkOW.mt";
     var data ={
         sessionId:sid,
-        userId:currentUserId
+        userId:currentUserId,
+        ip:ip
     }
     $(".oww").click(function(){
         var _this =$(this);
@@ -389,7 +391,7 @@
             dataType: "json",
             timeout: 120000,
             success: function (data, textStatus, jqXHR) {
-                location.href=$('.oww').attr("ahref");
+                window.open($('.oww').attr("ahref"),"_blank");
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //alert(params.url+" error code:"+textStatus);

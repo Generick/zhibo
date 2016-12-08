@@ -177,34 +177,41 @@
         });
     </script>
 </head>
+<?php
+$startImg1 = "/files/".$gameInfo['gamePacks']."/startGame1920.png?".rand(1000,9999);
+$startImg2 = "/files/".$gameInfo['gamePacks']."/startGame1444.png?".rand(1000,9999);
+$startImg3 = "/files/".$gameInfo['gamePacks']."/startGame1284.png?".rand(1000,9999);
 
+$downImg1 = "/files/".$gameInfo['gamePacks']."/downGame1920.png?".rand(1000,9999);
+$downImg2 = "/files/".$gameInfo['gamePacks']."/downGame1444.png?".rand(1000,9999);
+$downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999);
+?>
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
-
     .down-load-game{position: absolute;width: 120px;height: 76px;right: 0;top: 92px;}
     .start-load-game{position: absolute;width: 120px;height: 76px;left: 0;top: 92px;}
-    .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
-    .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/SstartGame_1920.png") no-repeat;}
+    .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $downImg1;?>") no-repeat;}
+    .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $startImg1;?>") no-repeat;}
 
     @media only screen and (min-width:1920px) and (min-height:806px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
-        .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/SstartGame_1920.png") no-repeat;}
+        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $downImg1;?>") no-repeat;}
+        .btn-start-game{display:inline-block;width: 120px;height: 76px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
     }
     @media only screen and (max-width:1919px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/startGame_1920.png") no-repeat;}
-        .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("/skin/game_comic/images/SstartGame_1920.png") no-repeat;}
+        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $downImg1;?>")  no-repeat;}
+        .btn-start-game{display:inline-block;width: 120px;height: 76px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
     }
     @media only screen and (max-width:1448px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']."?p=0&w=1444&h=812";?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 90px;height: 57px;background: url("/skin/game_comic/images/startGame_1444.png") no-repeat;}
-        .btn-start-game{display:inline-block;width: 90px;height: 57px;background: url("/skin/game_comic/images/SstartGame_1444.png") no-repeat;}
+        .btn-down-game{display:inline-block;width: 90px;height: 57px;background:url("<?php echo $downImg2;?>")  no-repeat;}
+        .btn-start-game{display:inline-block;width: 90px;height: 57px;background:  url("<?php echo $startImg2;?>")  no-repeat;}
     }
     @media only screen and (max-width:1284px) {
         .game-bake-ground{  background: url(<?php echo $gameInfo['bgImage']."?p=0&w=1284&h=722";?>) no-repeat center top;   background-color: black;  }
-        .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("/skin/game_comic/images/startGame_1284.png") no-repeat;}
-        .btn-start-game{display:inline-block;width: 80px;height: 51px;background: url("/skin/game_comic/images/SstartGame_1284.png") no-repeat;}
+        .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("<?php echo $downImg3;?>") no-repeat;}
+        .btn-start-game{display:inline-block;width: 80px;height: 51px;background:  url("<?php echo $startImg3;?>")  no-repeat;}
     }
 </style>
 

@@ -38,7 +38,7 @@
                         <tr  class="fir">
                             <th style="width: 152px;">流水号</th>
                             <th style="width: 200px;">交易时间</th>
-                            <th style="width: 240px;">充值逗比</th>
+                            <th style="width: 150px;">充值K豆</th>
                             <th style="">支付金额</th>
                             <th style="width: 120px;">支付方式</th>
                             <th style="width: 120px;">支付状态</th>

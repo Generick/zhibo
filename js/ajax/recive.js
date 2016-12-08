@@ -41,17 +41,16 @@ define('ajax/recive', function(require, exports, module){
             }
         }, function (data) {
             console.log(data);
-            imghost=data.imghost;
             if(data.data){
                 $.each(data.data, function(k,v) {
                     if(v.type==1){  //礼物
-                        $h += Tools.stringFormat(html,v.nickname,v.createDT,v.numbers,imghost +"/"+ v.giftimage+"?p=0",v.giftname,Math.abs(v.money));
+                        $h += Tools.stringFormat(html,v.nickName,v.createDT,v.numbers, v.img,v.giftName,Math.abs(v.money));
                     }else if(v.type==2){ //点歌
-                        $h += '<tr class="dd"><td>'+v.nickname+'</td><td>'+v.createDT+'</td><td class="sendss">点歌</td><td>'+Math.abs(v.money)+'</td></tr>';
+                        $h += '<tr class="dd"><td>'+v.nickName+'</td><td>'+v.createDT+'</td><td class="sendss">点歌</td><td>'+Math.abs(v.money)+'</td></tr>';
                     }else if(v.type==3){ //守护
-                        $h += '<tr class="dd"><td>'+v.nickname+'</td><td>'+v.createDT+'</td><td class="sendss">给开通守护</td><td>'+Math.abs(v.money)+'</td></tr>';
+                        $h += '<tr class="dd"><td>'+v.nickName+'</td><td>'+v.createDT+'</td><td class="sendss">开通守护</td><td>'+Math.abs(v.money)+'</td></tr>';
                     }else if(v.type==4){ //弹幕
-                        $h += '<tr class="dd"><td>'+v.nickname+'</td><td>'+v.createDT+'</td><td class="sendss">发弹幕</td><td>'+Math.abs(v.money)+'</td></tr>';
+                        $h += '<tr class="dd"><td>'+v.nickName+'</td><td>'+v.createDT+'</td><td class="sendss">发弹幕</td><td>'+Math.abs(v.money)+'</td></tr>';
                     }
                 });
 
