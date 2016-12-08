@@ -202,7 +202,7 @@ img {
 .bind-phone-area #code:focus,.bind-phone-area #phone:focus{border:1px solid #E74152;}
 .bind-phone-area #code{width:160px;}
 .bind-phone-area #phone{width:200px;}
-.bind-phone-area .send{color: #1B76BD;  display: inline-block;  font-size: 12px;  cursor: pointer;  width: 100px;  height: 30px;  line-height: 30px;color: #333;
+.bind-phone-area .send{color: #1B76BD;  display: inline-block;  font-size: 12px;  cursor: pointer;  width: 100px;  height: 30px;  line-height: 26px;color: #333;
 }
 .bind-phone-area .resend-ms{display:none;color:#E74152;font-size: 12px;padding-left: 10px;}
 
@@ -228,7 +228,7 @@ img {
 /*修改密码**/
 .midfy-passwd-area table{margin-left:60px;margin-top:30px;font-size:14px;}
 .midfy-passwd-area table tr{height:30px;line-height:40px;}
-.input-pass{height:30px;width:200px;line-height:30apx;font-size:14px;border:1px solid #E74152}
+.input-pass{height:30px;width:200px;line-height:30apx;font-size:14px;}
 .midfy-passwd-area #save{background: #E74152;color:#fff;margin-right:60px;}
 .midfy-passwd-area #save:hover{background-color:#ea7a85; }
 .midfy-passwd-area #cancel{background:#C9C9C9;color:#404040}
@@ -268,7 +268,7 @@ img {
 
 /**交易记录*/
 .re-title-area{margin-top: 60px;color: #333333;}
-.re-title{font-size: 16px;font-weight: 700;display: inline-block;margin-right: 30px;margin-left: 30px;}
+.re-title{font-size: 16px;font-weight: 700;display: inline-block;margin-right: 30px;margin-left: 30px; color: #999; }
 .recharge-search{display: inline-block;color: #333333;}
 .recharge-search select{width:126px;height: 30px;border-radius: 3px;}
 .re-search-button{background:#E74152;color:#fff2ed}
