@@ -43,21 +43,19 @@ define(function(require, exports, module) {
 					$(".giftHeader span:last").addClass('redot');
 				}
 				$("#giftList28 ." + base.data.packs.giftId).attr("giftNum", base.data.packs.num);
-
-
-				if(base.data.isAdd != null){
-					var auto = base.data.isAdd;
-					if(auto.giftId != null && auto.num != null){
-						Tools.setCookie("fi_num",auto.num,86400);
-                        if($(".giftLists ul:first #gift"+auto.giftId+"").find(".first-nus").length >0){
-                            $(".giftLists ul:first #gift"+auto.giftId+"").find(".first-nus").text(auto.num);
-                        }else{
-                            $(".giftLists ul:first #gift"+auto.giftId+"").append('<span class="first-nus">' + auto.num + '</span>');
-                        }
-						$(".giftLists ul:first #gift"+auto.giftId+"").addClass('fi');
-					}
-				}
 			}
+            if(base.data.giftStar != null){
+                var giftStar = base.data.giftStar;
+                UIF.handler.isAdd=true;
+                Tools.setCookie("fi_num",giftStar.star,86400);
+                if($(".giftLists ul:first #gift"+giftStar.giftId+"").find(".first-nus").length >0){
+                    $(".giftLists ul:first #gift"+giftStar.giftId+"").find(".first-nus").text(giftStar.star);
+                }else{
+                    $(".giftLists ul:first #gift"+giftStar.giftId+"").append('<span class="first-nus">' + giftStar.star + '</span>');
+                }
+                $(".giftLists ul:first #gift"+giftStar.giftId+"").addClass('fi');
+
+            }
 			$("#closing").hide();
 			if (base.data.roles != null && base.data.roles.length > 0) {
 				var $roles = jQuery.parseJSON(base.data.roles);

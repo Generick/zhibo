@@ -186,6 +186,9 @@ define(function(require, exports, module) {
 						}
 						Tools.setCookie("fi_num", fi_num, 86400);
 						$('.first-nus').text(fi_num);
+                        UIF.handler.countingStar({}, function(data) {
+                            console.log(data);
+                        });
 					}
 					if (fi_num > 50) {
 						clearInterval(dt_timer);
