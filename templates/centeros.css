@@ -583,4 +583,12 @@ img {
     filter: alpha(opacity =   50);
     z-index: 4999;
 }
-/*个人中心 分页*/
+.succ,.deErr{
+    position: absolute;
+    left: 55%;
+    background-color: #e34052;
+    padding: 8px;
+    border-radius: 12%;
+    color: #fff;
+    display: none;
+}

@@ -32,9 +32,16 @@
 			$http.get('rest/usersGiftDetails/delAlerts.mt',{
 				params:{id:id}
 			}).success(function(arr){
+				$(".succ").slideDown();
+				setTimeout(function(){
+	                $(".succ").slideUp();
+	            },1050)
 				getPage(p,userId);
 			}).error(function(){
-				alert('删除失败');
+				$(".deErr").slideDown();
+				setTimeout(function(){
+	                $(".deErr").slideUp();
+	            },105000)
 			})
 		}
 

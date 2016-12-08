@@ -5,6 +5,8 @@
     include_once('./include/personal_tpl/center-info.php');
     include_once('./include/personal_tpl/menu_left.php');
     ?>
+    <div class="succ">删除成功</div>
+    <div class="deErr">删除失败</div>
     <div class="center-right">
 
         <div class="cr-care" >
@@ -32,7 +34,7 @@
                            </div>
                             <div class="message-sf-control">
                                 <a href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">进入房间</a>
-                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                                <button type="button" data-toggle="modal" data-target="deleData" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
 
