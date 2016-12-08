@@ -244,6 +244,8 @@ $(document).ready(function(){
 
             "anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
 
+            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=30",//new hot anchors interface
+
             "anc_game":"/files/gameAnchors.json",//精彩推荐
 
             "anc_new":"/files/newAnchors.json" //"/ajax/getLiveAnchors.php"+"?anc_type=new"
@@ -481,6 +483,7 @@ $(document).ready(function(){
                 url: ulList.anc_hot,
                 data: ""
             }, function (data) {
+                console.log(data);
                 if(data == "" || data ==undefined){
                     return 0;
                 }
@@ -551,6 +554,77 @@ $(document).ready(function(){
             });
         }
 
+        //new hot anchors interface
+        compiliter.parseNewHotAnchors = function(url,type){
+            Tools.getJson({
+                url:url,
+                data:""
+            },function(data){
+                console.log(data.data.big);
+                console.log(data.data.hot);
+                if (data == '' || data == undefined) {
+                    return 0;
+                }
+                try {
+                    var datas = data;
+                } catch(e) {
+                    datas = '';
+                    return false;
+                }
+                var h = "hotList";
+                var advertisement = '<a href="/applyHome.php" target="_blank" class="thumbnail adImg">\
+                            <img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
+                        </a>';
+                bigData = data.data.big;
+                hotData = data.data.hot;
+
+                if (hotData != null && hotData.length > 0) {
+                    try {
+                        rowData = hotData.slice(0,18);
+                    } catch(e) {
+                        console.log(e);
+                    }
+
+                    var s_big,s_sml;
+                    var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
+                    var swrap = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
+                    var srow = $('<div class="row"></div>');
+
+                    if (bigData.image == "" || bigData.image == null) {
+                        bigData.image = "http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                    }
+                    if (bigData.city == '' || bigData.city == null) {
+                        $(".glyphicon-map-marker").removeClass();
+                    }
+                    s_big = Tools.stringFormat(compiliter.bightml,bigData.roomNumber,bigData.image,ndecodeURI(bigData.nickName),compiliter.tolive(bigData.online,1),bigData.totalpoint,bigData.numbers,ndecodeURI(bigData.nickName),compiliter.totime(bigData.onlineTime),compiliter.toCity(bigData.city));
+                    bwrap.append(s_big);
+                    bwrap.append(advertisement);
+
+                    $.each(rowData,function(k,v){
+                        if(v.image =="" || v.image == null ){
+                            v.image ="http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
+                        }
+                        if(v.city==""||v.city==null){
+                            $(".glyphicon-map-marker").removeClass();
+                        }
+                        if(k>=0 && k<6){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
+                        }else if(k>=6 && k <12){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 col-md-3 col-sm-3 hidden-xs",v.roomNumber,v.image,ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
+                        }else if(k>=12 && k <18){
+                            s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
+                        }
+                        srow.append(s_sml);
+                    });
+
+                    swrap.append(srow);
+                    $("#"+h+" .hotLiCon").append(bwrap);
+                    $("#"+h+" .hotLiCon").append(swrap);
+                    
+                }
+            });
+        }
+
 
         compiliter.parseNewAnchors = function(url,type){
             Tools.getJson({
@@ -614,7 +688,10 @@ $(document).ready(function(){
             });
         }
 
-        compiliter.parseAnchors(ulList.anc_hot,"hot");
+
+
+        //compiliter.parseAnchors(ulList.anc_hot,"hot");
+        compiliter.parseNewHotAnchors(ulList.newHotAnchors,"hot");
         compiliter.parseNewAnchors(ulList.anc_new,"new");
         compiliter.parseGame=function(){
             Tools.getJson({
