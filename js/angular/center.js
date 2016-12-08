@@ -16,7 +16,6 @@
 		// 获取显示数据
 		$scope.getPage=getPage;
 		function getPage(p,userId){
-			console.log(00)
 			$scope.curPage=p;
 			$http.get('rest/usersGiftDetails/alerts.mt',{
 				params:{userId:userId,page:p,num:10}
@@ -33,7 +32,6 @@
 			$http.post('rest/usersGiftDetails/delAlerts.mt',{
 				params:{id:id}
 			}).success(function(arr){
-				console.log(arr)
 				getPage(p,userId);
 			}).error(function(){
 				alert('删除失败');
