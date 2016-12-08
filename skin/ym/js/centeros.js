@@ -59,13 +59,4 @@ $(function () {
         showWindow("repass-next");
     });
 
-    $.ajax({
-        type:"get",
-        dataType:"json",
-        url:"/rest/usersGiftDetails/alerts.mt?userId=6798",
-        success:function(data){
-            console.log(data);
-        }
-    })
-
 })

@@ -84,8 +84,8 @@ $(function(){
     var $orderid='';
     $(".imChar").on("click",function(){
         if(currentUserId==null || currentUserId ==''){
-           // login.show();
-            //return false;
+            login.show();
+            return false;
         }
         if(paytype=="WXP"){
 			$(this).attr("disabled",true);

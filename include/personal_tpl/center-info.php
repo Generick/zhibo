@@ -54,7 +54,6 @@ if ($user['roomNumber']) {
     </div>
 <?php
 }?>
-
 <div class="center-info">
     <div class="info-left">
         <div class="c-photo">

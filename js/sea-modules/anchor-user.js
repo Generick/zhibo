@@ -29,9 +29,9 @@ define(function(require, exports, module) {
 				UIF.radials.value(Number(base.data.actpes));
 			}
 			if (base.data.packs != null && base.data.packs.length > 0) {
-				base.packs = jQuery.parseJSON(base.data.packs);
-				if (base.packs.gift != null && base.packs.gift.length > 0) {
-					var $gift = base.packs.gift;
+				base.data.packs = jQuery.parseJSON(base.data.packs);
+				if (base.data.packs.gift != null && base.data.packs.gift.length > 0) {
+					var $gift = base.data.packs.gift;
 					for (var i = 0; i < $gift.length; i++) {
 						if ($gift[i].num > 0) {
 							$("#giftList28 ." + $gift[i].giftId).removeClass("hideli");
@@ -39,12 +39,12 @@ define(function(require, exports, module) {
 						$("#giftList28 ." + $gift[i].giftId).attr("giftNum", $gift[i].num);
 					}
 				}
-				if (base.packs != null && base.packs.isread != null &&  base.packs.isread == 1 && base.packs.gift.length > 0) {
+				if (base.data.packs != null && base.data.packs.isread != null &&  base.data.packs.isread == 1 && base.data.packs.gift.length > 0) {
 					$(".giftHeader span:last").addClass('redot');
 				}
-				$("#giftList28 ." + base.packs.giftId).attr("giftNum", base.packs.num);
-				if(base.packs.auto != null){
-					var auto = base.packs.auto;
+				$("#giftList28 ." + base.data.packs.giftId).attr("giftNum", base.data.packs.num);
+				if(base.data.packs.auto != null){
+					var auto = base.data.packs.auto;
 					if(auto.giftId != null && auto.num != null){
 						Tools.setCookie("fi_num",auto.num,86400);
                         if($(".giftLists ul:first #gift"+auto.giftId+"").find(".first-nus").length >0){

@@ -5,73 +5,205 @@
     include_once('./include/personal_tpl/center-info.php');
     include_once('./include/personal_tpl/menu_left.php');
     ?>
-
+    <div class="succ">删除成功</div>
+    <div class="deErr">删除失败</div>
     <div class="center-right">
 
         <div class="cr-care" >
-            <div class="cr-title">消息中心</div>
+        	
+        	<div class="clearfix">
+                <div class="cr-title pull-left">消息中心</div>
+                <ul class="pagination pull-right">
+                    <li ng-repeat="item in pages" ng-class="item==curPage ?'active':''" ng-click="getPage(item,userId)"><a href="javascript:;">{{item}}</a></li>
+                </ul>
+            </div>
 
-            <div class="none-message" style="display: none">暂无消息</div>
+            <div class="none-message" ng-if="news.length==0">暂无消息</div>
             <div class="cr-notice-main" style="">
                 <div class="mlb-handlar">
                     <span class="systitle">系统消息</span>
-                    <div class="right-h">
-                        <input type="checkbox" name="select-all" class="select-all-box"/>
-                        <span class="select-all-text">全选/反选</span>
-                        <span class="del-m kbutton">删除</span>
-                    </div>
                 </div>
                 <div class="has-message">
-                    <div class="message-list-box" ng-repeat="new in news">
-                        <div class="message-list-title">守护到期提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                	<!--开播通知-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==0">
+                        <div class="message-list-title">
+                        {{new.title}}<span class="times">{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}</span></div>
                         <div class="message-sf">
                            <div class="message-sf-cont">
-                               您对 <a href="#" class="names">梁胖胖吃翔</a> 的守护期限即将到期,请及时守护
+                               你关注的 <a href="{{new.roomNumber}}" target="_blank" class="names" id="{{new.userId}}">{{((new.details|toJson).userName)|decode}}</a> 已经开始直播<span id="{{new.id}}" hidden></span>
                            </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">前往续费</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <a href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">进入房间</a>
+                                <button type="button" data-toggle="modal" data-target="deleData" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
 
                     </div>
-                    <div class="message-list-box">
-                        <div class="message-list-title">管理设置提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                    
+                    <!--爵位冻结数据库挂了-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==1">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                您已成为 <a href="#" class="names">xx频道</a> 的管理员
+                                {{(new.details|toJson).month}} 月 {{(new.details|toJson).day}} 前再消{{(new.details|toJson).money}}才能继续点亮当前爵位，记得不要让尊贵的爵位暗淡咯<span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">管理房间</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
                     </div>
-                    <div class="message-list-box">
-                        <div class="message-list-title">物品过期提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                    
+                    <!--亲密度升级-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==2">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                您的 xxx座驾 即将到期 请即使续费
+                                你和<a href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的亲密度等级达到 <span class="colorPin">{{(new.details|toJson).level}}</span> 级<span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">管理房间</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
                     </div>
+                    
+                    <!--守护到期-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==3">
+                        <div class="message-list-title">
+                        {{new.title}}<span class="times">{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}</span></div>
+                        <div class="message-sf">
+                           <div class="message-sf-cont">
+                               你<a href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的守护还有一天就要到期了，再多留点时间守护在TA身边吧<span id="{{new.id}}" hidden></span>
+                           </div>
+                            <div class="message-sf-control">
+                                <a href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">继续守护TA</a>
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
 
-                    <div class="message-list-box">
-                        <div class="message-list-title">开播提醒 <span class="times">2016-11-16 20:20:08</span></div>
+                    </div>
+                    
+                    <!--获得礼物-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==4">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                您关注的主播 <a href="/1020" class="names">龙基基不搞基</a> 已经开播,赶紧去看看吧!
+                                <a href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>送给你 <span class="colorPin">{{(new.details|toJson).amount}}</span> 个 <span class="colorPin">{{(new.details|toJson).itmename}}</span>，你的K豆增加了 <span class="colorPin">{{(new.details|toJson).coins}}</span><span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
-                                <span class="message-sf-fee lbutton">管理房间</span>
-                                <span class="message-del-single kbutton">删除</span>
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
                     </div>
+                    
+                    <!--成为房间管理-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==5">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                频道号：<a href="new.number" class="names">{{new.roomNumber}} </a>的 <a href="{{new.roomNumber}}" target="_blank" class="names">{{((new.details|toJson).userName)|decode}}</a> 将你设为了TA的房间管理员，你在这里享有踢人、禁言权利哦，请帮助TA管理频道秩序吧<span id="{{new.id}}" hidden></span>
+                            </div>
+                            <div class="message-sf-control">
+                            	<a href="{{new.roomNumber}}" class="btn btn-sm btn-default">前去管理房间</a>
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--背包道具到期-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==6">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                亲爱的用户，你的背包里有{{(new.details|toJson).amount}}个{{(new.details|toJson).itmename}}即将在 {{(new.details|toJson).mouth}} 月 {{(new.details|toJson).day}} 日失效，请记得在失效前赶紧用掉哦<span id="{{new.id}}" hidden></span>
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--背包道具过期-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==7">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                亲爱的用户，你的背包里有 {{(new.details|toJson).amount}} 个 {{(new.details|toJson).itmename}} 超过有效期，系统已自动清理。如有疑问请联系客服<span id="{{new.id}}" hidden></span>
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--爵位升级-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==8">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                尊贵的用户恭喜你升级成为了 <span class="colorPin">{{(new.details|toJson).nobility}}</span> 贵族<span id="{{new.id}}" hidden></span>
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--活跃度升级-->
+                    <div class="message-list-box" ng-repeat="new in news" ng-if="new.type==9">
+                        <div class="message-list-title">
+                            {{new.title}}
+                            <span class="times">
+                            	{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}
+                            </span>
+                        </div>
+                        <div class="message-gl">
+                            <div class="message-sf-cont">
+                                你的活跃度等级达到了 <span class="colorPin">{{(new.details|toJson).level}}</span> 级<span id="{{new.id}}" hidden></span>
+                            </div>
+                            <div class="message-sf-control">
+                                <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
 
                 </div>
                 <div class="message-buy-box" style="display: none">
@@ -109,13 +241,7 @@
                 </div>
             </div>
         </div>
-        <ul class="pagination">
-            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-        </ul>
+        
     </div>
 
 

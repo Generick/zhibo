@@ -16,7 +16,7 @@
 
             $rs=$db->Execute("select b.roomNumber,
 (SELECT o.online from bu_user_online o where o.roomnumber = b.roomNumber and o.anchors=1) online,
-u.nickname,u.userId,
+u.nickname,u.userId,u.avatar,
 a.followeds
 from  bu_user_studio b,bu_user u,bu_user_anchors a
 where b.userId='{$user['userId']}'
@@ -30,7 +30,7 @@ and b.isFollow =1
                 $arr['nickname'] = urldecode($arr['nickname']);
                 ?>
                 <div class="care-li">
-                    <div class="care-img"><a href="/<?php echo $arr['roomNumber']?>.html"><img src="/apis/avatar.php?uid=<?php echo $arr['userId']?>" alt="name"></a></div>
+                    <div class="care-img"><a href="/<?php echo $arr['roomNumber']?>.html"><img src="<?php echo _IMAGES_DOMAIN_."/".$arr['avatar']?>" alt="name"></a></div>
                     <div class="care-info">
                         <div class="care-title">
                             <input type="hidden" value="<?php echo $arr['roomNumber']?>" id="usernumber"/>
