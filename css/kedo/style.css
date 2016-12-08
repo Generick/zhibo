@@ -445,8 +445,8 @@ a:hover{
 	/*热门*/
 	
 	.page-header{
-		border:none;
-		padding-bottom: 0; 
+		border:none !important;
+		padding-bottom: 0 !important; 
 	}
 	.hotCon .hotR{
 		margin-right: 10px; 

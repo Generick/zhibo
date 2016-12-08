@@ -157,7 +157,10 @@ img {
 .cl-set-info ul .li-hover a{cursor:pointer; color:#3e63d8; }
 .center-right{float:left;margin-left:20px;width:1040px;height: auto;min-height:500px;border: 1px #E3E3E3 solid;background: #fff;padding-bottom: 30px;margin-bottom: 30px; }
 
-.center-right .cr-title{padding: 27px 0 15px 40px; color:#5F5D68; font-size: 22px;}
+.center-right .cr-title{margin: 20px 0; padding-left: 3.3%; color:#5F5D68; font-size: 22px;}
+.center-right .pagination{padding-right: 6%; }
+.center-right .pagination>.active>a{background-color: #3e63d8 !important; }
+.center-right .pagination>.active>a:hover{background-color: #4b6acb !important; }
 #info-table{width:680px; border: none;color: #5F5D68;}
 #info-table tr{height: 40px;line-height: 40px;}
 #info-table td{width: 170px;height: 30px;}

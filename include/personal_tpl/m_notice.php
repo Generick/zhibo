@@ -11,11 +11,13 @@
     <div class="center-right">
 
         <div class="cr-care" >
-        	<ul class="pagination">
-                <li ng-repeat="item in pages" ng-class="item==curPage ?'active':''" ng-click="getPage(item,userId)"><a href="javascript:;">{{item}}</a></li>
-            </ul>
-        
-            <div class="cr-title">消息中心</div>
+        	
+        	<div class="clearfix">
+                <div class="cr-title pull-left">消息中心</div>
+                <ul class="pagination pull-right">
+                    <li ng-repeat="item in pages" ng-class="item==curPage ?'active':''" ng-click="getPage(item,userId)"><a href="javascript:;">{{item}}</a></li>
+                </ul>
+            </div>
 
             <div class="none-message" ng-if="news.length==0">暂无消息</div>
             <div class="cr-notice-main" style="">
@@ -101,7 +103,7 @@
                         </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                <a href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>送给你 {{(new.details|toJson).amount}} 个 {{(new.details|toJson).itmename}}，你的K豆增加了 {{(new.details|toJson).coins}}<span id="{{new.id}}" hidden></span>
+                                <a href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>送给你 <span class="colorPin">{{(new.details|toJson).amount}}</span> 个 <span class="colorPin">{{(new.details|toJson).itmename}}</span>，你的K豆增加了 <span class="colorPin">{{(new.details|toJson).coins}}</span><span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
@@ -174,7 +176,7 @@
                         </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                尊贵的用户恭喜你升级成为了 {{(new.details|toJson).nobility}} 贵族<span id="{{new.id}}" hidden></span>
+                                尊贵的用户恭喜你升级成为了 <span class="colorPin">{{(new.details|toJson).nobility}}</span> 贵族<span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
@@ -192,7 +194,7 @@
                         </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                你的活跃度等级达到了 {{(new.details|toJson).level}} 级<span id="{{new.id}}" hidden></span>
+                                你的活跃度等级达到了 <span class="colorPin">{{(new.details|toJson).level}}</span> 级<span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>

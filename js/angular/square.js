@@ -27,14 +27,5 @@ squareApp.filter("decode",function(){
 		return decodeURIComponent(value)
 	}
 })
-squareApp.filter("images",function(){
-	return function(value){
-		if (value==null) {
-			return value="http://images.181show.com/46a920d47a9c287e627693554180598a?p=0";
-		}
-		return value;
-	}
-})
-
 
 
