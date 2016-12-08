@@ -132,9 +132,9 @@ a{text-decoration:none; }
 .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
 .no-live ul li{float: left;margin-right:20px; }
 .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
-.noanchor-kuang{width:102px;  height: 150px;position: relative;overflow: hidden}
-.noanchor-kuang .nocnchor-k{width: 102px;height: 150px;position: absolute;z-index: 11}
-.noanchor-kuang img{ position: absolute;height: 143px; width: 95px; z-index: 8; margin: 5px;  border-radius: 10px;}
+.noanchor-kuang{width:100px;  height: 150px;position: relative;overflow: hidden}
+.noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
+.noanchor-kuang img{ position: absolute;height: 146px; width: 96px; z-index: 8; margin: 2px;  border-radius: 5px;}
 
 .noanchor-info{ line-height: 18px;  margin-top: 3px;margin-left: -2px;}
 .noanchor-info .noanchor-level{float: left}

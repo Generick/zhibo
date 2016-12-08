@@ -43,8 +43,10 @@ define(function(require, exports, module) {
 					$(".giftHeader span:last").addClass('redot');
 				}
 				$("#giftList28 ." + base.data.packs.giftId).attr("giftNum", base.data.packs.num);
-				if(base.data.packs.auto != null){
-					var auto = base.data.packs.auto;
+
+
+				if(base.data.isAdd != null){
+					var auto = base.data.isAdd;
 					if(auto.giftId != null && auto.num != null){
 						Tools.setCookie("fi_num",auto.num,86400);
                         if($(".giftLists ul:first #gift"+auto.giftId+"").find(".first-nus").length >0){
