@@ -18,7 +18,7 @@
                 </ul>
             </div>
 
-            <div class="none-message" ng-if="news.length==0">暂无消息</div>
+            <div class="none-message" ng-if="news==null||news.length==0">暂无消息</div>
             <div class="cr-notice-main" style="">
                 <div class="mlb-handlar">
                     <span class="systitle">系统消息</span>
