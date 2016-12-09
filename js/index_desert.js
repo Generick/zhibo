@@ -35,8 +35,9 @@ $(document).ready(function(){
                 callback(data, textStatus, jqXHR);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(params.url+" error code:"+textStatus);
-
+                if (typeOf(params.error)==='function') {
+                    params.error(data, textStatus, jqXHR)
+                }
 
             }
         });
@@ -51,12 +52,12 @@ $(document).ready(function(){
             timeout: 120000,
             statusCode: {
                 404: function() {
-                    // return false;
-
+                    if (typeOf(params.error)==='function') {
+                        params.error(data, textStatus, jqXHR)
+                    }
 
                 },
                 200: function(){
-                    // alert("请求成功");
 
                 }
             },
@@ -64,8 +65,9 @@ $(document).ready(function(){
                 callback(data, textStatus, jqXHR);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(params.url+" error code:"+jqXHR.status);
-
+                if (typeOf(params.error)==='function') {
+                    params.error(data, textStatus, jqXHR)
+                }
 
             }
         });
