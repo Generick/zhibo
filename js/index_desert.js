@@ -36,7 +36,7 @@ $(document).ready(function(){
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 if (typeof(params.error)==='function') {
-                    params.error(data, textStatus, jqXHR)
+                    params.error(data);
                 }
 
             }

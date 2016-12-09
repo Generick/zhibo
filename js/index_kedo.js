@@ -32,7 +32,9 @@ $(document).ready(function(){
 				callback(data, textStatus, jqXHR);
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
-				//alert(params.url+" error code:"+textStatus);
+				if (typeof(params.error) === 'function') {
+					params.error(data);
+				}
 	
 	
 			}
@@ -48,7 +50,10 @@ $(document).ready(function(){
 			timeout: 120000,
 			statusCode: {
 				404: function() {
-					params.error(data);
+					if (typeof(params.error)==='function') {
+						params.error(data);
+					}
+					
 	
 				},
 				200: function(){
@@ -60,7 +65,10 @@ $(document).ready(function(){
 				callback(data, textStatus, jqXHR);
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
-				params.error(data);	
+				if (typeof(params.error)==='function') {
+					params.error(data);
+				}
+				
 	
 			}
 		});
