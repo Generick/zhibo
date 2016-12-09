@@ -27,5 +27,10 @@ squareApp.filter("decode",function(){
 		return decodeURIComponent(value)
 	}
 })
+squareApp.filter("time",function(){
+	return function(value){
+		return parseInt(value/60000)
+	}
+})
 
 

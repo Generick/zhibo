@@ -60,7 +60,7 @@ include_once('tpl_header.php');
                   <div class="hotB">
                     <span class="colorPin f14">{{squAnch.nickName|decode}}</span>  
                     <p class="f12 color99" ng-if="squAnch.onlineTime>0">
-                        <span>{{squAnch.onlineTime}}</span>
+                        <span>{{squAnch.onlineTime|time}}</span>
                         <span>分钟之前</span>
                     </p>
                     <p class="f12" ng-if="squAnch.onlineTime==0">
