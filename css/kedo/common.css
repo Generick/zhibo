@@ -1,6 +1,6 @@
 body{
     font-family:"Microsoft YaHei";
-    background-color:#f4f4f4;
+    background-color:#f1f1f1;
     color: #333;
 }
 a{
@@ -163,4 +163,8 @@ li{
         -o-border-radius: 20px;
         border-left: none;
     }
+}
+
+.officialMailbox{
+    color: #337ab7;
 }

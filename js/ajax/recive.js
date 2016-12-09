@@ -43,6 +43,7 @@ define('ajax/recive', function(require, exports, module){
             console.log(data);
             if(data.data){
                 $.each(data.data, function(k,v) {
+                    v.nickName = decodeURIComponent(v.nickName);
                     if(v.type==1){  //礼物
                         $h += Tools.stringFormat(html,v.nickName,v.createDT,v.numbers, v.img,v.giftName,Math.abs(v.money));
                     }else if(v.type==2){ //点歌

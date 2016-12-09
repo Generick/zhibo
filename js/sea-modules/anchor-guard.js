@@ -32,7 +32,7 @@ define(function(require, exports, module) {
 					n++;
 					var _self = $(this);
 					_self[0].grds = _self[0].grds;
-					htm += '<li><div class="guardYou"><div class="gback glv1"><img src="/apis/avatar.php?uid=' + _self[0].userId
+					htm += '<li><div class="guardYou"><div class="gback glv1"><img src="' + _self[0].himage
 							+ '" class="img2"/>\
 		                        <span class="img3">' + _self[0].days
 							+ '<br />\u5929</span>\

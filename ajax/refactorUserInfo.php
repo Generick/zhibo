@@ -48,6 +48,11 @@ $_POST=safe_output($_POST);
      $gender=$_POST['gender']?$_POST['gender']:0;
      $snic=$nickname;
      $nickname=urlencode($_POST['aliasname']);
+     if(check_nickname($nickname) != "yes"){
+         header('Content-Type:application/json; charset=utf-8');
+         echo json_encode(array("resultStatus"=>100,"errorMessage"=>"昵称非法"));
+         exit();
+     }
      $res=$db->Execute("update bu_user set nickname='{$nickname}', birthday='$birthday',gender=$gender,province='{$_POST['province']}',city='{$_POST['city']}' where userId=$user[userId]");
      if($res){
          header('Content-Type:application/json; charset=utf-8');

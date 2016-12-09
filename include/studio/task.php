@@ -106,12 +106,12 @@
                 <div class="sf-mis">
                     <div class="sf-descript">
                         <div class="sf-ms-title titMonth"></div>
-                        <div class="sf-ms-content">拥有专属勋章、个性名称、房间防踢、禁言他人、主播互动等功能<a href="#">查看更多</a></div>
+                        <div class="sf-ms-content">拥有专属勋章、个性名称、房间防踢、禁言他人、主播互动等功能<a href="/mall.php?type=guard" <?php if($_SESSION['pf'] != "QQGame"){ echo 'target="_blank"';}?>>查看更多</a></div>
                     </div>
                     <div class="sf-line-s"></div>
                     <div class="sf-descript">
                         <div class="sf-ms-title titYear"></div>
-                        <div class="sf-ms-content">一次性购买12个月即开通年费守护、尊享月费所有特权、额外可获得系统奖励蝌蚪比和守护经验的<a href="#">查看更多</a></div>
+                        <div class="sf-ms-content">一次性购买12个月即开通年费守护、尊享月费所有特权、额外可获得系统奖励蝌蚪比和守护经验的<a href="/mall.php?type=guard" <?php if($_SESSION['pf'] != "QQGame"){ echo 'target="_blank"';}?>>查看更多</a></div>
                     </div>
                 </div>
             </div>

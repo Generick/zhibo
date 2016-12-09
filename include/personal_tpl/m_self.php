@@ -18,18 +18,18 @@
             <div class="cr-title">基本资料</div>
             <table id="info-table">
                 <tr  class="cr-hline">
-                    <td class="n-type">昵称：</td> <td class="" colspan="3"><input type="text" name="aliasname" id="aliasname"   value="<?php echo $user['nickname']?>"/></td>
+                    <td class="n-type">昵称：</td> <td class="" colspan="3"><input type="text" name="aliasname" id="aliasname" style="padding-left: 5px;" maxlength="8" value="<?php echo $user['nickname']?>"/></td>
                 </tr>
                 <tr class="cr-hline">
                     <td  class="n-type"> <span>性别：</span></td> <td colspan="3">
-                        <em><input class="inputnoborder" type="radio" name="gender" value='0' id="female" <?php echo $femalechecked?>><label for="female">女</label><input type="radio" class="inputnoborder" name="gender" value='1' id="male" <?php echo $malechecked?>><label for="male">男</label></em>
+                        <input class="inputnoborder" type="radio" name="gender" value='0' id="female" <?php echo $femalechecked?>>&nbsp;<label for="female">女</label>&nbsp;&nbsp;&nbsp;<input type="radio" class="inputnoborder" name="gender" value='1' id="male" <?php echo $malechecked?>>&nbsp;<label for="male">男</label>
                     </td>
                 </tr>
                 <tr class="cr-hline">
                     <td class="n-type">所在地：</td>
                     <td> <select name="province" id="province"></select></td>
                     <td><select name="city"  id="city"></select></td>
-                    <td> <input type="radio" name="issecret" id="" value="1">保密 <input type="radio" name="issecret" value="2" />公开</td>
+                    <td> <input type="radio" name="issecret" id="" value="1">&nbsp;保密 <input type="radio" name="issecret" value="2" />&nbsp;公开</td>
                 </tr>
                 <script language="javascript" src="/js/PCASClass.js"></script>
                 <script language="javascript" src="/skin/ym/js/birthday.js"></script>

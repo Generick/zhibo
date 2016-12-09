@@ -133,9 +133,9 @@ a{text-decoration:none; }
 .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
 .no-live ul li{float: left;margin-right:20px; }
 .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
-.noanchor-kuang{width:102px;  height: 150px;position: relative;overflow: hidden}
-.noanchor-kuang .nocnchor-k{width: 102px;height: 150px;position: absolute;z-index: 11}
-.noanchor-kuang img{ position: absolute;height: 143px; width: 95px; z-index: 8; margin: 5px;  border-radius: 10px;}
+.noanchor-kuang{width:100px;  height: 150px;position: relative;overflow: hidden}
+.noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
+.noanchor-kuang img{ position: absolute;height: 146px; width: 96px; z-index: 8; margin: 2px;  border-radius: 5px;}
 
 .noanchor-info{ line-height: 18px;  margin-top: 3px;margin-left: -2px;}
 .noanchor-info .noanchor-level{float: left}
@@ -195,7 +195,7 @@ a{text-decoration:none; }
 .gift-record ul li .gr-song,.cr-to{color: #FFffff}
 .gift-record ul li .gr-reciver{color: #ffc937;}
 .gift-record ul li img{width: 22px;  height: 24px; vertical-align: middle; margin: 0 3px 0 2px;}
-.gr-header,.vr-header{color:#FFffff;margin:12px 0 0 15px;cursor: move}
+.gr-header,.vr-header{color:#FFffff;margin:12px 0 12px 15px;cursor: move}
 .gr-header #span{ background:url(/skin/comic/images/gift_tit.png); width: 66px; height: 20px; display: block; }
 .vr-header .span{ background:url("/skin/comic/images/icon_guibinxi.png") no-repeat; width: 50px; height: 20px; display: block; }
 .handler{width: 15px;    height: 10px;  border-right: solid 1px #888;    border-bottom: solid 1px #888;  position: absolute;   right: 1px; bottom: 1px;  cursor: nw-resize;}
@@ -915,3 +915,5 @@ a{text-decoration:none; }
 	.visitant-record{top:60px;}
 }
 
+.flash-area{width:640px;height:360px}
+.bk-color{    border: 2px solid #ccc;  border-radius: 10px;}

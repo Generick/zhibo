@@ -401,6 +401,10 @@ define(function(require, exports, module) {
 			/** 添加取消关注 */
 			this.sendMsg(msg, call, "follow");
 		},
+        countingStar : function(msg, call) {
+            /** 上推自动增加礼物 */
+            this.sendMsg(msg, call, "countStar");
+        },
 		anchorInfo : function(msg, call) {
 			/** 更新主播信息 */
 			this.sendMsg(msg, call, "anchorInfo");

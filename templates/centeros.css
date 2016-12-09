@@ -157,7 +157,10 @@ img {
 .cl-set-info ul .li-hover a{cursor:pointer; color:#3e63d8; }
 .center-right{float:left;margin-left:20px;width:1040px;height: auto;min-height:500px;border: 1px #E3E3E3 solid;background: #fff;padding-bottom: 30px;margin-bottom: 30px; }
 
-.center-right .cr-title{padding: 27px 0 15px 40px; color:#5F5D68; font-size: 22px;}
+.center-right .cr-title{margin: 20px 0; padding-left: 3.3%; color:#5F5D68; font-size: 22px;}
+.center-right .pagination{padding-right: 6%; }
+.center-right .pagination>.active>a{background-color: #3e63d8 !important; }
+.center-right .pagination>.active>a:hover{background-color: #4b6acb !important; }
 #info-table{width:680px; border: none;color: #5F5D68;}
 #info-table tr{height: 40px;line-height: 40px;}
 #info-table td{width: 170px;height: 30px;}
@@ -199,7 +202,7 @@ img {
 .bind-phone-area #code:focus,.bind-phone-area #phone:focus{border:1px solid #E74152;}
 .bind-phone-area #code{width:160px;}
 .bind-phone-area #phone{width:200px;}
-.bind-phone-area .send{color: #1B76BD;  display: inline-block;  font-size: 12px;  cursor: pointer;  width: 100px;  height: 30px;  line-height: 30px;color: #333;
+.bind-phone-area .send{color: #1B76BD;  display: inline-block;  font-size: 12px;  cursor: pointer;  width: 100px;  height: 30px;  line-height: 26px;color: #333;
 }
 .bind-phone-area .resend-ms{display:none;color:#E74152;font-size: 12px;padding-left: 10px;}
 
@@ -225,7 +228,7 @@ img {
 /*修改密码**/
 .midfy-passwd-area table{margin-left:60px;margin-top:30px;font-size:14px;}
 .midfy-passwd-area table tr{height:30px;line-height:40px;}
-.input-pass{height:30px;width:200px;line-height:30apx;font-size:14px;border:1px solid #E74152}
+.input-pass{height:30px;width:200px;line-height:30apx;font-size:14px;}
 .midfy-passwd-area #save{background: #E74152;color:#fff;margin-right:60px;}
 .midfy-passwd-area #save:hover{background-color:#ea7a85; }
 .midfy-passwd-area #cancel{background:#C9C9C9;color:#404040}
@@ -265,7 +268,7 @@ img {
 
 /**交易记录*/
 .re-title-area{margin-top: 60px;color: #333333;}
-.re-title{font-size: 16px;font-weight: 700;display: inline-block;margin-right: 30px;margin-left: 30px;}
+.re-title{font-size: 16px;font-weight: 700;display: inline-block;margin-right: 30px;margin-left: 30px; color: #999; }
 .recharge-search{display: inline-block;color: #333333;}
 .recharge-search select{width:126px;height: 30px;border-radius: 3px;}
 .re-search-button{background:#E74152;color:#fff2ed}
@@ -339,7 +342,7 @@ img {
     font-size: 12px;
     margin-left:38px;
     overflow: hidden;
-    border-bottom: 1px solid #D5D5D5;
+    border-bottom: 1px solid #ddd;
     width: 930px;
 
 }
@@ -374,8 +377,7 @@ img {
 .lbutton:hover{
     color: #ea7a85;
 }
-.mlb-handlar .del-m{}
-.message-list-title{font-size: 14px;margin: 10px;color: #333}
+.message-list-title{font-size: 14px;margin: 10px 10px 10px 0;color: #333}
 .message-list-title .times{margin-left: 20px;color: #999999;display: inline-block}
 .message-sf-cont{float: left; }
 .message-sf-cont .names{color:#E74152 }
@@ -581,4 +583,12 @@ img {
     filter: alpha(opacity =   50);
     z-index: 4999;
 }
-/*个人中心 分页*/
+.succ,.deErr{
+    position: absolute;
+    left: 55%;
+    background-color: #e34052;
+    padding: 8px;
+    border-radius: 12%;
+    color: #fff;
+    display: none;
+}
