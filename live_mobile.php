@@ -159,16 +159,13 @@ $roomUsers = $zhuboinfo['roomUsers'];
         </div>
        <div class="row">
        <?php 
-            // foreach ($data['data']['hotAnchors'] as $key => $value) {
-            //   echo $key."=>".$value['roomNumber'];
-            //   echo "</br>";
-            // }
+            
             $hotAnchors = $data['data']['hotAnchors'];
-            $hotNum = count($hotAnchors);
+            $hotNum = count($hotAnchors)<6?count($hotAnchors):6;
             $imgsize = '&w=330&h=181';
             //$imgsize = '';
             //$hotNum = 0;
-            for ($i=0; $i <6 ; $i++) { 
+            for ($i=0; $i <$hotNum ; $i++) { 
               if($hotNum<=0) break;
               if ($i == 0) {
                 echo '<div class="col-xs-6" ng-repeat="reply in replies">
