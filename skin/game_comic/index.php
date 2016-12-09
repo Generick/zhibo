@@ -192,10 +192,10 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
     .down-load-game{position: absolute;width: 150px;height:120px;right: -182px;top:5px;}
     .start-load-game{position: absolute;    width: 150px; height: 120px;left: -182px; top: 5px;}
-/*
+
     .btn-down-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $downImg1;?>") no-repeat;}
     .btn-start-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $startImg1;?>") no-repeat;}
-*/
+
 
     @media only screen and (min-width:1920px) and (min-height:806px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }

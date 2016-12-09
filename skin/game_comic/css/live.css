@@ -91,7 +91,7 @@ a{text-decoration:none; }
 
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
 .live-info{position: relative;  margin-top: 8px;}
-.flash-area{width: 985px;height: 550px;}
+.flash-area{width: 985px;height: 550px; margin: 0 auto ;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
 .self-photo{width:60px; }.self-photo img,.nl-login img{ display: block;  width: 60px;  height: 60px;  -webkit-border-radius: 50%; -moz-border-radius: 50%;  -o-border-radius: 50%;  border-radius: 50%;}
@@ -700,8 +700,12 @@ a{text-decoration:none; }
 
 .appear .user_info .user_add{width:82px; height:32px; line-height:32px; text-align:center; color:#fff; background:#fdb200; border-radius:4px; margin-left:12px; margin-top:60px; margin-bottom:14px; cursor:pointer; }
 
-
-
+#player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
+    width: 985px;
+    height: 550px;
+    margin: 0 auto;
+}
+ 
 @media only screen and (min-width:1920px) and (min-height:806px){
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
@@ -769,9 +773,9 @@ a{text-decoration:none; }
 @media only screen and (max-width:1919px){
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        /*width:640px;
-       height:360px;
-      margin:77px auto;*/
+        width: 985px;
+        height: 550px;
+        margin: 0 auto;
     }
     .live-info{
         margin: 0 auto;
@@ -813,17 +817,15 @@ a{text-decoration:none; }
     .no-live-text{margin-top:66px;}
     .no-live ul{margin-top:60px;}
     #player{
-        width:483px;
-        height:272px;
+        width: 742px;
+        height: 415px;
         margin:58px auto;
         margin-top:-19px;
-        margin-left:39px;
-
     }
 
     #CustomGiftSwf,#LevelUpPlayerSwf{
-        width:483px;
-        height:272px;
+        width: 742px;
+        height: 415px;
         margin:58px auto;
         margin-top:-19px;
         margin-left:458px;
@@ -832,11 +834,11 @@ a{text-decoration:none; }
     .live-info {
         position: relative;
         width: 483px;
-        margin-top: -62px;
+        margin-top: -18px;
     }
     .flash-area{
-        height:312px;
-        height:312px !important;
+        width: 742px;
+        height: 415px;
     }
 
     .newGifts{
@@ -861,32 +863,29 @@ a{text-decoration:none; }
     .no-live ul{margin-top:50px;}
     .self-care{margin-top: 18px;}
     #player{
-        width:429px;
-        height:242px;
+        width: 660px;
+        height: 370px;
         margin:51px auto;
         margin-top:-26px;
-        margin-left:53px;
-
     }
 
     #CustomGiftSwf,#LevelUpPlayerSwf{
-        width:429px;
-        height:242px;
+        width: 660px;
+        height: 370px;
         margin:51px auto;
         margin-top:-26px;
         margin-left:485px;
-
     }
 
     .live-info {
         position: relative;
         width: 429px;
-        margin-top: -62px;
+        margin-top: -36px;
     }
 
     .flash-area{
-        height:268px;
-        height:268px !important;
+        width: 660px;
+        height: 370px;
     }
 
     .self-care{
@@ -896,10 +895,6 @@ a{text-decoration:none; }
     .newGifts{
         left:396px;
     }
-    /*.myDiv2, .gift-record, .guard-area {
-        width: 260px;
-        left: 170px;
-    }*/
 
     .myDiv2, .gift-record, .guard-area ,.visitant-record{
         width: 220px;
@@ -916,5 +911,3 @@ a{text-decoration:none; }
         top:476px;
     }
 }
-
-.flash-area{width:980px;height:550px}

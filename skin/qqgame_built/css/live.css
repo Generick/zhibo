@@ -785,3 +785,8 @@ a{text-decoration:none; }
 
 /**/
 .flash-area{width:568px;height:314px}
+
+#player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
+    width:568px;
+    height:314px;
+}
