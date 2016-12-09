@@ -85,7 +85,7 @@
                                你<a href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的守护还有一天就要到期了，再多留点时间守护在TA身边吧<span id="{{new.id}}" hidden></span>
                            </div>
                             <div class="message-sf-control">
-                                <a href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">继续守护TA</a>
+                                <a ng-if="{{new.roomNumber>0}}" href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">继续守护TA</a>
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
