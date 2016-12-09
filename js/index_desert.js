@@ -36,7 +36,7 @@ $(document).ready(function(){
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 if (typeof(params.error)==='function') {
-                    params.error(data);
+                    params.error(jqXHR,textStatus,errorThrown);
                 }
 
             }
@@ -53,7 +53,7 @@ $(document).ready(function(){
             statusCode: {
                 404: function() {
                     if (typeof(params.error)==='function') {
-                        params.error(data);
+                        params.error(jqXHR,textStatus,errorThrown);
                     }
 
                 },
@@ -66,7 +66,7 @@ $(document).ready(function(){
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 if (typeof(params.error)==='function') {
-                    params.error(data);
+                    params.error(jqXHR,textStatus,errorThrown);
                 }
 
             }
