@@ -115,30 +115,32 @@ include_once('tpl_header.php');
             	<div class="page-header">
                 	<h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 全部游戏</h4>
                 </div>
-            	<div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="gameAnch in gameAnchs">                    
-                <a href="{{gameAnch.roomNumber}}" target="_blank" class="thumbnail bgf4">            
-                    <div class="recommImg">                        
-                        <img class="lazy" ng-src="{{gameAnch.image}}&w=221&h=146" alt="{{gameAnch.nickName|decode}}">                        
-                        <div class="thumb-bar"></div>                        
-                        <div class="shadow"></div>                        
-                        <div class="playBtn"></div>                    
-                    </div>                  
-                    <div class="recommB clearfix">  
-                    	<img class="pull-left recommBL img-circle" ng-src="{{gameAnch.imagePrivate}}"/>                      	
-                        <div class="recommBR pull-right">
-                        	<div class="clearfix">                            
-                                <span class="color33 pull-left ellipsis">{{gameAnch.nickName|decode}}</span>
-                                <div class="color99 pull-right">                                
-                                <span class="glyphicon glyphicon-eye-open"></span>            
-                                <span>{{gameAnch.numbers}}</span>                            
-                            </div>                        
-                        </div>                        
-                			<p class="color99 ellipsis f12">{{gameAnch.title}}</p>
-                        </div>
-                                            
-                	</div>
-                </a>                    
-            </div>
+                <div class="row">
+                	<div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="gameAnch in gameAnchs">                    
+                        <a href="{{gameAnch.roomNumber}}" target="_blank" class="thumbnail bgf4">            
+                            <div class="recommImg">                        
+                                <img class="lazy" ng-src="{{gameAnch.image}}&w=221&h=146" alt="{{gameAnch.nickName|decode}}">                        
+                                <div class="thumb-bar"></div>                        
+                                <div class="shadow"></div>                        
+                                <div class="playBtn"></div>                    
+                            </div>                  
+                            <div class="recommB clearfix">  
+                            	<img class="pull-left recommBL img-circle" ng-src="{{gameAnch.imagePrivate}}"/>                      	
+                                <div class="recommBR pull-right">
+                                	<div class="clearfix">                            
+                                        <span class="color33 pull-left ellipsis">{{gameAnch.nickName|decode}}</span>
+                                        <div class="color99 pull-right">                                
+                                        <span class="glyphicon glyphicon-eye-open"></span>            
+                                        <span>{{gameAnch.numbers}}</span>                            
+                                    </div>                        
+                                </div>                        
+                        			<p class="color99 ellipsis f12">{{gameAnch.title}}</p>
+                                </div>
+                                                    
+                        	</div>
+                        </a>                    
+                    </div>
+                </div>
             </div>      
         </div>
         
