@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 				<img src="/apis/avatar.php?uid={0}" alt="{1}">\
 			</div>\
 			<div class="rkb-con">\
-				<p class="rkb-p1">{2}</p>\
+				<p class="rkb-p1" style="font-size: 12px;">{2}</p>\
 				<p style="font-size: 12px;">{3}</p>\
 			</div>\
 			</li>',

@@ -10,7 +10,6 @@ html, body {
 
 }
 .bg1{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
-.bg2{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
 cite, i {
     font-style: normal;
 }
@@ -89,9 +88,10 @@ a{text-decoration:none; }
 .euc .jubao:hover{background: url(/skin/desert/images/jubao-hover.png)center top no-repeat;}
 
 /*中部*/
-.video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
-.live-info{position: relative;  margin-top: 8px;}
 
+.video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
+.live-info{position: relative;  margin-top: 8px;}
+.flash-area{width: 985px;height: 550px;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
 .self-photo{width:60px; }.self-photo img,.nl-login img{ display: block;  width: 60px;  height: 60px;  -webkit-border-radius: 50%; -moz-border-radius: 50%;  -o-border-radius: 50%;  border-radius: 50%;}
@@ -116,31 +116,25 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative}
+.no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative}
 
 /*未开播*/
-.no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
-.no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
+.no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
+.no-live ul{margin: 0 auto;margin-top:100px;width: 460px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
 .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
-.no-live ul li{float: left;margin-right:20px; }
+.no-live ul li{float: left;  margin-right: 25px;  margin-left: 25px;}
 .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
 .noanchor-kuang{width:102px;  height: 150px;position: relative;overflow: hidden}
-.noanchor-kuang .nocnchor-k{width: 102px;height: 150px;position: absolute;z-index: 11}
-.noanchor-kuang img{ position: absolute;height: 143px; width: 95px; z-index: 8; margin: 5px;  border-radius: 10px;}
+.noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
+.noanchor-kuang img{ position: absolute;height: 146px; width: 96px; z-index: 8; margin: 2px;  border-radius:5px;}
 
-.noanchor-info{ line-height: 18px;  margin-top: 3px;margin-left: -2px;}
+.noanchor-info{ line-height: 18px;  margin-top: 6px;margin-left: -2px;}
 .noanchor-info .noanchor-level{float: left}
-.noanchor-name {float: left;    float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;}
-.noanchor-num{float: left;margin-left: 10px;}
-.bk-white{background: url("/static_data/images_css/biankuang_nolive/biankuang_white_SS.png") no-repeat;}
-.bk-blue{background: url("/static_data/images_css/biankuang_nolive/biankuang_blue_SS.png") no-repeat;}
-.bk-yellow{background: url("/static_data/images_css/biankuang_nolive/biankuang_yellow_SS.png") no-repeat;}
-.bk-size{background: url("/static_data/images_css/biankuang_nolive/biankuang_size_SS.png") no-repeat;}
-.bk-orange{background: url("/static_data/images_css/biankuang_nolive/biankuang_orange_SS.png") no-repeat;}
-.bk-black{background: url("/static_data/images_css/biankuang_nolive/biankuang_black_SS.png") no-repeat;}
-
+.noanchor-name {float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;font-size: 14px;}
+.noanchor-num{float: left;margin-left: 10px;font-size: 12px;  color: #999;}
+.bk-color{    border: 2px solid #ccc;  border-radius: 10px;}
 /*礼物*/
 
 .myDiv1{width: 340px;position:absolute;}
@@ -188,7 +182,7 @@ a{text-decoration:none; }
 .gift-record ul li .gr-song,.cr-to{color: #FFffff}
 .gift-record ul li .gr-reciver{color: #ffc937;}
 .gift-record ul li img{width: 22px;  height: 24px; vertical-align: middle; margin: 0 3px 0 2px;}
-.gr-header,.vr-header{color:#FFffff;margin:12px 0 0 15px;cursor: move}
+.gr-header,.vr-header{color:#FFffff;margin:12px 0 12px 15px;cursor: move}
 .gr-header #span{ background:url(/skin/comic/images/gift_tit.png); width: 66px; height: 20px; display: block; }
 .vr-header .span{ background:url("/skin/comic/images/icon_guibinxi.png") no-repeat; width: 50px; height: 20px; display: block; }
 .handler{width: 15px;    height: 10px;  border-right: solid 1px #888;    border-bottom: solid 1px #888;  position: absolute;   right: 1px; bottom: 1px;  cursor: nw-resize;}
@@ -459,7 +453,7 @@ a{text-decoration:none; }
 .less-butt .less-charge{background-color: #e7a317}
 .less-butt .less-cancel{background-color: #505050}
 /*新礼物*/
-.newGifts{ width: 600px; height: 92px;  position: absolute; - margin-left:-300px; left: 50%;  bottom:28%;}
+.newGifts{ width: 600px; height: 92px;  position: absolute; - margin-left:-300px; left: 50%;  bottom:10%;}
 .draggift{width:600px;height: 50px;position: absolute;top:-40px;cursor:move;}
 .toMarginLeft{width: 940px;height: 92px;position: absolute;left: 0}
 .mainGifts{width:502px;height:92px;position: absolute;right: -10px;}
@@ -709,15 +703,17 @@ a{text-decoration:none; }
 
 
 @media only screen and (min-width:1920px) and (min-height:806px){
-    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        width:640px;
-        height:360px;
+        width: 985px;
+        height: 550px;
+        margin: 0 auto;
     }
     .video-area{margin:77px auto;}
     .live-info{
-        margin-top:8px;
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 640px;
     }
 
     .rank-area{
@@ -730,6 +726,23 @@ a{text-decoration:none; }
     .guard-area,.rank-area,.gift-record{
         left:78px;
     }
+
+    .no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
+        .no-live ul{margin: 0 auto;margin-top:106px;width: 560px;height: 190px;}
+
+    .no-live{ font-size:12px; color: #fefefe}
+    .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
+    .no-live ul li{float: left;  margin-right: 25px;  margin-left: 25px;}
+    .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
+        .noanchor-kuang{width:128px;  height: 190px;position: relative;overflow: hidden}
+    .noanchor-kuang .nocnchor-k{width: 128px;height: 190px;position: absolute;z-index: 11}
+        .noanchor-kuang img{ position: absolute;    height: 187px;  width: 125px;z-index: 8; margin: 2px;  border-radius:10px;}
+
+    .noanchor-info{ line-height: 18px;  margin-top: 16px;margin-left: -2px;}
+    .noanchor-info .noanchor-level{float: left}
+    .noanchor-name {float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;font-size: 14px;}
+    .noanchor-num{float: left;margin-left: 10px;font-size: 12px;  color: #999;}
+    .bk-color{    border: 3px solid #ccc;  border-radius: 10px;}
 
 }
 
@@ -754,15 +767,16 @@ a{text-decoration:none; }
     .guard-area,.rank-area,.gift-record,.visitant-record{left:3000px; }
 }
 @media only screen and (max-width:1919px){
-    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
-        width:640px;
-        height:360px;
-        /*margin:77px auto;*/
+        /*width:640px;
+       height:360px;
+      margin:77px auto;*/
     }
     .live-info{
-        margin-top:8px;
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 640px;
     }
     .newGifts{
         left:30%;
@@ -788,18 +802,16 @@ a{text-decoration:none; }
 
 
 @media only screen and (max-width:1448px){
-    .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
     .no-live{
-        width:483px;
-        height:272px;
-        margin:58px auto;
-        margin-top:-19px;
-        margin-left:79px;
-        background: url("/skin/comic/images/pic_zhibojian_moren_484.jpg");
+        width: 742px;
+        height: 415px;
+        margin: 58px auto;
+        margin-top: -19px;
+        background: url("/skin/game_comic/images/pic_zhibojian_moren_742_415.jpg");
     }
-    .no-live-text{margin-top:30px;}
-    .no-live ul{margin-top:25px;}
+    .no-live-text{margin-top:66px;}
+    .no-live ul{margin-top:60px;}
     #player{
         width:483px;
         height:272px;
@@ -815,14 +827,12 @@ a{text-decoration:none; }
         margin:58px auto;
         margin-top:-19px;
         margin-left:458px;
-
     }
 
     .live-info {
         position: relative;
         width: 483px;
         margin-top: -62px;
-        margin-left: 80px;
     }
     .flash-area{
         height:312px;
@@ -838,20 +848,18 @@ a{text-decoration:none; }
 
 @media only screen and (max-width:1284px){
 
-    .bg2{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
     .bg1{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
     .no-live{
-        /*width:428px;*/
-        width:429px;
-        height:242px;
-        margin:51px auto;
-        margin-top:-26px;
-        margin-left:107px;
-        background: url("/skin/comic/images/pic_zhibojian_moren_430.jpg");
+        width: 660px;
+        height: 370px;
+        margin: 51px auto;
+        margin-top: -26px;
+        background: url("/skin/game_comic/images/pic_zhibojian_moren_660_370.jpg");
     }
 
-    .no-live-text{margin-top:26px;}
-    .no-live ul{margin-top:8px;}
+    .no-live-text{margin-top:58px;}
+    .no-live ul{margin-top:50px;}
+    .self-care{margin-top: 18px;}
     #player{
         width:429px;
         height:242px;
@@ -874,7 +882,6 @@ a{text-decoration:none; }
         position: relative;
         width: 429px;
         margin-top: -62px;
-        margin-left: 92px;
     }
 
     .flash-area{
@@ -910,3 +917,4 @@ a{text-decoration:none; }
     }
 }
 
+.flash-area{width:980px;height:550px}

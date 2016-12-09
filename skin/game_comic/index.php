@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -36,6 +37,7 @@
             currentRoomNumber : "<?php echo addslashes($roomnumber)?>",
             currentUserNickname : "<?php echo addslashes($user['nickname'])?>",
             version :"<?php echo $vsn?>",
+            skinType :"<?php echo $skinType?>",
             log : function(msg){
                 UIF.handler.weblog(msg);
             },
@@ -188,30 +190,36 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 ?>
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
-    .down-load-game{position: absolute;width: 120px;height: 76px;right: 0;top: 92px;}
-    .start-load-game{position: absolute;width: 120px;height: 76px;left: 0;top: 92px;}
-    .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $downImg1;?>") no-repeat;}
-    .btn-start-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $startImg1;?>") no-repeat;}
+    .down-load-game{position: absolute;width: 150px;height:120px;right: -182px;top:5px;}
+    .start-load-game{position: absolute;    width: 150px; height: 120px;left: -182px; top: 5px;}
+/*
+    .btn-down-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $downImg1;?>") no-repeat;}
+    .btn-start-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $startImg1;?>") no-repeat;}
+*/
 
     @media only screen and (min-width:1920px) and (min-height:806px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $downImg1;?>") no-repeat;}
-        .btn-start-game{display:inline-block;width: 120px;height: 76px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
+        .btn-down-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $downImg1;?>") no-repeat;}
+        .btn-start-game{display:inline-block;width: 150px;height: 120px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
     }
     @media only screen and (max-width:1919px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 120px;height: 76px;background: url("<?php echo $downImg1;?>")  no-repeat;}
-        .btn-start-game{display:inline-block;width: 120px;height: 76px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
+        .btn-down-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $downImg1;?>")  no-repeat;}
+        .btn-start-game{display:inline-block;width: 150px;height: 120px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
     }
     @media only screen and (max-width:1448px){
+        .start-load-game{left: -132px; top: 5px;}
+        .down-load-game{right: -172px;top:15px;}
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']."?p=0&w=1444&h=812";?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 90px;height: 57px;background:url("<?php echo $downImg2;?>")  no-repeat;}
-        .btn-start-game{display:inline-block;width: 90px;height: 57px;background:  url("<?php echo $startImg2;?>")  no-repeat;}
+        .btn-down-game{display:inline-block;width: 113px;height: 90px;background:url("<?php echo $downImg2;?>")  no-repeat;}
+        .btn-start-game{display:inline-block;width: 113px;height: 90px;background:  url("<?php echo $startImg2;?>")  no-repeat;}
     }
     @media only screen and (max-width:1284px) {
+        .start-load-game{left: -123px; top: 13px;}
+        .down-load-game{right: -173px;top:15px;}
         .game-bake-ground{  background: url(<?php echo $gameInfo['bgImage']."?p=0&w=1284&h=722";?>) no-repeat center top;   background-color: black;  }
-        .btn-down-game{display:inline-block;width: 80px;height: 51px;background: url("<?php echo $downImg3;?>") no-repeat;}
-        .btn-start-game{display:inline-block;width: 80px;height: 51px;background:  url("<?php echo $startImg3;?>")  no-repeat;}
+        .btn-down-game{display:inline-block;width: 113px;height: 90px;background: url("<?php echo $downImg3;?>") no-repeat;}
+        .btn-start-game{display:inline-block;width: 113px;height: 90px;background:  url("<?php echo $startImg3;?>")  no-repeat;}
     }
 </style>
 

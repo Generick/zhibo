@@ -164,7 +164,7 @@ define(function(require, exports, module) {
 			var lis = '<li data-cardid="{0}" class="anchor">\
 							<span class="ICON-noble-level ICON-nl-13"></span>\
 							<i class="ICON-medal">{1}</i>\
-							<span class="name" title="{2}">{3}</span>\
+							<span class="name" title="{2}" style="font-size: 12px;">{3}</span>\
 					  </li>';
 			var hs = "";
             if(userlist != null){

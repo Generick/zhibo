@@ -22,6 +22,12 @@ if(isset($_GET[openid]) and $_GET[openid] !=''){
 
 
 $user=checklogin();
+if($user){
+    $userinfo=search_save_user($user['userId']);
+    set_login_info($userinfo);
+    $user=$userinfo;
+}
+
 $page_var['user']=$user;
 $page_var['vsn']=$vsn;
 
