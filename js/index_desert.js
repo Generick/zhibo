@@ -35,7 +35,7 @@ $(document).ready(function(){
                 callback(data, textStatus, jqXHR);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                if (typeOf(params.error)==='function') {
+                if (typeof(params.error)==='function') {
                     params.error(data, textStatus, jqXHR)
                 }
 
