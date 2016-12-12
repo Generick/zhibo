@@ -42,14 +42,12 @@ $roomUsers = $zhuboinfo['roomUsers'];
 //print_r($data['data']);
 ?>
 <!DOCTYPE html>
-<html ng-app="personalCenter">
+<html>
 <head>
     <title>视频播放</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
-    <script type="text/javascript" src="js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="js/angular/center.js"></script>
     <style type="text/css">
       .downgame{
         width: 250px;
@@ -70,7 +68,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
       }
     </style>
 </head>
-<body class="body" ng-controller="center">
+<body class="body">
     <div class="header">
     <header>
       <div class="row">
