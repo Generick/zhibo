@@ -129,10 +129,10 @@ include_once('tpl_header.php');
                                 <div class="recommBR pull-right">
                                     <div class="clearfix">                            
                                         <span class="color33 pull-left ellipsis">{{gameAnch.nickName|decode}}</span>
-                                        <div class="color99 pull-right">                                
-                                        <span class="glyphicon glyphicon-eye-open"></span>            
-                                        <span>{{gameAnch.numbers}}</span>                            
-                                    </div>                        
+                                        <div class="color99 pull-right" ng-if="rankGame.numbers>0">                                
+                                            <span class="glyphicon glyphicon-eye-open"></span>            
+                                            <span>{{gameAnch.numbers}}</span>                            
+                                        </div>                        
                                 </div>                        
                                     <p class="color99 ellipsis f12">{{gameAnch.title}}</p>
                                 </div>
