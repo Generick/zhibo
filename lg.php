@@ -12,10 +12,14 @@ $str2 = 'CTl18IJNIEE79EssGXNIM46T1tQDX6NGLu5Qhoy2OSvD4mGkvNZub9J7nXHkZZjl';     
 $str3 = "w7J%2Br9BCYQL4NSM8R9G%2B7cXAb2Gg5xIgwtbgMLfzMACjbv4cHCRfkEyo72KQHcQJ"; //不掉线     不能解
 $str4 = 'tiS1bhXrIvS9b%2FwS6OT9gBDpzT6Y1%2FFSBO1%2FEz3Rf73V873MQ8q8BYsikFgBZorm'; //不掉线         不能解
 $str5 ='Ls6RMzX2ll1S34TlbPZNRn8bBPqDQmZ%2F4ohLpx68FaBRx8W4xKwd87iy4mzNdCSF';     //不掉线         不能解
-$str6 = 'NBKhaVd2TK7QM%2BeUESUqqkfCqpMsKj7lah76xLXOMH2YZQEXD0yNoPihpYF61GO5'; //(赵海刚的) 不能解
+$str6 = '46a2d959bc52e9af5847662abf566060'; //(赵海刚的) 不能解
 if(isset($_GET['str'])){
     var_dump(aes_decrypt($_GET['str']));
 }
 else{
     var_dump(aes_decrypt($str5));
+}
+
+if($_GET['info'] == 'info'){
+    phpinfo();
 }
