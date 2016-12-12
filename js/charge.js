@@ -99,7 +99,9 @@ $(function(){
                 data=jQuery.parseJSON(data);
                 $orderid=data.orderid;
                 $src='/apis/Wxpay/example51543/qrcode.php?data='+data.src;
-                $('<img />',{class: 'wk',src: $src}).appendTo($('.mn-box'));
+                var $img = $('img');
+                $img.arrr("class",'wk').attr('src',$src);
+                $img.appendTo($('.mn-box'));
                 $('.wxximage,.mks').show();
                 $('#mys').text($("#P_RMB").text());
 
