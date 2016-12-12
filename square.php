@@ -26,7 +26,7 @@
     })
     </script>
 </head>
-<body style="padding-top:60px;" ng-controller="square">
+<body style="padding-top:100px;" ng-controller="square">
 <?php
 include("include/header.inc.php");
 $user = checklogin();
@@ -48,7 +48,7 @@ include_once('tpl_header.php');
                     <span>搞怪</span>
                     <span>段子</span>
                 </div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
+                <div class="col-pc-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
                 <a href="{{squAnch.roomNumber}}" target="_blank" class="hotItem thumbnail" >
                   <img ng-src="{{squAnch.image}}&w=97&h=146" alt="{{squAnch.nickName|decode}}"/>
                   <div class="{{squAnch.levelImg}}"></div>
@@ -67,6 +67,8 @@ include_once('tpl_header.php');
                         <span>未开播</span>
                     </p>
                  </div>
+                 <div class="shadow thumbnail"></div>
+                 <div class="playBtn"></div>
               </a>
             
             </div>
@@ -110,7 +112,7 @@ include_once('tpl_header.php');
                     </a>                    
                 </div>
                 
-                <div class="page-header">
+                <div class="page-header allGame">
                     <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 全部游戏</h4>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameAnch in gameAnchs">                    
