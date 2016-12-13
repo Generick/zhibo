@@ -700,7 +700,6 @@ $(document).ready(function(){
         }
 
 
-
         //compiliter.parseAnchors(ulList.anc_hot,"hot");
         compiliter.parseNewHotAnchors(ulList.newHotAnchors,"hot");
         compiliter.parseNewAnchors(ulList.anc_new,"new");
