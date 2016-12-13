@@ -28,9 +28,14 @@
 </head>
 <body style="padding-top:100px;" ng-controller="square">
 <?php
+$current_page="square";
 include("include/header.inc.php");
 $user = checklogin();
 include_once('tpl_header.php');
+?>
+
+<?php
+    $current_page="square";
 ?>
     <div class="hotCon square container">
         <div class="squareTit text-center clearfix">
