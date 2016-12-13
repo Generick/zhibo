@@ -47,8 +47,9 @@ if($count < $limit){
     ));
 }
 
-
 $dataObject = json_decode($dataObj);
-$dataObject -> pagelinks = $pagelinks;
+if($pagelinks != ""){
+    $dataObject -> pagelinks = $pagelinks;
+}
 echo json_encode($dataObject);
 exit();
