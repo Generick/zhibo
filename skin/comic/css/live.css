@@ -347,7 +347,7 @@ a{text-decoration:none; }
 
 #pubChatList{}
 #pubChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all; }
-#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;}
+#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 20px;}
 #pubChatList li .jv1,#priChatList li .jv1{color:#8CEAF1;}
 #pubChatList li .jv2,#priChatList li .jv2{color:#8B35E1;}
 #pubChatList li .jv3,#priChatList li .jv3{color:#ebaa3e;}
@@ -709,7 +709,10 @@ a{text-decoration:none; }
 
 .appear .user_info .user_add{width:82px; height:32px; line-height:32px; text-align:center; color:#fff; background:#fdb200; border-radius:4px; margin-left:12px; margin-top:60px; margin-bottom:14px; cursor:pointer; }
 
-
+#player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
+    width:640px;
+    height:360px;
+}
 
 @media only screen and (min-width:1920px) and (min-height:806px){
     .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
