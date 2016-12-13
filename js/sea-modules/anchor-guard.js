@@ -61,7 +61,7 @@ define(function(require, exports, module) {
 				var _price = mon * base.price;
 				base.changeTimeBtn.text(mon);
 				base.changeTimeBtn.text(mon);
-				$(".sfpeice").text("\u603B\u4EF7\u683C\uFF1A" + _price + "\u9017\u5E01");
+				$(".sfpeice").text("总价格" + _price + "K豆");
 				base.clzTimelist();
 			})
 			base.timeList.on("mouseleave", function() {

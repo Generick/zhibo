@@ -411,10 +411,6 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
     <div class="br" style="width:10px; height:10px; position:absolute; right:0; bottom:0; cursor:nw-resize"></div>
 </div>
 <!--守护区 !-->
-<?php
-if($roomType != "game"){
-
-    ?>
     <div class="guard-area myDiv6">
         <div class="guard-header">
             <span class="guard-title"></span>
@@ -427,8 +423,6 @@ if($roomType != "game"){
         <div class="lb"></div>
         <div class="rb"></div>
     </div>
-<?php }?>
-
 <!-- 任务区-->
 <?php
 include('./include/studio/task.php');
