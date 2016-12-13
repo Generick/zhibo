@@ -128,8 +128,9 @@ $roomUsers = $zhuboinfo['roomUsers'];
 
     <section class="jumbotron banner row">
       <div class="col-xs-12" style="">
-          <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="000.mp4"
-                   x-webkit-airplay="true" webkit-playsinline="true" playsinline controls="controls" muted="true" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
+          <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="player"
+		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
+                   x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
 
             <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
             <div><a href="<?php echo $zhuboinfo['uploadAdd'];?>"><button class="downgame">下载游戏</button></a></div>
