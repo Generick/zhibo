@@ -77,8 +77,8 @@ include_once('tpl_header.php');
             
             <div class="squareDe gameAnch">
                 <div class="secTit text-center clearfix color99">
-                    <span class="allG"><a href="javascript:;" class="colorPin">全部</a></span>
-                    <span class="tits" ng-repeat="sort in sorts"><a href="javascript:;" ng-click="getSort(sort)">{{sort}}</a></span>
+                    <span class="allG colorPin"><a href="javascript:;">全部</a></span>
+                    <span class="tits" ng-repeat="sort in sorts" ng-class="sort==curSort ?'colorPin':''" ng-click="getSort(sort)"><a href="javascript:;" >{{sort}}</a></span>
                 </div>
                 <div class="page-header">
                     <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 排行推荐</h4>
