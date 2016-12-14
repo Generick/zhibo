@@ -746,6 +746,9 @@ a:hover{
 	.secTit{
 		margin-bottom: 3%;
 	}
+	.secTit a:active{
+		color:#e34052;
+	}
 	.secTit span{
 		margin-right: 1%;
 	}

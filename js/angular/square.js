@@ -21,12 +21,16 @@ squareApp.controller('square',function($scope,$http){
 		console.log('排行推荐加载失败')
 	});
 
+
 	$http.get("/files/allGameAnchors/1.json",{
 	}).success(function(json){
+		console.log(json.data)
 		$scope.gameAnchs=json.data;
 	}).error(function(){
 		console.log('全部游戏加载失败')
 	});
+
+	
 
 	$http.get("/rest/homeAnchors/gameClassify.mt",{
 	}).success(function(json){
@@ -50,6 +54,14 @@ squareApp.controller('square',function($scope,$http){
 			params:{name:name}
 		}).success(function(json){
 			console.log(json.data)
+			$(".allG a").removeClass("colorPin");
+			$("#allGaD").hide();
+			$("#gameItems").show();
+			$(".allG").click(function(){
+				$(".allG a").addClass("colorPin");
+				$("#gameItems").hide();
+				$("#allGaD").show();
+			})
 			$scope.gameItems=json.data;
 			setSort(json.data.rows)
 		}).error(function(){
