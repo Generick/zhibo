@@ -109,7 +109,7 @@ include_once('tpl_header.php');
                 </div>
                 
                 <div class="page-header">
-                    <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 全部游戏</h4>
+                    <h4 id="sortTit"><span class="glyphicon glyphicon-fire bgPin colorff"></span></h4>
                 </div>
 
                 <div class="allGaD"  id="allGaD">
