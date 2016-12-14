@@ -219,7 +219,7 @@ a:hover{
 }
 
 .hdNavR>li>a{
-	padding: 15px 6px;
+	padding: 17px 6px;
 	font-size:16px;
 }
 @media (max-width: 767px){
@@ -264,6 +264,14 @@ a:hover{
     padding:34px 12px 14px;
 }
 /*登陆后*/
+.header-notice{
+	display: inline-block;
+    width: 24px;
+    height: 18px;
+    background: url("/images/kedo/header_notice.png") no-repeat;
+    cursor: pointer;
+    margin-top: 20px
+}
 .AfterLog .imgR{
     border:2px solid #e34052;
     margin-right:16px;
