@@ -45,10 +45,10 @@
 
                     <div class="mycare-box">
                         <div class="mycare-box-left">
-                            <div class="careImg"><img src="<?php echo $v['himage']?>"/></div>
+                            <div class="careImg"><a href="/<?php echo $v['roomNumber'];?>"><img src="<?php echo $v['himage']?>"/></a></div>
                         </div>
                         <div class="mycare-box-right">
-                            <div class="mybr1"><span class="mbysp1"><?php echo urldecode($v['name'])?></span> <span class="mbysp2">守护中..</span></div>
+                            <div class="mybr1"><span class="mbysp1"><a href="/<?php echo $v['roomNumber'];?>"><?php echo urldecode($v['name'])?></a></span> <span class="mbysp2">守护中..</span></div>
                             <div class="mybr2"><?php echo $v['followeds']?> 粉丝</div>
                             <div class="mybr3">守护等级：<span class="color33"><?php echo $v['grds']?></span></div>
                             <div class="mybr4">剩余天数：<span class="colorcc"><?php echo $v['days']?> </span>天</div>

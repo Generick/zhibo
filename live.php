@@ -109,13 +109,23 @@ $skid = $redis->get($key);
 
 $rtp_key = _REDIS_KEYB_ . "_c.mt.cs.ea.rt.hash." . $roomnumber . "_4";
 $hash_room = $redis->hGetAll($rtp_key);
-$roomType = $hash_room['rtype'] ? $hash_room['rtype'] : "";
 
-$roomType_p = '';
+
 if($_GET['ttt'] == "ttt"){
     console_log($hash_room['rtype']);
 }
+if($hash_room['rtype'] == "") {
+    $h2rtype = $db->CacheGetRow(10, "select packs from bu_user_packs WHERE  userId = {$showinfo['userId']}");
+    if ($h2rtype != null and $h2rtype != "") {
+        $json = json_decode($h2rtype['packs'], 1);
+        if (array_key_exists('rtype', $json)) {
+            $hash_room['rtype'] = $json['rtype'];
+        }
+    }
+}
 
+$roomType_p = '';
+$roomType = $hash_room['rtype'] ? $hash_room['rtype'] : "";
 if ($hash_room['rtype'] == "2") {
     $roomType = 'game';
     $roomType_p = $roomType . "_";

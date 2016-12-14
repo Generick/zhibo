@@ -190,8 +190,8 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 ?>
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
-    .down-load-game{position: absolute;width: 150px;height:120px;right: -182px;top:5px;}
-    .start-load-game{position: absolute;    width: 150px; height: 120px;left: -182px; top: 5px;}
+    .down-load-game{position: absolute;width: 150px;height:120px;right: -182px;top:-5px;}
+    .start-load-game{position: absolute;    width: 150px; height: 120px;left: -182px; top: -5px;}
 
     .btn-down-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $downImg1;?>") no-repeat;}
     .btn-start-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $startImg1;?>") no-repeat;}
@@ -411,10 +411,6 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
     <div class="br" style="width:10px; height:10px; position:absolute; right:0; bottom:0; cursor:nw-resize"></div>
 </div>
 <!--守护区 !-->
-<?php
-if($roomType != "game"){
-
-    ?>
     <div class="guard-area myDiv6">
         <div class="guard-header">
             <span class="guard-title"></span>
@@ -427,8 +423,6 @@ if($roomType != "game"){
         <div class="lb"></div>
         <div class="rb"></div>
     </div>
-<?php }?>
-
 <!-- 任务区-->
 <?php
 include('./include/studio/task.php');
@@ -505,12 +499,7 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
-    <?php if($roomType != "game"){ ?>
-        <div class="sw-guard Bmenu" id="sw-guard"></div>
-    <?php }else{?>
-        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
-    <?php }?>
-
+    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <div class="sw-vip Bmenu" id="sw-vip"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>

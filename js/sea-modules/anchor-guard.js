@@ -12,7 +12,15 @@ define(function(require, exports, module) {
 		clz : $(".start-watch .clz"),
 		price : 88800,
 		contoiner : $(".guard-main"),
-		init : function() {
+		init : function(data) {
+            var _this = this;
+            var params = jQuery.parseJSON(data.params);
+            var rtype = UIF.roomType;
+            this.rtype = rtype;
+
+            _this.price = eval("params."+rtype+".guard")+"00";
+            $(".sfpeice").text("总价格" + _this.price * parseInt($(".sftext").text()) + "K豆");
+
 			this.sfbox = $(".start-watch");
 			this.changeTimeBtn = $(".sftext");
 			this.timeList = $(".sf-times");
@@ -61,7 +69,7 @@ define(function(require, exports, module) {
 				var _price = mon * base.price;
 				base.changeTimeBtn.text(mon);
 				base.changeTimeBtn.text(mon);
-				$(".sfpeice").text("\u603B\u4EF7\u683C\uFF1A" + _price + "\u9017\u5E01");
+				$(".sfpeice").text("总价格" + _price + "K豆");
 				base.clzTimelist();
 			})
 			base.timeList.on("mouseleave", function() {
@@ -95,7 +103,8 @@ define(function(require, exports, module) {
 			var base = this;
 			base.startWatchBtn.on("click", function() {
 				UIF.handler.sendAddGuard({
-					guardDT : base.changeTimeBtn.text()
+					guardDT : base.changeTimeBtn.text(),
+                    rtype : base.rtype
 				}, function(data) {
 					var args = jQuery.parseJSON(data);
 					if (args != null && args.resultStatus == 200) {//100:no money,101:nontime

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>蝌蚪直播-最好玩的直播平台</title>
-    <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">	
+    <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">
 
     <link href="/css/kedo/style.css" rel="stylesheet">
     <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
@@ -21,6 +21,7 @@
         var currentUserId="{$user.userId}";
         var sid="{$sid}";
         var ip="{$ip}";
+        var ohref = "{$coreweb}?userId={$user.userId}&token={$gf_token}";
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -216,7 +217,7 @@
                 <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
                 {/if}
                 {if $user.socType==1}
-                <a  target="_blank" href="javascript:;" ahref = "{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                 {/if}
             </p>
 
@@ -390,11 +391,10 @@
             dataType: "json",
             timeout: 120000,
             success: function (data, textStatus, jqXHR) {
-                window.open($('.oww').attr("ahref"),"_blank");
+               // window.open(ohref,"ccc");
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(params.url+" error code:"+textStatus);
-
+                alert(params.url+" error code:"+textStatus);
             }
         });
     })
