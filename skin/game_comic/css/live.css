@@ -142,7 +142,7 @@ a{text-decoration:none; }
 .myDiv3{width: 340px;position:absolute; }
 .myDiv4{width: 340px;position:absolute; }
 .myDiv5{width: 340px;position:absolute; }
-.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:330px;border-radius: 3px;width:340px;position:absolute}
+.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute}
 .visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute}
 .gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
@@ -721,7 +721,7 @@ a{text-decoration:none; }
     }
 
     .rank-area{
-        top:60px;
+        top:340px;
     }
     .newGifts{
         left:644px;
@@ -786,7 +786,7 @@ a{text-decoration:none; }
         left:30%;
     }
 
-    .guard-area,.rank-area,.gift-record,.visitant-record{
+    .guard-area,.rank-area,.gift-record{
         width:260px;
         height:200px;
         left:78px;
