@@ -1,4 +1,6 @@
 <?php
+
+error_reporting(0);
 /**
  * Created by PhpStorm.
  * User: Administrator
@@ -20,7 +22,6 @@ if(@$_SERVER['HTTP_HOST']=='kedo.tv'){
 
 //ini_set('display_errors','On');
 //error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);
-error_reporting(0);
 define('_CDNDOMAIN_','http://mains.kedo.tv');//文件加速服务器
 define('_IMAGES_DOMAIN_','http://img.kedo.tv');//图片服务器
 define('_IMGPLUS_DOMAIN_','http://static.kedo.tv');//图片服务器
@@ -34,4 +35,4 @@ define('_REDIS_HOST_','09ede0159aa64f40.m.cnhza.kvstore.aliyuncs.com');//redis�
 define('_REDIS_PWD_','09ede0159aa64f40:fooBa4eds');//redis地址
 define('_REDIS_KEYB_','ext');
 
-$vsn = md5(date('Y-d-m')."S%000012");
+$vsn = md5(date('Y-d-m')."S%1100012");
