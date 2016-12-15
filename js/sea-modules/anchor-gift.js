@@ -187,11 +187,12 @@ define(function(require, exports, module) {
 						Tools.setCookie("fi_num", fi_num, 86400);
 						$('.first-nus').text(fi_num);
                         UIF.handler.countingStar({}, function(data) {
-                            console.log(data);
+                            //console.log(data);
                         });
 					}
-					if (fi_num > 50) {
+					if (fi_num > 49) {
 						clearInterval(dt_timer);
+                        $(".gp22").text("今日星星已达上限");
 					}
 				}
 
