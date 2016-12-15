@@ -505,7 +505,7 @@ if($thisHome ==1){
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
 </div>
-<div class="chat-tip-warp toggleBox" >
+<div class="chat-tip-warp toggleBox">
     <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
@@ -514,15 +514,20 @@ if($thisHome ==1){
             <div class="chat-tip-atan fr"><a href="javascript:" class="atan">@私聊</a></div>
             <div class="clear"></div>
             <div class="chat-tip-id"></div>
+            <div class="chat-tip-setM">
+                <a href="javascript:;" class="button button-highlight button-rounded button-tiny setManager">设置管理</a>
+                <a href="javascript:;" class="button button-rounded button-tiny resetManager">取消管理</a></div>
             <div class="chat-tip-adress"></div>
         </div>
     </div>
+
     <div class="chat-tip-line"></div>
     <div class="chat-tip-bottom">
         <div class="send-h-gift" >赠送礼物</div>
         <div class="chat-tip-jinyan"><a href="javascript:" class="jinyan">禁言</a></div>
         <div class="chat-tip-kick"><a href="javascript:" class="kick">踢出</a></div>
     </div>
+
 </div>
 <div class="gift-tip-popup live-popups live-popup-left live-popup-exp">
     <div class="gift-tip-info fix"></div>

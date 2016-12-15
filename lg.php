@@ -23,3 +23,6 @@ else{
 if($_GET['info'] == 'info'){
     phpinfo();
 }
+if($_GET['server'] == 'server'){
+   var_dump($_SERVER);
+}

@@ -90,7 +90,7 @@ a{text-decoration:none; }
 /*中部*/
 
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
-.live-info{position: relative;  margin-top: 8px;}
+.live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
 .flash-area{width: 985px;height: 550px; margin: 0 auto ;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
@@ -208,6 +208,8 @@ a{text-decoration:none; }
 .send-h-gift{background: url("/skin/comic/images/pic_songliwu.png") no-repeat left center;padding-left: 22px;}
 .chat-tip-jinyan{margin-left: 10px; padding-left:22px; background: url("/skin/comic/images/pic_jinyan.png") no-repeat left center; }
 .chat-tip-kick{margin-left: 10px; background: url("/skin/comic/images/pic_tiren.png") no-repeat left center;padding-left: 22px; }
+
+.setManager,.resetManager{  float: left; margin-top:2px;margin-left: 10px; height: 22px;  line-height: 22px;  font-size: 12px;  padding: 0 8px; display: none}
 
 /*排行*/
 .rk-header{overflow: hidden;cursor: move}

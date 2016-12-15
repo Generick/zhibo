@@ -5,7 +5,7 @@
  * Date: 2016/8/25
  * Time: 19:59
  */
-if($_SERVER[HTTP_HOST]=='kedo.tv'){
+if(@$_SERVER['HTTP_HOST']=='kedo.tv'){
     //echo "roomnumber";
 
     if(strpos($_SERVER['SCRIPT_NAME'],"live.php") && strstr($_SERVER['QUERY_STRING'],"roomnumber")){

@@ -73,7 +73,7 @@ define(function(require, exports, module) {
                             stime = new Date().getTime();
                         }
                         UIF.handler.cache.put(cons.LOCAL_TIMESENDMSG, stime);
-                        if (bool || UIF.handler.userId == UIF.handler.anchorId) {
+                         if (bool || UIF.handler.userId == UIF.handler.anchorId) {
                             if (UIF.handler.sendUserId != null && UIF.handler.sendUserId.length > 0) {
                                 UIF.handler.sendChatP2P({
                                     nickname : UIF.currentUserNickname,
@@ -213,6 +213,7 @@ define(function(require, exports, module) {
             // 弹框
             $("#pubChatList").on("click", 'li .u', function(e) {
                 var clazz = $(this).attr("rel");
+                var classz =$(this).attr("class");
                 if (undefined == clazz)
                     return;
                 var userId = clazz.split(" ")[0];
@@ -237,12 +238,13 @@ define(function(require, exports, module) {
                     'left' : clientLeft + 20,
                     'top' : initT + 20 + "px"
                 });
-                $('.chat-tip-img img').attr("src", "/apis/avatar.php?uid=" + userId);
                 var roles = UIF.handler.cache.get(cons.USER_HEADROLES);
                 $(".chat-tip-kick .kick").hide();
                 $(".chat-tip-atan .atan").hide();
                 $(".chat-tip-jinyan .jinyan").hide();
                 var headInfo = UIF.handler.cache.get(cons.USER_HEADINFOS);
+
+                $('.chat-tip-img img').attr("src", UIF.cdn_img+ "/" + headInfo.himage);
                 if (headInfo != null && UIF.handler.anchorId != userId && headInfo.userId != userId && roles != null && roles.length > 0) {
                     if (roles.indexOf("12") > 0) {
                         $(".chat-tip-atan .atan").show();
@@ -253,9 +255,47 @@ define(function(require, exports, module) {
                     if (roles.indexOf("16") > 0 || roles.indexOf("17") > 0 || roles.indexOf("18") > 0) {
                         $(".chat-tip-kick .kick").show();
                     }
+                    if(roles.indexOf("18") > 0 && roles.indexOf("15") > 0  && UIF.handler.anchorId == UIF.currentUserID && 1==2){
+                        if(classz.indexOf("gl") > 0){
+                            $('.resetManager').show();
+                        }else{
+                            $('.setManager').show();
+                        }
+                        $(".chat-tip-setM").show();
+                    }
                 }
                 $(".chat-tip-warp").show();
             })
+            //添加管理
+            $(".setManager").click(function(){
+                var userId = $(".toggleBox .chat-tip-id").attr("tid");
+                UIF.handler.roomManagers({
+                    toIds : userId,
+                    drives : "adds"
+                }, function(data) {
+                    data = jQuery.parseJSON(data);
+                    if (data != null && data.resultMessage == "success") {
+                        Tools.dialog("嗖嗖嗖");
+                    }
+                });
+            })
+
+            //删除管理
+            $(".resetManager").click(function(){
+                var userId = $(".toggleBox .chat-tip-id").attr("tid");
+                UIF.handler.roomManagers({
+                    toIds : userId,
+                    drives : "dels"
+                }, function(data) {
+                    data = jQuery.parseJSON(data);
+                    if (data != null && data.resultMessage == "success") {
+                      console.log("delman");
+                    }
+                });
+            })
+
+
+
             // 用户私聊
             $(".toggleBox").on("click", ".chat-tip-atan .atan", function(e) {
                 if (!UIF.handler.login) {
@@ -446,6 +486,9 @@ define(function(require, exports, module) {
                             }
                             if ($img.indexOf("pic_liverlevel") > 0) {
                                 heads += ' anc';
+                            }
+                            if ($img.indexOf("pic_guanli") > 0) {
+                                heads += ' gl';
                             }
                             if ($img.indexOf("pic_guardlevel") > 0) {
                                 var gds = "";
