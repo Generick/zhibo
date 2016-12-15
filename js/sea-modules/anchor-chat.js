@@ -458,7 +458,7 @@ define(function(require, exports, module) {
         /** 用户头衔 */
         headimg : function(data) {
             var heads = "";
-            if (data != null && data.length > 0) {
+            if (data != null && data !="" && data.length > 0) {
                 var img = '<span class="{0}"></span>';
                 var $data = jQuery.parseJSON(data);
                 if ($data != null && $data.length > 0) {
@@ -532,14 +532,12 @@ define(function(require, exports, module) {
             }).done(function(datas){
                 $.each(datas,function(k,v){
                     var htmls = '<li class="fontred"><span class="gr-time">{0}</span>{1}<a href="javascript:;" class="u{2}" rel="{3} {4} {5}">{6}</a><span class="words">{7}</span></li>';
-
                     words = Face.faceReplaceImg(v.message);
                     try{
                         v.levs = v.levs.replace(/\\/g,'');
                     }catch (e){
                         v.levs = "";
                     }
-
                     htmls = Tools.stringFormat(htmls, v.ctime,_this.headimg(v.levs), _this.pclass(v.levs), v.userId, decodeURI(v.nickname), _this.spimg(v.levs), decodeURI(v.nickname)+"：", words);
                     $("#pubChatList").append(htmls);
                     try {
