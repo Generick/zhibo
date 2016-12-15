@@ -209,7 +209,7 @@ define(function(require, exports, module) {
             $(".sdChat").mouseup(function(){
                 $(this).removeClass("sdChatBtnC");
             })
-
+            var isset =0;
             // 弹框
             $("#pubChatList").on("click", 'li .u', function(e) {
                 var clazz = $(this).attr("rel");
@@ -244,7 +244,8 @@ define(function(require, exports, module) {
                 $(".chat-tip-jinyan .jinyan").hide();
                 var headInfo = UIF.handler.cache.get(cons.USER_HEADINFOS);
 
-                $('.chat-tip-img img').attr("src", UIF.cdn_img+ "/" + headInfo.himage);
+
+                $('.chat-tip-img img').attr("src", $(this).attr('data-img'));
                 if (headInfo != null && UIF.handler.anchorId != userId && headInfo.userId != userId && roles != null && roles.length > 0) {
                     if (roles.indexOf("12") > 0) {
                         $(".chat-tip-atan .atan").show();
@@ -255,11 +256,12 @@ define(function(require, exports, module) {
                     if (roles.indexOf("16") > 0 || roles.indexOf("17") > 0 || roles.indexOf("18") > 0) {
                         $(".chat-tip-kick .kick").show();
                     }
-                    if(roles.indexOf("18") > 0 && roles.indexOf("15") > 0  && UIF.handler.anchorId == UIF.currentUserID && 1==2){
-                        if(classz.indexOf("gl") > 0){
-                            $('.resetManager').show();
+                    if(roles.indexOf("18") > 0 && roles.indexOf("15") > 0  && UIF.handler.anchorId == UIF.currentUserID){
+                        $(".setManager,.resetManager").hide();
+                        if(classz.indexOf("gl") < 0 && isset == 0){
+                           $('.setManager').show();
                         }else{
-                            $('.setManager').show();
+                           $('.resetManager').show();
                         }
                         $(".chat-tip-setM").show();
                     }
@@ -275,7 +277,10 @@ define(function(require, exports, module) {
                 }, function(data) {
                     data = jQuery.parseJSON(data);
                     if (data != null && data.resultMessage == "success") {
-                        Tools.dialog("嗖嗖嗖");
+                        Tools.dialog("添加成功！");
+                        $(".resetManager").show();
+                        $(".setManager").hide();
+                        isset = 1;
                     }
                 });
             })
@@ -289,7 +294,10 @@ define(function(require, exports, module) {
                 }, function(data) {
                     data = jQuery.parseJSON(data);
                     if (data != null && data.resultMessage == "success") {
-                      console.log("delman");
+                        Tools.dialog("删除成功！");
+                        $(".resetManager").hide();
+                        $(".setManager").show();
+                        isset = 0;
                     }
                 });
             })
@@ -560,8 +568,11 @@ define(function(require, exports, module) {
             if (data.userId != null && data.nickname != null) {
                 if (data.numbers != null)
                     $(".live-info .s-else .s-people").text(data.numbers);
-                var htmls = '<li class="fontred"><div><span>欢迎   </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}">{5}</a><span>进入房间</span></div></li>';
-                htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), decodeURI(data.nickname));
+                if(data.himage != null){
+                    var himage = data.himage;
+                }
+                var htmls = '<li class="fontred"><div><span>欢迎   </span>{0}<a href="javascript:;" class="u{1}" rel="{2} {3} {4}" data-img="{5}">{6}</a><span>进入房间</span></div></li>';
+                htmls = Tools.stringFormat(htmls, this.headimg(data.levs), this.pclass(data.levs), data.userId, decodeURI(data.nickname), this.spimg(data.levs), himage,decodeURI(data.nickname));
                 $("#pubChatList").append(htmls);
                 try {
                     $("#nano-pubChatList").nanoScroller();

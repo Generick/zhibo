@@ -195,7 +195,7 @@ a{text-decoration:none; }
 .chat-tip-top{height: 61%; }
 .chat-tip-top >div{float: left;}
 .chat-top-imgs{display: block; width: 60px; height: 60px;border: 2px solid #e7b158; -webkit-border-radius: 50%;-moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
-.chat-tip-title{width:120px;margin-left: 20px; margin-top: 12px;}
+.chat-tip-title{width:120px;margin-left: 10px;  margin-top: 10px;  }
 .levelss{float: left;width:46px;height:20px;}
 .chat-tip-name{float:left;margin-left: 15px; color: #b4ce90; font-size: 14px; }
 .chat-tip-id{}
@@ -209,7 +209,7 @@ a{text-decoration:none; }
 .chat-tip-jinyan{margin-left: 10px; padding-left:22px; background: url("/skin/comic/images/pic_jinyan.png") no-repeat left center; }
 .chat-tip-kick{margin-left: 10px; background: url("/skin/comic/images/pic_tiren.png") no-repeat left center;padding-left: 22px; }
 
-.setManager,.resetManager{  float: left; margin-top:2px;margin-left: 10px; height: 22px;  line-height: 22px;  font-size: 12px;  padding: 0 8px; display: none}
+.setManager,.resetManager{  float: left; margin-top:4px;margin-left: 10px; height: 22px;  line-height: 22px;  font-size: 12px;  padding: 0 8px; display: none;}
 
 /*排行*/
 .rk-header{overflow: hidden;cursor: move}
@@ -303,7 +303,7 @@ a{text-decoration:none; }
 .chat-header >div{float: left;width:34px;height:20px;text-align: center;color: #FFffff;position: relative;background-color: rgba(0, 0, 0,0.33);vertical-align: middle;line-height: 40px;cursor: pointer; }
 .chat-header .issel{background:none;}
 .chat-body ul li{margin-left: 15px;font-size: 12px;line-height: 24px;color:#fefefe}
-.chat-body ul li span{ color: #999; padding-right:0; }
+.chat-body ul li span{ color: #999; padding-right:0;    height: 18px;  line-height: 18px;  display: inline-block;  overflow: hidden }
 .chat-body ul li .prwords{color: #fff}
 .chat-body ul li .words{color: #fff;}
 .chat-body ul li .gr-time{color: #999;}
