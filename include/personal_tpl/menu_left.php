@@ -1,4 +1,16 @@
 <?php// echo $current_page;?>
+<style type="text/css">
+    .noticedot{
+        display:block;
+        background:#f00;
+        border-radius:50%;
+        width:8px;
+        height:8px;
+        top:12px;
+        right:0px;
+        position:absolute;
+    }
+</style>
 <div class="clearFix">
 <div class="center-left">
 
@@ -27,7 +39,7 @@
     </div>
     <div class="pi">
         <div class="cl-div <?php if($current_page=="notice"){ echo "cl-focus";}?>">
-            <a href="/centeros.php?ptype=notice"><div class="cl-notice cl-title color33">消息中心</div></a>
+            <a href="/centeros.php?ptype=notice"><div class="cl-notice cl-title color33">消息中心<?php if($state['state'] == null || $state['state'] == ''){echo "<i class='noticedot'></i>";}?></div></a>
         </div>
     </div>
    <!-- <div class="pi">
@@ -52,3 +64,7 @@
     </div>
 
 </div>
+<script type="text/javascript">
+    // var userId = "{$user['userId']}";
+    // alert("ll"+userId);
+</script>
