@@ -28,7 +28,11 @@ $user=$userinfo;
 
 $_GET = safe_output($_GET);
 $_POST = safe_output($_POST);
-
+//notice state
+global $db;
+$state = $db->GetRow("select * from bu_station_message where userId = {$user['userId']}");
+//var_dump($state);
+//over
     ?>
 <!DOCTYPE html>
 <html ng-app="personalCenter">

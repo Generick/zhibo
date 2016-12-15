@@ -33,10 +33,6 @@ include("include/header.inc.php");
 $user = checklogin();
 include_once('tpl_header.php');
 ?>
-
-<?php
-    $current_page="square";
-?>
     <div class="hotCon square container">
         <div class="squareTit text-center clearfix">
             <div class="showHd pull-left active"></div>
@@ -81,13 +77,8 @@ include_once('tpl_header.php');
             
             <div class="squareDe gameAnch">
                 <div class="secTit text-center clearfix color99">
-                    <span>全部</span>
-                    <span class="colorPin">英雄联盟</span>
-                    <span>穿越火线</span>
-                    <span>守望先锋</span>
-                    <span>我的世界</span>
-                    <span>搞怪</span>
-                    <span>其他</span>
+                    <span class="allG colorPin"><a href="javascript:;">全部</a></span>
+                    <span class="tits" ng-repeat="sort in sorts" ng-class="sort==curSort ?'colorPin':''" ng-click="getSort(sort)"><a href="javascript:;" >{{sort}}</a></span>
                 </div>
                 <div class="page-header">
                     <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 排行推荐</h4>
@@ -117,9 +108,11 @@ include_once('tpl_header.php');
                     </a>                    
                 </div>
                 
-                <div class="page-header allGame">
-                    <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 全部游戏</h4>
+                <div class="page-header">
+                    <h4 id="sortTit"><span class="glyphicon glyphicon-fire bgPin colorff"></span>全部游戏</h4>
                 </div>
+
+                <div class="allGaD"  id="allGaD">
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameAnch in gameAnchs">                    
                     <a href="{{gameAnch.roomNumber}}" target="_blank" class="thumbnail bgf4">            
                         <div class="recommImg">                        
@@ -143,6 +136,34 @@ include_once('tpl_header.php');
                                                 
                         </div>
                     </a>                    
+                </div>
+                </div>
+                
+                <div id="gameItems">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameItem in gameItems">                    
+                    <a href="{{gameItem.roomNumber}}" target="_blank" class="thumbnail bgf4">            
+                        <div class="recommImg">                        
+                            <img class="lazy" ng-src="{{gameItem.image}}&w=220&h=146" alt="{{gameItem.nickName|decode}}">                        
+                            <div class="thumb-bar"></div>                        
+                            <div class="shadow"></div>                        
+                            <div class="playBtn"></div>                    
+                        </div>                  
+                        <div class="recommB clearfix">  
+                            <img class="pull-left recommBL img-circle" ng-src="{{gameItem.imagePrivate}}"/>                         
+                            <div class="recommBR pull-right">
+                                <div class="clearfix">                            
+                                    <span class="color33 pull-left ellipsis">{{gameItem.nickName|decode}}</span>
+                                    <div class="color99 pull-right" ng-if="rankGame.numbers>0">                                
+                                        <span class="glyphicon glyphicon-eye-open"></span>            
+                                        <span>{{gameItem.numbers}}</span>                            
+                                    </div>                        
+                            </div>                        
+                                <p class="color99 ellipsis f12">{{gameItem.title}}</p>
+                            </div>
+                                                
+                        </div>
+                    </a>                    
+                </div>
                 </div>
             </div>      
         </div>

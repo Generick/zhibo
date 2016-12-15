@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>蝌蚪直播-最好玩的直播平台</title>
-    <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">	
+    <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">
 
     <link href="/css/kedo/style.css" rel="stylesheet">
     <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
     <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
     <script src="/js/jquery-1.12.2.min.js"></script>
     <script src="/js/jquery.lazyload.min.js"></script>
+    <script src="/js/notice/notice.js"></script>
     <script>
         var cdn_domain="{$cdn_domain}";
         var img_domain="{$images_domain}";
@@ -21,6 +22,9 @@
         var currentUserId="{$user.userId}";
         var sid="{$sid}";
         var ip="{$ip}";
+        var ohref = "{$coreweb}?userId={$user.userId}&token={$gf_token}";
+        var userId = "{$user['userId']}";
+        var flag = 0;
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -66,7 +70,7 @@
             {else}
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                 <li><a href="/centeros.php">{$user.nickname}</a></li>
-                <li><a class= "header-notice hidden-xs"></a></li>
+                <li><a class="header-notice hidden-xs"></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
@@ -216,7 +220,7 @@
                 <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
                 {/if}
                 {if $user.socType==1}
-                <a  target="_blank" href="javascript:;" ahref = "{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                 {/if}
             </p>
 
@@ -357,7 +361,7 @@
             <img class="lazy" src="images/kedo/logo_foot.png"/>
             <span> -Copyright©2016 沪ICP备14054721号</span>
         </p>
-        <p>蝌蚪客服电话：021-63156389 | 商务合作邮箱：
+        <p>蝌蚪客服电话：021-63156393 | 商务合作邮箱：
             <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
         </p>
     </div>
@@ -390,11 +394,10 @@
             dataType: "json",
             timeout: 120000,
             success: function (data, textStatus, jqXHR) {
-                window.open($('.oww').attr("ahref"),"_blank");
+               // window.open(ohref,"ccc");
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(params.url+" error code:"+textStatus);
-
+                alert(params.url+" error code:"+textStatus);
             }
         });
     })

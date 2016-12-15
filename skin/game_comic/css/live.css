@@ -90,7 +90,7 @@ a{text-decoration:none; }
 /*中部*/
 
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
-.live-info{position: relative;  margin-top: 8px;}
+.live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
 .flash-area{width: 985px;height: 550px; margin: 0 auto ;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
@@ -142,7 +142,7 @@ a{text-decoration:none; }
 .myDiv3{width: 340px;position:absolute; }
 .myDiv4{width: 340px;position:absolute; }
 .myDiv5{width: 340px;position:absolute; }
-.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:330px;border-radius: 3px;width:340px;position:absolute}
+.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute}
 .visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute}
 .gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
@@ -208,6 +208,8 @@ a{text-decoration:none; }
 .send-h-gift{background: url("/skin/comic/images/pic_songliwu.png") no-repeat left center;padding-left: 22px;}
 .chat-tip-jinyan{margin-left: 10px; padding-left:22px; background: url("/skin/comic/images/pic_jinyan.png") no-repeat left center; }
 .chat-tip-kick{margin-left: 10px; background: url("/skin/comic/images/pic_tiren.png") no-repeat left center;padding-left: 22px; }
+
+.setManager,.resetManager{  float: left; margin-top:2px;margin-left: 10px; height: 22px;  line-height: 22px;  font-size: 12px;  padding: 0 8px; display: none}
 
 /*排行*/
 .rk-header{overflow: hidden;cursor: move}
@@ -602,7 +604,7 @@ a{text-decoration:none; }
 .sf-buy-time .sftext{display: inline-block;padding:0 25px 0 5px;border-radius:3px; margin:0 5px;background-image:url("/skin/comic/images/pic_import.png"); background-position: 88% center;background-repeat: no-repeat;line-height: 22px; background-size: 100%; }
 .sftext:hover {background-image:url("/skin/comic/images/pic_import_down.png") no-repeat;}
 .sf-buy-time .sfpeice{margin-left:10px;display:inline-block;color:#742502; }
-.watchButton{width:35%; height:9%; margin-top: 32px; margin: 0 auto;cursor: pointer; background:url("/skin/comic/images/icon_goumai_bt.png") no-repeat;  }
+.watchButton{width:35%; height:41px; margin-top: 32px; margin: 0 auto;cursor: pointer; background:url("/skin/comic/images/icon_goumai_bt.png") no-repeat;  }
 .watchButton:hover{background:url("/skin/comic/images/icon_goumai_bt_down.png") no-repeat;  }
 .sf-times{display:none;width:60%; border: 1px solid #330700; padding:1.8% 2.5%; background-color:#444141; overflow: hidden; position:absolute;left: 23%;top:56%;}
 .sf-times ul li{float: left;line-height: 24px;width: 10%; height: 10%;cursor: pointer;color:#ECEAE7;text-align: center;}
@@ -721,7 +723,7 @@ a{text-decoration:none; }
     }
 
     .rank-area{
-        top:60px;
+        top:340px;
     }
     .newGifts{
         left:644px;
@@ -786,7 +788,7 @@ a{text-decoration:none; }
         left:30%;
     }
 
-    .guard-area,.rank-area,.gift-record,.visitant-record{
+    .guard-area,.rank-area,.gift-record{
         width:260px;
         height:200px;
         left:78px;

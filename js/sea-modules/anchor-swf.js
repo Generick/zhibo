@@ -155,7 +155,11 @@ define(function(require, exports, module) {
 		},
 		censorDescribe : "\u5173\u95ED\u76F4\u64AD\u95F4",
 		censor : function(data){
-			self.location = "/html/102.html";
+            if("stop" == data.resultMessage){
+                self.location = "/html/100.html";
+            }else{
+                self.location = "/html/102.html";
+            }
 		},
 		//主播pk数据处理
 		anchorPK : function(data){

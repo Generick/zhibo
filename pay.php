@@ -6,7 +6,7 @@ require('include/smarty/Smarty.class.php');
 include_once('include/login.func.php');
 
 $user=checklogin();
-$page_var['user']=$userinfo;
+$page_var['user']=$user;
 $datas = curl_get(_CDNDOMAIN_."/files/allAnchors.json","");
 $acceptData=json_decode($datas, true);
 $page_var['sqAnchorList']=json_decode($acceptData[json],true);

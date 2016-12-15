@@ -190,8 +190,8 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 ?>
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
-    .down-load-game{position: absolute;width: 150px;height:120px;right: -182px;top:5px;}
-    .start-load-game{position: absolute;    width: 150px; height: 120px;left: -182px; top: 5px;}
+    .down-load-game{position: absolute;width: 150px;height:120px;right: -182px;top:-5px;}
+    .start-load-game{position: absolute;    width: 150px; height: 120px;left: -182px; top: -5px;}
 
     .btn-down-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $downImg1;?>") no-repeat;}
     .btn-start-game{display:inline-block;width: 150px;height: 120px;background: url("<?php echo $startImg1;?>") no-repeat;}
@@ -411,10 +411,6 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
     <div class="br" style="width:10px; height:10px; position:absolute; right:0; bottom:0; cursor:nw-resize"></div>
 </div>
 <!--守护区 !-->
-<?php
-if($roomType != "game"){
-
-    ?>
     <div class="guard-area myDiv6">
         <div class="guard-header">
             <span class="guard-title"></span>
@@ -427,8 +423,6 @@ if($roomType != "game"){
         <div class="lb"></div>
         <div class="rb"></div>
     </div>
-<?php }?>
-
 <!-- 任务区-->
 <?php
 include('./include/studio/task.php');
@@ -505,18 +499,13 @@ if($thisHome ==1){
     <div class="sw-chat Bmenu" id="sw-chat"></div>
     <div class="sw-record Bmenu" id="sw-record"></div>
     <div class="sw-rank Bmenu" id="sw-rank"></div>
-    <?php if($roomType != "game"){ ?>
-        <div class="sw-guard Bmenu" id="sw-guard"></div>
-    <?php }else{?>
-        <!--<div class="sw-guard Bmenu" id="sw-guard"></div>-->
-    <?php }?>
-
+    <div class="sw-guard Bmenu" id="sw-guard"></div>
     <div class="sw-vip Bmenu" id="sw-vip"></div>
     <?php if(1==2){?>
         <div class="sw-mission-hover Bmenu" id="sw-mission"></div>
     <?php }?>
 </div>
-<div class="chat-tip-warp toggleBox" >
+<div class="chat-tip-warp toggleBox">
     <div class="chat-tip-top clearFix">
         <div class="chat-tip-img"><img src="http://r3.ykimg.com/0510000056AC9CAA67BC3D5EB409503F" class="chat-top-imgs" alt="#" /></div>
         <div class="chat-tip-title">
@@ -525,15 +514,20 @@ if($thisHome ==1){
             <div class="chat-tip-atan fr"><a href="javascript:" class="atan">@私聊</a></div>
             <div class="clear"></div>
             <div class="chat-tip-id"></div>
+            <div class="chat-tip-setM">
+                <a href="javascript:;" class="button button-highlight button-rounded button-tiny setManager">设置管理</a>
+                <a href="javascript:;" class="button button-rounded button-tiny resetManager">取消管理</a></div>
             <div class="chat-tip-adress"></div>
         </div>
     </div>
+
     <div class="chat-tip-line"></div>
     <div class="chat-tip-bottom">
         <div class="send-h-gift" >赠送礼物</div>
         <div class="chat-tip-jinyan"><a href="javascript:" class="jinyan">禁言</a></div>
         <div class="chat-tip-kick"><a href="javascript:" class="kick">踢出</a></div>
     </div>
+
 </div>
 <div class="gift-tip-popup live-popups live-popup-left live-popup-exp">
     <div class="gift-tip-info fix"></div>
