@@ -245,7 +245,8 @@ define(function(require, exports, module) {
                 var headInfo = UIF.handler.cache.get(cons.USER_HEADINFOS);
 
 
-                $('.chat-tip-img img').attr("src", $(this).attr('data-img'));
+                $('.chat-tip-img img').attr("src", "/apis/avatar.php?uid=" + userId);
+                //$('.chat-tip-img img').attr("src", $(this).attr('data-img'));
                 if (headInfo != null && UIF.handler.anchorId != userId && headInfo.userId != userId && roles != null && roles.length > 0) {
                     if (roles.indexOf("12") > 0) {
                         $(".chat-tip-atan .atan").show();
