@@ -15,7 +15,7 @@ function notice(){
 			//console.log(data);
 			if (data.info.state == '' || data.info.state == null) {
 				//console.log('有未读消息');
-				$('.header-notice').css('background','url(/static_data/images_css/icon_xiaoxi-tishi.png) no-repeat');
+				$('.header-notice').css({'background':'url(/static_data/images_css/icon_xiaoxi-tishi.png) no-repeat','margin-top':'17px'});
 				shine = setInterval("blink()",500);
 				if (typeof clearB === 'function') {
 					clearB();
