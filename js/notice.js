@@ -16,7 +16,10 @@ function notice(){
 			if (data.info.state == '' || data.info.state == null) {
 				//console.log('有未读消息');
 				$('.header-notice').css('background','url(/static_data/images_css/icon_xiaoxi-tishi.png) no-repeat');
-				setInterval("shanshuo()",500);
+				shine = setInterval("blink()",500);
+				if (typeof clearB === 'function') {
+					clearB();
+				}
 				
 			}else{
 				console.log("no unread news");
@@ -24,13 +27,14 @@ function notice(){
 		}
 	});
 }
-//var flag = 0;
-function shanshuo(){
+function blink(){
 	if (!flag) {
-		$('.header-notice').css('background','url()');
+		//$('.header-notice').css('background','url()');
+		$('.header-notice').css('opacity',0);
 		flag =1;
 	}else{
-		$('.header-notice').css('background','url(/static_data/images_css/icon_xiaoxi-tishi.png) no-repeat');
+		$('.header-notice').css('opacity',1);
+		//$('.header-notice').css('background','url(/static_data/images_css/icon_xiaoxi-tishi.png) no-repeat');
 		flag =0;
 	}
 }
