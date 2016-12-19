@@ -40,6 +40,12 @@ $data = json_decode($datas,true);
 $zhuboinfo = $data['data'];
 $roomUsers = $zhuboinfo['roomUsers'];
 //print_r($data['data']);
+//
+$url = _INTERFACE_.'/rest/site/transcoding.mt?roomNumber='.$roomnumber;
+$udata = array('roomnumber'=>$roomnumber);
+$result = curl_post_data($url,$udata);
+// var_dump($url);
+// var_dump($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +54,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
+    <script src="/js/jquery-1.12.2.min.js"></script>
     <style type="text/css">
       .downgame{
         width: 250px;
