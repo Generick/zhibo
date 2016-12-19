@@ -25,9 +25,9 @@ function notice(){
 			}else{
 				console.log("no unread news");
 				$('.header-notice').hover(function(){
-					$('.header-notice').css('background','url(/images/kedo/header_notice_hover.png) no-repeat');
+					$(this).css('background','url(/images/kedo/header_notice_hover.png) no-repeat');
 				},function(){
-					$('.header-notice').css('background','url(/images/kedo/header_notice.png) no-repeat');
+					$(this).css('background','url(/images/kedo/header_notice.png) no-repeat');
 				});
 			}
 		}
