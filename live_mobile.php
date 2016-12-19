@@ -41,7 +41,7 @@ $zhuboinfo = $data['data'];
 $roomUsers = $zhuboinfo['roomUsers'];
 //print_r($data['data']);
 //
-$url = _INTERFACE_.'/rest/site/transcoding.mt?roomNumber='.$roomnumber;
+$url = 'http://1b7a61-0.sh.1252349838.clb.myqcloud.com/rest/site/transcoding.mt?roomNumber='.$roomnumber;
 $udata = array('roomnumber'=>$roomnumber);
 $result = curl_post_data($url,$udata);
 // var_dump($url);
@@ -135,7 +135,7 @@ $result = curl_post_data($url,$udata);
 
     <section class="jumbotron banner row">
       <div class="col-xs-12" style="">
-          <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="player"
+          <video src="http://hls.181show.com/mutian-ucloud/m<?php echo $roomnumber;?>/playlist.m3u8" id="player"
 		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
                    x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
 
