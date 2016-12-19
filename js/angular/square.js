@@ -5,6 +5,7 @@ squareApp.controller('square',function($scope,$http){
 	$scope.rankGames=[];
 	$scope.sorts=[];
 	$scope.gameItems=[];
+	$scope.curSort='';
 
 	$http.get("/files/allAnchors/1.json",{
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
@@ -21,6 +22,7 @@ squareApp.controller('square',function($scope,$http){
 		console.log('排行推荐加载失败')
 	});
 
+
 	$http.get("/files/allGameAnchors/1.json",{
 	}).success(function(json){
 		$scope.gameAnchs=json.data;
@@ -28,9 +30,10 @@ squareApp.controller('square',function($scope,$http){
 		console.log('全部游戏加载失败')
 	});
 
+	
+
 	$http.get("/rest/homeAnchors/gameClassify.mt",{
 	}).success(function(json){
-		console.log(json.data)
 		$scope.sorts=json.data;
 	}).error(function(){
 		console.log('游戏分类标题加载失败')
@@ -49,7 +52,15 @@ squareApp.controller('square',function($scope,$http){
 		$http.get("/rest/homeAnchors/allKeyword.mt",{
 			params:{name:name}
 		}).success(function(json){
-			console.log(json.data)
+			$(".allG").removeClass("colorPin");
+			$("#allGaD").hide();
+			$("#gameItems").show();
+			$(".allG").click(function(){
+				$(".tits").removeClass('colorPin');
+				$(".allG").addClass("colorPin");
+				$("#gameItems").hide();
+				$("#allGaD").show();
+			})
 			$scope.gameItems=json.data;
 			setSort(json.data.rows)
 		}).error(function(){
