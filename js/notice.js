@@ -13,16 +13,21 @@ function notice(){
 		dataType:'json',
 		success:function(data){
 			//console.log(data);
-			if (data.info.state == '' || data.info.state == null) {
+			//data.info.state = 1;
+			if (data.info.state == 1) {
+				//console.log("no unread news");
+				$('.header-notice').hover(function(){
+					$(this).css('background','url(/images/kedo/header_notice_hover.png) no-repeat');
+				},function(){
+					$(this).css('background','url(/images/kedo/header_notice.png) no-repeat');
+				});	
+			}else{
 				//console.log('有未读消息');
-				$('.header-notice').css({'background':'url(/static_data/images_css/icon_xiaoxi-tishi.png) no-repeat','margin-top':'17px'});
+				$('.header-notice').css({'background':'url(/static_data/images_css/icon_xiaoxi.png) no-repeat','margin-top':'17px'});
 				shine = setInterval("blink()",500);
 				if (typeof clearB === 'function') {
 					clearB();
 				}
-				
-			}else{
-				console.log("no unread news");
 			}
 		}
 	});

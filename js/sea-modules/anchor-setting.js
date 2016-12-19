@@ -82,7 +82,7 @@ define(function(require, exports, module) {
 					data = jQuery.parseJSON(data);
 					if (data != null && data.userid != undefined) {
 						$("#idNum").html(data.userid);
-						$("#userName").html(data.nickName);
+						$("#userName").html(decodeURIComponent(data.nickName));
 						$("#userImg").attr('src', "/apis/avatar.php?uid=" + data.userid);
 					}
 					$("#appear").css("display", "block");
@@ -196,7 +196,7 @@ define(function(require, exports, module) {
 					$("#no_added").hide();
 					$("#added").show();
 					$.each(data, function(index, $data) {
-						html += '<li class="clearFix"> <span class="num fl">' + (index + 1) + '</span> <span class="level-bg fl"></span> <span class="name fl">' + $data.nickName
+						html += '<li class="clearFix"> <span class="num fl">' + (index + 1) + '</span> <span class="level-bg fl"></span> <span class="name fl">' + decodeURIComponent($data.nickName)
 								+ '</span> <a href="javascript:;" class="delete fl ' + $data.userid + '">\u5220\u9664</a> </li>';
 					});
 				}

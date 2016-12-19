@@ -363,7 +363,7 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 
         <?php if($gameInfo['set'] == 1){  ?>
             <div class="down-load-game">
-                <a href="<?php echo  $gameInfo['gameUrl'];?>" class="btn-down-game"></a>
+                <a href="<?php echo  $gameInfo['gameUrl'];?>" target="_blank" class="btn-down-game"></a>
             </div>
         <?php }?>
 
