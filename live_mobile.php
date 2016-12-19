@@ -73,6 +73,12 @@ $result = curl_post_data($url,$udata);
         letter-spacing: 3px;
         background-color: #ec4356;
       }
+      .msty{
+        width: 64%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     </style>
 </head>
 <body class="body">
@@ -182,7 +188,7 @@ $result = curl_post_data($url,$udata);
                   </div>
                   <div class="recommB">
                     <div class="clearfix">
-                      <span class="color00 pull-left f3">'.$hotAnchors[$i]['title'].'</span>
+                      <span class="color00 pull-left ellipsis msty f3">'.$hotAnchors[$i]['title'].'</span>
                       <div class="color99 pull-right f2_8">
                         <span class="glyphicon glyphicon-eye-open"></span>
                         <span>'.$hotAnchors[$i]['numbers'].'</span>
@@ -202,7 +208,7 @@ $result = curl_post_data($url,$udata);
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left f3">'.$hotAnchors[$i]['title'].'</span>
+                  <span class="color00 pull-left ellipsis msty f3">'.$hotAnchors[$i]['title'].'</span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
                     <span>'.$hotAnchors[$i]['numbers'].'</span>
