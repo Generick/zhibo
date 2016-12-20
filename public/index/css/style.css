@@ -676,6 +676,12 @@ a:hover{
 			height: 100px;
 			top:14px;
 		}
+		.icon-zonghe{
+			background: url(../images/pic_zonghe.png) no-repeat;
+			width: 172px;
+			height: 100px;
+			top:14px;
+		}
 		#games .gameItems .gameIcon{
 			width: 172px;
 			height: 100px;

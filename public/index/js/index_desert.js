@@ -253,7 +253,7 @@ $(document).ready(function(){
             "anc_game":"/files/gameAnchors.json",//精彩推荐
             "anc_gameType":"/rest/homeAnchors/gameType.mt",//首页游戏分类
             "anc_gameTypeJson":"/files/gameType.json",//首页游戏分类静态
-
+            "gameHeald":"/rest/homeAnchors/gameHeald.mt",//首页游戏综合推荐
             "anc_new":"/files/newAnchors.json" //"/ajax/getLiveAnchors.php"+"?anc_type=new"
 
         }
@@ -792,10 +792,7 @@ $(document).ready(function(){
                 var gameIcon="";
                 var key=0;
 
-                console.log(datas)
-
-                $.each(datas, function(k, v) {
-                    console.log(v) 
+                $.each(datas, function(k, v) { 
                     var typeTit=Tools.stringFormat(compiliter.gameTypeTit,v.gameIcon,v.gameName);
                     $("#games").append(typeTit);
 
@@ -828,6 +825,48 @@ $(document).ready(function(){
                     effect: "fadeIn"
                 });
                
+            });
+        }();
+
+        compiliter.gameHeald=function(){
+            Tools.getJson({
+                url: ulList.gameHeald,
+                data: ""
+            }, function (data) {
+                if(data == "" || data ==undefined){
+                    return 0;
+                }
+                try
+                {
+                    datas=data;
+                    datas =datas.data;
+                }
+                catch (e)
+                {
+                    datas="";
+                    return false;
+                }
+                console.log(datas)
+                var li="";
+                if (datas != null && datas.length > 0) {
+                    $.each(datas, function(k, v) {
+                        descri =v.descri?v.descri:"　";
+                        li += Tools.stringFormat(compiliter.gameType,
+                            v.roomNumber,
+                            compiliter.tolive(v.online,1),
+                            v.image,
+                            ndecodeURI(v.nickName),
+                            v.imagePrivate,
+                            ndecodeURI(v.nickName),
+                            v.numbers,
+                            descri
+                        );  
+                    })
+                    $(".gameHeald .row").append(li);
+                    $(".recomm img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });
+                }
             });
         }();
       
