@@ -263,8 +263,7 @@ $(function(){
 				if(r.r==100){
 					$("#login_form2 .regmail .error").html(r.field).show();
 				}else if(r.r==101){
-					alert(r.r);
-					$("#login_form2 .log_yzm .error").html(error.'验证码校验失败').show();
+					$("#login_form2 .log_yzm .error").html('验证码校验失败').show();
 				}
 				else{
 					try{

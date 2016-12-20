@@ -1,12 +1,6 @@
-
  <?php 
  /***url形式 index.php?c=控制器名&m=方法名      ***/
-	
- if($_SERVER['HTTP_HOST']=='mains.kedo.tv'){
- 	Header('HTTP/1.1 301 Moved Permanently');
- 	Header('Location:http://www.kedo.tv');
- 	exit();
- }
+
 	 header("Content-type: text/html; charset=utf-8");
 	 $currentdir=dirname(__FILE__);//获取当前文件的目录地址
 	 
@@ -30,4 +24,3 @@
  	}
  	
  ?>
-

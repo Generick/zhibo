@@ -10,7 +10,7 @@
 
 */
 
-.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/icons.png);}
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(icons.png);}
 
 .activelevel-pic_activelevel_1 {width:24px; height:18px; background-position: -678px -108px}
 .activelevel-pic_activelevel_10 {width:24px; height:18px; background-position: -652px -108px}

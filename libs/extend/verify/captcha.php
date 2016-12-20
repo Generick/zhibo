@@ -1,5 +1,6 @@
 <?php
 
+include_once "../include/header.inc.php";
 function getAuthImage($text) {
     $im_x = 160;
     $im_y = 40;
@@ -59,7 +60,6 @@ function getAuthImage($text) {
         }
     }
 
-    //return $distortion_im;
     //设置文件头;
     Header("Content-type: image/JPEG");
     //以PNG格式将图像输出到浏览器或文件;
@@ -84,5 +84,4 @@ function make_rand($length="32"){//验证码文字生成函数
 $checkcode = make_rand(4);
 $_SESSION['code']=$checkcode;
 getAuthImage($checkcode);
-
 ?>
