@@ -51,7 +51,7 @@
 		$view->registerPlugin("function","toTime","toTime");
 		
 		
-		$view->display('index_desert.html');
+		$view->display('index.html');
 		
 		//include("include/footer.inc.php");
 		}
