@@ -108,7 +108,8 @@ define(function(require, exports, module) {
 		bg : function() {
 			var content = new Array;
 			content.push('<div class="no-live">');
-			content.push('<div class="no-live-text">主播未开播</div>');
+            content.push('<div class="no-live-text">主播未开播</div>');
+            content.push('<div class="no-live-next">下次开播时间：<span class="no-live-week">星期五</span>&nbsp;&nbsp;&nbsp;<span class="no-live-time">19:20</span></div>');
 			content.push('<ul id="bglis">');
 			content.push('</ul>');
 			content.push('</div>');
@@ -148,7 +149,26 @@ define(function(require, exports, module) {
 					}
 				}
 			});
+
+            $.ajax({
+                type : "post",
+                url : "/rest/site/atsTime.mt",
+                data : "roomNumber=" + UIF.handler.roomNumber,
+                async : false,
+                success : function(data) {
+                    if (data.resultStatus == 200 && data.data != null) {
+                        $(".no-live-week").text(data.data[0]);
+                        $(".no-live-time").text(data.data[1]);
+                      $('.no-live-next').show();
+                    }
+                }
+            });
+
 			return content.join("");
+
+
+
 		}
+
 	}
 });
