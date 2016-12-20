@@ -32,7 +32,6 @@
 		//$page_var['ip'] = get_real_ips();
 		
 		
-		
 		$view->assign('pointlimit', $pointlimit);
 		
 		//当前页面标示
@@ -51,7 +50,10 @@
 		$view->registerPlugin("function","toColor","toColor");
 		$view->registerPlugin("function","toTime","toTime");
 		
+		
 		$view->display('index_desert.html');
+		
+		//include("include/footer.inc.php");
 		}
 	}
 

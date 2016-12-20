@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <!--create 2016-11-11 15.40-->
@@ -6,15 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>蝌蚪直播-最好玩的直播平台</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="public/index/css/bootstrap.min.css" rel="stylesheet">	
-    <link href="public/index/css/style.css?vsn={$vsn}" rel="stylesheet">
-    <link href="public/index/css/homeBg.css?vsn={$vsn}" rel="stylesheet">
-    <link href="public/index/css/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
+    <link href="/public/min/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/index/css/style.css" rel="stylesheet">
+    <link href="/public/index/css/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
     <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
-    <script src="public/jquery-1.12.2.min.js"></script>
-    <script src="public/jquery.lazyload.min.js"></script>
-
+    <script src="/public/min/jquery-1.12.2.min.js"></script>
+    <script src="/public/min/jquery.lazyload.min.js"></script>
+    
     <script>
         var cdn_domain="{$cdn_domain}";
         var img_domain="{$images_domain}";
@@ -22,6 +20,11 @@
         var site_skin="{$site_skin}";
         var currentUserId="{$user.userId}";
         var sid="{$sid}";
+        var ip="{$ip}";
+        var ohref = "{$coreweb}?userId={$user.userId}&token={$gf_token}";
+        var userId = "{$user['userId']}";
+        var flag = 0;
+        var shine;
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -67,6 +70,7 @@
             {else}
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                 <li><a href="/centeros.php">{$user.nickname}</a></li>
+                <li><a class="header-notice hidden-xs"></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
@@ -77,8 +81,8 @@
     </div>
 </div>
 
-<!--主体-->
 
+<!--主体-->
 <div class="container main">
 <div class="row">
 <div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
@@ -116,10 +120,10 @@
 
     </div>
 
-    <!--精彩推荐-->
+    <!--游戏专区-->
     <div class="recomm">
         <div class="page-header clearfix">
-            <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>精彩推荐</span> </h4>
+            <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>游戏专区</span> </h4>
             <h4 class="pull-right recommR">
                 <a href="javascript:;"><small>话题</small></a>
                 <a href="javascript:;"><small>游戏</small></a>
@@ -162,7 +166,7 @@
 
         <div class="caption beforLog">
             <p class="row">
-                <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" onclick="login()">立即登录</button>
+                <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" >立即登录</button>
             </p>
             <p class="row">
                 <a type="button" href="javascript:;" class="btn_login regBtn btn btn-default register" data-loading-text="Loading..." autocomplete="off">一键注册</a>
@@ -216,7 +220,7 @@
                 <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
                 {/if}
                 {if $user.socType==1}
-                <a  target="_blank" href="javascript:;" ahref = "{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                 {/if}
             </p>
 
@@ -258,7 +262,7 @@
     </div>
     <!--申请入驻-->
     <a href="javascript:;" class="thumbnail apply">
-        <img class="lazy" src="public/index/images/banner_zhaoping.png"/>
+        <img class="lazy" src="images/kedo/banner_zhaoping.png"/>
     </a>
 
     <!--主播排行榜-->
@@ -344,24 +348,43 @@
 </div>
 
 <!--底部-->
-{include file="../public/footer.html"}
+<div class="bs-docs-footer navbar-inverse" role="contentinfo">
+    <div class="container">
+        <p>
+            <a href="javascript:;" class="firBL">关于蝌蚪 </a>|
+            <a href="/serviceArgument.php" class="firBL" target="_blank">服务协议 </a>|
+            <a href="/help.php" class="firBL" target="_blank">客服帮助 </a>|
+            <a href="javascript:;" class="firBL">关于我们 </a>|
+            <a href="javascript:;" class="firBL">版权声明</a>
+        </p>
+        <p>
+            <img class="lazy" src="images/kedo/logo_foot.png"/>
+            <span> -Copyright©2016 沪ICP备14054721号</span>
+        </p>
+        <p>蝌蚪客服电话：021-63156393 | 商务合作邮箱：
+            <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
+        </p>
+    </div>
+</div>
 
 <!-- 3 加载bootstrap的核心ＪＳ库 -->
-<script src="public/index/js/bootstrap.min.js"></script>
-<script src="public/index/js/boot.js"></script>
-<script src="public/index/js/json2.js"></script>
-<script src="public/index/js/index_desert.js?vsn={$vsn}"></script>
+<script src="/public/min/bootstrap.min.js"></script>
+<script src="/public/index/js/boot.js"></script>
+<script src="/public/index/js/json2.js"></script>
+<script src="/public/index/js/index_desert.js?vsn={$vsn}"></script>
 <script src="/js/login.js?vsn={$vsn}"></script>
+<script src="/public/index/js/notice.js"></script>
 
-<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="/public/min/html5shiv.min.js"></script>
+<script src="/public/min/respond.min.js"></script>
 {literal}
 <script>
 
     var url = "/rest/checkToken/checkOW.mt";
     var data ={
         sessionId:sid,
-        userId:currentUserId
+        userId:currentUserId,
+        ip:ip
     }
     $(".oww").click(function(){
         var _this =$(this);
@@ -372,11 +395,10 @@
             dataType: "json",
             timeout: 120000,
             success: function (data, textStatus, jqXHR) {
-                location.href=$('.oww').attr("ahref");
+               // window.open(ohref,"ccc");
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(params.url+" error code:"+textStatus);
-
+                alert(params.url+" error code:"+textStatus);
             }
         });
     })

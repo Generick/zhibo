@@ -1,4 +1,4 @@
-.sprite_l {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_L.png);}
+.sprite_l {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(liverlevel_L.png);}
 
 .pic_liverlevel_L_1 {width:64px; height:64px; background-position: -1919px -2px}
 .pic_liverlevel_L_10 {width:64px; height:64px; background-position: -1850px -2px}
@@ -32,7 +32,7 @@
 .pic_liverlevel_L_9 {width:64px; height:64px; background-position: -2px -2px}
 
 /*等级小图*/
-.sprite_s {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_S.png);}
+.sprite_s {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(liverlevel_S.png);}
 
  .pic_liverlevel_S_1 {width:40px; height:40px; background-position: -380px -86px}
  .pic_liverlevel_S_10 {width:40px; height:40px; background-position: -380px -44px}

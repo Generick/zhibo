@@ -1,30 +1,29 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-20 10:40:46
+/* Smarty version 3.1.30, created on 2016-12-20 12:49:21
   from "D:\xampp\htdocs\anchors\app\view\index\index_desert.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58589a2e56f737_07084602',
+  'unifunc' => 'content_5858b851bc5545_60510635',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13148ed2b9cb5c11de2da5a2c24a06ffc9f8b322' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index_desert.html',
-      1 => 1482201369,
+      1 => 1482209357,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_58589a2e56f737_07084602 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
+function content_5858b851bc5545_60510635 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '135095858b851b5fc42_82143066';
 ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <!--create 2016-11-11 15.40-->
@@ -32,22 +31,18 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>蝌蚪直播-最好玩的直播平台</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="public/index/css/bootstrap.min.css" rel="stylesheet">	
-    <link href="public/index/css/style.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
-" rel="stylesheet">
-    <link href="public/index/css/homeBg.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
-" rel="stylesheet">
-    <link href="public/index/css/anchorLevel.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+    <link href="/public/min/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/index/css/style.css" rel="stylesheet">
+    <link href="/public/index/css/anchorLevel.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 " rel="stylesheet">
     <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
     <?php echo '<script'; ?>
- src="public/jquery-1.12.2.min.js"><?php echo '</script'; ?>
+ src="/public/min/jquery-1.12.2.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="public/jquery.lazyload.min.js"><?php echo '</script'; ?>
+ src="/public/min/jquery.lazyload.min.js"><?php echo '</script'; ?>
 >
-
+    
     <?php echo '<script'; ?>
 >
         var cdn_domain="<?php echo $_smarty_tpl->tpl_vars['cdn_domain']->value;?>
@@ -62,6 +57,16 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
 ";
         var sid="<?php echo $_smarty_tpl->tpl_vars['sid']->value;?>
 ";
+        var ip="<?php echo $_smarty_tpl->tpl_vars['ip']->value;?>
+";
+        var ohref = "<?php echo $_smarty_tpl->tpl_vars['coreweb']->value;?>
+?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
+&token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
+";
+        var userId = "<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
+";
+        var flag = 0;
+        var shine;
     <?php echo '</script'; ?>
 >
 </head>
@@ -109,6 +114,7 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                 <li><a href="/centeros.php"><?php echo $_smarty_tpl->tpl_vars['user']->value['nickname'];?>
 </a></li>
+                <li><a class="header-notice hidden-xs"></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
@@ -119,8 +125,8 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
     </div>
 </div>
 
-<!--主体-->
 
+<!--主体-->
 <div class="container main">
 <div class="row">
 <div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
@@ -158,10 +164,10 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
 
     </div>
 
-    <!--精彩推荐-->
+    <!--游戏专区-->
     <div class="recomm">
         <div class="page-header clearfix">
-            <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>精彩推荐</span> </h4>
+            <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>游戏专区</span> </h4>
             <h4 class="pull-right recommR">
                 <a href="javascript:;"><small>话题</small></a>
                 <a href="javascript:;"><small>游戏</small></a>
@@ -204,7 +210,7 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
 
         <div class="caption beforLog">
             <p class="row">
-                <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" onclick="login()">立即登录</button>
+                <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" >立即登录</button>
             </p>
             <p class="row">
                 <a type="button" href="javascript:;" class="btn_login regBtn btn btn-default register" data-loading-text="Loading..." autocomplete="off">一键注册</a>
@@ -267,7 +273,7 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
 ">开播</a>
                 <?php }?>
                 <?php if ($_smarty_tpl->tpl_vars['user']->value['socType'] == 1) {?>
-                <a  target="_blank" href="javascript:;" ahref = "<?php echo $_smarty_tpl->tpl_vars['coreweb']->value;?>
+                <a  target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['coreweb']->value;?>
 ?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
 &token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
 " class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
@@ -312,7 +318,7 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
     </div>
     <!--申请入驻-->
     <a href="javascript:;" class="thumbnail apply">
-        <img class="lazy" src="public/index/images/banner_zhaoping.png"/>
+        <img class="lazy" src="images/kedo/banner_zhaoping.png"/>
     </a>
 
     <!--主播排行榜-->
@@ -398,34 +404,52 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
 </div>
 
 <!--底部-->
-<?php $_smarty_tpl->_subTemplateRender("file:../public/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
+<div class="bs-docs-footer navbar-inverse" role="contentinfo">
+    <div class="container">
+        <p>
+            <a href="javascript:;" class="firBL">关于蝌蚪 </a>|
+            <a href="/serviceArgument.php" class="firBL" target="_blank">服务协议 </a>|
+            <a href="/help.php" class="firBL" target="_blank">客服帮助 </a>|
+            <a href="javascript:;" class="firBL">关于我们 </a>|
+            <a href="javascript:;" class="firBL">版权声明</a>
+        </p>
+        <p>
+            <img class="lazy" src="images/kedo/logo_foot.png"/>
+            <span> -Copyright©2016 沪ICP备14054721号</span>
+        </p>
+        <p>蝌蚪客服电话：021-63156393 | 商务合作邮箱：
+            <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
+        </p>
+    </div>
+</div>
 
 <!-- 3 加载bootstrap的核心ＪＳ库 -->
 <?php echo '<script'; ?>
- src="public/index/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="/public/min/bootstrap.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="public/index/js/boot.js"><?php echo '</script'; ?>
+ src="/public/index/js/boot.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="public/index/js/json2.js"><?php echo '</script'; ?>
+ src="/public/index/js/json2.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="public/index/js/index_desert.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+ src="/public/index/js/index_desert.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 "><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="/js/login.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 "><?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ src="/public/index/js/notice.js"><?php echo '</script'; ?>
+>
 
 <?php echo '<script'; ?>
- src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"><?php echo '</script'; ?>
+ src="/public/min/html5shiv.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
+ src="/public/min/respond.min.js"><?php echo '</script'; ?>
 >
 
 <?php echo '<script'; ?>
@@ -434,7 +458,8 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
     var url = "/rest/checkToken/checkOW.mt";
     var data ={
         sessionId:sid,
-        userId:currentUserId
+        userId:currentUserId,
+        ip:ip
     }
     $(".oww").click(function(){
         var _this =$(this);
@@ -445,11 +470,10 @@ $_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
             dataType: "json",
             timeout: 120000,
             success: function (data, textStatus, jqXHR) {
-                location.href=$('.oww').attr("ahref");
+               // window.open(ohref,"ccc");
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(params.url+" error code:"+textStatus);
-
+                alert(params.url+" error code:"+textStatus);
             }
         });
     })
