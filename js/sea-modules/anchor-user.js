@@ -12,7 +12,103 @@ define(function(require, exports, module) {
 		meters : function(data) {
 			this.data = data;
 			this.init();
+            this.menus();
+            this.startMenu();
 		},
+        startMenu:function(){
+            $(".guard-area").draggable({containment:"parent",stop:function(){
+                var st = $(".guard-area").attr("style");
+                UIF.setCookie("guard-area",st,60 * 24 * 60);
+            }});
+            $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208,stop:function(){
+                var st = $(".guard-area").attr("style");
+                UIF.setCookie("guard-area",st,60 * 24 * 60);
+            }});
+
+            $(".rank-area").draggable({containment:"parent",stop:function(){
+                var st = $(".rank-area").attr("style");
+                UIF.setCookie("rank-area",st,60 * 24 * 60);
+            }});
+            $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208,stop:function(){
+                var st = $(".rank-area").attr("style");
+                UIF.setCookie("rank-area",st,60 * 24 * 60);
+            }});
+
+            $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
+                var st = $(".gift-record").attr("style");
+                UIF.setCookie("gift-record",st,60 * 24 * 60);
+            }});
+            $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208,stop:function(){
+                var st = $(".gift-record").attr("style");
+                UIF.setCookie("gift-record",st,60 * 24 * 60);
+            }});
+
+            $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
+                var st = $(".visitant-record").attr("style");
+                UIF.setCookie("visitant-record",st,60 * 24 * 60);
+            }});
+            $(".visitant-record").resizable({alsoResize:".vr-main",minHeight:150,minWidth:208,stop:function(){
+                var st = $(".visitant-record").attr("style");
+                UIF.setCookie("visitant-record",st,60 * 24 * 60);
+            }});
+            $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
+                var st = $(".chat-area").attr("style");
+                UIF.setCookie("chat-area",st,60 * 24 * 60);
+            }});
+            $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340,stop:function(){
+                var st = $(".chat-area").attr("style");
+                UIF.setCookie("chat-area",st,60 * 24 * 60);
+            }});
+            $( ".chat-area" ).on( "resizestop", function( event, ui ) {
+                $("#nano-pubChatList").nanoScroller();
+                $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
+            } );
+        },
+        menus :function(){
+            var base = this;
+            var Map = require('map');
+            var listMenus = new Map();
+            listMenus.put("sw-guard","guard-area");
+            listMenus.put("sw-chat","chat-area");
+            listMenus.put("sw-record","gift-record");
+            listMenus.put("sw-rank","rank-area");
+            listMenus.put("sw-vip","visitant-record");
+
+            for (var i = 0; i < listMenus.size(); i++) {
+                var msg = listMenus.elements[i];
+                if (msg != null) {
+                    base.swc(msg.key,msg.value);
+                    var ck = Tools.getCookie(msg.key + "-cook");
+                    var ock = Tools.getCookie(msg.value);
+                    if(ock != null){
+                        $("."+msg.value).attr("style",ock);
+                    }
+                    if(ck != null && ck == 1){
+                        $("#"+msg.key).removeClass(msg.key).addClass(msg.key + "-hover");
+                        $('.'+msg.value).hide();
+                    }else{
+                       $('.'+msg.value).show();
+                    }
+                }
+            }
+
+        },
+        swc:function(buttons,area){
+            $(".switch-area").on("click", "#" + buttons + "", function () {
+                if (!UIF.handler.login) {
+                    UIF.handler.loging();
+                    return;
+                }
+                Tools.setCookie(buttons + "-cook", 1, 60 * 24 * 60);
+                $("." + area + "").toggle();
+                if ($("." + area + "").is(":hidden")) {
+                    $(this).addClass(buttons + "-hover").removeClass(buttons);
+                } else {
+                    Tools.setCookie(buttons + "-cook", 0, 60 * 24 * 60);
+                    $(this).addClass(buttons).removeClass(buttons + "-hover");
+                }
+            })
+        },
 		init : function() {
 			var base = this;
 			$("#sendChatBtn").removeAttr("disabled");
