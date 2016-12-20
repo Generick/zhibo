@@ -30,7 +30,12 @@ $_GET = safe_output($_GET);
 $_POST = safe_output($_POST);
 //notice state
 global $db;
-$state = $db->GetRow("select * from bu_station_message where userId = {$user['userId']}");
+$states = $db->Execute("select * from bu_station_message where userId = {$user['userId']} and (state = 0 or state is null)");
+if ($states) {
+    $stateNum = $states->RecordCount();
+}else{
+    $stateNum = 0;
+}
 //var_dump($state);
 //over
     ?>
