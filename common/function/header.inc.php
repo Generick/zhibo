@@ -86,9 +86,10 @@ date_default_timezone_set('PRC');
 $app_path=str_replace('\\','/',str_replace('common\\function\\header.inc.php','',str_replace('common/function/header.inc.php','',__FILE__)));
 //echo $app_path;
 include($app_path.'libs/extend/adodb_65495/adodb.inc.php');
-include($app_path.'mysql_config.php');
+include($app_path.'common/function/mysql_config.php');
 
-//echo ($app_path.'libs/extend/adodb_65495/adodb.inc.php');
+//echo ($app_path.'common/function/mysql_config.php');
+
 include_once('global.func.php');
 if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['openid'] != null){
     $index_page = "index_qqgame.php";

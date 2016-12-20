@@ -66,7 +66,7 @@
 
 .order-box-second{width:150px;height: 140px; margin-top:84px;text-align: center;float: left; }
 .order-box-second .order-second-img{display: block;width: 67px;height: 67px; margin: 0 auto; position:relative; }
-.order-second-img .secondCrown{position:absolute; left:18px; top:-17px; background:url(/img/pic_huangguan_2.png) no-repeat; width:35px; height:23px;  }
+.order-second-img .secondCrown{position:absolute; left:18px; top:-17px; background:url(../images/pic_huangguan_2.png) no-repeat; width:35px; height:23px;  }
 
 .order-second-img img{width: 67px;height: 67px;margin: 0 auto;  display: inline-block; border-radius: 50%; border: 2px solid #dbdbdb; }
 .order-second-name{margin:7px auto;display: block; height:20px; line-height:20px; padding-left: 5px;  }
@@ -74,23 +74,23 @@
 .order-box-bottom .order-second-name:hover{color:#5694cd; }
 .order-first-name{margin-top: 5px;}
 .order-box-second .order-second-level{display: block;margin-top: 5px}
-.order-second-level span{display: inline-block;width:124px;height: 38px;background: url("/img/second.png")no-repeat}
+.order-second-level span{display: inline-block;width:124px;height: 38px;background: url("../images/second.png")no-repeat}
 
 .order-box-first{width:150px;height: 90px;margin-top: 57px;text-align: center;float: left;margin-right: 10px;margin-left: 10px;}
 .order-box-first .order-first-img{display: block;width: 81px;height: 81px; margin: 0 auto; position:relative; }
-.order-first-img .crown{position:absolute; top:-24px; right:6px; background:url(/img/pic_huangguan_1.png) no-repeat; width:64px; height:32px; }
+.order-first-img .crown{position:absolute; top:-24px; right:6px; background:url(../images/pic_huangguan_1.png) no-repeat; width:64px; height:32px; }
 .order-first-img img{width: 81px;height: 81px;margin: 0 auto;  display: inline-block;border-radius: 81px;border:2px solid #F5C736;}
 .order-box-first .order-first-name{margin:7px auto;display: block;width:150px;height:25px;line-height:25px;padding-left: 5px;}
 .order-box-first .order-first-level{display: block;margin-top: 10px}
-.order-first-level span{display: inline-block; width:124px;height: 46px; background: url("/img/first.png")no-repeat}
+.order-first-level span{display: inline-block; width:124px;height: 46px; background: url("../images/first.png")no-repeat}
 .sec{margin-right: 8px;}
 .order-box-third{width:150px;height:74px;margin-top:90px;text-align: center;float: left;margin-right: 10px;}
 .order-box-third .order-third-img{display: block;width: 67px;height: 67px; margin: 0 auto; position:relative; }
-.order-third-img .thirdCrown{position:absolute; top:-18px; left:21px; background:url(/img/pic_huangguan_3.png) no-repeat; width:28px; height:21px; }
+.order-third-img .thirdCrown{position:absolute; top:-18px; left:21px; background:url(../images/pic_huangguan_3.png) no-repeat; width:28px; height:21px; }
 .order-third-img img{width:67px;height: 67px;margin: 0 auto;  display: inline-block;border-radius: 50%; border: 2px solid #dbdbdb; }
 .order-box-third .order-third-name{margin:7px auto;display: block;width:150px;height:25px;line-height:25px;padding-left: 5px;}
 .order-box-third .order-third-level{display: block;margin-top: 10px}
-.order-third-level span{display: inline-block;width:124px;height: 27px;background: url("/img/third.png")no-repeat}
+.order-third-level span{display: inline-block;width:124px;height: 27px;background: url("../images/third.png")no-repeat}
 
 .order-box-bottom{margin-top: 4px;margin-left:36px; width:444px; border-top:3px solid #5694cd; }
 .order-box-bottom ul{ height:310px; width:450px; margin-left:10px; margin-top:10px; }
@@ -248,7 +248,7 @@
 			border-radius: 50%;
 		}
 		
-.spriteGuard {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/guardAllBg.png);}
+.spriteGuard {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/guardAllBg.png);}
 
 .cion_jinchang {width:24px; height:20px; background-position: -1202px -372px}
 .icon_huizhang {width:24px; height:20px; background-position: -1202px -350px}
