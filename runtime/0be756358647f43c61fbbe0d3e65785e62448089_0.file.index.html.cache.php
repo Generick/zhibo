@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-20 17:08:41
+/* Smarty version 3.1.30, created on 2016-12-20 17:36:11
   from "D:\xampp\htdocs\anchors\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5858f519d8ff28_53087644',
+  'unifunc' => 'content_5858fb8bca97a6_80537771',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0be756358647f43c61fbbe0d3e65785e62448089' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index.html',
-      1 => 1482224576,
+      1 => 1482225969,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5858f519d8ff28_53087644 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '174755858f519d1eaa1_74018459';
+function content_5858fb8bca97a6_80537771 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '176435858fb8bc40025_33647856';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -493,7 +493,7 @@ $_smarty_tpl->compiled->nocache_hash = '174755858f519d1eaa1_74018459';
 >
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
-/public/login/js/login.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+/js/login.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 "><?php echo '</script'; ?>
 >
 

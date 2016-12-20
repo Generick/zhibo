@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-20 17:08:41
+/* Smarty version 3.1.30, created on 2016-12-20 17:36:11
   from "D:\xampp\htdocs\anchors\app\view\public\footer.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5858f519d9f922_31849073',
+  'unifunc' => 'content_5858fb8bcb91a5_00189194',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5858f519d9f922_31849073 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '109445858f519d9baa0_26897151';
+function content_5858fb8bcb91a5_00189194 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '87765858fb8bcb5320_97483638';
 ?>
 <!--底部-->
 <div class="bs-docs-footer navbar-inverse" role="contentinfo">
