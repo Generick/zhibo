@@ -40,9 +40,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
                 <li class="{if $current_page=='index'}active{/if}"><a href="#">首页</a></li>
-                <li class="{if $current_page=='square'}active{/if}"><a href="../anchors/square.php">广场</a> </li>
-                <li class="{if $current_page=='mall'}active{/if}"><a href="kedo.php?c=mall">商城</a> </li>
-                <li class="{if $current_page=='order'}active{/if}"><a href='kedo.php?c=orders'>排行榜</a> </li>
+                <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
+                <li class="{if $current_page=='mall'}active{/if}"><a href="/mall.php">商城</a> </li>
+                <li class="{if $current_page=='order'}active{/if}"><a href="/orders.php">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <!--<div class="form-group">
@@ -100,209 +100,7 @@
             
             	<!--游戏-->
                 <div id="games"></div>
-                <div class="recomm gameHeald">
-                    <div class="page-header clearfix hpGameTit">
-                    	<!--左标题-->
-                        <h4 class="pull-left">
-                            <span class="glyphicon icon-zonghe"></span>
-                            <span class="color99">综合推荐</span>
-                        </h4>
-                        <h4 class="pull-right recommR">
-                            <a href="javascript:;"><small class="color33">更多</small></a>
-                        </h4>
-            
-                    </div>
-                    <div class="row">
-                        <!--<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
-                            <a href="1076" target="_blank" class="bgff block"> <span
-                                class="glyphicon glyphicon-stats"></span>
-                                <div class="recommImg thumbnail">
-                                    <img class="lazy"
-                                        src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
-                                        alt="魔女猫柚`">
-                                    <div class="shadow"></div>
-                                    <div class="playBtn"></div>
-                                </div>
-                                <div class="recommB clearfix">
-                                    <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
-                                    <div class="recomBR pull-right">
-                                        <div class="clearfix">
-                                            <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
-                                            <div class="color99 pull-right f12">
-                                                <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
-                                            </div>
-                                        </div>
-                                        <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
-                                    </div>
-                                </div></a>
-                        </div>-->
-                        
-                    </div>
-                    
-                   
-                </div>
+                
                 
                 
                 
@@ -324,7 +122,6 @@
                     </div>
             
                 </div>
-                
                 
                 <!--游戏专区-->
                 <!--<div class="GamesCon" id="gameAnchors">
