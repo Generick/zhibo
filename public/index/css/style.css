@@ -52,18 +52,18 @@ a:hover{
 }
 /*字体*/
 .icon-hot{
-	background: url(/images/kedo/icon_hot.png) no-repeat;
+	background: url(../images/icon_hot.png) no-repeat;
 	width: 40px;
 	height: 20px; 
 }
 .icon-fire{
-	background: url(/images/kedo/icon_jingcai.png) no-repeat;
+	background: url(../images/icon_jingcai.png) no-repeat;
 	width: 40px;
 	height: 20px; 
 	margin-right: 10px; 
 }
 .icon-new{
-	background: url(/images/kedo/icon_new.png) no-repeat;
+	background: url(../images/icon_new.png) no-repeat;
 	width: 40px;
 	height: 20px; 
 }
@@ -182,7 +182,7 @@ a:hover{
 
 /*商标*/
 .logo_head{
-	background: url(/images/kedo/logo_head.png) no-repeat;
+	background: url(../images/logo_head.png) no-repeat;
 	width: 120px;
 	height: 45px; 
 	margin-right: 25px;
@@ -268,7 +268,7 @@ a:hover{
 	display: inline-block;
     width: 24px;
     height: 18px;
-    background: url("/images/kedo/header_notice.png") no-repeat;
+    background: url("../images/header_notice.png") no-repeat;
     cursor: pointer;
     margin-top: 20px
 }
@@ -436,7 +436,7 @@ a:hover{
 	    left: 9%;
 	    width: 36px;
 	    height: 20px;
-	    background: url(/images/kedo/icon_huangguan.png);
+	    background: url(../images/icon_huangguan.png);
 	}
 	.navbar-default{
 		background-color:#fff; 

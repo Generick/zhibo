@@ -3,14 +3,14 @@
 	class indexController{
 	public function index(){
 		global $view;
-		
+		global $vsn;
 			//$testModel=M('test');
 			//$data=$testModel->get();
 			//$view->assign('str',$data);
 		//读取配置
 		$page_var['images_domain']=_IMAGES_DOMAIN_;
 		$page_var['sitename']=SITENAME;
-		
+		$page_var['cdn']=_CDNDOMAIN_;
 		
 		if(isset($_GET[openid]) and $_GET[openid] !=''){
 			include("qq_index.php");

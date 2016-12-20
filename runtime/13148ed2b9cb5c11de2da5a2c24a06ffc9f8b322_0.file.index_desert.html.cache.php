@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-20 12:49:21
+/* Smarty version 3.1.30, created on 2016-12-20 16:03:38
   from "D:\xampp\htdocs\anchors\app\view\index\index_desert.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5858b851bc5545_60510635',
+  'unifunc' => 'content_5858e5da198aa3_21567402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13148ed2b9cb5c11de2da5a2c24a06ffc9f8b322' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index_desert.html',
-      1 => 1482209357,
+      1 => 1482220978,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5858b851bc5545_60510635 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '135095858b851b5fc42_82143066';
+function content_5858e5da198aa3_21567402 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '134275858e5da1331a4_61206814';
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -31,16 +31,24 @@ $_smarty_tpl->compiled->nocache_hash = '135095858b851b5fc42_82143066';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>蝌蚪直播-最好玩的直播平台</title>
-    <link href="/public/min/bootstrap.min.css" rel="stylesheet">
-    <link href="/public/index/css/style.css" rel="stylesheet">
-    <link href="/public/index/css/anchorLevel.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+    <link href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/css/style.css" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/css/homeBg.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/css/anchorLevel.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 " rel="stylesheet">
     <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
     <?php echo '<script'; ?>
- src="/public/min/jquery-1.12.2.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/jquery-1.12.2.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="/public/min/jquery.lazyload.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/jquery.lazyload.min.js"><?php echo '</script'; ?>
 >
     
     <?php echo '<script'; ?>
@@ -124,7 +132,6 @@ $_smarty_tpl->compiled->nocache_hash = '135095858b851b5fc42_82143066';
         </div><!--/.nav-collapse -->
     </div>
 </div>
-
 
 <!--主体-->
 <div class="container main">
@@ -425,31 +432,39 @@ $_smarty_tpl->compiled->nocache_hash = '135095858b851b5fc42_82143066';
 
 <!-- 3 加载bootstrap的核心ＪＳ库 -->
 <?php echo '<script'; ?>
- src="/public/min/bootstrap.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/bootstrap.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/public/index/js/boot.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/js/boot.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/public/index/js/json2.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/js/json2.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/public/index/js/index_desert.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/js/index_desert.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 "><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/js/login.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/js/login.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 "><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/public/index/js/notice.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/js/notice.js"><?php echo '</script'; ?>
 >
 
 <?php echo '<script'; ?>
- src="/public/min/html5shiv.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/html5shiv.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/public/min/respond.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/respond.min.js"><?php echo '</script'; ?>
 >
 
 <?php echo '<script'; ?>
