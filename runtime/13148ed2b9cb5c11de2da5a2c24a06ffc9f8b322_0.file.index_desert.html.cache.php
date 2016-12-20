@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-20 10:14:40
+/* Smarty version 3.1.30, created on 2016-12-20 10:40:46
   from "D:\xampp\htdocs\anchors\app\view\index\index_desert.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585894100898b8_01835740',
+  'unifunc' => 'content_58589a2e56f737_07084602',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13148ed2b9cb5c11de2da5a2c24a06ffc9f8b322' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index_desert.html',
-      1 => 1482199945,
+      1 => 1482201369,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_585894100898b8_01835740 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '301658589410004bb3_69818859';
+function content_58589a2e56f737_07084602 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '469658589a2e4eaa30_65674145';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -82,8 +82,8 @@ $_smarty_tpl->compiled->nocache_hash = '301658589410004bb3_69818859';
             <ul class="nav navbar-nav hdNavL">
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'index') {?>active<?php }?>"><a href="#">首页</a></li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="/square.php">广场</a> </li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="kedo.php?c=mall">商城</a> </li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href='kedo.php?c=orders'>排行榜</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="/mall.php">商城</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href="/orders.php">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <!--<div class="form-group">
