@@ -3,6 +3,7 @@ if(isset($_REQUEST['username']) && strlen($_REQUEST['username'])>50 && isset($_G
 	echo jsonp_encode(array('r'=>'no'));
 	exit;
 }
+
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
 header("Pragma: no-cache");
@@ -28,6 +29,7 @@ if($_GET['action']=='logout'){
 	}
 }else{
 	session_start();
+	
 	if($_GET['from']!='client' && strtolower($_SESSION['code'])!=strtolower($_REQUEST['login_vaildcode'])){
 		echo json_encode(array('r'=>101,'field'=>'您输入的验证码不正确'));
 		include('include/footer.inc.php');
