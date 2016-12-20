@@ -12,7 +12,7 @@
 
 	function getNoticeState($userId){
 		global $db;
-		//$userId = 12;
+		//$userId = 6856;
 		$userinfo = $db->Execute("select state from bu_station_message where userId = {$userId} and (state  = 0 or state is null)");
 		if ($userinfo) {
 			return $userinfo->RecordCount();

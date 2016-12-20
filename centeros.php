@@ -33,11 +33,10 @@ global $db;
 $states = $db->Execute("select state from bu_station_message where userId = {$user['userId']} and (state = 0 or state is null)");
 if ($states) {
     $stateNum = $states->RecordCount();
-    //var_dump($user['userId']);
 }else{
     $stateNum = 0;
 }
-//var_dump($state);
+//var_dump($states);exit;
 //over
     ?>
 <!DOCTYPE html>
