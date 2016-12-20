@@ -96,7 +96,7 @@ a{text-decoration:none; }
 
 /*中部*/
 .video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
-.live-info{position: relative;  margin-top: 8px;}
+.live-info{position: relative;  margin-top: 8px;z-index: -1}
 
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
@@ -122,15 +122,18 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/desert/images/nolbg.jpg");position: relative}
+.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative;z-index: -1}
 
 /*未开播*/
-.no-live-text{margin: auto; text-align: center; margin-top: 42px;}
+.no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
+.no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
+.no-live-next .no-live-week{color: #99999}
+.no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
 .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
-.no-live ul li{float: left;margin-right:20px; }
+.no-live ul li{float: left;margin:0 12px }
 .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
 .noanchor-kuang{width:100px;  height: 150px;position: relative;overflow: hidden}
 .noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
@@ -156,7 +159,7 @@ a{text-decoration:none; }
 .myDiv5{width: 340px;position:absolute; }
 .gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute}
 .visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute}
-.gr-main{height:150px;}
+.gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
 .gf-outer-header{cursor: move}
@@ -194,7 +197,7 @@ a{text-decoration:none; }
 .gift-record ul li .gr-song,.cr-to{color: #FFffff}
 .gift-record ul li .gr-reciver{color: #ffc937;}
 .gift-record ul li img{width: 22px;  height: 24px; vertical-align: middle; margin: 0 3px 0 2px;}
-.gr-header,.vr-header{color:#FFffff;margin:12px;cursor: move}
+.gr-header,.vr-header{color:#FFffff;margin:12px 0 12px 15px;cursor: move}
 .gr-header #span{ background:url(/skin/comic/images/gift_tit.png); width: 66px; height: 20px; display: block; }
 .vr-header .span{ background:url("/skin/comic/images/icon_guibinxi.png") no-repeat; width: 50px; height: 20px; display: block; }
 .handler{width: 15px;    height: 10px;  border-right: solid 1px #888;    border-bottom: solid 1px #888;  position: absolute;   right: 1px; bottom: 1px;  cursor: nw-resize;}
@@ -238,7 +241,7 @@ a{text-decoration:none; }
 
 
 .r-week{margin: 0 1px;}
-.rk-contents .nano{height:165px; }
+.rk-contents .nano{height:146px; }
 .rk-conn ul li{height:45px; padding-left: 15px;margin-bottom: 4px;}
 .rk-conn ul li >div{float: left;color: #f2f8fa}
 .rkb-xuu{width:25px;height: 30px;background-repeat:no-repeat;margin-top: 10px;background: url("../images/sucai-hao.png")no-repeat}
@@ -257,7 +260,7 @@ a{text-decoration:none; }
 .sw-chat {width:59px; height:59px; background-position: -616px -2px}
 .sw-chat-hover,.sw-chat:hover {width:59px; height:59px; background-position: -677px -2px}
 .sw-guard {width:59px; height:59px; background-position: -494px -2px}
-.sw-guard:hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
+.sw-guard-hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
 .sw-mission {width:60px; height:60px; background-position: -126px -2px}
 .sw-mission-hover,.sw-mission:hover {width:60px; height:60px; background-position: -188px -2px}
 .sw-rank {width:59px; height:59px; background-position: -372px -2px}
@@ -312,7 +315,7 @@ a{text-decoration:none; }
 #priChatList{min-height:120px;}
 .chat-header >div{float: left;width:34px;height:20px;text-align: center;color: #FFffff;position: relative;background-color: rgba(0, 0, 0,0.33);vertical-align: middle;line-height: 40px;cursor: pointer; }
 .chat-header .issel{background:none;}
-.chat-body ul li{margin-left: 15px;font-size: 12px;line-height: 24px;color:#fefefe}
+.chat-body ul li{margin-left: 15px;margin-right:10px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0; }
 .chat-body ul li .prwords{color: #fff}
 .chat-body ul li .words{color: #fff;}
@@ -346,7 +349,7 @@ a{text-decoration:none; }
 
 #pubChatList{}
 #pubChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all; }
-#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 20px;}
+#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 18px;}
 #pubChatList li .jv1,#priChatList li .jv1{color:#8CEAF1;}
 #pubChatList li .jv2,#priChatList li .jv2{color:#8B35E1;}
 #pubChatList li .jv3,#priChatList li .jv3{color:#ebaa3e;}
@@ -622,20 +625,7 @@ a{text-decoration:none; }
 .clz{position: absolute;right: -2%;top:-2%;width:13%;height:12%;background: url("/skin/comic/images/pic_close.png")no-repeat;cursor: pointer;}
 .clz:hover{background: url("/skin/comic/images/pic_close_down.png") no-repeat;}
 
-
-/*@media (max-width:1500px){
-    .guard-main{width: 260px;}
-    .guard-main ul li{margin-left: 20px;}
-
-    .myDiv2,.gift-record,.guard-area{width:260px;left: 91px;}
-    .rk-header >div{width: 86px;}
-
-    .chat-area{left:1070px;}　
-                    
-}*/
-
 /*设置*/
-
 .setting{width:45px; height:20px; line-height:20px; text-align:center; background:#fcaf01; color:#fff; cursor:pointer; border-radius:4px; position: absolute; right: 10px; top:30px;  }
 #shadow {width:100%; height:100%; background:black; position:absolute; left:0; top:0; display:none; opacity:.5; filter:alpha(opacity=50); z-index:888; }
 
@@ -801,7 +791,7 @@ a{text-decoration:none; }
         top:268px;
     }
 
-    .gift-record,.visitant-record{
+    .visitant-record{
         top:60px;
         right: 20px;
     }
@@ -934,3 +924,4 @@ a{text-decoration:none; }
 }
 
 .flash-area{width:640px;height:360px}
+.bk-color{    border: 2px solid #ccc;  border-radius: 10px;}

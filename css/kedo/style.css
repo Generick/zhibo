@@ -433,7 +433,7 @@ a:hover{
 	.crown{
 		position: absolute;
 	    top: -15px;
-	    left: 25%;
+	    left: 9%;
 	    width: 36px;
 	    height: 20px;
 	    background: url(/images/kedo/icon_huangguan.png);
@@ -746,6 +746,10 @@ a:hover{
 	.secTit{
 		margin-bottom: 3%;
 	}
+	.secTit .colorPin a{
+		color: #e34052;
+	}
+
 	.secTit span{
 		margin-right: 1%;
 	}

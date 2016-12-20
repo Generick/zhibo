@@ -40,6 +40,12 @@ $data = json_decode($datas,true);
 $zhuboinfo = $data['data'];
 $roomUsers = $zhuboinfo['roomUsers'];
 //print_r($data['data']);
+//
+$url = 'http://1b7a61-0.sh.1252349838.clb.myqcloud.com/rest/site/transcoding.mt?roomNumber='.$roomnumber;
+$udata = array('roomnumber'=>$roomnumber);
+$result = curl_post_data($url,$udata);
+// var_dump($url);
+// var_dump($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +54,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/templates/livePhone/css/style.css">
+    <script src="/js/jquery-1.12.2.min.js"></script>
     <style type="text/css">
       .downgame{
         width: 250px;
@@ -128,7 +135,7 @@ $roomUsers = $zhuboinfo['roomUsers'];
 
     <section class="jumbotron banner row">
       <div class="col-xs-12" style="">
-          <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="player"
+          <video src="http://hls.181show.com/mutian-ucloud/m<?php echo $roomnumber;?>/playlist.m3u8" id="player"
 		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
                    x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
 

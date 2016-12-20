@@ -128,7 +128,7 @@
                 if(visitant != null){
                     $(".visitant-record").attr("style",visitant);
                 }
-                $(".visitant-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
+                $(".visitant-record").resizable({alsoResize:".vr-main",minHeight:150,minWidth:208});
                 $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
                      var st = $(".visitant-record").attr("style");
                     UIF.setCookie("visitant-record",st,60 * 24 * 60);

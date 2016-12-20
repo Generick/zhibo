@@ -557,7 +557,6 @@ $(document).ready(function(){
 
             });
         }
-
         //new hot anchors interface
         compiliter.parseNewHotAnchors = function(url,type){
             Tools.getJson({
