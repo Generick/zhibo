@@ -13,8 +13,8 @@ function notice(){
 		dataType:'json',
 		success:function(data){
 			//console.log(data);
-			//data.info.state = 1;
-			if (data.info.state == 1) {
+			//data.state = 1;
+			if (data.state == 0) {
 				//console.log("no unread news");
 				$('.header-notice').hover(function(){
 					$(this).css('background','url(/images/kedo/header_notice_hover.png) no-repeat');

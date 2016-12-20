@@ -1,24 +1,6 @@
 <?php
 $roomnumber = (int)$_GET['roomnumber'];
 
-//$showinfo = $db->CacheGetRow(10, "select u.userId as userId,u.avatar as avatar,u.nickname as nickname,u.city as city,a.roomNumber as roomNumber from bu_user_anchors a LEFT JOIN bu_user u on a.userId = u.userId WHERE a.roomNumber = $roomnumber and a.`status` =1 and u.`status` =1");
-
-// if (!!$showinfo) {
-//     //  include($app_path."include/footer.inc.php");
-//     // header("Location:/blank.php");
-//     //   exit;
-// }
-
-// if ($showinfo['nickname'] == base64_encode(base64_decode($showinfo['nickname']))) {
-//     $b = base64_decode($showinfo['nickname']);
-// } else {
-//     $b = $showinfo['nickname'];
-// }
-// $showinfo['nickname'] = $b;
-// $showinfo['starlevel'] = 1;
-// //print_r($showinfo);
-// include($app_path . "include/footer.inc.php");
-//...
 function curl_post_data($url,$post){
   $options = array(
     CURLOPT_RETURNTRANSFER=>true,
