@@ -1002,7 +1002,7 @@ $(function() {
 		}
 		$(".guard-area").toggle();
 		if ($(".guard-area").is(":hidden")) {
-			$(this).addClass("sw-guard-hover").removeClass("newGifts");
+			$(this).addClass("sw-guard-hover").removeClass("sw-guard");
 		} else {
 			$(this).addClass("sw-guard").removeClass("sw-guard-hover");
 		}
@@ -1016,7 +1016,7 @@ $(function() {
 		}
 		$(".chat-area").toggle();
 		if ($(".chat-area").is(":hidden")) {
-			$(this).addClass("sw-chat-hover").removeClass("newGifts");
+			$(this).addClass("sw-chat-hover").removeClass("sw-chat");
 		} else {
 			$(this).addClass("sw-chat").removeClass("sw-chat-hover");
 		}

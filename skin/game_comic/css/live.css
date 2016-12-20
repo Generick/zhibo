@@ -89,7 +89,7 @@ a{text-decoration:none; }
 
 /*中部*/
 
-.video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute}
+.video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute;}
 .live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
 .flash-area{width: 985px;height: 550px; margin: 0 auto ;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
@@ -116,10 +116,13 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative}
+.no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative;z-index: -1}
 
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
+.no-live-next{margin: auto;  text-align: center;  margin-top: 44px;  color: #999; height: 36px;  width: 360px;  line-height: 36px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -75px;display: none}
+.no-live-next .no-live-week{color: #99999}
+.no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:100px;width: 460px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
@@ -142,8 +145,8 @@ a{text-decoration:none; }
 .myDiv3{width: 340px;position:absolute; }
 .myDiv4{width: 340px;position:absolute; }
 .myDiv5{width: 340px;position:absolute; }
-.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute}
-.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute}
+.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute;z-index: 1}
+.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute;z-index: 1}
 .gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
@@ -195,7 +198,7 @@ a{text-decoration:none; }
 .chat-tip-top{height: 61%; }
 .chat-tip-top >div{float: left;}
 .chat-top-imgs{display: block; width: 60px; height: 60px;border: 2px solid #e7b158; -webkit-border-radius: 50%;-moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
-.chat-tip-title{width:120px;margin-left: 20px; margin-top: 12px;}
+.chat-tip-title{width:120px;margin-left: 10px;  margin-top: 10px;  }
 .levelss{float: left;width:46px;height:20px;}
 .chat-tip-name{float:left;margin-left: 15px; color: #b4ce90; font-size: 14px; }
 .chat-tip-id{}
@@ -209,7 +212,7 @@ a{text-decoration:none; }
 .chat-tip-jinyan{margin-left: 10px; padding-left:22px; background: url("/skin/comic/images/pic_jinyan.png") no-repeat left center; }
 .chat-tip-kick{margin-left: 10px; background: url("/skin/comic/images/pic_tiren.png") no-repeat left center;padding-left: 22px; }
 
-.setManager,.resetManager{  float: left; margin-top:2px;margin-left: 10px; height: 22px;  line-height: 22px;  font-size: 12px;  padding: 0 8px; display: none}
+.setManager,.resetManager{  float: left; margin-top:4px;margin-left: 10px; height: 22px;  line-height: 22px;  font-size: 12px;  padding: 0 8px; display: none;}
 
 /*排行*/
 .rk-header{overflow: hidden;cursor: move}
@@ -247,7 +250,7 @@ a{text-decoration:none; }
 .sw-chat {width:59px; height:59px; background-position: -616px -2px}
 .sw-chat-hover,.sw-chat:hover {width:59px; height:59px; background-position: -677px -2px}
 .sw-guard {width:59px; height:59px; background-position: -494px -2px}
-.sw-guard:hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
+.sw-guard-hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
 .sw-mission {width:60px; height:60px; background-position: -126px -2px}
 .sw-mission-hover,.sw-mission:hover {width:60px; height:60px; background-position: -188px -2px}
 .sw-rank {width:59px; height:59px; background-position: -372px -2px}
@@ -302,8 +305,8 @@ a{text-decoration:none; }
 #priChatList{min-height:120px;}
 .chat-header >div{float: left;width:34px;height:20px;text-align: center;color: #FFffff;position: relative;background-color: rgba(0, 0, 0,0.33);vertical-align: middle;line-height: 40px;cursor: pointer; }
 .chat-header .issel{background:none;}
-.chat-body ul li{margin-left: 15px;font-size: 12px;line-height: 24px;color:#fefefe}
-.chat-body ul li span{ color: #999; padding-right:0; }
+.chat-body ul li{margin-left: 15px;margin-left: 10px;font-size: 12px;line-height: 24px;color:#fefefe}
+.chat-body ul li span{ color: #999; padding-right:0;    height: 18px;  line-height: 18px;  display: inline-block;  overflow: hidden }
 .chat-body ul li .prwords{color: #fff}
 .chat-body ul li .words{color: #fff;}
 .chat-body ul li .gr-time{color: #999;}
@@ -336,7 +339,7 @@ a{text-decoration:none; }
 
 #pubChatList{}
 #pubChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all; }
-#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 20px;}
+#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 18px;}
 #pubChatList li .jv1,#priChatList li .jv1{color:#8CEAF1;}
 #pubChatList li .jv2,#priChatList li .jv2{color:#8B35E1;}
 #pubChatList li .jv3,#priChatList li .jv3{color:#ebaa3e;}
@@ -738,7 +741,7 @@ a{text-decoration:none; }
 
     .no-live{ font-size:12px; color: #fefefe}
     .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
-    .no-live ul li{float: left;  margin-right: 25px;  margin-left: 25px;}
+    .no-live ul li{float: left;  margin-right: 25px;  margin-left: 30px;}
     .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
         .noanchor-kuang{width:128px;  height: 190px;position: relative;overflow: hidden}
     .noanchor-kuang .nocnchor-k{width: 128px;height: 190px;position: absolute;z-index: 11}
@@ -862,7 +865,8 @@ a{text-decoration:none; }
     }
 
     .no-live-text{margin-top:58px;}
-    .no-live ul{margin-top:50px;}
+    .no-live ul{margin-top:70px;}
+    .no-live-next{height: 30px;line-height: 30px;  margin-bottom: -52px;}
     .self-care{margin-top: 18px;}
     #player{
         width: 660px;

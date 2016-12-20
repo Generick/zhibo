@@ -123,15 +123,18 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative}
+.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative;z-index: -1}
 
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
+.no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
+.no-live-next .no-live-week{color: #99999}
+.no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
 .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
-.no-live ul li{float: left;margin-right:20px; }
+.no-live ul li{float: left;margin:0 12px }
 .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
 .noanchor-kuang{width:100px;  height: 150px;position: relative;overflow: hidden}
 .noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
@@ -258,7 +261,7 @@ a{text-decoration:none; }
 .sw-chat {width:59px; height:59px; background-position: -616px -2px}
 .sw-chat-hover,.sw-chat:hover {width:59px; height:59px; background-position: -677px -2px}
 .sw-guard {width:59px; height:59px; background-position: -494px -2px}
-.sw-guard:hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
+.sw-guard-hover,.sw-guard:hover {width:59px; height:59px; background-position: -555px -2px}
 .sw-mission {width:60px; height:60px; background-position: -126px -2px}
 .sw-mission-hover,.sw-mission:hover {width:60px; height:60px; background-position: -188px -2px}
 .sw-rank {width:59px; height:59px; background-position: -372px -2px}
@@ -313,7 +316,7 @@ a{text-decoration:none; }
 #priChatList{min-height:120px;}
 .chat-header >div{float: left;width:34px;height:20px;text-align: center;color: #FFffff;position: relative;background-color: rgba(0, 0, 0,0.33);vertical-align: middle;line-height: 40px;cursor: pointer; }
 .chat-header .issel{background:none;}
-.chat-body ul li{margin-left: 15px;font-size: 12px;line-height: 24px;color:#fefefe}
+.chat-body ul li{margin-left: 15px;margin-right:10px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0; }
 .chat-body ul li .prwords{color: #fff}
 .chat-body ul li .words{color: #fff;}
@@ -347,7 +350,7 @@ a{text-decoration:none; }
 
 #pubChatList{}
 #pubChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all; }
-#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 20px;}
+#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 18px;}
 #pubChatList li .jv1,#priChatList li .jv1{color:#8CEAF1;}
 #pubChatList li .jv2,#priChatList li .jv2{color:#8B35E1;}
 #pubChatList li .jv3,#priChatList li .jv3{color:#ebaa3e;}
@@ -786,7 +789,7 @@ a{text-decoration:none; }
         top:268px;
     }
 
-    .gift-record,.visitant-record{
+    .visitant-record{
         top:60px;
         right: 20px;
     }
