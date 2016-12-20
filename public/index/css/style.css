@@ -269,21 +269,25 @@ a:hover{
 }
 @media screen and (min-width: 768px){
 	.carousel-indicators {
-    	bottom: 0;
+    	bottom: 20px
 	}
 }
 
-.carousel-indicators li.active{
+.carousel-indicators li.active img{
 	width:156px;
 	height: 40px;
 	opacity: 1;
 }
-.carousel-indicators li{
-	background:url(../images/ban1.jpg) no-repeat #000;
+
+.carousel-indicators li img{
+	background:#000;
 	width:156px;
 	height: 40px;
 	background-size: 100%;
 	opacity: 0.5;
+	position: absolute;
+	left: 50%;
+	margin-left:-78px;
 }
 .searchN{
 	border-radius:20px; 
@@ -652,7 +656,7 @@ a:hover{
 	@media (min-width: 768px){
 		.hpGameTit{
 			position: relative;
-			margin: 0 0 10px;
+			margin: 0 0 14px;
 		}
 		.icon-yin{
 			background: url(../images/yin.png) no-repeat;
@@ -671,6 +675,23 @@ a:hover{
 			width: 172px;
 			height: 100px;
 			top:14px;
+		}
+		#games .gameItems .gameIcon{
+			width: 172px;
+			height: 100px;
+			top: 14px;
+			position: relative;
+			display: inline-block;
+			font-family: 'Glyphicons Halflings';
+			font-style: normal;
+			font-weight: 400;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		#games .gameItems .gameName{
+			position: relative;
+			top:44px;
 		}
 		.icon-yule{
 			background: url(../images/pic_yule.png) no-repeat;

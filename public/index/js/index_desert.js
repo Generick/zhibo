@@ -486,8 +486,8 @@ $(document).ready(function(){
                 '<div class="recomm gameItems">\
                     <div class="page-header clearfix hpGameTit">\
                         <h4 class="pull-left">\
-                            <span class="glyphicon icon-yin"></span>\
-                            <span class="color99">{0}</span>\
+                            <img class="gameIcon" src="{0}"/>\
+                            <span class="color99 gameName">{1}</span>\
                         </h4>\
                         <h4 class="pull-right recommR">\
                             <a href="javascript:;"><small class="color33">更多</small></a>\
@@ -553,7 +553,6 @@ $(document).ready(function(){
                 }
                 try{
                     var datas=data;
-                    //alert(datas);
                 }catch(e){
                     var datas="";
                     return false;
@@ -604,8 +603,6 @@ $(document).ready(function(){
                         effect: "fadeIn"
                     });
 
-
-
                 }
 
             });
@@ -644,7 +641,6 @@ $(document).ready(function(){
 
                     var s_big,s_sml;
                     var bwrap = $('<div class="col-pc-f col-md-4 col-sm-4 col-xs-6"></div>');
-                    //var swrap = $('<div class="col-pc-i col-md-3 col-sm-3 col-xs-6"></div>');
 
                     if (bigData.image == "" || bigData.image == null) {
                         bigData.image = "http://images.181show.com/c32caba0b2bb669870247e21125c6d16";
@@ -667,12 +663,7 @@ $(document).ready(function(){
                   
                         s_sml = Tools.stringFormat(compiliter.littleH,v.roomNumber,v.image, ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
                         $("#"+h+" .hotLiCon").append(s_sml);
-                    });
-
-                    
-                   
-                    //$("#"+h+" .hotLiCon").append(swrap);
-                    
+                    });                    
                 }
             });
         }
@@ -696,17 +687,12 @@ $(document).ready(function(){
                     return false;
                 }
 
-
                 var $new="newList";
                 dealData= dealData.data;
                 if (dealData != null && dealData.length > 0) {
                     var row1=dealData.slice(0,19);
                     var s_big,s_sml;
-                    /*var advertisement =
-                        '<a href="#" target="_blank" class="thumbnail adImg">\
-                            <img class="lazy" src="/images/kedo/banner_zhaomu.png" alt="">\
-                        </a>\
-                        ';*/
+                    
                     var bwrap = $('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"></div>');
                     var swrap = $('<div class="col-lg-9 col-md-8 col-sm-8 col-xs-6"></div>');
                     var srow = $('<div class="row"></div>');
@@ -717,7 +703,6 @@ $(document).ready(function(){
                         if(k==0){
                             s_big = Tools.stringFormat(compiliter.bightmlNew,v.roomNumber,v.image,ndecodeURI(v.nickName), compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers,v.heats);
                             bwrap.append(s_big);
-                            //bwrap.append(advertisement);
                         }else if(k>0 && k<=6){
                             s_sml = Tools.stringFormat(compiliter.lithtmlNew,"col-lg-2 col-md-3 col-sm-3 col-xs-6",v.roomNumber,v.image, ndecodeURI(v.nickName),compiliter.tolive(v.online,1),ndecodeURI(v.nickName),v.numbers);
                         }else if(k>6 && k <=12){
@@ -786,7 +771,7 @@ $(document).ready(function(){
 
         compiliter.parseGameType=function(){
             Tools.getJson({
-                url: ulList.anc_gameTypeJson,
+                url: ulList.anc_gameType,
                 data: ""
             }, function (data) {
                 if(data == "" || data ==undefined){
@@ -809,11 +794,12 @@ $(document).ready(function(){
 
                 console.log(datas)
 
-                $.each(datas, function(k, v) { 
-                    var typeTit=Tools.stringFormat(compiliter.gameTypeTit,k);
+                $.each(datas, function(k, v) {
+                    console.log(v) 
+                    var typeTit=Tools.stringFormat(compiliter.gameTypeTit,v.gameIcon,v.gameName);
                     $("#games").append(typeTit);
 
-                    $.each(v,function(kk,vv){
+                    $.each(v.list,function(kk,vv){
                         descri =vv.descri?vv.descri:"　";
                         var li = Tools.stringFormat(compiliter.gameType,
                             vv.roomNumber,
@@ -865,9 +851,9 @@ $(document).ready(function(){
                             item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }
                         if(k==0){
-                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"></li>';
+                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></li>';
                         }else{
-                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""></li>';
+                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></li>';
                         }
 
                         $(".carousel-indicators li").css("background",v.image);
