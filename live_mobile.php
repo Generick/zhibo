@@ -194,7 +194,7 @@ $result = curl_post_data($url,$udata);
                         <span>'.$hotAnchors[$i]['numbers'].'</span>
                       </div>
                     </div>
-                    <p class="color99 ellipsis f3">'.$hotAnchors[$i]['descri'].'</p>
+                    <p class="color99 ellipsis msty f3">'.$hotAnchors[$i]['descri'].'</p>
                   </div>
 
                 </a>
@@ -214,7 +214,7 @@ $result = curl_post_data($url,$udata);
                     <span>'.$hotAnchors[$i]['numbers'].'</span>
                   </div>
                 </div>
-                <p class="color99 ellipsis f3">'.$hotAnchors[$i]['descri'].'</p>
+                <p class="color99 ellipsis msty f3">'.$hotAnchors[$i]['descri'].'</p>
               </div>
 
             </a>
