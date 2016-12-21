@@ -22,6 +22,9 @@ switch($http_host){
 	case "localhost":
         define("SITENAME","local");
         break;
+	case "www.kedo.cn":
+        define("SITENAME","local");
+        break;
     case "10.1.1.17":
         define("SITENAME","local");
         break;

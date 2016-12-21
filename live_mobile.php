@@ -1,24 +1,6 @@
 <?php
 $roomnumber = (int)$_GET['roomnumber'];
 
-//$showinfo = $db->CacheGetRow(10, "select u.userId as userId,u.avatar as avatar,u.nickname as nickname,u.city as city,a.roomNumber as roomNumber from bu_user_anchors a LEFT JOIN bu_user u on a.userId = u.userId WHERE a.roomNumber = $roomnumber and a.`status` =1 and u.`status` =1");
-
-// if (!!$showinfo) {
-//     //  include($app_path."include/footer.inc.php");
-//     // header("Location:/blank.php");
-//     //   exit;
-// }
-
-// if ($showinfo['nickname'] == base64_encode(base64_decode($showinfo['nickname']))) {
-//     $b = base64_decode($showinfo['nickname']);
-// } else {
-//     $b = $showinfo['nickname'];
-// }
-// $showinfo['nickname'] = $b;
-// $showinfo['starlevel'] = 1;
-// //print_r($showinfo);
-// include($app_path . "include/footer.inc.php");
-//...
 function curl_post_data($url,$post){
   $options = array(
     CURLOPT_RETURNTRANSFER=>true,
@@ -41,7 +23,7 @@ $zhuboinfo = $data['data'];
 $roomUsers = $zhuboinfo['roomUsers'];
 //print_r($data['data']);
 //
-$url = _INTERFACE_.'/rest/site/transcoding.mt?roomNumber='.$roomnumber;
+$url = 'http://1b7a61-0.sh.1252349838.clb.myqcloud.com/rest/site/transcoding.mt?roomNumber='.$roomnumber;
 $udata = array('roomnumber'=>$roomnumber);
 $result = curl_post_data($url,$udata);
 // var_dump($url);
@@ -72,6 +54,12 @@ $result = curl_post_data($url,$udata);
         font-weight: 400;
         letter-spacing: 3px;
         background-color: #ec4356;
+      }
+      .msty{
+        width: 64%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
     </style>
 </head>
@@ -135,7 +123,7 @@ $result = curl_post_data($url,$udata);
 
     <section class="jumbotron banner row">
       <div class="col-xs-12" style="">
-          <video src="http://hls.181show.com/mutian-ucloud/<?php echo $roomnumber;?>/playlist.m3u8" id="player"
+          <video src="http://hls.181show.com/mutian-ucloud/m<?php echo $roomnumber;?>/playlist.m3u8" id="player"
 		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
                    x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="<?php echo $zhuboinfo['image']."?p=0&w=640&h=360";?>"></video>
 
@@ -182,13 +170,13 @@ $result = curl_post_data($url,$udata);
                   </div>
                   <div class="recommB">
                     <div class="clearfix">
-                      <span class="color00 pull-left f3">'.$hotAnchors[$i]['title'].'</span>
+                      <span class="color00 pull-left ellipsis msty f3">'.$hotAnchors[$i]['title'].'</span>
                       <div class="color99 pull-right f2_8">
                         <span class="glyphicon glyphicon-eye-open"></span>
                         <span>'.$hotAnchors[$i]['numbers'].'</span>
                       </div>
                     </div>
-                    <p class="color99 ellipsis f3">'.$hotAnchors[$i]['descri'].'</p>
+                    <p class="color99 ellipsis msty f3">'.$hotAnchors[$i]['descri'].'</p>
                   </div>
 
                 </a>
@@ -202,13 +190,13 @@ $result = curl_post_data($url,$udata);
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left f3">'.$hotAnchors[$i]['title'].'</span>
+                  <span class="color00 pull-left ellipsis msty f3">'.$hotAnchors[$i]['title'].'</span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
                     <span>'.$hotAnchors[$i]['numbers'].'</span>
                   </div>
                 </div>
-                <p class="color99 ellipsis f3">'.$hotAnchors[$i]['descri'].'</p>
+                <p class="color99 ellipsis msty f3">'.$hotAnchors[$i]['descri'].'</p>
               </div>
 
             </a>
