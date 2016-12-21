@@ -778,7 +778,7 @@ $(document).ready(function(){
                     return;
                 }
             }, function (data) {
-                if (data == '' || data == undefined || data ) {
+                if (data == '' || data == undefined || data ==null ) {
                     compiliter.parseGameType(ulList.anc_gameTypeJson);
                     return;
                 }
