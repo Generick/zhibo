@@ -852,7 +852,6 @@ $(document).ready(function(){
                     datas="";
                     return false;
                 }
-                console.log(datas)
                 var li="";
                 if (datas != null && datas.length > 0) {
                     $.each(datas, function(k, v) {
