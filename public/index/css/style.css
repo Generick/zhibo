@@ -2,7 +2,7 @@
 /* CSS Document */
 body{
 	font-family:"Microsoft YaHei";
-	background-color:#f4f4f4;
+	background-color:#f1f1f1;
 }
 *{
 	margin: 0;
@@ -32,6 +32,9 @@ a:hover{
 .padd1{
 	padding: 1px  !important; 
 }
+.bord1d{
+	border:1px solid #ddd !important;
+}
 .colorff{
 	color: #fff;
 }
@@ -43,6 +46,9 @@ a:hover{
 }
 .bgff{
 	background-color: #fff;
+}
+.bgfa{
+	background-color: #fafafa;
 }
 .bgf4{
 	background-color: #f4f4f4 !important;
@@ -186,11 +192,6 @@ a:hover{
 	border-radius: 3px;
 	border: none; 
 }
-.mainRight .thumbnail{
-	border-radius:8px; 
-	-webkit-border-radius:8px;
-	-o-border-radius:8px; 
-}
 /*登录注册*/
 @media (min-width: 768px){
 	.navbar-right {
@@ -210,12 +211,6 @@ a:hover{
 }
 
 /* 登录注册隐藏 */
-@media (min-width: 768px){
-	/* .navbar-right {
-	    display: none;
-	} */
-	
-}
 @media (max-width: 767px){
 	.thumbnail{
 		padding: 0; 
@@ -248,10 +243,48 @@ a:hover{
 }
 
 /*轮播图*/
+/*去掉双侧 */
+	.carousel-control{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:0}
+	.carousel-control:hover{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:0}
+
 #carousel-example-captions{
-	border:1px solid #ddd;
 	position:relative;
-	margin-bottom: 0.3%;
+	margin-bottom:1.7%;
+	overflow: hidden;
+}
+.carousel-indicators{
+	width:100%;
+	margin-left: -50%; 
+}
+#carousel-example-captions .item img{
+	width: 1170px;
+}
+.carousel-indicators .active,.carousel-indicators li{
+	width:156px;
+	height: 40px;
+	position: relative;
+	margin-right: 4px; 
+	border:none; 
+}
+
+.carousel-indicators li img{
+	background:#000;
+	width:156px;
+	height: 40px;
+	background-size: 100%;
+	position: absolute;
+	left:0; 
+}
+
+.carousel-indicators li.active img{
+	width:156px;
+	height: 40px;
+}
+.carousel-indicators li .shadow{
+	opacity: 0.3;
+}
+.carousel-indicators li.active .shadow{
+	opacity: 0;
 }
 .thumb-bar{
 	width: 0;
@@ -269,26 +302,10 @@ a:hover{
 }
 @media screen and (min-width: 768px){
 	.carousel-indicators {
-    	bottom: 20px
+    	bottom: 0;
 	}
 }
 
-.carousel-indicators li.active img{
-	width:156px;
-	height: 40px;
-	opacity: 1;
-}
-
-.carousel-indicators li img{
-	background:#000;
-	width:156px;
-	height: 40px;
-	background-size: 100%;
-	opacity: 0.5;
-	position: absolute;
-	left: 50%;
-	margin-left:-78px;
-}
 .searchN{
 	border-radius:20px; 
 	-webkit--border-radius:20px;
@@ -501,8 +518,8 @@ a:hover{
 		margin-top: -3%;
 	}
 	.row.hotLiCon{
-		margin-left: 0;
-		margin-right: 0;
+		margin-left: 1px;
+		margin-right: 1px;
 		padding: 0 1px;
 	}
 	@media (min-width: 1200px){
@@ -513,6 +530,9 @@ a:hover{
 		.hotLiCon .col-pc-i{
 			width:12.5%;
 			padding:0 13px;
+		}
+		.hotLiCon .thumbnail{
+			margin-bottom: 22px; 
 		}
 	}
 	 
@@ -532,9 +552,16 @@ a:hover{
 		padding-right: 18px;
 		padding-top: 32px;
 		padding-bottom: 22px;
+		position: absolute;
+		left:0;
+		bottom:0;
+		width:100%; 
 	}
 	.hotLiCon .hotB{
 		padding: 10px 8px 6px; 
+		position: absolute;
+		left:0; bottom: 0; 
+		width: 100%;
 	}
 
 	.hotLiCon img{
@@ -555,10 +582,6 @@ a:hover{
 
 		
 	/* 手机端 */
-	.hrow1{
-		display: flex;
-	}
-	
 	.hotCon .thumbnail >img{
 		border-radius:12px;
 		width:100%;
@@ -606,10 +629,8 @@ a:hover{
 	    transition: all ease-in 250ms;
 	    font-size: 50px;
 	}
-	
-	.hotItem{
-		font-size: 12px; 
-		overflow: hidden;
+	.hotLiCon .playBtn{
+		top:37%; 
 	}
 	.hotItem .sprite_s{
 		position: absolute;
@@ -656,7 +677,7 @@ a:hover{
 	@media (min-width: 768px){
 		.hpGameTit{
 			position: relative;
-			margin: 0 0 14px;
+			margin: 0 15px 14px;
 		}
 		.icon-yin{
 			background: url(../images/yin.png) no-repeat;
@@ -708,7 +729,7 @@ a:hover{
 		.recommR{
 			position: absolute;
 			bottom: 0;
-			right: 15px;
+			right: 6px;
 		}
 	}
 	.gameN{
@@ -717,10 +738,6 @@ a:hover{
 	.GamesCon a.thumbnail{
 		background-color: #f4f4f4;
 	} 
-	/* 轮播图去掉双侧 */
-	.carousel-control{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:0}
-	.carousel-control:hover{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:0}
-		
 	
 	/*底部*/
 	.bs-docs-footer {

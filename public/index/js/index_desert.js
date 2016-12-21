@@ -350,9 +350,9 @@ $(document).ready(function(){
                     <div class="playBtn"></div></a>',
           
             bigH:
-                '<a href="{0}"  target="_blank" class="thumbnail firHot">\
+                '<a href="{0}"  target="_blank" class="thumbnail firHot bord1d">\
                     <div class="hotT">\
-                        <img class="lazy" src="{1}&w=266&h=278" alt="{2}">\
+                        <img class="lazy" src="{1}&w=263&h=388" alt="{2}">\
                         {3}\
                         <div class="shadow"></div>\
                         <div class="playBtn"></div>\
@@ -360,7 +360,7 @@ $(document).ready(function(){
                     <div class="firB bgff">\
                         <div class="clearfix">\
                         <p class="colorPin pull-left f16">{4}</p>\
-                        <div class="pull-right f12"><span>{5}</span></div>\
+                        <div class="pull-right f12"><span class="color99">{5}</span></div>\
                     </div>\
                     <div class="clearfix f12 color99">\
                         <div class="onliNum pull-left">\
@@ -403,9 +403,9 @@ $(document).ready(function(){
                         </a>\
                         </div>',
             littleH:
-                '<div class="col-pc-i col-md-3 col-sm-3 col-xs-6"><a href="{0}" target="_blank" class="hotItem thumbnail bgdd padd1">\
+                '<div class="col-pc-i col-md-3 col-sm-3 col-xs-6"><a href="{0}" target="_blank" class="hotItem thumbnail bord1d">\
                     <div class="hotT">\
-                        <img class="lazy" src="{1}&w=120&h=130" alt="{2}">\
+                        <img class="lazy" src="{1}&w=120&h=182" alt="{2}">\
                         {3}\
                         <div class="shadow"></div>\
                         <div class="playBtn"></div>\
@@ -487,7 +487,7 @@ $(document).ready(function(){
                     <div class="page-header clearfix hpGameTit">\
                         <h4 class="pull-left">\
                             <img class="gameIcon" src="{0}"/>\
-                            <span class="color99 gameName">{1}</span>\
+                            <span class="color99 gameName">. {1}</span>\
                         </h4>\
                         <h4 class="pull-right recommR">\
                             <a href="/square.php"><small class="color33">更多</small></a>\
@@ -860,9 +860,9 @@ $(document).ready(function(){
                             v.roomNumber,
                             compiliter.tolive(v.online,1),
                             v.image,
-                            ndecodeURI(v.nickName),
+                            ndecodeURI(v.title),
                             v.imagePrivate,
-                            ndecodeURI(v.nickName),
+                            ndecodeURI(v.title),
                             v.numbers,
                             descri
                         );  
