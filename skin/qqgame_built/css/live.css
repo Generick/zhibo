@@ -110,6 +110,9 @@ a{text-decoration:none; }
 
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 42px;}
+.no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
+.no-live-next .no-live-week{color: #999999}
+.no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
 
 .no-live{ font-size:12px; color: #fefefe}
