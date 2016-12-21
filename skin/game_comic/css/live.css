@@ -121,7 +121,7 @@ a{text-decoration:none; }
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
 .no-live-next{margin: auto;  text-align: center;  margin-top: 44px;  color: #999; height: 36px;  width: 360px;  line-height: 36px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -75px;display: none}
-.no-live-next .no-live-week{color: #99999}
+.no-live-next .no-live-week{color: #999999}
 .no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:100px;width: 460px;height: 190px;}
 
