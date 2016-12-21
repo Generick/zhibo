@@ -769,17 +769,18 @@ $(document).ready(function(){
             });
         }();
 
+        compiliter.parseGameType(ulList.anc_gameTypeJson);
         compiliter.parseGameType=function(url){
             Tools.getJson({
                 url: url,
                 data: "",
                 error:function(){
-                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                    compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
             }, function (data) {
                 if (data == '' || data == undefined) {
-                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                    compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
                 try
@@ -833,7 +834,6 @@ $(document).ready(function(){
             });
         };
 
-        compiliter.parseGameType(ulList.anc_gameType);
         compiliter.gameHeald=function(){
             Tools.getJson({
                 url: ulList.gameHeald,
