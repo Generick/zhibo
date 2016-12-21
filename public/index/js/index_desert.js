@@ -769,7 +769,6 @@ $(document).ready(function(){
             });
         }();
 
-        compiliter.parseGameType(ulList.anc_gameTypeJson);
         compiliter.parseGameType=function(url){
             Tools.getJson({
                 url: url,
@@ -833,7 +832,7 @@ $(document).ready(function(){
                
             });
         };
-
+        compiliter.parseGameType(ulList.anc_gameTypeJson);
         compiliter.gameHeald=function(){
             Tools.getJson({
                 url: ulList.gameHeald,
