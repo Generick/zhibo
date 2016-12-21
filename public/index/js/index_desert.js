@@ -778,7 +778,11 @@ $(document).ready(function(){
                     return;
                 }
             }, function (data) {
+<<<<<<< HEAD
                 if (data == '' || data == undefined || data ==null ) {
+=======
+                if (data == '' || data == undefined || data==null) {
+>>>>>>> recover_branch_dev
                     compiliter.parseGameType(ulList.anc_gameTypeJson);
                     return;
                 }
