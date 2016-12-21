@@ -245,7 +245,7 @@ function checklogin(){
     }
     if(!function_exists("aes_decrypt")){
         global $app_path;
-        include($app_path.'aes.func.php');
+        include($app_path.'common/function/aes.func.php');
     }
     if(!$_COOKIE['KDUUS']){
         setcookie("KDUUS",$_SESSION['KDCOOKIE'],time()+3600*24,"/",_COOKIE_DOMAIN_);
