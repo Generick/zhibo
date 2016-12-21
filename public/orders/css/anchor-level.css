@@ -1,5 +1,5 @@
  /*主播等级*/
-.anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(anchor-level.png);width:32px; height:20px;vertical-align: text-top;     margin-left: 5px;}
+.anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/anchor-level.png);width:32px; height:20px;vertical-align: text-top;     margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
 .pic_liverlevel_1 {background-position: -1px -1px}
@@ -35,7 +35,7 @@
 
 /*活跃等级*/
 
-.activelevel {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(pic_activelevel.png);}
+.activelevel {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/pic_activelevel.png);}
 
 .pic_activelevel_1 {width:32px; height:17px; background-position: -75px -46px}
 .pic_activelevel_2 {width:32px; height:17px; background-position: -109px -46px}
@@ -69,7 +69,7 @@
 .pic_activelevel_9 {width:29px; height:21px; background-position: -281px -41px}
 
 /*守护等级*/
-.guardlevel{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(pic_guardLevel_l.png);}
+.guardlevel{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/pic_guardLevel_l.png);}
  .pic_guardlevel_S_1 {width:17px; height:20px; background-position: -333px -1px}
  .pic_guardlevel_S_10 {width:24px; height:22px; background-position: -113px -1px}
  .pic_guardlevel_S_11 {width:24px; height:22px; background-position: -139px -1px}
@@ -89,7 +89,7 @@
 
  /*爵位等级等级*/
 
- .userlevel {display:inline-block;width:52px; height:20px; overflow:hidden; background-repeat: no-repeat;background-image:url(userlevel.png);}
+ .userlevel {display:inline-block;width:52px; height:20px; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/userlevel.png);}
 
  .pic_consumelevel_1  { background-position: -1px -1px}
  .pic_consumelevel_2  { background-position: -55px -1px}
@@ -124,7 +124,7 @@
 
  /*首页*/
      /*大框*/
-.sprite_big_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(big_box.png);}
+.sprite_big_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/big_box.png);}
 
 .biankuang-black {width:306px; height:446px; background-position: -1542px -2px}
 .biankuang-blue {width:306px; height:446px; background-position: -1234px -2px}
@@ -134,7 +134,7 @@
 .biankuang-yellow {width:306px; height:446px; background-position: -2px -2px}	
 
     /*小框*/
- .sprite_small_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(small_box.png);}
+ .sprite_small_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/small_box.png);}
 
 .biankuang_black_little {width:146px; height:214px; background-position: -742px -2px}
 .biankuang_blue_little {width:146px; height:214px; background-position: -594px -2px}
@@ -144,7 +144,7 @@
 .biankuang_yellow_little {width:146px; height:214px; background-position: -2px -2px}
 
     /*等级小图*/
-.sprite_s {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(liverlevel_S.png);}
+.sprite_s {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_S.png);}
 
  .pic_liverlevel_S_1 {width:40px; height:40px; background-position: -380px -86px}
  .pic_liverlevel_S_10 {width:40px; height:40px; background-position: -380px -44px}
@@ -179,7 +179,7 @@
 
     /*等级大图*/
 
-.sprite_l {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(liverlevel_L.png);}
+.sprite_l {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_L.png);}
 
 .pic_liverlevel_L_1 {width:64px; height:64px; background-position: -1919px -2px}
 .pic_liverlevel_L_10 {width:64px; height:64px; background-position: -1850px -2px}
@@ -213,7 +213,7 @@
 .pic_liverlevel_L_9 {width:64px; height:64px; background-position: -2px -2px}
 
 /*排行榜*/
-.sprite_top {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(top.png);}
+.sprite_top {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/top.png);}
 
 .icon_shuzi_1 {width:56px; height:52px; background-position: -408px -2px}
 .icon_shuzi_2 {width:56px; height:52px; background-position: -350px -2px}
