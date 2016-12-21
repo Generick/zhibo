@@ -352,7 +352,7 @@ $(document).ready(function(){
             bigH:
                 '<a href="{0}"  target="_blank" class="thumbnail firHot bord1d">\
                     <div class="hotT">\
-                        <img class="lazy" src="{1}&w=263&h=388" alt="{2}">\
+                        <img class="lazy" src="{1}&w=263&h=386" alt="{2}">\
                         {3}\
                         <div class="shadow"></div>\
                         <div class="playBtn"></div>\
