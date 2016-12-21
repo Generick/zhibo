@@ -76,13 +76,19 @@ a{text-decoration:none; }
 .nl-nav ul li:hover{color: #3E63D8}
 .euc .eu{text-align: center}
 .euc li a{display: block;  padding: 8px 0 12px;width: 66px; color: #A6A6A6; text-align: center;  }
-.euc .eu a{padding-top: 35px;  font-size:11px;color: #fa4a5d}
-.euc .eu a:hover{ color:#3E63D8}
-.euc .download{background: url(/skin/game_comic/images/pic_download.png)center top no-repeat;}
-.euc .download:hover{background: url(/skin/game_comic/images/pic_download_hover.png)center top no-repeat;}
-.euc .download span{width: 40px;  text-align: center;  display: inline-block;  line-height: 20px;  font-size: 12px;  }
+.euc .eu a{padding-top: 30px;  font-size:11px;}
+.euc .eu a:hover{ color:#fff}
+.euc .download{background: url(/skin/desert/images/xiazai.png)center top no-repeat;}
+.euc .download:hover{background: url(/skin/desert/images/xiazai-hover.png)center top no-repeat;}
+.euc .wenjuan{background: url(/skin/desert/images/wenjuan.png)center top no-repeat;}
+.euc .wenjuan:hover{background: url(/skin/desert/images/wenjuan-hover.png)center top no-repeat;}
+.euc .libao{background: url(/skin/desert/images/libao.png)center top no-repeat;}
+.euc .libao:hover{background: url(/skin/desert/images/libao-hover.png)center top no-repeat;}
+.euc .jubao{background: url(/skin/desert/images/jubao.png)center top no-repeat;}
+.euc .jubao:hover{background: url(/skin/desert/images/jubao-hover.png)center top no-repeat;}
 
 /*中部*/
+
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute;}
 .live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
 .flash-area{width: 985px;height: 550px; margin: 0 auto ;}
