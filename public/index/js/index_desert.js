@@ -774,12 +774,12 @@ $(document).ready(function(){
                 url: url,
                 data: "",
                 error:function(){
-                    compiliter.parseGameType(ulList.anc_gameType);
+                    compiliter.parseGameType(ulList.anc_gameTypeJson);
                     return;
                 }
             }, function (data) {
-                if (data == '' || data == undefined) {
-                    compiliter.parseGameType(ulList.anc_gameType);
+                if (data == '' || data == undefined || data==null) {
+                    compiliter.parseGameType(ulList.anc_gameTypeJson);
                     return;
                 }
                 try
@@ -832,7 +832,7 @@ $(document).ready(function(){
                
             });
         };
-        compiliter.parseGameType(ulList.anc_gameTypeJson);
+        compiliter.parseGameType(ulList.anc_gameType);
         compiliter.gameHeald=function(){
             Tools.getJson({
                 url: ulList.gameHeald,
