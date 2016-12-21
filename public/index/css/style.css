@@ -251,6 +251,7 @@ a:hover{
 	position:relative;
 	margin-bottom:1.7%;
 	overflow: hidden;
+	height: 298px;
 }
 .carousel-indicators{
 	width:100%;
@@ -533,6 +534,7 @@ a:hover{
 		}
 		.hotLiCon .thumbnail{
 			margin-bottom: 22px; 
+			position: relative;
 		}
 	}
 	 
@@ -588,7 +590,8 @@ a:hover{
 	}
 	.hotCon .firHot{
 		background-color:#e34052;
-		padding:1px;	
+		padding:1px;
+		position: relative;	
 	}
 	
 	.page-header .pull-left{
