@@ -29,7 +29,7 @@
 		$page_var['vsn']=$vsn;
 		
 		$page_var['sid']=session_id();
-		//$page_var['ip'] = get_real_ips();
+		$page_var['ip'] = get_real_ips();
 		
 		
 		$view->assign('pointlimit', $pointlimit);
