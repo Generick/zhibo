@@ -90,7 +90,7 @@ a{text-decoration:none; }
 /*中部*/
 
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute;}
-.live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;z-index: -1}
+.live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
 .flash-area{width: 985px;height: 550px; margin: 0 auto ;}
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
