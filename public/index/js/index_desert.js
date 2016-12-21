@@ -807,9 +807,9 @@ $(document).ready(function(){
                             vv.roomNumber,
                             compiliter.tolive(vv.online,1),
                             vv.image,
-                            ndecodeURI(vv.nickName),
+                            ndecodeURI(vv.title),
                             vv.imagePrivate,
-                            ndecodeURI(vv.nickName),
+                            ndecodeURI(vv.title),
                             vv.numbers,
                             descri
                         );  
