@@ -769,13 +769,18 @@ $(document).ready(function(){
             });
         }();
 
-        compiliter.parseGameType=function(){
+        compiliter.parseGameType=function(url){
             Tools.getJson({
-                url: ulList.anc_gameType,
-                data: ""
+                url: url,
+                data: "",
+                error:function(){
+                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                    return;
+                }
             }, function (data) {
-                if(data == "" || data ==undefined){
-                    return 0;
+                if (data == '' || data == undefined) {
+                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                    return;
                 }
                 try
                 {
@@ -826,8 +831,9 @@ $(document).ready(function(){
                 });
                
             });
-        }();
+        };
 
+        compiliter.parseGameType(ulList.anc_gameType);
         compiliter.gameHeald=function(){
             Tools.getJson({
                 url: ulList.gameHeald,
