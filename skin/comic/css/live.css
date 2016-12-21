@@ -97,7 +97,7 @@ a{text-decoration:none; }
 
 /*中部*/
 .video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
-.live-info{position: relative;  margin-top: 8px;z-index: -1}
+.live-info{position: relative;  margin-top: 8px;}
 
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
 .live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
@@ -128,7 +128,7 @@ a{text-decoration:none; }
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
 .no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
-.no-live-next .no-live-week{color: #99999}
+.no-live-next .no-live-week{color: #999999}
 .no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
 
