@@ -95,8 +95,20 @@
             }
         }
         $(function() {
-            try {
+            $(".btn-down-game").on("click",function(){
+                $.ajax({
+                    url : "/rest/personCenter/downAmount.mt",
+                    type : "POST",
+                    data : "gId ="+ $(this).attr("gid") + "&roomNumber="+UIF.currentRoomNumber,
+                    cache : false,
+                    dataType : "json",
+                    async : false
+                }).done(function(data) {
 
+                });
+            })
+
+            try {
                 var newGifts = UIF.getCookie("newGifts");
                 if(newGifts != null){
                     $(".newGifts").attr("style",newGifts);
@@ -312,7 +324,7 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 
         <?php if($gameInfo['set'] == 1){  ?>
             <div class="down-load-game">
-                <a href="<?php echo  $gameInfo['gameUrl'];?>" target="_blank" class="btn-down-game"></a>
+                <a href="<?php echo  $gameInfo['gameUrl'];?>" target="_blank" gid="<?php echo $gameInfo['gid']?>" class="btn-down-game"></a>
             </div>
         <?php }?>
 
