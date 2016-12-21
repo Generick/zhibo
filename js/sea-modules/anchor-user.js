@@ -12,8 +12,10 @@ define(function(require, exports, module) {
 		meters : function(data) {
 			this.data = data;
 			this.init();
-            this.menus();
-            this.startMenu();
+            if("qqgame_built" != UIF.skinType){
+                this.menus();
+                this.startMenu();
+            }
 		},
         startMenu:function(){
             $(".guard-area").draggable({containment:"parent",stop:function(){

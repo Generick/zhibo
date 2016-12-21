@@ -73,7 +73,7 @@ a{text-decoration:none; }
 .nl-nav{ overflow: hidden; padding: 25px 0 52px 0;}
 .nl-nav ul li{width:66px;height: 36px; color: #ACACAC;text-align: center;line-height: 36px;font-size: 12px;margin-top: 10px; border-radius: 3px;cursor: pointer}
 .nl-nav ul li a{width:62px;height: 36px;display: inline-block}
-.nl-nav ul li:hover{color: #ffc937}
+.nl-nav ul li:hover{color: #3E63D8}
 .euc .eu{text-align: center}
 .euc li a{display: block;  padding: 8px 0 12px;width: 66px; color: #A6A6A6; text-align: center;  }
 .euc .eu a{padding-top: 30px;  font-size:11px;}

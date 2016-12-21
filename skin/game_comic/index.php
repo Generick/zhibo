@@ -214,6 +214,7 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
             <li><a href="javascript:"  target="_blank">活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
             <li><a href="/help.php" target="_blank">帮助</a></li>
+            <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载</span></a></li>
            <!-- <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
             <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>-->
         </ul>
