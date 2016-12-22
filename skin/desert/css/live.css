@@ -152,7 +152,7 @@ a{text-decoration:none; }
 
 /*礼物*/
 
-.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{display: none}
+.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{z-index:13;display: none}
 .myDiv1{width: 340px;position:absolute;}
 .myDiv2{width: 340px;position:absolute; }
 .myDiv3{width: 340px;position:absolute; }

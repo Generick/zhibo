@@ -153,7 +153,7 @@ a{text-decoration:none; }
 .bk-black{background: url("/static_data/images_css/biankuang_nolive/biankuang_black_SS.png") no-repeat;}
 
 /*礼物*/
-.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{display: none}
+.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{z-index:13;display: none}
 .myDiv1{width: 340px;position:absolute;}
 .myDiv2{width: 340px;position:absolute; }
 .myDiv3{width: 340px;position:absolute; }

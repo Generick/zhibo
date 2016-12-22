@@ -128,8 +128,8 @@ define(function(require, exports, module) {
         swc:function(buttons,area){
             $(".switch-area").on("click", "#" + buttons + "", function () {
                 if (!UIF.handler.login) {
-                    //UIF.handler.loging();
-                  //  return;
+                    UIF.handler.loging();
+                    return;
                 }
                 Tools.setCookie(buttons + "-cook", 1, 60 * 24 * 60);
                 $("." + area + "").toggle();
