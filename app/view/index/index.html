@@ -22,7 +22,6 @@
         var site_skin="{$site_skin}";
         var currentUserId="{$user.userId}";
         var sid="{$sid}";
-        var ip="{$ip}";
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -227,7 +226,7 @@
                         <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
                         {/if}
                         {if $user.socType==1}
-                       <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                       <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="btn btn-md btn-default colorBlue pull-right">OW</a>
                         {/if}
                     </p>
         
@@ -391,8 +390,7 @@
         var url = "/rest/checkToken/checkOW.mt";
         var data ={
             sessionId:sid,
-            userId:currentUserId,
-            ip:ip
+            userId:currentUserId
         }
         $(".oww").click(function(){
             var _this =$(this);
@@ -403,7 +401,7 @@
                 dataType: "json",
                 timeout: 120000,
                 success: function (data, textStatus, jqXHR) {
-                    //location.href=$('.oww').attr("ahref");
+                    location.href=$('.oww').attr("ahref");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     //alert(params.url+" error code:"+textStatus);

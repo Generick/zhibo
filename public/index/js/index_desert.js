@@ -894,9 +894,9 @@ $(document).ready(function(){
                             item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }
                         if(k==0){
-                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></li>';
+                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }else{
-                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></li>';
+                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }
 
                         $(".carousel-indicators li").css("background",v.image);
