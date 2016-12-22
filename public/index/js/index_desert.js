@@ -634,7 +634,7 @@ $(document).ready(function(){
 
                 if (hotData != null && hotData.length > 0) {
                     try {
-                        rowData = hotData.slice(0,20);
+                        rowData = hotData.slice(0,44);
                     } catch(e) {
                         console.log(e);
                     }
