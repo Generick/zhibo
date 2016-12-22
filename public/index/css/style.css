@@ -83,6 +83,9 @@ a:hover{
 .f18{
 	font-size:18px;
 }
+.bordR3{
+	border-radius: 3px;
+}
 .margB6{
 	margin-bottom: 6px;
 }
