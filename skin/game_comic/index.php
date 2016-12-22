@@ -95,62 +95,20 @@
             }
         }
         $(function() {
+            $(".btn-down-game").on("click",function(){
+                $.ajax({
+                    url : "/rest/personCenter/downAmount.mt",
+                    type : "POST",
+                    data : "gId ="+ $(this).attr("gid") + "&roomNumber="+UIF.currentRoomNumber,
+                    cache : false,
+                    dataType : "json",
+                    async : false
+                }).done(function(data) {
+
+                });
+            })
+
             try {
-                var guardarea = UIF.getCookie("guard-area");
-                if(guardarea != null){
-                    $(".guard-area").attr("style",guardarea);
-                }
-                $(".guard-area").draggable({containment:"parent",stop:function(){
-                    var st = $(".guard-area").attr("style");
-                    UIF.setCookie("guard-area",st,60 * 24 * 60);
-                }});
-                $(".guard-area").resizable({alsoResize:".guard-main",minHeight:150,minWidth:208});
-
-                var rankarea = UIF.getCookie("rank-area");
-                if(rankarea != null){
-                    $(".rank-area").attr("style",rankarea);
-                }
-                $(".rank-area").draggable({containment:"parent",stop:function(){
-                    var st = $(".rank-area").attr("style");
-                    UIF.setCookie("rank-area",st,60 * 24 * 60);
-                }});
-                $(".rank-area").resizable({alsoResize:".rk-con1,.rk-con2,.rk-con3",minHeight:150,minWidth:208});
-
-                var giftrecord = UIF.getCookie("gift-record");
-                if(giftrecord != null){
-                    $(".gift-record").attr("style",giftrecord);
-                }
-                $(".gift-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                    var st = $(".gift-record").attr("style");
-                    UIF.setCookie("gift-record",st,60 * 24 * 60);
-                }});
-                $(".gift-record").resizable({alsoResize:".gr-main",minHeight:150,minWidth:208});
-
-
-                var visitant = UIF.getCookie("visitant-record");
-                if(visitant != null){
-                    $(".visitant-record").attr("style",visitant);
-                }
-                $(".visitant-record").draggable({containment:"parent", cancel:"#span",stop:function(){
-                     var st = $(".visitant-record").attr("style");
-                    UIF.setCookie("visitant-record",st,60 * 24 * 60);
-                }});
-                $(".visitant-record").resizable({alsoResize:".vr-main",minHeight:150,minWidth:208});
-
-                var chatarea = UIF.getCookie("chat-area");
-                if(chatarea != null){
-                    $(".chat-area").attr("style",chatarea);
-                }
-                $(".chat-area").draggable({containment:"parent",cancel:".hrr,input",stop:function(){
-                    var st = $(".chat-area").attr("style");
-                    UIF.setCookie("chat-area",st,60 * 24 * 60);
-                }});
-                $(".chat-area").resizable({alsoResize:".cr-body,#msgContent",minHeight:530,minWidth:340});
-                $( ".chat-area" ).on( "resizestop", function( event, ui ) {
-                    $("#nano-pubChatList").nanoScroller();
-                    $("#nano-pubChatList").nanoScroller({ scroll: 'bottom' });
-                } );
-
                 var newGifts = UIF.getCookie("newGifts");
                 if(newGifts != null){
                     $(".newGifts").attr("style",newGifts);
@@ -190,22 +148,22 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 ?>
 <style>
     .game-bake-ground {background: url('<?php echo $gameInfo['bgImage']?>');  background-position: center top;background-repeat: no-repeat;}
-    .down-load-game{position: absolute;width: 150px;height:98px;right: -182px;top:-5px;}
-    .start-load-game{position: absolute;    width: 150px; height: 98px;left: -182px; top: -5px;}
+    .down-load-game{position: absolute;width: 150px;height:100px;right: -182px;top:-5px;}
+    .start-load-game{position: absolute;    width: 150px; height: 100px;left: -182px; top: -5px;}
 
-    .btn-down-game{display:inline-block;width: 150px;height: 98px;background: url("<?php echo $downImg1;?>") no-repeat;}
-    .btn-start-game{display:inline-block;width: 150px;height: 98px;background: url("<?php echo $startImg1;?>") no-repeat;}
+    .btn-down-game{display:inline-block;width: 150px;height: 100px;background: url("<?php echo $downImg1;?>") no-repeat;}
+    .btn-start-game{display:inline-block;width: 150px;height: 100px;background: url("<?php echo $startImg1;?>") no-repeat;}
 
 
     @media only screen and (min-width:1920px) and (min-height:806px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 150px;height: 98px;background: url("<?php echo $downImg1;?>") no-repeat;}
-        .btn-start-game{display:inline-block;width: 150px;height: 98px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
+        .btn-down-game{display:inline-block;width: 150px;height: 100px;background: url("<?php echo $downImg1;?>") no-repeat;}
+        .btn-start-game{display:inline-block;width: 150px;height: 100px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
     }
     @media only screen and (max-width:1919px){
         .game-bake-ground{background:url('<?php echo $gameInfo['bgImage']?>') no-repeat center top; background-color:black;  }
-        .btn-down-game{display:inline-block;width: 150px;height: 98px;background: url("<?php echo $downImg1;?>")  no-repeat;}
-        .btn-start-game{display:inline-block;width: 150px;height: 98px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
+        .btn-down-game{display:inline-block;width: 150px;height: 100px;background: url("<?php echo $downImg1;?>")  no-repeat;}
+        .btn-start-game{display:inline-block;width: 150px;height: 100px;background:  url("<?php echo $startImg1;?>")  no-repeat;}
     }
     @media only screen and (max-width:1448px){
         .start-load-game{left: -132px; top: 5px;}
@@ -268,8 +226,11 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
             <li><a href="javascript:"  target="_blank">活动</a></li>
             <li class="aud"><span><a href="#">观众</a></span></li>
             <li><a href="/help.php" target="_blank">帮助</a></li>
-           <!-- <li><a href="/files/softwore/crossgate20161115_0423.zip" target="_blank">下载</a></li>
-            <li> <a href="javascript:;" onClick="location.href='crossgate:'">游戏</a></li>-->
+            <div class="nl-else">
+                <ul class="euc">
+                    <li class="eu"><a  href="http://a11.gdl.netease.com/MuMuInstaller_1.0.1.0_nochannel.exe" target="_blank" class="download"><span>下载模拟器</span></a></li>
+                </ul>
+            </div>
         </ul>
     </div>
     <?php if(1==2){?>
@@ -363,7 +324,7 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
 
         <?php if($gameInfo['set'] == 1){  ?>
             <div class="down-load-game">
-                <a href="<?php echo  $gameInfo['gameUrl'];?>" target="_blank" class="btn-down-game"></a>
+                <a href="<?php echo  $gameInfo['gameUrl'];?>" target="_blank" gid="<?php echo $gameInfo['gid']?>" class="btn-down-game"></a>
             </div>
         <?php }?>
 
@@ -596,7 +557,7 @@ if($thisHome ==1){
                                 ?>
                                 <li class="<?php if($gift['catename'] == "背包"){ echo "hideli ";}  echo $gift['giftid'];?>">
                                     <div price="<?php echo $gift['giftprice']?>" id="gift<?php echo $gift['giftid']?>" >
-                                        <img src="<?php echo _IMAGES_DOMAIN_."/".$gift['giftimage']?>?p=0" types="<?php echo $gift['giftType'];?>" join="<?php echo $join;?>" rel="<?php echo $gift['giftprice']?><?php echo $page_var['money_name']?>" />
+                                        <img src="<?php echo _IMGPLUS_DOMAIN_."/".$gift['giftimage']?>?p=0" types="<?php echo $gift['giftType'];?>" join="<?php echo $join;?>" rel="<?php echo $gift['giftprice']?><?php echo $page_var['money_name']?>" />
                                         <span title="<?php echo $gift['giftname']?>" class="tooltip gfname" style="display: none"><?php echo $gift['giftname']?></span>
                                     </div>
                                 </li>

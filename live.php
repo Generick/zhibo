@@ -142,6 +142,7 @@ if ($hash_room['rtype'] == "2") {
         $gameInfo['startGame'] = $params['open'];
         $gameInfo['startGameUrl'] = $params['url'];
         $gameInfo['gamePacks'] =  $params['gamePacks'];
+        $gameInfo['gid'] =  $conn['gaid'];
     }else{
         $gameInfo['set'] = 0;
     }

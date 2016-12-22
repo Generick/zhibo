@@ -81,7 +81,7 @@ a{text-decoration:none; }
 .nl-nav{ overflow: hidden; padding: 25px 0 52px 0;}
 .nl-nav ul li{width:66px;height: 36px; color: #ACACAC;text-align: center;line-height: 36px;font-size: 12px;margin-top: 10px; border-radius: 3px;cursor: pointer}
 .nl-nav ul li a{width:62px;height: 36px;display: inline-block}
-.nl-nav ul li:hover{color: #ffc937}
+.nl-nav ul li:hover{color: #3E63D8}
 .euc .eu{text-align: center}
 .euc li a{display: block;  padding: 8px 0 12px;width: 66px; color: #A6A6A6; text-align: center;  }
 .euc .eu a{padding-top: 30px;  font-size:11px;}
@@ -97,6 +97,7 @@ a{text-decoration:none; }
 
 /*中部*/
 .video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
+.live-info{position: relative;  margin-top: 8px; }
 .live-info{position: relative;  margin-top: 8px;}
 
 .live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
@@ -152,7 +153,7 @@ a{text-decoration:none; }
 .bk-black{background: url("/static_data/images_css/biankuang_nolive/biankuang_black_SS.png") no-repeat;}
 
 /*礼物*/
-
+.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{display: none}
 .myDiv1{width: 340px;position:absolute;}
 .myDiv2{width: 340px;position:absolute; }
 .myDiv3{width: 340px;position:absolute; }
@@ -221,6 +222,7 @@ a{text-decoration:none; }
 .chat-tip-line{background: url("/skin/comic/images/pic_xian.png") no-repeat;width:100%;height:2px; margin-top: 8px; }
 .chat-tip-bottom{color:#eee; height: 20px; }
 .chat-tip-bottom >div{float: left;line-height: 22px;margin-top: 8px;  cursor: pointer;}
+.chat-tip-bottom >div:hover{}
 .send-h-gift{background: url("/skin/comic/images/pic_songliwu.png") no-repeat left center;padding-left: 22px;}
 .chat-tip-jinyan{margin-left: 10px; padding-left:22px; background: url("/skin/comic/images/pic_jinyan.png") no-repeat left center; }
 .chat-tip-kick{margin-left: 10px; background: url("/skin/comic/images/pic_tiren.png") no-repeat left center;padding-left: 22px; }
@@ -256,7 +258,7 @@ a{text-decoration:none; }
 
 /*菜单*/
 .switch-area{width:365px; position: fixed;right:50px;bottom: 10px;  z-index: 110;}
-.switch-area .Bmenu{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sucai-tb.png);}
+.switch-area .Bmenu{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sucai-tb.png);cursor: pointer}
 
 .sw-chat {width:59px; height:59px; background-position: -616px -2px}
 .sw-chat-hover,.sw-chat:hover {width:59px; height:59px; background-position: -677px -2px}
@@ -319,7 +321,8 @@ a{text-decoration:none; }
 .chat-body ul li{margin-left: 15px;margin-right:10px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0; }
 .chat-body ul li .prwords{color: #fff}
-.chat-body ul li .words{color: #fff;}
+.chat-body ul li .words{color: #fff;line-height: 24px; height: 20px;}
+.chat-body ul li .words img{vertical-align: middle;margin-bottom: 3px;}
 .chat-body ul li .gr-time{color: #999;}
 .chat-body ul{overflow: hidden;}
 .cr-ulevel{display: inline-block; width: 32px; height: 24px;}
@@ -350,7 +353,7 @@ a{text-decoration:none; }
 
 #pubChatList{}
 #pubChatList li{color:#fefefe; word-wrap:break-word; word-break:break-all; }
-#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 18px;}
+#pubChatList li .u,#priChatList li .u{color:#d2eea5;margin-left:3px;  margin-right: 4px;display: inline-block;overflow: hidden;  max-width: 100px;  height: 20px;}
 #pubChatList li .jv1,#priChatList li .jv1{color:#8CEAF1;}
 #pubChatList li .jv2,#priChatList li .jv2{color:#8B35E1;}
 #pubChatList li .jv3,#priChatList li .jv3{color:#ebaa3e;}

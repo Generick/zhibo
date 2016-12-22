@@ -11,6 +11,7 @@ error_reporting(E_ALL ^ E_NOTICE  ^E_WARNING);
 define('_CDNDOMAIN_','');//cdn服务器
 define('_INTERFACE_','http://10.1.1.17');//接口
 define('_IMAGES_DOMAIN_','http://images.181show.com');//图片服务器
+define('_IMGPLUS_DOMAIN_','http://images.181show.com');//图片服务器
 define('_MYSQL_HOST_','10.1.1.17');//数据库地址
 define('_MYSQL_DB_','anchors');//数据库名
 define('_MYSQL_USER_','root');//数据库用户名

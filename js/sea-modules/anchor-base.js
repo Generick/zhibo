@@ -994,80 +994,9 @@ $(function() {
             $(document).off("mouseup");
         });
     });
-	// 守护框
-	$(".switch-area .sw-guard").click(function() {
-		if(!UIF.handler.login){
-			UIF.handler.loging();
-			return;
-		}
-		$(".guard-area").toggle();
-		if ($(".guard-area").is(":hidden")) {
-			$(this).addClass("sw-guard-hover").removeClass("sw-guard");
-		} else {
-			$(this).addClass("sw-guard").removeClass("sw-guard-hover");
-		}
-	});
 
-	// 聊天框
-	$(".switch-area .sw-chat").click(function() {
-		if(!UIF.handler.login){
-			UIF.handler.loging();
-			return;
-		}
-		$(".chat-area").toggle();
-		if ($(".chat-area").is(":hidden")) {
-			$(this).addClass("sw-chat-hover").removeClass("sw-chat");
-		} else {
-			$(this).addClass("sw-chat").removeClass("sw-chat-hover");
-		}
-	});
 
-	// 记录框
-	$(".switch-area .sw-record").click(function() {
-		if(!UIF.handler.login){
-			UIF.handler.loging();
-			return;
-		}
-		$(".gift-record").toggle();
-		if ($(".gift-record").is(":hidden")) {
-			$(this).addClass("sw-record-hover").removeClass("sw-record");
-		} else {
-			$(this).addClass("sw-record").removeClass("sw-record-hover");
-		}
-	});
 
-    // 本场榜
-    $(".switch-area .sw-rank").click(function() {
-        if(!UIF.handler.login){
-            UIF.handler.loging();
-            return;
-        }
-        $(".rank-area").toggle();
-        if ($(".rank-area").is(":hidden")) {
-            $(this).addClass("sw-rank-hover").removeClass("sw-rank");
-        } else {
-            $(this).addClass("sw-rank").removeClass("sw-rank-hover");
-        }
-    });
-    // 贵宾
-    $(".switch-area .sw-vip").click(function() {
-        if(!UIF.handler.login){
-            UIF.handler.loging();
-            return;
-        }
-        $(".visitant-record").toggle();
-        if ($(".visitant-record").is(":hidden")) {
-            $(this).addClass("sw-vip-hover").removeClass("sw-vip");
-        } else {
-            $(this).addClass("sw-vip").removeClass("sw-vip-hover");
-        }
-    });
-	
-	// 任务框
-	$(".switch-area .sw-rank").click(function() {
-		
-	});
-	
 	/* 礼物数量 */
 	$('#stdSps li').click(function(){
 		$('#sendGiftNum').val($(this).attr('data-count'));
@@ -1116,4 +1045,25 @@ $(function() {
 	});
 });
 
-
+var swc = function (buttons,area) {
+    $(".switch-area").on("click","#"+ buttons +"",function() {
+        if(!UIF.handler.login){
+            UIF.handler.loging();
+            return;
+        }
+        UIF.setCookie(buttons+"-cook",1,60 * 24 * 60);
+        $("."+area+"").toggle();
+        if ($("."+area+"").is(":hidden")) {
+            $(this).addClass(buttons+"-hover").removeClass(buttons);
+        }else{
+            UIF.setCookie(buttons+"-cook",0,60 * 24 * 60);
+            $(this).addClass(buttons).removeClass(buttons+"-hover");
+        }
+    })
+}
+var listMenus = {};
+swc("sw-guard","guard-area");
+swc("sw-chat","chat-area");
+swc("sw-record","gift-record");
+swc("sw-rank","rank-area");
+swc("sw-vip","visitant-record");

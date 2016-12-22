@@ -38,7 +38,7 @@
 		exit();
 	}
 	
-	//ini_set('display_errors','On');
+	ini_set('display_errors','off');
 	//error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);
 	define('_CDNDOMAIN_','http://mains.kedo.tv');//文件加速服务器
 	define('_IMAGES_DOMAIN_','http://img.kedo.tv');//图片服务器

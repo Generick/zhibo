@@ -24,7 +24,7 @@ if ($user['roomNumber']) {
         </div>
         <div class="dui-mian dui-next" >
             <div class="dui-cert-text">确定兑换k豆</div>
-            <div class="dui-cert-notice">温馨提示星豆不可兑换k豆</div>
+            <div class="dui-cert-notice">温馨提示K豆不可兑换星豆</div>
             <div class="dui-control">
                 <button class="dui-queren">确认</button>
                 <button class="dui-cancel">退出</button>
