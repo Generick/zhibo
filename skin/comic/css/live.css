@@ -321,8 +321,8 @@ a{text-decoration:none; }
 .chat-body ul li{margin-left: 15px;margin-right:10px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0; }
 .chat-body ul li .prwords{color: #fff}
-
 .chat-body ul li .words{color: #fff;line-height: 24px; height: 20px;}
+.chat-body ul li .words img{vertical-align: middle;margin-bottom: 3px;}
 .chat-body ul li .gr-time{color: #999;}
 .chat-body ul{overflow: hidden;}
 .cr-ulevel{display: inline-block; width: 32px; height: 24px;}
