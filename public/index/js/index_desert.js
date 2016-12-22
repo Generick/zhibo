@@ -468,7 +468,7 @@ $(document).ready(function(){
             ',
 
             gameType:
-            '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem"><a href="{0}" target="_blank" class="bgff block">\
+            '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem"><a href="{0}" target="_blank" class="bgff block thumbnail">\
                 {1}\
                 <div class="recommImg thumbnail">\
                     <img class="lazy" src="{2}&w=262&h=150" alt="{3}">\
@@ -611,7 +611,7 @@ $(document).ready(function(){
                 }
             });
         }
-        
+
 
         //new hot anchors interface
         compiliter.parseNewHotAnchors = function(url,type){

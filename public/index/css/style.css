@@ -546,6 +546,7 @@ a:hover{
 	}
 	.hotLiCon .hotItem {
 		position: relative;
+		overflow: hidden;
 	}
 	.hotItem .playBtn{
 		width:30px;
@@ -595,7 +596,8 @@ a:hover{
 		width:100%;
 	}
 	.hotCon .firHot{
-		position: relative;	
+		position: relative;
+		overflow: hidden;	
 	}
 	
 	.page-header .pull-left{
