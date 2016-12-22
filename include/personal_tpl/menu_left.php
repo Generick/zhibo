@@ -1,4 +1,4 @@
-<?php// echo $current_page;?>
+<?php //echo $current_page.$stateNum;?>
 <style type="text/css">
     .noticedot{
         display:block;
@@ -39,7 +39,7 @@
     </div>
     <div class="pi">
         <div class="cl-div <?php if($current_page=="notice"){ echo "cl-focus";}?>">
-            <a href="/centeros.php?ptype=notice"><div class="cl-notice cl-title color33">消息中心<?php if($state['state'] == null || $state['state'] == ''){echo "<i class='noticedot'></i>";}?></div></a>
+            <a href="/centeros.php?ptype=notice"><div class="cl-notice cl-title color33">消息中心<?php if($stateNum>0){echo "<i class='noticedot'></i>";}?></div></a>
         </div>
     </div>
    <!-- <div class="pi">
