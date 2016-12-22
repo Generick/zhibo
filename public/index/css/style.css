@@ -185,9 +185,7 @@ a:hover{
 }
 
 .mainRight .thumbnail{
-	border-radius:8px; 
-	-webkit-border-radius:8px;
-	-o-border-radius:8px; 
+	border: 1px solid #ddd;
 }
 .logName{
 	width:96px; 
@@ -547,7 +545,7 @@ a:hover{
 		overflow: hidden;
 	}
 	.hotLiCon .hotItem {
-		position: absolute;
+		position: relative;
 	}
 	.hotItem .playBtn{
 		width:30px;
