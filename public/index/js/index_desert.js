@@ -778,7 +778,7 @@ $(document).ready(function(){
                     return;
                 }
             }, function (data) {
-                if (data == '' || data == undefined) {
+                if (data == '' || data == undefined || data==null) {
                     compiliter.parseGameType(ulList.anc_gameTypeJson);
                     return;
                 }
@@ -832,7 +832,6 @@ $(document).ready(function(){
                
             });
         };
-
         compiliter.parseGameType(ulList.anc_gameType);
         compiliter.gameHeald=function(){
             Tools.getJson({

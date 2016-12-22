@@ -755,7 +755,7 @@ a:hover{
 	}
 	.square .showHd{
 		background: url("/images/kedo/pic_zhibo.png") no-repeat;
-		left:0;
+		right:0;
 	}
 	.square .showHd.active{
 		background: url("/images/kedo/pic_zhiboxiu.png") no-repeat;
@@ -768,7 +768,7 @@ a:hover{
 	}
 	.square .gameHd{
 		background: url("/images/kedo/pic_game.png") no-repeat;
-		right: 0;
+		left: 0;
 	}
 	.square .gameHd.active{
 		background: url("/images/kedo/pic_gamelive.png") no-repeat;

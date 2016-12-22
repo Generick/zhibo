@@ -35,47 +35,11 @@ include_once('tpl_header.php');
 ?>
     <div class="hotCon square container">
         <div class="squareTit text-center clearfix">
-            <div class="showHd pull-left active"></div>
-            <div class="gameHd pull-left"></div>
+            <div class="gameHd pull-left active"></div>
+            <div class="showHd pull-left"></div>
         </div>
-        <div class="row squareCon">
-            <div class="squareDe" style="display:block; ">
-                <div class="secTit text-center clearfix color99">
-                    <span>全部</span>
-                    <span class="colorPin">最新入驻</span>
-                    <span>户外</span>
-                    <span>音乐</span>
-                    <span>蠢萌</span>
-                    <span>搞怪</span>
-                    <span>段子</span>
-                </div>
-                <div class="col-pc-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
-                <a href="{{squAnch.roomNumber}}" target="_blank" class="hotItem thumbnail" >
-                  <img ng-src="{{squAnch.image}}&w=97&h=146" alt="{{squAnch.nickName|decode}}"/>
-                  <div class="{{squAnch.levelImg}}"></div>
-                  <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
-                  <div class="hotT thumbnail">
-                    <p class="text-center color33">人数：<span>{{squAnch.numbers}}</span></p>
-                    
-                  </div>
-                  <div class="hotB">
-                    <span class="colorPin f14">{{squAnch.nickName|decode}}</span>  
-                    <p class="f12 color99" ng-if="squAnch.onlineTime>0">
-                        <span>{{squAnch.onlineTime|time}}</span>
-                        <span>分钟之前</span>
-                    </p>
-                    <p class="f12" ng-if="squAnch.onlineTime==0">
-                        <span>未开播</span>
-                    </p>
-                 </div>
-                 <div class="shadow thumbnail"></div>
-                 <div class="playBtn"></div>
-              </a>
-            
-            </div>
-            </div>
-            
-            <div class="squareDe gameAnch">
+        <div class="row squareCon"> 
+            <div class="squareDe gameAnch" style="display:block; ">
                 <div class="secTit text-center clearfix color99">
                     <span class="allG colorPin"><a href="javascript:;">全部</a></span>
                     <span class="tits" ng-repeat="sort in sorts" ng-class="sort==curSort ?'colorPin':''" ng-click="getSort(sort)"><a href="javascript:;" >{{sort}}</a></span>
@@ -167,7 +131,42 @@ include_once('tpl_header.php');
                     </a>                    
                 </div>
                 </div>
-            </div>      
+            </div>  
+            <div class="squareDe">
+                <div class="secTit text-center clearfix color99">
+                    <span>全部</span>
+                    <span class="colorPin">最新入驻</span>
+                    <span>户外</span>
+                    <span>音乐</span>
+                    <span>蠢萌</span>
+                    <span>搞怪</span>
+                    <span>段子</span>
+                </div>
+                <div class="col-pc-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
+                <a href="{{squAnch.roomNumber}}" target="_blank" class="hotItem thumbnail" >
+                  <img ng-src="{{squAnch.image}}&w=97&h=146" alt="{{squAnch.nickName|decode}}"/>
+                  <div class="{{squAnch.levelImg}}"></div>
+                  <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
+                  <div class="hotT thumbnail">
+                    <p class="text-center color33">人数：<span>{{squAnch.numbers}}</span></p>
+                    
+                  </div>
+                  <div class="hotB">
+                    <span class="colorPin f14">{{squAnch.nickName|decode}}</span>  
+                    <p class="f12 color99" ng-if="squAnch.onlineTime>0">
+                        <span>{{squAnch.onlineTime|time}}</span>
+                        <span>分钟之前</span>
+                    </p>
+                    <p class="f12" ng-if="squAnch.onlineTime==0">
+                        <span>未开播</span>
+                    </p>
+                 </div>
+                 <div class="shadow thumbnail"></div>
+                 <div class="playBtn"></div>
+              </a>
+            
+            </div>
+            </div>    
         </div>
         
     </div>

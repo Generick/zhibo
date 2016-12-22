@@ -123,12 +123,12 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative;z-index: -1}
+.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative;}
 
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
 .no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
-.no-live-next .no-live-week{color: #99999}
+.no-live-next .no-live-week{color: #999999}
 .no-live-next .no-live-time{color: #c28332}
 .no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
 
