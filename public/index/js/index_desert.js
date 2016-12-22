@@ -359,8 +359,8 @@ $(document).ready(function(){
                     </div>\
                     <div class="firB bgff">\
                         <div class="clearfix">\
-                        <p class="colorPin pull-left f16">{4}</p>\
-                        <div class="pull-right f12"><span class="color99">{5}</span></div>\
+                        <p class="colorPin pull-left f18">{4}</p>\
+                        <div class="pull-right f12 weathLiv"><span class="color99">{5}</span></div>\
                     </div>\
                     <div class="clearfix f12 color99">\
                         <div class="onliNum pull-left">\
@@ -774,12 +774,12 @@ $(document).ready(function(){
                 url: url,
                 data: "",
                 error:function(){
-                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                    compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
             }, function (data) {
-                if (data == '' || data == undefined || data==null) {
-                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                if (data.data == '' || data.data == undefined || data.data==null) {
+                    compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
                 try
@@ -832,7 +832,7 @@ $(document).ready(function(){
                
             });
         };
-        compiliter.parseGameType(ulList.anc_gameType);
+        compiliter.parseGameType(ulList.anc_gameTypeJson);
         compiliter.gameHeald=function(){
             Tools.getJson({
                 url: ulList.gameHeald,
