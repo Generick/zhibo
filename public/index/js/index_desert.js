@@ -246,7 +246,7 @@ $(document).ready(function(){
 
             "anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
 
-            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=30",//new hot anchors interface
+            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=44",//new hot anchors interface
 
             "newHotAnchorsJson":"/files/hotAnchorsNew.json",//new hot anchors interface json
 
@@ -632,6 +632,8 @@ $(document).ready(function(){
                 bigData = data.data.big;
                 hotData = data.data.hot;
 
+                console.log(hotData)
+                console.log(hotData.length)
                 if (hotData != null && hotData.length > 0) {
                     try {
                         rowData = hotData.slice(0,44);
