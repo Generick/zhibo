@@ -35,6 +35,9 @@ a:hover{
 .bord1d{
 	border:1px solid #ddd !important;
 }
+.bord1Pin{
+	border:1px solid #e34052 !important;
+}
 .colorff{
 	color: #fff;
 }
@@ -76,6 +79,12 @@ a:hover{
 }
 .f16{
 	font-size:16px;
+}
+.f18{
+	font-size:18px;
+}
+.bordR3{
+	border-radius: 3px;
 }
 .margB6{
 	margin-bottom: 6px;
@@ -179,9 +188,7 @@ a:hover{
 }
 
 .mainRight .thumbnail{
-	border-radius:8px; 
-	-webkit-border-radius:8px;
-	-o-border-radius:8px; 
+	border: 1px solid #ddd;
 }
 .logName{
 	width:96px; 
@@ -224,8 +231,12 @@ a:hover{
 	margin-right: 16px;
 }
 .hdNavL>li>a{
-	padding: 10px 10px;
-    margin-top: 7px;
+	padding: 5px 10px;
+    margin-top: 14px;
+    border-radius: 4px; 
+}
+.hdNavL>li>a:hover{
+	background-color: #6683e2;
 }
 .navbar-default .navbar-nav>.active>a{
 	color:#fff;
@@ -280,22 +291,13 @@ a:hover{
 .carousel-indicators li.active img{
 	width:156px;
 	height: 40px;
+	border:2px solid #3e63d8;
 }
 .carousel-indicators li .shadow{
 	opacity: 0.3;
 }
 .carousel-indicators li.active .shadow{
 	opacity: 0;
-}
-.thumb-bar{
-	width: 0;
-    height: 2px;
-    -webkit-transition: all ease-in 250ms;
-    transition: all ease-in 250ms;
-    background-color: #e34052;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 .recommImg{
 	position: relative;
@@ -304,6 +306,9 @@ a:hover{
 @media screen and (min-width: 768px){
 	.carousel-indicators {
     	bottom: 0;
+	}
+	.search{
+		margin-top:2%; 
 	}
 }
 
@@ -533,12 +538,16 @@ a:hover{
 			padding:0 13px;
 		}
 		.hotLiCon .thumbnail{
-			margin-bottom: 22px; 
+			margin-bottom: 27px; 
 			position: relative;
 		}
 	}
 	 
 	.hotLiCon .hotT{
+		position: relative;
+		overflow: hidden;
+	}
+	.hotLiCon .hotItem {
 		position: relative;
 		overflow: hidden;
 	}
@@ -550,17 +559,14 @@ a:hover{
 		margin-top: -15px;
 	}
 	.hotLiCon .firB{
-		padding-left:10px;
-		padding-right: 18px;
-		padding-top: 32px;
-		padding-bottom: 22px;
+		padding: 6%;
 		position: absolute;
 		left:0;
 		bottom:0;
 		width:100%; 
 	}
 	.hotLiCon .hotB{
-		padding: 10px 8px 6px; 
+		padding: 7% 6% 6%; 
 		position: absolute;
 		left:0; bottom: 0; 
 		width: 100%;
@@ -570,6 +576,10 @@ a:hover{
 	    -webkit-transition: all ease-in 250ms;
 	    -ms-transition:all ease-in 250ms;
 	    transition: all ease-in 250ms;
+	    width:100%; 
+	}
+	.weathLiv{
+		margin-top: 2%; 
 	}
 	.gameCon.row{
 		margin: 0 !important;
@@ -589,9 +599,8 @@ a:hover{
 		width:100%;
 	}
 	.hotCon .firHot{
-		background-color:#e34052;
-		padding:1px;
-		position: relative;	
+		position: relative;
+		overflow: hidden;	
 	}
 	
 	.page-header .pull-left{
@@ -768,13 +777,6 @@ a:hover{
 	
 	/*所有悬停效果手机和平板没有*/
 	@media (min-width: 1200px){
-		#carousel-example-captions:hover .thumb-bar {
-			width: 100%;
-		
-		}
-		.recomm .thumbnail:hover .thumb-bar{
-			 width: 100%;
-		}
 		#btn_login:hover{
 			background-color:#e86473;
 		}
@@ -924,7 +926,6 @@ a:hover{
 	}
 	.glyphicon-fire{
 		border-radius: 4px;
-		padding:0 10px;
 	}
 	.gameAnch .recommB .recommBL{
 		width:18%;
@@ -963,6 +964,9 @@ a:hover{
 			-webkit-transform: scale(1);
 			-ms-transform: scale(1);
 			transform: scale(1);
+		}
+		.firB .heat{
+			margin-left:30px; 
 		}
 	}
 	.gameAnch .allGame{
