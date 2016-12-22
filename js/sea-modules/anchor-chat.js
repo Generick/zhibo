@@ -518,6 +518,8 @@ define(function(require, exports, module) {
             }
             return heads;
         },
+
+
         getCacheChat : function(roomNumber) {
             var _this=this;
             var data={
@@ -589,6 +591,7 @@ define(function(require, exports, module) {
                 }
             }
         },
+
         /** 公共聊天 */
         onAllMsg : function(data) {
             if (UIF.thisHome == 1) {
@@ -618,6 +621,7 @@ define(function(require, exports, module) {
                 UIF.handler.weblog(e);
             }
         },
+        
         /** 主播私聊 */
         onPrvMsg : function(data) {
             var msg = '<li class="fontred"><div><span class="gr-time">' + Tools.dateFormat(new Date(), "HH:mm")
