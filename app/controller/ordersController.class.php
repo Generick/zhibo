@@ -24,7 +24,7 @@
 		
 		$page_var['current_page']="order";
 		
-		$page_var['cdn_domain']=_CDNDOMAIN_;
+		$page_var['cdn']=_CDNDOMAIN_;
 		foreach($page_var as $key=>$val){
 			$view->assign($key,$val);
 		}
