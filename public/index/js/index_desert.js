@@ -252,9 +252,8 @@ $(document).ready(function(){
 
             "anc_game":"/files/gameAnchors.json",//精彩推荐
 
-            "anc_gameType":"/rest/homeAnchors/gameType.mt",//首页游戏分类
-
-            "anc_gameTypeJson":"/files/gameType.json",//首页游戏分类静态
+           "anc_gameType":"/rest/homeAnchors/gameType.mt",//首页游戏分类
+           "anc_gameTypeJson":"/files/gameType.json",//首页游戏分类静态
 
             "gameHeald":"/rest/homeAnchors/gameHeald.mt",//首页游戏综合推荐
 
@@ -785,7 +784,10 @@ $(document).ready(function(){
                     return;
                 }
             }, function (data) {
-                if (data.data == '' || data.data == undefined || data.data==null) {
+                console.log('测试：'+data)
+                console.log(data.data)
+                if (data.data == '' || data.data == undefined || data.data == null ) {
+                    console.log(000)
                     compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
@@ -803,7 +805,6 @@ $(document).ready(function(){
                 var typeTit="";
                 var gameIcon="";
                 var key=0;
-
                 $.each(datas, function(k, v) { 
                     var typeTit=Tools.stringFormat(compiliter.gameTypeTit,v.gameIcon,v.gameName);
                     $("#games").append(typeTit);
@@ -839,6 +840,7 @@ $(document).ready(function(){
                
             });
         };
+
         compiliter.parseGameType(ulList.anc_gameTypeJson);
         compiliter.gameHeald=function(){
             Tools.getJson({

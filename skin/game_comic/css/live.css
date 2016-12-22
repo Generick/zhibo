@@ -39,7 +39,7 @@ a{text-decoration:none; }
 /*跑道*/
 .list_top a,.list_top select,.list_top td,.list_top b{font-size:12px; text-decoration:none;}
 .list_top{ width:520px;height:35px;position:absolute; top:10px; left:0; right:0; padding-left:40px; overflow:hidden; background:url("/skin/comic/images/pic_paodao.png") no-repeat; margin: 0 auto; display: none; }
-.hot{width: 246px; height: 30px; position: relative; overflow: hidden; margin-top:2px; }
+.hot{width: 466px; height: 30px; color:#ddd; position: relative; overflow: hidden; margin-top:2px; }
 #ulid{width:720px; height:30px; overflow:hidden; margin:0;padding:0; padding: 0px; border: 0px; line-height: 30px; display: inline-block; list-style: none; padding-left:16px; }
 #ulid li{list-style: none; margin-left: 0px;  border-left-width: 0px; border-right-width: 0px; display: inline; height:30px; float:left; margin-right:40px; line-height:30px;}
 #ulid li a{color:#ddd; font-weight:bold;}
