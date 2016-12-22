@@ -481,7 +481,7 @@ if($thisHome ==1){
                                 ?>
                                 <li class="<?php if($gift['catename'] == "背包"){ echo "hideli ";}  echo $gift['giftid'];?>">
                                     <div price="<?php echo $gift['giftprice']?>" id="gift<?php echo $gift['giftid']?>" >
-                                        <img src="<?php echo _IMAGES_DOMAIN_."/".$gift['giftimage']?>?p=0" types="<?php echo $gift['giftType'];?>" join="<?php echo $join;?>" rel="<?php echo $gift['giftprice']?><?php echo $page_var['money_name']?>" />
+                                        <img src="<?php echo _IMGPLUS_DOMAIN_."/".$gift['giftimage']?>?p=0" types="<?php echo $gift['giftType'];?>" join="<?php echo $join;?>" rel="<?php echo $gift['giftprice']?><?php echo $page_var['money_name']?>" />
                                         <span title="<?php echo $gift['giftname']?>" class="tooltip gfname" style="display: none"><?php echo $gift['giftname']?></span>
                                     </div>
                                 </li>

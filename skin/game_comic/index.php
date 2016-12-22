@@ -228,7 +228,7 @@ $downImg3 = "/files/".$gameInfo['gamePacks']."/downGame1284.png?".rand(1000,9999
             <li><a href="/help.php" target="_blank">帮助</a></li>
             <div class="nl-else">
                 <ul class="euc">
-                    <li class="eu"><a  href="javascript:" target="_blank" class="download"><span>下载模拟器</span></a></li>
+                    <li class="eu"><a  href="http://a11.gdl.netease.com/MuMuInstaller_1.0.1.0_nochannel.exe" target="_blank" class="download"><span>下载模拟器</span></a></li>
                 </ul>
             </div>
         </ul>
@@ -557,7 +557,7 @@ if($thisHome ==1){
                                 ?>
                                 <li class="<?php if($gift['catename'] == "背包"){ echo "hideli ";}  echo $gift['giftid'];?>">
                                     <div price="<?php echo $gift['giftprice']?>" id="gift<?php echo $gift['giftid']?>" >
-                                        <img src="<?php echo _IMAGES_DOMAIN_."/".$gift['giftimage']?>?p=0" types="<?php echo $gift['giftType'];?>" join="<?php echo $join;?>" rel="<?php echo $gift['giftprice']?><?php echo $page_var['money_name']?>" />
+                                        <img src="<?php echo _IMGPLUS_DOMAIN_."/".$gift['giftimage']?>?p=0" types="<?php echo $gift['giftType'];?>" join="<?php echo $join;?>" rel="<?php echo $gift['giftprice']?><?php echo $page_var['money_name']?>" />
                                         <span title="<?php echo $gift['giftname']?>" class="tooltip gfname" style="display: none"><?php echo $gift['giftname']?></span>
                                     </div>
                                 </li>
