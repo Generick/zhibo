@@ -180,13 +180,19 @@ a:hover{
     }
 
     .hdNavL > li > a {
-        padding: 10px 10px;
-        margin-top: 7px;
+        padding: 5px 10px;
+        margin-top: 14px;
+        border-radius: 4px; 
     }
 
     .navbar-default .navbar-nav > .active > a {
         color: #fff;
         background-color: #3e63d8;
+    }
+
+    .navbar-default .navbar-nav>.active>a:hover{
+        background-color: #6683e2;
+        color:#fff; 
     }
 
     .hdNavR > li > a {

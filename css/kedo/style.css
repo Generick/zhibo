@@ -166,9 +166,9 @@ a:hover{
 }
 
 .mainRight .thumbnail{
-	border-radius:8px; 
-	-webkit-border-radius:8px;
-	-o-border-radius:8px; 
+	border-radius:3px; 
+	-webkit-border-radius:3px;
+	-o-border-radius:3px; 
 }
 .logName{
 	width:96px; 
@@ -176,7 +176,7 @@ a:hover{
 
 .thumbnail{
 	padding:0; 
-	border-radius: 12px;
+	border-radius: 3px;
 	border: none; 
 }
 .mainRight .thumbnail{
@@ -484,13 +484,8 @@ a:hover{
 		display: flex;
 	}
 	
-	.hotCon .thumbnail {
-		padding:2px; 
-		box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
-	}
-	
 	.hotCon .thumbnail >img{
-		border-radius:12px;
+		border-radius:3px;
 		width:100%;
 	}
 	.hotCon .firHot{
@@ -816,6 +811,12 @@ a:hover{
 	}
 	.recommBR{
 		width:78%;
+	}
+	.rankReco{
+		margin-bottom: 4%; 
+	}
+	.rankReco .page-header,.entertain .page-header{
+		margin-left: 0.7%;
 	}
 
 	/*mod bootstrap*/
