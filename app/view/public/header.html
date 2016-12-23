@@ -1,7 +1,7 @@
 <!--<link data-fixed="true" href="/templates/index.css" rel="stylesheet">-->
 <link data-fixed="true" href="/public/min/bootstrap.min.css" rel="stylesheet">
 <link data-fixed="true" href="{$cdn}/public/orders/css/common.css" rel="stylesheet">
-<script type="text/javascript" src="/js/notice.js"></script>
+<script type="text/javascript" src="{$cdn}/public/orders/js/notice.js"></script>
 <script>
     var cdn_domain="{$cdn_domain}";
     var img_domain="{$images_domain}";
@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav hdNavL">
                 <li class="{if $current_page=='index'}active{/if}"><a href="/kedo.php">首页</a></li>
                 <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
-                <li class="{if $current_page=='mall'}active{/if}"><a href="/mall.php">商城</a> </li>
+                <li class="{if $current_page=='mall'}active{/if}"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="{if $current_page=='order'}active{/if}"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
