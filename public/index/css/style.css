@@ -96,8 +96,8 @@ a:hover{
 .margB10{
 	margin-bottom: 10px;
 }
-.thumbnail:hover{
-	border-color:none;
+a.thumbnail:hover{
+	border-color: #ddd;
 }
 .hotCon .col-lg-1,
 .hotCon .col-lg-10, 
@@ -245,8 +245,9 @@ a:hover{
 	background-color:#3e63d8;
 }
 
-.hdNavL>.active>a:hover{
+.navbar-default .navbar-nav>.active>a:hover{
 	background-color: #6683e2;
+	color:#fff; 
 }
 
 .hdNavR>li>a{
@@ -269,7 +270,7 @@ a:hover{
 	overflow: hidden;
 }
 
-@media (max-width: 1450px){
+@media (min-width: 1450px){
 	#carousel-example-captions{
 		height:298px; 
 	}
@@ -459,10 +460,6 @@ a:hover{
     max-height: 335px;
     overflow: hidden;
     position: relative;
-    padding-top: 0;
-    padding-left: 9px;
-    padding-right: 9px;
-    border-radius: 3px;
 }
 
 .follow .caption .boxx .foLi{
@@ -471,6 +468,9 @@ a:hover{
 .captitle .active{
     background-color: #3e63d8;
     color: #fff;
+    padding: 0 9px 3px;
+    border-radius: 3px;
+}
 }
 .rank_list a{
     width: 100%;
@@ -521,9 +521,7 @@ a:hover{
 		border-bottom-width:2px;
 		font-size:18px;
 	}
-	.titD .colorPin{
-		padding:4px;
-	}
+
 	.apply img{
 		border-radius: 4px; 
 	}
@@ -836,8 +834,6 @@ a:hover{
 			-webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
 			-moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
 			box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
-		}
-		.hotItem:hover{
 			display: block;
 			-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 			filter: alpha(opacity=100);

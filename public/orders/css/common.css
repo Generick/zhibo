@@ -125,9 +125,9 @@ a:hover{
     }
 
     .mainRight .thumbnail {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -o-border-radius: 8px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -o-border-radius: 3px;
     }
 
     .logName {
@@ -136,14 +136,8 @@ a:hover{
 
     .thumbnail {
         padding: 0;
-        border-radius: 12px;
+        border-radius: 3px;
         border: none;
-    }
-
-    .mainRight .thumbnail {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -o-border-radius: 8px;
     }
 
     /*登录注册*/

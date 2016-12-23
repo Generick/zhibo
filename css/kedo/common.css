@@ -106,24 +106,23 @@ a:hover{
     }
 
     /* 大分块 */
-    @media (min-width: 1450px) {
-        .container {
-            width: 1440px;
+    @media(min-width:1450px){
+        .container{
+            width:1440px;
+        } 
+        .mainLeft{
+            width: 82.1%;
+            padding: 0 6px;
         }
-
-        .mainLeft {
-            width: 79%;
-        }
-
-        .mainRight {
-            width: 20%;
+        .mainRight{
+            width: 17.9%;
+            padding: 0 6px;
         }
     }
-
     .mainRight .thumbnail {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -o-border-radius: 8px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -o-border-radius: 3px;
     }
 
     .logName {
@@ -132,14 +131,8 @@ a:hover{
 
     .thumbnail {
         padding: 0;
-        border-radius: 12px;
+        border-radius: 3px;
         border: none;
-    }
-
-    .mainRight .thumbnail {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -o-border-radius: 8px;
     }
 
 /*登录注册*/

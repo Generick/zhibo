@@ -415,7 +415,7 @@ $(document).ready(function(){
                         <div class="playBtn"></div>\
                     </div>\
                     <div class="hotB bgff">\
-                        <div class="colorf1 f12 ellipsis">{4}</div>\
+                        <div class="color1f f12 ellipsis">{4}</div>\
                         <div class="f12 color99">\
                             <span>{5}</span>\
                         </div>\
@@ -854,6 +854,7 @@ $(document).ready(function(){
                     datas="";
                     return false;
                 }
+                console.log(data)
                 var li="";
                 if (datas != null && datas.length > 0) {
                     $.each(datas, function(k, v) {
