@@ -7,7 +7,7 @@
     <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <!--<link data-fixed="true" href="/templates/square.css" rel="stylesheet">-->
     <link href="/css/kedo/style.css?vsn={$svn}" rel="stylesheet">
-    <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
+    <link href="/public/index/css/style.css?vsn={$vsn}" rel="stylesheet">
     <script src="/skin/desert/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/login.js??{$vsn}"></script>
     <script type="text/javascript" src="/js/angular/angular.min.js"></script>

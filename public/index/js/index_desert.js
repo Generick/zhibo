@@ -1,5 +1,4 @@
 // JavaScript Document
-//create on 2016-11-23 14.23
 $(document).ready(function(){
     function SwapTab(name, title, content, Sub, cur) {
         $(name + ' ' + title).mouseover(function () {

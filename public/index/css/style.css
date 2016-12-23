@@ -13,6 +13,7 @@ a{
 }
 a:hover{
 	text-decoration: none; 
+	color:none; 
 }
 .fl{ float:left; }
 .fr{ float:right;}
@@ -94,6 +95,9 @@ a:hover{
 }
 .margB10{
 	margin-bottom: 10px;
+}
+.thumbnail:hover{
+	border-color:none;
 }
 .hotCon .col-lg-1,
 .hotCon .col-lg-10, 
@@ -235,12 +239,14 @@ a:hover{
     margin-top: 14px;
     border-radius: 4px; 
 }
-.hdNavL>li>a:hover{
-	background-color: #6683e2;
-}
+
 .navbar-default .navbar-nav>.active>a{
 	color:#fff;
 	background-color:#3e63d8;
+}
+
+.hdNavL>.active>a:hover{
+	background-color: #6683e2;
 }
 
 .hdNavR>li>a{
@@ -260,10 +266,15 @@ a:hover{
 
 #carousel-example-captions{
 	position:relative;
-	margin-bottom:1.7%;
 	overflow: hidden;
-	height: 298px;
 }
+
+@media (max-width: 1450px){
+	#carousel-example-captions{
+		height:298px; 
+	}
+}
+
 .carousel-indicators{
 	width:100%;
 	margin-left: -50%; 
@@ -448,6 +459,10 @@ a:hover{
     max-height: 335px;
     overflow: hidden;
     position: relative;
+    padding-top: 0;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 3px;
 }
 
 .follow .caption .boxx .foLi{
@@ -717,7 +732,7 @@ a:hover{
 		}
 		#games .gameItems .gameIcon{
 			width: 172px;
-			height: 100px;
+			height: 86px;
 			top: 14px;
 			position: relative;
 			display: inline-block;
