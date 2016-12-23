@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-22 17:55:26
+/* Smarty version 3.1.30, created on 2016-12-23 11:00:53
   from "E:\anchors\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585ba30e4c9ac4_65797048',
+  'unifunc' => 'content_585c9365d76229_88319174',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b' => 
     array (
       0 => 'E:\\anchors\\app\\view\\index\\index.html',
-      1 => 1482397895,
+      1 => 1482461924,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_585ba30e4c9ac4_65797048 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
+function content_585c9365d76229_88319174 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '19435585c9365bf3657_57603763';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -132,10 +132,10 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
             <div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
                 <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-        </ol>
+                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                    </ol>
         			<div class="carousel-inner" role="listbox">
-        </div>
+        			</div>
 					<a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
                         <span class="icon-prev glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -147,15 +147,13 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
                     <div class="thumb-bar"></div>
     			</div>
             
-            	<!--游戏-->
-                <div id="games"></div>
-                <!--综合推荐-->
+            	<!--综合推荐-->
                 <div class="recomm gameHeald">
                     <div class="page-header clearfix hpGameTit">
                         <!--左标题-->
                         <h4 class="pull-left">
                             <span class="glyphicon icon-zonghe"></span>
-                            <span class="color99">综合推荐</span>
+                            <span class="color99">. 综合推荐</span>
                         </h4>
                         <h4 class="pull-right recommR">
                             <a href="javascript:;"><small class="color33">更多</small></a>
@@ -168,9 +166,9 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
                    
                 </div>
                 
-                
-                
-                
+            	<!--游戏-->
+                <div id="games"></div>
+             
                 <!--娱乐直播-->
                 <div class="hotCon" id="hotList">
                     <div class="page-header clearfix hpGameTit">
