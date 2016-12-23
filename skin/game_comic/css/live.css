@@ -140,8 +140,8 @@ a{text-decoration:none; }
 .myDiv3{width: 340px;position:absolute; }
 .myDiv4{width: 340px;position:absolute; }
 .myDiv6{width: 340px;position:absolute; }
-.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute;z-index: 1}
-.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute;z-index: 1}
+.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute;}
+.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute;}
 .gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
@@ -304,7 +304,7 @@ a{text-decoration:none; }
 .chat-body ul li{margin-left: 15px;margin-left: 10px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0;    height: 18px;  line-height: 18px;  display: inline-block;  overflow: hidden }
 .chat-body ul li .prwords{color: #fff}
-.chat-body ul li .words{color: #fff;line-height: 24px; height: 20px;}
+.chat-body ul li .words{color: #fff;line-height: 24px; height: 22px;}
 .chat-body ul li .words img{vertical-align: middle;margin-bottom: 3px;}
 .chat-body ul li .gr-time{color: #999;}
 .chat-body ul{overflow: hidden;}
