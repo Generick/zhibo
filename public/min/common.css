@@ -97,8 +97,12 @@ a:hover{
 .thumbnail:hover{
     border-color:none;
 }
-
-
+    .navbar-default {
+        background-color: #fff;
+        border-color: #e34052;
+        border-bottom-width: 2px;
+        font-size: 18px;
+    }
     @media (min-width: 1450px) {
         .container {
             width: 1440px;
@@ -106,19 +110,20 @@ a:hover{
     }
 
     /* 大分块 */
-    @media(min-width:1450px){
-        .container{
-            width:1440px;
-        } 
-        .mainLeft{
-            width: 82.1%;
-            padding: 0 6px;
+    @media (min-width: 1450px) {
+        .container {
+            width: 1440px;
         }
-        .mainRight{
-            width: 17.9%;
-            padding: 0 6px;
+
+        .mainLeft {
+            width: 79%;
+        }
+
+        .mainRight {
+            width: 20%;
         }
     }
+
     .mainRight .thumbnail {
         border-radius: 3px;
         -webkit-border-radius: 3px;
@@ -135,7 +140,7 @@ a:hover{
         border: none;
     }
 
-/*登录注册*/
+    /*登录注册*/
     @media (min-width: 768px) {
         .navbar-right {
             float: right !important;
@@ -145,7 +150,7 @@ a:hover{
 
     /*商标*/
     .logo_head {
-        background: url(../images/logo_head.png) no-repeat;
+        background: url(/public/index/images/logo_head.png) no-repeat;
         width: 120px;
         height: 45px;
         margin-right: 25px;
@@ -189,7 +194,6 @@ a:hover{
         background-color: #6683e2;
         color:#fff; 
     }
-
 
     .hdNavR > li > a {
         padding: 17px 6px;
