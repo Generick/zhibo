@@ -11,21 +11,19 @@
 			$http.get("/rest/site/roomAts.mt?roomNumber=1024&type=2&number=1",{
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
 			}).success(function(json){
-				$scope.roomNs=json.data;
+				$scope.roomNs=json.data[0].roomNumber;
+				window.location.href=$scope.roomNs;
 			}).error(function(){
 				console.log('房间加载失败')
 			});
 		
 			
 		})
+		
 	
 </script>
 </head>
 
 <body ng-controller="room">
-	<div ng-repeat="roomN in roomNs">
-		<a ng-href="{{roomN.roomNumber}}" target="_blank">进入房间</a>
-	</div>
-	 
 </body>
 </html>
