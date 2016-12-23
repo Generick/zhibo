@@ -169,7 +169,7 @@ and b.isFollow =1
     $user = $this->user;
     $sql = "select mobile from bu_user where userId = {$user['userId']}";
     $mobile = $this->db->GetOne($sql);
-    $mobile = '18255001881';
+    //$mobile = '18255001881';
     $this->view->assign('mobile',$mobile);
     $this->view->assign('current_page',$current_page);
     $this->view->display('m_phone.html');
