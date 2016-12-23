@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>商城</title>
-<link href="__PUBLIC__/css/anchor-level.css" rel="stylesheet">
-<link data-fixed="true" href="__PUBLIC__/css/square.css" rel="stylesheet">
-<link href="__PUBLIC__/center/css/index.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+	<title>商城</title>
+	<link data-fixed="true" href="{$cdn}/public/mall/css/square.css?vsn={$vsn}" rel="stylesheet">
+	<script src="{$cdn}/public/min/jquery.min.js"></script>
+    <script src="{$cdn}/js/login.js" type="text/javascript" ></script>
 
-	<include file="Public/head" />
+</head>
+<body style="padding-top:60px;">
+
+{include file="../public/header.html"}
 
 <!--主体-->
 	<div class="main-mall">
@@ -18,12 +18,13 @@
 			<div class="mall-top-title">
 				<a href="#" class="mselect"> 守护</a>
 			</div>
-			<div class="mall-top-title">
-				<a href="__MODULE__/Mall/mall_prop" class=""> 道具</a>
-			</div>
-			<div class="mall-top-title">
-				<a href="__MODULE__/Mall/mall_ride" class=""> 座驾</a>
-			</div>
+            <div class="mall-top-title">
+            	<a href="kedo.php?c=mall&m=mall_prop" class=""> 道具</a>
+            </div>
+            <div class="mall-top-title">
+            	<a href="kedo.php?c=mall&m=mall_ride" class=""> 座驾</a> 
+            </div>
+			
 		</div>
 		<div class="clear"></div>
 
@@ -120,20 +121,7 @@
 
 	</div>
 
-	<!-- login -->
-	<input type="hidden" name="" id="m_url" value="{:U('Login/index')}">
-
-
-	<include file="Public/footer" />
-
-	<!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
-
-	<!-- 3 加载bootstrap的核心ＪＳ库 -->
-	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
-	<script src="__PUBLIC__/js/boot.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
-
-
+ {include file="../public/footer.html"}
 
 </body>
 </html>
