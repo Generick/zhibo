@@ -121,7 +121,7 @@ FROM gift g where g.giftcateid = 8 ORDER BY g.giftid ASC");
     </div>
 </div>
     <!--main-->
-<?php include('tpl_footer.php'); ?>
+<?php include('tpl_footer.php');?>
 <script>
     seajs.use("ajax/usecar");
 </script>
