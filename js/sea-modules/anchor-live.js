@@ -149,7 +149,6 @@ define(function(require, exports, module) {
 					}
 				}
 			});
-
             $.ajax({
                 type : "post",
                 url : "/rest/site/atsTime.mt",
@@ -163,12 +162,7 @@ define(function(require, exports, module) {
                     }
                 }
             });
-
 			return content.join("");
-
-
-
 		}
-
 	}
 });

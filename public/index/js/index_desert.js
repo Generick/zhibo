@@ -636,8 +636,6 @@ $(document).ready(function(){
                 bigData = data.data.big;
                 hotData = data.data.hot;
 
-                console.log(hotData)
-                console.log(hotData.length)
                 if (hotData != null && hotData.length > 0) {
                     try {
                         rowData = hotData.slice(0,44);
@@ -784,10 +782,7 @@ $(document).ready(function(){
                     return;
                 }
             }, function (data) {
-                console.log('测试：'+data)
-                console.log(data.data)
                 if (data.data == '' || data.data == undefined || data.data == null ) {
-                    console.log(000)
                     compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
