@@ -28,10 +28,22 @@ a:hover{
 .bgdd{
 	background-color: #ddd;
 }
+.padd1{
+	padding: 1px  !important; 
+}
+.bord1d{
+	border:1px solid #ddd !important;
+}
+.bord1Pin{
+	border:1px solid #e34052 !important;
+}
 .bgf4{
 	background-color: #f4f4f4 !important;
 }
+.bgff{
+	background-color: #fff !important;
 }
+
 .colorPin{
 	color:#e34052;
 }
@@ -246,6 +258,9 @@ a:hover{
 .recommImg{
 	position: relative;
 	display: block;
+}
+.recommImg img{
+	width:100%; 
 }
 .carousel-indicators li.active{
 	background-color:#e34052;
@@ -607,7 +622,7 @@ a:hover{
 	/* 精彩推荐 */
 	
 	.recommB{
-		padding-top: 8%; 
+		padding: 9.2% 3.1% 3.4%;
 	}
 	.recommB .ellipsis{
 		width:58%;
@@ -795,8 +810,9 @@ a:hover{
 		width:18%;
 		height: auto;
 	}
-	.gameAnch .page-header{
-		margin-left: 0.6%;
+	.gameAnch .row{
+		margin-left: 0;
+		margin-right: 0;
 	}
 	.recommBR{
 		width:78%;

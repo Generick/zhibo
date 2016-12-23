@@ -6,7 +6,7 @@
     <meta property="qc:admins" content="105415766763547646" />
     <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
     <!--<link data-fixed="true" href="/templates/square.css" rel="stylesheet">-->
-    <link href="/css/kedo/style.css?vsn={$svn}" rel="stylesheet">
+    <link href="/css/kedo/style.css?vsn={$vsn}" rel="stylesheet">
     <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
     <script src="/skin/desert/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/login.js??{$vsn}"></script>
@@ -44,11 +44,14 @@ include_once('tpl_header.php');
                     <span class="allG colorPin"><a href="javascript:;">全部</a></span>
                     <span class="tits" ng-repeat="sort in sorts" ng-class="sort==curSort ?'colorPin':''" ng-click="getSort(sort)"><a href="javascript:;" >{{sort}}</a></span>
                 </div>
-                <div class="page-header">
+                
+                <div class="rankReco">
+                	<div class="page-header">
                     <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 排行推荐</h4>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="rankGame in rankGames">                    
-                    <a href="{{rankGame.roomNumber}}" target="_blank" class="thumbnail bgf4">            
+                	<div class="row">
+                    	<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="rankGame in rankGames">                    
+                    <a href="{{rankGame.roomNumber}}" target="_blank" class="thumbnail bord1d">            
                         <div class="recommImg">                        
                             <img class="lazy" ng-src="{{rankGame.image}}&w=220&h=146" alt="{{gameAnch.nickName|decode}}">                        
                             <div class="thumb-bar"></div>                        
@@ -71,8 +74,12 @@ include_once('tpl_header.php');
                         </div>
                     </a>                    
                 </div>
+                    </div>
+                	
+                </div>
                 
-                <div class="page-header">
+                
+                <div class="page-header ">
                     <h4 id="sortTit">
                     	<span class="glyphicon glyphicon-fire bgPin colorff"></span>
                     	全部游戏</h4>

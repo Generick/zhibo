@@ -12,6 +12,7 @@ define(function(require, exports, module) {
 		meters : function(data) {
 			this.data = data;
 			this.init();
+
 		},
 		init : function() {
 			var base = this;

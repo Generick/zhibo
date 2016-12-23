@@ -1,13 +1,17 @@
 body{
     font-family:"Microsoft YaHei";
     background-color:#f1f1f1;
-    color: #333;
+}
+*{
+    margin: 0;
+    padding:0;
 }
 a{
-    color: #333; 
+    color: #333;
 }
 a:hover{
-    text-decoration: none;
+    text-decoration: none; 
+    color:none; 
 }
 .fl{ float:left; }
 .fr{ float:right;}
@@ -18,11 +22,50 @@ a:hover{
 .color99{
     color: #999;
 }
+.colordd{
+    color: #ddd;
+}
+.bgdd{
+    background-color: #ddd;
+}
+.padd1{
+    padding: 1px  !important; 
+}
+.bord1d{
+    border:1px solid #ddd !important;
+}
+.bord1Pin{
+    border:1px solid #e34052 !important;
+}
 .colorff{
-    color: #fff; 
+    color: #fff;
+}
+.color1f{
+    color: #1f1f1f;
+}
+.bgdd{
+    background-color: #ddd;
+}
+.bgff{
+    background-color: #fff;
+}
+.bgfa{
+    background-color: #fafafa;
+}
+.bgf4{
+    background-color: #f4f4f4 !important;
+}
+.bgnone{
+    background-color: none;
+}
+.block{
+    display: block;
 }
 .colorPin{
     color:#e34052;
+}
+.bgPin{
+    background-color:#e34052;
 }
 .colorBlue{
     color:#3e63d8;
@@ -36,22 +79,34 @@ a:hover{
 .f16{
     font-size:16px;
 }
-li{
-    list-style: none;
+.f18{
+    font-size:18px;
 }
-.ellipsis{
-    width: 99%;
-    overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+.bordR3{
+    border-radius: 3px;
 }
-.navbar-default {
-    background-color: #fff;
-    border-color: #e34052;
-    border-bottom-width: 2px;
-    font-size: 18px;
+.margB6{
+    margin-bottom: 6px;
 }
-@media (min-width: 1450px) {
-    .container {
-        width: 1440px;
+.margB8{
+    margin-bottom: 8px;
+}
+.margB10{
+    margin-bottom: 10px;
+}
+.thumbnail:hover{
+    border-color:none;
+}
+    .navbar-default {
+        background-color: #fff;
+        border-color: #e34052;
+        border-bottom-width: 2px;
+        font-size: 18px;
+    }
+    @media (min-width: 1450px) {
+        .container {
+            width: 1440px;
+        }
     }
 
     /* 大分块 */
@@ -70,9 +125,9 @@ li{
     }
 
     .mainRight .thumbnail {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -o-border-radius: 8px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -o-border-radius: 3px;
     }
 
     .logName {
@@ -81,14 +136,8 @@ li{
 
     .thumbnail {
         padding: 0;
-        border-radius: 12px;
+        border-radius: 3px;
         border: none;
-    }
-
-    .mainRight .thumbnail {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -o-border-radius: 8px;
     }
 
     /*登录注册*/

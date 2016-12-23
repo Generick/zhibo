@@ -39,7 +39,7 @@ a{text-decoration:none; }
 /*跑道*/
 .list_top a,.list_top select,.list_top td,.list_top b{font-size:12px; text-decoration:none;}
 .list_top{ width:520px;height:35px;position:absolute; top:10px; left:0; right:0; padding-left:40px; overflow:hidden; background:url("/skin/comic/images/pic_paodao.png") no-repeat; margin: 0 auto; display: none; }
-.hot{width: 466px; height: 30px; color:#ddd; position: relative; overflow: hidden; margin-top:2px; }
+.hot{width: 246px; height: 30px; position: relative; overflow: hidden; margin-top:2px; }
 #ulid{width:720px; height:30px; overflow:hidden; margin:0;padding:0; padding: 0px; border: 0px; line-height: 30px; display: inline-block; list-style: none; padding-left:16px; }
 #ulid li{list-style: none; margin-left: 0px;  border-left-width: 0px; border-right-width: 0px; display: inline; height:30px; float:left; margin-right:40px; line-height:30px;}
 #ulid li a{color:#ddd; font-weight:bold;}
@@ -76,13 +76,19 @@ a{text-decoration:none; }
 .nl-nav ul li:hover{color: #3E63D8}
 .euc .eu{text-align: center}
 .euc li a{display: block;  padding: 8px 0 12px;width: 66px; color: #A6A6A6; text-align: center;  }
-.euc .eu a{padding-top: 35px;  font-size:11px;color: #fa4a5d}
-.euc .eu a:hover{ color:#3E63D8}
-.euc .download{background: url(/skin/game_comic/images/pic_download.png)center top no-repeat;}
-.euc .download:hover{background: url(/skin/game_comic/images/pic_download_hover.png)center top no-repeat;}
-.euc .download span{width: 40px;  text-align: center;  display: inline-block;  line-height: 20px;  font-size: 12px;  }
+.euc .eu a{padding-top: 30px;  font-size:11px;}
+.euc .eu a:hover{ color:#fff}
+.euc .download{background: url(/skin/desert/images/xiazai.png)center top no-repeat;}
+.euc .download:hover{background: url(/skin/desert/images/xiazai-hover.png)center top no-repeat;}
+.euc .wenjuan{background: url(/skin/desert/images/wenjuan.png)center top no-repeat;}
+.euc .wenjuan:hover{background: url(/skin/desert/images/wenjuan-hover.png)center top no-repeat;}
+.euc .libao{background: url(/skin/desert/images/libao.png)center top no-repeat;}
+.euc .libao:hover{background: url(/skin/desert/images/libao-hover.png)center top no-repeat;}
+.euc .jubao{background: url(/skin/desert/images/jubao.png)center top no-repeat;}
+.euc .jubao:hover{background: url(/skin/desert/images/jubao-hover.png)center top no-repeat;}
 
 /*中部*/
+
 .video-area{width:985px;margin: 77px auto;left: 0; right: 0;position: absolute;}
 .live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
 .flash-area{width: 985px;height: 550px; margin: 0 auto ;}
@@ -110,7 +116,7 @@ a{text-decoration:none; }
 .anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;width:32px; height:20px;margin-left: 5px;}
 .anchor-level-next{ position: absolute; right: 0;  top: -5px;}
 
-.no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative;}
+.no-live{width: 985px;height: 550px;overflow:hidden;background: url("/skin/game_comic/images/pic_zhibojian_moren.jpg");position: relative;z-index: -1}
 
 /*未开播*/
 .no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
@@ -134,14 +140,14 @@ a{text-decoration:none; }
 .bk-color{    border: 2px solid #ccc;  border-radius: 10px;}
 /*礼物*/
 
-.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{z-index:13;display: none}
+.myDiv1,.myDiv2,.myDiv3,.myDiv4,.myDiv6{display: none}
 .myDiv1{width: 340px;position:absolute; }
 .myDiv2{width: 340px;position:absolute; }
 .myDiv3{width: 340px;position:absolute; }
 .myDiv4{width: 340px;position:absolute; }
 .myDiv6{width: 340px;position:absolute; }
-.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute;}
-.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute;}
+.gift-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover; left: 205px;top:570px;border-radius: 3px;width:340px;position:absolute;z-index: 1}
+.visitant-record{height: 205px; background:url("../images/giftBg.png"); background-size:cover;right:20px;top:60px;border-radius: 3px;width:340px;position:absolute;z-index: 1}
 .gr-main{height:166px;}
 .rank-area{height: 200px; background:url("/skin/comic/images/rankBg.png"); background-size:cover; left: 205px;top:350px;}
 .gift-area{height: 212px; background:url("../images/tianchong.png") repeat;left: 205px;top: 670px;border-radius:3px}
@@ -304,7 +310,7 @@ a{text-decoration:none; }
 .chat-body ul li{margin-left: 15px;margin-left: 10px;font-size: 12px;line-height: 24px;color:#fefefe}
 .chat-body ul li span{ color: #999; padding-right:0;    height: 18px;  line-height: 18px;  display: inline-block;  overflow: hidden }
 .chat-body ul li .prwords{color: #fff}
-.chat-body ul li .words{color: #fff;line-height: 24px; height: 22px;}
+.chat-body ul li .words{color: #fff;line-height: 24px; height: 20px;}
 .chat-body ul li .words img{vertical-align: middle;margin-bottom: 3px;}
 .chat-body ul li .gr-time{color: #999;}
 .chat-body ul{overflow: hidden;}
@@ -707,7 +713,7 @@ a{text-decoration:none; }
     height: 550px;
     margin: 0 auto;
 }
-
+ 
 @media only screen and (min-width:1920px) and (min-height:806px){
     .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
     #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
@@ -734,15 +740,15 @@ a{text-decoration:none; }
     }
 
     .no-live-text{margin: auto; text-align: center; margin-top: 90px; color: #ddb180; }
-    .no-live ul{margin: 0 auto;margin-top:106px;width: 560px;height: 190px;}
+        .no-live ul{margin: 0 auto;margin-top:106px;width: 560px;height: 190px;}
 
     .no-live{ font-size:12px; color: #fefefe}
     .no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
     .no-live ul li{float: left;  margin-right: 25px;  margin-left: 30px;}
     .no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
-    .noanchor-kuang{width:128px;  height: 190px;position: relative;overflow: hidden}
+        .noanchor-kuang{width:128px;  height: 190px;position: relative;overflow: hidden}
     .noanchor-kuang .nocnchor-k{width: 128px;height: 190px;position: absolute;z-index: 11}
-    .noanchor-kuang img{ position: absolute;    height: 187px;  width: 125px;z-index: 8; margin: 2px;  border-radius:10px;}
+        .noanchor-kuang img{ position: absolute;    height: 187px;  width: 125px;z-index: 8; margin: 2px;  border-radius:10px;}
 
     .noanchor-info{ line-height: 18px;  margin-top: 16px;margin-left: -2px;}
     .noanchor-info .noanchor-level{float: left}
