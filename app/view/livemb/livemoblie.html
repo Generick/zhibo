@@ -5,36 +5,15 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="public/min/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="public/livemb/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/livemb/css/livemb.css">
     <script src="public/min/jquery-1.12.2.min.js"></script>
-    <style type="text/css">
-      .downgame{
-        width: 250px;
-        height: 80px;
-        margin-left: 67%;
-        margin-top: 6%;
-        border-radius: 8px;
-        border: solid 0px gray;
-        /*background: transparent;*/
-        z-index: 10000;
-        position: absolute;
-        font-family: Microsoft Yahei;
-        color: white;
-        font-size: 34px;
-        font-weight: 400;
-        letter-spacing: 3px;
-        background-color: #ec4356;
-      }
-      .msty{
-        width: 64%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-    </style>
+    
 </head>
+
 <body class="body">
     <div class="header">
     <header>
+
       <div class="row">
             <div class="anchLive firAnch col-xs-2 clearfix bgff">
                 <div class="anchImg pull-left">
@@ -44,22 +23,17 @@
                 
             </div>
             
-               
-                {if $zhuboinfo.roomUsers gt '0'} 
-                 
-              	 {foreach from=$zhuboinfo item=show }
-              	 {assign var=list value=$smarty.foreach.infolist.index}
-              	 	{if $list lt $zhuboinfo.roomUsers}
+              	 {foreach from=$roomUsers item=show key=key}
+              	 	{if $key<{$rmbu} and $key=={$rmbu}}
                   <div class="anchLive col-xs-2">
                       <div class="anchImg pull-left">
-                        <img src="'.$roomUsers[$i]['ava'].'"/>
-                     <div class="degree bgff colorY">'{$zhuboinfo['nickName']|urldecode}'</div> 
+                        <img src="{$show['ava']}"/>
+                     <div class="degree bgff colorY">'{$show['nickName']|urldecode}'</div> 
                 </div>
             </div>
             		{/if}
                {/foreach}
-              {/if}
-                
+             
            
             <!-- <div class="anchLive col-xs-2">
                 <div class="anchImg pull-left">
@@ -93,7 +67,7 @@
       <div class="col-xs-12" style="">
           <video src="http://hls.181show.com/mutian-ucloud/m{$rmb}/playlist.m3u8" id="player"
 		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
-                   x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="{$zhuboinfo['image']}&p=0&w=640&h=360"></video>
+                   x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="{$zhuboinfo['image']}?p=0&w=640&h=360"></video>
 
             <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
             <div><a href="{$zhuboinfo['uploadAdd']}"><button class="downgame">下载游戏</button></a></div>
@@ -122,7 +96,7 @@
        <div class="row">
         {if {$hotNum}>0}
              {foreach from=$hotAnchors item=show key=key}
-                    {if $key==1}
+                    {if $key==0}
                 <div class="col-xs-6" ng-repeat="reply in replies">
                 <a href="{$show['roomNumber']}" class="thumbnail">
                   <div class="recommImg thumbnail">
@@ -146,22 +120,22 @@
               {/foreach}
              
              {foreach from=$hotAnchors item=show key=key}
-                    {if $key>1 || $key lt {$hotNum}}  
+                    {if $key>0 and $key<{$hotNum} }  
              <div class="col-xs-6">
-            <a href="{$hotAnchors['roomNumber']}" class="thumbnail">
+            <a href="{$show['roomNumber']}" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="{$hotAnchors['image']}{$imgsize}" alt=""/>
+                <img src="{$show['image']}{$imgsize}" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left ellipsis msty f3">{$hotAnchors['title']}</span>
+                  <span class="color00 pull-left ellipsis msty f3">{$show['title']}</span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
-                    <span>{$hotAnchors['numbers']}</span>
+                    <span>{$show['numbers']}</span>
                   </div>
                 </div>
-                <p class="color99 ellipsis msty f3">{$hotAnchors['descri']}</p>
+                <p class="color99 ellipsis msty f3">{$show['descri']}</p>
               </div>
 
             </a>
@@ -172,20 +146,20 @@
          {foreach from=$hotAnchors item=show key=key}
                     {if $key=={$hotNum}}  
              <div class="col-xs-6">
-            <a href="{$hotAnchors['roomNumber']}" class="thumbnail">
+            <a href="{$show['roomNumber']}" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="{$hotAnchors['image']}{$imgsize}" alt=""/>
+                <img src="{$show['image']}{$imgsize}" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left ellipsis msty f3">{$hotAnchors['title']}</span>
+                  <span class="color00 pull-left ellipsis msty f3">{$show['title']}</span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
-                    <span>{$hotAnchors['numbers']}</span>
+                    <span>{$show['numbers']}</span>
                   </div>
                 </div>
-                <p class="color99 ellipsis msty f3">{$hotAnchors['descri']}</p>
+                <p class="color99 ellipsis msty f3">{$show['descri']}</p>
               </div>
 
             </a>
