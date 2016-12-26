@@ -527,8 +527,6 @@ a:hover{
 		padding-left: 5%;
 		font-size: 16px;
 		color: #999;
-		border-bottom-left-radius:12px; 
-		border-bottom-right-radius:12px;
 	}
 			
 	.shadow{
@@ -544,6 +542,12 @@ a:hover{
 	    background-color: #000;
 	    -webkit-transition: all ease-in 250ms;
 	    transition: all ease-in 250ms;
+	}
+	.squareDe .shadow{
+		height: 72%;
+	}
+	.squareDe .playBtn{
+		top: 38%; 
 	}
 	.playBtn{
 		position: absolute;
