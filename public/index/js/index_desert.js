@@ -245,7 +245,7 @@ $(document).ready(function(){
 
             "anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
 
-            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=44",//new hot anchors interface
+            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=45",//new hot anchors interface
 
             "newHotAnchorsJson":"/files/hotAnchorsNew.json",//new hot anchors interface json
 
@@ -637,7 +637,7 @@ $(document).ready(function(){
 
                 if (hotData != null && hotData.length > 0) {
                     try {
-                        rowData = hotData.slice(0,44);
+                        rowData = hotData.slice(0,45);
                     } catch(e) {
                         console.log(e);
                     }
@@ -854,7 +854,6 @@ $(document).ready(function(){
                     datas="";
                     return false;
                 }
-                console.log(data)
                 var li="";
                 if (datas != null && datas.length > 0) {
                     $.each(datas, function(k, v) {

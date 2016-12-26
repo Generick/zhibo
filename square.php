@@ -157,10 +157,9 @@ include_once('tpl_header.php');
                       <img ng-src="{{squAnch.image}}&w=97&h=127" alt="{{squAnch.nickName|decode}}"/>
                       <div class="{{squAnch.levelImg}}"></div>
                       <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
-                      <div class="hotT thumbnail">
+                      <!-- <div class="hotT thumbnail">
                         <p class="text-center color33">人数：<span>{{squAnch.numbers}}</span></p>
-                        
-                      </div>
+                      </div> -->
                       <div class="hotB">
                         <span class="colorPin f14">{{squAnch.nickName|decode}}</span>  
                         <p class="f12 color99" ng-if="squAnch.onlineTime>0">
@@ -171,7 +170,7 @@ include_once('tpl_header.php');
                             <span>未开播</span>
                         </p>
                      </div>
-                     <div class="shadow thumbnail"></div>
+                     <div class="shadow"></div>
                      <div class="playBtn"></div>
                   </a>
             
