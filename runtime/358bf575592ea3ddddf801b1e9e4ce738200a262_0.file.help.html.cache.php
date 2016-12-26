@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:41:24
+/* Smarty version 3.1.30, created on 2016-12-26 16:00:59
   from "D:\xampp\htdocs\anchors\app\view\assist\help.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860c9a429fe00_20682396',
+  'unifunc' => 'content_5860ce3b7faf85_08648059',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '358bf575592ea3ddddf801b1e9e4ce738200a262' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\assist\\help.html',
-      1 => 1482731588,
+      1 => 1482739227,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5860c9a429fe00_20682396 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '267695860c9a41e0780_58373518';
+function content_5860ce3b7faf85_08648059 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '268575860ce3b75ad01_57440317';
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,18 +33,29 @@ $_smarty_tpl->compiled->nocache_hash = '267695860c9a41e0780_58373518';
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>serviCenter-蝌蚪直播</title>
-<link rel="stylesheet" type="text/css" href="/public/assist/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="public/assist/css/allDegree.css">
-<link href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/css/allDegree.css">
+	<link href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
 /public/assist/css/icons.css?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 " rel="stylesheet">
-<?php echo '<script'; ?>
- src="public/min/jquery-1.12.2.min.js"><?php echo '</script'; ?>
-> 
-<?php echo '<script'; ?>
- src="public/assist/js/help.js"><?php echo '</script'; ?>
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/jquery.min.js"><?php echo '</script'; ?>
 >
-
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/jquery-1.12.2.min.js"><?php echo '</script'; ?>
+> 
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/js/help.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/js/login.js" type="text/javascript" ><?php echo '</script'; ?>
+>
 
 </head>
 <body style="padding-top:60px;">

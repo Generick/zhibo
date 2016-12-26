@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:41:50
+/* Smarty version 3.1.30, created on 2016-12-26 15:55:37
   from "D:\xampp\htdocs\anchors\app\view\assist\applyMain.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860c9bea9ad87_87039124',
+  'unifunc' => 'content_5860ccf9ac5d04_15147642',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68c84a034cc9886ef5d40367325d511b68e0d353' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\assist\\applyMain.html',
-      1 => 1482738000,
+      1 => 1482738919,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5860c9bea9ad87_87039124 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '136175860c9bea64285_20469232';
+function content_5860ccf9ac5d04_15147642 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '72495860ccf9a87500_09308222';
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,9 +33,15 @@ $_smarty_tpl->compiled->nocache_hash = '136175860c9bea64285_20469232';
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>申请签约公会</title>
-
-<link href="public/assist/css/applyOw.css" rel="stylesheet">
-
+	<link href="public/assist/css/applyOw.css" rel="stylesheet">
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/js/login.js" type="text/javascript" ><?php echo '</script'; ?>
+>
 </head>
 <body  style="padding-top:60px;">
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:41:28
+/* Smarty version 3.1.30, created on 2016-12-26 16:01:55
   from "D:\xampp\htdocs\anchors\app\view\assist\serviceArgument.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860c9a869f505_57528974',
+  'unifunc' => 'content_5860ce7364d486_36451727',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '61211726ce661a63f4c3d226827437822e0c35e4' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\assist\\serviceArgument.html',
-      1 => 1482735922,
+      1 => 1482739298,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5860c9a869f505_57528974 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '177055860c9a8655184_23394158';
+function content_5860ce7364d486_36451727 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '201935860ce73606f81_80066826';
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,9 +33,16 @@ $_smarty_tpl->compiled->nocache_hash = '177055860c9a8655184_23394158';
 <meta http-equiv="X-UA-Compatible" content="IE=9" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>蝌蚪用户服务和隐私权政策协议</title>
-<link data-fixed="true" href="public/assist/css/serviceArgument.css"
-	rel="stylesheet">
-
+	<link  href="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+public/assist/css/serviceArgument.css" data-fixed="true" rel="stylesheet">
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/min/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/js/login.js" type="text/javascript" ><?php echo '</script'; ?>
+>
 </head>
 <body style="padding-top:60px;">
 

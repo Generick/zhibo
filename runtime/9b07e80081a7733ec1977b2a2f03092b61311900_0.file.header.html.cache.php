@@ -1,15 +1,15 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:53:22
+/* Smarty version 3.1.30, created on 2016-12-26 15:53:04
   from "D:\xampp\htdocs\anchors\app\view\public\header.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860cc72407404_84579611',
+  'unifunc' => 'content_5860cc60887985_35182641',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '67964b316b3dc2eabd27af971914b9a07476b02a' => 
+    '9b07e80081a7733ec1977b2a2f03092b61311900' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\public\\header.html',
       1 => 1482738759,
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5860cc72407404_84579611 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '225535860cc723a9806_21090110';
+function content_5860cc60887985_35182641 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '143375860cc60835905_56153208';
 ?>
 <!--<link data-fixed="true" href="/templates/index.css" rel="stylesheet">-->
 <link data-fixed="true" href="/public/min/bootstrap.min.css" rel="stylesheet">
