@@ -214,7 +214,7 @@ a{text-decoration:none; }
 .chat-top-imgs{display: block; width: 60px; height: 60px;border: 2px solid #e7b158; -webkit-border-radius: 50%;-moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
 .chat-tip-title{width:120px;margin-left: 20px; margin-top: 12px;}
 .levelss{float: left;width:46px;height:20px;}
-.chat-tip-name{float:left;margin-left: 15px; color: #b4ce90; font-size: 14px; }
+.chat-tip-name{float:left;margin-left: 15px; color: #b4ce90; font-size: 14px;max-width: 70px;height: 20px;  overflow: hidden; }
 .chat-tip-id{}
 .chat-tip-adress{margin-left: 15px;}
 .chat-tip-id,
