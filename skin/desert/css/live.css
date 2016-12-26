@@ -207,7 +207,7 @@ a{text-decoration:none; }
 
 
 /*聊天弹出框*/
-.chat-tip-warp{position: absolute;right: 200px;top: 100px;width:14%; background-size:100%; padding:1.4% 0.9% 0.9% 0.9%;color:#fff;height:146px;background: url("/skin/comic/images/pic_bgTip.png") no-repeat;display: none; font-size: 12px; }
+.chat-tip-warp{position: absolute;right: 200px;top: 100px;width:14%; background-size:100%; padding:1.4% 0.9% 0.9% 0.9%;color:#fff;height:146px;background: url("/skin/comic/images/pic_bgTip.png") no-repeat;display: none; font-size: 12px; z-index: 14}
 .chat-tip-top{height: 61%; }
 .chat-tip-top >div{float: left;}
 .chat-top-imgs{display: block; width: 60px; height: 60px;border: 2px solid #e7b158; -webkit-border-radius: 50%;-moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}

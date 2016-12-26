@@ -41,7 +41,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
                 <li class="{if $current_page=='index'}active{/if}"><a href="#">首页</a></li>
-                <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
+                <li class="{if $current_page=='square'}active{/if}"><a href="square.php">广场</a> </li>
                 <li class="{if $current_page=='mall'}active{/if}"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="{if $current_page=='order'}active{/if}"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
@@ -227,7 +227,7 @@
                         {if $user.socType==1}
                        <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                         {/if}
-                    </p>
+                    </p> 
         
         
                     <!--<div class="clearfix">
@@ -267,7 +267,7 @@
             </div>
             <!--申请入驻-->
             <a href="javascript:;" class="thumbnail apply">
-                <img class="lazy" src="public/index/images/banner_zhaoping.png"/>
+                <img class="lazy" src="{$cdn}/public/index/images/banner_zhaoping.png"/>
             </a>
         
             <!--主播排行榜-->
