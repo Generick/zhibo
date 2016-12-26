@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 16:00:59
+/* Smarty version 3.1.30, created on 2016-12-26 18:36:59
   from "D:\xampp\htdocs\anchors\app\view\assist\help.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860ce3b7faf85_08648059',
+  'unifunc' => 'content_5860f2cb29bf82_67948205',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '358bf575592ea3ddddf801b1e9e4ce738200a262' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\assist\\help.html',
-      1 => 1482739227,
+      1 => 1482739485,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5860ce3b7faf85_08648059 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '268575860ce3b75ad01_57440317';
+function content_5860f2cb29bf82_67948205 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '81295860f2cb20f586_54296506';
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -1316,17 +1316,23 @@ $_smarty_tpl->compiled->nocache_hash = '268575860ce3b75ad01_57440317';
             	<h4>主播如何开播</h4>
                 <p>1.签约主播的直播</p>
                 <p>STEP1：登录您的蝌蚪账号</p>
-                <img class="regLogin" src="/public/assist/img/pic_bangzhu_denglu.png"/>
+                <img class="regLogin" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/img/pic_bangzhu_denglu.png"/>
                 <p>STEP2：在首页点击"直播"</p>
-                <img class="ckLive" src="public/assist/img/pic_bangzhu_geren.png"/>
+                <img class="ckLive" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/img/pic_bangzhu_geren.png"/>
                 <p>STEP3：进入我的房间开始</p>
-                <img class="entStart" src="public/assist/img/pic_bangzhu_shezhi.png"/>
+                <img class="entStart" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/img/pic_bangzhu_shezhi.png"/>
                 <p class="c9">请点击窗口中的允许按钮来开启摄像头</p>
-                <img class="opCame" src="public/assist/img/pic_bangzhu_tiaojie.png"/>
+                <img class="opCame" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/img/pic_bangzhu_tiaojie.png"/>
                 <p class="c9">预览窗口，实时调节自己的播放位置</p>
-                <img class="preLo" src="public/assist/img/pic_bangzhu_fanhui.png"/>
+                <img class="preLo" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/img/pic_bangzhu_fanhui.png"/>
                 <p class="c9">设置完成，赶紧来秀自己吧</p>
-                <img class="preLo" src="public/assist/img/pic_bangzhu_kaibo.png"/>
+                <img class="preLo" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/assist/img/pic_bangzhu_kaibo.png"/>
             </li>
             
             

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:41:13
+/* Smarty version 3.1.30, created on 2016-12-26 18:40:26
   from "D:\xampp\htdocs\anchors\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860c99914c081_99380483',
+  'unifunc' => 'content_5860f39a1d4c01_80825161',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0be756358647f43c61fbbe0d3e65785e62448089' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index.html',
-      1 => 1482489748,
+      1 => 1482748770,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5860c99914c081_99380483 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '196415860c9990e2900_48540586';
+function content_5860f39a1d4c01_80825161 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '205695860f39a13c682_25246937';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -88,7 +88,7 @@ $_smarty_tpl->compiled->nocache_hash = '196415860c9990e2900_48540586';
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'index') {?>active<?php }?>"><a href="#">首页</a></li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="/square.php">广场</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="square.php">广场</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
@@ -287,7 +287,7 @@ $_smarty_tpl->compiled->nocache_hash = '196415860c9990e2900_48540586';
 &token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
 " class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                         <?php }?>
-                    </p>
+                    </p> 
         
         
                     <!--<div class="clearfix">
@@ -327,7 +327,8 @@ $_smarty_tpl->compiled->nocache_hash = '196415860c9990e2900_48540586';
             </div>
             <!--申请入驻-->
             <a href="javascript:;" class="thumbnail apply">
-                <img class="lazy" src="public/index/images/banner_zhaoping.png"/>
+                <img class="lazy" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/images/banner_zhaoping.png"/>
             </a>
         
             <!--主播排行榜-->

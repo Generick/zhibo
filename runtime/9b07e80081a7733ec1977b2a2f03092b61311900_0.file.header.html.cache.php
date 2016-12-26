@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:53:04
+/* Smarty version 3.1.30, created on 2016-12-26 18:40:30
   from "D:\xampp\htdocs\anchors\app\view\public\header.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860cc60887985_35182641',
+  'unifunc' => 'content_5860f39ed42888_08468629',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b07e80081a7733ec1977b2a2f03092b61311900' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\public\\header.html',
-      1 => 1482738759,
+      1 => 1482748816,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5860cc60887985_35182641 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '143375860cc60835905_56153208';
+function content_5860f39ed42888_08468629 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '164815860f39ecdcf86_37819053';
 ?>
 <!--<link data-fixed="true" href="/templates/index.css" rel="stylesheet">-->
 <link data-fixed="true" href="/public/min/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +67,7 @@ $_smarty_tpl->compiled->nocache_hash = '143375860cc60835905_56153208';
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'index') {?>active<?php }?>"><a href="/kedo.php">首页</a></li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="/square.php">广场</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="square.php">广场</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>

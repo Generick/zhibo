@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 15:41:13
+/* Smarty version 3.1.30, created on 2016-12-26 18:36:47
   from "D:\xampp\htdocs\anchors\app\view\public\footer.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860c999157c04_10668427',
+  'unifunc' => 'content_5860f2bf668a01_80905355',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5860c999157c04_10668427 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '145905860c999153d87_41982669';
+function content_5860f2bf668a01_80905355 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '258225860f2bf664b88_31640002';
 ?>
 <style type="text/css">
     /*底部*/
