@@ -1,18 +1,17 @@
 // JavaScript Document
-//create on 2016-11-23 14.23
 $(document).ready(function(){
     function SwapTab(name, title, content, Sub, cur) {
         $(name + ' ' + title).mouseover(function () {
             $(this).addClass(cur).siblings().removeClass(cur);
             $(content + " > " + Sub).eq($(name + ' ' + title).index(this)).show().siblings().hide();
-
         })
-
-
     }
+
 
     SwapTab(".captitle", "a", ".cons", ".foLi", "active");
     SwapTab("#orderTit", "li", "#orderBody", ".orderItem", "active");
+
+
     function ndecodeURI(str){
         var $a="";
         try{
@@ -20,9 +19,10 @@ $(document).ready(function(){
         }catch (e){
             $a="错误编码";
         }
-
         return $a;
     }
+
+
     var Tools = {};
     Tools.getDate = function (params, callback) {
         $.ajax({
@@ -38,7 +38,6 @@ $(document).ready(function(){
                 if (typeof(params.error)==='function') {
                     params.error(jqXHR,textStatus,errorThrown);
                 }
-
             }
         });
     };
@@ -55,10 +54,8 @@ $(document).ready(function(){
                     if (typeof(params.error)==='function') {
                         params.error(jqXHR,textStatus,errorThrown);
                     }
-
                 },
                 200: function(){
-
                 }
             },
             success: function (data, textStatus, jqXHR) {
@@ -68,10 +65,11 @@ $(document).ready(function(){
                 if (typeof(params.error)==='function') {
                     params.error(jqXHR,textStatus,errorThrown);
                 }
-
             }
         });
     };
+
+
     Tools.stringFormat = function () {
         if (arguments.length == 0)
             return this;
@@ -86,7 +84,10 @@ $(document).ready(function(){
         }
         return $;
     };
+
+
     Tools.sliceObject=function(o,s,n){
+
         if(o==null || o==undefined || o==""){
             return false;
         }
@@ -97,10 +98,10 @@ $(document).ready(function(){
         return newo;
     }
 
+
     //关注
-
-
     $(function () {
+
         var Mycare = {};
         Mycare.listlen=0;
         Mycare.loop=0;
@@ -154,6 +155,7 @@ $(document).ready(function(){
             });
         };
 
+
         var canTop=false;
         var canBottom=false;
         // alert(Math.ceil(12/5));
@@ -206,7 +208,6 @@ $(document).ready(function(){
                 }
                 changeClose('glyphicon-menu-down-hover');
             });
-
         }
         Mycare.init();
 
@@ -215,18 +216,18 @@ $(document).ready(function(){
             data: {userId:currentUserId}
         }, function (data) {
         });
-
     })
+
 
     $(function(){
 
         var ulList={
+
             "dayList":"/files/giftWeels.json", //主播周塝
 
             "weekList":"/files/giftMonth.json", //主播月
 
             "monthList":"/files/giftYear.json", //主播年榜
-
 
             "th_week":"/files/localTyrantDay.json",//土豪周
 
@@ -234,26 +235,27 @@ $(document).ready(function(){
 
             "th_year":"/files/localTyrantYear.json",//土豪年
 
-
             "hy_week":"/files/fansActive.json",//活跃周
 
             "hy_month":"/files/fansActive.json",//活跃月
 
             "hy_year":"/files/fansActive.json",//活跃年
 
-
             "anc_banner":"/files/banners.json",//banner
 
             "anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
 
-            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=30",//new hot anchors interface
+            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=45",//new hot anchors interface
 
             "newHotAnchorsJson":"/files/hotAnchorsNew.json",//new hot anchors interface json
 
             "anc_game":"/files/gameAnchors.json",//精彩推荐
-            "anc_gameType":"/rest/homeAnchors/gameType.mt",//首页游戏分类
-            "anc_gameTypeJson":"/files/gameType.json",//首页游戏分类静态
+
+           "anc_gameType":"/rest/homeAnchors/gameType.mt",//首页游戏分类
+           "anc_gameTypeJson":"/files/gameType.json",//首页游戏分类静态
+
             "gameHeald":"/rest/homeAnchors/gameHeald.mt",//首页游戏综合推荐
+
             "anc_new":"/files/newAnchors.json" //"/ajax/getLiveAnchors.php"+"?anc_type=new"
 
         }
@@ -266,6 +268,7 @@ $(document).ready(function(){
 					<span class="diamond fl sprite liverlevel-pic_liverlevel_{4}"></span>\
 					<a href="{5}"><span class="name fl">{6}</span> </a>\
 				</li>';
+
         var ht_ransT='<div class="row foLi"><a href="{0}" target="_blank">\
 						<span class="icon_shuzi_{1} sprite_top pull-left hidden-md hidden-sm hidden-xs"></span>\
 						<img class="pull-left img-circle lazy"  src="{2}" alt="{3}"/>\
@@ -275,6 +278,7 @@ $(document).ready(function(){
 					</div>\
 					<div class="pull-left spriteLev liverlevel-pic_liverlevel_{5}"></div>\
 					</a></div>';
+
         var ht_rans='<div class="row foLi"><a href="{0}" target="_blank">\
 						<span class="icon_shuzi_{1} sprite_top pull-left hidden-md hidden-sm hidden-xs"></span>\
 						<img class="pull-left img-circle lazy" src="{2}" alt="{3}"/>\
@@ -315,6 +319,7 @@ $(document).ready(function(){
             });
         }
 
+
         parse_to_board("dayList",ulList.dayList,"anchor");
         parse_to_board("weekList",ulList.weekList,"anchor");
         parse_to_board("monthList",ulList.monthList,"anchor");
@@ -326,7 +331,6 @@ $(document).ready(function(){
         parse_to_board("hy_week",ulList.hy_week);
         parse_to_board("hy_month",ulList.hy_month);
         parse_to_board("hy_year",ulList.hy_year);
-
 
 
         var compiliter={
@@ -350,7 +354,7 @@ $(document).ready(function(){
                     <div class="playBtn"></div></a>',
           
             bigH:
-                '<a href="{0}"  target="_blank" class="thumbnail firHot bord1d">\
+                '<a href="{0}"  target="_blank" class="thumbnail firHot bord1Pin">\
                     <div class="hotT">\
                         <img class="lazy" src="{1}&w=263&h=386" alt="{2}">\
                         {3}\
@@ -359,8 +363,8 @@ $(document).ready(function(){
                     </div>\
                     <div class="firB bgff">\
                         <div class="clearfix">\
-                        <p class="colorPin pull-left f16">{4}</p>\
-                        <div class="pull-right f12"><span class="color99">{5}</span></div>\
+                        <p class="colorPin pull-left f18">{4}</p>\
+                        <div class="pull-right f12 weathLiv"><span class="color99">{5}</span></div>\
                     </div>\
                     <div class="clearfix f12 color99">\
                         <div class="onliNum pull-left">\
@@ -411,7 +415,7 @@ $(document).ready(function(){
                         <div class="playBtn"></div>\
                     </div>\
                     <div class="hotB bgff">\
-                        <div class="colorf1 f12 ellipsis">{4}</div>\
+                        <div class="color1f f12 ellipsis">{4}</div>\
                         <div class="f12 color99">\
                             <span>{5}</span>\
                         </div>\
@@ -450,6 +454,7 @@ $(document).ready(function(){
                     </div>\
                     <div class="playBtn"></div>\
                 </a>',
+
             gameHtml:
                 ' <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">\
                     <a href="{0}" target="_blank" class="thumbnail padd1 bgnone">\
@@ -461,7 +466,7 @@ $(document).ready(function(){
             ',
 
             gameType:
-            '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem"><a href="{0}" target="_blank" class="bgff block">\
+            '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem"><a href="{0}" target="_blank" class="bgff block bordR3">\
                 {1}\
                 <div class="recommImg thumbnail">\
                     <img class="lazy" src="{2}&w=262&h=150" alt="{3}">\
@@ -543,6 +548,7 @@ $(document).ready(function(){
             }
         };
 
+
         compiliter.parseAnchors = function(url,type){
             Tools.getJson({
                 url: ulList.anc_hot,
@@ -592,21 +598,18 @@ $(document).ready(function(){
                             s_sml = Tools.stringFormat(compiliter.lithtml,"col-lg-2 hidden-md hidden-sm hidden-xs",v.roomNumber,v.image, ndecodeURI(v.nickName),v.totalpoint,compiliter.tolive(v.online,1),v.numbers,ndecodeURI(v.nickName),compiliter.totime(v.onlineTime));
                         }
                         srow.append(s_sml);
-
                     })
                     swrap.append(srow);
                     $("#"+$h+" .hotLiCon").append(bwrap);
                     $("#"+$h+" .hotLiCon").append(swrap);
 
-
                     $("#hotList img.lazy").lazyload({
                         effect: "fadeIn"
                     });
-
                 }
-
             });
         }
+
 
         //new hot anchors interface
         compiliter.parseNewHotAnchors = function(url,type){
@@ -634,7 +637,7 @@ $(document).ready(function(){
 
                 if (hotData != null && hotData.length > 0) {
                     try {
-                        rowData = hotData.slice(0,20);
+                        rowData = hotData.slice(0,45);
                     } catch(e) {
                         console.log(e);
                     }
@@ -774,12 +777,12 @@ $(document).ready(function(){
                 url: url,
                 data: "",
                 error:function(){
-                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                    compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
             }, function (data) {
-                if (data == '' || data == undefined || data==null) {
-                    compiliter.parseGameType(ulList.anc_gameTypeJson);
+                if (data.data == '' || data.data == undefined || data.data == null ) {
+                    compiliter.parseGameType(ulList.anc_gameType);
                     return;
                 }
                 try
@@ -796,7 +799,6 @@ $(document).ready(function(){
                 var typeTit="";
                 var gameIcon="";
                 var key=0;
-
                 $.each(datas, function(k, v) { 
                     var typeTit=Tools.stringFormat(compiliter.gameTypeTit,v.gameIcon,v.gameName);
                     $("#games").append(typeTit);
@@ -832,7 +834,8 @@ $(document).ready(function(){
                
             });
         };
-        compiliter.parseGameType(ulList.anc_gameType);
+
+        compiliter.parseGameType(ulList.anc_gameTypeJson);
         compiliter.gameHeald=function(){
             Tools.getJson({
                 url: ulList.gameHeald,
@@ -894,9 +897,9 @@ $(document).ready(function(){
                             item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }
                         if(k==0){
-                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></li>';
+                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }else{
-                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></li>';
+                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }
 
                         $(".carousel-indicators li").css("background",v.image);

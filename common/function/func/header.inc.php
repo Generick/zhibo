@@ -83,10 +83,10 @@ if($page_var['IS_QQ']){//正式环境和测试环境下需要修改，include/QQ
 }
 $page_var['cdn_domain']=_CDNDOMAIN_;
 date_default_timezone_set('PRC');
-$app_path=str_replace('\\','/',str_replace('common\\function\\header.inc.php','',str_replace('common/function/header.inc.php','',__FILE__)));
+$app_path=str_replace('\\','/',str_replace('common\\function\\func\\header.inc.php','',str_replace('common/function/func/header.inc.php','',__FILE__)));
 //echo $app_path;
 include($app_path.'libs/extend/adodb_65495/adodb.inc.php');
-include($app_path.'common/function/mysql_config.php');
+include($app_path.'common/function/func/mysql_config.php');
 
 //echo ($app_path.'common/function/mysql_config.php');
 
@@ -245,7 +245,7 @@ function checklogin(){
     }
     if(!function_exists("aes_decrypt")){
         global $app_path;
-        include($app_path.'common/function/aes.func.php');
+        include($app_path.'common/function/func/aes.func.php');
     }
     if(!$_COOKIE['KDUUS']){
         setcookie("KDUUS",$_SESSION['KDCOOKIE'],time()+3600*24,"/",_COOKIE_DOMAIN_);
