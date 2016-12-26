@@ -28,10 +28,22 @@ a:hover{
 .bgdd{
 	background-color: #ddd;
 }
+.padd1{
+	padding: 1px  !important; 
+}
+.bord1d{
+	border:1px solid #ddd !important;
+}
+.bord1Pin{
+	border:1px solid #e34052 !important;
+}
 .bgf4{
 	background-color: #f4f4f4 !important;
 }
+.bgff{
+	background-color: #fff !important;
 }
+
 .colorPin{
 	color:#e34052;
 }
@@ -154,9 +166,9 @@ a:hover{
 }
 
 .mainRight .thumbnail{
-	border-radius:8px; 
-	-webkit-border-radius:8px;
-	-o-border-radius:8px; 
+	border-radius:3px; 
+	-webkit-border-radius:3px;
+	-o-border-radius:3px; 
 }
 .logName{
 	width:96px; 
@@ -164,7 +176,7 @@ a:hover{
 
 .thumbnail{
 	padding:0; 
-	border-radius: 12px;
+	border-radius: 3px;
 	border: none; 
 }
 .mainRight .thumbnail{
@@ -218,6 +230,12 @@ a:hover{
 	background-color:#3e63d8;
 }
 
+.navbar-default .navbar-nav>.active>a:hover{
+	background-color: #6683e2;
+	color:#fff; 
+}
+
+
 .hdNavR>li>a{
 	padding: 17px 6px;
 	font-size:16px;
@@ -246,6 +264,9 @@ a:hover{
 .recommImg{
 	position: relative;
 	display: block;
+}
+.recommImg img{
+	width:100%; 
 }
 .carousel-indicators li.active{
 	background-color:#e34052;
@@ -469,13 +490,8 @@ a:hover{
 		display: flex;
 	}
 	
-	.hotCon .thumbnail {
-		padding:2px; 
-		box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
-	}
-	
 	.hotCon .thumbnail >img{
-		border-radius:12px;
+		border-radius:3px;
 		width:100%;
 	}
 	.hotCon .firHot{
@@ -511,8 +527,6 @@ a:hover{
 		padding-left: 5%;
 		font-size: 16px;
 		color: #999;
-		border-bottom-left-radius:12px; 
-		border-bottom-right-radius:12px;
 	}
 			
 	.shadow{
@@ -528,6 +542,12 @@ a:hover{
 	    background-color: #000;
 	    -webkit-transition: all ease-in 250ms;
 	    transition: all ease-in 250ms;
+	}
+	.squareDe .shadow{
+		height: 72%;
+	}
+	.squareDe .playBtn{
+		top: 38%; 
 	}
 	.playBtn{
 		position: absolute;
@@ -607,7 +627,7 @@ a:hover{
 	/* 精彩推荐 */
 	
 	.recommB{
-		padding-top: 8%; 
+		padding: 9.2% 3.1% 3.4%;
 	}
 	.recommB .ellipsis{
 		width:58%;
@@ -795,11 +815,19 @@ a:hover{
 		width:18%;
 		height: auto;
 	}
-	.gameAnch .page-header{
-		margin-left: 0.6%;
+	.gameAnch .row{
+		margin-left: 0;
+		margin-right: 0;
 	}
 	.recommBR{
 		width:78%;
+	}
+
+	.rankReco .page-header,.entertain .page-header{
+		margin-left: 0.7%;
+	}
+	.squareCon .recommB {
+	    padding: 4% 3.1% 3.4%;
 	}
 
 	/*mod bootstrap*/

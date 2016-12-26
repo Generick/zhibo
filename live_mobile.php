@@ -18,6 +18,7 @@ $post = array('roomnumber'=>$roomnumber);
 $interface = _INTERFACE_."/rest/homeAnchors/livePhone.mt?roomNumber=".$roomnumber;
 $datas = curl_post_data($interface,$post);
 $data = json_decode($datas,true);
+
 //print_r($data);
 $zhuboinfo = $data['data'];
 $roomUsers = $zhuboinfo['roomUsers'];

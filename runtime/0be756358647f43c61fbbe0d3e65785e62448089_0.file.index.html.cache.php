@@ -1,18 +1,32 @@
 <?php
+<<<<<<< HEAD:runtime/5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b_0.file.index.html.cache.php
 /* Smarty version 3.1.30, created on 2016-12-23 11:00:53
   from "E:\anchors\app\view\index\index.html" */
+=======
+/* Smarty version 3.1.30, created on 2016-12-26 15:41:13
+  from "D:\xampp\htdocs\anchors\app\view\index\index.html" */
+>>>>>>> f04036679f9b1c5158e6f0e4bcdc2eef86a3a7f4:runtime/0be756358647f43c61fbbe0d3e65785e62448089_0.file.index.html.cache.php
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
+<<<<<<< HEAD:runtime/5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b_0.file.index.html.cache.php
   'unifunc' => 'content_585c9365d76229_88319174',
+=======
+  'unifunc' => 'content_5860c99914c081_99380483',
+>>>>>>> f04036679f9b1c5158e6f0e4bcdc2eef86a3a7f4:runtime/0be756358647f43c61fbbe0d3e65785e62448089_0.file.index.html.cache.php
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b' => 
+    '0be756358647f43c61fbbe0d3e65785e62448089' => 
     array (
+<<<<<<< HEAD:runtime/5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b_0.file.index.html.cache.php
       0 => 'E:\\anchors\\app\\view\\index\\index.html',
       1 => 1482461924,
+=======
+      0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index.html',
+      1 => 1482489748,
+>>>>>>> f04036679f9b1c5158e6f0e4bcdc2eef86a3a7f4:runtime/0be756358647f43c61fbbe0d3e65785e62448089_0.file.index.html.cache.php
       2 => 'file',
     ),
   ),
@@ -21,8 +35,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
+<<<<<<< HEAD:runtime/5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b_0.file.index.html.cache.php
 function content_585c9365d76229_88319174 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->compiled->nocache_hash = '19435585c9365bf3657_57603763';
+=======
+function content_5860c99914c081_99380483 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '196415860c9990e2900_48540586';
+>>>>>>> f04036679f9b1c5158e6f0e4bcdc2eef86a3a7f4:runtime/0be756358647f43c61fbbe0d3e65785e62448089_0.file.index.html.cache.php
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -89,7 +108,7 @@ $_smarty_tpl->compiled->nocache_hash = '19435585c9365bf3657_57603763';
             <ul class="nav navbar-nav hdNavL">
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'index') {?>active<?php }?>"><a href="#">首页</a></li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="/square.php">广场</a> </li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="/mall.php">商城</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
@@ -156,7 +175,7 @@ $_smarty_tpl->compiled->nocache_hash = '19435585c9365bf3657_57603763';
                             <span class="color99">. 综合推荐</span>
                         </h4>
                         <h4 class="pull-right recommR">
-                            <a href="javascript:;"><small class="color33">更多</small></a>
+                            <a href="/square.php"><small class="color33">更多</small></a>
                         </h4>
             
                     </div>

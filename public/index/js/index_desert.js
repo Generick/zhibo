@@ -1,5 +1,4 @@
 // JavaScript Document
-//create on 2016-11-23 14.23
 $(document).ready(function(){
     function SwapTab(name, title, content, Sub, cur) {
         $(name + ' ' + title).mouseover(function () {
@@ -246,7 +245,7 @@ $(document).ready(function(){
 
             "anc_hot":"/files/anchors.json",  //"/ajax/getLiveAnchors.php"+"?anc_type=hot"
 
-            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=44",//new hot anchors interface
+            "newHotAnchors":"/rest/homeAnchors/hotAnchorsNew.mt?count=45",//new hot anchors interface
 
             "newHotAnchorsJson":"/files/hotAnchorsNew.json",//new hot anchors interface json
 
@@ -416,7 +415,7 @@ $(document).ready(function(){
                         <div class="playBtn"></div>\
                     </div>\
                     <div class="hotB bgff">\
-                        <div class="colorf1 f12 ellipsis">{4}</div>\
+                        <div class="color1f f12 ellipsis">{4}</div>\
                         <div class="f12 color99">\
                             <span>{5}</span>\
                         </div>\
@@ -638,7 +637,7 @@ $(document).ready(function(){
 
                 if (hotData != null && hotData.length > 0) {
                     try {
-                        rowData = hotData.slice(0,44);
+                        rowData = hotData.slice(0,45);
                     } catch(e) {
                         console.log(e);
                     }
@@ -893,14 +892,14 @@ $(document).ready(function(){
                     $.each(datas, function(k, v) {
                         $active = k==0?"active":"";
                         if(v.url !=''){
-                            item+='<div class="item '+$active+'"><a href="'+v.url+'"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }else{
-                            item+='<div class="item '+$active+'"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }
                         if(k==0){
-                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
+                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }else{
-                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="javascript:;"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
+                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }
 
                         $(".carousel-indicators li").css("background",v.image);
