@@ -5,8 +5,8 @@
 	$config=array(
 		//smarty配置；
 		'viewconfig'=>array(
-				'left_delimiter'	=>	'{',
-				'right_delimiter'	=>	'}',
+				'left_delimiter'	=>	'<{',
+				'right_delimiter'	=>	'}>',
 				'template_dir'		=>	'app/view/'.$vw,
 				'compile_dir'		=>	'runtime',
 				'caching'			=>	'false',
