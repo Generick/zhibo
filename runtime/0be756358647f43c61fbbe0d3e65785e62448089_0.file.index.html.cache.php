@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-22 17:55:26
-  from "E:\anchors\app\view\index\index.html" */
+/* Smarty version 3.1.30, created on 2016-12-26 15:41:13
+  from "D:\xampp\htdocs\anchors\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585ba30e4c9ac4_65797048',
+  'unifunc' => 'content_5860c99914c081_99380483',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5abbee25ad45bf5388bf984ea9c1bf7b767b9f8b' => 
+    '0be756358647f43c61fbbe0d3e65785e62448089' => 
     array (
-      0 => 'E:\\anchors\\app\\view\\index\\index.html',
-      1 => 1482397895,
+      0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\index\\index.html',
+      1 => 1482489748,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_585ba30e4c9ac4_65797048 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
+function content_5860c99914c081_99380483 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '196415860c9990e2900_48540586';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -89,7 +89,7 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
             <ul class="nav navbar-nav hdNavL">
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'index') {?>active<?php }?>"><a href="#">首页</a></li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="/square.php">广场</a> </li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="/mall.php">商城</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
@@ -132,10 +132,10 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
             <div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
                 <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-        </ol>
+                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                    </ol>
         			<div class="carousel-inner" role="listbox">
-        </div>
+        			</div>
 					<a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
                         <span class="icon-prev glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -147,18 +147,16 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
                     <div class="thumb-bar"></div>
     			</div>
             
-            	<!--游戏-->
-                <div id="games"></div>
-                <!--综合推荐-->
+            	<!--综合推荐-->
                 <div class="recomm gameHeald">
                     <div class="page-header clearfix hpGameTit">
                         <!--左标题-->
                         <h4 class="pull-left">
                             <span class="glyphicon icon-zonghe"></span>
-                            <span class="color99">综合推荐</span>
+                            <span class="color99">. 综合推荐</span>
                         </h4>
                         <h4 class="pull-right recommR">
-                            <a href="javascript:;"><small class="color33">更多</small></a>
+                            <a href="/square.php"><small class="color33">更多</small></a>
                         </h4>
             
                     </div>
@@ -168,9 +166,9 @@ $_smarty_tpl->compiled->nocache_hash = '27164585ba30e2c9ed4_80184516';
                    
                 </div>
                 
-                
-                
-                
+            	<!--游戏-->
+                <div id="games"></div>
+             
                 <!--娱乐直播-->
                 <div class="hotCon" id="hotList">
                     <div class="page-header clearfix hpGameTit">
