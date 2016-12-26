@@ -1,15 +1,15 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 14:19:41
+/* Smarty version 3.1.30, created on 2016-12-26 15:41:15
   from "D:\xampp\htdocs\anchors\app\view\public\footer.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860b67d090885_19974400',
+  'unifunc' => 'content_5860c99ba77b08_07781570',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '75f2f4f9ae84f5fe00dab81eba60b262a4405083' => 
+    'fa608e391c2ff3a951ec008f41f68c85ea4d79ba' => 
     array (
       0 => 'D:\\xampp\\htdocs\\anchors\\app\\view\\public\\footer.html',
       1 => 1482731727,
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5860b67d090885_19974400 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '219035860b67d090881_48538637';
+function content_5860c99ba77b08_07781570 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '273995860c99ba73c80_99162493';
 ?>
 <style type="text/css">
     /*底部*/
