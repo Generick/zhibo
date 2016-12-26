@@ -27,12 +27,9 @@
     </script>
 </head>
 <body style="padding-top:100px;" ng-controller="square">
-<?php
-$current_page="square";
-include("include/header.inc.php");
-$user = checklogin();
-include_once('tpl_header.php');
-?>
+
+<{include file="../public/header.html"}>
+
     <div class="hotCon square container">
         <div class="squareTit text-center clearfix">
             <div class="gameHd pull-left active"></div>
@@ -180,7 +177,7 @@ include_once('tpl_header.php');
         
     </div>
 
-<?php include('tpl_footer.php'); ?>
+<{include file="../public/footer.html"}>
 
 
 </body>
