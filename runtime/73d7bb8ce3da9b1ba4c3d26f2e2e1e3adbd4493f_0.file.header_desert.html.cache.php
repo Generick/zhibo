@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 16:54:15
+/* Smarty version 3.1.30, created on 2016-12-26 14:22:35
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\header_desert.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585ce6375d0c93_74668149',
+  'unifunc' => 'content_5860b72b5b0d27_33937542',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73d7bb8ce3da9b1ba4c3d26f2e2e1e3adbd4493f' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\header_desert.html',
-      1 => 1482483253,
+      1 => 1482733352,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_585ce6375d0c93_74668149 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '473585ce63759e041_75275934';
+function content_5860b72b5b0d27_33937542 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '260705860b72b5783a5_20097379';
 ?>
 <!--<link data-fixed="true" href="/templates/index.css" rel="stylesheet">-->
-<link data-fixed="true" href="/css/kedo/bootstrap.min.css" rel="stylesheet">
-<link data-fixed="true" href="/css/kedo/common.css" rel="stylesheet">
+<link data-fixed="true" href="/public/centeros/css/bootstrap.min.css" rel="stylesheet">
+<link data-fixed="true" href="/public/centeros/css/common.css" rel="stylesheet">
 <?php echo '<script'; ?>
- type="text/javascript" src="/js/notice.js"><?php echo '</script'; ?>
+ type="text/javascript" src="/public/centeros/js/notice.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
 >

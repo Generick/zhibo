@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 16:55:24
+/* Smarty version 3.1.30, created on 2016-12-26 11:44:45
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\center-info.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585ce67c749b58_44736427',
+  'unifunc' => 'content_5860922dea8195_13282758',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dada97918e19fbf263f1e8e89718807ad324a2cd' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\center-info.html',
-      1 => 1482483320,
+      1 => 1482723870,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_585ce67c749b58_44736427 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '27554585ce67c712619_74976128';
+function content_5860922dea8195_13282758 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '58475860922de3b2e5_29821283';
 echo '<script'; ?>
- src="/js/sea.js"><?php echo '</script'; ?>
+ src="/public/centeros/js/sea.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
 >
 
     seajs.config({
-        base: "/js/",
+        base: "/public/centeros/js/",
         alias: {
             // "jquery": "jquery/jquery/1.10.1/jquery.js"
         }

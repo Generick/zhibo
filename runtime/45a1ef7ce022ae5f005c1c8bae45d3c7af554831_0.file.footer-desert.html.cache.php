@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 12:01:39
+/* Smarty version 3.1.30, created on 2016-12-26 14:17:36
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\footer-desert.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585ca1a3cbefb2_83570351',
+  'unifunc' => 'content_5860b600d5e5b3_30267651',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45a1ef7ce022ae5f005c1c8bae45d3c7af554831' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\footer-desert.html',
-      1 => 1482465588,
+      1 => 1482733054,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_585ca1a3cbefb2_83570351 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '10200585ca1a3cbb7f6_18576046';
+function content_5860b600d5e5b3_30267651 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '158365860b600d403a5_15908605';
 ?>
 <style type="text/css">
     /*底部*/
@@ -56,7 +56,7 @@ $_smarty_tpl->compiled->nocache_hash = '10200585ca1a3cbb7f6_18576046';
             <a href="javascript:;" class="firBL">版权声明</a>
         </p>
         <p>
-            <img class="lazy" src="images/kedo/logo_foot.png"/>
+            <img class="lazy" src="/public/centeros/images/logo_foot.png"/>
             <span> -Copyright©2016 沪ICP备14054721号</span>
         </p>
         <p>蝌蚪客服电话：021-63156393 | 商务合作邮箱：

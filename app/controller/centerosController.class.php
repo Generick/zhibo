@@ -233,7 +233,6 @@ and b.isFollow =1
 
     $user = checklogin();
     if (!$user) {
-        include("include/footer.inc.php");
         header("location:index.php");
         exit();
     }
@@ -245,11 +244,13 @@ and b.isFollow =1
 
     $_GET = safe_output($_GET);
     $_POST = safe_output($_POST);
-    // assign data
+    // assign user data to view
     foreach ($user as $key => $value) {
         $this->view->assign($key,$value);
     }
     //over
+    $res_path = "././public/centeros";
+    $this->view->assign('res_path',$res_path);
     $this->view->assign('cdn_domain',$page_var['cdn_domain']);
     $this->view->display('common.html');
     // include tpl_header.php
