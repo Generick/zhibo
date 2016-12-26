@@ -621,7 +621,6 @@ $(document).ready(function(){
                     return;
                 }
             },function(data){
-                console.log(data.data.hot.length)
                 if (data == '' || data == undefined) {
                     compiliter.parseNewHotAnchors(ulList.newHotAnchorsJson,"hot");
                     return;
