@@ -222,9 +222,9 @@ define(function(require, exports, module) {
 				}
 			}
 		},
-		weblog : function(msg) {
+		weblog : function(data) {
 			if (eval(this.weblg)) {
-				console.log(msg);
+				console.log(data);
 			}
 		},
 		restDoit : function() {

@@ -816,7 +816,7 @@ define("toproom", [], function(require, exports, module) {
                 $('#ulid li').remove();
                 $(".list_top").slideUp();
             },105000)
-        },
+        }, 
         
         formatLuckNum : function(n) {
             if (+n) {

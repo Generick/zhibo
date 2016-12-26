@@ -65,7 +65,6 @@ define(function(require, exports, module) {
 				}
 			}
 			$('#current_fan_top').html($html);
-			console.log('到此')
 		},
 		append2Htmls : function(data, bs) {
 			if (data != null) {
