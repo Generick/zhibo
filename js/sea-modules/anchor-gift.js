@@ -6,87 +6,88 @@ define(function(require, exports, module) {
 		oWidth : 0,
 		init : function() {
 			$("#sendGiftBtn").click(
-							function() {
-								if (!UIF.handler.login) {
-									UIF.handler.loging();
-									return;
-								}
-								var sendGiftNum = parseInt($("#sendGiftNum").val());
-								if (sendGiftNum == "") {
-									sendGiftNum = 0;
-								}
-								if (UIF.handler.newSendGiftID == 0) {
-									Tools.dialog("\u8BF7\u9009\u62E9\u793C\u7269");
-									return;
-								}
-								if (sendGiftNum <= 0 || !$.isNumeric(sendGiftNum)) {
-									Tools.dialog("\u8BF7\u6B63\u786E\u586B\u5199\u793C\u7269\u6570\u91CF");
-									return;
-								}
-								var gid = UIF.handler.cache.get(cons.GIFT_TIMEGIFTIDS);
-								var uid = UIF.handler.cache.get(cons.GIFT_TIMEUUIDS);
-								var times = UIF.handler.cache.get(cons.GIFT_TRANSTIME);
-								var gnu = UIF.handler.cache.get(cons.GIFT_TIMEGNUMBERS);
-								var timeNumber = UIF.handler.cache.get(cons.GIFT_TIMENUMBERS);
-								if (gid != null && uid != null && times != null && timeNumber != null && gnu != null && gid == UIF.handler.newSendGiftID && gnu == sendGiftNum) {
-									var date = new Date().getTime();
-									var diff = date - times;
-									if (diff <= (5 * 1000)) {
-										timeNumber++;
-										if (timeNumber == 1)
-											timeNumber++;
-										times = new Date().getTime();
-									} else {
-										timeNumber = 0;
-										uid = Tools.uuid();
-										times = new Date().getTime();
-									}
-								} else {
-									timeNumber = 0;
-									gnu = sendGiftNum;
-									uid = Tools.uuid();
-									gid = UIF.handler.newSendGiftID;
-									times = new Date().getTime();
-								}
-								UIF.handler.cache.put(cons.GIFT_TIMEUUIDS, uid);
-								UIF.handler.cache.put(cons.GIFT_TRANSTIME, times);
-								UIF.handler.cache.put(cons.GIFT_TIMEGIFTIDS, gid);
-								UIF.handler.cache.put(cons.GIFT_TIMEGNUMBERS, gnu);
-								UIF.handler.cache.put(cons.GIFT_TIMENUMBERS, timeNumber);
-								UIF.handler
-										.deduction(
-												{
-													uid : uid,
-													sendNum : timeNumber,
-													giftId : UIF.handler.newSendGiftID,
-													number : sendGiftNum
-												},
-												function(data) {
-													var fs = jQuery.parseJSON(data);
-													if (fs.resultStatus == 100) { //100:余额不足 101:不存在 102:未登录 103:数量不足
-														var yeless = '<div class="less-money">\
-                            <div class="less-box">\
-                        <div class="less-header">\u6E29\u99A8\u63D0\u793A</div>\
-                        <div class="less-close"></div>\
-                            <div class="hsr"></div>\
-                            <div class="less-text">\u60A8\u7684<span>\u4F59\u989D</span>\u4E0D\u8DB3\uFF0C\u65E0\u6CD5\u8D2D\u4E70</div>\
-                            <div class="less-butt">\
-                                <div class="less-charge butt"><a href="/pay.php">\u5145\u503C</a></div>\
-                                <div class="less-cancel butt">\u53D6\u6D88</div>\
-                            </div>\
-                        </div>\
-                        </div>';
-														$('body').append(yeless);
-														$(".less-money").css({
-															"left" : $(".newGifts").offset().left + 400,
-															"top" : $(".newGifts").offset().top - 105
-														});
-														$(".less-money").show();
-														return;
-													}
-													Tools.dialog(fs.resultMessage);
-												});
-							});
+				function() {
+					if (!UIF.handler.login) {
+						UIF.handler.loging();
+						return;
+					}
+					var sendGiftNum = parseInt($("#sendGiftNum").val());
+					if (sendGiftNum == "") {
+						sendGiftNum = 0;
+					}
+
+					if (UIF.handler.newSendGiftID == 0) {
+						Tools.dialog("\u8BF7\u9009\u62E9\u793C\u7269");
+						return;
+					}
+					if (sendGiftNum <= 0 || !$.isNumeric(sendGiftNum)) {
+						Tools.dialog("\u8BF7\u6B63\u786E\u586B\u5199\u793C\u7269\u6570\u91CF");
+						return;
+					}
+					var gid = UIF.handler.cache.get(cons.GIFT_TIMEGIFTIDS);
+					var uid = UIF.handler.cache.get(cons.GIFT_TIMEUUIDS);
+					var times = UIF.handler.cache.get(cons.GIFT_TRANSTIME);
+					var gnu = UIF.handler.cache.get(cons.GIFT_TIMEGNUMBERS);
+					var timeNumber = UIF.handler.cache.get(cons.GIFT_TIMENUMBERS);
+					if (gid != null && uid != null && times != null && timeNumber != null && gnu != null && gid == UIF.handler.newSendGiftID && gnu == sendGiftNum) {
+						var date = new Date().getTime();
+						var diff = date - times;
+						if (diff <= (5 * 1000)) {
+							timeNumber++;
+							if (timeNumber == 1)
+								timeNumber++;
+							times = new Date().getTime();
+						} else {
+							timeNumber = 0;
+							uid = Tools.uuid();
+							times = new Date().getTime();
+						}
+					} else {
+						timeNumber = 0;
+						gnu = sendGiftNum;
+						uid = Tools.uuid();
+						gid = UIF.handler.newSendGiftID;
+						times = new Date().getTime();
+					}
+					UIF.handler.cache.put(cons.GIFT_TIMEUUIDS, uid);
+					UIF.handler.cache.put(cons.GIFT_TRANSTIME, times);
+					UIF.handler.cache.put(cons.GIFT_TIMEGIFTIDS, gid);
+					UIF.handler.cache.put(cons.GIFT_TIMEGNUMBERS, gnu);
+					UIF.handler.cache.put(cons.GIFT_TIMENUMBERS, timeNumber);
+					UIF.handler
+							.deduction(
+									{
+										uid : uid,
+										sendNum : timeNumber,
+										giftId : UIF.handler.newSendGiftID,
+										number : sendGiftNum
+									},
+									function(data) {
+										var fs = jQuery.parseJSON(data);
+										if (fs.resultStatus == 100) { //100:余额不足 101:不存在 102:未登录 103:数量不足
+											var yeless = '<div class="less-money">\
+											                <div class="less-box">\
+												            <div class="less-header">\u6E29\u99A8\u63D0\u793A</div>\
+												            <div class="less-close"></div>\
+												                <div class="hsr"></div>\
+												                <div class="less-text">\u60A8\u7684<span>\u4F59\u989D</span>\u4E0D\u8DB3\uFF0C\u65E0\u6CD5\u8D2D\u4E70</div>\
+												                <div class="less-butt">\
+												                    <div class="less-charge butt"><a href="/pay.php">\u5145\u503C</a></div>\
+												                    <div class="less-cancel butt">\u53D6\u6D88</div>\
+												                </div>\
+												            </div>\
+												            </div>';
+											$('body').append(yeless);
+											$(".less-money").css({
+												"left" : $(".newGifts").offset().left + 400,
+												"top" : $(".newGifts").offset().top - 105
+											});
+											$(".less-money").show();
+											return;
+										}
+										Tools.dialog(fs.resultMessage);
+									});
+				});
 			$(".giveBtn").mousedown(function() {
 				$(this).addClass("down");
 			})
@@ -365,17 +366,17 @@ define(function(require, exports, module) {
 				data.giftType = "-1";
 			}
 			switch (data.giftType) {
-			case "1":
-				this.filGift(data);
-				break;
-			case "0":
-				this.figGift(data);
-				break;
-			case "-1":
-				this.customGift(data);
-				break;
-			default:
-				break;
+				case "1":
+					this.filGift(data);
+					break;
+				case "0":
+					this.figGift(data);
+					break;
+				case "-1":
+					this.customGift(data);
+					break;
+				default:
+					break;
 			}
 			if (data != null && data.par != null && data.par != "") {
 				var multys = JSON.parse(data.par);

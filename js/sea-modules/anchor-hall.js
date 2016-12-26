@@ -64,7 +64,8 @@ define(function(require, exports, module) {
 					$html += Tools.stringFormat(this.lihtml, data[i].userId, decodeURI(data[i].nickname), decodeURI(data[i].nickname), "\u8D21\u732E\u5EA6\uFF1A"+data[i].moneys);
 				}
 			}
-			$('#current_fan_top').html($html)
+			$('#current_fan_top').html($html);
+			console.log('到此')
 		},
 		append2Htmls : function(data, bs) {
 			if (data != null) {
