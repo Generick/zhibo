@@ -16,14 +16,12 @@
 #rewrite ^/square$ /square.php last; 
 #rewrite ^/center$ /centeros.php last; 
 
-
-#RewriteEngine on 
-#RewriteRule ^([a-zA-Z]+)\/([a-zA-Z0-9]+)\.tml$ $1.php?c=$2 [L]
-
 #	<IfModule mod_rewrite.c> 
-#		 RewriteEngine on   //on为打开,off为关闭   
-#		 RewriteRule ([a-zA-Z]{1,})-([0-9]{1,}).html$ index.php?c=$1&m=$2 
-#	</IfModule>
+#	RewriteEngine on 
+#	RewriteRule ^([a-zA-Z]+)\/([a-zA-Z0-9]+)\.tml$ $1.php?c=$2 [L]
+#	RewriteRule ([a-zA-Z]{1,})\/([0-9]{1,})\.html$ kedo.php?c=$1&m=$2 
+#	</IfModule>  
+		
 
 
     
