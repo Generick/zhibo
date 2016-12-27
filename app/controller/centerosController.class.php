@@ -171,7 +171,6 @@ class centerosController{
 
     function treasure(){
         exit();
-        exit(0);
   }
 
     function __construct(){
@@ -192,7 +191,7 @@ class centerosController{
 
         $user = checklogin();
         if (!$user) {
-            header("location:index.php");
+            header("location:kedo.php");
             exit();
         }
 
