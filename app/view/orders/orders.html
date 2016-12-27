@@ -6,27 +6,17 @@
    
     <meta property="qc:admins" content="105415766763547646" />
     <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
-    <link href="{$cdn}/public/orders/css/anchor-level.css" rel="stylesheet">
-    <link href="{$cdn}/public/orders/css/square.css" data-fixed="true"  rel="stylesheet">
-    <link href="{$cdn}/public/orders/css/icons.css" rel="stylesheet">
-    <script src="{$cdn}/public/min/jquery.min.js"></script>
-    <script src="{$cdn}/js/login.js" type="text/javascript" ></script>
-    <script>
-        $(function(){
-
-            function SwapTab(name, title, content, Sub, cur) {
-                $(name + ' ' + title).mouseover(function () {
-                    $(this).addClass(cur).siblings().removeClass(cur);
-                    $(content + " > " + Sub).eq($(name + ' ' + title).index(this)).show().siblings().hide();
-                })
-            }
-            SwapTab("#orderTit", "li", "#orderBody", ".orderItem", "active");
-        })
-    </script>
+    <link href="<{$cdn}>/public/orders/css/anchor-level.css" rel="stylesheet">
+    <link href="<{$cdn}>/public/orders/css/square.css" data-fixed="true"  rel="stylesheet">
+    <link href="<{$cdn}>/public/orders/css/icons.css" rel="stylesheet">
+    <script src="<{$cdn}>/public/min/jquery.min.js"></script>
+    <script src="<{$cdn}>/public/orders/js/orders.js"></script>
+    <script src="<{$cdn}>/js/login.js" type="text/javascript" ></script>
+    
 </head>
 <body style="padding-top:60px;">
 
-{include file="../public/header.html"}
+<{include file="../public/header.html"}>
 
 <div class="main-order">
 <div class="order-list">
@@ -45,59 +35,59 @@
         <div class="orderItem cur">
             <div class="order-box-top">
 
-                {foreach from=$rank_super_star item=show key=key}
-                {if $key==2}
+                <{foreach from=$rank_super_star item=show key=key}>
+                <{if $key==2}>
                 <a href="javascript:;" class="order-box-second">
                     <div class="order-second-img">
-                        <img class="rank_pho" src="{$show.image}" alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho" src="<{$show.image}>" alt="<{$show.nickName|urldecode}>"/>
                         <span class="secondCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-second-level"><span></span></div>
                 </a>
-                {/if}
-                {/foreach}
+                <{/if}>
+                <{/foreach}>
 
-                {foreach from=$rank_super_star item=show key=key}
-                {if $key==1}{break}{/if}
+                <{foreach from=$rank_super_star item=show key=key}>
+                <{if $key==1}><{break}><{/if}>
                 <a href="javascript:;"   class="order-box-first">
                     <div class="order-first-img">
-                        <img class="rank_pho" src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho" src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="crown"></span>
                         <span class="crown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_24"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_24"></span><{$show.nickName|urldecode}></div>
                     <div class="order-first-level"><span></span></div>
                 </a>
-                {/foreach}
+                <{/foreach}>
 
-                {foreach from=$rank_super_star item=show key=key}
-                {if $key==3}
+                <{foreach from=$rank_super_star item=show key=key}>
+                <{if $key==3}>
                 <a href="javascript:;" class="order-box-third">
                     <div class="order-third-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="thirdCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_22"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_22"></span><{$show.nickName|urldecode}></div>
                     <div class="order-third-level"><span></span></div>
                 </a>
-                {/if}
-                {/foreach}
+                <{/if}>
+                <{/foreach}>
             </div>
             <div class="clear"></div>
             <div class="order-box-bottom">
                 <ul>
-                    {foreach from=$rank_super_star item=show key=key}
-                    {if $key>3}
+                    <{foreach from=$rank_super_star item=show key=key}>
+                    <{if $key>3}>
                     <li>
                         <a href="javascript:;"  >
-                            <span class="number">{$key}.</span>
-                            <span class="diamond sprite {$show.levelImg}"></span>
-                            <span class="order-second-name">{$show.nickName|urldecode}</span>
+                            <span class="number"><{$key}>.</span>
+                            <span class="diamond sprite <{$show.levelImg}>"></span>
+                            <span class="order-second-name"><{$show.nickName|urldecode}></span>
                         </a>
                     </li>
-                    {/if}
-                    {/foreach}
+                    <{/if}>
+                    <{/foreach}>
 
                 </ul>
             </div>
@@ -323,61 +313,61 @@
         <div class="orderItem cur">
             <div class="order-box-top">
 
-                {foreach from=$rank_super_rich item=show key=key}
-                {if $key==2}
+                <{foreach from=$rank_super_rich item=show key=key}>
+                <{if $key==2}>
                 <a href="javascript:;" class="order-box-second">
                     <div class="order-second-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="secondCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-second-level"><span></span></div>
                 </a>
-                {/if}
-                {/foreach}
+                <{/if}>
+                <{/foreach}>
 
-                {foreach from=$rank_super_rich item=show key=key}
-                {if $key==1}{break}{/if}
+                <{foreach from=$rank_super_rich item=show key=key}>
+                <{if $key==1}><{break}><{/if}>
                 <a href="javascript:;"class="order-box-first">
                     <div class="order-first-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="crown"></span>
                         <span class="crown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-first-level"><span></span></div>
                 </a>
-                {/foreach}
+                <{/foreach}>
 
-                {foreach from=$rank_super_rich item=show key=key}
-                {if $key==3}
+                <{foreach from=$rank_super_rich item=show key=key}>
+                <{if $key==3}>
                 <a href="javascript:;" class="order-box-third">
                     <div class="order-third-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="thirdCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-third-level"><span></span></div>
                 </a>
-                {/if}
-                {/foreach}
+                <{/if}>
+                <{/foreach}>
 
             </div>
             <div class="clear"></div>
             <div class="order-box-bottom">
                 <ul >
 
-                    {foreach from=$rank_super_rich item=show key=key}
-                    {if $key>3}
+                    <{foreach from=$rank_super_rich item=show key=key}>
+                    <{if $key>3}>
                     <li>
                         <a href="javascript:;">
-                            <span class="number">{$key}.</span>
-                            <span class="diamond sprite {$show.levelImg}"></span>
-                            <span class="order-second-name">{$show.nickName|urldecode}</span>
+                            <span class="number"><{$key}>.</span>
+                            <span class="diamond sprite <{$show.levelImg}>"></span>
+                            <span class="order-second-name"><{$show.nickName|urldecode}></span>
                         </a>
                     </li>
-                    {/if}
-                    {/foreach}
+                    <{/if}>
+                    <{/foreach}>
 
                 </ul>
             </div>
@@ -605,62 +595,62 @@
         <div class="orderItem cur">
             <div class="order-box-top">
 
-                {foreach from=$rank_fans_list item=show key=key}
-                {if $key==2}
+                <{foreach from=$rank_fans_list item=show key=key}>
+                <{if $key==2}>
                 <a href="javascript:;" class="order-box-second">
                     <div class="order-second-img">
 
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="secondCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-second-level"><span></span></div>
                 </a>
-                {/if}
-                {/foreach}
+                <{/if}>
+                <{/foreach}>
 
-                {foreach from=$rank_fans_list item=show key=key}
-                {if $key==1}{break}{/if}
+                <{foreach from=$rank_fans_list item=show key=key}>
+                <{if $key==1}><{break}><{/if}>
                 <a href="javascript:;"class="order-box-first">
                     <div class="order-first-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="crown"></span>
                         <span class="crown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-first-level"><span></span></div>
                 </a>
-                {/foreach}
+                <{/foreach}>
 
-                {foreach from=$rank_fans_list item=show key=key}
-                {if $key==3}
+                <{foreach from=$rank_fans_list item=show key=key}>
+                <{if $key==3}>
                 <a href="javascript:;" class="order-box-third">
                     <div class="order-third-img">
-                        <img class="rank_pho"  src="{$show.image}"  alt="{$show.nickName|urldecode}"/>
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
                         <span class="thirdCrown"></span>
                     </div>
-                    <div class="order-first-name"> <span class="sec {$show.levelImg}"></span>{$show.nickName|urldecode}</div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
                     <div class="order-third-level"><span></span></div>
                 </a>
-                {/if}
-                {/foreach}
+                <{/if}>
+                <{/foreach}>
 
             </div>
             <div class="clear"></div>
             <div class="order-box-bottom">
                 <ul >
 
-                    {foreach from=$rank_fans_list item=show key=key}
-                    {if $key>3}
+                    <{foreach from=$rank_fans_list item=show key=key}>
+                    <{if $key>3}>
                     <li>
                         <a href="javascript:;">
-                            <span class="number">{$key}.</span>
-                            <span class="diamond sprite {$show.levelImg}"></span>
-                            <span class="order-second-name">{$show.nickName|urldecode}</span>
+                            <span class="number"><{$key}>.</span>
+                            <span class="diamond sprite <{$show.levelImg}>"></span>
+                            <span class="order-second-name"><{$show.nickName|urldecode}></span>
                         </a>
                     </li>
-                    {/if}
-                    {/foreach}　
+                    <{/if}>
+                    <{/foreach}>　
 
                 </ul>
             </div>
@@ -876,7 +866,7 @@
 </div>
 </div>
 
-{include file="../public/footer.html"}
+<{include file="../public/footer.html"}>
 
 </body>
 </html>

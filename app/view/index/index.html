@@ -8,21 +8,21 @@
     <title>蝌蚪直播-最好玩的直播平台</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="/public/min/bootstrap.min.css" rel="stylesheet">	
-    <link href="{$cdn}/public/index/css/style.css?vsn={$vsn}" rel="stylesheet">
-    <link href="{$cdn}/public/index/css/homeBg.css?vsn={$vsn}" rel="stylesheet">
-    <link href="{$cdn}/public/index/css/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
+    <link href="<{$cdn}>/public/index/css/style.css?vsn=<{$vsn}>" rel="stylesheet">
+    <link href="<{$cdn}>/public/index/css/homeBg.css?vsn=<{$vsn}>" rel="stylesheet">
+    <link href="<{$cdn}>/public/index/css/anchorLevel.css?vsn=<{$vsn}>" rel="stylesheet">
     <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
-    <script src="{$cdn}/public/min/jquery-1.12.2.min.js"></script>
-    <script src="{$cdn}/public/min/jquery.lazyload.min.js"></script>
+    <script src="<{$cdn}>/public/min/jquery-1.12.2.min.js"></script>
+    <script src="<{$cdn}>/public/min/jquery.lazyload.min.js"></script>
 
     <script>
-        var cdn_domain="{$cdn_domain}";
-        var img_domain="{$images_domain}";
-        var inf_domain="{$inf_domain}";
-        var site_skin="{$site_skin}";
-        var currentUserId="{$user.userId}";
-        var sid="{$sid}";
-        var ip="{$ip}";
+        var cdn_domain="<{$cdn_domain}>";
+        var img_domain="<{$images_domain}>";
+        var inf_domain="<{$inf_domain}>";
+        var site_skin="<{$site_skin}>";
+        var currentUserId="<{$user.userId}>";
+        var sid="<{$sid}>";
+        var ip="<{$ip}>";
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -40,10 +40,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
-                <li class="{if $current_page=='index'}active{/if}"><a href="#">首页</a></li>
-                <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
-                <li class="{if $current_page=='mall'}active{/if}"><a href="kedo.php?c=mall">商城</a> </li>
-                <li class="{if $current_page=='order'}active{/if}"><a href="kedo.php?c=orders">排行榜</a> </li>
+                <li class="<{if $current_page=='index'}>active<{/if}>"><a href="#">首页</a></li>
+                <li class="<{if $current_page=='square'}>active<{/if}>"><a href="kedo.php?c=square">广场</a> </li>
+                <li class="<{if $current_page=='mall'}>active<{/if}>"><a href="kedo.php?c=mall">商城</a> </li>
+                <li class="<{if $current_page=='order'}>active<{/if}>"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <!--<div class="form-group">
@@ -58,22 +58,22 @@
                 </div>
 
             </form>
-            {if !$user}
+            <{if !$user}>
             <ul class="nav navbar-nav navbar-right  hidden-sm hdNavR reg_log">
                 <li><a href="javascript:;" class="log">登录</a></li>
                 <li class="hidden-xs"><a href="javascript:;">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href=""></a></li>
                 <li class=""><a href="javascript:;" class="reg">注册<span class="sr-only">(current)</span></a></li>
             </ul>
-            {else}
+            <{else}>
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
-                <li><a href="/centeros.php">{$user.nickname}</a></li>
+                <li><a href="/centeros.php"><{$user.nickname}></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
             </ul>
 
-            {/if}
+            <{/if}>
         </div><!--/.nav-collapse -->
     </div>
 </div>
@@ -167,7 +167,7 @@
             <div class="col-lg-3 col-sm-3 hidden-xs pull-right mainRight" role="complementary">
             <!--登录注册-->
             <div class="thumbnail regLog text-center">
-                {if !$user}
+                <{if !$user}>
         
                 <div class="caption beforLog">
                     <p class="row">
@@ -187,17 +187,17 @@
                     </p>
                 </div>
         
-                {else}
+                <{else}>
                 <div class="caption AfterLog">
                     <div class="row">
                         <div class="pull-left imgR img-circle colorPin">
-                           <a href="/centeros.php"> <img class="img-circle lazy"  src="{$images_domain}/{$user.avatar}" style="width: 52px;height: 52px;" alt="{$user.nickname}" /></a>
+                           <a href="/centeros.php"> <img class="img-circle lazy"  src="<{$images_domain}>/<{$user.avatar}>" style="width: 52px;height: 52px;" alt="<{$user.nickname}>" /></a>
                         </div>
                         <div class="pull-left">
-                            <div class="name">{$user.nickname}</div>
+                            <div class="name"><{$user.nickname}></div>
                             <div class="money">
                                 <span class="glyphicon glyphicon-bold img-circle"></span>
-                                <span class="moneyNum">{$user.coins}</span>
+                                <span class="moneyNum"><{$user.coins}></span>
                             </div>
         
                             <a class="charge btn btn-warning" href="/pay.php">充值</a>
@@ -213,21 +213,21 @@
                     <div class="progress progress-striped">
                         <div class="progress-bar progress-bar-danger" role="progressbar"
                              aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                             style="width: {$user.nextSpender}%;">
-                            <span class="sr-only">{$user.nextSpender}% 完成（危险）</span>
+                             style="width: <{$user.nextSpender}>%;">
+                            <span class="sr-only"><{$user.nextSpender}>% 完成（危险）</span>
                         </div>
                     </div>
-                    <div>还差{$user.differ}经验值升级到下一级</div>
+                    <div>还差<{$user.differ}>经验值升级到下一级</div>
         
         
                     <p class="row showOw clearfix">
-                        {if $user.roomNumber}
-                        <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
-                        {/if}
-                        {if $user.socType==1}
-                       <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
-                        {/if}
-                    </p>
+                        <{if $user.roomNumber}>
+                        <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/<{$user.roomNumber}>">开播</a>
+                        <{/if}>
+                        <{if $user.socType==1}>
+                       <a  target="_blank" href="<{$coreweb}>?userId=<{$user.userId}>&token=<{$gf_token}>" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                        <{/if}>
+                    </p> 
         
         
                     <!--<div class="clearfix">
@@ -240,10 +240,10 @@
                         <span class="achieve3 pull-left"></span>
                         <span class="achieve4 pull-left"></span>
                         <a href="" class="pull-right">更多</a>
-                    </div>
-        -->
+                    </div>-->
+        
                 </div>
-                {/if}
+                <{/if}>
             </div>
         
             <!--我的关注-->
@@ -267,7 +267,7 @@
             </div>
             <!--申请入驻-->
             <a href="javascript:;" class="thumbnail apply">
-                <img class="lazy" src="public/index/images/banner_zhaoping.png"/>
+                <img class="lazy" src="<{$cdn}>/public/index/images/banner_zhaoping.png"/>
             </a>
         
             <!--主播排行榜-->
@@ -353,65 +353,20 @@
     </div>
     
     <!--底部-->
-    {include file="../public/footer.html"}
-    <!--<div class="bs-docs-footer navbar-inverse" role="contentinfo">
-        <div class="container">
-            <p>
-                <a href="javascript:;" class="firBL">关于蝌蚪 </a>|
-                <a href="/serviceArgument.php" class="firBL" target="_blank">服务协议 </a>|
-                <a href="/help.php" class="firBL" target="_blank">客服帮助 </a>|
-                <a href="javascript:;" class="firBL">关于我们 </a>|
-                <a href="javascript:;" class="firBL">版权声明</a>
-            </p>
-            <p>
-                <img class="lazy" src="./././public/index/images/logo_foot.png"/>
-                <span> -Copyright©2016 沪ICP备14054721号</span>
-            </p>
-            <p>蝌蚪客服电话：021-63156389 | 商务合作邮箱：
-                <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
-            </p>
-        </div>
-    </div>-->
+    <{include file="../public/footer.html"}>
     
     <!-- 3 加载bootstrap的核心ＪＳ库 -->
-    <script src="{$cdn}/public/min/bootstrap.min.js"></script>
-    <script src="{$cdn}/public/index/js/json2.js?vsn={$vsn}"></script>
-    <!--<script src="public/index/js/index_desert.js?vsn={$vsn}"></script>-->
-    <script src="{$cdn}/public/min/angular.min.js?vsn={$vsn}"></script>
-    <script src="{$cdn}/public/index/js/index_desert.js?vsn={$vsn}"></script>
-    <script src="{$cdn}/js/login.js?vsn={$vsn}"></script>
-
-    <script src="{$cdn}/public/min/html5shiv.min.js"></script>
-    <script src="{$cdn}/public/min/respond.min.js"></script>
-    {literal}
-    <script>
-    
-        var url = "/rest/checkToken/checkOW.mt";
-        var data ={
-            sessionId:sid,
-            userId:currentUserId,
-            ip:ip
-        }
-        $(".oww").click(function(){
-            var _this =$(this);
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: data,
-                dataType: "json",
-                timeout: 120000,
-                success: function (data, textStatus, jqXHR) {
-                    //location.href=$('.oww').attr("ahref");
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    //alert(params.url+" error code:"+textStatus);
-    
-                }
-            });
-        })
+    <script src="<{$cdn}>/public/min/bootstrap.min.js"></script>
+    <script src="<{$cdn}>/public/index/js/json2.js?vsn=<{$vsn}>"></script>
+    <!--<script src="public/index/js/index_desert.js?vsn=<{$vsn}>"></script>-->
+    <script src="<{$cdn}>/public/min/angular.min.js?vsn=<{$vsn}>"></script>
+    <script src="<{$cdn}>/public/index/js/index_desert.js?vsn=<{$vsn}>"></script>
+    <script src="<{$cdn}>/public/index/js/ow.js" ></script>
+    <script src="<{$cdn}>/js/login.js?vsn=<{$vsn}>"></script>
+	
+    <script src="<{$cdn}>/public/min/html5shiv.min.js"></script>
+    <script src="<{$cdn}>/public/min/respond.min.js"></script>
     
     
-    </script>
-    {/literal}
 </body>
 </html>
