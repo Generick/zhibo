@@ -102,12 +102,10 @@ $(document).ready(function(){
 	
 	$(function () {
 
-        $("*").live("click","a",function(){
-            if(document.all){
-              //  alert("IE");
+        $("body").click(function(){
+           if(document.all){
                 window.location.href="/html/guild/index.html";  return false;
             }else{
-                //alert("not ie");
             }
 
         })
