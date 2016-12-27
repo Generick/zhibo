@@ -3,7 +3,7 @@
 	class indexController{
 	public function index(){
 		global $view;
-		global $vsn;
+		global $page_var;
 			//$testModel=M('test');
 			//$data=$testModel->get();
 			//$view->assign('str',$data);
