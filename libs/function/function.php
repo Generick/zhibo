@@ -9,6 +9,7 @@
 		//eval ()函数调用简单但不安全；
 		$controller=$name.'Controller';
 		$obj=new $controller();
+
 		return $obj->$method();
 	}
 	

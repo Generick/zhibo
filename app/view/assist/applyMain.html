@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>申请签约公会</title>
+	<link href="<{$cdn}>/public/assist/css/applyOw.css" rel="stylesheet">
+	<script src="<{$cdn}>/public/min/jquery.min.js"></script>
+    <script src="<{$cdn}>/js/login.js" type="text/javascript" ></script>
+</head>
+<body  style="padding-top:60px;">
 
-<link href="__PUBLIC__/assist/css/applyOw.css" rel="stylesheet">
-
-<include file="Public/head" />
+<{include file="../public/header.html"}>
 
 <!-- 主体 -->
 	<div class="container applyM">
@@ -18,12 +21,12 @@
 		<div class="appDetail">
 			<h3 class="color99 tit">创建公会流程（线下）</h3>
 			<div class="clearfix callCustom">
-				<a href="__MODULE__/Assist/help" class="pull-right">联系客服</a>
+				<a href="kedo.php?c=assist&m=help" class="pull-right">联系客服</a>
 			</div>
 			<div class="row">
 				<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
 					<a href="#" class="thumbnail">
-						<img class="lineL" src="__PUBLIC__/assist/img/pic_shijianzhu.png" alt="">
+						<img class="lineL" src="<{$cdn}>/public/assist/img/pic_shijianzhu.png" alt="">
 						
 					</a>
 				</div>
@@ -61,6 +64,7 @@
 
 </div>
 
-<include file="Public/footer" />
+<{include file="../public/footer.html"}>
+
 </body>
 </html>

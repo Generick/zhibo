@@ -383,6 +383,7 @@ define(function(require, exports, module) {
 
             // 增送礼物
             $(".toggleBox").on("click", '.send-h-gift', function(e) {
+                console.log(000)
                 if (!UIF.handler.login) {
                     UIF.handler.loging();
                     return;
@@ -401,6 +402,8 @@ define(function(require, exports, module) {
                     Tools.dialog("请正确填写礼物数量");
                     return;
                 }
+
+                
                 var name = $(".toggleBox .chat-tip-name").text();
                 var giftName = $("#gift" + UIF.handler.newSendGiftID + " >span").text();
                 Tools.dialog("赠送" + name + sendGiftNum + giftName, function(e) {
@@ -666,7 +669,6 @@ define(function(require, exports, module) {
         },
 
         runMsg : function(data) {
-            console.log(data);
             if(data.id=='hornLi'){
                 var msg = data.userName + "说：" + data.content;
                 toproom.rwMsgH(Tools.dateFormat(new Date(), "HH:mm"), {
@@ -814,7 +816,7 @@ define("toproom", [], function(require, exports, module) {
                 $('#ulid li').remove();
                 $(".list_top").slideUp();
             },105000)
-        },
+        }, 
         
         formatLuckNum : function(n) {
             if (+n) {

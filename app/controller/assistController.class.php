@@ -46,21 +46,42 @@
 	    }
 	    
 	    //轮播图入口签约工会OW;
-	    public function applyhome(){
+	    public function applyHome(){
 	    
+	    	global $view;
+	    	global $vsn;
 	    	
-	    
-	    	$this->display();
+	    	$page_var['vsn']=$vsn;
+	    	$page_var['cdn']=_CDNDOMAIN_;
+	    	
+	    	$user=checklogin();
+	    	$page_var['user']=$user;
+	    	
+	    	foreach($page_var as $key=>$val){
+	    		$view->assign($key,$val);
+	    	}
+	    	
+	    	$view->display('applyHome.html');
 	    
 	    }
 	    
 	    //签约工会流程介绍页面；
 	    public function applymain(){
 	    
+	    	global $view;
+	    	global $vsn;
 	    	
-	    
-	    	$this->display();
-	    
+	    	$page_var['vsn']=$vsn;
+	    	$page_var['cdn']=_CDNDOMAIN_;
+	    	
+	    	$user=checklogin();
+	    	$page_var['user']=$user;
+	    	
+	    	foreach($page_var as $key=>$val){
+	    		$view->assign($key,$val);
+	    	}
+	    	
+	    	$view->display('applyMain.html');
 	    }
     
 }
