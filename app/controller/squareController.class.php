@@ -17,7 +17,7 @@
 	    	
 	    	$user=checklogin();
 	    	$page_var['user']=$user;
-	    	
+	    	//print_r($user);
 	    	foreach($page_var as $key=>$val){
 	    		$view->assign($key,$val);
 	    	}
