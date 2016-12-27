@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 14:47:41
+/* Smarty version 3.1.30, created on 2016-12-27 12:40:44
   from "E:\xampp\htdocs\kedo_tv\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860bd0d34c088_72012579',
+  'unifunc' => 'content_5861f0cc3cbb77_52994053',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99081063d91ee38eabbf8b564810b66bed2d5cfb' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\index\\index.html',
-      1 => 1482734809,
+      1 => 1482813379,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5860bd0d34c088_72012579 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
+function content_5861f0cc3cbb77_52994053 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '204715861f0cc317188_68403939';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -88,7 +88,7 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'index') {?>active<?php }?>"><a href="#">首页</a></li>
-                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="/square.php">广场</a> </li>
+                <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'square') {?>active<?php }?>"><a href="kedo.php?c=square">广场</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'mall') {?>active<?php }?>"><a href="kedo.php?c=mall">商城</a> </li>
                 <li class="<?php if ($_smarty_tpl->tpl_vars['current_page']->value == 'order') {?>active<?php }?>"><a href="kedo.php?c=orders">排行榜</a> </li>
             </ul>
@@ -287,7 +287,7 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
 &token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
 " class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                         <?php }?>
-                    </p>
+                    </p> 
         
         
                     <!--<div class="clearfix">
@@ -300,8 +300,8 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
                         <span class="achieve3 pull-left"></span>
                         <span class="achieve4 pull-left"></span>
                         <a href="" class="pull-right">更多</a>
-                    </div>
-        -->
+                    </div>-->
+        
                 </div>
                 <?php }?>
             </div>
@@ -327,7 +327,8 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
             </div>
             <!--申请入驻-->
             <a href="javascript:;" class="thumbnail apply">
-                <img class="lazy" src="public/index/images/banner_zhaoping.png"/>
+                <img class="lazy" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/images/banner_zhaoping.png"/>
             </a>
         
             <!--主播排行榜-->
@@ -416,24 +417,6 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
     <?php $_smarty_tpl->_subTemplateRender("file:../public/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <!--<div class="bs-docs-footer navbar-inverse" role="contentinfo">
-        <div class="container">
-            <p>
-                <a href="javascript:;" class="firBL">关于蝌蚪 </a>|
-                <a href="/serviceArgument.php" class="firBL" target="_blank">服务协议 </a>|
-                <a href="/help.php" class="firBL" target="_blank">客服帮助 </a>|
-                <a href="javascript:;" class="firBL">关于我们 </a>|
-                <a href="javascript:;" class="firBL">版权声明</a>
-            </p>
-            <p>
-                <img class="lazy" src="./././public/index/images/logo_foot.png"/>
-                <span> -Copyright©2016 沪ICP备14054721号</span>
-            </p>
-            <p>蝌蚪客服电话：021-63156389 | 商务合作邮箱：
-                <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
-            </p>
-        </div>
-    </div>-->
     
     <!-- 3 加载bootstrap的核心ＪＳ库 -->
     <?php echo '<script'; ?>
@@ -461,10 +444,14 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
 >
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/index/js/ow.js" ><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
 /js/login.js?vsn=<?php echo $_smarty_tpl->tpl_vars['vsn']->value;?>
 "><?php echo '</script'; ?>
 >
-
+	
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
 /public/min/html5shiv.min.js"><?php echo '</script'; ?>
@@ -474,36 +461,6 @@ $_smarty_tpl->compiled->nocache_hash = '246855860bd0d2e63e9_62099617';
 /public/min/respond.min.js"><?php echo '</script'; ?>
 >
     
-    <?php echo '<script'; ?>
->
-    
-        var url = "/rest/checkToken/checkOW.mt";
-        var data ={
-            sessionId:sid,
-            userId:currentUserId,
-            ip:ip
-        }
-        $(".oww").click(function(){
-            var _this =$(this);
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: data,
-                dataType: "json",
-                timeout: 120000,
-                success: function (data, textStatus, jqXHR) {
-                    //location.href=$('.oww').attr("ahref");
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    //alert(params.url+" error code:"+textStatus);
-    
-                }
-            });
-        })
-    
-    
-    <?php echo '</script'; ?>
->
     
 </body>
 </html>
