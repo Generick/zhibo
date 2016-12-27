@@ -17,22 +17,22 @@
       <div class="row">
             <div class="anchLive firAnch col-xs-2 clearfix bgff">
                 <div class="anchImg pull-left">
-                  <img src=" {$zhuboinfo['ava']}"/>
-                     <div class="degree bgff colorR"> {$zhuboinfo['nickName']|urldecode}</div> 
+                  <img src=" <{$zhuboinfo['ava']}>"/>
+                     <div class="degree bgff colorR"> <{$zhuboinfo['nickName']|urldecode}></div> 
                 </div>
                 
             </div>
             
-              	 {foreach from=$roomUsers item=show key=key}
-              	 	{if $key<{$rmbu} and $key=={$rmbu}}
+              	 <{foreach from=$roomUsers item=show key=key}>
+              	 	<{if $key<<{$rmbu}> and $key==<{$rmbu}>}>
                   <div class="anchLive col-xs-2">
                       <div class="anchImg pull-left">
-                        <img src="{$show['ava']}"/>
-                     <div class="degree bgff colorY">'{$show['nickName']|urldecode}'</div> 
+                        <img src="<{$show['ava']}>"/>
+                     <div class="degree bgff colorY">'<{$show['nickName']|urldecode}>'</div> 
                 </div>
             </div>
-            		{/if}
-               {/foreach}
+            		<{/if}>
+               <{/foreach}>
              
            
             <!-- <div class="anchLive col-xs-2">
@@ -65,18 +65,18 @@
 
     <section class="jumbotron banner row">
       <div class="col-xs-12" style="">
-          <video src="http://hls.181show.com/mutian-ucloud/m{$rmb}/playlist.m3u8" id="player"
+          <video src="http://hls.181show.com/mutian-ucloud/m<{$rmb}>/playlist.m3u8" id="player"
 		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
-                   x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="{$zhuboinfo['image']}?p=0&w=640&h=360"></video>
+                   x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls="controls" poster="<{$zhuboinfo['image']}>?p=0&w=640&h=360"></video>
 
             <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
-            <div><a href="{$zhuboinfo['uploadAdd']}"><button class="downgame">下载游戏</button></a></div>
+            <div><a href="<{$zhuboinfo['uploadAdd']}>"><button class="downgame">下载游戏</button></a></div>
             <div class="txt clearfix">
                 <div class="txtL pull-left" style="margin-top: 30px;">
-                    <p class="tit colorR f3_4">{$zhuboinfo['nickName']|urldecode}</p>
+                    <p class="tit colorR f3_4"><{$zhuboinfo['nickName']|urldecode}></p>
                     <p class="color99 f2_8">
                       <span class="glyphicon glyphicon-eye-open f3_3"></span>
-                        <span style="color:#999;">{$zhuboinfo['personNum']}</span></p>
+                        <span style="color:#999;"><{$zhuboinfo['personNum']}></span></p>
                 </div>
                 <div class="txtR pull-right f3" style="margin-top: 30px;clear: both;margin-top: -6.5%;margin-right: 40%;color:#999;">
                     关注她
@@ -94,79 +94,79 @@
             </h4>     
         </div>
        <div class="row">
-        {if {$hotNum}>0}
-             {foreach from=$hotAnchors item=show key=key}
-                    {if $key==0}
+        <{if <{$hotNum}>>0}>
+             <{foreach from=$hotAnchors item=show key=key}>
+                    <{if $key==0}>
                 <div class="col-xs-6" ng-repeat="reply in replies">
-                <a href="{$show['roomNumber']}" class="thumbnail">
+                <a href="<{$show['roomNumber']}>" class="thumbnail">
                   <div class="recommImg thumbnail">
-                    <img src="{$show['image']}{$imgsize}" alt=""/>
+                    <img src="<{$show['image']}><{$imgsize}>" alt=""/>
                     <div class="thumb-bar"></div>
                   </div>
                   <div class="recommB">
                     <div class="clearfix">
-                      <span class="color00 pull-left ellipsis msty f3">{$show['title']}</span>
+                      <span class="color00 pull-left ellipsis msty f3"><{$show['title']}></span>
                       <div class="color99 pull-right f2_8">
                         <span class="glyphicon glyphicon-eye-open"></span>
-                        <span>{$show['numbers']}</span>
+                        <span><{$show['numbers']}></span>
                       </div>
                     </div>
-                    <p class="color99 ellipsis msty f3">{$show['descri']}</p>
+                    <p class="color99 ellipsis msty f3"><{$show['descri']}></p>
                   </div>
 
                 </a>
               </div>
-               {/if}
-              {/foreach}
+               <{/if}>
+              <{/foreach}>
              
-             {foreach from=$hotAnchors item=show key=key}
-                    {if $key>0 and $key<{$hotNum} }  
+             <{foreach from=$hotAnchors item=show key=key}>
+                    <{if $key>0 and $key<<{$hotNum}> }>  
              <div class="col-xs-6">
-            <a href="{$show['roomNumber']}" class="thumbnail">
+            <a href="<{$show['roomNumber']}>" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="{$show['image']}{$imgsize}" alt=""/>
+                <img src="<{$show['image']}><{$imgsize}>" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left ellipsis msty f3">{$show['title']}</span>
+                  <span class="color00 pull-left ellipsis msty f3"><{$show['title']}></span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
-                    <span>{$show['numbers']}</span>
+                    <span><{$show['numbers']}></span>
                   </div>
                 </div>
-                <p class="color99 ellipsis msty f3">{$show['descri']}</p>
+                <p class="color99 ellipsis msty f3"><{$show['descri']}></p>
               </div>
 
             </a>
           </div>
-             {/if}
-         {/foreach}  
+             <{/if}>
+         <{/foreach}>  
          
-         {foreach from=$hotAnchors item=show key=key}
-                    {if $key=={$hotNum}}  
+         <{foreach from=$hotAnchors item=show key=key}>
+                    <{if $key==<{$hotNum}>}>  
              <div class="col-xs-6">
-            <a href="{$show['roomNumber']}" class="thumbnail">
+            <a href="<{$show['roomNumber']}>" class="thumbnail">
               <div class="recommImg thumbnail">
-                <img src="{$show['image']}{$imgsize}" alt=""/>
+                <img src="<{$show['image']}><{$imgsize}>" alt=""/>
                 <div class="thumb-bar"></div>
               </div>
               <div class="recommB">
                 <div class="clearfix">
-                  <span class="color00 pull-left ellipsis msty f3">{$show['title']}</span>
+                  <span class="color00 pull-left ellipsis msty f3"><{$show['title']}></span>
                   <div class="color99 pull-right f2_8">
                     <span class="glyphicon glyphicon-eye-open"></span>
-                    <span>{$show['numbers']}</span>
+                    <span><{$show['numbers']}></span>
                   </div>
                 </div>
-                <p class="color99 ellipsis msty f3">{$show['descri']}</p>
+                <p class="color99 ellipsis msty f3"><{$show['descri']}></p>
               </div>
 
             </a>
           </div>
-             {/if}
-         {/foreach}  
-      {/if}
+             <{/if}>
+         <{/foreach}>  
+      <{/if}>
           <!-- <div class="col-xs-6" ng-repeat="reply in replies">
                 <a href="#" class="thumbnail">
                   <div class="recommImg thumbnail">
