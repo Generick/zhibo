@@ -102,7 +102,7 @@ $(document).ready(function(){
 	
 	$(function () {
 
-        $("*").on("click","a",function(){
+        $("*").live("click","a",function(){
             if(document.all){
               //  alert("IE");
                 window.location.href="/html/guild/index.html";  return false;
