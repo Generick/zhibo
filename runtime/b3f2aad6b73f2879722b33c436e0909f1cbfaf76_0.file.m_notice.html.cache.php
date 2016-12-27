@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 15:40:50
+/* Smarty version 3.1.30, created on 2016-12-27 10:55:25
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\m_notice.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585cd5020896e5_42307052',
+  'unifunc' => 'content_5861d81d24f8e6_21803174',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b3f2aad6b73f2879722b33c436e0909f1cbfaf76' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\m_notice.html',
-      1 => 1482478847,
+      1 => 1482746332,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu_left.html' => 1,
   ),
 ),false)) {
-function content_585cd5020896e5_42307052 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '3195585cd50204ed20_68904168';
+function content_5861d81d24f8e6_21803174 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '70215861d81d215ff7_68927047';
 ?>
 <!--main-->
 <div class="inmiddle" ng-controller="center">

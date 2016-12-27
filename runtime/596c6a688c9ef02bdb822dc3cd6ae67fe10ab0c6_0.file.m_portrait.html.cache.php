@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 14:32:15
+/* Smarty version 3.1.30, created on 2016-12-27 11:21:33
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\m_portrait.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860b96f0a9e64_67946055',
+  'unifunc' => 'content_5861de3d729992_65616689',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '596c6a688c9ef02bdb822dc3cd6ae67fe10ab0c6' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\m_portrait.html',
-      1 => 1482733914,
+      1 => 1482808831,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu_left.html' => 1,
   ),
 ),false)) {
-function content_5860b96f0a9e64_67946055 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '104345860b96f0514e9_32136260';
+function content_5861de3d729992_65616689 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '326305861de3d6fdd34_27362555';
 ?>
 <!--main-->
 <div class="inmiddle">
@@ -58,15 +58,16 @@ $_smarty_tpl->compiled->nocache_hash = '104345860b96f0514e9_32136260';
     <?php echo '<script'; ?>
 >
         function avatarUploadComplete(){
-            $("#personavatar").attr("src","/apis/avatar.php?uid=<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
+            $("#personavatar").attr("src","/kedo.php?c=centeros&m=avatar&uid=<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
 &_t="+new Date().getTime());
             window.location.reload();
         }
         $(function(){
             swfobject.addDomLoadEvent(function () {
+			var oldurl = "/fullAvatarEditor/upload.php";
                 var swf = new fullAvatarEditor("/public/centeros/js/fullAvatarEditor/fullAvatarEditor.swf", "/public/centeros/js/fullAvatarEditor/expressInstall.swf", "swfContainer", {
                         id : 'uploadavatarbtn',
-                        upload_url : '/fullAvatarEditor/upload.php',	//上传接口
+                        upload_url : '/kedo.php?c=centeros&m=imgupload',	//上传接口
                         method : 'post',	//传递到上传接口中的查询参数的提交方式。更改该值时，请注意更改上传接口中的查询参数的接收方式
                         src_upload : 0,		//是否上传原图片的选项，有以下值：0-不上传；1-上传；2-显示复选框由用户选择
                         avatar_box_border_width : 1,
@@ -74,6 +75,7 @@ $_smarty_tpl->compiled->nocache_hash = '104345860b96f0514e9_32136260';
                         isShowUploadResultIcon:true,
                         avatar_sizes_desc : '120*120像素'
                     }, function (msg) {
+					console.log(msg);
                         switch(msg.code)
                         {
                             case 1 : break;//页面成功加载了组件！

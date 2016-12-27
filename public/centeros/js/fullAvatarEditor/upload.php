@@ -2,19 +2,21 @@
 
 include(dirname(dirname(__FILE__))."/include/header.inc.php");
 include(dirname(dirname(__FILE__))."/include/level.func.php");
-header('Content-Type: text/html; charset=utf-8');
+
+//$path = $_SERVER['DOCUMENT_ROOT'];
+//include $path."/index.php";
+//header('Content-Type: text/html; charset=utf-8');
 $result = array();
 $result['success'] = false;
 $success_num = 0;
 $msg = '';
 $user=checklogin();
 //上传目录
-$dir = dirname(dirname(__FILE__))."/upload/";
+$dir = "/public/upload/";
 
 if(!file_exists($dir)){
     mkdir($dir,0755);
 }
-
 
 function uploadImages1($imgurl){
     $zimg_upload_url = _IMAGES_DOMAIN_;

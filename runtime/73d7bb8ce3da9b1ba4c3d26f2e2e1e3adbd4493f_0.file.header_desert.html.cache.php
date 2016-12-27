@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 14:22:35
+/* Smarty version 3.1.30, created on 2016-12-26 15:10:58
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\header_desert.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860b72b5b0d27_33937542',
+  'unifunc' => 'content_5860c282dbe655_64900890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73d7bb8ce3da9b1ba4c3d26f2e2e1e3adbd4493f' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\header_desert.html',
-      1 => 1482733352,
+      1 => 1482736256,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5860b72b5b0d27_33937542 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '260705860b72b5783a5_20097379';
+function content_5860c282dbe655_64900890 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '96255860c282d835c1_05224050';
 ?>
 <!--<link data-fixed="true" href="/templates/index.css" rel="stylesheet">-->
 <link data-fixed="true" href="/public/centeros/css/bootstrap.min.css" rel="stylesheet">
@@ -95,7 +95,7 @@ $_smarty_tpl->compiled->nocache_hash = '260705860b72b5783a5_20097379';
             <?php } else { ?>
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
 
-                <li><a href="/centeros.php"><?php echo $_smarty_tpl->tpl_vars['user']->value['nickname'];?>
+                <li><a href="/kedo.php?c=centeros&m=index"><?php echo $_smarty_tpl->tpl_vars['user']->value['nickname'];?>
 </a></li>
                 <li><a class= "header-notice" style=" "></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
@@ -106,8 +106,8 @@ $_smarty_tpl->compiled->nocache_hash = '260705860b72b5783a5_20097379';
                 
                     <style>
                         .header-notice{margin-top: 20px;}
-                        .header-notice,.img-notice{display:inline-block;width:24px;height: 18px;  background: url("/images/kedo/header_notice.png") no-repeat;cursor: pointer}
-                        .header-notice:hover{background: url("/images/kedo/header_notice_hover.png") no-repeat;}
+                        .header-notice,.img-notice{display:inline-block;width:24px;height: 18px;  background: url("/public/centeros/images/header_notice.png") no-repeat;cursor: pointer}
+                        /*.header-notice:hover{background: url("/images/kedo/header_notice_hover.png") no-repeat;}*/
                         .notice-list{display:none;position: absolute;overflow: hidden;
                             font-size: 12px;
                             background-color: #fff;

@@ -127,7 +127,7 @@ var tLoginContent='<div class="bgmask" style="display: none; height: 100%; z-ind
 		</div>\
 	</div>\
 </div>';
-document.write('<link href="/css/login.css?20150413" type="text/css" rel="stylesheet" />');
+document.write('<link href="/public/centeros/css/login.css?20150413" type="text/css" rel="stylesheet" />');
 document.write(tLoginContent);
 function changeVaildcode(){
 	$(".yzmimg_reg").attr('src','/tools/captcha.php?_t='+getTimestamp());

@@ -30,8 +30,8 @@ img {
 .center-info .info-left{margin:30px 0 0 66px;}
 .c-photo,.c-myname,.info-left,.info-middle,.c-right{float:left;}
 .a-myname{float: left;margin-top:12px;}
-.center-edit{background:url("/skin/desert/images/icon_bianji.png") no-repeat; width:14px;height:15px;cursor: pointer;  display: inline-block; margin-left: 15px;}
-.center-edit:active{background:url("/skin/desert/images/icon_bianji_anxia.png") no-repeat;}
+.center-edit{background:url("/public/centeros/skin/desert/images/icon_bianji.png") no-repeat; width:14px;height:15px;cursor: pointer;  display: inline-block; margin-left: 15px;}
+.center-edit:active{background:url("/public/centeros/skin/desert/images/icon_bianji_anxia.png") no-repeat;}
 .uid{color: #333333;font-weight: 700;margin-top:15px}
 .c-photo{margin-right: 20px;}
 .c-photo img{width: 52px;  height: 52px;  -webkit-border-radius: 50%;  -moz-border-radius: 50%;  -o-border-radius: 50%;  border: solid 1px #E74152;  border-radius: 50%;  margin-top: 14px;}
@@ -52,7 +52,7 @@ img {
 .info-middle .c-level-bar i{position: absolute;right: 10px;width:24px;height: 17px; top: -5px;}
 .info-middle{position: absolute;left: 350px;  top: 45px;  padding-left: 72px;  border-left: 1px solid #ddd;}
 .c-right{position: absolute; left: 830px; top: 45px; border-left: 1px solid #ddd; padding-left: 90px;}
-.c-right .c-funds .c-funds-jb{background: url(/img/icon_money.png) no-repeat left;float:left;margin-right: 40px;height: 20px; padding-left: 28px;padding-top: 3px;color: #E74152}
+.c-right .c-funds .c-funds-jb{background: url(/public/centeros/images/icon_money.png) no-repeat left;float:left;margin-right: 40px;height: 20px; padding-left: 28px;padding-top: 3px;color: #E74152}
 .c-right .c-funds .c-funds-db{float:left;font-size: 12px;color: #434343;margin-right: 40px;height: 20px; padding-right: 22px;padding-top: 8px;}
 .c-right .c-funds .c-funds-cz{width:42px;height: 22px;color: #fff;background: #E74152;font-size: 12px;float: left; padding-top: 4px; text-align: center; border-radius: 2px;cursor: pointer;line-height: 14px;}
 .c-right .c-funds .c-funds-cz:hover{background-color:#ea7a85; }
@@ -133,20 +133,20 @@ img {
 .center-left .cl-focus .cl-title{color: #fff; }
 .cl-title{position: absolute;left: 60px;top:16px;width:100px;padding-left: 30px;height: 30px;line-height: 30px;}
 .pi a{width:100%;height: 100%;display: inline-block}
-.cl-index{background: url("/skin/desert/images/icon_home.png") no-repeat left center;}
-.cl-focus .cl-index{background: url("/skin/desert/images/icon_home_hover.png") no-repeat left center;}
-.cl-trade{background: url("/skin/desert/images/icon_shape.png") no-repeat left center;}
-.cl-focus .cl-trade{background: url("/skin/desert/images/icon_shape_hover.png") no-repeat left center;}
-.cl-treasure{background: url("/skin/desert/images/icon_caifu.png") no-repeat left center;}
-.cl-focus .cl-treasure{background: url("/skin/desert/images/icon_caifu_hover.png") no-repeat left center;}
-.cl-focus .cl-notice{background: url("/skin/desert/images/icon_xiaoxi_hover.png") no-repeat left center;}
-.cl-notice{background: url("/skin/desert/images/icon_xiaoxi.png") no-repeat left center;}
-.cl-focus .cl-care{background: url("/skin/desert/images/icon_guanzhu_hover.png") no-repeat left center;}
-.cl-care{background: url("/skin/desert/images/icon_guanzhu.png") no-repeat left center;}
-.cl-setting{background: url("/skin/desert/images/icon_Settings.png") no-repeat left center;}
-.cl-focus .cl-setting{background: url("/skin/desert/images/icon_Settings_hover.png") no-repeat left center;}
-.arrow-down{width:11px;height: 7px; background: url("/skin/desert/images/arrow.png") no-repeat;position: absolute;right: 30px;top:30px;}
-.arrow-up{width:20px;height: 11px; background: url("/skin/desert/images/arrow1.png")no-repeat;position: absolute;right: 30px;top:30px;}
+.cl-index{background: url("/public/centeros/skin/desert/images/icon_home.png") no-repeat left center;}
+.cl-focus .cl-index{background: url("/public/centeros/skin/desert/images/icon_home_hover.png") no-repeat left center;}
+.cl-trade{background: url("/public/centeros/skin/desert/images/icon_shape.png") no-repeat left center;}
+.cl-focus .cl-trade{background: url("/public/centeros/skin/desert/images/icon_shape_hover.png") no-repeat left center;}
+.cl-treasure{background: url("/public/centeros/skin/desert/images/icon_caifu.png") no-repeat left center;}
+.cl-focus .cl-treasure{background: url("/public/centeros/skin/desert/images/icon_caifu_hover.png") no-repeat left center;}
+.cl-focus .cl-notice{background: url("/public/centeros/skin/desert/images/icon_xiaoxi_hover.png") no-repeat left center;}
+.cl-notice{background: url("/public/centeros/skin/desert/images/icon_xiaoxi.png") no-repeat left center;}
+.cl-focus .cl-care{background: url("/public/centeros/skin/desert/images/icon_guanzhu_hover.png") no-repeat left center;}
+.cl-care{background: url("/public/centeros/skin/desert/images/icon_guanzhu.png") no-repeat left center;}
+.cl-setting{background: url("/public/centeros/skin/desert/images/icon_Settings.png") no-repeat left center;}
+.cl-focus .cl-setting{background: url("/public/centeros/skin/desert/images/icon_Settings_hover.png") no-repeat left center;}
+.arrow-down{width:11px;height: 7px; background: url("/public/centeros/skin/desert/images/arrow.png") no-repeat;position: absolute;right: 30px;top:30px;}
+.arrow-up{width:20px;height: 11px; background: url("/public/centeros/skin/desert/images/arrow1.png")no-repeat;position: absolute;right: 30px;top:30px;}
 .cl-title a{display: inline-block;}
 .cl-set-info{background:#fefefe;width: 308px;border-bottom: 1px solid #ccc}
 .cl-set-info ul{font-size: 14px;}
@@ -184,7 +184,7 @@ img {
 .care-li .care-current-title{margin-top:20px;color:#f03f38;}
 .care-li .canel-care{display: inline-block;margin-left: 20px;cursor: pointer;color:#999;}
 .care-li .canel-care:hover{color:#f03f38}
-.care-li .care-current-time{margin-top:8px;color:#3e3e3e;background:url(./skin/ym/images/position.png) left center no-repeat;padding-left:15px;}
+.care-li .care-current-time{margin-top:8px;color:#3e3e3e;background:url(./public/centeros/skin/ym/images/position.png) left center no-repeat;padding-left:15px;}
 .care-li .care-next-title{margin-top:20px;color:#333}
 .care-li .care-next-time{margin-top:8px;color:#999}
 
@@ -260,7 +260,7 @@ img {
 .input-pass2{ }
 .next-bt-area{text-align: center}
 .input-pass2 #fin-new-pass,.input-pass2 #fin-renew-pass{width:200px;height: 30px;line-height: 30px;}
-.setting-gous{margin-left:130px;margin-top:50px;height: 60px;padding-left: 80px;background: url("./skin/ym/images/mpass-email.png") no-repeat left center;line-height: 30px}
+.setting-gous{margin-left:130px;margin-top:50px;height: 60px;padding-left: 80px;background: url("./public/centeros/skin/ym/images/mpass-email.png") no-repeat left center;line-height: 30px}
 .fin-endding1{font-size: 16px;color: #000000;text-align: left}
 .fin-endding2{font-size: 15px;color: #666;text-align: left}
 .setting-gous2{margin-top: 20px;color: #666;padding-left: 210px;text-align: left}
@@ -387,7 +387,7 @@ img {
 
 .message-buy-box{width:393px; height: 393px;position: absolute;left: 310px;top: 30px;background: #302C2D;border: 5px solid #201F27}
 .mbb-top{margin-left: 18px;margin-top: 30px;color:#F4F2F3}
-.mbb-img-left{float:left;width:62px;height: 62px;background: url("/skin/ym/images/vip.png") no-repeat;}
+.mbb-img-left{float:left;width:62px;height: 62px;background: url("/public/centeros/skin/ym/images/vip.png") no-repeat;}
 .mbb-middle{margin-left: 18px;margin-top: 18px;width:340px;height: 62px;overflow:hidden;border-bottom: #3B3738 1px solid;padding-bottom:90px;}
 .mbb-con-right{float: left;margin-left: 22px;width: 250px;    margin-right: -20px; }
 .mbb-con-title{color:#F4F2F3; }
@@ -408,21 +408,21 @@ img {
 
 /**财富*/
 .cr-treasure-main{padding-top: 40px;padding-left: 40px;}
-.es-box{width:183px;height: 66px;padding-left: 80px;background: url("/skin/ym/images/tq5.png") no-repeat; float: left;margin-right: 20px;}
+.es-box{width:183px;height: 66px;padding-left: 80px;background: url("/public/centeros/skin/ym/images/tq5.png") no-repeat; float: left;margin-right: 20px;}
 .es-box .es-top,.no-tr-box .ntb-title{font-size: 16px;color: #333333;margin-top: 3px;margin-bottom: 7px;}
 .es-box .es-mid,.no-tr-box  .ntb-mid{font-size: 12px;color: #666}
 .es-box .es-bot,.no-tr-box  .ntb-bot{font-size: 12px;color: #ED3E45;margin-top: 10px;}
 .none-treasure-title{padding: 27px 0 15px 0px; color: #5F5D68;font-size: 22px;border-bottom: 1px solid #D5D5D5;width: 920px;}
 .no-tr-box{width:280px;height: 70px;margin-top: 36px;float: left}
 .no-tr-box .limg{width:67px;height: 67px;float: left;margin-right:12px;border: 1px solid #E5E5E5;text-align: center;vertical-align: middle}
-.ll1{background: url("/skin/ym/images/jiange.png") no-repeat center;}
-.no-tr-box .ll2{background: url("/skin/ym/images/jinchang.png") no-repeat center;border:none}
-.ll3{background: url("/skin/ym/images/laba.png") no-repeat center;}
-.ll4{background: url("/skin/ym/images/diange.png") no-repeat center;}
-.ll5{background: url("/skin/ym/images/siliao.png") no-repeat center;}
-.ll6{background: url("/skin/ym/images/baioqing.png") no-repeat center;}
-.ll7{background: url("/skin/ym/images/jinyan.png") no-repeat center;}
-.ll8{background: url("/skin/ym/images/tichu.png") no-repeat center;}
+.ll1{background: url("/public/centeros/skin/ym/images/jiange.png") no-repeat center;}
+.no-tr-box .ll2{background: url("/public/centeros/skin/ym/images/jinchang.png") no-repeat center;border:none}
+.ll3{background: url("/public/centeros/skin/ym/images/laba.png") no-repeat center;}
+.ll4{background: url("/public/centeros/skin/ym/images/diange.png") no-repeat center;}
+.ll5{background: url("/public/centeros/skin/ym/images/siliao.png") no-repeat center;}
+.ll6{background: url("/public/centeros/skin/ym/images/baioqing.png") no-repeat center;}
+.ll7{background: url("/public/centeros/skin/ym/images/jinyan.png") no-repeat center;}
+.ll8{background: url("/public/centeros/skin/ym/images/tichu.png") no-repeat center;}
 
 /**广场*/
 .main-square{width:1278px; margin:40px auto;padding-top:60px;padding-bottom:60px; padding-left:70px;overflow: hidden;}
