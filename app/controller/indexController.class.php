@@ -50,7 +50,6 @@
 		$view->registerPlugin("function","toColor","toColor");
 		$view->registerPlugin("function","toTime","toTime");
 		
-		
 		$view->display('index.html');
 		
 		//include("include/footer.inc.php");
