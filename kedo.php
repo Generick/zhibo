@@ -20,5 +20,4 @@
  		$method=isset($_GET['m'])?daddslashes($_GET['m']):'index';
 	 	C($controller, $method);
  	}
-    console_log(json_encode($_SESSION));
  ?>

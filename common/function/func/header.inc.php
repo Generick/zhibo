@@ -12,7 +12,6 @@ if(isset($_GET['c'])){
 }
 
 //vision
-$page_var['vsn']=@$vsn;
 
 $http_host=$_SERVER['HTTP_HOST'];
 switch($http_host){
@@ -63,8 +62,8 @@ session::getSession('redis',array(
 
 
 session_start();
-
-
+global $page_var;
+$page_var['vsn']=$vsn;
 define('_COOKIE_DOMAIN_',$_SERVER['HTTP_HOST']);//cookie域
 //echo _COOKIE_DOMAIN_;
 define('_API_URL_','http://'.$_SERVER['HTTP_HOST'].'/apis/');
@@ -96,9 +95,8 @@ if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['o
     $page_var['index_page'] =$index_page;
 }else{
     $index_page = "";
-    $page_var['index_page'] ="";
+    $page_var['index_page'] = "";
 }
-
 /*读取网站配置结束*/
 if (!get_magic_quotes_gpc()) {
     function addslashesDeep($var) {

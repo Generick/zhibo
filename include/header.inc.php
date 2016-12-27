@@ -11,9 +11,6 @@ if(isset($_GET['c'])){
     $tm=true;
 }
 
-//vision
-$page_var['vsn']=@$vsn;
-
 $http_host=$_SERVER['HTTP_HOST'];
 switch($http_host){
     case "127.0.0.1":
@@ -61,9 +58,9 @@ session::getSession('redis',array(
 
 session_start();
 
-
+global $page_var;
+$page_var['vsn']=$vsn;
 define('_COOKIE_DOMAIN_',$_SERVER['HTTP_HOST']);//cookie域
-//echo _COOKIE_DOMAIN_;
 define('_API_URL_','http://'.$_SERVER['HTTP_HOST'].'/apis/');
 define('_RESET_PWD_URL_','http://'.$_SERVER['HTTP_HOST'].'/resetpassword/');
 define('_MAIN_DOMAIN_',$_SERVER['HTTP_HOST']);
