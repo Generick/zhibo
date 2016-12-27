@@ -10,6 +10,7 @@
 		$controller=$name.'Controller';
 		$obj=new $controller();
 		$obj->$method();
+		return $obj->$method();
 	}
 	
 	
