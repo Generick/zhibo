@@ -11,13 +11,16 @@ define('ajax/userinfo', function(require, exports, module){
             city: $("#city").val()
         }
         var common=require("./common");
+		var oldurl = '/ajax/refactorUserInfo?action=base';
+		var newurl = '/kedo.php?c=centerosAPI&m=base';
         $.ajax({
             type: "POST",
             cache: false,
-            url: "/ajax/refactorUserInfo.php?action=base",
+            url: newurl,
             data:data,
             contentType: "application/x-www-form-urlencoded",
             success: function (data) {
+				//console.log(data);
                 common.clert(data.errorMessage);
             }
         });

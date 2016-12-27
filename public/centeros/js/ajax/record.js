@@ -29,10 +29,12 @@ define('ajax/record', function(require, exports, module){
         return ret;
     }
     function initHtml($page){
+		var oldurl = '/ajax/get_record.php';
+		var newurl = '/kedo.php?c=centerosAPI&m=get_record';
         $h="";
         $p=$page?$page:1;
         Tools.getDate({
-            url: '/ajax/get_record.php',
+            url: newurl,
             data:{
                 y:$("#research-year").val(),
                 m:$("#research-month").val(),

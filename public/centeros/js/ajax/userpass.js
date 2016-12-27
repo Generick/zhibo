@@ -7,13 +7,16 @@ define('ajax/userpass', function(require, exports, module){
             new_password:$("#new-pass").val(),
             new_repassword:$("#re-pass").val()
         }
+		var old = '/ajax/refactorUserInfo.php?action=pass';
+		var newurl = '/kedo.php?c=centerosAPI&m=changePass';
         $.ajax({
             type: "POST",
             cache: false,
-            url: "/ajax/refactorUserInfo.php?action=pass",
+            url: newurl,
             data:data,
             contentType: "application/x-www-form-urlencoded",
             success: function (data) {
+				console.log(data);
                 data=$.parseJSON(data);
                 common.clert(data.errorMessage);
                 if(data.resultStatus == 200){

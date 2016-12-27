@@ -10,9 +10,11 @@ define('ajax/phone', function(require, exports, module){
             if($('.phone_error').is(":visible")){
                 $('.phone_error').hide();
             }
+			var oldsend = 'ajax/sendPhone.php';
+			var newsend = '/kedo.php?c=centerosAPI&m=sendSMS';
             $.ajax({
                 type: "POST",
-                url: '/ajax/sendPhone.php',
+                url: oldsend,
                 data: {
                     number:$('#phone').val(),
                     type:'send'
@@ -60,10 +62,12 @@ define('ajax/phone', function(require, exports, module){
             $('.resend-ms').text('请输入手机上接收的验证码!').show();
             return;
         }
-
+		
+		var oldurl = 'ajax/sendPhone.php';
+		var newurl = '/kedo.php?c=centerosAPI&m=bindPhone';
         $.ajax({
             type: "POST",
-            url: '/ajax/sendPhone.php',
+            url: oldurl,
             data: {
                 code:$('#code').val(),
                 type:'bind'

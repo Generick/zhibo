@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 18:46:53
+/* Smarty version 3.1.30, created on 2016-12-27 18:37:37
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\m_pass.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585d009de5a9a2_19528280',
+  'unifunc' => 'content_586244717d6968_48682305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e20822f6666a7f140d0a9c5c876ed99b32a3fcb5' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\m_pass.html',
-      1 => 1482489814,
+      1 => 1482835054,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu_left.html' => 1,
   ),
 ),false)) {
-function content_585d009de5a9a2_19528280 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '15484585d009de1e131_88595077';
+function content_586244717d6968_48682305 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '2583858624471776912_93775194';
 ?>
 <!--main-->
 <div class="inmiddle">
@@ -61,14 +61,14 @@ $_smarty_tpl->compiled->nocache_hash = '15484585d009de1e131_88595077';
                 <div class="else-pass-title">其他方式修改</div>
                 <div class="midify-else">
                     <div class="modify-by-">
-                        <div class="mod-bleft"> <img src="/skin/ym/images/mpass-phone.png" /> </div>
+                        <div class="mod-bleft"> <img src="/public/centeros/skin/ym/images/mpass-phone.png" /> </div>
                         <div class="mod-bright">
                             <div>通过手机修改</div>
                             <button class="ck-pass-phone">点击修改</button>
                         </div>
                     </div>
                     <div class="modify-by-" style="float:right;">
-                        <div class="mod-bleft"> <img src="/skin/ym/images/mpass-email.png" style="margin-top:40px"/> </div>
+                        <div class="mod-bleft"> <img src="/public/centeros/skin/ym/images/mpass-email.png" style="margin-top:40px"/> </div>
                         <div class="mod-bright">
                             <div>通过邮箱修改</div>
                             <button class="ck-pass-phone">点击修改</button>
