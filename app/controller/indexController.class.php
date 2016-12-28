@@ -26,14 +26,11 @@
 		}
 		
 		$page_var['user']=$user;
-		$page_var['vsn']=$vsn;
-		
 		$page_var['sid']=session_id();
 		$page_var['ip'] = get_real_ips();
 		
 		
-		$view->assign('pointlimit', $pointlimit);
-		
+
 		//当前页面标示
 		$page_var['current_page']="index";
 		
@@ -49,7 +46,6 @@
 		}
 		$view->registerPlugin("function","toColor","toColor");
 		$view->registerPlugin("function","toTime","toTime");
-		
 		
 		$view->display('index.html');
 		

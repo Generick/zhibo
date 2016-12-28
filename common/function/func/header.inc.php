@@ -97,6 +97,7 @@ if(($_SESSION['pf'] == "QQGame" or $_SESSION['pf'] == "qqgame") and $_SESSION['o
     $index_page = "";
     $page_var['index_page'] = "";
 }
+
 /*读取网站配置结束*/
 if (!get_magic_quotes_gpc()) {
     function addslashesDeep($var) {

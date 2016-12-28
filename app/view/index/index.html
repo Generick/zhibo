@@ -227,6 +227,9 @@
                         <{if $user.socType==1}>
                        <a  target="_blank" href="<{$coreweb}>?userId=<{$user.userId}>&token=<{$gf_token}>" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                         <{/if}>
+                        <{if $user.socType==3}>
+                       <a  target="_blank" href="<{$coreweb}>?userId=<{$user.userId}>&token=<{$gf_token}>&type=1" class="oww btn btn-md btn-default colorBlue pull-right">AW</a>
+                        <{/if}>
                     </p> 
         
         
