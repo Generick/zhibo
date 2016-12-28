@@ -14,7 +14,7 @@
         	<div class="clearfix">
                 <div class="cr-title pull-left">消息中心</div>
                 <ul class="pagination pull-right">
-                    <li ng-repeat="item in pages" ng-class="item==curPage ?'active':''" ng-click="getPage(item,userId)"><a ng-href="javascript:;">{{item}}</a></li>
+                    <li ng-repeat="item in pages" ng-class="item==curPage ?'active':''" ng-click="getPage(item,userId)"><a href="javascript:;">{{item}}</a></li>
                 </ul>
             </div>
 
