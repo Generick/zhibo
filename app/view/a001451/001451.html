@@ -9,8 +9,7 @@
 		room.controller('room',function($scope,$http){
 			$scope.roomN=[];
 			$http.get("/rest/site/roomAts.mt?roomNumber=1024&type=2&number=1",{
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
-				params:{adus:<{$adus}>}
+				params:{adus:"<{$adus}>",adgId:"<{$adgId}>"}
 			}).success(function(json){
 				$scope.roomNs=json.data[0].roomNumber;
 				window.location.href=$scope.roomNs;
@@ -24,7 +23,6 @@
 	
 </script>
 </head>
-
 <body ng-controller="room">
 </body>
 </html>

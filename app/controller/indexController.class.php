@@ -3,7 +3,7 @@
 	class indexController{
 	public function index(){
 		global $view;
-		global $vsn;
+		global $page_var;
 			//$testModel=M('test');
 			//$data=$testModel->get();
 			//$view->assign('str',$data);
@@ -26,14 +26,11 @@
 		}
 		
 		$page_var['user']=$user;
-		$page_var['vsn']=$vsn;
-		
 		$page_var['sid']=session_id();
 		$page_var['ip'] = get_real_ips();
 		
 		
-		$view->assign('pointlimit', $pointlimit);
-		
+
 		//当前页面标示
 		$page_var['current_page']="index";
 		
@@ -49,7 +46,6 @@
 		}
 		$view->registerPlugin("function","toColor","toColor");
 		$view->registerPlugin("function","toTime","toTime");
-		
 		
 		$view->display('index.html');
 		

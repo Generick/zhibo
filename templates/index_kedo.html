@@ -35,9 +35,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav hdNavL">
                 <li class="{if $current_page=='index'}active{/if}"><a href="/index_qqgame.php">首页</a></li>
-                <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
-                <li class="{if $current_page=='mall'}active{/if}"><a href="/mall.php">商城</a> </li>
-                <li class="{if $current_page=='order'}active{/if}"><a href="/orders.php">排行榜</a> </li>
+                <li class="{if $current_page=='square'}active{/if}"><a href="/kedo.php?c=square">广场</a> </li>
+                <li class="{if $current_page=='mall'}active{/if}"><a href="/kedo.php?c=mall">商城</a> </li>
+                <li class="{if $current_page=='order'}active{/if}"><a href="/kedo.php?c=orders">排行榜</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                  <!--<div class="form-group">
@@ -344,15 +344,19 @@
 
     <script src="/js/bootstrap/html5shiv.min.js"></script>
     <script src="/js/bootstrap/respond.min.js"></script>
-    <!-- <script src="http://minigame.qq.com/plat/social_hall/app_frame/qqgamelib.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if(GameAPI.SNSBrowser.IsQQGame()){
-            GameAPI.Aux.chk_origin = null;
-            GameAPI.SNSBrowser.SetSize(912, 1500);
-            GameAPI.SNSBrowser.SetOK();
-        }
-    });
-      </script> -->
+
+        <script src="http://qqgameplatcdn.qq.com/social_hall/js/jquery.js"></script>
+        <script src="http://qqgameplatcdn.qq.com/social_hall/js/jquery.pm.js"></script>
+        <script src="http://qqgameplatcdn.qq.com/social_hall/app_frame/qqgamelib.js"></script>
+
+        <script type="text/javascript">
+          $(function(){
+            if(GameAPI.SNSBrowser.IsQQGame()){
+                GameAPI.Aux.chk_origin = null;
+                GameAPI.SNSBrowser.SetSize(900, 1600);
+                GameAPI.SNSBrowser.SetOK();
+            }
+        });
+          </script>
   </body>
 </html>

@@ -5,26 +5,14 @@
     <title>广场-蝌蚪直播</title>
     <meta property="qc:admins" content="105415766763547646" />
     <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
-    <!--<link data-fixed="true" href="/templates/square.css" rel="stylesheet">-->
-    <link href="/css/kedo/style.css?vsn={$vsn}" rel="stylesheet">
-    <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
-    <script src="/skin/desert/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/login.js??{$vsn}"></script>
-    <script type="text/javascript" src="/js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/js/angular/square.js"></script>
-    <script>
-    $(function(){
-        function SwapTab(name, title, content, Sub, cur) {
-            $(name + ' ' + title).click(function () {
-                $(this).addClass(cur).siblings().removeClass(cur);
-                $(content + " > " + Sub).eq($(name + ' ' + title).index(this)).show().siblings().hide();
     
-            })
-        }
-        
-        SwapTab(".square .squareTit", "div", ".squareCon", ".squareDe", "active");
-    })
-    </script>
+    <link href="<{$cdn}>/public/square/css/style.css?vsn=<{$vsn}>" rel="stylesheet">
+    <link href="<{$cdn}>/public/square/css/anchorLevel.css?vsn=<{$vsn}>" rel="stylesheet">
+    <script src="public/min/jquery.min.js"></script>
+    <script src="public/min/angular.min.js" type="text/javascript" ></script>
+    <script src="<{$cdn}>/public/square/js/square.js" type="text/javascript" ></script>
+    <script src="<{$cdn}>/js/login.js" type="text/javascript" ></script>
+   
 </head>
 <body style="padding-top:100px;" ng-controller="square">
 

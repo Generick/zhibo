@@ -5,6 +5,7 @@
 			global $view;
 			
 			$page_var['adus']=$_GET['adus'];
+			$page_var['adgId']=$_GET['adgId'];
 			$page_var['cdn']=_CDNDOMAIN_;
 			
 			foreach($page_var as $key=>$val){
