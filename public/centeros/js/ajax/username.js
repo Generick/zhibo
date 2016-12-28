@@ -6,10 +6,12 @@ define('ajax/username', function (require, exports, module) {
         var data = {
             nickname: $("#nickname").val()
         }
+		var oldurl = '/ajax/refactorUserInfo.php?action=editName';
+		var newurl = '/kedo.php?c=centerosAPI&m=editName';
         $.ajax({
             type: "POST",
             cache: false,
-            url: "/ajax/refactorUserInfo.php?action=editName",
+            url: newurl,
             contentType: "application/x-www-form-urlencoded",
             data: data,
             success: function (data) {
@@ -20,7 +22,7 @@ define('ajax/username', function (require, exports, module) {
                     $(".a-myname").show();
                     $(".c-myname").hide();
                 } else {
-                    alert(data.errorMessage);
+                    common.clert(data.errorMessage);
                 }
             }
         });

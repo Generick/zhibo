@@ -101,7 +101,7 @@ li{
 
     /*商标*/
     .logo_head {
-        background: url(/images/kedo/logo_head.png) no-repeat;
+        background: url(/public/centeros/images/logo_head.png) no-repeat;
         width: 120px;
         height: 45px;
         margin-right: 25px;

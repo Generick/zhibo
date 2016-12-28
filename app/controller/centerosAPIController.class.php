@@ -78,6 +78,27 @@ class centerosAPIController{
 		//
 	}
 
+	function editName(){
+		$user = checklogin();
+		$nickname = $_REQUEST['nickname'];
+	    $r=check_nickname($nickname);
+	    if($r!="yes"){
+	        echo json_encode(array("resultStatus"=>100,"errorMessage"=>$r));
+	        exit();
+	    }else{
+	    	//echo  json_encode(array("resultStatus"=>100,"errorMessage"=>"hhhh","info"=>$nickname,"r"=>$r));
+	    	//exit();
+	        //$snic=$nickname;
+	        $nickname = urlencode($nickname);
+	        $this->db->Execute("update bu_user set nickname='{$nickname}' where userId='{$user['userId']}'");
+
+	        $userinfo=search_save_user($user['userId']);
+	        set_login_info($userinfo);
+	        echo json_encode(array("resultStatus"=>200,"errorMessage"=>"用户名Ok"));
+	        exit();
+	    }
+	}
+
 	function base(){
 		$user = checklogin();
 		if ($_POST['year']!="" && $_POST['month']!="" && $_POST['day']!="") {

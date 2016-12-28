@@ -274,7 +274,8 @@ class centerosController{
 
     function showCommon(){
         $this->view->display('common.html');
-        $this->view->display('header_desert.html');
+        //$this->view->display('header_desert.html');
+        $this->view->display('header.html');
   }
 
     function imgupload(){
