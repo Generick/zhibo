@@ -3,7 +3,7 @@
 		
 		public function index(){
 			global $view;
-			global $vsn;
+			global $page_var;
 			
 			$page_var['cdn']=_CDNDOMAIN_;
 			$page_var['current_page']="mall";
@@ -19,7 +19,7 @@
 		
 		public function mall_prop(){
 			global $view;
-			global $vsn;
+			global $page_var;
 				
 			$page_var['cdn']=_CDNDOMAIN_;
 			$page_var['current_page']="mall";
@@ -35,7 +35,7 @@
 		
 		public function mall_ride(){
 			global $view;
-			global $vsn;
+			global $page_var;
 				
 			$page_var['cdn']=_CDNDOMAIN_;
 			$page_var['current_page']="mall";

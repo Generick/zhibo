@@ -109,10 +109,5 @@ foreach ($page_var as $key => $val) {
 }
 $smarty->registerPlugin("function", "toColor", "toColor");
 $smarty->registerPlugin("function", "toTime", "toTime");
-
-if ($_GET["qz"] == "ajax") {
-    $smarty->display("index_{$page_var['site_skin']}_ajax.html");
-} else {
-    $smarty->display("index_kedo.html");
-}
+$smarty->display("index_kedo.html");
 include("include/footer.inc.php");
