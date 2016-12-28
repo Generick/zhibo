@@ -67,10 +67,15 @@ class centerosAPIController{
 		exit();
 	}
 
-	function get_recive(){
+	function testsms(){
 		$phoneNumber = '18255001881';
 		$datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt","number=$phoneNumber");
 		echo json_encode($datas,true);
+		echo $datas."0000";
+	}
+
+	function get_recive(){
+		//
 	}
 
 	function base(){
@@ -168,7 +173,6 @@ class centerosAPIController{
         }else{
             $ajax_data["resultMessage"]="send message error!";
             $ajax_data["resultCode"]="100";
-            $ajax_data['info'] = var_dump($datas);
         }
         echo json_encode($ajax_data);
         exit();
