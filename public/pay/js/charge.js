@@ -92,13 +92,13 @@ $(function(){
            // window.open("/apis/Wxpay/example51543/wx_ajax_code.php?p3_Amt="+$("#P_RMB").text()+"&paychannel=3","_blank");
             $.ajax({
                 type: "POST",
-                url: "/apis/Wxpay/example51543/rtimg.php",
+                url: "/public/pay/Wxpay/example51543/rtimg.php",
                 data: "p3_Amt="+$("#P_RMB").text(),
                 cache: false
             }).done(function (data) {
                 data=jQuery.parseJSON(data);
                 $orderid=data.orderid;
-                $src='/apis/Wxpay/example51543/qrcode.php?data='+data.src;
+                $src='/public/pay/Wxpay/example51543/qrcode.php?data='+data.src;
                 var $img = $('img');
                 $img.arrr("class",'wk').attr('src',$src);
                 $img.appendTo($('.mn-box'));
@@ -115,14 +115,14 @@ $(function(){
                     request_num ++;
                     $.ajax({
                         type: "POST",
-                        url: "/apis/Wxpay/example51543/payIsOk.php",
+                        url: "/public/pay/Wxpay/example51543/payIsOk.php",
                         data: "id="+$orderid,
                         cache: false
                     }).done(function (obj) {
                         if(obj !=""){
                             obj = jQuery.parseJSON(obj);
                             if(obj.code==200){
-                                window.location.href='/apis/Wxpay/example51543/payIsOkRes.php';
+                                window.location.href='/public/pay/Wxpay/example51543/payIsOkRes.php';
                             }
                         }
                     });
