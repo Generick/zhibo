@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-27 12:40:44
+/* Smarty version 3.1.30, created on 2016-12-28 11:38:27
   from "E:\xampp\htdocs\kedo_tv\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5861f0cc3cbb77_52994053',
+  'unifunc' => 'content_586333b3083958_48348442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99081063d91ee38eabbf8b564810b66bed2d5cfb' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\index\\index.html',
-      1 => 1482813379,
+      1 => 1482896281,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5861f0cc3cbb77_52994053 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '204715861f0cc317188_68403939';
+function content_586333b3083958_48348442 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '12593586333b2f3ed46_53344425';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -286,6 +286,12 @@ $_smarty_tpl->compiled->nocache_hash = '204715861f0cc317188_68403939';
 ?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
 &token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
 " class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                        <?php }?>
+                        <?php if ($_smarty_tpl->tpl_vars['user']->value['socType'] == 3) {?>
+                       <a  target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['coreweb']->value;?>
+?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
+&token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
+&type=1" class="oww btn btn-md btn-default colorBlue pull-right">AW</a>
                         <?php }?>
                     </p> 
         
