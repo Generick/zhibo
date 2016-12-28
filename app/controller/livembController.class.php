@@ -20,9 +20,8 @@
 			//print_r($zhuboinfo);
 			//echo count($roomnum);
 			//转码作用；
-			$url = 'http://1b7a61-0.sh.1252349838.clb.myqcloud.com/rest/site/transcoding.mt?roomNumber='.$roomnumber;
-			$udata = array('roomnumber'=>$roomnumber);
-			$result = curl_post_data($url,$udata);
+			
+			$result = curl_post("http://1b7a61-0.sh.1252349838.clb.myqcloud.com/rest/site/transcoding.mt?roomNumber={$roomnumber}");
 			
 			 //print_r($hotAnchors);
 			 $view->assign('zhuboinfo',$zhuboinfo);

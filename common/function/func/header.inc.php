@@ -136,7 +136,7 @@ function curl_post($url, $post) {
 function curl_get($get_url,$get_param){
 	global $tm;
 	if($tm){
-		echo "<br>loadBegin:".getMillisecond();
+		return  "<br>loadBegin:".getMillisecond();
 	}
 
     $oCurl = curl_init();
