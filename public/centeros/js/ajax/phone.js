@@ -14,7 +14,7 @@ define('ajax/phone', function(require, exports, module){
 			var newsend = '/kedo.php?c=centerosAPI&m=sendSMS';
             $.ajax({
                 type: "POST",
-                url: oldsend,
+                url: newsend,
                 data: {
                     number:$('#phone').val(),
                     type:'send'
@@ -67,7 +67,7 @@ define('ajax/phone', function(require, exports, module){
 		var newurl = '/kedo.php?c=centerosAPI&m=bindPhone';
         $.ajax({
             type: "POST",
-            url: oldurl,
+            url: newurl,
             data: {
                 code:$('#code').val(),
                 type:'bind'

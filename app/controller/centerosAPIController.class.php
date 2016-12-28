@@ -68,7 +68,9 @@ class centerosAPIController{
 	}
 
 	function get_recive(){
-		//
+		$phoneNumber = '18255001881';
+		$datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt","number=$phoneNumber");
+		echo json_encode($datas,true);
 	}
 
 	function base(){
@@ -150,21 +152,23 @@ class centerosAPIController{
             exit();
         }
         $phoneNumber=$_POST['number'];
+        //$sendData = array("number"=>$phoneNumber);
         $datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt","number=$phoneNumber");
+        //$datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt",$sendData);
         $acceptData=json_decode($datas, true);
         if($acceptData!=null and $acceptData["data"] !=''){
             $send_phone_info['time']=$_SERVER['REQUEST_TIME'];
             $send_phone_info['phone']=$phoneNumber;
-            $send_phone_info['code']=$acceptData[data];
-            $_SESSION[phone_array]=$send_phone_info;
+            $send_phone_info['code']=$acceptData["data"];
+            $_SESSION["phone_array"]=$send_phone_info;
 
             $ajax_data["resultMessage"]="success";
             $ajax_data["resultCode"]="200";
             $ajax_data["ts"]=$_SESSION["phone_array"];
         }else{
-            $ajax_data["resultMessage"]="send messae error!";
+            $ajax_data["resultMessage"]="send message error!";
             $ajax_data["resultCode"]="100";
-            $ajax_data['info'] = $phoneNumber;
+            $ajax_data['info'] = var_dump($datas);
         }
         echo json_encode($ajax_data);
         exit();
