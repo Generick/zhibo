@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 	module.exports = {
 		init : function() {
             swfobject.embedSWF("/js/sea-modules/swf/MultyGiftNotice.swf?20140218", "MultyGiftNoticeSwf", "640", "360", "10.0", "", {
-                mtadd : UIF.handler.flash
+                mtadd : UIF.handler.flash,
             }, {
                 wmode : "transparent",
                 allowScriptAccess : "always"
