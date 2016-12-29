@@ -11,7 +11,12 @@
 	}
 	//启用并初始化视图Smarty引擎；
  	$view=ORG('Smarty/', 'Smarty',$config['viewconfig']);
- 	
+
+ 	if (isset($_GET['rndcode']) || isset($_POST['rndcode'])) {
+ 		$result = C('centeros','imgupload');
+ 		echo $result;
+ 		exit;
+ 	}
  	if ($_GET['c']==''){
  		C('index', 'index');
  	}else {

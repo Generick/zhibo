@@ -11,7 +11,6 @@ $current_page = "person";
 if (isset($_GET['ptype']) && $_GET['ptype'] == 'pay') {
     $current_page = "pay";
 }
-
 include("include/header.inc.php");
 include_once($app_path . "include/level.func.php");
 include_once('./include/login.func.php');
@@ -74,7 +73,6 @@ if ($user['ender'] == '') {
 } else {
     $malechecked = 'checked';
 }
-
 switch ($_GET['ptype']) {
     case "index";
         include('include/personal_tpl/m_index.php');
