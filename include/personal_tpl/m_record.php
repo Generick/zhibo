@@ -39,7 +39,7 @@
                             <th style="width: 152px;">流水号</th>
                             <th style="width: 200px;">交易时间</th>
                             <th style="width: 341px;">消费内容</th>
-                            <th style="">消费蚪币</th>
+                            <th style="">消费K豆</th>
                         </tr>
                     </table>
 
