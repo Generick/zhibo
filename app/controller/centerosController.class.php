@@ -82,7 +82,8 @@ class centerosController{
 
     function info(){
         $this->showCommon();
-        $user = $this->user;
+        //$user = $this->user;
+        $user = checklogin();
         $current_page = "info";
 
         $tmp_b = explode('-', $user['birthday']);
@@ -91,6 +92,7 @@ class centerosController{
         $birthday_month = $tmp_b[1];
         $birthday_day = $tmp_b[2];
         }
+        //exit(var_dump($user));
         if ($user['gender'] == '') {
 
         } else if ($user['gender'] == 0) {
