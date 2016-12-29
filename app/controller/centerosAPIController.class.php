@@ -53,7 +53,7 @@ class centerosAPIController{
 		if ($count<$limit) {
 			$dataObj = $dataAll;
 		}else{
-			$dataObj = curl_get($_url,array(
+			$dataObj = $this->curlGet($_url,array(
 				'between'=>($page-1)*$limit,
 				'end'=>10,
 				'year'=>$year,

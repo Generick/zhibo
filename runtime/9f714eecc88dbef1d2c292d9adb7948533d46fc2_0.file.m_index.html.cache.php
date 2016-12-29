@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 19:15:48
+/* Smarty version 3.1.30, created on 2016-12-29 16:29:36
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\m_index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585d0764e9df35_07675777',
+  'unifunc' => 'content_5864c970905bd8_39004249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9f714eecc88dbef1d2c292d9adb7948533d46fc2' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\m_index.html',
-      1 => 1482491746,
+      1 => 1483000170,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu_left.html' => 1,
   ),
 ),false)) {
-function content_585d0764e9df35_07675777 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '13612585d0764e4b4b9_53619269';
+function content_5864c970905bd8_39004249 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '47675864c97087a5d5_63425362';
 ?>
 <!--main-->
 <div class="inmiddle">
@@ -73,9 +73,9 @@ $_smarty_tpl->compiled->nocache_hash = '13612585d0764e4b4b9_53619269';
 
         <div class="mindex-else-title"> 我守护的</div>
         <div class="mycare-list">
-            <?php if ($_smarty_tpl->tpl_vars['acceptData']->value['resultMessage'] != "error") {?>
+            <?php if ($_smarty_tpl->tpl_vars['guardianship']->value['resultMessage'] != "error") {?>
                     <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['acceptData']->value, 'v', false, 'k');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['guardianship']->value, 'v', false, 'k');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
 ?>

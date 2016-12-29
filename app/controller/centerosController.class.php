@@ -9,10 +9,11 @@ class centerosController{
         $this->showCommon();
         $user = $this->user;
         $page_var = $this->page_var;
-        //shouhu
+        //guardianship
         $datas = curl_post(_INTERFACE_."/rest/personCenter/myGuard.mt","userid={$user['userId']}");
-        $acceptData=json_decode($datas, true);
-        $this->view->assign('acceptData',$acceptData);
+        $parseData=json_decode($datas, true);
+        $this->view->assign('guardianship',$parseData['data']);
+        //exit(var_dump($acceptData));
         //over
         // 进场特效 m_index.html
         $flage = false;

@@ -34,8 +34,8 @@
 
         <div class="mindex-else-title"> 我守护的</div>
         <div class="mycare-list">
-            <{if $acceptData['resultMessage'] neq "error"}>
-                    <{foreach $acceptData as $k=>$v}>
+            <{if $guardianship['resultMessage'] neq "error"}>
+                    <{foreach $guardianship as $k=>$v}>
                     <div class="mycare-box">
                         <div class="mycare-box-left">
                             <div class="careImg"><a href="/{$v['roomNumber']}"><img src="<{$v['himage']}>"/></a></div>

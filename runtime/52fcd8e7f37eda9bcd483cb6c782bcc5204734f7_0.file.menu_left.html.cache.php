@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-23 18:46:52
+/* Smarty version 3.1.30, created on 2016-12-29 16:33:54
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\menu_left.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_585d009cb52d52_28372167',
+  'unifunc' => 'content_5864ca72cb79c0_41398647',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '52fcd8e7f37eda9bcd483cb6c782bcc5204734f7' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\menu_left.html',
-      1 => 1482489868,
+      1 => 1483000431,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_585d009cb52d52_28372167 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '32365585d009cae1820_52764643';
+function content_5864ca72cb79c0_41398647 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '42935864ca72c09850_93271055';
 ?>
 <style type="text/css">
     .noticedot{
@@ -112,8 +112,8 @@ $_smarty_tpl->compiled->nocache_hash = '32365585d009cae1820_52764643';
 		<?php }?>
     </div>
    <!-- <div class="pi">
-        <div class="cl-div <?php echo '/*%%SmartyNocache:32365585d009cae1820_52764643%%*/<?php echo \'<?php \';?>/*/%%SmartyNocache:32365585d009cae1820_52764643%%*/';?>
-/*if($current_page=="treasure"){ echo "cl-focus";}*/<?php echo '/*%%SmartyNocache:32365585d009cae1820_52764643%%*/<?php echo \'?>\';?>/*/%%SmartyNocache:32365585d009cae1820_52764643%%*/';?>
+        <div class="cl-div <?php echo '/*%%SmartyNocache:42935864ca72c09850_93271055%%*/<?php echo \'<?php \';?>/*/%%SmartyNocache:42935864ca72c09850_93271055%%*/';?>
+/*if($current_page=="treasure"){ echo "cl-focus";}*/<?php echo '/*%%SmartyNocache:42935864ca72c09850_93271055%%*/<?php echo \'?>\';?>/*/%%SmartyNocache:42935864ca72c09850_93271055%%*/';?>
 ">
             <a href="/centeros.php?ptype=treasure"><div class="cl-treasure cl-title">我的财富</div></a>
         </div>
@@ -156,11 +156,5 @@ $_smarty_tpl->compiled->nocache_hash = '32365585d009cae1820_52764643';
         </div>
     </div>
 
-</div>
-<?php echo '<script'; ?>
- type="text/javascript">
-    // var userId = "{$user['userId']}";
-    // alert("ll"+userId);
-<?php echo '</script'; ?>
-><?php }
+</div><?php }
 }
