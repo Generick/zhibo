@@ -495,7 +495,7 @@ $(document).ready(function(){
                             <span class="color99 gameName">. {1}</span>\
                         </h4>\
                         <h4 class="pull-right recommR">\
-                            <a href="/square.php"><small class="color33">更多</small></a>\
+                            <a href="kedo.php?c=square"><small class="color33">更多</small></a>\
                         </h4>\
                     </div>\
                     <div class="row">\

@@ -4,8 +4,11 @@
 		public function index(){
 			global $view;
 			
-			$page_var['adus']=$_GET['adus'];
-			$page_var['adgId']=$_GET['adgId'];
+			$get=$_GET;
+			foreach ($get as $keys=>$vals){
+				$page_var[$keys]=$vals;
+			}
+			
 			$page_var['cdn']=_CDNDOMAIN_;
 			
 			foreach($page_var as $key=>$val){

@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
     <title>充值中心-蝌蚪直播</title>
-    <link rel="stylesheet" href="css/charge.css"/>
-    <link href="static_data/images_css/anchor-level.css" rel="stylesheet">
     <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
-    <link data-fixed="true" href="/templates/square.css" rel="stylesheet">
-    <script src="<{$cdn}>/skin/desert/js/jquery.min.js"></script>
-    <script type="text/javascript" src="<{$cdn}>/js/login.js?20150908"></script>
+    
+    <link href="<{$cdn}>/public/pay/css/charge.css" rel="stylesheet" />
+    <link href="<{$cdn}>/public/pay/css/anchor-level.css" rel="stylesheet">
+    <link href="<{$cdn}>/public/pay/css/square.css" rel="stylesheet" data-fixed="true">
+    <script src="<{$cdn}>/public/min/jquery.min.js"></script>
+    <script src="<{$cdn}>/js/login.js?20150908" type="text/javascript" ></script>
 
     <{if $pf=="qqgame" or $pf =="QQGame"}>
-    <script src="/js/pay_QQCloud.js"></script>
+    <script src="<{$cdn}>/public/pay/js/pay_QQCloud.js"></script>
     <{else}>
-    <script src="/js/charge.js"></script>
+    <script src="<{$cdn}>/public/pay/js/charge.js"></script>
     <{/if}>
 
 </head>

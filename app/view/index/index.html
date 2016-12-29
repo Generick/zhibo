@@ -14,6 +14,7 @@
     <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
     <script src="<{$cdn}>/public/min/jquery-1.12.2.min.js"></script>
     <script src="<{$cdn}>/public/min/jquery.lazyload.min.js"></script>
+    <script src="/public/orders/js/notice.js"></script>
 
     <script>
         var cdn_domain="<{$cdn_domain}>";
@@ -23,6 +24,8 @@
         var currentUserId="<{$user.userId}>";
         var sid="<{$sid}>";
         var ip="<{$ip}>";
+        var userId = "<{$user.userId}>";
+        var flag = 0;
     </script>
 </head>
 <body style="padding-top:60px;">
@@ -68,6 +71,7 @@
             <{else}>
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                 <li><a href="/centeros.php"><{$user.nickname}></a></li>
+                <li><a class= "header-notice" style=" "></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
@@ -108,7 +112,7 @@
                             <span class="color99">. 综合推荐</span>
                         </h4>
                         <h4 class="pull-right recommR">
-                            <a href="/square.php"><small class="color33">更多</small></a>
+                            <a href="kedo.php?c=square"><small class="color33">更多</small></a>
                         </h4>
             
                     </div>
@@ -130,7 +134,7 @@
                             <span class="color99">娱乐直播</span>
                         </h4>
                         <h4 class="pull-right recommR">
-                            <a href="/square.php"><small class="color33">更多</small></a>
+                            <a href="kedo.php?c=square"><small class="color33">更多</small></a>
                         </h4>
             
                     </div>
@@ -228,7 +232,7 @@
                        <a  target="_blank" href="<{$coreweb}>?userId=<{$user.userId}>&token=<{$gf_token}>" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
                         <{/if}>
                         <{if $user.socType==3}>
-                       <a  target="_blank" href="<{$coreweb}>?userId=<{$user.userId}>&token=<{$gf_token}>&type=1" class="oww btn btn-md btn-default colorBlue pull-right">AW</a>
+                       <a  target="_blank" href="<{$coreweb}>?userId=<{$user.userId}>&token=<{$gf_token}>&type=1" class="oww btn btn-md btn-default colorBlue pull-right">AD</a>
                         <{/if}>
                     </p> 
         
