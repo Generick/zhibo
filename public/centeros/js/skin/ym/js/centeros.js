@@ -34,7 +34,7 @@ $(function () {
 
     });
     $(".ck-pass-phone").click(function(){
-        showWindow("phone-find-passwd1");
+        //showWindow("phone-find-passwd1");
     })
 
     function jump(count,cls) {
