@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-28 11:38:27
+/* Smarty version 3.1.30, created on 2016-12-29 10:02:52
   from "E:\xampp\htdocs\kedo_tv\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_586333b3083958_48348442',
+  'unifunc' => 'content_58646ecc397bf6_54835478',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99081063d91ee38eabbf8b564810b66bed2d5cfb' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\index\\index.html',
-      1 => 1482896281,
+      1 => 1482976965,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_586333b3083958_48348442 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '12593586333b2f3ed46_53344425';
+function content_58646ecc397bf6_54835478 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '984858646ecc3300f1_99304127';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -52,6 +52,9 @@ $_smarty_tpl->compiled->nocache_hash = '12593586333b2f3ed46_53344425';
  src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
 /public/min/jquery.lazyload.min.js"><?php echo '</script'; ?>
 >
+    <?php echo '<script'; ?>
+ type="text/javascript" src="/public/centeros/js/notice.js"><?php echo '</script'; ?>
+>>
 
     <?php echo '<script'; ?>
 >
@@ -69,6 +72,9 @@ $_smarty_tpl->compiled->nocache_hash = '12593586333b2f3ed46_53344425';
 ";
         var ip="<?php echo $_smarty_tpl->tpl_vars['ip']->value;?>
 ";
+        var userId = "<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
+";
+        var flag = 0;
     <?php echo '</script'; ?>
 >
 </head>
@@ -116,6 +122,7 @@ $_smarty_tpl->compiled->nocache_hash = '12593586333b2f3ed46_53344425';
             <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
                 <li><a href="/centeros.php"><?php echo $_smarty_tpl->tpl_vars['user']->value['nickname'];?>
 </a></li>
+                <li><a class= "header-notice" style=" "></a></li>
                 <li class="hidden-xs"><a href="">|</a></li>
                 <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
                 <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
