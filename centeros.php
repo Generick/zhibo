@@ -40,7 +40,7 @@ if ($states) {
 //over
     ?>
 <!DOCTYPE html>
-<html ng-app="personalCenter">
+<html  xmlns:ng="http://angularjs.org" id="ng-app" class="ng-app:personalCenter" ng-app="personalCenter">
 <head lang="en">
 <meta charset="UTF-8">
 <title>个人中心－蝌蚪TV</title>
@@ -51,7 +51,10 @@ if ($states) {
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/login.js?20150908"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/skin/ym/js/centeros.js?20150908"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/angular/angular.min.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/public/index/js/json2.js"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/angular/center.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/public/min/html5shiv.min.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/public/min/respond.min.js"></script>
 
 </head>
 <body>
