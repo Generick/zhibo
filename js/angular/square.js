@@ -12,14 +12,14 @@ squareApp.controller('square',function($scope,$http){
 	}).success(function(json){
 		$scope.squAnchs=json.data;
 	}).error(function(){
-		console.log('直播秀场加载失败')
+		//console.log('直播秀场加载失败')
 	});
 
 	$http.get("/rest/homeAnchors/pushAnchors.mt",{
 	}).success(function(json){
 		$scope.rankGames=json.data;
 	}).error(function(){
-		console.log('排行推荐加载失败')
+		//console.log('排行推荐加载失败')
 	});
 
 
@@ -27,7 +27,7 @@ squareApp.controller('square',function($scope,$http){
 	}).success(function(json){
 		$scope.gameAnchs=json.data;
 	}).error(function(){
-		console.log('全部游戏加载失败')
+		//console.log('全部游戏加载失败')
 	});
 
 	
@@ -36,7 +36,7 @@ squareApp.controller('square',function($scope,$http){
 	}).success(function(json){
 		$scope.sorts=json.data;
 	}).error(function(){
-		console.log('游戏分类标题加载失败')
+		//console.log('游戏分类标题加载失败')
 	});
 
 	function setSort(name){
@@ -64,7 +64,7 @@ squareApp.controller('square',function($scope,$http){
 			$scope.gameItems=json.data;
 			setSort(json.data.rows)
 		}).error(function(){
-			console.log('分类详情获取失败')
+			//console.log('分类详情获取失败')
 		});
 	}
 	

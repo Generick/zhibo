@@ -38,7 +38,8 @@
                     	<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="rankGame in rankGames">                    
                     <a href="{{rankGame.roomNumber}}" class="thumbnail bord1d">            
                         <div class="recommImg">                        
-                            <img class="lazy" ng-src="{{rankGame.image}}&w=220&h=127" alt="{{gameAnch.nickName|decode}}">                        
+                            <img class="lazy" ng-src="{{rankGame.image}}&w=220&h=127" alt="{{gameAnch.nickName|decode}}"> 
+                            <span ng-if="rankGame.online==1" class="glyphicon glyphicon-stats"></span>                       
                             <div class="thumb-bar"></div>                        
                             <div class="shadow"></div>                        
                             <div class="playBtn"></div>                    
@@ -74,7 +75,8 @@
                         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameAnch in gameAnchs">                    
                             <a href="{{gameAnch.roomNumber}}" class="thumbnail bord1d">            
                                 <div class="recommImg">                        
-                                    <img class="lazy" ng-src="{{gameAnch.image}}&w=220&h=127" alt="{{gameAnch.nickName|decode}}">                        
+                                    <img class="lazy" ng-src="{{gameAnch.image}}&w=220&h=127" alt="{{gameAnch.nickName|decode}}"> 
+                                    <span ng-if="gameAnch.online==1" class="glyphicon glyphicon-stats"></span>                        
                                     <div class="thumb-bar"></div>                        
                                     <div class="shadow"></div>                        
                                     <div class="playBtn"></div>                    
@@ -102,7 +104,8 @@
                     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameItem in gameItems">                    
                         <a href="{{gameItem.roomNumber}}" class="thumbnail bord1d">            
                             <div class="recommImg">                        
-                                <img class="lazy" ng-src="{{gameItem.image}}&w=220&h=127" alt="{{gameItem.nickName|decode}}">                        
+                                <img class="lazy" ng-src="{{gameItem.image}}&w=220&h=127" alt="{{gameItem.nickName|decode}}"> 
+                                <span ng-if="gameItem.online==1" class="glyphicon glyphicon-stats"></span>                           
                                 <div class="thumb-bar"></div>                        
                                 <div class="shadow"></div>                        
                                 <div class="playBtn"></div>                    
