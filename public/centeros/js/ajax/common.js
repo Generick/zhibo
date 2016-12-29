@@ -79,7 +79,7 @@ define('ajax/common', function(require, exports, module){
                 callback(data, textStatus, jqXHR);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert(params.url+" error code:"+textStatus);
+                //alert(params.url+" error code:"+textStatus);
             }
         });
     };

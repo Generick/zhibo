@@ -42,7 +42,7 @@ define('ajax/record', function(require, exports, module){
                 t:1
             }
         }, function (data) {
-            console.log(data);
+            //console.log(data);
             if(data.data){
                 $.each(data.data, function(k,v) {
                     if(v.serialNum != null){
