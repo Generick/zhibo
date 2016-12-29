@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-29 10:02:52
+/* Smarty version 3.1.30, created on 2016-12-29 16:57:32
   from "E:\xampp\htdocs\kedo_tv\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58646ecc397bf6_54835478',
+  'unifunc' => 'content_5864cffc3b6262_71268769',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99081063d91ee38eabbf8b564810b66bed2d5cfb' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\index\\index.html',
-      1 => 1482976965,
+      1 => 1483001792,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_58646ecc397bf6_54835478 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '984858646ecc3300f1_99304127';
+function content_5864cffc3b6262_71268769 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '131325864cffc33c602_07599013';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -163,7 +163,7 @@ $_smarty_tpl->compiled->nocache_hash = '984858646ecc3300f1_99304127';
                             <span class="color99">. 综合推荐</span>
                         </h4>
                         <h4 class="pull-right recommR">
-                            <a href="/square.php"><small class="color33">更多</small></a>
+                            <a href="kedo.php?c=square"><small class="color33">更多</small></a>
                         </h4>
             
                     </div>
@@ -185,7 +185,7 @@ $_smarty_tpl->compiled->nocache_hash = '984858646ecc3300f1_99304127';
                             <span class="color99">娱乐直播</span>
                         </h4>
                         <h4 class="pull-right recommR">
-                            <a href="/square.php"><small class="color33">更多</small></a>
+                            <a href="kedo.php?c=square"><small class="color33">更多</small></a>
                         </h4>
             
                     </div>
@@ -298,7 +298,7 @@ $_smarty_tpl->compiled->nocache_hash = '984858646ecc3300f1_99304127';
                        <a  target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['coreweb']->value;?>
 ?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['userId'];?>
 &token=<?php echo $_smarty_tpl->tpl_vars['gf_token']->value;?>
-&type=1" class="oww btn btn-md btn-default colorBlue pull-right">AW</a>
+&type=1" class="oww btn btn-md btn-default colorBlue pull-right">AD</a>
                         <?php }?>
                     </p> 
         

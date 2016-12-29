@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-26 14:47:41
+/* Smarty version 3.1.30, created on 2016-12-29 16:57:32
   from "E:\xampp\htdocs\kedo_tv\app\view\public\footer.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5860bd0d35d329_36187342',
+  'unifunc' => 'content_5864cffc4036c2_32875873',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4b209c472c6ee23ea7eb97b418e97e01feb8dd53' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\public\\footer.html',
-      1 => 1482734809,
+      1 => 1483001699,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5860bd0d35d329_36187342 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '298585860bd0d359c43_88984759';
+function content_5864cffc4036c2_32875873 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '121815864cffc3c2d17_50340336';
 ?>
 <style type="text/css">
     /*底部*/
@@ -59,7 +59,8 @@ $_smarty_tpl->compiled->nocache_hash = '298585860bd0d359c43_88984759';
             <a href="javascript:;" class="firBL">版权声明</a>
         </p>
         <p>
-            <img class="lazy" src="public/orders/images/logo_foot.png"/>
+            <img class="lazy" src="<?php echo $_smarty_tpl->tpl_vars['cdn']->value;?>
+/public/orders/images/logo_foot.png"/>
             <span> -Copyright©2016 沪ICP备14054721号</span>
         </p>
         <p>蝌蚪客服电话：021-63156393 | 商务合作邮箱：
