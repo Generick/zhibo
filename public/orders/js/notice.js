@@ -17,13 +17,13 @@ function notice(){
 			if (data.state == 0) {
 				//console.log("no unread news");
 				$('.header-notice').hover(function(){
-					$(this).css('background','url(../images/header_notice_hover.png) no-repeat');
+					$(this).css('background','url(/public/orders/images/header_notice_hover.png) no-repeat');
 				},function(){
-					$(this).css('background','url(../images/header_notice.png) no-repeat');
+					$(this).css('background','url(/public/orders/images/header_notice.png) no-repeat');
 				});	
 			}else{
 				//console.log('有未读消息');
-				$('.header-notice').css({'background':'url(../images/icon_xiaoxi.png) no-repeat','margin-top':'17px'});
+				$('.header-notice').css({'background':'url(/public/orders/images/icon_xiaoxi.png) no-repeat','margin-top':'17px'});
 				shine = setInterval("blink()",500);
 				if (typeof clearB === 'function') {
 					clearB();
