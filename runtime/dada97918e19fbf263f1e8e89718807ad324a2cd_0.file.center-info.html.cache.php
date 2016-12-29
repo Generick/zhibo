@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-29 15:01:58
+/* Smarty version 3.1.30, created on 2016-12-29 16:52:55
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\center-info.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5864b4e689e421_66988144',
+  'unifunc' => 'content_5864cee76f4a00_30946861',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dada97918e19fbf263f1e8e89718807ad324a2cd' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\center-info.html',
-      1 => 1482994915,
+      1 => 1483001563,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5864b4e689e421_66988144 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '240835864b4e68484f7_63490498';
+function content_5864cee76f4a00_30946861 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '257815864cee76bec10_68238517';
 echo '<script'; ?>
  src="/public/centeros/js/sea.js"><?php echo '</script'; ?>
 >
@@ -127,7 +127,7 @@ echo '<script'; ?>
             <div class="c-funds-kd">K 豆 :</div>
             <div class="c-funds-jb"> <?php echo intval($_smarty_tpl->tpl_vars['coins']->value);?>
 </div>
-            <div class="c-funds-cz"><a href="/pay.php" style="color: #fff;">充值</a></div>
+            <div class="c-funds-cz"><a href="/kedo.php?c=pay" style="color: #fff;">充值</a></div>
         </div>
         <div class="c-funds">
             
