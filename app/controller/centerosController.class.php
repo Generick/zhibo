@@ -227,7 +227,8 @@ class centerosController{
         //over
         //footer
         $site_skin = isset($page_var['site_skin'])?$page_var['site_skin']:'desert';
-        $footer = 'footer-'.$site_skin.".html";
+        //$footer = 'footer-'.$site_skin.".html";
+        $footer = "../public/footer.html";
         $this->view->assign('site_skin',$site_skin);
         $this->view->assign('footer',$footer);
 
@@ -283,7 +284,7 @@ class centerosController{
     function showCommon(){
         $this->view->display('common.html');
         //$this->view->display('header_desert.html');
-        $this->view->display('header.html');
+        $this->view->display('headernew.html');
   }
 
     function imgupload(){
