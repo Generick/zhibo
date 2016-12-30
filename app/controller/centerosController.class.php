@@ -159,12 +159,12 @@ class centerosController{
 
   }
 
-    function recive(){
+    function receive(){
         $this->showCommon();
-        $current_page = "recive";
+        $current_page = "receive";
         $this->view->assign('current_page',$current_page);
         $this->view->assign('monlist',$this->monlist());
-        $this->view->display('m_recive.html');
+        $this->view->display('m_receive.html');
   }
 
     function notice(){

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-29 16:33:54
+/* Smarty version 3.1.30, created on 2016-12-30 15:56:08
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\menu_left.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5864ca72cb79c0_41398647',
+  'unifunc' => 'content_586613185d80c1_33060071',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '52fcd8e7f37eda9bcd483cb6c782bcc5204734f7' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\menu_left.html',
-      1 => 1483000431,
+      1 => 1483084552,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5864ca72cb79c0_41398647 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '42935864ca72c09850_93271055';
+function content_586613185d80c1_33060071 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '30680586613184d12e4_67973962';
 ?>
 <style type="text/css">
     .noticedot{
@@ -50,7 +50,7 @@ $_smarty_tpl->compiled->nocache_hash = '42935864ca72c09850_93271055';
 		<?php }?>        
     </div>
     <div class="pi">
-	<?php if ($_smarty_tpl->tpl_vars['current_page']->value == "recharge" || $_smarty_tpl->tpl_vars['current_page']->value == "record" || $_smarty_tpl->tpl_vars['current_page']->value == "recive") {?>
+	<?php if ($_smarty_tpl->tpl_vars['current_page']->value == "recharge" || $_smarty_tpl->tpl_vars['current_page']->value == "record" || $_smarty_tpl->tpl_vars['current_page']->value == "receive") {?>
         <div class="cl-div  hasnenu cl-focus" >
             <div class="cl-trade cl-title color33">交易中心</div>
             <div class="arrow-down"></div>
@@ -73,10 +73,10 @@ $_smarty_tpl->compiled->nocache_hash = '42935864ca72c09850_93271055';
 				<?php } else { ?>
 				<li><a class="color33" href="/kedo.php?c=centeros&m=record">交易记录</a></li>
 				<?php }?>
-				<?php if ($_smarty_tpl->tpl_vars['current_page']->value == "recive") {?>
-                <li  class="li-hover"><a class="color33" href="/kedo.php?c=centeros&m=recive">收到礼物</a></li>
+				<?php if ($_smarty_tpl->tpl_vars['current_page']->value == "receive") {?>
+                <li  class="li-hover"><a class="color33" href="/kedo.php?c=centeros&m=receive">收到礼物</a></li>
 				<?php } else { ?>
-				<li><a class="color33" href="/kedo.php?c=centeros&m=recive">收到礼物</a></li>
+				<li><a class="color33" href="/kedo.php?c=centeros&m=receive">收到礼物</a></li>
 				<?php }?>
             </ul>
         </div>
@@ -112,8 +112,8 @@ $_smarty_tpl->compiled->nocache_hash = '42935864ca72c09850_93271055';
 		<?php }?>
     </div>
    <!-- <div class="pi">
-        <div class="cl-div <?php echo '/*%%SmartyNocache:42935864ca72c09850_93271055%%*/<?php echo \'<?php \';?>/*/%%SmartyNocache:42935864ca72c09850_93271055%%*/';?>
-/*if($current_page=="treasure"){ echo "cl-focus";}*/<?php echo '/*%%SmartyNocache:42935864ca72c09850_93271055%%*/<?php echo \'?>\';?>/*/%%SmartyNocache:42935864ca72c09850_93271055%%*/';?>
+        <div class="cl-div <?php echo '/*%%SmartyNocache:30680586613184d12e4_67973962%%*/<?php echo \'<?php \';?>/*/%%SmartyNocache:30680586613184d12e4_67973962%%*/';?>
+/*if($current_page=="treasure"){ echo "cl-focus";}*/<?php echo '/*%%SmartyNocache:30680586613184d12e4_67973962%%*/<?php echo \'?>\';?>/*/%%SmartyNocache:30680586613184d12e4_67973962%%*/';?>
 ">
             <a href="/centeros.php?ptype=treasure"><div class="cl-treasure cl-title">我的财富</div></a>
         </div>

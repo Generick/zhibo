@@ -1,4 +1,4 @@
-define('ajax/recive', function(require, exports, module){
+define('ajax/receive', function(require, exports, module){
     var Tools = require('./common');
     var $h="";
     var html='<tr class="dd">\

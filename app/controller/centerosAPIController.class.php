@@ -164,7 +164,6 @@ class centerosAPIController{
 	}
 
 	function sendSMS(){
-		//session_start();
 		$user = checklogin();
 		if (!$user) {
 			echo 'error';
