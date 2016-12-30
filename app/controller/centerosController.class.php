@@ -132,9 +132,11 @@ class centerosController{
   }
 
     function mportrait(){
+        $user = checklogin();
         $this->showCommon();
         $current_page = "mportrait";
         $this->view->assign('current_page',$current_page);
+        $this->view->assign('userId',$user['userId']);
         $this->view->display('m_portrait.html');
   }
 
@@ -319,8 +321,8 @@ class centerosController{
 
                     $result['avatarUrls'] = _IMAGES_DOMAIN_.'/'.$md5_img;
                     //save avatar to user
-                    $userid = $this->user['userId'];
-                    $this->db->Execute("update bu_user set avatar= {$md5_img} where userId = {$userId}");
+                    $userId = $this->user['userId'];
+                    $this->db->Execute("update bu_user set avatar= '{$md5_img}' where userId = {$userId}");
 
                     $_SESSION['avatar'] = $md5_img;
                     $result['res'] = $this->db->Affected_Rows();
@@ -392,6 +394,7 @@ class centerosController{
         $md5 = $this->db->GetOne("select avatar from bu_user where userId = {$uid}");
         if ($md5) {
             $imgurl = _IMAGES_DOMAIN_."/".$md5;
+            echo $imgurl;
             exit;
         }else{
             header("Location:/public/centeros/images/2456_120x120.jpg");

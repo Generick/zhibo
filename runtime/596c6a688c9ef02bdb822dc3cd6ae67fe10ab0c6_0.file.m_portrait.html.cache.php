@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-27 11:21:33
+/* Smarty version 3.1.30, created on 2016-12-30 11:37:15
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\m_portrait.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5861de3d729992_65616689',
+  'unifunc' => 'content_5865d66ba71735_36351723',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '596c6a688c9ef02bdb822dc3cd6ae67fe10ab0c6' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\m_portrait.html',
-      1 => 1482808831,
+      1 => 1483069013,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu_left.html' => 1,
   ),
 ),false)) {
-function content_5861de3d729992_65616689 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '326305861de3d6fdd34_27362555';
+function content_5865d66ba71735_36351723 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '158595865d66ba18f55_67179204';
 ?>
 <!--main-->
 <div class="inmiddle">
@@ -57,9 +57,11 @@ $_smarty_tpl->compiled->nocache_hash = '326305861de3d6fdd34_27362555';
 >
     <?php echo '<script'; ?>
 >
-        function avatarUploadComplete(){
-            $("#personavatar").attr("src","/kedo.php?c=centeros&m=avatar&uid=<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
+        function avatarUploadComplete(avatarurl){
+            //$("#personavatar").attr("src","kedo.php?c=centeros&m=avatar&uid=<?php echo $_smarty_tpl->tpl_vars['userId']->value;?>
 &_t="+new Date().getTime());
+			$("#personavatar").attr('src',avatarurl);
+			//console.log($("#personavatar").attr('src'));
             window.location.reload();
         }
         $(function(){
@@ -75,7 +77,7 @@ $_smarty_tpl->compiled->nocache_hash = '326305861de3d6fdd34_27362555';
                         isShowUploadResultIcon:true,
                         avatar_sizes_desc : '120*120像素'
                     }, function (msg) {
-					console.log(msg);
+					//console.log(msg);
                         switch(msg.code)
                         {
                             case 1 : break;//页面成功加载了组件！
@@ -97,8 +99,9 @@ $_smarty_tpl->compiled->nocache_hash = '326305861de3d6fdd34_27362555';
                                 }
                                 break;
                             case 5 :
-                                console.log(msg.content.avatarUrls[0]);
-                                avatarUploadComplete();
+                                //console.log(msg.content.avatarUrls[0]);
+								//console.log(msg.content.avatarUrls);
+                                avatarUploadComplete(msg.content.avatarUrls);
                                 break;
                         }
                     }

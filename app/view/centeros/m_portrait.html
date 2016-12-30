@@ -21,8 +21,10 @@
     <script src="/public/centeros/js/swfobject.js"></script>
     <script src="/public/centeros/js/fullAvatarEditor.js"></script>
     <script>
-        function avatarUploadComplete(){
-            $("#personavatar").attr("src","/kedo.php?c=centeros&m=avatar&uid=<{$userid}>&_t="+new Date().getTime());
+        function avatarUploadComplete(avatarurl){
+            //$("#personavatar").attr("src","kedo.php?c=centeros&m=avatar&uid=<{$userId}>&_t="+new Date().getTime());
+			$("#personavatar").attr('src',avatarurl);
+			//console.log($("#personavatar").attr('src'));
             window.location.reload();
         }
         $(function(){
@@ -38,7 +40,7 @@
                         isShowUploadResultIcon:true,
                         avatar_sizes_desc : '120*120像素'
                     }, function (msg) {
-					console.log(msg);
+					//console.log(msg);
                         switch(msg.code)
                         {
                             case 1 : break;//页面成功加载了组件！
@@ -60,8 +62,9 @@
                                 }
                                 break;
                             case 5 :
-                                console.log(msg.content.avatarUrls[0]);
-                                avatarUploadComplete();
+                                //console.log(msg.content.avatarUrls[0]);
+								//console.log(msg.content.avatarUrls);
+                                avatarUploadComplete(msg.content.avatarUrls);
                                 break;
                         }
                     }

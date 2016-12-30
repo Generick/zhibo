@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-29 16:52:55
+/* Smarty version 3.1.30, created on 2016-12-30 11:24:36
   from "E:\xampp\htdocs\kedo_tv\app\view\centeros\center-info.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5864cee76f4a00_30946861',
+  'unifunc' => 'content_5865d374c69f13_50143082',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dada97918e19fbf263f1e8e89718807ad324a2cd' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\centeros\\center-info.html',
-      1 => 1483001563,
+      1 => 1483068260,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5864cee76f4a00_30946861 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '257815864cee76bec10_68238517';
+function content_5865d374c69f13_50143082 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '220405865d374bc6fc0_33062801';
 echo '<script'; ?>
  src="/public/centeros/js/sea.js"><?php echo '</script'; ?>
 >
@@ -85,7 +85,7 @@ echo '<script'; ?>
         <div class="c-photo">
             <img src="<?php echo @constant('_IMAGES_DOMAIN_');?>
 /<?php echo $_smarty_tpl->tpl_vars['avatar']->value;?>
-" alt="<?php echo $_smarty_tpl->tpl_vars['nickname']->value;?>
+"  id="personavatar" alt="<?php echo $_smarty_tpl->tpl_vars['nickname']->value;?>
 "/>
         </div>
 
