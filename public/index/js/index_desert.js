@@ -495,7 +495,7 @@ $(document).ready(function(){
                             <span class="color99 gameName">. {1}</span>\
                         </h4>\
                         <h4 class="pull-right recommR">\
-                            <a href="kedo.php?c=square"><small class="color33">更多</small></a>\
+                            <a href="/square/index"><small class="color33">更多</small></a>\
                         </h4>\
                     </div>\
                     <div class="row">\
@@ -892,14 +892,14 @@ $(document).ready(function(){
                     $.each(datas, function(k, v) {
                         $active = k==0?"active":"";
                         if(v.url !=''){
-                            item+='<div class="item '+$active+'"><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="/assist/applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500" src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }else{
-                            item+='<div class="item '+$active+'"><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
+                            item+='<div class="item '+$active+'"><a href="/assist/applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/></a></div>';
                         }
                         if(k==0){
-                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
+                            lo='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class="active"><a href="/assist/applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }else{
-                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="kedo.php?c=assist&m=applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
+                            lo+='<li data-target="#carousel-example-captions" data-slide-to="'+k+'" class=""><a href="/assist/applyHome"><img class="lazy" data-src="'+v.image+'" alt="900x500"  src="'+v.image+'" data-holder-rendered="true"/><div class="shadow"></div></a></li>';
                         }
 
                         $(".carousel-indicators li").css("background",v.image);
