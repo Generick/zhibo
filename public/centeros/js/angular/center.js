@@ -17,7 +17,7 @@
 		$scope.getPage=getPage;
 		function getPage(p,userId){
 			$scope.curPage=p;
-			$http.get('rest/usersGiftDetails/alerts.mt',{
+			$http.get('/rest/usersGiftDetails/alerts.mt',{
 				params:{userId:userId,page:p,num:10}
 			}).success(function(arr){
 				$scope.news = arr.data;
@@ -29,7 +29,7 @@
 
 		//删除数据
 		$scope.dele=function(id,p,userId){
-			$http.get('rest/usersGiftDetails/delAlerts.mt',{
+			$http.get('/rest/usersGiftDetails/delAlerts.mt',{
 				params:{id:id}
 			}).success(function(arr){
 				$(".succ").slideDown();

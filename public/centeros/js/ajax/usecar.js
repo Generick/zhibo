@@ -1,10 +1,12 @@
 define('ajax/usecar', function(require, exports, module){
     var Tools = require('./common');
+	var oldurl = '/ajax/useCar.php';
+	var newurl = '/kedo.php?c=centerosAPI&m=usercar';
     $('.no-use-car').on('click',function(){
         var idd=$(this).parent(".mcar-right-3").attr("idd");
         $.ajax({
             type: "POST",
-            url: '/ajax/useCar.php',
+            url: newurl,
             data: {
                 idd:idd
             },
