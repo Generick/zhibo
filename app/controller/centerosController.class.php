@@ -15,7 +15,7 @@ class centerosController{
         $this->view->assign('guardianship',$parseData['data']);
         //exit(var_dump($acceptData));
         //over
-        // 进场特效 m_index.html
+        // approach effects m_index.html
         $flage = false;
         $rs=$this->db->Execute("select g.giftid,g.giftimage,g.giftname,g.giftprice,
         (SELECT if(Count(1) = 1,1,0) FROM  bu_user_cars c WHERE  g.giftid = c.giftId AND c.userId = {$user['userId']} AND c.`status`=1) as ts,
@@ -52,12 +52,13 @@ class centerosController{
 
   }
 
+    //my care
     function history(){
         $this->showCommon();
         $user = $this->user;
         $current_page = "care";
         $this->view->assign('current_page',$current_page);
-        // get data
+        // get data my care
         $rs=$this->db->Execute("select b.roomNumber,
         (SELECT o.online from bu_user_online o where o.roomnumber = b.roomNumber and o.anchors=1) online,
         u.nickname,u.userId,u.avatar,
@@ -80,6 +81,7 @@ class centerosController{
         $this->view->display('m_care.html');
   }
 
+    //basic info
     function info(){
         $this->showCommon();
         //$user = $this->user;
@@ -112,6 +114,7 @@ class centerosController{
         $this->view->display('m_self.html');
   }
 
+    //change pwd
     function mpass(){
         $this->showCommon();
         $current_page = "mpass";
@@ -119,6 +122,7 @@ class centerosController{
         $this->view->display('m_pass.html');
   }
 
+    //bind phone
     function mphone(){
         $this->showCommon();
         $current_page = "mphone";
@@ -131,6 +135,7 @@ class centerosController{
         $this->view->display('m_phone.html');
   }
 
+    //change avatar
     function mportrait(){
         $user = checklogin();
         $this->showCommon();
@@ -140,6 +145,7 @@ class centerosController{
         $this->view->display('m_portrait.html');
   }
 
+    //recharge
     function recharge(){
         $this->showCommon();
         $current_page = "recharge";
@@ -149,6 +155,7 @@ class centerosController{
         $this->view->display('m_recharge.html');
   }
 
+    //trade
     function record(){
         $this->showCommon();
         $current_page = "record";
@@ -159,6 +166,7 @@ class centerosController{
 
   }
 
+    //recieved gifts
     function receive(){
         $this->showCommon();
         $current_page = "receive";
@@ -167,6 +175,7 @@ class centerosController{
         $this->view->display('m_receive.html');
   }
 
+    //news notice
     function notice(){
         $this->showCommon();
         $current_page = "notice";
@@ -180,6 +189,7 @@ class centerosController{
         exit();
   }
 
+    //initialization
     function __construct(){
         global $db;
         global $view;
@@ -241,9 +251,11 @@ class centerosController{
   }
 
     function __destruct(){
+        //close db
         $this->db->close();
   }
 
+    //get date list table
     function monlist(){
         $monlist="";
         $time = time();
@@ -312,11 +324,11 @@ class centerosController{
                 $ext = end($fileA);
                 $savepath = $dir.$filename.'.ico';
                 //debug info
-                $result["dir"] = $dir;
-                $result["filename"] = $filename;
-                $result['ext'] = $ext;
-                $result["savepath"] = $savepath;
-                $result['userid'] = $this->user['userId'];
+                //$result["dir"] = $dir;
+                //$result["filename"] = $filename;
+                //$result['ext'] = $ext;
+                //$result["savepath"] = $savepath;
+                //$result['userid'] = $this->user['userId'];
                 if (move_uploaded_file($imgfile["tmp_name"],$savepath)) {
                     $success_num++;
                     $md5_img = $this->uploadImg($savepath);
