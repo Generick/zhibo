@@ -8,9 +8,12 @@ header("Pragma: no-cache");
 }*/
 include('include/header.inc.php');
 include($app_path . "include/level.func.php");
+
+$roomnumber = (int)$_GET['roomnumber'];
+
 $user = checklogin();
 if (ismobile()) {
-    include "live_mobile.php";
+    headre("/livemb/index?roomnumber={$roomnumber}");
     exit();
 }
 
@@ -24,7 +27,7 @@ if (!$_COOKIE["sbg"]) {
 } else {
     $BSG = $_COOKIE["sbg"];
 }
-$roomnumber = (int)$_GET['roomnumber'];
+
 
 //tokern校验
 $db->Execute("update bu_user_packs set liveDT='" . time() . "' where userId=$user[userId]");
