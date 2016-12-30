@@ -16,11 +16,6 @@
 #rewrite ^/square$ /square.php last; 
 #rewrite ^/center$ /centeros.php last; 
 
-#	<IfModule mod_rewrite.c> 
-#		RewriteEngine on 
-#	RewriteCond %{QUERY_STRING} ^(.*)$
-#		RewriteRule ^(\w+)\/(\w+)\.html kedo.php?c=$1&m=$2%1 [L,QSA]
-#	</IfModule> 
 
 <IfModule mod_rewrite.c> 
 	RewriteEngine on 
