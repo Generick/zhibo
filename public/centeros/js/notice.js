@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('.header-notice').on('click',function(){
-		window.location.href = "/kedo.php?c=centeros&m=notice";
+		window.location.href = "/centeros/notice";
 	});
 	notice();
 });

@@ -45,7 +45,7 @@
                             <div class="mybr2"><{$v['followeds']}> 粉丝</div>
                             <div class="mybr3">守护等级：<span class="color33"><{$v['grds']}></span></div>
                             <div class="mybr4">剩余天数：<span class="colorcc"> <{$v['days']}></span>天</div>
-                            <a class="mindex-recharge-button" href="/pay.php">充值</a>
+                            <a class="mindex-recharge-button" href="/pay/index">充值</a>
                         </div>
                     </div>
             
@@ -56,7 +56,7 @@
             <div class="mcar-list">
     <{foreach $arrs as $key=>$arr}>
                 <{if $arr['id']}>
-                    <div class="mcar-box" idd=<{$arr['id']}> >
+                    <div class="mcar-box" idd="<{$arr['id']}>" >
                     <{else}>
                     <div class="mcar-box">
                     <{/if}>
@@ -66,7 +66,7 @@
                         <div class="mcar-right">
                             <div class="mcar-right-1 clearFix"><span class="car-name"> <{$arr['giftname']}></span><span class="xufei">续费</span></div>
                             <div class="mcar-right-2 clearFix">剩余天数：<span><{$arr['day']}>天</span></div>
-                            <{if $arr['id']}><div class="mcar-right-3 learFix" idd={$arr['id']} ><{$arr['use']}>
+                            <{if $arr['id']}><div class="mcar-right-3 learFix" idd="<{$arr['id']}>" ><{$arr['use']}>
                                 <{else}>
                                 <div class="mcar-right-3 learFix" ><{$arr['use']}>
                                 <{/if}>

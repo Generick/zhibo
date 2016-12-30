@@ -236,6 +236,21 @@ class centerosAPIController{
         exit();
 	}
 
+	function usercar(){
+		$user = checklogin();
+		$idd = $_POST['idd'];
+		$userId = $user['userId'];
+		$info = array();
+		$select = "update bu_user_cars set active = 1 where id = {$idd}";
+		if ($this->db->Execute($select)) {
+			$this->db->Execute("update bu_user_cars set active = 0 where userId = {$userId} and id != {$idd}");
+			$info['resultCode'] = 200;
+		}else{
+			$info['resultCode'] = $idd;
+		}
+		echo json_encode($info,true);
+	}
+
 
 	function __construct(){
 		//initalization
