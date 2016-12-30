@@ -177,7 +177,7 @@ function set_login_info($array){
 
 function search_save_user($userid){
     global $db;
-    $userinfo=$db->GetRow("select u.userId as userId,u.nickname as nickname,u.password as password,a.roomNumber as roomNumber,u.avatar as avatar,u.username as username,u.loginDT as loginDT,u.logins as logins from bu_user u left JOIN bu_user_anchors a ON u.userId = a.userId where u.userId ={$userid}");
+    $userinfo=$db->GetRow("select u.userId as userId,u.nickname as nickname,u.password as password,a.roomNumber as roomNumber,u.avatar as avatar,u.username as username,u.loginDT as loginDT,u.logins as logins,u.gender as gender,u.birthday as birthday,u.province as province,u.city as city from bu_user u left JOIN bu_user_anchors a ON u.userId = a.userId where u.userId ={$userid}");
 
     $loginDT = $userinfo[loginDT];
     $nowDT = date('Y-m-d H:i:s',$_SERVER['REQUEST_TIME']);

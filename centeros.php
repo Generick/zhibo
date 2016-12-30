@@ -11,7 +11,6 @@ $current_page = "person";
 if (isset($_GET['ptype']) && $_GET['ptype'] == 'pay') {
     $current_page = "pay";
 }
-
 include("include/header.inc.php");
 include_once($app_path . "include/level.func.php");
 include_once('./include/login.func.php');
@@ -40,7 +39,7 @@ if ($states) {
 //over
     ?>
 <!DOCTYPE html>
-<html ng-app="personalCenter">
+<html  xmlns:ng="http://angularjs.org" id="ng-app" class="ng-app:personalCenter" ng-app="personalCenter">
 <head lang="en">
 <meta charset="UTF-8">
 <title>个人中心－蝌蚪TV</title>
@@ -51,7 +50,10 @@ if ($states) {
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/login.js?20150908"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/skin/ym/js/centeros.js?20150908"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/angular/angular.min.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/public/index/js/json2.js"></script>
 <script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/js/angular/center.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/public/min/html5shiv.min.js"></script>
+<script type="text/javascript" src="<?php echo $page_var['cdn_domain']?>/public/min/respond.min.js"></script>
 
 </head>
 <body>
@@ -71,7 +73,6 @@ if ($user['ender'] == '') {
 } else {
     $malechecked = 'checked';
 }
-
 switch ($_GET['ptype']) {
     case "index";
         include('include/personal_tpl/m_index.php');
