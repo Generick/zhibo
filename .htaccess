@@ -16,12 +16,10 @@
 #rewrite ^/square$ /square.php last; 
 #rewrite ^/center$ /centeros.php last; 
 
+
 <IfModule mod_rewrite.c> 
 	RewriteEngine on 
-	RewriteCond %{QUERY_STRING} ^(.*)$
-	RewriteRule ^(\w+)\/(\w+)\.html kedo.php?c=$1&m=$2%1 [L,QSA]
-</IfModule>  
+	RewriteRule ^([0-9]+)$ live.php?roomnumber=$1 
+	RewriteRule ^(\w+)\/(\w+)$ kedo.php?c=$1&m=$2 [L,QSA]
+</IfModule> 
 		
-#	RewriteRule ([a-zA-Z]{1,})\/([0-9]{1,})\.html$ kedo.php?c=$1&m=$2 
-
-#RewriteRule ^([a-zA-Z]+)\/([a-zA-Z0-9]+)\.html$ $1.php?c=$2 [L]  
