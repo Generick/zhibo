@@ -213,6 +213,7 @@ class centerosController{
         foreach ($user as $key => $value) {
             $this->view->assign($key,$value);
         }
+        //exit(var_dump($user));
         //over
         $res_path = "././public/centeros";
         $this->view->assign('res_path',$res_path);

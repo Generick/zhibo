@@ -8,7 +8,7 @@ class centerosAPIController{
 	public $user;
 
 	function get_recharge(){
-		//
+		//nothing to do
 	}
 
 	function get_record(){
@@ -20,11 +20,11 @@ class centerosAPIController{
 			exit();
 		}
 		$tpe = $_REQUEST['t'];
-		if ($tpe == 0) {//chongzhi 0
+		if ($tpe == 0) {//recharge 0
 			$_url = _INTERFACE_."/rest/usersGiftDetails/topUp.mt";
-		}else if($tpe == 1){//jiaoyi 1
+		}else if($tpe == 1){//trade 1
 			$_url = _INTERFACE_."/rest/usersGiftDetails/trading.mt";
-		}else{//shoudao liwu 2
+		}else{//received gifts 2
 			$_url = _INTERFACE_."/rest/usersGiftDetails/giving.mt";
 		}
 		$year = $_POST['y']?$_POST['y']:date("Y");
@@ -75,7 +75,7 @@ class centerosAPIController{
 	}
 
 	function get_recive(){
-		//
+		//nothing to do
 	}
 
 	function editName(){
@@ -178,9 +178,7 @@ class centerosAPIController{
             exit();
         }
         $phoneNumber=$_POST['number'];
-        //$sendData = array("number"=>$phoneNumber);
-        $datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt","number=$phoneNumber");
-        //$datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt",$sendData);
+        $datas = curl_post(_INTERFACE_."/rest/personCenter/sendMessage.mt","number=$phoneNumber");
         $acceptData=json_decode($datas, true);
         if($acceptData!=null and $acceptData["data"] !=''){
             $send_phone_info['time']=$_SERVER['REQUEST_TIME'];
@@ -224,8 +222,7 @@ class centerosAPIController{
             exit();
         }
         $bind_phone=$phone_infos['phone'];
-        global $db;
-        $sql="update bu_user set mobile =$bind_phone where userId=$userId";
+        $sql="update bu_user set mobile = $bind_phone where userId=$userId";
         if($this->db->Execute($sql)){
             $ajax_data["resultMessage"]="success";
             $ajax_data["resultCode"]="200";
@@ -242,6 +239,7 @@ class centerosAPIController{
 
 
 	function __construct(){
+		//initalization
 		session_start();
 		global $db;
 		global $page_var;
@@ -252,9 +250,11 @@ class centerosAPIController{
 	}
 
 	function __destruct(){
+		//close db
 		$this->db->close();
 	}
 
+	//curl get method
 	function curlGet($get_url,$get_param){
 	    $oCurl = curl_init();
 	    if(stripos($get_url,"https://")!==FALSE){

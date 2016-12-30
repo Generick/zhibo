@@ -55,7 +55,7 @@ define('ajax/phone', function(require, exports, module){
 
     $('#bindPhone').on('click',function(){
         if(!sendPhone){
-            alert('短信未发!');
+            Tools.clert('短信未发!');
             return;
         }
         if($('#code').val()==''){
@@ -76,11 +76,11 @@ define('ajax/phone', function(require, exports, module){
         }).done(function (data) {
             data =jQuery.parseJSON(data);
             if(data.resultCode=="200"){
-                Tools.blert('绑定成功!');
+                Tools.clert('绑定成功!');
                 window.location.reload();
             }
         }).error(function (jqXHR, textStatus, errorThrown) {
-            2;
+            console.log('error');
         });
 
 
