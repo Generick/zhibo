@@ -51,7 +51,7 @@ include_once('tpl_header.php');
                 </div>
                 	<div class="row">
                     	<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="rankGame in rankGames">                    
-                    <a href="{{rankGame.roomNumber}}" target="_blank" class="thumbnail bord1d">            
+                    <a href="{{rankGame.roomNumber}}" class="thumbnail bord1d">            
                         <div class="recommImg">                        
                             <img class="lazy" ng-src="{{rankGame.image}}&w=220&h=127" alt="{{gameAnch.nickName|decode}}">                        
                             <div class="thumb-bar"></div>                        
@@ -87,7 +87,7 @@ include_once('tpl_header.php');
     
                     <div class="allGaD row"  id="allGaD">
                         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameAnch in gameAnchs">                    
-                            <a href="{{gameAnch.roomNumber}}" target="_blank" class="thumbnail bord1d">            
+                            <a href="{{gameAnch.roomNumber}}" class="thumbnail bord1d">            
                                 <div class="recommImg">                        
                                     <img class="lazy" ng-src="{{gameAnch.image}}&w=220&h=127" alt="{{gameAnch.nickName|decode}}">                        
                                     <div class="thumb-bar"></div>                        
@@ -115,7 +115,7 @@ include_once('tpl_header.php');
                 
                 <div id="gameItems">
                     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameItem in gameItems">                    
-                        <a href="{{gameItem.roomNumber}}" target="_blank" class="thumbnail bord1d">            
+                        <a href="{{gameItem.roomNumber}}" class="thumbnail bord1d">            
                             <div class="recommImg">                        
                                 <img class="lazy" ng-src="{{gameItem.image}}&w=220&h=127" alt="{{gameItem.nickName|decode}}">                        
                                 <div class="thumb-bar"></div>                        
@@ -153,7 +153,7 @@ include_once('tpl_header.php');
                     <span>段子</span>
                 </div>
                 <div class="col-pc-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
-                    <a href="{{squAnch.roomNumber}}" target="_blank" class="hotItem thumbnail bord1d" >
+                    <a href="{{squAnch.roomNumber}}" class="hotItem thumbnail bord1d" >
                       <img ng-src="{{squAnch.image}}&w=97&h=127" alt="{{squAnch.nickName|decode}}"/>
                       <div class="{{squAnch.levelImg}}"></div>
                       <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>

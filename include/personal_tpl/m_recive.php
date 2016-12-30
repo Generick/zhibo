@@ -39,7 +39,7 @@
                             <th style="width: 152px;">赠送者</th>
                             <th style="width: 200px;">赠送时间</th>
                             <th style="width: 240px;">获得礼物</th>
-                            <th style="width: 362px;">消费蚪币</th>
+                            <th style="width: 362px;">消费K豆</th>
                         </tr>
                     </table>
                 </div>

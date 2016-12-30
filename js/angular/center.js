@@ -1,5 +1,13 @@
 (function(){
-	var app = angular.module('personalCenter',[]);
+	var app = angular.module('personalCenter',[]).config(['$compileProvider',function( $compileProvider ){$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);        
+	    }]) ;
+
+	/*app.config(function( $compileProvider ){   
+	        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|sms):/);
+	        // Angular v1.2 之前使用 $compileProvider.urlSanitizationWhitelist(...)
+	    }
+	);*/
+
 	app.controller('center',function($scope,$http){
 		$scope.news = [];
 		$scope.pages= [] 
