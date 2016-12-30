@@ -17,7 +17,7 @@ define('ajax/username', function (require, exports, module) {
             success: function (data) {
                 data = JSON.parse(data);
                 if (data.resultStatus == 200) {
-                    //alert("修改成功!");
+                    common.clert("修改成功!");
                     $(".center-name").text(nickname);
                     $(".a-myname").show();
                     $(".c-myname").hide();
