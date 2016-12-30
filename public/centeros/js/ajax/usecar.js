@@ -18,7 +18,7 @@ define('ajax/usecar', function(require, exports, module){
                 window.location.reload();
             }
         }).error(function (jqXHR, textStatus, errorThrown) {
-            2;
+            console.log('error');
         });
 
     });
