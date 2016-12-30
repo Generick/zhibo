@@ -252,7 +252,7 @@ class centerosAPIController{
 	}
 
 	function __destruct(){
-		//$this->db->close();
+		$this->db->close();
 	}
 
 	function curlGet($get_url,$get_param){

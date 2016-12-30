@@ -107,6 +107,8 @@ class centerosController{
         $this->view->assign('femalechecked',$femalechecked);
         $this->view->assign('malechecked',$malechecked);
         $this->view->assign('current_page',$current_page);
+        $this->view->assign('province',$user['province']);
+        $this->view->assign('city',$user['city']);
         $this->view->display('m_self.html');
   }
 
