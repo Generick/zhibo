@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-12-29 16:57:32
+/* Smarty version 3.1.30, created on 2016-12-30 10:03:32
   from "E:\xampp\htdocs\kedo_tv\app\view\index\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5864cffc3b6262_71268769',
+  'unifunc' => 'content_5865c07415a903_14986309',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99081063d91ee38eabbf8b564810b66bed2d5cfb' => 
     array (
       0 => 'E:\\xampp\\htdocs\\kedo_tv\\app\\view\\index\\index.html',
-      1 => 1483001792,
+      1 => 1483063405,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../public/footer.html' => 1,
   ),
 ),false)) {
-function content_5864cffc3b6262_71268769 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '131325864cffc33c602_07599013';
+function content_5865c07415a903_14986309 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '229105865c073dbbb84_98626254';
 ?>
  <!DOCTYPE html>
 <html lang="zh-CN">
@@ -54,7 +54,7 @@ $_smarty_tpl->compiled->nocache_hash = '131325864cffc33c602_07599013';
 >
     <?php echo '<script'; ?>
  type="text/javascript" src="/public/centeros/js/notice.js"><?php echo '</script'; ?>
->>
+>
 
     <?php echo '<script'; ?>
 >
