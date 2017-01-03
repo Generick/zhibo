@@ -28,10 +28,10 @@
                         {{new.title}}<span class="times">{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}</span></div>
                         <div class="message-sf">
                            <div class="message-sf-cont">
-                               你关注的 <a ng-href="{{new.roomNumber}}" target="_blank" class="names" id="{{new.userId}}">{{((new.details|toJson).userName)|decode}}</a> 已经开始直播<span id="{{new.id}}" hidden></span>
+                               你关注的 <a ng-href="/{{new.roomNumber}}" target="_blank" class="names" id="{{new.userId}}">{{((new.details|toJson).userName)|decode}}</a> 已经开始直播<span id="{{new.id}}" hidden></span>
                            </div>
                             <div class="message-sf-control">
-                                <a ng-href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">进入房间</a>
+                                <a ng-href="/{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">进入房间</a>
                                 <button type="button" data-toggle="modal" data-target="deleData" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                你和<a ng-href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的亲密度等级达到 <span class="colorPin">{{(new.details|toJson).level}}</span> 级<span id="{{new.id}}" hidden></span>
+                                你和<a ng-href="/{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的亲密度等级达到 <span class="colorPin">{{(new.details|toJson).level}}</span> 级<span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
@@ -80,10 +80,10 @@
                         {{new.title}}<span class="times">{{new.createDT|date:"yyyy-MM-dd HH:mm:ss"}}</span></div>
                         <div class="message-sf">
                            <div class="message-sf-cont">
-                               你<a ng-href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的守护还有一天就要到期了，再多留点时间守护在TA身边吧<span id="{{new.id}}" hidden></span>
+                               你<a ng-href="/{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>的守护还有一天就要到期了，再多留点时间守护在TA身边吧<span id="{{new.id}}" hidden></span>
                            </div>
                             <div class="message-sf-control">
-                                <a ng-if="new.roomNumber>0" ng-href="{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">继续守护TA</a>
+                                <a ng-if="new.roomNumber>0" ng-href="/{{new.roomNumber}}" target="_blank" class="btn btn-sm btn-default">继续守护TA</a>
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                <a ng-href="{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>送给你 <span class="colorPin">{{(new.details|toJson).amount}}</span> 个 <span class="colorPin">{{(new.details|toJson).itmename}}</span>，你的K豆增加了 <span class="colorPin">{{(new.details|toJson).coins}}</span><span id="{{new.id}}" hidden></span>
+                                <a ng-href="/{{new.roomNumber}}" target="_blank" class="names"> {{((new.details|toJson).userName)|decode}} </a>送给你 <span class="colorPin">{{(new.details|toJson).amount}}</span> 个 <span class="colorPin">{{(new.details|toJson).itmename}}</span>，你的K豆增加了 <span class="colorPin">{{(new.details|toJson).coins}}</span><span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
@@ -118,10 +118,10 @@
                         </div>
                         <div class="message-gl">
                             <div class="message-sf-cont">
-                                频道号：<a ng-href="new.number" class="names">{{new.roomNumber}} </a>的 <a ng-href="{{new.roomNumber}}" target="_blank" class="names">{{((new.details|toJson).userName)|decode}}</a> 将你设为了TA的房间管理员，你在这里享有踢人、禁言权利哦，请帮助TA管理频道秩序吧<span id="{{new.id}}" hidden></span>
+                                频道号：<a ng-href="new.number" class="names">{{new.roomNumber}} </a>的 <a ng-href="/{{new.roomNumber}}" target="_blank" class="names">{{((new.details|toJson).userName)|decode}}</a> 将你设为了TA的房间管理员，你在这里享有踢人、禁言权利哦，请帮助TA管理频道秩序吧<span id="{{new.id}}" hidden></span>
                             </div>
                             <div class="message-sf-control">
-                            	<a ng-href="{{new.roomNumber}}" class="btn btn-sm btn-default">前去管理房间</a>
+                            	<a ng-href="/{{new.roomNumber}}" class="btn btn-sm btn-default">前去管理房间</a>
                                 <button type="button" ng-click="dele(new.id,item,userId)" class="btn btn-sm btn-danger">删除</button>
                             </div>
                         </div>
