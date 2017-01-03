@@ -229,7 +229,8 @@ class centerosController{
         $this->view->assign('res_path',$res_path);
         $this->view->assign('cdn_domain',$page_var['cdn_domain']);
         // include tpl_header.php
-        $page_var['current_page']=$current_page;
+        //$page_var['current_page']=$current_page;
+        $page_var['current_page'] = '';
         foreach($page_var as $key=>$val){
         $this->view->assign($key,$val);
         }
