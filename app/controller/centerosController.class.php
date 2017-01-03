@@ -302,13 +302,11 @@ class centerosController{
 
     function showCommon(){
         $this->view->display('common.html');
-        //$this->view->display('header_desert.html');
-        $this->view->display('headernew.html');
+        $this->view->display('header_public.html');
   }
 
     //upload avatar
     function imgupload(){
-        //return "hello";
         $APP_ROOT = $_SERVER['DOCUMENT_ROOT'];
         $dir = $APP_ROOT.'/public/upload/';
         if (PHP_OS != "WINNT") {
