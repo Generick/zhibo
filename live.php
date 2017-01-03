@@ -13,7 +13,7 @@ $roomnumber = (int)$_GET['roomnumber'];
 
 $user = checklogin();
 if (ismobile()) {
-    header("/livemb/index?roomnumber={$roomnumber}");
+    header("/livemb?roomnumber={$roomnumber}");
     exit();
 }
 
