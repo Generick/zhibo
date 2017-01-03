@@ -1,6 +1,6 @@
 <?php 
 /**
-* 
+* centeros common API
 */
 class centerosAPIController{
 	public $db;
@@ -11,6 +11,7 @@ class centerosAPIController{
 		//nothing to do
 	}
 
+	//get recharge trading and gifts record
 	function get_record(){
 		if (!$this->user) {
 			$data = array();
@@ -67,17 +68,11 @@ class centerosAPIController{
 		exit();
 	}
 
-	function testsms(){
-		$phoneNumber = '18255001881';
-		$datas = curl_post(_CDNDOMAIN_."/rest/personCenter/sendMessage.mt","number=$phoneNumber");
-		echo json_encode($datas,true);
-		echo $datas."0000";
-	}
-
 	function get_recive(){
 		//nothing to do
 	}
 
+	//edit nickname
 	function editName(){
 		$user = checklogin();
 		$nickname = $_REQUEST['nickname'];
@@ -99,6 +94,7 @@ class centerosAPIController{
 	    }
 	}
 
+	// modify user base info
 	function base(){
 		$user = checklogin();
 		if ($_POST['year']!="" && $_POST['month']!="" && $_POST['day']!="") {
@@ -134,6 +130,7 @@ class centerosAPIController{
 	     }
 	}
 
+	//change pwd
 	function changePass(){
 		$user = checklogin();
 		if (trim($_POST['current_password']) == '' || trim($_POST['new_password']) == '' || trim($_POST['new_repassword']) == '') {
@@ -163,6 +160,7 @@ class centerosAPIController{
 		exit();
 	}
 
+	//send sms
 	function sendSMS(){
 		$user = checklogin();
 		if (!$user) {
@@ -196,13 +194,14 @@ class centerosAPIController{
         exit();
 	}
 
+	//bind phone
 	function bindPhone(){
 		$user = checklogin();
 		$userId = $user['userId'];
 
 		$code=$_POST['code'];
 
-        //没有短信信息
+        //no sms message
         if(!empty($_SESSION["phone_array"]) and count($_SESSION["phone_array"]) >0){
             $phone_infos=$_SESSION["phone_array"];
         }else{
@@ -212,7 +211,7 @@ class centerosAPIController{
             echo json_encode($ajax_data);
             exit();
         }
-        //验证码错误
+        //validcode error
         if($code!=$phone_infos['code']){
             $ajax_data["resultMessage"]="code error!";
             $ajax_data["resultCode"]="100";
@@ -236,6 +235,7 @@ class centerosAPIController{
         exit();
 	}
 
+	//my approach effects
 	function usercar(){
 		$user = checklogin();
 		$idd = $_POST['idd'];
@@ -292,5 +292,26 @@ class centerosAPIController{
 	        return FALSE;
 	    }
 	}
+
+	//get user avatar
+	function avatar(){
+		$uid = (int)$_GET['uid'];
+		if (empty($uid)) {
+			header("Location:/public/centeros/images/2456_120x120.jpg");
+			exit;
+		}
+
+		$md5 = $this->db->GetOne("select avatar from bu_user where userId = {$uid}");
+		if ($md5) {
+			$imgurl = _IMAGES_DOMAIN_."/".$md5;
+			header("Location:$imgurl");
+			exit;
+		}else{
+			header("Location:/public/centeros/images/2456_120x120.jpg");
+			exit;
+		}
+	}
+
+
 }
  ?>

@@ -1,10 +1,14 @@
 <?php
+/*
+* centeros class
+ */
 class centerosController{
      public $db;
      public $page_var;
      public $view;
      public $user;
 
+    //centeros index
     function index(){
         $this->showCommon();
         $user = $this->user;
@@ -155,7 +159,7 @@ class centerosController{
         $this->view->display('m_recharge.html');
   }
 
-    //trade
+    //trade page
     function record(){
         $this->showCommon();
         $current_page = "record";
@@ -223,7 +227,6 @@ class centerosController{
         foreach ($user as $key => $value) {
             $this->view->assign($key,$value);
         }
-        //exit(var_dump($user));
         //over
         $res_path = "././public/centeros";
         $this->view->assign('res_path',$res_path);
@@ -234,6 +237,7 @@ class centerosController{
         foreach($page_var as $key=>$val){
         $this->view->assign($key,$val);
         }
+        // delieve user array data to page
         $this->view->assign("user",$user);
         //over
         //footer
@@ -271,6 +275,7 @@ class centerosController{
         return $monlist;
   }
 
+    //common notice API
     function noticeAPI(){
         $userId = $_POST['userId'];
         //$userId = 12;
@@ -285,6 +290,7 @@ class centerosController{
         echo json_encode($retData);
   }
 
+    //get unread news numbers by userId
     function getNoticeState($userId){
         $userinfo = $this->db->Execute("select state from bu_station_message where userId = {$userId} and (state = 0 or state is null)");
         if ($userinfo) {
@@ -300,6 +306,7 @@ class centerosController{
         $this->view->display('headernew.html');
   }
 
+    //upload avatar
     function imgupload(){
         //return "hello";
         $APP_ROOT = $_SERVER['DOCUMENT_ROOT'];
@@ -356,12 +363,13 @@ class centerosController{
             if ($success_num > 0){
                 $result['success'] = true;
             }
-            //返回图片的保存结果,json
+            //return picture save result,json format
             return json_encode($result);
 
 
   }
 
+    //create random code
     function createRandomCode($length){
         $randomCode = "";
         $randomChars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -372,6 +380,7 @@ class centerosController{
         return $randomCode;
   }
 
+    //upload avatar to server
     function uploadImg($imgurl){
         $zimg_upload_url = _IMAGES_DOMAIN_;
         $simg=$imgurl;
@@ -399,24 +408,6 @@ class centerosController{
         return false;
   }
 
-    function avatar(){
-        $uid = (int)$_GET['uid'];
-        if (empty($uid)) {
-            header("Location:/public/centeros/images/2456_120x120.jpg");
-            exit;
-        }
-
-        $md5 = $this->db->GetOne("select avatar from bu_user where userId = {$uid}");
-        if ($md5) {
-            $imgurl = _IMAGES_DOMAIN_."/".$md5;
-            echo $imgurl;
-            exit;
-        }else{
-            header("Location:/public/centeros/images/2456_120x120.jpg");
-            exit;
-        }
-
-    }
 
 }
 ?>
